@@ -2,8 +2,8 @@
 # There're some problems with "shared" version
 #
 %define ver	7.20
-%define	rel	20030807.1
-%define	dirrel	20030807
+%define	rel	20030821.1
+%define	dirrel	20030821
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -13,13 +13,13 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-Source0:	http://snapshot.opera.com/unix/intel-linux/437-%{dirrel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source0:	http://snapshot.opera.com/unix/intel-linux/445-%{dirrel}-%{ver}-B4/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
 #Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-Source1:	http://snapshot.opera.com/unix/ppc-linux/437-%{rel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source1:	http://snapshot.opera.com/unix/ppc-linux/445-%{rel}-%{ver}-B4/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %endif
 %ifarch sparc
-Source1:	http://snapshot.opera.com/unix/sparc-linux/437-%{rel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source1:	http://snapshot.opera.com/unix/sparc-linux/445-%{rel}-%{ver}-B4/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %endif
 # polish language file
 Source2:	%{name}-2887.lng
