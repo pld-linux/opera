@@ -21,8 +21,6 @@ Requires:	freetype >= 2
 Requires:	openmotif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 %define		_plugindir	%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}.%{rel}
 %define		configfile	%{_datadir}/opera/config/opera6rc
