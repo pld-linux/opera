@@ -2,17 +2,18 @@
 # There're some problems with "shared" version
 #
 %define ver	6.10
-%define	rel	20021015.1
+%define	rel	20021029.1
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	2
+Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 #Source0:	http://web.opera.com/download/unix/untested/intel-linux/257-20021010-6.1-P3/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-Source0:	http://gd.tuwien.ac.at/infosys/browsers/opera/linux/610/beta1/en/static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+#Source0:	http://gd.tuwien.ac.at/infosys/browsers/opera/linux/610/beta1/en/static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/610/final/en/i386/static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source2:	opera.desktop
 URL:		http://www.opera.com/
@@ -59,7 +60,7 @@ gunzip -c %{SOURCE1} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 cp man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
-# wrapper corection
+# wrapper correction
 sed s#$RPM_BUILD_ROOT## > $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
 mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
 
@@ -73,10 +74,6 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 # symlink który niweluje burkanie siê opery :>
 #ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
 #ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
-
-echo "[User Prefs]" >> $RPM_BUILD_ROOT%{configfile}
-echo "Plugin Path=/usr/lib/jre1.4.1_01/lib/i386/:/usr/lib/jre1.4.1_01/plugin/i386/ns600/:/usr/X11R6/lib/opera/plugins/:/usr/X11R6/lib/mozilla/plugins/" >> $RPM_BUILD_ROOT%{configfile}
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
