@@ -9,12 +9,10 @@
 %if %{with snap}
 %define	ver		7.60
 %define dirrel		20040824
-# type of release, usually final or beta or Preview-4 for snaps
 %define reltype         Preview-1
 %else
 %define ver             7.54
-%define dirrel          20040824
-# type of release, usually final or beta or Preview-4 for snaps
+%define dirrel          20040803
 %define reltype         final
 %endif
 
