@@ -190,7 +190,7 @@ Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	0a7e933ef593d4b7a897041c9f87bba2
+# Source0-md5:	c514d0a5254a46e686118302bd0a554f
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -201,7 +201,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{nam
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	04976a6ace7a4345ce5e4cf763159939
+# Source1-md5:	4370b9b55c4c3991582c90452e3aed5c
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -213,7 +213,7 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{nam
 
 %if %{need_ppc_static}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	c11a4c78d18bdaa4bd338b4c0dc27f38
+# Source2-md5:	08c34b4fdc11860fe2c05f9ab235048c
 %{!?with_distributable:NoSource:	2}
 %endif
 
