@@ -18,9 +18,8 @@
 %define	ppc_static_rel		%{dirrel}.1
 %if %{with shared}
 %define	type		shared
-%ifarch %{ix86}
+# We should be able to build src.rpm also on not supported archs
 %define	rel		%{x86_shared_rel}
-%endif
 %ifarch sparc64 sparc
 %define	rel		%{sparc_shared_rel}
 %endif
@@ -29,9 +28,7 @@
 %endif
 %else
 %define	type		static
-%ifarch %{ix86}
 %define	rel		%{x86_static_rel}
-%endif
 %ifarch sparc sparc64
 %define	rel		%{sparc_static_rel}
 %endif
