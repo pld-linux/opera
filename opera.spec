@@ -324,10 +324,18 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
 
-# always use wrapper linked with libXm.so.3
+# always use latest possible wrapper
 rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
-ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
-ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
+if [ -f "$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3" ]; then
+	ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
+	ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
+elif [ -f "$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2" ]; then
+	ln -sf operamotifwrapper-2 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
+	ln -sf operamotifwrapper-2 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
+elif [ -f "$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1" ]; then
+	ln -sf operamotifwrapper-1 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
+	ln -sf operamotifwrapper-1 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
+fi
 
 # clean unneeded files
 rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/config
