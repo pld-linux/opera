@@ -1,9 +1,9 @@
 #
 # There're some problems with "shared" version
 #
-%define ver	7.21
-%define	rel	20031013.1
-%define	dirrel	20031013
+%define ver	7.23
+%define	rel	20031119.1
+%define	dirrel	20031119
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -12,14 +12,10 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-%ifarch sparc
-Source1:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
-%endif
-%ifarch ppc
-Source2:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-%endif
-# polish language file
+Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386-en.tar.bz2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc-en.tar.bz2
+Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc-en.tar.bz2
+# polish language file (taken from where?)
 Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
 NoSource:	0
@@ -47,13 +43,13 @@ statycznie skonsolidowana z qt.
 
 %prep
 %ifarch %{ix86}
-%setup -q  -n %{name}-%{ver}-%{rel}-%{type}-qt.i386
+%setup -q  -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
 %endif
 %ifarch sparc sparc64
-%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
+%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
 %endif
 %ifarch ppc
-%setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
+%setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc-en
 %endif
 
 %install
@@ -113,6 +109,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/opera/ini
 %{_datadir}/opera/search.ini
 %{_datadir}/opera/*.html
+%{_datadir}/opera/*.ssr
+%{_datadir}/opera/*.txt
 %ifarch %{ix86}
 %attr(755,root,root) %{_datadir}/opera/chartables.bin
 %endif
