@@ -2,8 +2,8 @@
 # There're some problems with "shared" version
 #
 %define ver	7.20
-%define	rel	20030827.1
-%define	dirrel	20030827
+%define	rel	20030905.1
+%define	dirrel	20030905
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -13,16 +13,19 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	http://snapshot.opera.com/unix/intel-linux/447-%{dirrel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source0:	http://snapshot.opera.com/unix/7.20-Beta-9/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+#Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
-#Source1:	http://snapshot.opera.com/unix/ppc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+#Source1:	http://snapshot.opera.com/unix/ppc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+Source1:	http://snapshot.opera.com/unix/7.20-Beta-9/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 #Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+#Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
 %ifarch sparc
 #Source1:	http://snapshot.opera.com/unix/sparc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
-Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
+Source1:	http://snapshot.opera.com/unix/7.20-Beta-9/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
+#Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 %endif
 # polish language file
 Source2:	%{name}-2887.lng
