@@ -8,15 +8,15 @@
 
 %if %{with snap}
 %define	ver		7.60
-%define dirrel		20041115
-%define reltype         Preview-3
+%define	dirrel		20041115
+%define	reltype		Preview-3
 %else
-%define ver             7.54
-%define dirrel          20040803
-%define reltype         final
+%define	ver		7.54
+%define	dirrel		20040803
+%define	reltype		final
 %endif
 
-%define shver		%(echo %{ver} | tr -d .)
+%define	shver		%(echo %{ver} | tr -d .)
 %define	x86_shared_rel		%{dirrel}.5
 %define	x86_static_rel		%{dirrel}.1
 %define	sparc_shared_rel	%{dirrel}.2
@@ -46,19 +46,19 @@
 
 # define to 0 and then redefine to avoid
 # not defined macros
-%define need_ix86_shared_snap	0
-%define need_sparc_shared_snap	0
-%define need_ppc_shared_snap	0
-%define need_ix86_static_snap	0
-%define need_sparc_static_snap	0
-%define need_ppc_static_snap	0
+%define	need_ix86_shared_snap	0
+%define	need_sparc_shared_snap	0
+%define	need_ppc_shared_snap	0
+%define	need_ix86_static_snap	0
+%define	need_sparc_static_snap	0
+%define	need_ppc_static_snap	0
 
-%define need_ix86_shared	0
-%define need_sparc_shared	0
-%define need_ppc_shared		0
-%define need_ix86_static	0
-%define need_sparc_static	0
-%define need_ppc_static		0
+%define	need_ix86_shared	0
+%define	need_sparc_shared	0
+%define	need_ppc_shared		0
+%define	need_ix86_static	0
+%define	need_sparc_static	0
+%define	need_ppc_static		0
 
 %if %{with incall}
 #	with incall?	[if]
@@ -67,12 +67,12 @@
 %if	%{with shared}
 #			with shared?	[if]
 %define	need_ix86_shared_snap	1
-%define need_sparc_shared_snap	1
+%define	need_sparc_shared_snap	1
 %define	need_ppc_shared_snap	1
 %else
 #			with shared:	[else]
 %define	need_ix86_static_snap	1
-%define need_sparc_static_snap	1
+%define	need_sparc_static_snap	1
 %define	need_ppc_static_snap	1
 %endif
 #			with shared;	[endif]
@@ -81,12 +81,12 @@
 %if %{with shared}
 #			with shared?	[if]
 %define	need_ix86_shared	1
-%define need_sparc_shared	1
+%define	need_sparc_shared	1
 %define	need_ppc_shared	1
 %else
 #			with shared:	[else]
 %define	need_ix86_static	1
-%define need_sparc_static	1
+%define	need_sparc_static	1
 %define	need_ppc_static	1
 %endif
 #			with shared;	[endif]
@@ -299,12 +299,12 @@ mv install2.sh install.sh
 
 echo y |\
 sh install.sh \
-  --prefix=$RPM_BUILD_ROOT%{_prefix} \
-  --wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
-  --docdir=$RPM_BUILD_ROOT%{_operadocdir} \
-  --sharedir=$RPM_BUILD_ROOT%{_datadir}/opera \
-  --exec_prefix=$RPM_BUILD_ROOT%{_datadir}/opera/bin \
-  --plugindir=$RPM_BUILD_ROOT%{_plugindir}
+	--prefix=$RPM_BUILD_ROOT%{_prefix} \
+	--wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
+	--docdir=$RPM_BUILD_ROOT%{_operadocdir} \
+	--sharedir=$RPM_BUILD_ROOT%{_datadir}/opera \
+	--exec_prefix=$RPM_BUILD_ROOT%{_datadir}/opera/bin \
+	--plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # man install
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
