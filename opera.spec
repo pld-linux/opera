@@ -7,15 +7,15 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	1
+Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.bz2
 Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
+Source2:	opera.desktop
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86}
 Requires:	freetype >= 2
-Requires:	openmotif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NoSource:	0
 %define		_prefix		/usr/X11R6
@@ -37,16 +37,8 @@ linkowana z qt.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_datadir}
-install -d $RPM_BUILD_ROOT%{_prefix}/opera
+nstall -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_prefix}/opera,%{_libdir}/opera/plugins,%{_mandir}/man1,/usr/share,/usr/lib,%{_pixmapsdir},%{_applnkdir}/Network/WWW}
 install -d $RPM_BUILD_ROOT%{_datadir}/opera/{buttons,config,help,images,locale,skin,styles}
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-install -d $RPM_BUILD_ROOT%{_libdir}/opera/plugins
-#{%{version},plugins}
-install -d $RPM_BUILD_ROOT%{_mandir}/man1/
-install -d $RPM_BUILD_ROOT/usr/share
-install -d $RPM_BUILD_ROOT/usr/lib
 
 for i in buttons config help images locale skin styles; do
 	cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
@@ -68,6 +60,8 @@ cp unicode.dat $RPM_BUILD_ROOT%{_datadir}/opera
 cp opera $RPM_BUILD_ROOT%{_bindir}/opera
 cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
+install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
+
 # symlink który niweluje burkanie siê opery :>
 ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
 ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
@@ -81,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/opera
 %{_pixmapsdir}/opera.xpm
+%dir %{_applnkdir}/Network/WWW/*
 %{_mandir}/man1/opera.1.gz
 %{_libdir}/opera
 /usr/share/opera
