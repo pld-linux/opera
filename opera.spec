@@ -8,8 +8,8 @@
 
 %if %{with snap}
 %define	ver		7.60
-%define	dirrel		20041115
-%define	reltype		Preview-3
+%define	dirrel		20041203
+%define	reltype		Preview-4
 %else
 %define	ver		7.54
 %define	dirrel		20040803
@@ -203,7 +203,7 @@ Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static
 
 %if %{need_sparc_static_snap}
 Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source101-md5:	ba95075157b947e6db1454811d658ae5
+# Source101-md5:	793af778c64d49299cbfe0f8e07ff7c4
 %{!?with_distributable:NoSource:	101}
 %endif
 
@@ -226,7 +226,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 
 %if %{need_ix86_shared_snap}
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	304050ea94d3d7751e67c61e4389f824
+# Source1020-md5:	827f62ae5781e4f66c0d30c39723dae9
 %{!?with_distributable:NoSource:	1020}
 %endif
 
@@ -238,7 +238,7 @@ Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/share
 
 %if %{need_ix86_shared_snap}
 Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source1021-md5:	f88efb287af4d40323ecae87ae09afbd
+# Source1021-md5:	16c77233c49ac600bed54c61898c15b7
 %{!?with_distributable:NoSource:	1021}
 %endif
 
@@ -250,7 +250,7 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/
 
 %if %{need_ppc_shared_snap}
 Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source1022-md5:	7d61280d37ff272205b93a07ee9a8c69
+# Source1022-md5:	dfa0173345f3807cc5425a7903e24cb1
 %{!?with_distributable:NoSource:	1022}
 %endif
 
@@ -351,7 +351,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/opera/styles
 %{_datadir}/opera/ini
 %{_datadir}/opera/search.ini
-%{_datadir}/opera/*.html
 %{_datadir}/opera/*.ssr
 %{_datadir}/opera/*.txt
 %ifarch %{ix86}
