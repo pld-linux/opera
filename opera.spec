@@ -11,6 +11,7 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.bz2
+Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86}
 Requires:	freetype >= 2
@@ -40,18 +41,22 @@ install -d $RPM_BUILD_ROOT%{_datadir}
 install -d $RPM_BUILD_ROOT%{_prefix}/opera
 install -d $RPM_BUILD_ROOT%{_datadir}/opera/{buttons,config,help,images,locale,skin,styles}
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-install -d $RPM_BUILD_ROOT%{_libdir}/{%{version},plugins}
+install -d $RPM_BUILD_ROOT%{_libdir}/opera/plugins
+#{%{version},plugins}
 install -d $RPM_BUILD_ROOT%{_mandir}/man1/
 install -d $RPM_BUILD_ROOT/usr/share
+install -d $RPM_BUILD_ROOT/usr/lib
 
-for i in buttons config help images locale skin styles;
-do cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
+for i in buttons config help images locale skin styles; do
+	cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
 done
 
+#cp %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
+gunzip -c %{SOURCE1} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
 cp man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
-cp -r plugins $RPM_BUILD_ROOT%{_libdir}
-cp opera $RPM_BUILD_ROOT%{_libdir}/%{version}
+cp -r plugins $RPM_BUILD_ROOT%{_libdir}/opera
+#cp opera $RPM_BUILD_ROOT%{_libdir}/opera/%{version}
 
 cp opera6.adr $RPM_BUILD_ROOT%{_datadir}/opera
 cp chartables.bin $RPM_BUILD_ROOT%{_datadir}/opera
@@ -64,6 +69,7 @@ cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 # symlink który niweluje burkanie siê opery :>
 ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
+ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -74,4 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/opera
 %{_pixmapsdir}/opera.xpm
+%{_mandir}/man1/opera.1.gz
+%{_libdir}/opera
 /usr/share/opera
+/usr/lib/opera
