@@ -232,7 +232,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
-%{?with_snap:%{_datadir}/opera/locale/english.lng}
+%{_datadir}/opera/locale/english.lng
 
 %{_pixmapsdir}/opera.xpm
 %{_desktopdir}/*.desktop
