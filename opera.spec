@@ -11,7 +11,7 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.hu-berlin.de/pub/www/opera/linux/710/beta1/en/i386/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.gz
+Source0:	ftp://ftp.hu-berlin.de/pc/www/opera/linux/710/beta1/en/i386/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
 Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.gz
 %endif
