@@ -1,3 +1,5 @@
+# TODO:
+# - SECURITY: http://securitytracker.com/alerts/2004/Jul/1010780.html
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
