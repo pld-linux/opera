@@ -44,6 +44,121 @@
 %endif
 %endif
 
+%if %{with incall}
+#	with incall?	[if]
+%if	%{with snap}
+#		with snap?	[if]
+%if	%{with shared}
+#			with shared?	[if]
+%define	need_ix86_shared_snap	1
+%define need_sparc_shared_snap	1
+%define	need_ppc_shared_snap	1
+%else
+#			with shared:	[else]
+%define	need_ix86_static_snap	1
+%define need_sparc_static_snap	1
+%define	need_ppc_static_snap	1
+%endif
+#			with shared;	[endif]
+%else
+#		with snap:	[else]
+%if %{with shared}
+#			with shared?	[if]
+%define	need_ix86_shared	1
+%define need_sparc_shared	1
+%define	need_ppc_shared	1
+%else
+#			with shared:	[else]
+%define	need_ix86_static	1
+%define need_sparc_static	1
+%define	need_ppc_static	1
+%endif
+#			with shared;	[endif]
+%endif
+#		with snap;	[endif]
+%else
+#	with incall:	[else]
+%ifarch	%{ix86}
+#		is ix86?	[if]
+%if	%{with snap}
+#			with snap?	[if]
+%if	%{with shared}
+#				with shared?	[if]
+%define	need_ix86_shared_snap	1
+%else
+#				with shared:	[else]
+%define	need_ix86_static_snap	1
+%endif
+#				with shared;	[endif]
+%else
+#			with snap:	[else]
+%if	%{with shared}
+#				with shared?	[if]
+%define	need_ix86_shared	1
+%else
+#				with shared:	[else]
+%define	need_ix86_static	1
+%endif
+#				with shared;	[endif]
+%endif
+#			with snap;	[endif]
+%endif
+#		is ix86;	[endif]
+%ifarch	sparc sparc64
+#		is sparc?	[if]
+%if	%{with snap}
+#			with snap?	[if]
+%if	%{with shared}
+#				with shared?	[if]
+%define	need_sparc_shared_snap	1
+%else
+#				with shared:	[else]
+%define	need_sparc_static_snap	1
+%endif
+#				with shared;	[endif]
+%else
+#			with snap:	[else]
+%if	%{with shared}
+#				with shared?	[if]
+%define	need_sparc_shared	1
+%else
+#				with shared:	[else]
+%define	need_sparc_static	1
+%endif
+#				with shared;	[endif]
+%endif
+#			with snap;	[endif]
+%endif
+#		is sparc;	[endif]
+%ifarch	ppc
+#		is ppc?		[if]
+%if	%{with snap}
+#			with snap?	[if]
+%if	%{with shared}
+#				with shared?	[if]
+%define	need_ppc_shared_snap	1
+%else
+#				with shared:	[else]
+%define	need_ppc_static_snap	1
+%endif
+#				with shared;	[endif]
+%else
+#			with snap:	[else]
+%if	%{with shared}
+#				with shared?	[if]
+%define	need_ppc_shared	1
+%else
+#				with shared:	[else]
+%define	need_ppc_static	1
+%endif
+#				with shared;	[endif
+%endif
+#			with snap;	[endif
+%endif
+#		is ppc;		[endif]
+%endif
+#	with incall;	[endif]
+
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -52,78 +167,52 @@ Release:	4
 Epoch:		1
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
-%if %{without shared}
-%{!?with_incall:%ifarch %{ix86}}
-%if ! %{with snap}
-Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+
+%{?need_ix86_static:Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2}
 # Source0-md5:	0a7e933ef593d4b7a897041c9f87bba2
-%else
-Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	0}
-%if ! %{with incall}
-%endif
-%ifarch sparc sparc64
-%endif
-%if ! %{with snap}
-Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+%{?need_ix86_static_snap:Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2}
+
+%{?need_sparc_static:Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2}
 # Source1-md5:	04976a6ace7a4345ce5e4cf763159939
-%else
-#Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	1}
-%if ! %{with incall}
-%endif
-%ifarch ppc
-%endif
-%if ! %{with snap}
-Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+#%{?need_sparc_static_snap:Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2}
+
+%{?need_ppc_static:Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2}
 # Source2-md5:	c11a4c78d18bdaa4bd338b4c0dc27f38
-%else
-Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	2}
-%{!?with_incall:%endif}
-%else
-%{!?with_incall:%ifarch %{ix86}}
-%if ! %{with snap}
-Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+%{?need_ppc_static_snap:Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2}
+
+%{?need_ix86_shared:Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2}
 # Source20-md5:	0e407a050f3aa4559011a3cea707cd20
-%else
-Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+%{?need_ix86_shared_snap:Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2}
 # Source1020-md5:	da4df3c5d65057eac4e063b4359fafa6
-%endif
-%{!?with_distributable:NoSource:	20}
-%if ! %{with incall}
-%endif
-%ifarch sparc sparc64
-%endif
-%if ! %{with snap}
-Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+
+%{?need_sparc_shared:Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2}
 # Source21-md5:	d8635013dac0c98c680997fcc9dd66c4
-%else
-#Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	21}
-%if ! %{with incall}
-%endif
-%ifarch ppc
-%endif
-%if ! %{with snap}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+#%{?need_ix86_shared_snap:Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2}
+
+%{?need_ppc_shared:Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2}
 # Source22-md5:	516992e68c5a710d795a1ecc791c7f4d
-%else
-Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+%{?need_ppc_shared_snap:Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2}
 # Source1022-md5:      6496d9871a2ca7337377ed3ecc298559
-%endif
-%{!?with_distributable:NoSource:	22}
-%endif
-%{!?with_incall:%endif}
+
 Source4:	%{name}.desktop
+%if ! %{with distributable}
+NoSource:	0
+NoSource:	1
+NoSource:	2
+NoSource:	20
+NoSource:	21
+NoSource:	22
+NoSource:	100
+NoSource:	101
+NoSource:	102
+NoSource:	1020
+NoSource:	1021
+NoSource:	1022
+%endif
+
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 Requires:	freetype >= 2
-
 Requires:	openmotif >= 2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -145,7 +234,7 @@ statycznie skonsolidowana z qt.
 
 %prep
 %ifarch %{ix86}
-%setup -q %{?with_shared:-T -b %{?with_snap:10}20} -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
+%setup -q -T -b %{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
 %endif
 %ifarch sparc sparc64
 %setup -q -T -b %{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
