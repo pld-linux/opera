@@ -4,13 +4,21 @@
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
-%bcond_without	snap		# snap version
+%bcond_with	snap		# snap version
 
+%if %{with snap}
 %define	ver		7.60
-%define shver		%(echo %{ver} | tr -d .)
-%define	dirrel		20040824
+%define dirrel		20040824
 # type of release, usually final or beta or Preview-4 for snaps
-%define	reltype		Preview-1
+%define reltype         Preview-1
+%else
+%define ver             7.54
+%define dirrel          20040824
+# type of release, usually final or beta or Preview-4 for snaps
+%define reltype         final
+%endif
+
+%define shver		%(echo %{ver} | tr -d .)
 %define	x86_shared_rel		%{dirrel}.5
 %define	x86_static_rel		%{dirrel}.1
 %define	sparc_shared_rel	%{dirrel}.2
@@ -59,7 +67,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{nam
 %ifarch sparc sparc64
 %endif
 %if ! %{with snap}
-#Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
 # Source1-md5:	04976a6ace7a4345ce5e4cf763159939
 %else
 #Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
@@ -92,7 +100,7 @@ Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{na
 %ifarch sparc sparc64
 %endif
 %if ! %{with snap}
-#Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
 # Source21-md5:	d8635013dac0c98c680997fcc9dd66c4
 %else
 #Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
