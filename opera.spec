@@ -196,7 +196,7 @@ install %{SOURCE207} $RPM_BUILD_ROOT%{_datadir}/opera/locale/japanese.lng
 install %{SOURCE208} $RPM_BUILD_ROOT%{_datadir}/opera/locale/finish.lng
 install %{SOURCE209} $RPM_BUILD_ROOT%{_datadir}/opera/locale/french.lng
 install %{SOURCE210} $RPM_BUILD_ROOT%{_datadir}/opera/locale/italian.lng
-install %{SOURCE211} $RPM_BUILD_ROOT%{_datadir}/opera/locale/germen.lng
+install %{SOURCE211} $RPM_BUILD_ROOT%{_datadir}/opera/locale/german.lng
 install %{SOURCE212} $RPM_BUILD_ROOT%{_datadir}/opera/locale/korean.lng
 install %{SOURCE213} $RPM_BUILD_ROOT%{_datadir}/opera/locale/norwegian-bokmal.lng
 install %{SOURCE214} $RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
@@ -257,6 +257,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(da) %{_datadir}/opera/locale/danish.lng
 %lang(de) %{_datadir}/opera/locale/german.lng
 %lang(el) %{_datadir}/opera/locale/greek.lng
+%lang(en) %{_datadir}/opera/locale/english.lng
 %lang(en_GB) %{_datadir}/opera/locale/english-british.lng
 %lang(es) %{_datadir}/opera/locale/spanish.lng
 %lang(es) %{_datadir}/opera/locale/spanish-latin-american.lng
