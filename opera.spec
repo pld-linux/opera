@@ -3,35 +3,35 @@
 #
 %bcond_with	shared
 
-%define ver		7.50
-%define dirrel		20040414
-%define x86_shared_rel		%{dirrel}.5
-%define x86_static_rel		%{dirrel}.1
-%define sparc_shared_rel	%{dirrel}.2
-%define sparc_static_rel	%{dirrel}.1
-%define ppc_shared_rel		%{dirrel}.2
-%define ppc_static_rel		%{dirrel}.1
+%define	ver		7.50
+%define	dirrel		20040414
+%define	x86_shared_rel		%{dirrel}.5
+%define	x86_static_rel		%{dirrel}.1
+%define	sparc_shared_rel	%{dirrel}.2
+%define	sparc_static_rel	%{dirrel}.1
+%define	ppc_shared_rel		%{dirrel}.2
+%define	ppc_static_rel		%{dirrel}.1
 %if %{with shared}
-%define type		shared
+%define	type		shared
 %ifarch %{ix86}
-%define rel		%{x86_shared_rel}
+%define	rel		%{x86_shared_rel}
 %endif
 %ifarch sparc64 sparc
-%define rel             %{sparc_shared_rel}
+%define	rel		%{sparc_shared_rel}
 %endif
 %ifarch ppc
-%define rel             %{ppc_shared_rel}
+%define	rel		%{ppc_shared_rel}
 %endif
 %else
-%define type		static
+%define	type		static
 %ifarch %{ix86}
-%define rel             %{x86_static_rel}
+%define	rel		%{x86_static_rel}
 %endif
 %ifarch sparc sparc64
-%define rel             %{sparc_static_rel}
+%define	rel		%{sparc_static_rel}
 %endif
 %ifarch ppc
-%define rel		%{ppc_static_rel}
+%define	rel		%{ppc_static_rel}
 %endif
 %endif
 
@@ -55,7 +55,7 @@ NoSource:	1
 %endif
 %ifarch ppc
 # Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-Source2:        http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+Source2:	http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
 NoSource:	2
 %endif
 %else
