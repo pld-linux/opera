@@ -8,8 +8,8 @@
 
 %if %{with snap}
 %define	ver		7.60
-%define dirrel		20041026
-%define reltype         Preview-2
+%define dirrel		20041115
+%define reltype         Preview-3
 %else
 %define ver             7.54
 %define dirrel          20040803
@@ -179,7 +179,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{?with_snap:.%{rel}}
-Release:	4
+Release:	0.1
 Epoch:		1
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -226,7 +226,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 
 %if %{need_ix86_shared_snap}
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	a7938217483f89de6ad7c43ca4e13fb4
+# Source1020-md5:	304050ea94d3d7751e67c61e4389f824
 %{!?with_distributable:NoSource:	1020}
 %endif
 
