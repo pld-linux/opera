@@ -5,6 +5,7 @@ Comment[pl]=Najszybsza przeglądarka WWW na świecie
 Icon=opera.xpm
 Exec=opera
 Terminal=0
+Categories=Network;WebBrowser
 Type=Application
 # vi: encoding=utf-8
 
