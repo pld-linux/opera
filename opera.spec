@@ -1,12 +1,19 @@
 #
 # There're some problems with "shared" version
 #
-%define ver	7.23
-%define	dirrel	20031119
-%{!?_with_shared:%define	rel	%{dirrel}.1}
-%{?_with_shared:%define	rel	%{dirrel}.5}
-%{!?_with_shared:%define type	static}
-%{?_with_shared:%define type	shared}
+%bcond_with	shared
+
+%define	ver		7.23
+%define	dirrel		20031119
+%define	shared_rel	%{dirrel}.5
+%define	static_rel	%{dirrel}.1
+%if %{with shared}
+%define	rel		%{shared_rel}
+%define	type		shared
+%else
+%define	rel		%{static_rel}
+%define	type		static
+%endif
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -14,13 +21,21 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.i386-en.tar.bz2
-Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.sparc-en.tar.bz2
-Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.ppc-en.tar.bz2
+Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{static_rel}-static-qt.i386-en.tar.bz2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/static/%{name}-%{ver}-%{static_rel}-static-qt.sparc-en.tar.bz2
+Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{static_rel}-static-qt.ppc-en.tar.bz2
 # polish language file (taken from where?)
 Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
+Source20:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.i386-en.tar.bz2
+Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.sparc-en.tar.bz2
+Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.ppc-en.tar.bz2
 NoSource:	0
+NoSource:	1
+NoSource:	2
+NoSource:	20
+NoSource:	21
+NoSource:	22
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 Requires:	freetype >= 2
@@ -45,13 +60,13 @@ statycznie skonsolidowana z qt.
 
 %prep
 %ifarch %{ix86}
-%setup -q  -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
+%setup -q %{?_with_shared:-T -b 20} -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
 %endif
 %ifarch sparc sparc64
-%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
+%setup -q -T -b %{?_with_shared:2}1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
 %endif
 %ifarch ppc
-%setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc-en
+%setup -q -T -b %{?_with_shared:2}2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc-en
 %endif
 
 %install
