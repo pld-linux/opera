@@ -15,6 +15,7 @@ Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86}
 Requires:	freetype >= 2
+Requires:	openmotif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NoSource:	0
 %define		_prefix		/usr/X11R6
