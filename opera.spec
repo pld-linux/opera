@@ -3,9 +3,9 @@
 #
 %bcond_with	shared
 
-%define	ver		7.51
+%define	ver		7.52
 %define shver		%(echo %{ver} | tr -d .)
-%define	dirrel		20040602
+%define	dirrel		20040706
 # is this snap or beta/final release?
 %define	notsnap		1
 # type of release, usually final or beta or Preview-4 for snaps
@@ -44,7 +44,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	1
+Release:	0.1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 %if %{without shared}
