@@ -47,7 +47,7 @@ done
 cp opera.adr $RPM_BUILD_ROOT%{_datadir}/opera
 cp opera $RPM_BUILD_ROOT%{_bindir}/opera-bin
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/opera
-cp %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW/opera
+cp %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 cp opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -58,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/opera
-%{_applnkdir}/Network/WWW/opera
+%{_applnkdir}/Network/WWW/opera.desktop
 %{_pixmapsdir}/opera.xpm
