@@ -8,16 +8,18 @@
 
 %if %{with snap}
 %define	ver		7.60
+%define	fix		%{nil}
 %define	dirrel		20041203
 %define	reltype		Preview-4
 %else
 %define	ver		7.54
-%define	dirrel		20040803
+%define	fix		u1
+%define	dirrel		20041210
 %define	reltype		final
 %endif
 
-%define	shver		%(echo %{ver} | tr -d .)
-%define	x86_shared_rel		%{dirrel}.5
+%define	shver		%(echo %{ver} | tr -d .)%{fix}
+%define	x86_shared_rel		%{dirrel}.4
 %define	x86_static_rel		%{dirrel}.1
 %define	sparc_shared_rel	%{dirrel}.2
 %define	sparc_static_rel	%{dirrel}.1
@@ -178,8 +180,8 @@
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
-Version:	%{ver}%{?with_snap:.%{rel}}
-Release:	0.1
+Version:	%{ver}%{fix}%{?with_snap:.%{rel}}
+Release:	1
 Epoch:		1
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -219,8 +221,8 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}
 %endif
 
 %if %{need_ix86_shared}
-Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	0e407a050f3aa4559011a3cea707cd20
+Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/gcc-3.2/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+# Source20-md5:	01e2861b845cae1a523420de5ec29049
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -232,7 +234,7 @@ Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{na
 
 %if %{need_sparc_shared}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	d8635013dac0c98c680997fcc9dd66c4
+# Source21-md5:	662f6c7e6ca8f996d97d538f1a7a4447
 %{!?with_distributable:NoSource:	21}
 %endif
 
@@ -244,7 +246,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{na
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	516992e68c5a710d795a1ecc791c7f4d
+# Source22-md5:	039f376cf1a5dcbbc5eabd4dd5538eed
 %{!?with_distributable:NoSource:	22}
 %endif
 
@@ -343,6 +345,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/opera
 %dir %{_datadir}/opera/bin
 %attr(755,root,root) %{_datadir}/opera/bin/*
+%{_datadir}/opera/*.html
+%{_datadir}/opera/*.dtd
 %{_datadir}/opera/config
 %{_datadir}/opera/help
 %{_datadir}/opera/images
