@@ -182,7 +182,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{nam
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
 # Source1-md5:	04976a6ace7a4345ce5e4cf763159939
-%{!?with_distributableNoSource:	1}
+%{!?with_distributable:NoSource:	1}
 %endif
 
 %if %{need_sparc_static_snap}
