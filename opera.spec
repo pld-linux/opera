@@ -1,16 +1,16 @@
 #
 # There're some problems with "shared" version
 #
-%define ver	6.0
-%define	rel	20020510.1
+%define ver	6.02
+%define	rel	20020701.1
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	2
+Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.bz2
+Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source2:	opera.desktop
 URL:		http://www.opera.com/
