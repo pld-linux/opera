@@ -16,6 +16,7 @@ Source2:	opera.desktop
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86}
 Requires:	freetype >= 2
+Requires:	openmotif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NoSource:	0
 %define		_prefix		/usr/X11R6
@@ -37,7 +38,7 @@ linkowana z qt.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-nstall -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_prefix}/opera,%{_libdir}/opera/plugins,%{_mandir}/man1,/usr/share,/usr/lib,%{_pixmapsdir},%{_applnkdir}/Network/WWW}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_prefix}/opera,%{_libdir}/opera/plugins,%{_mandir}/man1,/usr/share,/usr/lib,%{_pixmapsdir},%{_applnkdir}/Network/WWW}
 install -d $RPM_BUILD_ROOT%{_datadir}/opera/{buttons,config,help,images,locale,skin,styles}
 
 for i in buttons config help images locale skin styles; do
