@@ -8,7 +8,7 @@
 %define	dirrel		20040422
 # is this snap or beta/final release?
 %define	notsnap		1
-# type of release, usually final or beta
+# type of release, usually final or beta or Preview-4 for snaps
 %define	reltype		beta1
 %define	x86_shared_rel		%{dirrel}.5
 %define	x86_static_rel		%{dirrel}.1
@@ -52,7 +52,7 @@ Group:		X11/Applications/Networking
 %if %{notsnap}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
 %else
-Source0:	http://snapshot.opera.com/unix/7.50-Preview-4/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+Source0:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
 %endif
 NoSource:	0
 %endif
@@ -60,7 +60,7 @@ NoSource:	0
 %if %{notsnap}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
 %else
-Source1:	http://snapshot.opera.com/unix/7.50-Preview-4/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+Source1:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
 %endif
 NoSource:	1
 %endif
@@ -68,7 +68,7 @@ NoSource:	1
 %if %{notsnap}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
 %else
-Source2:	http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+Source2:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
 %endif
 NoSource:	2
 %endif
@@ -77,7 +77,7 @@ NoSource:	2
 %if %{notsnap}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 %else
-Source20:	http://snapshot.opera.com/unix/7.50-Preview-4/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+Source20:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 %endif
 NoSource:	20
 %endif
@@ -85,7 +85,7 @@ NoSource:	20
 %if %{notsnap}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
 %else
-Source21:	http://snapshot.opera.com/unix/7.50-Preview-4/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+Source21:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
 %endif
 NoSource:	21
 %endif
@@ -93,13 +93,12 @@ NoSource:	21
 %if %{notsnap}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
 %else
-Source22:	http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+Source22:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
 %endif
 NoSource:	22
 %endif
 %endif
-# polish language file (taken from where?)
-Source3:	%{name}-2887.lng
+Source3:	ftp://ftp.opera.com/pub/opera/unix/lng/721/pl/ou721_480pl.lng
 Source4:	%{name}.desktop
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
