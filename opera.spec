@@ -81,4 +81,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/opera
 /usr/share/opera
 /usr/lib/opera
-%attr(755,root,root) /usr/lib/opera/plugins/operamotifwrapper
+%attr(755,root,root) %{_libdir}/opera/plugins/operamotifwrapper
