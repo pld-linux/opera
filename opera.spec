@@ -1,16 +1,17 @@
 #
 # There're some problems with "shared" version
 #
-%define ver	6.02
-%define	rel	20020701.1
+%define ver	6.10
+%define	rel	20021001.1
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	2
+Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+#Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+Source0:	http://web.opera.com/download/unix/untested/intel-linux/251-20021001-6.1-P2/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source2:	opera.desktop
 URL:		http://www.opera.com/
@@ -78,7 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/opera.xpm
 %dir %{_applnkdir}/Network/WWW/*
 %{_mandir}/man1/opera.1.gz
-%{_libdir}/opera
 /usr/share/opera
-/usr/lib/opera
-%attr(755,root,root) %{_libdir}/opera/plugins/operamotifwrapper
+%attr(755,root,root) %{_libdir}/opera/plugins/*
