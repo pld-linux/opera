@@ -186,12 +186,29 @@ sh install.sh \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # Polish locale
-install %{SOURCE201} %{SOURCE202} %{SOURCE203} %{SOURCE204} %{SOURCE205} \
-	%{SOURCE206} %{SOURCE207} %{SOURCE208} %{SOURCE209} %{SOURCE210} \
-	%{SOURCE211} %{SOURCE212} %{SOURCE213} %{SOURCE214} %{SOURCE215} \
-	%{SOURCE216} %{SOURCE217} %{SOURCE218} %{SOURCE219} %{SOURCE220} \
-	%{SOURCE221} %{SOURCE222} %{SOURCE223} \
-	$RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
+install %{SOURCE201} $RPM_BUILD_ROOT%{_datadir}/opera/locale/bulgarian.lng
+install %{SOURCE202} $RPM_BUILD_ROOT%{_datadir}/opera/locale/catalan.lng
+install %{SOURCE203} $RPM_BUILD_ROOT%{_datadir}/opera/locale/chinese-simplified.lng
+install %{SOURCE204} $RPM_BUILD_ROOT%{_datadir}/opera/locale/danish.lng
+install %{SOURCE205} $RPM_BUILD_ROOT%{_datadir}/opera/locale/dutch.lng
+install %{SOURCE206} $RPM_BUILD_ROOT%{_datadir}/opera/locale/spanish-latin-american.lng
+install %{SOURCE207} $RPM_BUILD_ROOT%{_datadir}/opera/locale/japanese.lng
+install %{SOURCE208} $RPM_BUILD_ROOT%{_datadir}/opera/locale/finish.lng
+install %{SOURCE209} $RPM_BUILD_ROOT%{_datadir}/opera/locale/french.lng
+install %{SOURCE210} $RPM_BUILD_ROOT%{_datadir}/opera/locale/italian.lng
+install %{SOURCE211} $RPM_BUILD_ROOT%{_datadir}/opera/locale/germen.lng
+install %{SOURCE212} $RPM_BUILD_ROOT%{_datadir}/opera/locale/korean.lng
+install %{SOURCE213} $RPM_BUILD_ROOT%{_datadir}/opera/locale/norwegian-bokmal.lng
+install %{SOURCE214} $RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
+install %{SOURCE215} $RPM_BUILD_ROOT%{_datadir}/opera/locale/spanish.lng
+install %{SOURCE216} $RPM_BUILD_ROOT%{_datadir}/opera/locale/swedish.lng
+install %{SOURCE217} $RPM_BUILD_ROOT%{_datadir}/opera/locale/greek.lng
+install %{SOURCE218} $RPM_BUILD_ROOT%{_datadir}/opera/locale/chinese-traditional.lng
+install %{SOURCE219} $RPM_BUILD_ROOT%{_datadir}/opera/locale/english-british.lng
+install %{SOURCE220} $RPM_BUILD_ROOT%{_datadir}/opera/locale/norwegian-nynorsk.lng
+install %{SOURCE221} $RPM_BUILD_ROOT%{_datadir}/opera/locale/portuguese-brazilian.lng
+install %{SOURCE222} $RPM_BUILD_ROOT%{_datadir}/opera/locale/russian.lng
+install %{SOURCE223} $RPM_BUILD_ROOT%{_datadir}/opera/locale/turkish.lng
 
 # man install
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
@@ -235,29 +252,29 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/opera/images
 %{_datadir}/opera/java
 %dir %{_datadir}/opera/locale
-%lang(bg) %{_datadir}/opera/locale/ou*bg.lng
-%lang(ca) %{_datadir}/opera/locale/ou*ca.lng
-%lang(da) %{_datadir}/opera/locale/ou*da.lng
-%lang(de) %{_datadir}/opera/locale/ou*de.lng
-%lang(el) %{_datadir}/opera/locale/ou*el.lng
-%lang(en_GB) %{_datadir}/opera/locale/ou*en-GB.lng
-%lang(es) %{_datadir}/opera/locale/ou*es-ES.lng
-%lang(es) %{_datadir}/opera/locale/ou*es-LA.lng
-%lang(fi) %{_datadir}/opera/locale/ou*fi.lng
-%lang(fr) %{_datadir}/opera/locale/ou*fr.lng
-%lang(it) %{_datadir}/opera/locale/ou*it.lng
-%lang(ja) %{_datadir}/opera/locale/ou*ja.lng
-%lang(ko) %{_datadir}/opera/locale/ou*ko.lng
-%lang(nb) %{_datadir}/opera/locale/ou*nb.lng
-%lang(nl) %{_datadir}/opera/locale/ou*nl.lng
-%lang(nn) %{_datadir}/opera/locale/ou*nn.lng
-%lang(pl) %{_datadir}/opera/locale/ou*pl.lng
-%lang(pt_BR) %{_datadir}/opera/locale/ou*pt-BR.lng
-%lang(ru) %{_datadir}/opera/locale/ou*ru.lng
-%lang(sv) %{_datadir}/opera/locale/ou*sv.lng
-%lang(tr) %{_datadir}/opera/locale/ou*tr.lng
-%lang(zh_CN) %{_datadir}/opera/locale/ou*zh-cn.lng
-%lang(zh_TW) %{_datadir}/opera/locale/ou*zh-tw.lng
+%lang(bg) %{_datadir}/opera/locale/bulgarian.lng
+%lang(ca) %{_datadir}/opera/locale/catalan.lng
+%lang(da) %{_datadir}/opera/locale/danish.lng
+%lang(de) %{_datadir}/opera/locale/german.lng
+%lang(el) %{_datadir}/opera/locale/greek.lng
+%lang(en_GB) %{_datadir}/opera/locale/english-british.lng
+%lang(es) %{_datadir}/opera/locale/spanish.lng
+%lang(es) %{_datadir}/opera/locale/spanish-latin-american.lng
+%lang(fi) %{_datadir}/opera/locale/finish.lng
+%lang(fr) %{_datadir}/opera/locale/french.lng
+%lang(it) %{_datadir}/opera/locale/italian.lng
+%lang(ja) %{_datadir}/opera/locale/japanese.lng
+%lang(ko) %{_datadir}/opera/locale/korean.lng
+%lang(nb) %{_datadir}/opera/locale/norwegian-bokmal.lng
+%lang(nl) %{_datadir}/opera/locale/dutch.lng
+%lang(nn) %{_datadir}/opera/locale/norwegian-nynorsk.lng
+%lang(pl) %{_datadir}/opera/locale/polish.lng
+%lang(pt_BR) %{_datadir}/opera/locale/portuguese-brazilian.lng
+%lang(ru) %{_datadir}/opera/locale/russian.lng
+%lang(sv) %{_datadir}/opera/locale/swedish.lng
+%lang(tr) %{_datadir}/opera/locale/turkish.lng
+%lang(zh_CN) %{_datadir}/opera/locale/chinese-simplified.lng
+%lang(zh_TW) %{_datadir}/opera/locale/chinese-traditional.lng
 %{_datadir}/opera/skin
 %{_datadir}/opera/styles
 %{_datadir}/opera/ini
