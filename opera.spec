@@ -10,14 +10,12 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-#Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-#Source0:	http://web.opera.com/download/unix/untested/intel-linux/257-20021010-6.1-P3/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-#Source0:	http://gd.tuwien.ac.at/infosys/browsers/opera/linux/610/beta1/en/static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/i386/static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
-Source2:	opera.desktop
+Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/static/%{name}-%{ver}-%{rel}-static-qt.ppc.tar.gz
+Source2:	http://web.opera.com/download/unix/locale/pl.qm.gz
+Source3:	opera.desktop
 URL:		http://www.opera.com/
-ExclusiveArch:	%{ix86}
+ExclusiveArch:	%{ix86} ppc
 Requires:	freetype >= 2
 Requires:	openmotif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,7 +38,12 @@ niedogodno¶ci± s± reklamy ukazuj±ce siê w górze okna. Wersja statycznie
 linkowana z qt.
 
 %prep
-%setup -q -n %{name}-%{ver}-%{rel}-static-qt.i386
+%ifarch %{ix86}
+%setup -q  -n %{name}-%{ver}-%{rel}-static-qt.i386
+%endif
+%ifarch ppc
+%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-static-qt.ppc
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -54,7 +57,7 @@ sh install.sh \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # Polish locale
-gunzip -c %{SOURCE1} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
+gunzip -c %{SOURCE2} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
 
 # man install
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
@@ -69,7 +72,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
+install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 
 # symlink który niweluje burkanie siê opery :>
 #ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
@@ -92,7 +95,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/opera/locale
 %{_datadir}/opera/skin
 %{_datadir}/opera/styles
+%ifarch %{ix86}
 %attr(755,root,root) %{_datadir}/opera/chartables.bin
+%endif
+%ifarch ppc
+%attr(755,root,root) %{_datadir}/opera/chartables-be.bin
+%endif
 %attr(755,root,root) %{_datadir}/opera/opera6.adr
 
 %attr(755,root,root) %{_plugindir}/*
