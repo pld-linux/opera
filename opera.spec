@@ -11,7 +11,7 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-Source0:	http://web.opera.com/download/unix/untested/intel-linux/251-20021001-6.1-P3/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+Source0:	http://web.opera.com/download/unix/untested/intel-linux/257-20021010-6.1-P3/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source2:	opera.desktop
 URL:		http://www.opera.com/
