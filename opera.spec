@@ -2,7 +2,8 @@
 # There're some problems with "shared" version
 #
 %define ver	7.0.0
-%define	rel	20030214.1
+%define	rel	20030307.1
+%define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -10,9 +11,9 @@ Version:	%{ver}.%{rel}
 Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	http://snapshot.opera.com/unix/353-20030214-P1/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+Source0:	http://snapshot.opera.com/unix/intel-linux/365-20030307-7.0.0-P2/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.gz
 %ifarch ppc
-Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/static/%{name}-%{ver}-%{rel}-static-qt.ppc.tar.gz
+Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.gz
 %endif
 Source2:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source3:	opera.desktop
@@ -40,10 +41,10 @@ linkowana z qt.
 
 %prep
 %ifarch %{ix86}
-%setup -q  -n %{name}-%{ver}-%{rel}-static-qt.i386
+%setup -q  -n %{name}-%{ver}-%{rel}-%{type}-qt.i386
 %endif
 %ifarch ppc
-%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-static-qt.ppc
+%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
 %endif
 
 %install
