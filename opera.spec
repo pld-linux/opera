@@ -9,7 +9,7 @@ License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
-Source0:	%{name}-%{version}-%{subversion}-dynamic.i386.tar.gz
+Source0:	ftp://ftp.opera.com/pub/opera/linux/%{name}-%{version}-%{subversion}-dynamic.i386.tar.gz
 Source1:	%{name}.sh
 URL:		http://www.opera.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
