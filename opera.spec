@@ -2,7 +2,7 @@
 # There're some problems with "shared" version
 #
 %define ver	6.10
-%define	rel	20021001.1
+%define	rel	20021010.1
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -11,7 +11,7 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-Source0:	http://web.opera.com/download/unix/untested/intel-linux/251-20021001-6.1-P2/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+Source0:	http://web.opera.com/download/unix/untested/intel-linux/251-20021001-6.1-P3/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 Source1:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source2:	opera.desktop
 URL:		http://www.opera.com/
@@ -55,7 +55,7 @@ cp -r plugins $RPM_BUILD_ROOT%{_libdir}/opera
 
 cp opera6.adr $RPM_BUILD_ROOT%{_datadir}/opera
 cp chartables.bin $RPM_BUILD_ROOT%{_datadir}/opera
-cp unicode.dat $RPM_BUILD_ROOT%{_datadir}/opera
+#cp unicode.dat $RPM_BUILD_ROOT%{_datadir}/opera
 
 # niech ktos wymysli jak wygenerowac wrappera z install.sh albo czysto opera bedzie odpalana
 # sh install.sh --jakiesopcje $RPM_BUILD_ROOT%{_bindir}/opera
