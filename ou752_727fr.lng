@@ -1,0 +1,5168 @@
+; Opera language file version 2.0
+; Copyright © 1995-2004 Opera Software ASA. All rights reserved.
+; Created on 2004-07-16 14:03
+; Lines starting with ; (like this) are comments and need not be translated
+
+[Info]
+Language="fr"
+; The string below is the language name in its own language
+LanguageName="français"
+Charset="iso-8859-1"
+Build.Linux=727
+Version.Linux=7.52
+DB.version=232
+
+[Translation]
+
+; General strings
+
+; Used in a popup error message when Opera can't connect to the remote
+; server due to other phenomena than the one stated in 32873.
+32869="Impossible de se connecter au serveur distant"
+
+; The error code corresponding to this string is used in a number of
+; situations when the server has abruptly closed the connection, and then
+; the string can be used in a popup error message.
+32864="Connexion fermée par le serveur distant"
+
+; Used in a popup error message when Opera has failed to load a requested
+; page more than once.
+32874="Malgré plusieurs essais, il est impossible de charger cette page complètement.\r\n\r\nIl peut y avoir un problème sur le serveur."
+
+; Used in a popup error message when Operas request to connect to a server
+; is refused. (For example when the server exists but does not answer on
+; the specified port.)
+32873="Impossible de se connecter au serveur distant"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain exists but the server itself does not (for example
+; http://fff.example.com).
+32871="Impossible de trouver le serveur distant"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain doesn't exist (for example http://invalid).
+32872="L'adresse n'est pas disponible depuis cette machine"
+
+; Used as default error message in a popup error message, when no other
+; network error message applies.
+32868="Erreur de communication interne"
+
+; Used in a popup error message when there is no route from the client's
+; subnet to the server's subnet, likely due to a badly configured network.
+32881="Réseau non disponible. Contactez votre administrateur système"
+
+; Used in a number of error situations, when the user has entered a
+; malformed URL, such as opera:nonexistant, into the URL field. The http
+; respose error code 400 (Bad request), and some other http error codes
+; between 400 and 500 (signifying client errors) also give the same
+; result.
+32832="Adresse illégale"
+
+; Used in a popup error message when the network of the underlying system is
+; down. This could be due to errors in the protocol stack, network card or
+; driver, or in the physical network outside of the system.
+32865="Problème réseau"
+
+; Used in a popup error message when the server has tried to redirect a
+; document request from Opera to an adress and Opera fails to connect to
+; that server.
+21462="Le serveur a tenté de renvoyer vers une adresse illégale.\r\nVeuillez le signaler au webmaster de ce site."
+
+; Used in a popup error message when a proxy server has been specified for a
+; specific request type, and the proxy server doesn't answer when an URL
+; of that type is entered in the URL field.
+32897="Impossible de se connecter au serveur PROXY"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain exists but the server itself does not (for example
+; fff.opera.com).
+32898="Impossible de trouver le serveur PROXY"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain doesn't exist (for example fjdlsakhngfjf).
+32899="Impossible d'accéder au serveur PROXY. Le serveur n'est pas disponible"
+
+; Used in a popup error message when Operas request to connect to a proxy
+; server is refused. (For example when the server exists but does not
+; answer on the specified port.)
+32900="Impossible de se connecter au serveur PROXY. Accès refusé"
+
+; Used when Opera has tried to open a network socket to a server and the
+; socket is busy. This message should be handled internally most of the
+; time.
+32866="Blocage réseau Winsock"
+
+; Used in a popup error message when a non-recoverable error has occurred in
+; the network protocol stack or network drivers of the system.
+32883="Problèmes réseau Winsock. Vérifiez vos pilotes réseau"
+
+; 
+32885="Délai du serveur distant expiré. Veuillez réessayer plus tard."
+
+; Used in a popup error message when not enough socket resources (file
+; handles, network buffers) are free.
+32867="Problèmes de ressource réseau Winsock. Réessayez"
+
+; The default error message, used in any situation where no more specific
+; error message can be created.
+20000="Erreur interne du programme ."
+
+20001="Veuillez attendre que l'impression en cours soit terminée"
+20002="Impossible de créer une nouvelle fenêtre. Mémoire ou ressources insuffisantes"
+; Used in a popup error message when the address type is unknown or
+; unsupported.
+20003="Le type d'adresse est inconnu ou non supporté"
+
+; Might be used in a popup error message when the user has clicked the Home
+; button and no home page is set in preferences, but the Set homepage
+; dialog seems to appear instead. Obsolete?
+20005="Aucune page d'accueil n'est définie. Veuillez en définir une."
+
+20009="Le type MIME est déjà défini"
+20011="Chaîne recherchée introuvable"
+20013="Impossible d'établir une connexion avec l'imprimante"
+20014="Veuillez préciser le programme à utiliser pour ouvrir le fichier"
+; Used in an error popup message when the printer has encountered an error
+; while printing (as opposed to 20013 which pops up if the printing can't
+; even start, which is more likely.)
+20015="Impossible d'imprimer la page. Veuillez vérifier si l'imprimante est accessible"
+
+20016="Impression en cours..."
+; Used in a popup error message when the user has requested a file from the
+; server that it's not allowed to fetch (HTTP response code 403), if the
+; user has set the Network/Server errors/Always show dialog box
+; preference.
+33040="Le serveur distant refuse d'exécuter la requête.\r\nCette adresse n'est pas disponible."
+
+; Used in a popup error message when the user has requested a file from the
+; server that does not exist (HTTP response code 404), if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33041="Adresse introuvable"
+
+; Used in a popup error message as a default message when the user has made
+; a valid request for a file from the server, and the server encounters an
+; error that prevents it to fulfill the request (HTTP response code 5xx
+; and 6xx), if the user has set the Network/Server errors/Always show
+; dialog box preference.
+33042="Serveur distant ou fichier introuvable"
+
+; Used in a popup error message when the user has requested a file from the
+; server, and the server could not fulfill the request since this
+; functionality wasn't implemented (HTTP error code 501), if the user has
+; set the Network/Server errors/Always show dialog box preference.
+33043="Le serveur distant n'a pas les fonctions nécessaires"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server sends the document using HTTP compression, and
+; the document decoder couldn't decode the data properly.
+33046="Problème rencontré pendant le décodage des données. Ceci est peut-être dû à des données corrompues."
+
+; Used in a popup error message when the user has submitted a form using a
+; HTTP request method (specified with the METHOD attribute to the FORM tag
+; in the HTML form) that the server does not accept (HTTP error code 405),
+; if the user has set the Network/Server errors/Always show dialog box
+; preference.
+33424="La méthode de demande HTTP n'a pas été acceptée par le serveur"
+
+; Used in a popup error message when the user tries to fetch a document by
+; clicking a link, and the server cannot send the requested document in a
+; format that matches the content of the HTTP accept headers sent in the
+; request (HTTP error code 406), if the user has set the Network/Server
+; errors/Always show dialog box preference. However, Opera accepts all
+; document formats and sends *.* in its accept header, so this is unlikely
+; to happen.
+33425="Le serveur n'a pas été capable d'envoyer des données acceptables"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server needs more data from Opera to fulfill the
+; request, and Opera fails to deliver the data before the server times out
+; and cancels the request (HTTP error code 408). Unlikely to happen very
+; often. Visible if the user has set the Network/Server errors/Always show
+; dialog box preference
+33426="Délai du serveur expiré"
+
+; Used in a popup error message when Opera has sent a HTTP request to fetch
+; or send a document to the server, and the server determins that there's
+; a conflict with a third part regarding the document, that can be solved
+; by the user (HTTP error message 409). This could happen when the user
+; submits a form that leads to a change of an online document, and the
+; server detects that the changes conflicts with other changes already
+; made to the document. Visible if the user has set the Network/Server
+; errors/Always show dialog box preference
+33427="Conflit avec une ressource existante du serveur"
+
+; Used in a popup error message when the user has requested a document and
+; the server answers that the document has been there, but has been
+; permanently removed (HTTP error code 410). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33428="L'adresse n'est plus disponible"
+
+; Used in a popup error message if the user has sent a request to the
+; server, and the server answers that it needs a Content-Length header to
+; process the request (HTTP error code 411). Opera never sends requests
+; without a valid Content-Lenght header. Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33429="La longueur du contenu HTTP était nécessaire"
+
+; Used in a popup error message if the user has sent a request to the server
+; containing one or more precondition headers, and one or more of these
+; preconditions evaluated false on the server (HTTP error code 412). The
+; precondition headers could be If-Range and If-Modifified-Since, that
+; could be used to fetch the missing parts of a earlier partially fetched
+; documents, if the document is still the same. Unlikely to happen.
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33430="Echec des pré-conditions HTTP"
+
+; Used in a popup error message when the user has sent a request to a
+; server, and the server signalled that the request entity (the actual
+; request data) was too large (HTTP error code 413). Visible if the user
+; has set the Network/Server errors/Always show dialog box preference.
+33431="Les données de la requête HTTP étaient trop longues"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the URL is longer than the server can handle (HTTP error code 414).
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33432="L'adresse HTTP est trop longue"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the server didn't recognize the content type of the request entitiy
+; (HTTP error code 415). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33433="Le serveur n'a pas reconnu le type du contenu"
+
+; Used in a popup error message if Opera has requested a part of a file that
+; does not exist (HTTP error code 416). This shouldn't happen. Visible if
+; the user has set the Network/Server errors/Always show dialog box
+; preference.
+33434="Le serveur n'a pas pu envoyer la partie demandée du fichier"
+
+; Used in a popup error message if Opera has sent a request with certain
+; expectations in the HTTP header 'Expect', and the server can't meet that
+; expectation because vital features are not implemented. For example, the
+; server can be expected to handle HTTP_CONTINUE (HTTP reply code 100)
+; when sending in forms (HTTP error code 417). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33435="L'attente HTTP a échoué"
+
+; Used in a popup error message when Opera has sent a request to a HTTP
+; proxy server, and the upstream server returned an invalid response code
+; (HTTP error code 502). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33436="La passerelle HTTP a échoué"
+
+; Used in a popup error message when the user has requested a document and
+; the server can't fulfill the request since it's overloaded or offline
+; (HTTP error code 503). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33437="Le service est surchargé ou hors connexion. Veuillez réessayer plus tard"
+
+; Used in a popup error message when the user has sent a request to a proxy
+; server, and the upstream server did not answer before the proxy server
+; timed out (HTTP error code 504). Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33438="Le délai de la passerelle HTTP a expiré"
+
+; Used in a popup error message when the user has requested a document from
+; a server, and the server doesn't support the HTTP version used (HTTP
+; error code 505). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33439="La version d'HTTP n'a pas été acceptée"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a server, using HTTP digest authentication to check the
+; documents integrity, and the authentication failed.
+33047="L'authentification a échoué. Vous ne devriez pas faire confiance au contenu"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a proxy server, using HTTP digest authentication to check
+; the documents integrity, and the authentication failed.
+33048="L'authentification du proxy a échoué. Vous ne devriez pas faire confiance au contenu"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server answered that the ftp service was not
+; currently available (FTP error 421).
+33056="Serveur FTP non disponible"
+
+; Used in a popup error message as a default error message when the user has
+; entered an FTP URL into the URL field and an error has occurred.
+33057="Erreur interne dans le module FTP"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server has rejected the connection.
+33058="Impossible de se connecter au serveur FTP, ceci est peut-être\r\ndû à un trop grand nombre d'utilisateurs. Veuillez réessayer."
+
+; Can be used when the the user has entered an FTP URL into the URL field,
+; and the server has rejected the connection because the provided user
+; name didn't exist. Normally an authentication dialog is shown instead.
+33059="Utilisateur introuvable sur le serveur FTP"
+
+; Can be used when the the user has entered an FTP URL without user name and
+; password into the URL field to do an anonymous login, and the server did
+; not accept anonymous logins. Normally an authentication dialog is shown
+; instead.
+33060="La connexion à ce serveur FTP nécessite un nom d'utilisateur et un mot de passe"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the directory did not exist
+33061="Dossier FTP introuvable"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the file did not exist.
+33062="Fichier introuvable"
+
+; Used in a popup error message when an initiated FTP file download is
+; interrupted by the server, either by the connection being closed (FTP
+; error 426) or the download action being aborted (FTP error 451).
+33063="Connexion fermée par le serveur FTP distant"
+
+; Used in a popup error message when the user has entered an FTP URL in the
+; URL field to request a file download, and the server signals that it
+; can't set up a passive data channel to transfer the file (FTP error
+; 425).
+33064="Impossible d'ouvrir le canal FTP distant"
+
+; Used in a popup error message when the user has entered a file URL
+; pointing to a file that does not exist in the URL field.
+33120="Impossible d'ouvrir le fichier"
+
+20017="L'échelle de l'imprimante est comprise entre 20 et 400%. Veuillez entrer une valeur correcte"
+20018="Le nombre de connexions à un serveur doit être compris entre 1 et 99."
+20019="Le nombre de connexions doit être compris entre 1 et 999."
+20020="Le nombre de lignes de l'historique doit être compris entre 0 et 999."
+; Used in a popup error message when the user has requested a file from the
+; server, and the server recieves the request but no data exists to return
+; (HTTP error code 204), if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33044="Le serveur distant a accepté la requête - aucun contenu n'a été retourné"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file is read-protected.
+32903="Accès refusé à ce fichier"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file does not exist.
+32904="Le fichier n'existe pas"
+
+; Used in a popup error message when Opera has tried to write a file to disk
+; and there was not enough disk space left. This happens for example when
+; trying to save a page to disk, but also in many other places and
+; situations, not always connected with something that the user does.
+32905="Impossible d'écrire dans le fichier. Disque plein."
+
+; Used in a popup error message when Opera has failed to write data into the
+; cache, for example when fetching a document.
+32906="Erreur de cache interne"
+
+20045="Ressources insuffisantes. Impossible de charger la chaîne"
+; Used as default text on file upload input elements in forms in HTML
+; documents.
+20046="Choisir"
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no telnet application is specified in preferences.
+20048="Aucune application Telnet définie. Veuillez entrer le chemin complet d'une application Telnet dans les Préférences."
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no host name has been specificed in the url.
+20049="Aucun nom d'hôte défini"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no path to a TN3270 terminal application has been specified
+; in the preferences. (TN3270 is a variant of telnet used mainly on IBM
+; mainframes).
+20121="Aucune application TN3270 définie. Veuillez entrer le chemin complet d'une application TN3270 dans les Préférences"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no host name has been specified. (TN3270 is a variant of
+; telnet used mainly on IBM mainframes).
+20122="Aucun nom d'hôte défini"
+
+20226="Fichiers d'habillage (*.zip)|*.zip|All files (*.*)|*.*|"
+20050="Fichiers HTML|*.htm;*.html|Fichiers textes|*.txt|Fichiers GIF|*.gif|Fichiers JPEG|*.jpg;*.jpeg|Fichiers BMP|*.bmp|Sons|*.wav|Fichiers vidéo AVI|*.avi|Fichiers MIDI|*.mid;*.midi|Fichier de configuration des fenêtres|*.win|Fichiers XML|*.xml|Feuilles de style|*.css|Tous les fichiers (*.*)|*.*|"
+; Used in the File/Open dialog to let the user select what type of files the
+; dialog should show. The labels are visible in the File type dropdown
+; list.
+20051="Fichiers HTML (*.htm;*.html)|*.htm;*.html|Fichiers textes (*.txt)|*.txt|Fichiers GIF (*.gif)|*.gif|Fichiers PNG (*.png)|*.png|Fichiers JPEG (*.jpg)|*.jpg|Fichiers BMP (*.bmp)|*.bmp|Tous les fichiers (*.*)|*.*|"
+
+20052="Programmes (*.exe)|*.exe|Tous les fichiers (*.*)|*.*|"
+30120="Fichiers sons (*.wav)|*.wav|Tous les fichiers (*.*)|*.*|"
+20126="X509 (*.usr)|*.usr|PKCS #7 signé (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (avec clé privée) (*.p12)|*.p12;*.pfx|PEM file (*.pem)|*.pem|Tous les fichiers|*.*|"
+20127="X509 (*.usr)|*.usr|PKCS #7 signé (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (avec clé privée) (*.p12)|*.p12;*.pfx|PEM file (*.pem)|*.pem|"
+20128="X509 (*.ca)|*.ca;*.crt;*.cer;*.509;*.der|PKCS #7 signé (*.p7s)|*.p7s|PKCS #7(*.p7)|*.p7|PEM file (*.pem)|*.pem|Tous les fichiers|*.*|"
+; Used in the authentication dialog when the user tries to access a password
+; protected document.
+20082="Veuillez entrer un nom d'utilisateur et un mot de passe pour cette page"
+
+; Used in the authentication dialog when the user has tried to access a
+; password protected HTML page and authentication has failed.
+20053="Authentification incorrecte. Veuillez redonner le nom d'utilisateur et le mot de passe"
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the proxy server requires authentication.
+20110="Veuillez entrer un nom d'utilisateur et un mot de passe pour ce serveur proxy"
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the authentication to the proxy server fails.
+20109="Authentification proxy incorrecte. Veuillez redonner le nom d'utilisateur et le mot de passe"
+
+20118="Fichiers CSS (*.css)|*.css|Fichiers HTML (*.htm,*.html)|*.htm;*.html|Tous les fichiers (*.*)|*.*|"
+20341="Images|*.gif;*.png;*.jpg;*.jpeg;*.jpe;*.bmp|Tous les fichiers|*.*|"
+20059="Fichiers GIF (*.gif)|*.gif|Fichiers PNG (*.png)|*.png|Fichiers JPEG (*.jpg)|*.jpg|Fichiers BMP (*.bmp)|*.bmp|Tous les fichiers (*.*)|*.*|"
+20073="Message(s) envoyé(s)"
+; Used in a popup error message when Opera finds that the document type is
+; unknown, or no document exists. This is hard to produce, though, since
+; handle all unknown file/mime types by letting the user decide what to do
+; with them - save, open or other alternatives, and empty documents are
+; just ignored.
+20074="Document inconnu ou non spécifié"
+
+20075="Impossible de créer le dossier Opera. Veuillez réessayer avec un nom de dossier valide"
+; Used in an error popup dialog when the user has entered a gopher or WAIS
+; url in the URL field, and no corresponding proxy has been set in
+; preferences.
+20076="Le type d'adresse nécessite l'utilisation d'un serveur proxy. Veuillez en spécifier un dans les Préférences"
+
+; Used as the default text to substitute an image in an HTML document, if
+; the image can't be loaded (or viewing of images is turned off) and the
+; images alt attribute is empty.
+20078="Image"
+
+; Used as the default prompt string to a searchable index specified with the
+; ISINDEX tag (an early form of forms functionality, deprecated in HTML
+; 4.X) in a HTML document, and is rendered in the document above an input
+; text area. (The label can be changed from this default with the PROMPT
+; attribute to the ISINDEX tag.)
+20079="Ceci est un index avec possibilité de recherche"
+
+; Used at the end of an HTML document that has not been fully loaded because
+; the user has cancelled the request with the Stop button.
+20081="  Transmission arrêtée !"
+
+20084="Ce type est interne et ne peut pas être supprimé."
+22509="Efface le type de fichier"
+20085="Etes-vous sûr de vouloir supprimer l'association du type de fichier : [%s] ?\n\nOpera ne saura plus comment gérer ces fichiers si vous le faites."
+20086="Ce type est interne et ne peut pas être renommé."
+20090="Ouvrir un fichier message"
+20091="Enregistrer un fichier message"
+20093="Courrier Opera"
+30101="Importer du courrier Eudora®"
+30100="Importer du courrier Outlook Express®"
+30102="(Microsoft Outlook Express 4.x)"
+30103="(Microsoft Outlook Express 5.x)"
+30112="(Fichier d'adresses délimité par des virgules)"
+30104="(Netscape Mail)"
+30109="(Qualcomm Eudora)"
+30105="(Microsoft Windows Messaging)"
+30106="(Microsoft Outlook)"
+30107="(fichier mailbox UNIX)"
+30108="Aucun programme supporté trouvé !"
+30110="Veuillez spécifier le dossier dans lequel se trouve votre courrier Outlook Express."
+30111="Veuillez indiquer le dossier dans lequel se trouvent vos boîtes aux lettres."
+16615="Vous pouvez définir ces options si vous souhaitez des publicités particulières"
+; Search strings
+17059="&Préférences..."
+17060="Moteur de recherche"
+17061="Mot-clé"
+17062="<Défaut>"
+
+; Search with x
+17063="Recherche %s"
+
+; Search for x
+17064="Recherche %s"
+
+; Search x-domain
+17065="Recherche %s"
+
+; Search in page
+17066="Dans la page"
+
+17056="Evènement"
+17057="Fichier son"
+22461="&Ouvrir le fichier"
+22462="O&uvrir le fichier avec %s"
+22464="Que voulez-vous faire ?"
+22463="Attention ! Vous devriez toujours utiliser un antivirus avant d'ouvrir les fichiers."
+22468="Serveur inconnu"
+22515="Document : "
+22516="Images : "
+22517="Total : "
+22518="Vitesse : "
+22519="Durée : "
+; Used in the dialog title when user tried to download file to an invalid
+; directory.
+22736="Répertoire de téléchargement non valide"
+
+; The user tried to download a file to an invalid directory.
+22735="Vous avez essayé de transférer un fichier dans un répertoire non valide."
+
+20094="Taille de marge interdite. Elle doit être comprise entre 0 et 5 cm (2 pouces)"
+20098="Aucune destination choisie. Veuillez choisir une destination ou un forum"
+20101="Impossible de jouer le fichier multimédia. Veuillez vérifier que le périphérique est correctement installé."
+21020="Impossible de démarrer l'application associée. Windows manque de mémoire ou le fichier programme de l'application est défectueux."
+21021="Fichier introuvable."
+21022="Chemin introuvable."
+21023="Impossible de démarrer l'application associée. Mémoire insuffisante."
+21024="Impossible de démarrer l'application associée. Une bibliothèque (Fichier DLL) semble être corrompue."
+21025="Impossible de démarrer l'application associée. Elle requiert les extensions 32 bit de Windows."
+21026="Aucune application associée à cette extension."
+21027="Impossible de démarrer l'application associée."
+21030="Impossible de démarrer l'application. Windows manque de mémoire ou le fichier de l'application est défectueux."
+21031="Programme introuvable."
+21032="Chemin du programme introuvable."
+21033="Impossible de démarrer l'application. Mémoire insuffisante."
+21034="Impossible de démarrer l'application. Une bibliothèque (Fichier DLL) semble être corrompue."
+21035="Impossible de démarrer l'application. Elle requiert les extensions 32 bit de Windows."
+21036="Impossible de démarrer l'application."
+20102="Fichiers signature(*.SIG)|*.sig|Fichiers texte (*.TXT)|*.txt|Tous les fichiers (*.*)|*.*|"
+22505="Vous devez spécifier un type MIME."
+22506="Type MIME non spécifié"
+22512="Ce type MIME est déjà défini.\n\n%s\n\nVoulez-vous l'écraser ?"
+22513="Ecraser le type MIME ?"
+; Popup error message when the user has tried to print a document and the
+; printer signals that it's out of paper. Currently unsorted.
+20103="Impossible d'imprimer la page. L'imprimante n'a plus de papier."
+
+; Used in the document window when showing an ftp file listing. 
+20125="Répertoire parent"
+
+; Used in the 'type' column of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field, when the list item type is a directory.
+22494="Répertoire"
+
+; Used in the column titles of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field.
+22496="Nom"
+22497="Type"
+22498="Taille"
+22499="Temps"
+
+20200="Texte normal"
+20201="Page Web <H1>"
+20202="Page Web <H2>"
+20203="Page Web <H3>"
+20204="Page Web <H4>"
+20205="Page Web <H5>"
+20206="Page Web <H6>"
+20207="Page Web <pre>"
+20208="Liens <a>"
+20230="Champ texte des formulaires monolignes"
+20212="Champ texte des formulaires multilignes"
+20213="Texte des boutons de formulaires"
+20214="Famille de police CSS sérif"
+20215="Famille de police CSS sans-sérif"
+20216="Famille de police CSS cursive"
+20217="Famille de police CSS fantasy"
+20218="Famille de police CSS monospace"
+22072="Cette adresse est trop longue."
+; Used in a popup error message when there is not enough free memory for
+; Opera to complete the current task.
+21002="Mémoire insuffisante."
+
+21249="Résultats de la recherche"
+21180="Barre personnelle"
+21181="Page blanche"
+21199="Nouveau dossier"
+21200="Ajouter"
+21201="Ajouter"
+21202="Menu"
+21248="Rechercher"
+21193="Nouvelle page"
+21203="Nouveau"
+21204="Ouvrir"
+21205="Enregistrer"
+21206="Imprimer"
+21207="Copier"
+21208="Rechercher"
+21209="Précédent"
+21210="Recharger"
+21211="Suivant"
+21212="Accueil"
+21213="Aller à"
+21214="Actif"
+21215="Mosaïque"
+21216="Cascade"
+21217="Ecole"
+21218="MIME"
+21254="Signets"
+21255="Plein écran"
+21197="Aller"
+21198="Rechercher"
+21194="Reprendre"
+21195="Retransférer"
+21196="Arrêter"
+21010="Aperçu"
+21011="Comme à l'écran"
+21012="Cadre actif"
+21013="Tous les cadres"
+21050="Fermer toutes les fenêtres ?"
+21051="&Signets"
+; Used in the progress bar when a request for fetching a document has been
+; enqueued for sending to the server.
+21059="Requête vers %s mise en attente..."
+
+; Used in the progress bar when Opera is looking up the name for the host to
+; fetch a document from.
+21060="Recherche du nom d'hôte %s..."
+
+; Used in the progress bar when connecting to the host to fetch the
+; requested document.
+21061="Connexion à un hôte distant %s..."
+
+; Used in the progress bar when sending a document request to the server.
+21062="Envoi d'une requête à %s..."
+
+; Used in the progress bar when receiving data from the requested document
+; from the server.
+21063="Réception de fichiers de %s en cours..."
+
+; Used in the progress bar when starting the network before fetching a
+; requested document.
+21064="Connexion au réseau/modem... "
+
+; Used in the progress bar (often too briefly to be seen, before the
+; hostname lookup) when searching for a complete name for the server to
+; fetch a requested document from.
+21065="Recherche du nom de serveur..."
+
+; Used in the progress bar when setting up an encrypted connection with the
+; server before fetching a requested document.
+21066="Mise en place de la connexion sécurisée..."
+
+; Used in the progress bar when connecting to a proxy server to fetch a
+; requested document.
+21067="Connexion au proxy..."
+
+; Used in the progress bar when waiting for a connection to the server to be
+; set up, to fetch a requested document.
+21760="Attente (#%2) d'une connexion à %1"
+
+; Used in the progress bar when a requested file has been loaded from the
+; server.
+21074="A terminé la requête de %s"
+
+; Used in the progress bar when waiting for a reply from the server after
+; requesting a document.
+21068="Délai d'expiration de 40 secondes activé. Attente de l'information..."
+
+; Used in a popup warning message when the user has submitted a HTML form to
+; a server, which accepts the request, but never sends an HTTP_CONTINUE
+; (HTTP response code 100) to tell Opera to send the forms data. Opera
+; waits for 40 seconds before showing the warning message.
+33045="Il semblerait qu'il y ait un problème sur ce serveur.\n\nSi le chargement ne se termine pas correctement, veuillez stopper la requête et réenvoyer le formulaire."
+
+; Used in the progress bar while the user selects to accept or reject a
+; cookie in the cookie warning/confirmation dialog, when accessing a site
+; that requires the server to set client cookies, and Opera is not set to
+; automatically receive this kind of cookie.
+21077="Attente de la confirmation de l'utilisateur pour les cookie(s)..."
+
+; Used in the progress bar while Opera checks that the domain stated in the
+; cookie exists.
+21078="Attente de la confirmation DNS du domaine du cookie..."
+
+; Used in a popup error message if the user has entered an URL with a port
+; specification that is not the default port for that protocol, and is
+; among the ones that Opera uses internally (for example
+; www.example.com:25) in the URL field.
+33050="L'accès à ce port est interdit pour des raisons de sécurité."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie with a domain attribute that does
+; not match the server name.
+33051="Ce serveur essaie de définir un cookie illégal. Le couple nom de serveur/attribut de domaine pour le cookie n'est pas acceptable et le cookie a été rejeté\r\n\r\nVous pouvez demander au Webmaster du site de définir des cookies légaux."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie, and Opera fails to look up the
+; domain stated in the cookie in the DNS.
+33052="Le serveur essaie de définir un cookie pour un domaine sans adresse IP connue. Pour des raisons de sécurité ceci n'est pas acceptable et le cookie a été rejeté\r\n\r\nVous pouvez demander au Webmaster du site de créer une adresse IP pour le domaine spécifié dans le cookie."
+
+; Used in about page.
+22726="Ce plug-in est désactivé"
+
+21080="Démarrage"
+21081="Arrêt d'Opera"
+21082="Page chargée"
+21079="Transfert terminé"
+21083="Echec"
+21084="Suivre le lien"
+22259="Message instantané reçu"
+22260="Contact en-ligne"
+21111="Aucun"
+22522="Pas d'habillage"
+22469="Pas d'afficheur enregistré pour le type %s de fichier, vous devez définir une application pour ouvrir ce type de fichier.\nAppuyez sur [Avancé] et spécifiez le programme à utiliser."
+22470="Pas d'application trouvée"
+25142="Choisir un fichier de son pour cet évènement"
+21100="Les ressources de Windows diminuent. Il serait utile de fermer quelques fenêtres ou une application pour éviter des problèmes."
+21101="Les ressources de Windows diminuent. Il serait utile de fermer quelques fenêtres ou une application pour éviter des problèmes."
+21104="Le fichier de fenêtres enregistré semble être corrompu et ne peut pas être utilisé."
+21112="Configuration des fenêtres d'Opera(*.win)|*.win|Tous les fichiers (*.*)|*.*|"
+21247="Afficher"
+21233="Envoyer"
+21234="Inclure"
+21235="Arrêter"
+21236="Charger"
+21237="Afficher"
+21238="Off"
+21239="Couleur"
+22502="Auteur"
+22503="Utilisateur"
+; View source button
+22571="HTML"
+
+20105="Page %d"
+; Used in an warning/confirmation dialog when the user has submitted a form
+; via email.
+20108="Ce formulaire est envoyé par courrier électronique. Si vous voulez révéler votre nom et votre adresse électronique au destinataire, cliquez sur <Oui>. Si vous voulez utiliser une adresse électronique anonyme, cliquez sur <Non>."
+
+; Used in an warning/confirmation dialog when the user has tried to submit
+; an HTML form insecurely.
+20111="Ce formulaire est envoyé sans cryptage. Voulez-vous continuer ?"
+
+; Used in a warning/confirmation dialog when the user has submitted an HTML
+; form, and the server wants to redirect the submitted data to another
+; server. GET and POST refers to HTTP commands. POST is to send the form
+; data again to the new destination, GET discards the data, but continues
+; to to the new destination.
+20119="Le serveur veut rediriger votre formulaire.\n\nCliquez sur <Oui> pour envoyer le formulaire à la nouvelle destination\n\nCliquez sur <Non> pour aller à la nouvelle destination sans envoyer le formulaire.\n\nCliquez sur <Annuler> si vous ne souhaitez pas continuer."
+
+21401="Aucune"
+21402="Faible"
+21403="Moyenne"
+21404="Haute"
+21405="Aucune sécurité sur le serveur"
+21407="Sécurité faible sur le serveur"
+21409="Sécurité moyenne sur le serveur"
+21411="Sécurité haute sur le serveur"
+21406="Sécurité faible sur le serveur - Image(s) non cryptée(s)"
+21408="Sécurité moyenne sur le serveur - Image(s) non cryptée(s)"
+21410="Sécurité haute sur le serveur - Image(s) non cryptée(s)"
+; Used in the title bar of the Certificate authorities dialog in the network
+; security preferences.
+21250="Autorités de certificats"
+
+; Used in the title bar of the Personal certificate dialog in the network
+; security preferences.
+21251="Certificats personnels"
+
+; Used in a popup error message when the client was unable to connect to the
+; server.
+21252="Impossible de se connecter au serveur.Les méthodes de cryptage acceptées par le serveur ne sont peut être pas activées dans les préférences de sécurité"
+
+; Used in a poup error message to inform about a transmission failure.
+21253="Echec de la transmission."
+
+; Used in a popup error message when the certificate is illegal or
+; non-verifiable.
+21258="Certificat invalide ou non vérifiable."
+
+; Used in a popup error message when the certificate is unsupported.
+21259="Le certificat est inconnu."
+
+; Used in a popup error message when the certificate has been revoked by its
+; issuer.
+21260="Le certificat a été révoqué par son émetteur."
+
+; Used in a popup error message when the certificate has expired.
+21261="Le certificat a expiré."
+
+; Used in a popup error message when the certificate is unknown.
+21262="Le certificat est inconnu."
+
+; Used in a popup error message, when the certificate is valid, but
+; permission denied.
+21265="Le certificat est valide mais l'accès est refusé."
+
+; Used in a popup error message when an internal error has occurred.
+21271="Une erreur interne s'est produite."
+
+; Used in a popup error message when the certificate's chain was not ordered
+; properly.
+21274="La chaîne du certificat n'était pas correctement ordonnée."
+
+; Used in a popup error message when no acceptable SSL 2 encryption methods
+; have been found.
+21272="Aucune méthode de cryptage SSL 2 acceptable n'a été trouvée."
+
+; Used in a popup error message when an unknown error has been detected.
+21273="Erreur inconnue détectée."
+
+; Used in a popup error message when the server only supports SSL 2, and SSL
+; 2 is not enabled in preferences.
+21319="Ce serveur supporte seulement SSL 2. Si vous voulez vous connecter à ce serveur, vous devez activer SSL 2 dans les Préférences."
+
+; Used as a title of a warning dialog.
+21276="Connexion sécurisée : avertissement (%u)"
+21277="Connexion sécurisée : avertissement (%u) du serveur"
+
+; Used as a title of a error dialog.
+21278="Connexion sécurisée: erreur fatale (%u)"
+21279="Connexion sécurisée : erreur fatale (%u) du serveur"
+
+; Used in the security password dialog.
+21280="Veuillez entrer un mot de passe de sécurité."
+21281="Veuillez entrer l'ancien mot de passe de sécurité "
+21282="Veuillez entrer le nouveau mot de passe de sécurité"
+21283="Veuillez redonner le nouveau mot de passe de sécurité"
+21284="Mauvais mot de passe, veuillez entrer le bon mot de passe de sécurité"
+
+; Error message during changing of password.
+21285="Le changement du mot de passe de sécurité a échoué."
+
+; Information to the user about requirements on security password.
+21388="Votre mot de passe doit comporter un minimum de 6 caractères, dont au moins un chiffre et une lettre"
+
+; Used in the security password dialog.
+21320="Veuillez entrer un mot de passe de sécurité."
+
+; Used in a text label in the view certificates dialog.
+21286="Voici les certificats personnels enregistrés dans la base de données."
+21287="Voici les autorités de certificats enregistrées dans la base de données."
+
+; Message during installation of certificate.
+21288="Installer cette chaîne d'Autorité de Certificat dans la base de données ?"
+21289="Installer cette chaîne de certificat personnel dans la base de données ?"
+21330="Installer cette chaîne de certificat encodé PEM dans la base de données ?"
+
+; Used in a popup error dialog when there is problem with the server's
+; certificate and the user is about to send a request to the server.
+21291="Vous êtes sur le point d'envoyer une requête à ce serveur. Continuer ?"
+
+; Used in a popup error dialog when there is problem with the server's
+; certificate, it did not match its hostname.
+21293="Le certificat du serveur ne correspond pas à son nom d'hôte. Accepter ?"
+
+; Used as a dialog text when one of the certificates presented by the server
+; has expired.
+21378="Un des certificats présentés par le serveur a expiré. Voulez-vous accepter le certificat ?"
+
+; Used in a dialog text when the user is prompted to select a certificate
+; for the server.
+21309="Ce serveur nécessite un certificat. Veuillez choisir l'un de ces certificats ou cliquez sur <Annuler> pour ne rien envoyer."
+
+; Used in a popup error message when the signatures of the certificate could
+; not be verified.
+21331="Impossible de vérifier les signatures de ce certificat."
+
+; Used in a popup error message when the certificate cannot be used for the
+; intended purpose.
+21464="Ce certificat ne peut être utilisé pour ceci."
+
+; Used as a dialog title when installing certificates.
+21303="Installation d'une autorité de certificat"
+21304="Installation d'un certificat client"
+21336="Installation d'un certificat PEM"
+
+; Used as a dialog title when the user should select a client certificate..
+21305="Sélectionnez un certificat client"
+
+; Used as a dialog title when there is a problem with the certificate.
+21306="Avertissement certificat"
+21307="Mauvais nom de certificat"
+21308="Le certificat a expiré"
+21377="Le certificat du serveur a expiré"
+
+; Used in a popup error message when the certificate has expired.
+21312="Ce certificat a expiré. Vous devriez le supprimer et installer un certificat à jour."
+
+; Used in a dialog title when the server's certificate chain is incomplete.
+21314="Signataire du certificat introuvable"
+
+; Used in a dialog when the server's certificate chain is incomplete, during
+; certificate installation.
+21321="La chaîne du certificat du serveur est incomplète, et le(s) signataire(s) n'est(ne sont) pas enregistré(s). Accepter ?"
+21322="Le certificat racine pour ce serveur n'est pas enregistré. Vous devriez installer ce certificat. Accepter/installer ?"
+
+; Used in a dialog during certificate installation. The certificate has been
+; installed and is usable, but Opera couldn't verify it, because the the
+; signer of certificate is missing.
+21315="Votre certificat a été installé, vous pouvez l'utiliser mais Opera ne peut le vérifier. Son signataire est inconnu. Veuillez installer, s'il existe, le certificat du signataire."
+
+21311="Installer"
+; Error message during changing of password.
+21323="Le réglage du mot de passe de sécurité a échoué."
+
+; Used in a popup error message when the installation of a certificate
+; failed.
+21316="L'installation du certificat a échoué."
+
+; Used in a dialog during certificate installation, when the client
+; certificatea had no matching private key in the database.
+21317="Le certificat client ne correspond à aucune clef privée de la base de données."
+
+; Used in a dialog during certificate installation, when the certificate's
+; chain was not ordered properly.
+21318="La chaîne du certificat n'était pas correctement ordonnée."
+
+; Used in a popup error message when the installation of a certificate
+; failed, because there was a different client certificate already
+; installed.
+21324="Un autre certificat client est déjà installé pour cette clef. L'installation a échouée."
+
+; Used in a popup error message when a different certificate already exist
+; for at least one of the installed certificate authorities.
+21325="Un autre certificat existe déjà pour au moins l'une des autorités de certificats installées. Ceux-là ont été ignorés."
+
+21326="Génération d'une clef"
+21327="Veuillez patienter, Opera génère votre clé privée."
+; Error message when encryption is disabled.
+21328="Toutes les méthodes de cryptage sont désactivées dans les Préférences."
+
+; Used in a dialog during certificate installation, when the certificate is
+; unknown or has an illegal format.
+21329="Ce certificat est inconnu ou a un format invalide."
+
+; Error message when encryption is disabled.
+21332="Les opérations de sécurité ne sont pas disponibles."
+21333="La sécurité est désactivée."
+
+21334="Cette opération de sécurité est désactivée"
+21335="Sans cette DLL de sécurité, les fonction sécurités d'Opera ne devraient pas être utilisées"
+21337="Accepter"
+; Used in a popup error message when the server's certificate held an
+; illegal name expression.
+21338="Le certificat du serveur porte un nom illégal"
+
+; Header for description of encryption type in certificate dialogs. Max 30
+; characters.
+21344="Connexion"
+
+; IMPORTANT!!!! Do not change %u, %ld or \r and \n !!!!
+21346="Plug-in :"
+21347="Plug-in :"
+21348="Exposant :"
+21349="Exposant public :"
+21350="Exposant privé :"
+21351="principal1 :"
+21352="principal2 :"
+21353="Exposant1 :"
+21354="Exposant2 :"
+21355="coefficient :"
+21364="Algorithme de clé non supporté "
+21365="ID de l'extension inconnu "
+21367="Algorithme de signature non connu "
+21368="Version du certificat : %ld\r\n"
+21369="Numéro de série : %s\r\n"
+21370="Non valide avant : "
+21371="\r\nNon valide après : "
+21372="\r\nEmpreinte digitale : "
+21373="\r\n\r\nAlgorithme de clé publique : "
+21374="\r\nAlgorithme de signature : "
+21375="\r\nExtensions :\r\n"
+21376=" (Critique)"
+21461="\r\n\r\nEmpreinte digitale de la clé publique (SHA-1) :\r\n  "
+
+; Max 199 chars 
+21366="Clé privée à %u bits . Générée %s.\r\nURL : %s."
+
+21362="Le certificat ne peut pas être utilisé pour une authentification SSL ou pour délivrer des certificats SSL."
+21356="Le certificat peut être utilisé pour l'authentification d'un client SSL."
+21357="Le certificat peut être utilisé pour l'authentification d'un serveur SSL."
+21358="Le certificat peut être utilisé pour l'authentification d'un client et d'un serveur SSL."
+21359="Le certificat peut être utilisé pour délivrer des certificats SSL."
+21360="Le certificat peut être utilisé pour l'authentification d'un client SSL et pour délivrer des certificats SSL."
+21361="Le certificat peut être utilisé pour l'authentification d'un serveur SSL et pour délivrer des certificats SSL."
+21363="Le certificat peut être utilisé pour l'authentification d'un client, d'un serveur SSL et pour délivrer des certificats SSL."
+; Used in a popup error message when the server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32901="Le serveur nécessite une méthode d'identification de connexion qui n'est pas supportée."
+
+; Used in a popup error message when a proxy server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32902="Le serveur proxy nécessite une méthode d'identification par nom d'utilisateur qui n'est pas supportée."
+
+; Used in a popup error message when the user has tried to authenticate to a
+; page outside of the given security realm.
+32907="Cette URL n'est pas dans la liste des URLs pouvant être authentifiées par le domaine donné..\r\nImpossible d'envoyer les créances d'authentification."
+
+; Used in the progress bar while Opera is uploading a file to the server.
+21386="Envoi du fichier vers le serveur"
+
+21380="Impossible d'enregistrer le message dans la boîte d'envoi."
+21382="Cette fonction n'est pas disponible dans cette version spéciale d'Opera."
+21379="Cette fonction a été enlevée"
+; Used as a title of the generated drives list page (opera:drives) on some
+; platforms.
+21383="Lecteurs"
+
+; Used as title of the generated plugin list page (opera:plugins) on some
+; platforms.
+21384="Plug-ins"
+
+; Used as title of the generated history list page, when the user has
+; selected Windows/Special/History, or entered the URL opera:history.
+21385="Historique"
+
+21400="Les répertoires de Plug-ins ont été scannés.\nLes Plug-ins pour les nouveaux types de fichiers ont été activés.\nLes Plug-ins pour les types connus ont été ajoutés, mais pas activés."
+; Used as title of the generated cache list page, when the user has selected
+; Windows/Special/Cache, or entered the URL opera:cache.
+21415="Cache"
+
+; Used in the Filename column of the created cache listing (created by
+; entering the special URL opera:cache into the URL field) when the file
+; is cached in memory and not to a file.
+22493="(Mémoire)"
+
+; Used in about page.
+22491="Source de"
+
+; Used as page title in a blank page created by entering the special URL
+; opera:blank in the URL field.
+22492="Page blanche"
+
+; Used as column titles in the generated cache list page, when the user has
+; selected Windows/Special/Cache, or entered the URL opera:cache.
+21416="Nom de fichier"
+21417="Adresse"
+21418="Taille"
+
+21420="Etes-vous sûr de vouloir annuler le transfert ?"
+; Used in a popup confirmation dialog when the user has gone to
+; Preferences/Multimedia, enabled plugins and pressed the 'Find plugins'
+; button, and new plugins needs to be activated.
+21764="Voulez-vous associer le plug-in "%1" avec le type "%2" ?"
+
+21421="Voulez-vous associer ce Plug-in au type ?"
+21425="Il vous reste %i jours pour évaluer le logiciel"
+21428="Version non enregistrée"
+21501="Ajouter une page ici..."
+21502="Choisir comme dossier actif"
+21504="Ouvrir tous les éléments du dossier"
+21508="Plus de signets..."
+; Docked hotlist window
+21516="Liste de signets"
+21517="Titre"
+21518="Visité"
+21520="Créé le"
+
+21525="Gérer les signets..."
+21519="&Afficher"
+21600="Un surnom ne peut pas contenir un point, deux points, un point d'interrogation ou un slash."
+21601="Surnom illégal."
+21609="Vos signets sont classés par ordre alphabétique.\n\nVous devez sélectionner "mon classement" dans le menu Afficher des signets\navant de pouvoir changer l'ordre de vos signets."
+21610="Signets classés par ordre alphabétique"
+; Open file dialog
+21511="Ajouter le fichier aux signets"
+21512="Ouvrir le fichier des signets"
+21513="Signets Opera (*.adr)|*.adr|HTML / Signets Netscape (*.htm, *.html)|*.htm;*.html|Tous les fichiers (*.*)|*.*|"
+21514="Créer un nouveau fichier de signets"
+
+; Autoimport after install
+21950="Importés automatiquement"
+21951="Signets Netscape"
+21952="Favoris d'Internet Explorer"
+
+; Save file
+21551="Opera (*.adr)|*.adr|"
+
+21606="Avertissement"
+21607="Etes-vous sûr de vouloir supprimer ces %li éléments ?"
+21608="Confirmation de la suppression de plusieurs éléments"
+22520="Raccourcis souris"
+22521="Vous avez activé un raccourci souris pour la première fois.\n\nLes raccourcis souris sont activés par les mouvements de la souris\ntout en maintenant appuyé le bouton droit de la souris.\n\nAppuyez sur [Aide] pour apprendre les raccourcis.\n\nDésirez vous continuer à les utiliser ?"
+; Skin removal
+22523="&Supprimer l'habillage de premier plan"
+22524="Supp&rimer l'habillage d'arrière-plan"
+
+; Use skin from button set (buttons.ini)
+22738="Utiliser l'habillage du jeu de bouton ?"
+22737="Le jeu de bouton contient aussi des habillages.\nVoulez-vous les utiliser ?"
+
+22739="Cliquez ici pour acheter Opera et supprimer la publicité"
+; Serial number stuff
+22004="Enregistrer Opera"
+22001="Opera est déjà enregistré.\n\nVoulez-vous changer les informations d'enregistrement ?"
+22002="Les informations d'enregistrement entrées ne sont pas valides.\n\nAssurez-vous de les avoir entrées correctement."
+22003="Opera est maintenant enregistré."
+22005="Ce code d'enregistrement a expiré.\nVeuillez le mettre à jour à <http://www.opera.com/buy/>."
+22006="Ce code d'enregistrement a expiré.\nVeuillez le mettre à jour sur <http://www.opera.com/buy/>."
+
+21300="Raccourcis"
+21301="Index"
+21342="Quand Opera est fermé."
+21343="Ce cookie sera envoyé uniquement aux serveurs sécurisés du domaine."
+21393="Ce cookie peut être envoyé à tout serveur du domaine."
+21394="Ce cookie sera envoyé uniquement à ce serveur sécurisé."
+21395="Ce cookie sera envoyé uniquement à ce serveur."
+21396="Ce cookie sera effacé de la base de donnée."
+22071="Transferts"
+22232="Défini par l'utilisateur"
+; Used in a popup error dialog during loading of global history list.
+21431="Votre fichier d'historique est corrompu et sera effacé."
+
+; Probably deprecated. On O7 and O6 Win, the JavaScript error dialog is
+; popped up instead, if the user has requested in preferences/Multimedia
+; to be alerted of JavaScript errors.
+32825="Echec d'exécution de JavaScript"
+21450="Echec de l'exécution du script."
+21451="Echec de la compilation du script."
+
+; Used if Opera for some reason tries to run JavaScript in a non-HTML
+; document. This is not likely to happen.
+21452="javascript: les URLs peuvent être lancées uniquement avec des documents HTML."
+
+; Used in a popup error message when the Opera fails to load the JavaScript
+; library at startup.
+21453="Impossible de charger le fichier système ES262-32.DLL. Javascript ne sera pas exécuté."
+
+; Used in the progress bar while Opera is busy running a JavaScript program.
+21454="Exécution de JavaScript..."
+
+22073="La fermeture de la fenêtre de transfert arrêtera les transferts en cours.\n\nEtes-vous sûr ?"
+22074="Annuler les transferts?"
+22076="Nom"
+22075="Taille"
+22080="Type"
+22077="Progression"
+22078="Temps"
+22079="Vitesse"
+22085="Terminé"
+22108="Terminé (incompatibilité de taille)"
+22086="Arrêté"
+22087="Erreur"
+22089="Inconnu"
+22090="Arrêter"
+22091="Reprendre"
+22186="Supprimer de la liste"
+22187="Transférer à nouveau"
+22092="Ouverture du Shell"
+22109="Copier les informations du fichier"
+22093="Arrêter le transfert sélectionné ?"
+22236="Le fichier de langage installé n'est pas écrit pour Opera révision %s.\n\nCliquez sur [Oui] pour relancer Opera en utilisant l'anglais par défaut.\n\nCliquez [Non] pour utilisez le fichier de langage, avec des erreurs possibles."
+22094="Fichier"
+22096="Nouveau"
+22095="Editer"
+22099="Erreur"
+22120="Fichiers"
+22121="Tous les fichiers"
+22122="Tous les fichiers (*.*)"
+14121="Arrêter l'exécution des scripts de cette page"
+25266="&Ne plus afficher"
+22151="Dossier"
+; Used in the title bar of a warning/confirmation dialog when a script tries
+; to read the content of a password input element in a form in a HTML
+; document.
+22486="Avertissement de sécurité JavaScript"
+
+; Used in a warning/confirmation dialog when a script tries to read the
+; content of a password input element in a form in a HTML document.
+21430="Un script veut lire le(s) mot(s) de passe du formulaire.\n\nVoulez-vous donner au script l'accès au(x) mot(s) de passe ?"
+
+22102="Impossible de fermer les connexions d'accès à distance (délai expiré)"
+22103="Fermer les connexions d'accès à distance ?"
+22104="Vous êtes connecté à %s. Voulez-vous fermer les connexions d'accès à distance ouvertes ?"
+22114="Propriétés du dossier de Signets"
+22125="Propriétés du dossier Contact"
+22115="Propriétés du signet"
+22117="Signets"
+22118="Contacts"
+34304="Mauvais code PIN"
+34305="Impossible de vérifier la signature"
+34306="Le lecteur de carte est déjà utilisé"
+34307="Il y a des problèmes avec la carte"
+34308="Votre numéro de carte ne correspond pas à celui d'un destinataire indiqué dans le message"
+34309="Ne peut pas crypter (Erreur non définie)"
+22110="Signets"
+22111="Courrier"
+22112="Contacts"
+22158="Panneau"
+22159="Panneau"
+22160="Panneau"
+22124="&Ajouter tout"
+22127="Dossier"
+22128="Nom"
+22262="Déconnecté"
+22263="En ligne"
+22264="Absent"
+22265="Je reviens"
+22266="Occupé"
+22267="Ne pas déranger"
+22268="Apparaît hors ligne"
+22269="Au téléphone"
+69523="Sorti déjeuné"
+22415="Art / Culture"
+22416="Automobiles"
+22417="Livres / Magazines"
+22418="Ordinateur / Jeux"
+22419="Ordinateur / Tech."
+22420="Cuisine"
+22421="Mode / boutiques"
+22422="Finance / Invst."
+22423="Aliments / Vins"
+22424="Santé / Forme"
+22425="Maison / Jardin"
+22426="Films"
+22427="Musique"
+22428="Infos / Evènements"
+22429="Sciences / Educatif."
+22430="Sports / Activités"
+22431="Voyages / Loisirs"
+22432="Non spécifié"
+22433="En-dessous de 25,000 euros"
+22434="25,000-35,999 euros"
+22435="36,000-49,999 euros"
+22436="50,000-75,999 euros"
+22437="76,000-99,999 euros"
+22438="100,000 euros +"
+22439="1900-1929"
+22440="1930-1949"
+22441="1950-1959"
+22442="1960-1969"
+22443="1970-1979"
+22444="1980-1989"
+22445="1990 ou après"
+22446="Homme"
+22447="Femme"
+22448="Célibataire"
+22449="Parent célibataire"
+22450="Mariés"
+22451="Mariés avec enfants"
+22452="Ecole primaire"
+22453="Lycée"
+22454="Enseignement supérieur"
+22455="DEUG"
+22456="Licence"
+22457="Diplômé"
+21470="Cette page souhaite définir le cookie\r\n   %s="%s"\r\n\r\nCette valeur %ssera envoyée à %s documents sur %s%s%s%s, et aux chemins commençant par /%s.\r\n\r\n"
+21471="seulement "
+21472="Pages sécurisées "
+21473="le serveur "
+21474="tous les serveurs du domaine "
+21475=", port(s) "
+22233="Ce code d'enregistrement a expiré.\nVeuillez le mettre à jour sur <http://www.opera.com/buy/>."
+22234="Mettre à jour Opera"
+21476="Le cookie sera effacé quand Opera sera fermé."
+21477=", mais, à moins que vous outrepassiez , le cookie sera effacé quand Opera sera fermé."
+21478="Le cookie est valide jusqu'à %s%s\r\n\r\n"
+21479="Le cookie est valide jusqu'à %s et a expiré, tout cookie existant de même nom sera effacé.\r\n\r\n"
+21480="Le service a envoyé le message suivant à propos du cookie: "%s"\r\n"
+21481="\r\nDes informations supplémentaires sont disponibles sur <%s>\r\n%s\r\n\r\n"
+21482="Le service fournit des informations sur ses cookies sur <%s>\r\n%s\r\n\r\n"
+21483="\r\nVous pouvez afficher cette page en cliquant sur le bouton "Afficher les commentaires" ci-dessous.\r\n"
+21484="Accepter, y compris les mises à jour avant de fermer Opera"
+21485="Accepter sans les changements"
+21486="Accepter, mais supprimer en quittant Opera"
+21487="Accepter, mais enregistrer en quittant Opera"
+21488="Accepter les cookies de ce serveur"
+21489="Refuser les cookies de ce serveur"
+21490="Accepter les cookies de ce domaine"
+21491="Refuser les cookies de ce domaine"
+21499="\r\n----------------------\r\nDemande de cookies:\r\n\r\n"
+21738="Accepter les cookies des tierces parties de ce serveur"
+21739="Refuser les cookies des tierces parties de ce serveur"
+21740="Accepter les cookies des tierces parties de ce domaine"
+21741="Refuser les cookies des tierces parties de ce domaine"
+21492="Refuser tous les cookies"
+21493="Me laisser choisir dès que j'en reçois un"
+21494="Traiter comme indiqué dans le gestionnaire de serveurs"
+21495="Accepter tous les cookies"
+21496="Accepter seulement les cookies défini par le serveur pour lui-même"
+21497="Refuser tous les cookies"
+21746="Me laisser choisir dès que j'en reçois un"
+21498="Accepter tous les cookies"
+22183="Opera a besoin d'être relancé afin que les changements prennent effet.\n\nVoulez-vous quitter Opera maintenant ?"
+22184="Quitter Opera ?"
+22185="Langue par défaut (Anglais)"
+22210="Aucune version supportée du Java Runtime Environment n'a été trouvée.\nVous devez installer la version 1.2 ou plus récente du Java Runtime Environment de Sun.\nJava est automatiquement désactivé pour cette session.\nVoulez-vous désactiver Java pour les sessions futures ?"
+22211="Les classes Java d'Opera n'ont pas assez de permissions pour exécuter.\nSoit le fichier opera.policy n'a pu être trouvé, ou bien il\n ne donne pas la permission au fichier .jar d'Opera. Les applets Java ne fonctionneront pas."
+22212="La version installée du Java Runtime Environment est incompatible avec cette version d'Opera.\nTéléchargez la version 1.2 ou supérieure sur <http://www.javasoft.com>"
+22213="La DLL Java n'a pas été trouvée là où \nle registre l'indiquait. Votre installation Java\nsemble être corrompue. Les applets Java ne fonctionneront pas."
+22214="Impossible de créer Java VM."
+22215="Java VM s'est fermée.\n\nJava est désactivé pour le reste de la session."
+22216="Java VM s'est interrompue.\n\nJava est désactivé pour le reste de la session."
+22217="Echec de l'enregistrement des méthodes natives de Java.\n\nVous utilisez une ancienne version du fichier opera.jar ou\nelle ne figure pas dans le chemin de classe d'Opera. Les applets Java ne fonctionneront pas."
+22218="Voulez-vous afficher les instructions d'installation du Java Runtime Environment?"
+22219="Impossible de trouver le fichier opera.jar\nSoit vous n'avez pas d'entrée 'OPERA CLASSPATH' dans la section [JAVA]\nde votre fichier opera.ini, ou votre entrée emprunte un mauvais chemin.\nLes applets Java ne fonctionneront pas."
+22220="Impossible de trouver le fichier opera.policy.\nIl vous manque une entrée 'SECURITY POLICY' dans la section [JAVA] \nde votre fichier opera.ini, ou votre entrée a un mauvais chemin.\nLes applets Java ne fonctionneront pas."
+; Dialog title for signed Java applets certificate dialog.
+22221="Sécurité Java"
+
+; Used in dialog for signed Java applets.
+22222="Une applet signée demande des privilèges supplémentaires. Souhaitez vous donner à cette applet toutes les permissions?"
+
+22123="Rien trouvé"
+22173="Erreur lors de l'envoi du message"
+22174="Aucun client de courrier externe n'a été défini."
+22175="Erreur lors de l'envoi du message"
+22176="Impossible de démarrer le client de courrier externe"
+22179="Message"
+22182="Les propriétés de votre compte e-mail ne sont pas définies correctement.\nVoulez-vous éditer ces préférences maintenant ?"
+22180="Le client de courrier externe sélectionné n'est pas spécifié.\nVoulez-vous éditer les préférences du courrier électronique maintenant ?"
+22181="Aucun client de courrier par défaut n'a été défini sur votre système.\nVoulez-vous éditer les préférences e-mail maintenant ?"
+22177="Avertissement"
+22178="Soit le client de courrier externe n'existe pas,\nsoit il n'a pas de compte valide.\n\nAppliquer les changements quand même ?"
+21720="Identifier comme Opera"
+21721="Identifier comme Mozilla %s"
+21723="Identifier comme MSIE %s"
+21730="Accepter du serveur"
+21731="Accepter du domaine"
+21732="Refuser du serveur"
+21733="Refuser du domaine"
+21742="Accepter tierce partie du serveur"
+21743="Accepter tierce partie du domaine"
+21744="Refuser tierce partie du serveur"
+21745="Refuser tierce partie du domaine"
+21736="Accepter les chemins illégaux"
+21737="Refuser les chemins illégaux"
+21734="Re&fuser"
+21735="Ac&cepter"
+14217="&Quitter l'aperçu avant impression\tP"
+14218="Aperçu avant impression..."
+22240="Sélectionnez le répertoire contenant vos fichiers de langue"
+22514="Défini par l'utilisateur"
+; Used as default text on submit input elements in forms in HTML documents.
+13043="Envoyer"
+
+; Used as default text on reset input elements in forms in HTML documents.
+13044="Remettre les données originales"
+
+; Used as default text on button input elements in forms in HTML documents.
+13045="Bouton"
+
+; Used at top of the document when trying to show an malformed XML document.
+; Followed by a more specific XML error message.
+13046="Echec de lecture du XML"
+
+; Used in a popup error message when the user has entered input in a text
+; input element in a WML document, and the input did not match the format
+; specification.
+13047="L'entrée n'est pas valide"
+
+11463="Barre de &page"
+11462="Barre p&ersonnelle"
+11458="Afficher les recherches"
+11461="&Afficher les panneaux"
+11326="Dans l'ordre de l'utilisation récente"
+11327="Dans l'ordre de création"
+11328="Sans afficher la liste"
+11459="Sélectionnez le répertoire où Eudora est installé"
+11460="Sélectionnez le répertoire où se situent les boîtes aux lettres d'Outlook Express"
+; Preferences dialog options
+11521="Publicité"
+11500="Accessibilité"
+11501="Navigateur par défaut"
+11502="Polices"
+11503="Courrier électronique"
+11504="Types de fichiers"
+11505="Historique et cache"
+11506="Apparence"
+11524="Style de la page"
+11507="Langues"
+11508="Multimédia"
+11509="Réseau"
+11511="Programmes et Chemins"
+11512="Info. personnelles"
+11513="Plug-ins"
+11514="Vie privée"
+11515="Sécurité"
+11516="Sons"
+11517="Démarrage et arrêt"
+11522="Recherche"
+11518="Agencement"
+11519="Fenêtres"
+
+11626="Catégorie"
+11621="Application des nouvelles préférences, veuillez attendre..."
+11627="Nom"
+11628="Description"
+11629="Chemin"
+17035="Type MIME"
+17036="Extension(s) de fichier"
+; Unicode block names for the international font preferences
+11525="Automatique"
+11526="Pas de polices disponibles"
+11527="Arabe"
+11528="Arménien"
+11529="Basic Latin"
+11530="Bengali"
+11531="Cherokee"
+11532="Symboles monétaires"
+11533="Chinois simplifié"
+11534="Chinois traditionnel"
+11535="Cyrillique"
+11536="Devanagari"
+11537="Ethiopien"
+11538="Ponctuation générale"
+11539="Géorgien"
+11540="Grec"
+11541="Grec Etendu"
+11542="Gujarati"
+11543="Gurmukhi"
+11544="Halfwidth and Fullwidth Forms"
+11545="Hangul"
+11546="Hébreu"
+11547="Hiragana"
+11548="CJK Symbols and Punctuation"
+11572="Kanji"
+11549="Kannada"
+11550="Katakana"
+11551="Khmer"
+11552="Lao"
+11553="Latin-1 Supplement"
+11554="Latin Extended-A"
+11555="Latin Extended-B"
+11556="Latin Extended Additional"
+11557="Malayalam"
+11558="Mongolien"
+11559="Myanmar"
+11560="Number Forms"
+11561="Ogham"
+11562="Oriya"
+11563="Runic"
+11564="Sinhala"
+11565="Syriac"
+11566="Tamil"
+11567="Telugu"
+11568="Thaana"
+11569="Thaï"
+11570="Tibétain"
+11571="Unified Canadian Aboriginal Syllabic"
+
+; About page
+11700="A propos d'Opera"
+11701="Informations d'enregistrement"
+11702="Enregistré"
+11703="Nom"
+11704="Organisation"
+11705="Evaluation"
+11706="Chemins"
+11707="Système"
+11708="Préférences"
+11709="Répertoire d'Opera"
+11710="Fenêtres enregistrées"
+11711="Signets"
+11712="Chemin des Plug-ins"
+11713="Cache"
+11714="Documents d'aide"
+11715="Java"
+11716="Tierces parties"
+11717="Opera Software remercie les groupes et les individus ci-dessus pour leur contribution."
+11718="La version de Java Runtime Environment installée n'est pas supportée par cette version d'Opera"
+11719="Pas de Java Runtime Environment installé"
+11720="Oui"
+11721="Non"
+11722="N/A"
+
+22248="pixels"
+22250="bits par pixel"
+22249="octets"
+22244="Message d'erreur"
+22251="animé en %i images"
+22168="Enregistrer le(s) Fichier(s)"
+22169="Ouvrir le(s) fichier(s)"
+22170="Fichier introuvable."
+22171="Nom de fichier incorrect."
+22167="Veuillez vérifier si le chemin et le nom du fichier sont corrects."
+22510="Octet"
+22252="o"
+; Short for kilobyte
+22253="ko"
+
+22254="Mo"
+22255="Go"
+22256="To"
+22257="/s"
+; Used in about page.
+22480="Java n'est pas installé"
+
+22465="Choisir un dossier pour enregistrer les fichiers"
+; Used in about page.
+22481="Version"
+22482="Révision"
+22483="Plate-forme"
+22484="Informations sur la version"
+22485="Système"
+22568="Partenaire"
+
+22245="Un problème est apparu lorsqu'Opera a tenté de se connecter à votre imprimante. Veuillez vérifier les paramètres de cette dernière. Si vous avez une imprimante distante ou réseau, veuillez vérifier votre connexion réseau."
+22246="Problème d'imprimante"
+22247="Imprimante"
+; Hotlists toolbar buttons
+10927="Affiche le menu d'apparence des contacts"
+10926="Créer un dossier de contacts"
+
+; Hotlists toolbar buttons and Mail Trash Toolbar
+10925="Ajouter un contact"
+
+10920="Ajouter la page active aux signets"
+10921="Créer un dossier de signets"
+10922="Affiche le menu d'apparence des signets"
+14494="Voulez-vous\n\n     fermer toutes les fenêtres,\n     supprimer tous les cookies non persistants,\n     supprimer tous les mots de passe,\n     supprimer les historiques\n     et supprimer du cache les pages cryptées ou avec mot de passe ?"
+14495="Supprimer les informations privées"
+22163="Le code source de cette fenêtre a été édité. Désirez vous l'enregistrer ?"
+; Used in the window title when the page has been edit using the internal
+; source viewer.
+22164="(édité) "
+
+22235="Page"
+; Used in a warning/confirmation dialog when the user has activated offline
+; mode and then requested Opera to access information that is only
+; available online.
+21433="Le mode hors-connexion est activé. Impossible de trouver:\n\n"%s"n\n Voulez-vous passer en mode connecté ?"
+
+22569="minute"
+22237="minutes"
+22570="seconde"
+22723="secondes"
+22238="dernière utilisation"
+22239="Vous avez entré une valeur de délai invalide.\n\nSeuls des chiffres peuvent être utilisés, et cette valeur ne peut être nulle."
+; XML error message used at top of the document, following string 13046,
+; when trying to show an malformed XML document. Followed by a line and
+; character count to help finding the error in the XML file.
+25001="mémoire insuffisante"
+25002="erreur de syntaxe"
+25003="aucun élément trouvé"
+25004="pas correctement formé "
+25005="symbole non fermé"
+25007="tag mal adapté"
+25008="attribut en double"
+25009="rebut après l'élément du document"
+25010="paramètre illégal dans la référence d'une entité"
+25011="entité non définie"
+25012="référence d'entité récursive"
+25013="entité asynchrone"
+25014="référence à un caractère numérique invalide"
+25015="référence à une entité binaire"
+25016="référence à une entité externe dans l'attribut"
+25017="instruction de traitement xml non au début d'une entité externe"
+25018="codage inconnu"
+25019="codage défini dans la déclaration XML incorrect"
+25020="section CDATA non fermée"
+25021="erreur dans le traitement de la référence d'une entité externe"
+25022="Le document n'est pas indépendant"
+25000="erreur inconnue"
+
+; Error messages from XML
+25023="Ligne :"
+25024="Caractère :"
+
+22154="Valeur incorrecte pour '%s'"
+21765="'%1' comporte une valeur incorrecte.\nUn nombre en %2 et %3 est requis.\n\n"
+22156="Voulez-vous remettre cette valeur à zéro ?"
+22157="Revenir à la dernière valeur correcte."
+22243="Inconnu"
+21766="%1 items dans %2 dossiers, %3 items au total."
+; Used in a warning/confirmation dialog when an URL with a user name (like
+; http://username@www.example.com) is entered in the URL field.
+21463="Alerte de sécurité :\n\nVous êtes sur le point d'aller à une adresse contenant un nom d'utilisateur.\n\n    Nom d'utilisateur: %s \n    Serveur: %s\n\nEtes-vous sûr de vouloir vous rendre à cette adresse ?"
+
+22161="Pas trouvé"
+22162="Ne peut pas trouver le texte "
+21120="Afficher tous les en-têtes"
+; Label in the displayed header of a news/mail/MIME/MHTML message.
+21122="Date"
+21123="De"
+21124="Sujet"
+21125="à"
+21121="Cc"
+21126="Bcc"
+
+22703="Images seulement"
+22704="Texte seulement"
+22705="Images et texte dessous"
+22706="Images et texte à droite"
+22715="Accepter tous les pop-ups"
+22716="Refuser tous les pop-ups"
+22717="Ouvrir les pop-ups en arrière-plan"
+22718="Bloquer les pop-ups non souhaités"
+25316="Confirmez la suppression"
+25317="Veuillez confirmer la suppression permanente de ce panneau.\n\n%s"
+25318="Ajouter un panneau d'outils ?"
+22729="Choisissez"
+22730="Opera est configuré pour démarrer avec vos fenêtres sauvegardées"
+22731="Opera est configuré pour démarrer avec votre page d'accueil"
+22732="Opera est configuré pour démarrer comme vous l'aviez laissé"
+22733="Opera est configuré pour démarrer sans fenêtre"
+22734="Cliquez ici pour modifier"
+17171="Google"
+17187="AllTheWeb"
+17189="Super"
+17202="Ama&zon.com"
+17174="Comparaison de prix"
+17175="&TechTracker"
+17176="Nom de domaine"
+17178="&Cours de la Bourse"
+17180="Image"
+17181="Vidéo"
+17179="&Mp3/Audio"
+17188="Groupes Google"
+17182="Support d'Opera"
+17183="&Rechercher dans la page"
+17203="News"
+; Prompting the user to enter the password protecting the key when importing
+; PKCS #12 key/certificate.
+21747="Veuillez entrer le mot de passe protégeant la clé"
+
+; Prompting the user to enter the password protecting the key when exporting
+; PKCS #12 key/certificate.
+21748="Veuillez entrer un mot de passe pour protéger la clé privée exportée"
+
+; Prompting the user to re-enter the password protecting the key when
+; exporting PKCS #12 key/certificate.
+21749="Veuillez répéter le mot de passe"
+
+; Used when importing private PKCS #12 key.
+21750="Importer la clé privée"
+
+21751="Importer la clé et le certificat"
+21752="Voulez-vous importer la clé privée et ses certificats associés ?"
+; Ask the user if to import the private PKCS #12 key.
+21753="Voulez-vous importer la clé privée contenue dans ce fichier ?"
+
+; Error messages when importing PKCS #12 key/certificate.
+21754="L'importation de la clé privée et du certificat a échoué"
+21755="Il n'y avait pas de clé privée dans ce fichier"
+21756="La clé privée importée ne correspond pas à la clé associée au certificat. L'opération a échoué."
+
+30211="La configuration automatique du Proxy a échoué. \nLa configuration du proxy est désactivée pour cette session."
+22728="Vous pouvez effectuer des recherches Web dans le champ d'adresse"
+25411="Cadre d'e-mail externe"
+25412="Chargement du source du cadre externe annulé:"
+10018="Disposer toutes les fenêtres en cascade"
+10724="Alterner entre mode auteur et mode utilisateur"
+10596="Entrez ici la valeur de zoom de la page (Appuyez sur la flèche pour la liste)"
+10009="Copier la sélection dans le presse-papier"
+10247="Alterner l'affichage/chargement des images"
+10072="Aller à la page d'accueil"
+10052="Accéder aux signets du dossier de signets actif"
+10000="Naviguer dans une nouvelle fenêtre"
+10031="Aller à la page suivante (cliquez sur la flèche pour les suivantes)"
+10001="Ouvrir un fichier de votre ordinateur local"
+10059="Aller à une page Web"
+10032="Revenir à la page précédente (cliquez sur la flèche pour les précédentes)"
+10004="Imprimer la page"
+10069="Entrez ici l'adresse Internet (Appuyez sur la flèche pour les adresses précédemment entrées)"
+10056="Récupérer la dernière version de la page"
+10002="Enregistrer la page sur votre ordinateur local"
+10227="Rechercher un texte spécifique dans la page"
+10143="Arrêter le chargement de la page"
+10019="Disposer toutes les fenêtres en mosaïque horizontale"
+13010="Alterner l'affichage du menu d'outils"
+13011="Afficher la page sur tout l'écran (alterner avec la touche F11 de votre clavier)"
+13030="Aperçu de la page telle qu'elle apparaîtrait imprimée"
+10314="Rechercher le texte entré sur Internet"
+10313="Entrez votre recherche Internet ici (Appuyez sur la flèche pour d'autres types de recherche)"
+10308="Aller à la page Web indiquée dans le champ d'adresse"
+14134="Reprendre le transfert"
+14135="Transférer à nouveau"
+14136="Arrêter le transfert"
+14137="Afficher le menu d'apparence des transferts"
+16245="Envoyer un message à cette personne"
+16246="Ajouter cette personne aux contacts"
+4000="Impossible de démarrer "
+4001="Impossible de créer la boîte de dialogue "
+4002="Impossible de charger le menu "
+4003="Impossible de charger les icônes "
+4004="Impossible de charger les images "
+4005="Impossible de créer la fenêtre "
+67003="Taille"
+67004="A"
+67005="S"
+67007="Baguette"
+; Message shown in the status bar when Java Virtual Machine is
+; loading/starting up.
+67008="Démarrage de la machine virtuelle Java..."
+
+; Attribution-line when replying to a mail
+67009="Le %:Date:, %f a écrit:"
+
+; Attribution-line when forwarding a mail
+67010="\\n\\n------- Message réexpédié-------\\nDe: %:From:\\nA: %:To:\\nSujet: %:Subject:\\nDate: %:Date:\\n"
+
+; Attribution-line when followup to a news message
+67011="Le %:Date:, %f a écrit:"
+
+; Attribution-line when replying by mail to a news message
+67012="Le %:Date:, vous avez écrit dans %:Newsgroups::"
+
+; Attribution-line when forwarding by mail a news message
+67013="\\n\\n---- Message Usenet réexpédié ----\\nDe: %:From:\\nForum: %:Newsgroups:\\nSujet: %:Subject:\\nDate: %:Date:\\nURL: message://%:Message-Id:\\n"
+
+67020="Baguette"
+67021="Vérifie le dossier"
+67022="Récupère les dossiers"
+67023="Récupère le corps"
+67024="Récupère la pièce jointe"
+67025="Crée le dossier"
+67026="Supprimer le dossier"
+67027="Renomme le dossier"
+67028="S'inscrit au dossier"
+67029="Supprimer le message"
+67030="Message joint"
+67031="Stocke le drapeau"
+67032="Contacte le serveur"
+67033="Taille du message incorrecte"
+67034="Nom d'utilisateur incorrect"
+67035="Mot de passe incorrect"
+67036="Erreur interne"
+67037="Le message n'existe pas"
+67038="Impossible de supprimer le message sur le serveur"
+67039="TLS n'est pas disponible sur ce serveur. Pour obtenir du courrier de ce serveur vous devez désactiver la connexion sécurisée"
+67040="Non défini"
+67041="Serveur POP3 indisponible. Problème réseau ?"
+; About page
+67042="Répertoire de courrier"
+
+67043="Le serveur essaie d'effectuer une redirection illégale"
+; Used in index category in M2
+67044="Dossiers Imap"
+67045="Filtres"
+
+; Usined while M2 is searching. Padded by ' <search>...'
+67046="Recherche "
+
+; Formats the M2 display of time today
+67047="Aujourd'hui à %X"
+
+; Used in M2 when a message has no label
+67048="Pas de label"
+
+; Priority of a M2 message
+67049="La plus haute priorité"
+67050="Haute priorité"
+67051="Basse priorité"
+67052="Basse priorité"
+
+; Used in Mail|Manage Account
+67053="Compte"
+67054="Statut"
+
+; Used in Mail|Newsgroups
+67055="Inscrit"
+67056="Statut"
+67057="Groupe"
+
+; Received news index in m2
+67058="Messages reçus"
+
+; Received list index in m2
+67059="Liste reçue"
+
+; Clipboard index in m2
+67060="Presse-papier"
+
+; Prefix for newsservers in serverlist in m2
+67061="Messages à"
+
+; Prefix for mailservers in serverlist in m2
+67062="Courrier pour"
+
+; Name for a new Imap folder in M2
+67063="Nouveau"
+
+; Status-message when sending messages in M2
+67064="Envoie..."
+
+; Status-message when checking for messages in M2
+67065="Vérifie..."
+
+; Status-message when getting messages in M2
+67066="Reçoit les messages (%u/%u)"
+
+; Status-message when done fetching messages in M2
+67067="%u reçus"
+
+; Status-message when no messages was fetched in M2
+67068="Pas de message reçu ou envoyé"
+
+; Error-message if setting From or Organization in M2 failed
+67069="Impossible de définir De ("%s") ou l'en-tête Organisation ("%s")"
+
+; The From-address is not given according to standards
+67070="Adresse de l'expéditeur incorrecte"
+
+; M2 was unable to mime-encode a message
+67071="L'encodage Mime a échoué"
+
+; Store::AddMessage failed
+67072="Le stockage du message a échoué"
+
+; M2 needs Drafts and Outbox to store messages
+67073="Impossible de localiser la Boîte d'envoi ou de Brouillons"
+
+; M2 will move a message to Outbox when sending or queueing it
+67074="Erreur pendant le déplacement du message vers la Boîte d'envoi"
+
+; M2 will move a message from Drafts when it is sent or deleted
+67075="Erreur pendant le déplacement du message du dossier Brouillons"
+
+; M2 got an error-message while sending a message
+67076="L'envoi du courrier a échoué."
+
+; Default name for new indexes in M2
+67077="Nouveau filtre"
+
+; Used for invalid mbox files in M2
+67078="Le fichier n'est pas valide"
+
+; Used various places in the import-code in M2
+67079="Importé"
+
+; Progress-information in M2 import-code
+67080="Déja importé"
+
+; Used in the M2 Import Mail wizzard
+67081="Importer l'item"
+
+; Marks where quoted text has been removed when replying to a mail
+67082="<...>"
+
+; The file being downloaded is already being written to the selected file,
+; this is not possible!
+67083="Le fichier est déjà en téléchargement"
+67084="Le fichier est en cours d'écriture, choisir un autre nom de fichier"
+
+; Period to view e-mails from
+67085="Aujourd'hui"
+67086="Semaine"
+67087="Mois"
+67088="Trois mois"
+67089="Année"
+67090="Tous"
+
+; Remove folder warning dialog title
+67091="Supprimer %s"
+
+67092="Etes-vous sûr de vouloir vous désinscrire de ce forum ?"
+67093="Etes-vous sûr de vouloir supprimer '%s' ?"
+67094="Etes-vous sûr de vouloir vous désinscrire de ce dossier IMAP ?"
+; Start a full search from the mail hotlist panel
+67095="Lancer la recherche"
+
+67096="Pas de message sélectionné"
+67097="Pas d'affichage sélectionné"
+; Title of button in compose window
+67098="Bcc:"
+67099="Répondre à"
+67100="Suivi sur"
+67101="Forum"
+
+67102="(%d non lu(s)"
+67103="(%d non lu(s) sur %d)"
+67104="Pièce(s) jointe(s)"
+67105="Taille"
+67106="Pas d'adresse e-mail définie. Veuillez éditer le compte"
+67107="Paramètre de serveur manquant"
+67108="Le compte n'a pas de serveur de courrier sortant défini"
+67109="Adresse d'expéditeur incorrecte"
+67110="Il manque une adresse e-mail au compte"
+67111="Message non valide."
+67112="Adresse ou sujet manquant"
+67113="Annuler le message"
+67114="Etes-vous sûr de vouloir annuler ce message ?"
+; Priority of a M2 message
+67115="Priorité normale"
+
+67116="Aller à l'adresse Web suivante"
+67117="Recherche rapide"
+67118="Zoom"
+67119="Champ de statut"
+67120="Supprimer le compte"
+67121="Etes-vous sûr de vouloir supprimer ce compte ?"
+67122="Gérer les comptes"
+67123="Propriétés du compte"
+67124="Serveur %s"
+67125="Serveur %s entrant"
+67126="Serveur %s sortant"
+67127="Encodage par défaut"
+67128="Nettoyage du serveur"
+67129="Voulez vous supprimer les messages lus sur le serveur ?"
+67130="Type"
+; General Do-not-show-this-dialog-again text for use in most new dialogs
+67131="Ne plus afficher ce dialogue"
+
+67132="Suivant >"
+67133="< Précédent"
+67134="Terminer"
+67135="Off"
+67136="Moyen"
+67137="Puissant"
+67138="Ou"
+37139="Et"
+67140="le sujet"
+67141="nom de l'expéditeur"
+67142="l'en-tête De"
+67143="l'en-tête A"
+67144="l'en-tête Cc"
+67145="l'en-tête Répondre à"
+67146="l'en-tête des forums"
+67147="un en-tête"
+67148="le message"
+67149="Contient"
+67150="Ne contient pas"
+67151="Correspond à l'expression rationnelle"
+67152="Filtre les messages où "
+67153="Ou bien où "
+67154="Et où "
+67155="le sujet"
+67156="le nom de l'expéditeur"
+67157="n'importe quel en-tête"
+67158="le message"
+67159="contient"
+67160="ne contient pas"
+67161="Correspond à l'expression rationnelle"
+; Used to format the title of a dialog, contact properties and similar
+67162="propriétés %s"
+
+67163="Télécharger un habillage"
+67164="Télécharge l'habillage..."
+67165="Appliquer l'habillage téléchargé"
+67166="Voulez vous garder cet habillage ?"
+67167="Nom de l'habillage :"
+67168="Auteur :"
+67169="Le téléchargement a échoué"
+67170="Tous les messages"
+67171="L'année dernière"
+67172="Le mois dernier"
+67173="Session précédente (sauvegardée automatiquement)"
+67174="Démarrer avec une page blanche"
+67175="%d octets téléchargés"
+67218="Supprimer"
+; Status-message when messages was sent in M2
+67361="%u envoyé"
+
+67504="Corps du message non téléchargé"
+67506="E-mail normal (POP)"
+67507="IMAP"
+67508="Forums"
+67509="Importer un compte"
+67510="Courrier Web Opera"
+67511="Importer d'Opera 5/6"
+67512="Importer d'Eudora"
+67513="Importer de Netscape 6/7"
+67514="Importer d'Outlook Express"
+67515="Importer le fichier mbox générique"
+67516="Dossier de boite aux lettres :"
+67517="Fichier de préférences de Netscape (prefs.js):"
+67518="Fichier mbox générique"
+67540="Vérifier"
+; Added in front of server response when POP server returnes an error
+67561="Réponse du serveur :"
+
+; Used when IMAP folder subscription fails
+67589="Le changement d'inscription de dossier a échoué ! Le dossier était peut être déjà inscrit/désinscrit sur le serveur."
+
+; Used when mailserver reports that it does not support TLS
+67590="TLS non supporté sur ce serveur !"
+
+; Generic error when connection to IMAP server failed
+67591="La connexion au serveur IMAP a échoué"
+
+; Precedes IMAP alert messages
+67592="Message d'alerte du serveur IMAP"
+
+; Used when IMAP-server notifies that folder has been renamed on server
+67593="Le nom du dossier "%s" a été changé en "%s"."
+
+; Used when appending a message to an IMAP folder
+67594="Le déplacement du message dans un dossier a échoué."
+
+; Used when copying an IMAP message failed
+67595="La copie du message a échoué."
+
+; Used when local storing of IMAP message failed
+67596="Le stockage local d'un message tranféré a échoué. Le message sera transféré à nouveau lors de la prochaine vérification du courrier"
+
+; Used by M2 POP backend when storing a message fails
+67597="Opera a essayé de ramener le message %d (UIDL %s) du serveur POP3, mais n'a pas pu le stocker sur votre machine"
+
+; Generic message when a M2 backend fails to connect to its server
+67598="Impossible de se connecter au serveur"
+
+; M2 SMTP error message
+67599="Message envoyé, mais impossible de le supprimer de la boite d'envoi"
+67600="L'envoi de l'e-mail a échoué. Le serveur SMTP n'est peut-être pas configuré correctement ?E-mail mis en attente."
+67601="Service SMTP non disponible"
+67602="Erreur interne"
+67603="Erreur temporaire du serveur"
+67604="Erreur du serveur"
+67605="Erreur de syntaxe du destinataire"
+67606="Destinataire non disponible"
+67607="Destinataire non local"
+67608="Pas de serveur défini"
+67609="Erreur SMTP"
+67610="Erreur de destinataire"
+67611="Erreur d'authentification SMTP"
+67612="TLS non supporté par le serveur"
+67613="Authentification SMTP non supportée par le serveur"
+67614="Erreur SMTP non définie"
+
+; Used when M2 for some reason isn't able to flush a message to disk
+67615="L'enregistrement a échoué, peut être à cause d'un fichier corrompu ou d'un anti-virus (%i)"
+
+; String used in customize toolbar box
+68124="Document"
+68125="Images"
+68126="Total "
+68127="Vitesse"
+68128="Ecoulé"
+68129="Progression"
+68130="Général"
+68131="Horloge"
+68132="Identifier comme"
+
+; Imported bookmarks are stored in this folder
+68133="Signets Netscape"
+68134="Favoris d'Internet Explorer"
+68135="Signets KDE1"
+68136="Signets Konqueror"
+
+; String to be used in preference font list for UI fonts
+69221="Interface des menus"
+69222="Interface des barres d'outils"
+69223="Interface des dialogues"
+69224="Interface des panneaux"
+
+; String to be used in preference font list
+69225="Interface de la composition d'email"
+
+; String to be used in preference font list to identify a system default
+; font
+69226="(défaut)"
+
+; When a SMTP server drops the connection when MAIL FROM is sent, it usually
+; is because needed authentication isn't fulfilled.
+69229="Le serveur a abandonné la connexion. Une identification est peut être nécessaire ?"
+
+; String that is displated on about page when java is installed
+69230="Librairie Java Runtime installée"
+
+; Version of Qt library that Opera uses. Shown on About page
+69231="Bibliothèque Qt"
+
+; Text to be used on the menubars. Some languages need a separate string
+; here
+69240="En arrière"
+
+; Used when saving a printer file to disk (from a filedialog box)
+69243="Fichiers Postscript (*.ps)|*.zip|Tous les fichiers (*.*)|*.*|"
+
+; Label in the displayed header of a news/mail message
+69244="Organisation"
+69245="Forums"
+69246="Suivi sur"
+69247="Répondre à"
+69248="Réexpédié de"
+
+; Title string of the HTML text that displays certificate data
+69249="Informations sur le certificat"
+
+; Header string for the detailed listing of certificate data
+69250="Détails"
+
+; DSA Private Key key list item
+69251="Clé privée (X)"
+
+; DSA Public Key list item
+69252="Clé publique (Y)"
+
+; Component P of DSA key
+69253="Composant RSA P"
+
+; Component Q of DSA key
+69254="Composant RSA Q"
+
+; Component G of DSA key
+69255="Composant RSA G"
+
+; Diffie Hellman Private Key component
+69256="Clé privée DH"
+
+; Diffie Hellman Public Key Component
+69257="Clé publique DH"
+
+; Diffie Hellman Modulus Key component
+69258="Module DH"
+
+; Diffie Hellman Generator Key component
+69259="Générateur DH"
+
+; Add characters here that can be used as fallback shortcuts (eg: of the
+; kind "File (A)"). An empty string will disable fallback shortcuts.
+69260=""
+
+67544="Télécharger une configuration de la barre d'outils"
+67545="Télécharge une configuration de la barre d'outils..."
+67546="Appliquer la configuration de la barre d'outils"
+67547="Voulez-vous continuer à utiliser cette barre d'outils ?"
+67548="Télécharger une configuration des menus d'Opera"
+67549="Télécharge une configuration des menus d'Opera..."
+67550="Appliquer la configuration des menus"
+67551="Voulez-vous continuer à utiliser cette configuration des menus ?"
+67552="Télécharger une configuration souris"
+67553="Télécharge une configuration souris..."
+67554="Appliquer une configuration souris"
+67555="Voulez-vous continuer à utiliser cette configuration de souris ?"
+67556="Télécharger une configuration clavier"
+67557="Télécharge une configuration clavier..."
+67558="Appliquer une configuration clavier"
+67559="Voulez-vous continuer à utiliser cette configuration clavier ?"
+67560="Copie de"
+67564="Etes-vous sûr de faire confiance à cet émetteur ?"
+; Open file dialog
+67565="Fichier de signets Opera (*.adr)|*.adr|"
+67566="HTML / Fichiers de signets Netscape (*.htm, *.html)|*.htm;*.html|"
+67567="Fichiers de signets Konqueror (*.xml)|*.xml|"
+
+; InputAction treeview header
+67576="Actions"
+67577="Contexte d'entrée et raccourcis"
+
+67578="Configuration clavier"
+67579="Configuration de la souris"
+67580="Configuration de la barre d'outils"
+67581="Configuration des menus"
+67582="Habillages"
+; Fonts and colors preferences
+67583="Type"
+67584="Police"
+
+; Cache preferences
+67585="Automatique"
+
+; string appended to setupfilename if this is modified, in preferences
+; dialog
+67586="(Modifié)"
+
+; Info panel
+67616="- sans titre -"
+67617="URL de la page principale :"
+67618="Encodage du serveur (utilisé par Opera) :"
+67619="Type MIME du serveur :"
+67620="Taille de la page principale"
+67621="Nombre d'éléments dans la page :"
+67622="Taille des éléments dans la page :"
+67623="Fichier de cache local :"
+67624="- pas de fichier de cache -"
+67625="Sécurité"
+67626="Sommaire :"
+67627="- pas sécurisé -"
+67628="Plus d'informations"
+67629="Cadres"
+67630="Cadre :"
+67631="Cadres intégrés"
+67632="ICadre :"
+
+67675="Avance Rapide"
+67679="Enregistrer sous"
+67680="Sélectionner le fichier de session"
+67681="Fenêtre"
+67682="Ecrire ici la nouvelle note"
+67683="Attacher les fichiers"
+67685="Version"
+67686="Cryptage"
+67687="Léger"
+67688="Normal"
+67689="Gras"
+67690="Démarrer avec une page blanche"
+67691="Vous êtes sur le point d'ouvrir %d contacts\n\nContinuer ?"
+; History and cache preferences
+67692="Toutes les %d minutes"
+67693="Toutes les %d heures"
+67694="Toutes les heures"
+67695="Chaque semaine"
+
+67696="Vous êtes sur le point d'ouvrir %d signets\n\nContinuer ?"
+67697="Votre premier compte a été crée\n\nLe client révolutionnaire d'Opera pour les e-mails et les forums\ndiffère beaucoup des programmes ordinaires de courrier,\net nous vous conseillons vivement de lire\nnotre tutorial.\n\nDésirez vous le lire maintenant ?"
+67698="Utiliser M2"
+67699="Pop-up en bas de page"
+67700="Retenir la dernière taille"
+67701="Toujours agrandir"
+67702="Toujours en cascade"
+; Checkbox string in filetype dialog box
+69261="Passer l'adresse Web directement à l'application"
+
+; Used in preference dialog box (window page)
+69262="Ouvrir la nouvelle page à côté de la page active"
+
+; Info panel. When server does not supply an encoding
+69263="- non fourni -"
+
+; Checkbox in download dialog for saving action
+69266="Mémoriser le choix et ne plus afficher"
+
+; Certificate verification servername mismatch
+69267="Le nom du serveur "%1" ne correspond pas au nom du certificat "%2". Quelqu'un est peut être en train de vous espionner."
+
+; Certificate not yet valid
+69268="Le certificat pour "%1" n'est pas valide avant %2. L'horloge sur votre ordinateur est-elle correcte ?"
+
+; The certificate expired on the given date
+69269="Ce certificat pour "%1" a expiré %2. Le Webmaster devrait le mettre à jour "
+
+; Certificate warning
+69270="Vous avez demandé à être alerté sur les certificats de "%1""
+
+; Unknown certificate authority
+69271="Le certificat pour "%1" est signé par une autorité de certificat inconnue  "%2". Impossible de vérifier que ce certificat est valide"
+
+; Unknown root certificate authority
+69272="Le certificat racine de "%1" n'est pas connu d'Opera. Opera ne peut pas décider si le certificat est digne de confiance."
+
+69300="Le serveur a abandonné la connexion pendant l'identification"
+69301="Nouvelle version d'Opera disponible"
+69302="Une nouvelle version d'Opera est disponible.\nVoulez-vous la télécharger maintenant ?"
+69303="Fichiers MP3 |*.mp3|"
+; Typically telnet, tn3270, news, mailto
+69304="Protocole"
+
+69305="Programme"
+69308="Ajoute un nouveau bouton avec l'action\n\n%s\n\nEtes-vous sûr ?"
+69309="Nouveau bouton"
+69332="Utilisant le client e-mail révolutionnaire d'Opera : http://www.opera.com/m2/"
+; Status message when M2 is emptying trash
+69333="Vide la corbeille"
+
+; Button text in startup dialog
+69334="Acheter Opera"
+
+; Message string shown in dialog box before auto reset in kiosk mode
+69347="Opera sera réinitialisé dans %d secondes pour cause d'inactivité"
+69348="Opera sera réinitialisé dans 1 seconde pour cause d'inactivité"
+
+; Text for button in toolbar that can clear contents if edit field
+69349="Effacer"
+
+; Message string used in a dialog box when user wants do do something that
+; requires online mode (eg. fetching mail)
+69352="Le mode hors-connexion est activé.\n\n Voulez-vous passer en mode connecté ?"
+
+; Used in a popup error dialog when the certificate authority os unknown for
+; the presented certificate.
+69353="Autorité de certificat inconnue pour le certificat présenté"
+
+; Used in a popup error dialog when handshake faild due to export
+; restrictions.
+69354="Le contact a échoué à cause de restrictions d'envoi"
+
+; Used in a popup warning dialog when handshake faild because the server
+; does not want to accept the enabled SSL/TLS protocol versions.
+69355="Le contact a échoué parce que le serveur n'accepte pas les versions SSL/TLS activées du protocole"
+
+; Used in a popup error dialog when handshake failed because the server
+; requires encryption methods more secure than those enabled.
+69356="Le contact a échoué parce que le serveur demande une méthode de cryptage plus sûre que celles activées"
+
+; Used in a popup warning dialog when the server wants to negotiate a
+; connection that does not encrypt the data, but only verifies integrity.
+69357="Le serveur veux négocier une connexion qui n'encrypte *pas* les données, mais vérifie seulement leur intégrité.Si vous continuez, les données pourront être lues par n'importe qui, mais pas modifiées."
+
+; Used in preference dialog box to control page redrawing
+69358="Actualiser maintenant"
+69359="Actualiser après 1 seconde"
+69360="Actualiser Après %d secondes"
+69361="Actualiser à la fin du chargement"
+
+; Label in the preference dialog box for page redrawing feature
+69362="Chargement"
+
+; Used in mail filter dialog
+69369="Messages de %s"
+
+; Used in mail filter dialog box
+69370="Cacher les messages aux autres vues"
+
+; View title in mail title dialog box
+69371="Affichage"
+
+; Add filter dialog box
+69373="Filtrer les messages suivants dans cette vue"
+69374="Messages de l'expéditeur"
+69375="Messages où le sujet contient"
+
+; Account properties dialog box
+69376="Catégorie du compte"
+
+; Message in reindex mail dialog box
+69378="Opera doit indexer à nouveau certains de vos e-mails. Si vous annulez maintenant, Opera continuera la prochaine fois"
+
+; Used in pref. dialog box
+69379="Acheter Opera et supprimer la publicité"
+
+; Used in pref box (multimedia)
+69380="Actualiser maintenant"
+
+69396="Ecrire une réponse rapide à %s ici"
+69397="correspond à l'expression rationnelle"
+69398="Ce filtre et ajoute la règle"
+; Used in javascript option dialog box
+69399="Permettre le changement de taille des fenêtres"
+69400="Permettre le déplacement des fenêtres"
+69401="Permettre l'ouverture de fenêtres"
+69402="Permettre la fermeture de fenêtres"
+
+; Used in javascript option dialog
+69403="Permettre le changement du champ de statut"
+
+; Opens javascript options dialog box
+69404="Options JavaScript..."
+
+; Label for window handling options
+69405="Gestion des fenêtres"
+
+; Option string for popup window management
+69406="Toujours agrandir, y compris les pop-ups"
+
+; Window handling mode string
+69407="Pages dans une seule fenêtre Opera"
+
+; Window handling mode string (SDI mode)
+69408="Préférer des fenêtres séparées"
+
+; Message string used on startup in we cannot load plug-ins
+69410="Opera ne peut charger la bibliothèque des plug-ins 'libnpp.so'.Les plug-ins ne pourront donc pas fonctionner.\nVérifiez l'installation.\n"
+
+69416="Préférences de Netscape (prefs.js):"
+69417="Fichier mbox générique (*.mb*)"
+; Fallback text for plug-in description when plug-in is missing this
+; resource
+69418="Pas de description"
+
+; Fallback text for plug-in name when plug-in is missing this resource
+69419="Pas de nom"
+
+; Message shown when downloaded skin can not be used
+69421="Impossible de poursuivre. Veuillez choisir un habillage conçu pour votre version d'Opera."
+
+69431="Recherche les liens"
+69432="Recherche le texte"
+69433="(Pas de correspondance)"
+; Used when a newsgroup name is not sent in UTF-8
+69438="Certains noms de forums sur ce serveur ne sont pas encodés de façon standard. Ils seront affichés selon l'encodage de sortie de ce compte"
+
+; RSS folder
+69440="Articles RSS"
+
+; Used for OE mail import, parameters are identity, account name and mailbox
+69441="%s [%s] (Importés)/%s"
+
+; 
+69442="(%s) -l'import a échoué, [err=%i]\n Id:%s\n De:%s"
+69443="Déja importé"
+69444="Conversion.Veuillez attendre..."
+69445="AVERTISSEMENT d'import OE"
+69446="(%s) -boite vide sautée"
+69447="Distribution d'articles RSS"
+69448="Dossier"
+
+69449="Salon"
+69450="Utilisateurs"
+69451="Sujet"
+; 
+69454="Le surnom %s est déjà utilisé. Entrez un nouveau surnom."
+
+69455="Le salon %s est protégé par un mot de passe. Entrer le mot de passe."
+69472="Tout mettre en mosaïque automatiquement"
+69473="%d / %d"
+69474="%d / %d  (%d secondes restantes)"
+69475="%d / %d  (%d minutes restantes)"
+69522="%s\n(cliquer ici pour voir les messages non lus)"
+69524="%s veut vous envoyer le fichier suivant. Désirez vous le recevoir ?\n\nFichier : %s\nTaille : %s\n\nNote: Vous ne devriez pas accepter de fichiers provenant d'inconnus ou dont vous ignorez le contenu."
+69525="Accepter le fichier"
+69530="Courrier (%d)"
+69531="Démarrage"
+69532="Transfert du fichier '%s' terminé\n(cliquer ici pour le menu)"
+69533="Info"
+69536="Invitation pour le salon"
+69537="%s vous invite à rejoindre le salon %s\nAcceptez vous l'invitation ?"
+69539="Commence à parler avec %s sur"
+69540="Contact inconnu"
+69541="%d utilisateurs, le sujet est :%s"
+69542="Rejoint le salon..."
+69543="Envoyer le fichier"
+69544="Commence a discuter dans %s sur"
+69545="Déconnecté de la discussion"
+69546="%s vous a viré du salon de discussion (Raison : %s)"
+69547="Vous avez quitté le salon"
+69548="%s a rejoint %s"
+69549="%s s'est déconnecté"
+69550=":%s a été viré de %s par %s (Raison : %s)"
+69551="%s a quitté %s"
+69552="Le sujet du salon est : %s"
+69553="%s change le sujet du salon en : %s"
+69554="La modération du salon est activée"
+69555="%s a défini le mode +m : le salon est maintenant modéré"
+69556="%s a défini le mode -m : le salon n'est plus modéré"
+69557="%s a défini le mode +1 : la limite d'utilisateurs est maintenant %s"
+69558="%s a défini le mode -1 : la limite d'utilisateur est annulée"
+69559="%s a défini le mode +t : le sujet peut seulement être modifié par les opérateurs"
+69560="%s a défini le mode -t: le sujet peut être modifié par tout le monde"
+69561="%a a défini le mode +k : le salon est maintenant protégé par mot de passe"
+69562="%a a défini le mode -k : le salon n'est plus protégé par mot de passe"
+69563="%s a défini le mode +s : le salon est maintenant secret"
+69564="%s a défini le mode -s : le salon n'est plus secret"
+69565="%s a défini le mode %s"
+69566="%s a défini le mode utilisateur %s"
+69567="%s change son surnom en %s"
+69568="%s a défini le mode utilisateur +o: %s est maintenant un opérateur du salon"
+69569="%s a défini le mode utilisateur -o: %s n'est plus un opérateur du salon"
+69570="%s a défini le mode utilisateur +v: %s peut maintenant parler si le salon est modéré"
+69571="%s a défini le mode utilisateur -v: %s ne peut plus parler si le salon est modéré"
+69572="%s est %s@%s (%s)"
+69573="%s est dans les salons suivants : %s"
+69574="%s utilise le serveur %s (%s)"
+69575="%s est un opérateur IRC"
+69576="%s est absent (%s)"
+69577="%s est enregistré en tant que %s"
+69578="%u heure"
+69579="%u heures"
+69580="%u minute"
+69581="%u minutes"
+69582="%u seconde"
+69583="%u secondes"
+69584=" et "
+69585="%s inscrit à %s, et a été inactif %s"
+69586="%s inscrit à %s"
+69676="Lycos"
+69677="SearchBoss"
+69678="Amazon"
+69679="Ebay"
+69680="Download.com"
+69723="Pas de nouveau message : %s"
+; Message box text shown when hotlists data has been imported
+69868="%d entrées ont été importées"
+69869="Une entrée a été importée"
+
+; Used in File Handler Edit Dialog
+69873="Demander avant de démarrer le programme"
+
+; Short string in dialog header seaction
+69874="Demander"
+
+; File handler dialog box string
+69875="Fichiers"
+69876="Dossiers"
+
+; Dialog box string shown before opening a folder
+69877="Ouvrir le dossier"
+
+; Dialog box string shown before opening a file
+69878="Ouvrir le fichier"
+
+; String in dialog <open file><filename>WITH<application>
+69879="avec"
+
+; Text on buttn that opens file handler dialog box
+69880="Gestionnaires pour les fichiers enregistrés..."
+
+69881="Importer d'Apple Mail"
+69883="Popularité"
+69892="Lister les salons"
+69893="Nouveau salon"
+69894="Changer de surnom"
+69895="Envoyer l'e-mail"
+69897="Vérifier/Envoyer"
+69914="Espacement fixe"
+69915="Espacement dynamique"
+69916="Répartiteur"
+69920="Articles RSS"
+; Message box string that is shown if mailto address contains command
+; character and we use an external e-mail client
+69937="L'adresse e-mail contient des caractères de commande. Voulez-vous exécuter la commande ?"
+
+69940="Discussion (IRC)"
+69941="%u salons"
+; This warning will be displayed for anonymous Diffie Hellman secure SSL
+; connections.
+69945="Le serveur demande une connexion ANONYME, il n'est donc pas possible de vérifier l'identité du serveur.Est-ce un service qui est normalement anonyme, et souhaitez-vous lui envoyer des données ? "
+
+; This warning is displayed if a low level encryption (level 1) is selected
+; by the server.
+69946="Le serveur possède un niveau de cryptage très faible.Si vous avez désactivé les cryptages plus puissants vous devriez les réactiver, sinon le webmaster devrait mettre à jour le serveur.Désirez-vous continuer ?"
+
+; Title of low encryption level dialog
+69947="Niveau de cryptage très faible"
+
+69998="Panneaux"
+
+; Dialog title and components
+; Used in most dialogs
+1="OK"
+10362="OK"
+2="Annuler"
+10358="Annuler"
+
+; Cookie properties
+11005="&Nom"
+11007="Do&maine"
+11009="&Chemin"
+11011="C&réé"
+11013="&Dernière utilisation"
+11015="E&xpire"
+11018="&Activé"
+11019="Non re&tenu"
+11020="&Valeur"
+10094="Aide"
+11022="Sécurisé"
+
+; Opera as default browser
+10961="Veuillez sélectionner les types de fichiers et les protocoles à associer à Opera."
+10962="Types de fichiers"
+11050="*.htm"
+10963="*.html"
+12055="*.xml"
+11250="*.url"
+10966="*.bmp"
+10965="*.gif"
+10964="*.jpeg"
+11051="*.jpg"
+11258="*.png"
+10967="*.xbm"
+10968="Protocoles"
+10969="http"
+10970="https"
+10971="news"
+10972="ftp"
+10973="gopher"
+10974="wais"
+25177="Vérifier au démarrage si Opera est le navigateur par défaut"
+25241="Tout sélectionner"
+
+; Print
+10103="Impression de la page..."
+
+; Password required
+14499="Authentification"
+17211="Adresse"
+11140="Message"
+10178="Nom d'utilisateur"
+10179="Mot de Passe"
+
+; Send form without encryption?
+11151="&Ne plus afficher"
+14100="Voulez-vous envoyer ce formulaire non crypté sur Internet ?"
+14500="Avertissement d'envoi"
+
+; Use Opera
+25176="Utiliser Opera comme navigateur par défaut"
+25174="Opera n'est pas défini comme votre navigateur par défaut.\n\nVoulez-vous le définir comme navigateur par défaut pour visualiser vos pages Web ?"
+25175="&Ne plus afficher"
+6="Oui"
+7="Non"
+
+; Validate source
+25268="Valider le code source"
+25267="Voulez-vous envoyer cette page à un validateur en ligne de code source ?"
+
+; Exit Opera?
+25150="Enregi&strer les fenêtres et les afficher la prochaine fois"
+14101="Actions avant de quitter"
+11150="&Ne plus afficher"
+
+; Opera
+10571="Courrier"
+
+; Opera startup
+10918="Démarrage d'Opera"
+10701="La session précédente d'Opera a été interrompue."
+14124="&Reprendre là où j'étais la dernière fois"
+14125="Démarr&er comme d'habitude"
+10649="Démarrer &sans fenêtre"
+14126="&Avancé..."
+
+; Advanced startup settings
+14127="Paramètres de démarrage avancés"
+10652="Réduire le nombre de connexions &simultanées"
+10651="Réduire la taille du ca&che réseau"
+10415="DNS Synchrone"
+
+; Progress
+10770="..."
+
+; Password
+10779="Veuillez entrer votre mot de passe de sécurité"
+10704="Votre mot de passe doit comporter 6 caractères minimum, dont au moins un chiffre et une lettre. Sinon, vous devrez entrer un nouveau mot de passe"
+
+; Certificate
+10766="Nom du certificat"
+10768="Emetteur"
+10758="Autoriser les connexions aux sites utilisant ce certificat"
+10759="M'avertir avant d'utiliser ce certificat"
+10775="Accepter"
+10776="Installer"
+
+; Performance
+10214="Performances"
+10213="Max. à un serveur"
+10219="Max. total de connexions"
+10434="&Taille du cache réseau (ko)"
+
+; Personal information
+11623="Informations personnelles"
+10938="Les informations peuvent être collées dans les formulaires avec le bouton droit."
+10874="Prénom"
+10877="Nom"
+10878="Adresse"
+10881="Ville"
+10882="Région/Etat"
+10884="Code postal"
+10886="Pays"
+10888="Téléphone"
+10890="Fax/Portable"
+10892="E-mail"
+10894="Page d'accueil"
+10896="Spécial 1"
+10898="Spécial 2"
+10900="Spécial 3"
+
+; Fast bookmark access
+10949="Veuillez entrer le surnom du signet"
+
+; Server name completion
+11029="Rechercher une machine sur le réseau local"
+11030="Essayer le complètement de nom, en utilisant"
+11031="Préfixes"
+11032="Suffixes"
+14118="Vous pouvez entrer une liste de préfixes séparés par des virgules, comme "www,web",  ou de suffixes comme "com,org,net"."
+
+; Links in frame
+11260="&Trier"
+11261="&Adresse"
+11263="&Cycle première lettre"
+11292="Ouvrir"
+11264="Co&pier tout »"
+11259="&Rafraîchir"
+11293="Fermer"
+
+; Import e-mail
+11420="Importer de"
+11426="Chemin"
+11427="Choisir"
+11439="Importer dans"
+11433="Importer dans un nouveau &compte"
+11432="Importe&r dans le compte"
+11424="Importer les réglages"
+11430="Importer des &e-mails"
+11431="Im&porter les contacts"
+11421="OK"
+
+; JavaScript execution error
+14061="Un script sur cette page n'a pas pu être exécuté. Ceci peut empêcher l'affichage ou le fonctionnement correct de la page."
+14117="Erreur JavaScript"
+14066="URL"
+14065="Erreur"
+14060="&Ne plus afficher"
+
+; Cookie server filters
+11453="&Enlever"
+11454="Re&fuser"
+11455="&Ajouter"
+
+; Cookie security problem
+14297="Accepter"
+14298="Refuser"
+14294="Adresse"
+14293="Cookie"
+11297="Un chemin dans un cookie ne correspond pas à l'adresse de la page."
+11298="Vous pouvez demander au Webmaster de ce site de définir des cookies légaux."
+11299="Acceptez-vous ce cookie ? "
+14300="Ne plus afficher ce dialogue"
+14503="Laisser [Accepter] et [Refuser] s'applique pour tout le domaine"
+
+; Update language file
+25302="Fichier de langue."
+25303="Votre fichier de langue doit être mis à jour."
+25304="Transférer un nouveau fichier de langue."
+25305="Redémarrer Opera en langue anglaise."
+25306="Utiliser mon fichier de langue existant."
+14501="N&e plus afficher"
+
+; Windows
+14355="&Liste de fenêtres"
+14350="A&ctiver"
+14351="&Recharger"
+14352="Min&imiser"
+14353="Fer&mer"
+
+; Automatic window reload
+14509="Activer"
+14510="Options"
+14511="Recharger toutes les"
+14518="minutes"
+14513="secondes"
+14515="Préréglages »"
+14516="Recharger uniquement si la page a expiré"
+
+; Image properties
+16055="Image"
+16056="Dimensions"
+16057="Profondeur"
+16058="Adresse"
+16059="Type d'image"
+16065="Taille du fichier"
+
+; File download
+17010="Transfert de fichier"
+17020="Fichier"
+17021="Serveur"
+17014="<B>Que voulez-vous faire ?"
+17012="&Enregistrer le fichier"
+17015="Toujours demander avant de transférer des fichiers de ce type"
+17016="&Avancé..."
+
+; Delete private data
+25155="Si vous continuez, cela fermera toutes les fenêtres, arrêtera tous les transferts en cours et effectuera les actions indiquées ci-dessous."
+25166="Cookies"
+25156="Supprimer les cookies temporaires"
+25159="Supprimer tous les cookies"
+25167="Cache"
+25157="Supprimer les pages et données protégées par mot de passe."
+25164="Effacer tout le cache"
+25168="Historique"
+25160="Effacer l'historique des pages visitées"
+25161="Effacer l'historique des adresses entrées"
+25163="Effacer l'historique des liens visités"
+25165="Effacer l'historique des fichiers transférés"
+25154="Mots de passe"
+25162="Effacer tous les mots de passe des comptes e-mail"
+25169="Effacer tous les mots de passe de la baguette"
+
+; Select currency
+25262="&De"
+25264="&A"
+
+; Panel properties
+25311="&Panneau"
+25312="&Titre"
+25314="A&dresse"
+
+; Item properties
+10942="&Titre"
+10943="Surnom"
+10944="Adresse"
+10945="Description"
+10820="Dossier parent"
+10824="Créé"
+10825="Visité"
+
+; Contact folder properties
+10941="&Nom"
+14102="&Dernier envoi"
+
+; Bookmarks Properties
+25100="Nom de la &Liste:"
+25102="Fichier"
+25103="Nom"
+25105="&Taille"
+25107="&Plus »"
+25108="Unicode"
+25109="&Contenus"
+
+; Go to page
+10181="Entrez une adresse de page Web ou choisissez-en une dans la liste."
+
+; Set home page
+10455="Page d'accueil"
+25371="Afficher ma page d'accueil au démarrage"
+
+; Save windows
+10661="Enregistrer la configuration des fenêtres"
+10199="Choisir"
+10665="Afficher ces fenêtres à chaque démarrage d'Opera"
+
+; Confirm file upload
+11108="Les fichiers suivants on été sélectionnés, sans votre intervention, afin d'être envoyés vers un autre ordinateur. Voulez-vous envoyer ces fichiers ?"
+11109="Destination"
+11110="Adresse du formulaire"
+
+; Print options
+10208="Options"
+11080="Imprimer l'arrière-plan de la page"
+14212="Imprimer les en-têtes et les pieds de page"
+11115="Imprimer à l'échelle"
+10257="Marges de la page(en cm)"
+10268="Haut"
+10266="Gauche"
+10267="Droite"
+10269="Bas"
+
+; Print preview
+14275="&Prévisualise et imprime"
+14272="Feuille identique à l'é&cran"
+14273="Un &cadre par feuille"
+14274="Cadre acti&f"
+
+; Register Opera
+11193="Veuillez entrer les informations d'enregistrement que vous avez reçues en achetant Opera."
+11194="Nom"
+11195="Organisation"
+11196="N°d'enregistrement"
+11200="Informations personnelles"
+
+; Preferences
+10101="Appliquer"
+
+; Advertising
+16601="Publicité"
+16602="Pays"
+16604="Année de naissance"
+16606="Sexe"
+16608="Situation de famille"
+16610="Niveau d'études"
+16616="Revenus"
+16612="Catégories préférées"
+
+; Privacy
+11600="Vie privée"
+10678="Informer de quel site vous venez"
+10647="Activer la redirection automatique"
+14498="Cookies pour tracer les pages protégées ?"
+10677="Cookies"
+25394="Activer les cookies"
+11456="Gérer les cookies..."
+11280="Supprimer les nouveaux cookies en quittant Opera"
+14299="M'avertir des domaines incorrects de cookie"
+28507="Accepter les cookies contenant des chemins incorrects"
+14305="M'avertir des chemins incorrects de cookie"
+
+; Accessibility
+11315="Souris"
+11317="Activer les raccourcis souris"
+11329="Activer le menu Interactif"
+11318="Mouvements précédent et suivant pour les gauchers"
+10096="Souligner la liste des éléments pointés"
+11316="Clavier"
+13039="Activer l'auto-complètement"
+10788="Inverser l'élément texte actif"
+10954="S&tyle menu pour les signets"
+10955="Menus compatibles l&ecteur d'écran"
+
+; Windows
+11324="Succession"
+
+; Accessibility
+10452="Conseils"
+10407="Montrer les co&nseils pour les boutons"
+10406="Montrer les conseils pour les &liens"
+10947="&Montrer les conseils pour les titres de l'élément"
+
+; Plug-ins
+11601="Plug-ins"
+
+; Programs
+25405="Clients Opera"
+25406="Activer le courrier et la discussion"
+25143="Chemins"
+10382="Répertoire d'Opera"
+25144="Répertoire de téléchargement"
+25146="Choisir"
+10359="Visualisation du code source"
+25249="Utiliser Opera"
+25250="Utiliser un programme externe"
+10360="Choisir"
+11116="Programmes"
+10252="Programme Telnet"
+10253="Choisir"
+10958="Programme TN3270"
+10960="Choisir"
+
+; Fonts and colors
+11055="Mes Polices et couleurs"
+10093="Choisir"
+12091="Taille minimum de la police (pixels)"
+11049="Couleur de l'arrière-plan"
+10484="Choisir"
+11728="Style du lien"
+10304="Mon style de lien..."
+25248="International"
+25247="Polices internationales..."
+
+; File type
+14128="Type de fichier"
+10129="Type MIME"
+10207="Extensions des fichiers"
+10706="Action"
+10134="Afficher la boîte de dialogue de transfert"
+10128="Ouvrir avec Opera"
+10127="Enregistrer sur le disque"
+14129="Ouvrir lorsque le transfert est terminé"
+14130="Ecrire directement dans"
+14132="Choisir"
+10546="Ouvrir avec l'application par défaut"
+10133="Ouvrir avec une autre application"
+10717="Utiliser le plug-in"
+
+; Network
+11606="Identification du navigateur"
+12066="Adresses Web Internationales"
+12065="Encoder toutes les adresses avec UTF-8"
+11608="Serveurs proxy"
+10391="Serveurs proxy..."
+11609="Complètement de noms de serveurs"
+11035="Complètement de noms de serveurs..."
+11302="Erreurs du serveur"
+10447="Toujours afficher les erreurs du serveur"
+10448="Toujours afficher la &boîte de dialogue"
+10446="Afficher la &réponse du serveur quand c'est approprié"
+11607="FTP"
+25236="Chemins FTP relatifs au répertoire de l'utilisateur"
+11094="Chemins FTP absolus"
+
+; Link style
+10282="Non visité"
+10098="Souligné"
+10099="Barré"
+10097="Couleur"
+10195="Choisir"
+10281="Visité"
+10283="Souligné"
+10284="Barré"
+10288="Couleur"
+10289="Choisir"
+10499="Liens visités conservés"
+10500="Jours"
+10502="Heures"
+10480="Contour"
+10481="Toujours des contours sur les images liens"
+10703="Toujours des contours sur les liens"
+
+; International fonts
+25251="Polices par défaut"
+25252="Choisir la police à utiliser quand le texte ne s'affiche pas correctement."
+25253="Système d'écriture"
+25255="Police Normale"
+25258="Police Monospace"
+
+; Browser look
+11076="&Ensemble de boutons"
+10780="Toujours la bordu&re autour des boutons"
+10946="Toujours afficher des boutons &colorés"
+25238="Images d'habillage"
+17073="Image d'habillage de &premier plan"
+17074="Choisir"
+17072="Image d'habillage d'arr&ière-plan"
+17075="Choisir"
+10707="Polices et couleurs"
+11268="U&tiliser les valeurs par défaut du système"
+10691="Texte normal"
+10693="Texte inactif"
+10692="Texte de signets"
+10857="Arrière-plan"
+10694="Arrière-plan des boutons"
+10711="Progression"
+
+; Cache
+11611="Historique"
+10223="&Précédent et Suivant"
+11612="adresses"
+10261="Entrées"
+11613="adresses"
+25152="Effacer"
+10816="Visitées"
+11614="adresses"
+25151="Effacer"
+10172="Cache en RAM"
+10226="Activer le cache RAM automati&que"
+10699="Cache do&cuments"
+10175="Ko"
+10174="Cache ima&ges"
+10176="Ko"
+10329="Cache disque"
+11303="Ko"
+10339="Cache documents"
+10340="Cache images"
+10341="Autre cache"
+10342="Vider à la sortie"
+10343="Vider maintenant"
+10344="Vérification du serveur"
+10354="Documents"
+10345="Toujours"
+10346="Jamais"
+10347="Jours, heures, min."
+10355="Images"
+10363="Toujours"
+10364="Jamais"
+10365="Jours, heures, min."
+10356="Autre"
+10372="Toujours"
+10373="Jamais"
+10374="Jours, heures, min."
+10829="Vérifier la redirection"
+11091="Vérifier la redirection"
+
+; Proxy servers
+10171="Serveurs proxy"
+10301="HTTP"
+11305="Port"
+10840="HTTPS"
+11306="Port"
+10300="FTP"
+11307="Port"
+10299="Gopher"
+11308="Port"
+10302="WAIS"
+11309="Port"
+10303="Ne pas utiliser le proxy pour les adresses suivantes"
+11320="Utiliser la configuration automatique du proxy "
+
+; E-mail client
+11615="Client de courrier"
+13204="Utiliser le compte Opera"
+13208="Propriétés..."
+13209="Nouveau..."
+13206="Utiliser le client par défaut du système"
+13205="Utiliser un client de courrier spécifique"
+13211="Choisir"
+13213="&Remplacer les paramètres manquant par des espaces"
+
+; Toolbars
+14310="Barre d'outils"
+14325="Barre principale"
+14326="Menu d'out&ils"
+14327="Fe&nêtres"
+14328="Barre d'adres&se"
+10256="Afficher les boutons &de page"
+10243="A&fficher le bouton [Aller]"
+10244="Afficher le champ et le bouton de r&echerche"
+10245="Afficher le champ &zoom"
+10222="Afficher dans la barre d'adresse"
+14320="&Utiliser des boutons de même largeur"
+14333="Répartir la barre d'&outils sur plusieurs lignes"
+
+; File types
+11616="Gestion de types de fichiers"
+10789="Déterminer l'action par les types MIME"
+25148="Déterminer l'action par l'extension du fichier si le type MIME n'est pas fiable"
+10122="Nouveau..."
+10135="Supprimer"
+10465="Editer..."
+
+; Windows
+11624="Fenêtres"
+
+; Windows - OBSOLETE?
+25397="Ouvrir les &fenêtres dans l'espace de travail d'Opera"
+
+; Windows
+10463="Toujours agrandir les nouvelles pages"
+12045="Menu d'outils inclus dans &mosaïque et cascade"
+10102="Mosaïque à l'ouverture d'une nouvelle fenê&tre"
+10592="Fenêtre du navigateur"
+25372="Réutiliser la page existante"
+13040="Eviter le &clignotement"
+10828="Pop-ups"
+10590="Afficher les barres de défilement"
+10591="Afficher la barre d'adresse"
+10839="Afficher la taille de la fenêtre"
+12058="Menu principal"
+11036="Affic&her les commandes de Signets"
+12059="Largeur ma&ximum de menu"
+
+; Sounds
+11619="Sons"
+10603="Activer les sons du programme"
+25140="Choisir"
+25141="Effacer"
+10605="Test"
+
+; Multimedia
+10438="Images"
+10441="Afficher les images"
+10443="N'afficher que les images du cache"
+10439="N'afficher aucune image"
+10644="Animations GIF"
+25239="Types de média"
+10645="Activer les vidéos"
+10646="Activer le son dans les pages Web"
+14123="Activer Java"
+10719="Activer les Plug-ins"
+10721="Rechercher les Plug-ins..."
+14105="JavaScript"
+10720="Activer le JavaScript"
+11152="Rapporter les erreurs JavaScript"
+
+; Security
+10726="Certificats"
+10733="Personnel"
+10734="Autorités..."
+10735="Protocoles"
+10736="Activer SSL 2"
+10737="Activer SSL 3"
+10994="Activer TLS 1"
+10738="&Configurer SSL 2..."
+10739="Configur&er SSL 3 et TLS..."
+10749="Mot de Passe"
+10813="Demander le mot de passe"
+10753="A chaque fois que nécessaire"
+10752="Une fois par session"
+14490="Demander mot de passe après "
+14492="minutes"
+10750="Définir le mot de passe..."
+10740="Alertes"
+10744="Avant d'envoyer un formulaire sans connexion sécurisée"
+25269="Avant de valider une page"
+
+; Personal certificates
+10754="Certificats"
+11726="Importer..."
+11727="Exporter..."
+
+; SSL configuration
+10812="Choisir le code à autoriser pour"
+
+; Cookie security breach
+14108="Adresse"
+14109="Cookie"
+11407="Ne plus afficher"
+
+; The server wishes to send you a cookie
+14505="Cookie entrant"
+14114="Adresses"
+14502="Action"
+11265="Désactiver les cookies"
+11406="Afficher les commentaires"
+11266="Ne plus afficher"
+14115="Aide"
+
+; Language
+14222="Langue de l'interface utilisateur"
+14235="Langue"
+14229="Veuillez noter qu'Opera doit redémarrer pour changer la langue de l'interface utilisateur"
+14223="Pages web"
+14228="Langues préférées pour les pages Web"
+14224="Ajouter..."
+14225="Supprimer"
+14226="Haut"
+14227="Bas"
+16619="Encodage par défaut"
+16620="Type de codage pour les pages ne l'indiquant pas"
+16621="H&TML"
+
+; Accept language
+14233="Langue"
+14236="Choisir la langue pour le Web"
+14234="A définir"
+
+; PREFS_STARTEXIT
+10489="Démarrer"
+12042="Afficher la configuration sauvegardée des fenêtres"
+12044="Afficher ma page d'accueil"
+10461="Utiliser acti&ve"
+25400="Afficher le dialogue de démarrage"
+11296="Quitter"
+11294="Confirmer avant de quitter"
+11295="Fermer les connexions d'accès à distance en quittant"
+
+; Page style
+25237="Par défaut"
+10588="Zoom par défaut"
+12089="Mode de l'auteur par défaut"
+11603="Cadres"
+10658="Activer les cadres"
+11100="Activer les cadres intégrés"
+10762="Contour sur le cadre actif"
+11039="Mode de l'auteur"
+12070="Définition du style de la page "
+12071="Polices et couleurs de la page "
+12072="Définition de mon style"
+12073="Mes polices et couleurs"
+12074="Mon style de liens"
+12075="Tableau&x"
+25240="Mode utilisateur"
+12076="Définition du style de la page"
+12077="Police, couleurs de la page "
+12078="Définition de mon style"
+12079="Mes polices et couleurs"
+12080="Mon style de liens"
+12081="&Tableaux"
+11605="Définition de mon style"
+
+; Search
+17025="Recherche"
+17026="Sélectionnez le moteur de recherche par défaut pour les nouvelles fenêtres"
+17029="Nombre de résultats par page"
+9="Aide"
+
+; SPLASH
+25399="&Démarrage"
+25395="Fenêtres dans Oper&a"
+25396="Fenêtre&s sur le bureau"
+14496="&Ne pas me redemander"
+
+; TRANSWIN_CLIENT
+14138="Détails"
+10997="De"
+10999="à"
+11001="Taille"
+11003="Téléchargé"
+
+; Contact properties
+13301="Nom"
+
+; Net
+13305="Adresse(s) e-&mail"
+13307="Page d'accueil"
+
+; Home
+13311="Adresse postale"
+13315="Téléphone"
+13313="Fax"
+
+; Notes
+13309="Notes"
+
+; Security
+13317="Numéro de &sécurité de la carte Conax"
+
+; Send message to instant messaging address
+16333="Entrez une adresse de messagerie instantanée"
+
+; Instant messaging account
+16308="&Nom"
+16309="&E-mail"
+16310="&Surnom"
+16306="A &mon propos"
+
+19000="Imprimer"
+19001="Certificat"
+19002="Langues acceptées"
+19003="Options de démarrage avancées"
+19004="Application des préférences"
+19005="Le serveur souhaite vous envoyer un cookie"
+19006="Accès rapide aux signets"
+19007="Mot de passe"
+19008="Invite JavaScript"
+19009="Mot de passe requis"
+19010="Rechargement automatique des pages"
+19011="Supprimer les données privées"
+19012="Propriétés du contact"
+19013="Messagerie instantanée"
+19014="Domicile"
+19015="Général"
+19016="Notes"
+19017="Sécurité"
+19018="Confirmation de l'envoi de fichiers"
+19019="Cookie : problème de sécurité"
+19020="Cookie : brèche de sécurité"
+19021="Propriétés du cookie"
+19022="Opera comme navigateur par défaut"
+19023="Utiliser Opera"
+19024="Transfert du fichier"
+19025="Filtres de cookies"
+19026="Erreur d'exécution de JavaScript"
+19027="Quitter Opera ?"
+19028="Message d'erreur"
+19029="Aller à la page"
+19030="Propriétés de l'élément"
+19031="Propriétés du dossier de contacts"
+19032="Propriétés des signets"
+19033="Compte de messagerie instantanée"
+19034="Ajout d'un compte de messagerie instantanée"
+19035="Demande d'autorisation"
+19036="Requête d'autorisation"
+19037="Messagerie instantanée"
+19038="Entrez le mot de passe de votre messagerie instantanée"
+19041="Propriétés de l'image"
+19042="Importer à partir de"
+19043="Envoyer le formulaire sans cryptage ?"
+19044="Liens du cadre"
+19045="Opera"
+19046="Complètement de noms de serveur"
+19047="Type de fichier"
+19048="Propriétés du panneau"
+19049="Performances"
+19050="Certificats personnels"
+19051="Entrez votre code PIN"
+19052="Plug-ins"
+19053="Préférences"
+19054="Aperçu avant impression"
+19055="Mise en page"
+19056="Progression"
+19057="Serveurs proxy"
+19058="Enregistrement des fenêtres"
+19059="Enregistrement d'Opera"
+19060="Démarrage d'Opera"
+19061="Style des liens"
+19063="Choisir la monnaie"
+19064="Police internationale"
+19065="Mettre à jour le fichier de langue"
+19066="Valider le source"
+19067="Fenêtres"
+19068="Définir la page d'accueil"
+26500="Nom d'utilisateur"
+26501="Mot de passe"
+26502="Nom d'utilisateur et mot de passe"
+26503="Choisir un surnom"
+26504="Aide à la création d'un nouveau compte"
+26505="Nom significatif"
+26506="Organisation"
+26507="Adresse e-mail"
+26508="Nom d'utilisateur"
+26509="Mot de Passe"
+26510="Serveur entrant"
+26511="Serveur sortant"
+26512="Recherche de message"
+26513="Rejoindre le salon de discussion"
+26514="Menu d'outils"
+26515="Courrier"
+26516="Signets"
+26517="Contacts"
+26518="Discussion"
+26519="Historique"
+26520="Envoyer"
+26521="Joindre"
+26522="De"
+26523="A"
+26524="Cc"
+26525="Sujet"
+26526="Ecrire un message"
+26527="Vérifier le courrier"
+26528="Ecrire"
+26529="Répondre"
+26530="Répondre à tous"
+; Forward mail
+26531="Faire suivre"
+
+26532="Supprimer"
+26533="Réponse rapide"
+26534="Restaurer"
+26535="Pas du spam"
+26536="Lire"
+26537="Rejoindre le salon"
+26538="Quitter la discussion"
+26539="Changer de sujet"
+26540="Enregistrer le journal"
+26541="Envoyer"
+26542="Nouveau signet"
+26543="Nouveau dossier"
+26544="Affichage"
+26545="Nouveau contact"
+26546="Nouveau Dossier"
+26547="Affichage"
+26548="Surnom"
+26549="Choisir le réseau IRC ou entrer le nom du serveur"
+26550="Rechercher seulement dans le sujet"
+26551="Ajouter un contact"
+26552="Non lu"
+26553="Non lu caché"
+26554="Aujourd'hui"
+26555="Reçu"
+26556="Boîte d'envoi"
+26557="Envoyé"
+26558="Brouillons"
+26559="Spam"
+26560="Corbeille"
+26561="Important"
+26562="A faire"
+26563="Y répondre"
+26564="A rappeler"
+26565="Réunion"
+26566="Fête"
+26567="Amusant"
+26568="Précieux"
+26569="Musique"
+26570="Images"
+26571="Vidéo"
+26572="Documents"
+26573="Archives"
+26574="Le %:Date:, %f a écrit :"
+26575="%f a écrit :"
+26576="Ce %:Message-id: a été trouvé dans %g:"
+26577="Index"
+26578="Tous les messages"
+26579="Contacts actifs"
+26580="Liste de diffusion"
+26581="Recherches"
+26582="Forums"
+26583="Étiquettes"
+26584="Pièce(s) jointe(s)"
+26585="Fils de discussion actifs"
+26589="Salle"
+26590="Surnom"
+26591="A:"
+26592="Sujet"
+26593="Envoyé"
+26594="Étiquette"
+26595="De"
+26596="Sujet"
+26597="Envoyé"
+26598="Étiquette"
+26600="Statut du compte"
+26610="Prêt pour la connexion"
+26611="Connexion"
+26612="Connecté"
+26613="Authentification"
+26614="Récupère les en-têtes"
+26615="Récupère les messages"
+26616="Récupère les groupes"
+26617="Envoi des messages"
+28503="Mot de passe principal pour e-mail et baguette magique"
+67000="Général"
+67001="Serveurs"
+67002="Entrant"
+67006="Sortant"
+67014="Filtre"
+; Error dialog
+67015="Erreur générique"
+
+67016="Images"
+67017="Grand"
+67018="Petit"
+67019="Champs"
+67176="Télécharger le fichier"
+67177="S'inscrire"
+67178="Changer..."
+67179="Ouvrir avec"
+67180="Voulez-vous Ouvrir ou Sauvegarder le fichier ?"
+67181="Extensions"
+67182="Afficher le dialogue de transfert"
+; New folder button
+67183="Nouveau..."
+
+67184="Supprimer..."
+67185="Personnaliser les barres d'outils"
+67186="Déplacer les boutons sur toutes les barres d'outils"
+67187="Déplacer les champs sur toutes les barres d'outils"
+67188="Note sur l'effacement des messages"
+67189="Supprimer un message l'enlèvera de toutes les vues"
+67190="Le restaurer de la corbeille le ramènera dans sa vue d'origine."
+67191="Filtres"
+67192="Correspond"
+67193="Ajouter un filtre"
+67194="Supprimer le filtre"
+67195="Filtre interne"
+67196="Marquer les messages correspondants comme lus"
+67197="Filtrer les messages existants"
+67198="Rechercher"
+67199="Chercher dans"
+67200="Intervalle"
+67201="Rechercher"
+67202="Phrase entière"
+67203="Chaque mot"
+67204="Chercher dans"
+67205="Inclure les sous-vues"
+67206="Retenir le mot de passe"
+67207="Sélectionner le type de compte à créer"
+67208="Utiliser une connexion sécurisée (TLS)"
+67209="laisser les messages sur le serveur"
+67210="Choisir le programme source"
+67211="Importer les contacts"
+67212="Importer les messages"
+67213="Parcourir..."
+67214="Voulez vous que la baguette (gestionnaire de mots de passe) enregistre le mot de passe ?"
+67215="La prochaine fois, vous pourrez vous connecter avec Ctrl+Entrée ou en cliquant sur la baguette"
+67216="Jamais sur cette page"
+67217="Sélectionner le nom d'utilisateur à utiliser"
+67219="Entrer une adresse Web ou en choisir une dans la liste."
+67220="Filtres de message"
+67221="filtres associés"
+67222="Bienvenue dans Opera"
+67223="Continuer là où j'étais la dernière fois"
+67224="Poursuivre une session enregistrée"
+67225="Démarrer avec la page d'accueil"
+67226="Démarrer sans fenêtre"
+67227="Nom"
+67228="Autres adresses e-mail"
+67229="URL de l'image"
+67230="Icône"
+67231="Surnom"
+67232="URL"
+67323="Afficher dans le menu d'outils"
+67324="Nom du compte"
+67325="Nom complet"
+67326="Adresse e-mail"
+67327="Répondre à"
+67328="Serveurs NNTP"
+67329="Serveur"
+67330="Numéro du port"
+67331="Connexion sécurisée (TLS)"
+67332="Serveur SMTP sortant"
+67333="Marquer les messages déjà téléchargés comme lus"
+67334="Ramener le corps du message dans le chargement"
+67335="Garder une copie locale du corps du message"
+67336="Vérifier le courrier toutes les #minutes"
+67337="Inclure ce compte lors de la vérification manuelle"
+67338="Jouer un son s'il y a de nouveaux messages"
+67339="Chemin du dossier racine IMAP"
+67340="Formater automatiquement les messages sortants"
+67341="Mettre le courrier en attente (ne pas envoyer immédiatement)"
+67342="Signature"
+67343="Dossier courrier IMAP envoyé"
+67349="Ajouter aux contacts en envoyant le message"
+; Manage accounts
+67344="Nouveau..."
+
+; Manage bookmarks
+67345="Nouveau..."
+
+67346="Editer..."
+67347="Couper"
+67348="Coller"
+67491="Utiliser la page actuelle comme page d'accueil"
+67492="Revenir à la page d'accueil par défaut d'Opera"
+67493="Utiliser l'adresse entrée ici"
+67494="Adresse de la page d'accueil"
+67500="Ouvrir la console Javascript en cas d'erreur"
+; MDI/SDI switch
+67501="Ouvrir dans une nouvelle fenêtre"
+
+67502="Fichier d'habillage"
+67503="Activer les effets spéciaux"
+67505="Utiliser comme mot de passe principal pour le courrier et la baguette."
+67519="Importer"
+67541="Transferts"
+67542="Liens"
+67543="Fenêtres"
+; Used for outgoing properties in E-mail account properties dialog
+67562="Envoyer le courrier en attente après avoir vérifié le courrier."
+
+; Shown if a server message is sent to the authorization dialog in M2
+67563="Message du serveur"
+
+67568="Etes-vous sûr de vouloir terminer cette session d'Opera ?"
+67569="Pour cette page"
+67570="Pour tout le serveur"
+67571="Chercher un dosssier"
+67574="S'abonner aux forums"
+67575="Inscrire des dossiers IMAP"
+67587="Transferts actifs"
+67588="Vous avez actuellement des transferts en cours qui seront arrêtés si vous fermez Opera.\nEtes vous certain de vouloir quitter Opera ?"
+67684="Propriétés"
+; What to do when mid clicking outside a link. Currently only used on Linux
+68000="Sélectionner l'action associée au bouton du milieu"
+
+; currently only used on Linux
+68001="Coller le texte contenu dans le presse-papier"
+68002="Commencer le défilement"
+68003="Permettre le défilement horizontal"
+
+; What do to when mid clicking on a link.
+68004="Sélectionner l'action du clic sur le lien"
+
+68005="Ne pas ouvrir le lien"
+68006="Ouvrir"
+68007="Ouvrir dans une nouvelle page"
+68008="Ouvrir en arrière-plan"
+68009="Ouvrir dans une nouvelle fenêtre"
+68010="Ouvrir en arrière-plan"
+68011="Choisir l'habillage préféré et la taille d'icône"
+68012="Standard Opera"
+68013="Fenêtres classiques"
+68014="Mon habillage"
+68015="Choisir la configuration de barre d'outils"
+68016="Barre d'outils standard"
+68017="Barre d'outils simplifiée"
+68018="Mes barres d'outils personnalisées"
+68019="Plus d'habillages et de configurations sur my.opera.com"
+68020="Que voulez-vous faire du cookie ?"
+; Dialog box title.
+68021="Options du bouton du milieu"
+
+68022="Afficher"
+68023="Gestionnaire de certificats"
+68024="Autorités"
+68025="Mot de passe actuel"
+68026="Nouveau mot de passe"
+68027="Confirmation"
+68028="Obtenir le filtre du parent"
+68029="Ouvrir dans"
+68030="Transfert"
+68031="Signet"
+68032="Gérer les contacts"
+68033="Par défaut"
+68034="Gestionnaire de serveurs"
+68035="Noms d'utilisateur de la baguette"
+68036="Utiliser les réglages par défaut pour les cookies normaux"
+68037="Appliquer ces réglages pour tout le domaine"
+68038="Accepter les cookies du serveur/domaine"
+68039="Accepter les cookies des tierces parties du serveur/domaine"
+68040="Cookies"
+68041="Propriétés du serveur"
+68042="Gérer les cookies..."
+68043="Mots de passe baguette..."
+68044="Supprimer l'heure de visite des signets"
+68045="Sélectionner la police"
+68046="Italique"
+68047="Souligné"
+68048="Souligné dessus"
+68049="Barré"
+68050="Couleur"
+68051="Exemple"
+68052="Protocoles de sécurité"
+68053="Choisir le cryptage à activer"
+68054="Rechercher"
+68055="Suivant"
+68056="Rechercher le mot entier uniquement"
+68057="Respecter la casse"
+68058="Rechercher vers le haut"
+68059="Rechercher vers le bas"
+68060="Démarrer avec la session sauvegardée"
+68061="Entrer 'g opera' recherchera Opera en utilisant le moteur de recherche Google"
+68062="Habillage"
+68063="Taille"
+68064="Barre d'outils et menus"
+68065="Renommer"
+68066="Dupliquer"
+68067="Supprimer"
+68068="Barre de progrès"
+68069="Souris et clavier"
+68070="Editer..."
+68071="Afficher les astuces"
+68072="Nouvelles Pages"
+68073="Zoom progressif des images"
+68074="Cacher les types de fichiers ouverts avec Opera"
+68075="Application par défaut"
+68076="Types de fichiers gérés par Opera"
+68101="Protocoles gérés par Opera"
+; HTML documents
+68077="Documents d'aide"
+
+; Default application
+68078="Documents XML"
+
+; URL shortcuts
+68079="Raccourcis URL"
+
+; Default application
+68080="Images GIF"
+68081="Images JPEG"
+68082="Images PNG"
+68083="Images BMP"
+68084="Images XBM"
+68085="mailto"
+
+68086="Fichier   Editer   Affichage   Navigation   Signets   Courrier    Fenêtre    Aide"
+68087="Utiliser Opera"
+68088="Adresses entrées"
+68089="Adresses visitées"
+68090="Cache mémoire"
+68091="Vérifier les documents"
+68092="Vérifier les images"
+68093="Vérifier autre"
+68094="Cookie normaux"
+68095="Cookies de tierces parties"
+68096="Baguette"
+68097="Activer la baguette"
+68098="Mot de passe principal"
+68099="Protocoles  de sécurité..."
+68100="Gérer les certificats..."
+; Currently only used on Linux
+68102="Poids"
+
+; Open application (source viewer etc) in a terminal
+68103="Ouvrir dans un terminal"
+
+; External news program
+68104="Programme de forums"
+
+; Label for image dropdown box
+68105="Images"
+
+; Label for favicon dropdown box
+68106="Icônes de la page"
+
+; Label for java path text field
+68107="Chemin Java"
+
+; Button text for testing correct Java path
+68108="Valider le chemin Java"
+
+; Dropdown menu string
+68109="Icônes inclues et favicônes"
+68110="Icônes inclues seulement"
+68111="Ne pas afficher d'icône"
+
+; String in message box when testing and path is correct
+68112="Le chemin Java semble indiquer un répertoire valide."
+
+; String in message box when testing and path is not found
+68113="Impossible de trouver une installation valide de Java."
+
+; String in message box when testing and an alternate path has been found
+68114="Le répertoire suivant semble être une meilleure alternative. L'utiliser à la place ?"
+
+; String in message box when testing and all failed
+68115="Entrez un nouveau répertoire et essayez à nouveau."
+
+; Dialog caption and label string for plug-in path dialog box
+68117="Chemin des Plug-ins"
+
+; Sub-paths of the plug-in path string
+68118="Chemins"
+
+; On top of a list showing all detected pug-ins
+68119="Plug-ins détectés"
+
+; Button text of a button starting a plug-in search
+68120="Rechercher nouveau..."
+
+; Button text of a button starting a dialog whe one can change the plug-in
+; path
+68121="Changer le chemin..."
+
+; Dialog title of a dialog that detects plug-ins
+68122="Association des plug-ins"
+
+; Text above a list box
+68123="Sélectionner le plug-in que vous voulez associer"
+
+; filedialog title
+68137="Créer un nouveau fichier de signets Opera"
+
+; filedialog title 
+68138="Sélectionner le nouveau fichier de contacts Opera"
+
+; filedialog title
+68139="Sélectionner le fichier de signets Opera"
+68140="Sélectionner le fichier de contacts Opera"
+68141="Exporter des signets Opera"
+68142="Exporter des contacts Opera"
+68143="Enregistrer des signets Opera sous"
+68144="Enregistrer les contacts Opera sous"
+68145="Enregistrer des signets Opera en HTML"
+68146="Enregistrer les contacts Opera en HTML"
+68147="Enregistrer les contacts Opera sélectionnés sous"
+68148="Enregistrer les contacts Opera sélectionnés sous"
+68149="Enregistrer les signets Opera sélectionnés en HTML"
+68150="Enregistrer les contacts Opera sélectionnés en HTML"
+68151="Sélectionner les signets Opera à importer"
+68152="Sélectionner les contacts Opera à importer"
+68153="Sélectionner les signets Netscape à importer"
+68154="Sélectionner le dossier de favoris Internet Explorer à importer"
+68155="Sélectionner les signets Konqueror à importer"
+68156="Sélectionner le dossier de signets KDE1 à importer"
+
+; Filedialog title
+68157="Sélectionner le fichier de son"
+68158="Sélectionner le fichier de langue"
+68159="Sélectionner le fichier de style"
+
+; Parttern string to be used in a file dialog box
+68160="Fichiers de langue |*.lng|"
+
+; Dialog title 
+68161="Editer la configuration clavier"
+
+; Dialog title
+68162="Editer la configuration souris"
+
+; Message box string shown when launching external programs
+68163="Vous n'avez pas indiqué d'application d'aide externe. Désirez vous mofifier la configuration maintenant ?"
+
+; Used in dialog box text
+68164="Client e-mail"
+
+; Shown in error dialog box
+68165="Impossible de démarrer l'application d'aide externe.Désirez vous mofifier la configuration maintenant ?"
+
+; One of the authentication methods in M2
+69227="Automatique"
+69228="Texte plain"
+
+; Used in first time dialog box
+69238="Parcourir..."
+
+; Title of first time dialog box
+69239="Première configuration"
+
+; This string will be used to add custom filter types to filesdialogs.
+; Example: PHP becomes PHP files (*.PHP) Note that %1 and %2 must be used
+69241="%1 fichiers (*.%2)"
+
+; File dialog title
+69264="Importer le certificat"
+69265="Exporter le certificat"
+
+69310="Effacer"
+69311="Réduire"
+69316="Enlever de cette vue uniquement. Raccourci clavier : Ctrl+X"
+69317="Gestionnaire d'entrée"
+69318="Activer le HTTP 1.1 pour le proxy"
+69319="Modes de présentation"
+69320="Déroulement fluide"
+69321="Mode par défaut"
+69322="Configurer les modes..."
+69323="Activer les styles de formulaires"
+69324="Activer les styles de barres de défilement"
+69325="Avertir avant de supprimer des messages"
+; General title in message boxes that tell we could not saved a file
+69341="L'enregistrement a échoué"
+
+; Messagebox string telling saving failed for a hotlist file
+69342="Impossible d'enregistrer le fichier des signets"
+
+; General message box string asking user to try action once more
+69343="Esayer à nouveau ?"
+
+; Message box text
+69344="Fermer toutes les pages ?"
+69345="Fermer tout sauf la page active"
+
+; Dialog title for dialog box that will autoreset opera in kiosk mode
+69346="Redémarrage d'Opera"
+
+; Dialog title string. Keep in sync with corresponding menu entry
+69350="Gérer les signets"
+
+; Dialog title used when user wants to do something that requires online
+; mode (eg. fetching mail)
+69351="Déconnecté"
+
+; General dialog button string 
+69364="Continuer"
+
+; General dialog button string
+69365="Pause"
+
+; Dialog title for Add filter dialog box
+69372="Ajouter un filtre"
+
+; Caption for Reindex mail dialog box
+69377="Indexer à nouveau le courrier"
+
+; Dialog caption javascript options dialog
+69409="Options JavaScript"
+
+69411="Jamais sur tout le serveur"
+69412="Traitement des messages (%li%%) (Tot:%li)"
+69413="Traitement des messages (%li%%) %li/%li (Tot:%li)"
+69414="Importation terminée. %li messages importés"
+69415="Sélectionner les fichiers à importer"
+; for STRICT_CACHE_LIMIT when page is too huge
+32863="Le chargement est arrêté parce que la capacité mémoire est dépassée"
+
+; Dialog title when downloaded skin can not be used
+69420="Version de l'habillage incompatible"
+
+; Dialog title when downloaded setupfile can not be used
+69866="Version du fichier de configuration incompatible"
+
+; Dialog text when downloaded setupfile can not be used
+69867="La configuration sélectionnée ne peut pas être appliquée. Veuillez choisir une configuration faite pour la version d'Opera que vous utilisez"
+
+69423="Options du bouton du milieu..."
+; Dialog title for save as file dialog
+69424="Enregistrer avec les images sous..."
+
+69425="La version gratuite d'Opera affichera de la publicité. Vous pouvez définir le type des publicités dans les préférences"
+69426="Afficher des publicités pertinantes et les recherches sur le même sujet avec Google"
+69427="Votre navigateur va envoyer à Google des informations telles les adresses que vous visitez afin de choisir des publicités pertinentes. Google et Opera se sont engagés à respecter ces données privées"
+69428="Lire plus"
+69429="Afficher une sélection générique de pub"
+69430="Permettre au script de recevoir les clics du bouton droit"
+69434="CC Automatique"
+69435="BCC Automatique"
+; Used in the dialog after having spellchecked the text
+69436="Vérification terminée"
+
+; Caption of spellcheck dialog
+69437="Vérification"
+
+; 
+69452="S'abonner aux articles RSS"
+69453="Salons de discussion"
+69456="Nom"
+69457="Adresse"
+69458="<nouveau compte>"
+
+; Caption for the Encoding Mismatch dialog
+69478="Erreur d'encodage"
+
+; Text in the Encoding Mismatch dialog
+69479="Ces caractères ne peuvent être envoyés avec les réglages actuels. Désirez-vous envoyer ce message en Unicode (UTF-8) ? Si vous sélectionnez [Non], les caractères suivants seront transformés en points d'interrogation.\n\n%s"
+
+; Used in print dialog box for selecting print range
+69481="Pages (de-à)"
+
+; Account properties
+69519="Démarrage du pool du port DCC"
+69520="Arrêt du pool du port DCC"
+69521="Utilise le serveur for sa propre recherche IP"
+
+69526="Navigateur"
+69527="Séparateurs"
+69528="Mes boutons"
+69529="Suggestions"
+69534="Utilise la vérification orthographique"
+69535="La vérification orthographique n'est pas disponible. Désirez vous des informations sur le moyen de l'obtenir ?"
+69538="Effectuer les commandes lors d'une connexion"
+69587="Tri de la liste..."
+69588="Ouvrir les fenêtres de discussion privée en arrière-plan"
+69589="Joindre"
+69590="Editer"
+69591="Rafraîchir"
+69592="Cliquer sur une barre d'outils hors de cette fenêtre pour l'éditer"
+69593="Emplacement"
+69594="Répartition"
+69595="Afficher seulement lorsque cela est nécessaire"
+69596="Afficher les barres d'outils cachées pour la personnalisation"
+69597="Par défaut"
+69598="Cliquer sur une barre d'outils hors de cette fenêtre pour afficher ses réglages par défaut"
+69599="Rétablir la barre d'outil d'origine"
+69600="Boutons et champs"
+69601="Déplacer les boutons et les champs sur des barres d'outils hors de cette fenêtre"
+69602="Mise à jour"
+69603="Règles"
+69604="Apprendre par les messages ajoutés ou retirés du filtre"
+69605="Nouvelle règle"
+69606="Enlever une règle"
+69607="Marquer les messages comme filtrés"
+69608="Limiter le filtre aux messages du parent"
+69609="Entrer un nouveau surnom"
+69610="Mot de passe requis"
+69611="Seuls les opérateurs peuvent modifier le sujet"
+69612="Seuls les opérateurs ou les utilisateurs qui ont la parole peuvent parler"
+69613="Cacher le salon des listes de salons"
+69614="Protégé par mot de passe"
+69615="Nombre max d'utilisateur"
+69616="Ajouter une règle"
+69617="Filtrer les messages suivants"
+69618="Surnoms"
+69619="Commencer les commandes avec le nom"
+69620="Vérifier l'orthographe"
+69621="Texte original"
+69622="Remplacer avec"
+69623="ignorer"
+69624="Remplacer"
+69625="Apprendre"
+69626="Supprimer"
+69627="Langue"
+69628="Afficher le panneau de démarrage lorsque qu'aucune page n'existe"
+69629="Informations sur le cookie"
+69630="Nom"
+69631="Valeur"
+69632="Expire"
+69633="Dernière visite"
+69634="Sécurisé"
+69635="Au créateur seulement"
+69636="Version"
+69637="Importer dans :"
+69638="Surnom"
+; The question to ask the user when wand wants to save some new or changed
+; form data related to eCommerce fields.
+69925="Vous avez entré ou modifié une information eCommerce."
+
+; The continuation of the WAND_ECOM_ASK_NEW_DATA question.
+69926="Voulez-vous le sauvegarder pour l'utiliser sur d'autres sites eCommerce ?"
+
+; A description how to use the data now saved.
+69927="Pour utiliser plus tard les données enregistrées, utilisez Ctrl+Entrée ou cliquez sur la baguette"
+
+; Dialog title for config dialog
+69871="Gestionnaires pour les fichiers enregistrés"
+
+; Dialog title for edit dialog
+69872="Editer un gestionnaire de fichier"
+
+69882="Exporter les messages dans un fichier"
+69898="OperaNet, Europe"
+69899="Undernet, Europe"
+69900="Undernet, Amérique du Nord"
+69901="IRCnet, Afrique"
+69902="IRCnet, Asie"
+69903="IRCnet, Europe"
+69904="EFnet, Asie"
+69905="EFnet, Europe"
+69906="EFnet, Amérique du Nord"
+69907="DALnet, Asie"
+69908="DALnet, Europe"
+69909="DALnet, Amérique du Nord"
+69910="FreeNode, Europe"
+69911="FreeNode, Amérique du Nord"
+69912="FreeNode, Océanie"
+69913="FreeNode, Amérique du Sud"
+69917="Pas de répartition"
+69918="Répartir sur plusieurs lignes"
+69919="Afficher le menu d'extension"
+69921="Affichage du navigateur"
+69922="Affichage des e-mail"
+; For license dialog
+69938="Je suis d'accord"
+69939="Je ne suis pas d'accord"
+
+; Menu strings
+
+50844="A&ncré"
+50845="Flottant"
+54219="Alter&ner\tF4"
+50070="Toujours &devant"
+65307="Ajouter un panneau..."
+65309="Editer le panneau"
+65308="Supprimer le &panneau..."
+65310="Obtenir des panneaux"
+51211="&Préférences..."
+54000="&Ouvrir les signets"
+54020="Ouvrir dans une nouvelle fenêtre"
+54022="Ouvrir en arrière-plan"
+54023="Afficher sur la barre personnelle"
+54001="Ajouter la page"
+54007="Ajouter tout"
+54002="Couper"
+54003="Copier"
+54004="Coller"
+54005="Supprimer"
+63001="Sélectionner tout"
+; Bookmark Item New menu
+180090="Nouveau"
+54009="Dossier..."
+54008="Signet..."
+
+180130="Fichier"
+54013="Nouveau..."
+54010="Ouvrir..."
+51071="Enregistrer"
+54015="Enregistrer sous..."
+54014="Enregistrer les items sélectionnés sous..."
+54011="Insérer les &signets..."
+54012="Insérer des favoris Internet &Explorer..."
+54006="Propriétés..."
+54018="&Item..."
+144660="&Fichier"
+50466="Nouvelle fenêtre"
+53028="Nouvelle page"
+50475="Fermer la fenêtre"
+53027="Fermer la page"
+50001="Ouvrir..."
+50003="Enregistrer sous..."
+50977="Enregistrer avec les images sous..."
+162500="Importer"
+52250="Courrier..."
+52251="Signets Opera..."
+52252="Contacts d'Opera..."
+52253="Configuration des &fenêtres d'Opera..."
+52254="Signets Netscape..."
+52255="Favoris d'Internet Explorer..."
+162560="Exporter"
+52256="Signets Opera..."
+52257="Contacts d'Opera..."
+52258="Configuration des &fenêtres d'Opera..."
+50004="Imprimer..."
+50005="Configuration de l'impression..."
+50476="Options d'impression..."
+54271="Aperçu avant impression"
+51099="Travailler hors connexion"
+54493="Supprimer les informations privées..."
+162000="Préférences rapides"
+52200="Accepter tous les pop-ups"
+52201="Refuser tous les les pop-ups"
+52202="Ouvrir les pop-ups en arrière-plan"
+52203="Activer l'animation GIF"
+52204="Activer la vidéo dans la page Web"
+52205="Activer le son dans les pages Web"
+52206="Activer Java"
+52207="Activer les plug-ins"
+52208="Activer le Javascript"
+52209="Activer les cookies"
+52215="Informer de quel site vous venez"
+52216="Activer les serveurs proxy"
+52210="S'identifier comme Opera"
+52211="S'identifier comme Mozilla 5.0"
+52212="S'identifier comme Mozilla 4.78"
+52213="S'identifier comme Mozilla 3.0"
+52214="S'identifier comme MSIE 6.0"
+50394="Préférences..."
+50006="Quitter"
+140070="&Editer"
+50007="Annuler"
+50008="Couper"
+50009="Copier"
+50010="Coller"
+50424="Supprimer"
+50641="Tout sélectionner"
+50058="Rechercher..."
+50086="Rechercher le suivant"
+52031="Rechercher le précédent"
+50063="Recherche intégrée"
+1124400="&Affichage"
+148440="Menu d'outils"
+50846="&Off"
+145550="Barre principale"
+50555="&Simple"
+50556="&Complète"
+50554="&Off"
+170510="Barre personnelle"
+53051="Haut"
+53052="Bas"
+53053="Gauche"
+53054="Droite"
+53050="Off"
+53055="&Afficher les signets"
+145570="Barre de statut"
+50557="&Haut"
+50559="&Bas"
+50558="&Off"
+50916="&Afficher l'heure"
+170210="Barre de page"
+53021="&Haut"
+53022="&Bas"
+53023="&Gauche"
+53024="&Droite"
+53020="&Off"
+180520="Barre de &fenêtre"
+54052="&Haut"
+54053="&Bas"
+54054="&Gauche"
+54055="&Droite"
+54050="&Off"
+150740="Barre d'adresse"
+51074="&Haut"
+51075="&Bas"
+51101="&Off"
+50612="Barres de défilement"
+157300="Zoom"
+51730="50%"
+51731="80%"
+51732="90%"
+51733="100%"
+51734="120%"
+51735="150%"
+51736="200%"
+51739="-100%"
+51740="+100%"
+51737="-10%"
+51738="+10%"
+157500="Encodage"
+51750="Détection automatique"
+157510="Unicode"
+51751="UTF-8"
+51752="UTF-16"
+67447="UTF-32"
+67448="UTF-7"
+157530="Angla&is US"
+51753="ASCII US"
+157540="Europe de l'Ouest"
+51754="ISO-8859-1"
+51771="Windows-1252"
+51767="ISO-8859-15"
+157550="Europe Centrale"
+51755="ISO-8859-2"
+67449="ISO-8859-1"
+51769="Windows-1250"
+157560="Europe du Sud"
+51756="ISO-8859-3"
+157650="Baltique"
+51765="ISO-8859-13"
+51776="Windows-1257"
+51757="ISO-8859-4"
+157630="Nordique"
+51763="ISO-8859-10"
+51791="Windows-Sami-2"
+157660="Celtique"
+51766="ISO-8859-14"
+157620="Turc"
+51762="ISO-8859-9"
+51773="Windows-1254"
+157770="Vietnamien"
+51777="Windows-1258"
+51783="VISCII"
+67450="VPS"
+157580="Cyrillique"
+51758="ISO-8859-5"
+51768="KOI8-R"
+51785="KOI8-U"
+51770="Windows-1251"
+51792="Codepage 866"
+157600="Grec"
+51760="ISO-8859-7"
+51772="Windows-1253"
+157590="Arabe"
+51759="ISO-8859-6"
+51775="Windows-1256"
+157610="Hebreu"
+51761="ISO-8859-8"
+67451="ISO-8859-8 (Visuel)"
+51774="Windows-1255"
+157640="Thai"
+51764="ISO-8859-11/TIS-620/Windows-874"
+157890="Chinois"
+51780="Big5 (Traditionnel)"
+67452="Big5-HKSCS (Traditionnel)"
+51790="EUC-TW (Traditionnel)"
+51782="GB2312 (Simplifié)"
+51786="&HZ-GB2312 (Simplifié)"
+67453="GB18030 (Simplifié)"
+67454="ISO-2022-CN"
+157880="Japonais"
+; Auto detect for Russian, Chinese and Japanese
+51788="Détection Automatique"
+
+51778="Shift-JIS"
+51779="ISO-2022-JP"
+51781="EUC-JP"
+157840="Coréen"
+51784="EUC-KR"
+51212="Actualiser l'affichage"
+44002="Source"
+50660="Source du cadre"
+51215="Liens dans le cadre"
+44001="&Menu\tCtrl+F11"
+50995="Plein écran"
+140320="&Navigation"
+50032="Précédent"
+; Next
+50031="Suivant"
+
+50420="Arrêter"
+50477="Accueil"
+50065="Recharger"
+44003="Recharger le cadre"
+50725="Recharger toutes les pages"
+200000="Recharger toutes les"
+56000="Activer"
+56001="Personnaliser..."
+50270="Charger toutes les images"
+50478="Définir la page d'accueil..."
+50059="Aller à la page..."
+65132="Aller sur des pages similaires"
+50087="Ajouter aux signets..."
+146790="&Courrier"
+50679="Ecrire..."
+; Send menu, Mail
+65180="Envoyer le lien"
+
+50979="Vérifier"
+; Check menu, Mail
+51723="Vérifier tous les comptes"
+
+; Send menu, Mail
+54070="Envoyer le courrier en attente"
+
+54071="Envoyer le courrier en attente de tous les &comptes\tCtrl+Maj+Q"
+54214="&Gérer le courrier\tCtrl+Alt+M"
+51143="&Rechercher..."
+51139="Filtres..."
+51145="Nouveau compte..."
+59999="Gérer les comptes..."
+54215="Gérer les contacts..."
+44004="Marquer comme lu"
+44005="Marquer comme non lu"
+44006="Lister les &anciens messages"
+44007="Lister &tous les forums"
+50626="Afficher les fils de dis&cussion"
+60004="Mettre à jour &les forums"
+1123600="Fenê&tre"
+148360="Spéciale"
+50836="Transferts"
+50837="Historique"
+50838="Plug-ins"
+50835="Cache"
+54122="Console Java"
+50498="Dupliquer"
+52035="Créer une fenêtre liée"
+50018="En cascade"
+50019="Mosaïque verticale"
+51136="Mosaïque horizontale"
+50567="Restaurer tout"
+50565="Réduire tout"
+50545="Agrandir tout"
+50564="Fermer tout"
+50523="Sauver la configuration de&s fenêtres..."
+52034="L&ister tout..."
+140130="Ai&de"
+50013="Contenu"
+50479="Clavier"
+50525="Souris"
+60243="Parlez-en à un ami"
+60242="Acheter Opera"
+50976="Enregistrer Opera..."
+242400="Opera sur le Web"
+; Opera on the Web menu
+60240="Page d'accueil"
+60241="Support"
+50666="Contact"
+60246="Communauté"
+51131="Courrier Web Opera"
+
+50015="A propos d'Opera"
+; link menu
+50416="&Ouvrir le lien\tClick"
+50417="Ouvrir dans une &nouvelle fenêtre\tMaj+Click"
+50437="Ouvrir en arrière-plan"
+53018="Ouvrir dans une nouvelle page"
+53019="Ouvrir en arrière-plan"
+50418="Ajouter le lien aux signets..."
+50216="Copier l'adresse du lien"
+50761="Enregistrer la cible sous..."
+
+; mailto: link menu
+50436="En&voyer un e-mail..."
+50543="&Ajouter aux contacts..."
+50542="Copier l'adresse e-mail"
+50544="Co&pier l'adresse mailto:"
+
+; mailto: image link menu
+50263="Afficher l'image"
+
+; mailto: image link and image link  menu
+65246="Recharger l'image"
+
+; mailto: image link menu and image link menu
+50262="Enregistrer l'image..."
+50251="Copier l'image"
+50419="Copier l'adresse de l'image"
+56064="Propriétés de l'image"
+200670="Utiliser l'image comme"
+56067="Habillage de premier plan"
+56068="Habillage d'arrière-plan"
+57076="Arrière-plan du bureau"
+56069="Enlever l'habillage de premier plan"
+56070="Enlever l'habillage d'arrière-plan"
+
+; Default page menu
+50426="Précédent"
+50427="Suivant"
+50429="Arrêter"
+50430="Accueil"
+50428="Recharger"
+50423="Ajouter aux signets..."
+50215="Copier l'adresse"
+65178="Envoyer le lien par e-mail"
+292450="Arrière-plan"
+
+; Default page menu and image link menu
+65245="Afficher l'image"
+
+; Default page menu
+50672="Enregistrer l'image"
+50671="Copier l'image"
+50673="Copier l'adresse de l'image"
+65244="Propriétés de l'image"
+200710="Utilisez l'image comme"
+56071="Habillage de &Premier plan"
+56072="Habillage d'A&rrière-plan"
+57077="Arrière &plan du bureau"
+50432="Dupliquer"
+
+; Select menu
+50872="Copier le texte"
+65184="Rechercher"
+291920="Rechercher avec"
+65187="Dictionnaire"
+65188="Encyclopédie"
+65186="Convertir la monnaie"
+291960="Traduire"
+65196="De l'anglais au français"
+65197="De l'anglais à l'allemand"
+65198="De l'anglais à l'italien"
+65199="De l'anglais au portugais"
+65200="De l'anglais à l'espagnol"
+65202="Du français à l'anglais"
+65203="Du français à l'allemand"
+65204="Du français à l'italien"
+65205="Du français au portugais"
+65206="Du français à l'espagnol"
+65207="De l'allemand à l'anglais"
+65208="De l'allemand au français"
+65209="De l'italien à l'anglais"
+65210="De l'italien au français"
+65211="Du portugais à l'anglais"
+65212="De l'espagnol à l'anglais"
+65213="De l'espagnol au français"
+65214="De l'anglais au japonais"
+65215="Du japonais à l'anglais"
+65218="Envoyer par e-mail"
+65191="A&fficher le source"
+
+; View source menu
+65261="Arrêter d'afficher le &source"
+
+; Image link menu
+44013="Ouvrir"
+44014="Ouvrir dans une nouvelle page"
+44015="Ajouter le lien aux signets"
+44016="Copier l'&adresse de l'image"
+
+144670="&Fichier"
+50467="&Ouvrir..."
+50468="&Enregistrer..."
+50470="&Envoyer"
+50469="&Quitter"
+140080="Edition"
+242420="_menu_contextuel_bannière_"
+57055="P&références..."
+; File menu
+148470="Fichier"
+
+50847="&Imprimer\tCtrl+P"
+50856="&Quitter\tCtrl+W"
+148480="Editer"
+50848="Co&pier\tCtrl+C"
+50849="&Rechercher\tCtrl+F"
+; Navigation menu
+148510="Navigation"
+
+50851="&Précédent\tZ"
+50852="&Suivant\tX"
+50853="&Accueil\tCtrl+Espace"
+50854="Index &alphabétique\tF1"
+50855="Raccourcis &clavier\tCtrl+B"
+1127000="Editer"
+148700="Insérer"
+50870="Nom &complet"
+50902="&Prénom"
+50903="&Nom"
+50904="&Adresse"
+50905="&Ville"
+50906="E&tat"
+65242="&Code postal"
+50907="Pays"
+50908="&Téléphone"
+50909="&Fax"
+50871="E&mail"
+50910="Page d'&accueil"
+50911="Spécial &1"
+50912="Spécial &2"
+50913="Spécial &3"
+65243="&Editer..."
+50864="Annuler"
+50865="Couper"
+50866="Copier"
+50867="Coller"
+50868="Supprimer"
+50869="Sélectionner tout"
+51265="Copier en &texte"
+51266="Copier en &HTML"
+51267="Copier en éléments Hot&list"
+; Button bar
+51321="Apparence d'Ope&ra..."
+50917="&Agencement du navigateur..."
+
+56073="Obtenir des habillages"
+; Hotlist window bookmarks view
+54150="Classement &manuel"
+54151="Classement par &titre"
+54152="Classement inve&rsé par titre"
+54153="Classement par date de &lecture"
+54154="Classement par date de lecture in&verse"
+54155="Classement par ordre de cré&ation"
+54156="Class&ement par ordre de création inverse"
+54161="A&fficher le champ de recherche"
+54157="Afficher l'ar&borescence des dossiers"
+181580="&Colonnes"
+54158="Afficher les en-&têtes des colonnes"
+52051="A&fficher la colonne visitée"
+52052="Affi&cher la colonne crée"
+52053="&Redimensionnement automatique des colonnes"
+
+; Bookmark item
+53056="&Supprimer\tSuppr"
+53057="&Propriétés..."
+
+; Hotlist window contacts view
+54159="Afficher l'ar&borescence des dossiers"
+54160="Afficher les en-&têtes des colonnes"
+
+; Transfers view
+54139="Afficher les détails"
+67520="Afficher les nouveaux items en haut"
+51204="Afficher en deh&ors d'Opera"
+51203="Mettre au &premier plan lors d'un nouveau transfert"
+
+294120="Barre de page"
+65412="N&ouvelle page \tDouble click"
+; Page bar item
+53025="&Déplacer dans une nouvelle fenêtre\tDouble-click"
+65411="F&ermer la page\tShift+Click"
+
+; Go menu
+65130="&Aller à la page"
+65133="Aller sur les pages ayant un &lien vers cette adresse"
+
+146630="Cadre"
+50663="Afficher le source"
+50781="Enregistrer sous"
+56051="Valider le code source"
+50669="Ajouter aux signets"
+50668="Copier l'adresse"
+65179="Envoyer le lien par e-mail"
+50664="Recharger"
+44012="Charger toutes les images"
+50708="Agrandir"
+53400="Composer un e-&mail"
+56053="Consulter la page d'&accueil"
+53404="&A:"
+53405="&Cc:"
+53406="&Bcc:"
+54019="&Contact..."
+180210="&Fichier"
+54021="&Nouveau..."
+53411="Co&pier\tCtrl+C"
+53412="Sélectionner &tout\tCtrl+A"
+53413="&Imprimer\tCtrl+P"
+67350="Transfert rapide"
+67351="Figer le panneau"
+67352="Tous les comptes"
+67353="Courrier lu"
+67354="Marquer et aller au prochain non lu"
+; Cancel newsmessage
+67355="Annuler l'envoi"
+
+67356="Marquer comme"
+67357="Afficher dans"
+67358="Aller à"
+67362="Marquer tous comme lus"
+67363="Vider la corbeille"
+67364="Rediriger"
+67359="Prochain non lu"
+67360="Précédent non lu"
+67365="Fil de discussion"
+; noun (in 'Go to' menu)
+67366="Contact"
+
+67367="Plat"
+67368="Par fil de discussion"
+67369="A et De"
+67370="Vignettes"
+67371="Afficher le courrier lu"
+67372="Afficher le contenu de la corbeille"
+67373="Afficher le spam"
+67374="Afficher les listes de diffusions"
+67375="Afficher les forums"
+67376="Afficher la réponse rapide"
+67377="Enlever de cette vue"
+; Forward mail
+67378="Faire suivre"
+
+67379="Priorité"
+67380="Classement manuel"
+67381="Classer par nom"
+67382="Classer par surnom"
+67383="Classer par adresse"
+67384="Classer par description"
+67385="Classer par ordre de création"
+67386="Classer par date de lecture"
+67387="Classement ascendant"
+67388="Classement descendant"
+67389="Ouvrir"
+67390="Afficher"
+67391="Afficher les message"
+67392="Visiter la page d'accueil"
+; Contact Item New menu
+67393="Nouveau"
+
+67394="Aller à l'URL"
+; Help menu
+67395="Aide"
+
+; Window menu
+67396="Fenêtre"
+
+; Mail menu and button
+67397="Courrier"
+
+; Bookmarks menu
+67398="Signets"
+
+67399="Sessions"
+67400="Barre de navigation"
+67401="Figer les boutons"
+67402="Personnaliser les barres d'outils..."
+67403="Habillage"
+67404="Thème de couleurs"
+; Browser View Menu
+67405="Style"
+
+67406="Petit écran"
+67407="Navigation"
+; Send mail menu
+67408="Envoyer"
+
+67409="Lire"
+67410="Recherche..."
+67411="Forums..."
+67412="Dossiers IMAP..."
+67413="Fermer tout sauf active"
+; Bookmark Item File menu
+67414="Importer des signets Opera..."
+67415="Importer des signets Netscape..."
+67416="Importer des favoris Internet Explorer..."
+67417="Exporter des signets Opera"
+
+; Contact Item New menu
+67418="Dossier..."
+67419="Contact..."
+
+; Contact Item File menu
+67420="Nouveau..."
+
+; File/Session menu
+67421="Ouvrir la session..."
+67422="Insérer la session..."
+67423="Enregistrer la session..."
+
+; Quick Preferences
+67424="Bloquer les pop-ups non désirés"
+
+; View Hotlist Menu
+67425="Signets"
+67426="Courrier"
+
+67427="Contacts"
+; View Hotlist Menu
+67428="Historique"
+67429="Transferts"
+67430="Liens"
+67431="Fenêtres"
+
+; View Navigation Bar Menu
+67432="Automatique"
+
+67433="Pas de thème de couleurs"
+67434="Thème de couleurs système"
+67435="Or"
+67436="Sable"
+67437="Jungle"
+67438="Mer"
+67439="Bleu"
+67440="Indigo"
+67441="Pourpre"
+67442="Cramoisi"
+67443="Rouge"
+67444="Effets spéciaux"
+67445="Mode auteur"
+67446="Mode utilisateur"
+; Reload Menu
+67455="5 secondes"
+67456="15 secondes"
+67457="30 secondes"
+67458="1 minute"
+67459="2 minutes"
+67460="5 minutes"
+67461="15 minutes"
+67462="30 minutes"
+
+; Site Navigation Menu
+67463="Accueil"
+67464="Index"
+67465="Contenu"
+67466="Rechercher"
+67467="Glossaire"
+67468="Aide"
+67469="Première"
+67470="Précédente"
+67471="Suivante"
+67472="Dernière"
+67473="Haut"
+67474="Copyright"
+67475="Auteur"
+
+67476="Console JavaScript"
+67477="Recommencer le transfert"
+67478="Supprimer le transfert"
+67479="Style"
+67480="Enlever le panneau"
+67481="Enlever de la barre d'outils"
+67482="Audio"
+67483="Fermer tout"
+67484="Fermer toutes sauf l'active"
+; Remove from Personal Bar
+67485="Enlever"
+
+67486="Barre d'outils par défaut"
+67487="Grandes images"
+67488="Afficher les transferts à chaque téléchargement"
+67489="Barre d'outils"
+; Right-click on address field
+67490="Coller et aller"
+
+; Links Panel Toolbar
+67495="Figer"
+
+67496="Plein écran"
+67497="Sécurité"
+67498="Afficher les images"
+; New page
+67499="Nouvelle"
+
+; Used in menus to show the keyboard shortcut, typically Ctrl+t
+67538="Ctrl"
+
+67521="Maj"
+67522="Alt"
+67523="Accueil"
+67524="Fin"
+67525="PageHaut"
+67526="PageBas"
+67527="Haut"
+67528="Bas"
+67529="Gauche"
+67530="Droite"
+67531="Echap"
+67532="Inser"
+67533="Suppr"
+67534="RetourArr"
+67535="Tab"
+67536="Espace"
+67537="Entrée"
+; Caption for fast forward button for automatic login using Wand
+67539="Connexion"
+
+67572="Ce filtre"
+67573="Plus d'items"
+67633="Ouvrir en arrière-plan"
+67634="Affichage"
+67635="Manuellement"
+67636="Après 1 seconde"
+67637="Après 2 secondes"
+67638="Après 3 secondes"
+67639="Après 5 secondes"
+67640="Après 10 secondes"
+67641="Préférer le texte simple"
+67642="Préférer le HTML"
+67643="Supprimer les éléments externes"
+67644="Affichage complet"
+67645="Affichage séparé"
+67646="Dossier seul"
+67647="Nouvelle note"
+67648="En arrière"
+67649="Avance Rapide"
+67650="Charger l'image"
+67651="Ouvrir l'image"
+67652="Copier dans la note"
+67653="Insérer donnée personnelle"
+67654="Insérer une note"
+67655="Supprimer tout"
+67656="Coller dans la note"
+67657="Barre de menu"
+67658="Liens..."
+67659="Ajouter un contact ici"
+67660="Ajouter tous les contacts dans le dossier"
+67661="Importer des signets KDE1..."
+67662="Importer des signets Konqueror..."
+67663="Exporter en HTML..."
+67664="Enregistrer les items sélectionnés en HTML..."
+67665="Importer des contacts Opera..."
+67666="Exporter des contacts d'Opera..."
+67667="Enregistrer les contacts sélectionnés sous..."
+67668="Signets KDE1..."
+67669="Signets Konqueror..."
+67670="Signets en HTML..."
+67671="Info"
+67672="Notes"
+; Revert an undo operation
+68116="Rétablir"
+
+; Edit popup menu string. Translate with ampersand
+69000="Ann&uler"
+69001="&Rétablir"
+69002="Cou&per"
+69003="&Copier"
+69004="&Coller"
+69005="Eff&acer"
+69006="Sél&ectionner tout"
+
+; Workspace popup menu string. Translate with ampersand
+69007="&Restaurer"
+69008="&Déplacer"
+69009="Tail&le"
+69010="Min&imiser"
+69011="Agrand&ir"
+69012="&Fermer"
+69013="&Prochain"
+69014="&Standard"
+69015="&Classique"
+69016="&Décors"
+
+; Print dialog. Detination tab
+69017="Destination"
+
+; Print dialog. Options tab
+69018="Options"
+
+; Print dialog. Printer program tab
+69019="Programme d'imprimante"
+
+; Print dialog.
+69020="Imprimantes"
+
+; Print dialog. List column header
+69021="Imprimante"
+69022="Hôte"
+69023="Commentaire"
+
+; Print dialog. Checkbox
+69024="Imprimer dans un fichier"
+
+; Print dialog. Frame text label
+69025="Etendue de l'impression"
+69026="Copies"
+69027="Tout"
+
+; Print dialog
+69028="Sélection"
+69029="Pages"
+
+; Print dialog.
+69030="De:"
+
+; Print dialog
+69031="A:"
+69032="Nombre de copies"
+69033="Imprimer la première page d'abord"
+69034="Imprimer la dernière page d'abord"
+
+; Print dialog. Frame text label
+69035="Couleur"
+69036="Options"
+69037="Format du papier"
+
+; Print dialog
+69038="Imprimer en couleurs si possible"
+69039="Imprimer en tons de gris"
+69040="Portrait"
+69041="Paysage"
+
+; Print dialog. Printer parameter
+69042="Paramètre"
+
+; Print dialog. Help text label
+69043="Le programme d'impression doit lire à partir de stdin.\nLes paramètres sont passés au programme comme une chaîne unique."
+
+; Print dialog. Dialog title
+69044="Imprimer"
+
+; Print dialog. Paper type
+69045="A0 (841 x 1189 mm)"
+69046="A1 (594 x 841 mm)"
+69047="A2 (420 x 594 mm)"
+69048="A3 (297 x 420 mm)"
+69049="A4 (210x297 mm, 8.26x11.7 pouces)"
+69050="A5 (148 x 210 mm)"
+69051="A6 (105 x 148 mm)"
+69052="A7 (74 x 105 mm)"
+69053="A8 (52 x 74 mm)"
+69054="A9 (37 x 52 mm)"
+69055="B0 (1030 x 1456 mm)"
+69056="B1 (728 x 1030 mm)"
+69057="B2 (515 x 728 mm)"
+69058="B3 (364 x 515 mm)"
+69059="B4 (257 x 364 mm)"
+69060="B5 (182x257 mm, 7.17x10.13 pouces)"
+69061="B6 (128 x 182 mm)"
+69062="B7 (91 x 128 mm)"
+69063="B8 (64 x 91 mm)"
+69064="B9 (45 x 64 mm)"
+69065="B10 (32 x 45 mm)"
+69066="C5E (163 x 229 mm)"
+69067="DLE (110 x 220 mm)"
+69068="Executive (7.5x10 pouces, 191x254 mm)"
+69069="Folio (210 x 330 mm)"
+69070="Ledger (432 x 279 mm)"
+69071="Legal (8.5x14 pouces, 216x356 mm)"
+69072="Letter (8.5x11 pouces, 216x279 mm)"
+69073="Tabloid (279 x 432 mm)"
+69074="US Common #10 Envelope (105 x 241 mm)"
+
+; Print dialog.
+69075="Programme local"
+69076="Imprimante personnalisée"
+
+; Print dialog. Fileselector title
+69077="Choisir le fichier de sortie"
+69078="Choisir l'application"
+
+; Print dialog. Printer connection
+69079="Déconnecté en local"
+
+; Print dialog. Alternate printer names
+69080="Alias :"
+
+; Print dialog. Unknown printer location
+69081="Emplacement inconnu"
+
+; Print dialog. Unknown printer
+69082="Inconnu"
+
+; Dialog title. When no printer was found
+69083="Pas d'imprimante installée"
+
+; Dialog help text
+69084="Aucune imprimante valide définie\n\nVous pouvez imprimer dans un fichier ou définir une imprimante personnalisée\ndans la boite de dialogue d'impression"
+
+; Column header label when listing plug-ins
+69085="Utiliser"
+
+; First time dialog help text
+69086="L'action du bouton du milieu peut être configurée en appuyant sur Maj+bouton du milieu.\n\nDésirez vous configurer le bouton du milieu maintenant ?"
+
+; Dialog close button
+69087="Fermer"
+
+; Dialog apply button
+69088="Appliquer"
+69089="Imprimer"
+
+; Dialog help button
+69090="Aide"
+
+; Qt library strings (colordialog)
+69100="&Ajouter aux couleurs personnalisées"
+69101="Couleurs de &base"
+69102="&Couleurs personnalisées"
+69103="&Définir les couleurs personnalisées >>"
+69104="&Vert"
+69105="&Rouge"
+69106="Ble&u"
+69107="&Sat"
+69108="&Val"
+69109="T&einte"
+69110="Canal A&lpha"
+69111="Sélectionner la couleur"
+
+; Qt library strings (filedialog)
+69112="%1\nFichier non trouvé.\nVérifiez le chemin et le nom du fichier."
+69113="Supprime&r"
+69114="No&n"
+69115="&Oui"
+69116="&Ouvrir"
+69117="&Renommer"
+69118="Enregi&strer"
+69119="Non clas&sé"
+69120="<qt>Etes-vous sûr de vouloir supprimer %1 %2?</qt>"
+69121="Tous les fichiers (*)"
+69122="Attributs"
+69123="Précédent"
+69124="Copier ou déplacer un fichier"
+69125="Créer un nouveau dossier"
+69126="Date"
+69127="Supprimer %1"
+69128="Afficher les détails"
+69129="Répertoire"
+69130="Répertoires"
+69131="Répertoire :"
+69132="Erreur"
+69133="&Nom du fichier:"
+69134="&Type du fichier"
+69135="Fichier"
+69136="Rechercher le répertoire"
+69137="Inaccessible"
+69138="Affichage de la liste"
+69139="Chercher d&ans"
+69140="Nom"
+69141="Nouveau dossier %1"
+69142="Nouveau dossier 1"
+69143="Nouveau dossier"
+69144="Répertoire parent"
+69145="Ouvrir"
+69146="Prévisualiser le contenu du fichier"
+69147="Prévisualiser les infos du fichier"
+69148="Recharg&er"
+69149="Lecture seule"
+69150="Lecture-écriture"
+69151="Lire: %1"
+69152="Enregistrer sous"
+69153="Enregistrer"
+69154="Afficher les fichiers cac&hés"
+69155="Taille"
+69156="Trier"
+69157="Classer par &date"
+69158="Classer par &nom"
+69159="Cla&sser par taille"
+
+; Qt library strings (filedialog) - Not regular file
+69160="Spécial"
+
+; Qt library strings (filedialog)
+69161="Lien symbolique vers répertoire"
+69162="Lien symbolique vers fichier"
+69163="Lien symbolique vers spécial"
+69164="Type"
+69165="Lecture seule"
+69166="Ecrire: %1"
+69167="le répertoire"
+69168="le fichier"
+69169="Le lien symbolique"
+
+; General message box strings
+69200="Vous devez d'abord sélectionner un nom de fichier"
+69201="Nom de fichier manquant"
+69202="Ce nom de fichier existe déjà. Si vous continuez, le\ncontenu du fichier existant sera perdu.\n\nVoulez vous continuer ?"
+69203="Remplacer le fichier"
+69204="Le nom de fichier sélectionné existe déjà. Veuillez en choisir un autre"
+69205="Nom de fichier incorrect"
+69206="L'écriture a échoué. Les données n'ont pas été enregistrées.\n\nVérifiez que vous avez la permission d'écriture pour le répertoire \noù vous souhaitez enregistrer le fichier et que l'espace disque est suffisant."
+69207="L'enregistrement a échoué"
+69208="Vous n'avez pas le droit d'écrire dans l'emplacement indiqué"
+69209="Vous n'avez pas le droit d'écrire dans le %1 indiqué.\n\nNom: %2"
+69210="Accès refusé"
+69211="Répertoire"
+69212="Fichier"
+
+; Message box title
+69213="Version du plug-in invalide"
+
+; Message box help text
+69214="Version non valide du plug-in proxy de Netscape détectée. Opera ne peut pas utiliser les plug-ins tant que ce problème n'est pas corrigé.Installez le plug-in proxy fourni avec cette version d'Opera"
+
+; Message box title
+69215="Rechercher des plug-ins"
+
+; Message box help text for delayed plug-in search (after startup)
+69216="Les plugs-in n'ont pas été installés au démarrage. L'installation va commencer maintenant"
+
+; Message box help text
+69217="Un problème fatal est survenu à la dernière recherche des plug-ins.\n\nVoulez vous démarrer une recherche des plug-ins maintenant ?"
+
+; Text above a list of directories
+69218="Répertoires de plug-ins enregistrés"
+
+; Help text for setting display resolution (DPI)
+69219="Résolution d'affichage"
+
+; Default display resolution value
+69220="Valeurs par défaut du système"
+
+; Fast forward 
+69232="Prochain"
+
+; Fast forward
+69233="Prochaine image"
+69234="Connexion"
+69235="Nom d'utilisateur de la baguette"
+69236="Afficher"
+69237="Afficher l'image"
+
+; Menu entry for adding a mailto link to the contact list
+69242="Ajouter aux contacts..."
+
+67306="Musique"
+69313="Liste de messages"
+69314="Corps du message"
+69315="Liste et corps"
+; Page menu string
+69336="Fermer"
+69337="Activer"
+69338="Rétablir"
+69339="Réduire"
+69340="Agrandir"
+
+; Used in toolbar popup menus to control visibility of extender arrow
+69363="Afficher les flèches de développement"
+
+; Used in M2 menus (in the show account menu)
+69366="Tous les comptes"
+69367="Comptes e-mail"
+69368="Comptes de forums"
+
+; General menu string 
+69381="Exporter..."
+
+; m2 submenu string (in hotlist)
+69382="Afficher le compte"
+
+; m2 menu string (in hotlist)
+69383="Afficher le sélecteur de comptes"
+
+; Submenu that hold all closed window entries
+69384="Fermée"
+
+; Main help entry (F1 action)
+69385="Aide d'Opera"
+
+; Contents sub menu in help menu
+69386="Sujets"
+
+; Help topic
+69387="Menu d'outils"
+69388="Barres d'outils"
+69389="Menus"
+69390="Dialogues"
+69391="Préférences"
+
+; On the web menu entry
+69392="Possibilités et tutoriaux"
+69393="Accessibilité"
+69394="Sécurité et vie privée"
+
+; Meta key
+69395="Méta"
+
+; Menu string in transfer panel
+69422="Supprimer les transferts terminés"
+
+69482="Ajuster à la largeur"
+; Displayed user css file name
+69483="Emuler un navigateur texte"
+69484="Nostalgie"
+69485="Disposition d'accessibilité"
+69486="Afficher les images et les liens seulement"
+69487="Fort contraste (B/N)"
+69488="Fort contraste (N/B)"
+69489="Cacher les images sans lien"
+69490="Cacher les éléments trop imposants (génants)"
+69491="Désactiver les tableaux"
+69492="Afficher les éléments de structure"
+69493="Débug avec lignes  de frontière"
+
+69639="Marquer"
+69640="Marquer comme spam"
+69641="Marquer en non spam"
+69642="Afficher"
+69643="Montrer l'affichage rapide"
+69644="Afficher la distribution d'articles RSS"
+69645="Afficher les filtrés"
+69646="Liste uniquement"
+69647="Message uniquement"
+69648="Liste et messages dessous"
+69649="Liste et messages à droite"
+69650="Vider le spam"
+69651="Nouveau filtre"
+69652="Articles RSS..."
+69653="Activer les smileys"
+69654="nouveau séparateur"
+69655="En ligne"
+69656="Occupé"
+69657="Je reviens"
+69658="Absent"
+69659="Au téléphone"
+69660="Sorti déjeuné"
+69661="Apparaît hors ligne"
+69662="Déconnecté"
+69663="Affiche la liste des salons..."
+69664="Nouveau salon..."
+69665="Rejoindre le salon"
+69666="Quitter le salon"
+69667="Qui est"
+69668="Discussion privé..."
+69669="Contrôle"
+69670="Ajouter le surnom au contact"
+69671="Op"
+69672="Sans op"
+69673="Voix"
+69674="Sans voix"
+69675="Virer"
+69681="Outils"
+69682="Panneaux"
+69683="Barres d'outils"
+; ui
+69684="Consoles"
+
+69685="Démarrage"
+69686="Emplacement des panneaux"
+69687="Emplacement du sélecteur de panneaux"
+69688="Montrer l'afficheur des panneaux"
+69689="Toutes les images"
+69690="N'afficher que les images du cache"
+69691="Pas d'image"
+69692="Panneaux"
+69693="Nouvelles"
+69694="Discussion"
+69695="Glossaire"
+69696="Ouvrir"
+69697="Ouvrir le dossier"
+69698="Afficher les transferts"
+69699="Afficher le panneau des transferts lors d'un nouveau téléchargement"
+69884="Détacher"
+69885="Afficher le bouton Nouvelle page"
+69886="Ouvrir Opera"
+69887="Cookies..."
+69888="Mots de passe baguette..."
+69889="Avancé"
+69896="Cacher Opera"
+69944="Discussion"

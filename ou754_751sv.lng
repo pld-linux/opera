@@ -1,0 +1,5219 @@
+; Opera language file version 2.0
+; Copyright © 1995-2004 Opera Software ASA. All rights reserved.
+; Created on 2004-08-06 11:25
+; Lines starting with ; (like this) are comments and need not be translated
+
+[Info]
+Language="sv"
+; The string below is the language name in its own language
+LanguageName="svenska"
+Charset="iso-8859-1"
+Build.Linux=751
+Version.Linux=7.54
+DB.version=252
+
+[Translation]
+
+; General strings
+
+; Used in a popup error message when Opera can't connect to the remote
+; server due to other phenomena than the one stated in 32873.
+32869="Kunde inte ansluta till servern"
+
+; The error code corresponding to this string is used in a number of
+; situations when the server has abruptly closed the connection, and then
+; the string can be used in a popup error message.
+32864="Servern stängde förbindelsen"
+
+; Used in a popup error message when Opera has failed to load a requested
+; page more than once.
+32874="Trots upprepade försök kunde inte sidan läsas in i sin helhet.\r\n\r\nDet kan bero på problem med servern."
+
+; Used in a popup error message when Operas request to connect to a server
+; is refused. (For example when the server exists but does not answer on
+; the specified port.)
+32873="Kunde inte ansluta till servern"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain exists but the server itself does not (for example
+; http://fff.example.com).
+32871="Kunde inte hitta servern"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain doesn't exist (for example http://invalid).
+32872="Adressen är inte tillgänglig från denna maskin"
+
+; Used as default error message in a popup error message, when no other
+; network error message applies.
+32868="Internt kommunikationsfel"
+
+; Used in a popup error message when there is no route from the client's
+; subnet to the server's subnet, likely due to a badly configured network.
+32881="Nätverket är inte tillgängligt. Kontakta din systemadministratör"
+
+; Used in a number of error situations, when the user has entered a
+; malformed URL, such as opera:nonexistant, into the URL field. The http
+; respose error code 400 (Bad request), and some other http error codes
+; between 400 and 500 (signifying client errors) also give the same
+; result.
+32832="Felaktig adress"
+
+; Used in a popup error message when the network of the underlying system is
+; down. This could be due to errors in the protocol stack, network card or
+; driver, or in the physical network outside of the system.
+32865="Nätverksproblem"
+
+; Used in a popup error message when the server has tried to redirect a
+; document request from Opera to an adress and Opera fails to connect to
+; that server.
+21462="Servern försökte omdirigera till en ogiltig adress.\r\nRapportera detta till ansvariga för webbplatsen."
+
+; Used in a popup error message when a proxy server has been specified for a
+; specific request type, and the proxy server doesn't answer when an URL
+; of that type is entered in the URL field.
+32897="Kunde inte ansluta till mellanservern"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain exists but the server itself does not (for example
+; fff.opera.com).
+32898="Kunde inte hitta mellanserver"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain doesn't exist (for example fjdlsakhngfjf).
+32899="Kunde inte komma åt mellanserver. Servern är ej tillgänglig"
+
+; Used in a popup error message when Operas request to connect to a proxy
+; server is refused. (For example when the server exists but does not
+; answer on the specified port.)
+32900="Kunde inte ansluta till mellanservern. Åtkomst nekas"
+
+; Used when Opera has tried to open a network socket to a server and the
+; socket is busy. This message should be handled internally most of the
+; time.
+32866="Nätverksuttag blockerat"
+
+; Used in a popup error message when a non-recoverable error has occurred in
+; the network protocol stack or network drivers of the system.
+32883="Problem med nätverksuttag. Kontrollera nätverksdrivrutinerna."
+
+; 
+32885="Förbindelsen bröts (tidsgräns nådd). Försök igen senare."
+
+; Used in a popup error message when not enough socket resources (file
+; handles, network buffers) are free.
+32867="Resursproblem för nätverksuttag. Försök igen."
+
+; The default error message, used in any situation where no more specific
+; error message can be created.
+20000="Internt programfel."
+
+20001="Vänta tills den pågående utskriften har slutförts"
+20002="Kunde inte skapa nytt fönster. Slut på minne eller resurser"
+; Used in a popup error message when the address type is unknown or
+; unsupported.
+20003="Adresstypen är okänd eller stöds ej"
+
+; Might be used in a popup error message when the user has clicked the Home
+; button and no home page is set in preferences, but the Set homepage
+; dialog seems to appear instead. Obsolete?
+20005="Ingen startsida angiven. Ställ in en."
+
+20009="MIME-typen är redan definierad"
+20011="Söksträngen kunde inte hittas"
+20013="Kunde inte ansluta till skrivaren"
+20014="Ange vilket program som skall användas för att visa filen"
+; Used in an error popup message when the printer has encountered an error
+; while printing (as opposed to 20013 which pops up if the printing can't
+; even start, which is more likely.)
+20015="Kunde inte skriva ut sidan. Kontrollera om skrivaren är tillgänglig"
+
+20016="Skriver ut sida"
+; Used in a popup error message when the user has requested a file from the
+; server that it's not allowed to fetch (HTTP response code 403), if the
+; user has set the Network/Server errors/Always show dialog box
+; preference.
+33040="Servern vägrar utföra din begäran.\r\nAdressen är inte tillgänglig."
+
+; Used in a popup error message when the user has requested a file from the
+; server that does not exist (HTTP response code 404), if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33041="Adressen hittades inte"
+
+; Used in a popup error message as a default message when the user has made
+; a valid request for a file from the server, and the server encounters an
+; error that prevents it to fulfill the request (HTTP response code 5xx
+; and 6xx), if the user has set the Network/Server errors/Always show
+; dialog box preference.
+33042="Server eller fil saknas"
+
+; Used in a popup error message when the user has requested a file from the
+; server, and the server could not fulfill the request since this
+; functionality wasn't implemented (HTTP error code 501), if the user has
+; set the Network/Server errors/Always show dialog box preference.
+33043="Servern saknar nödvändiga funktioner"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server sends the document using HTTP compression, and
+; the document decoder couldn't decode the data properly.
+33046="Problem uppstod vid avkodning av data, vilket kan bero på att data är felaktiga."
+
+; Used in a popup error message when the user has submitted a form using a
+; HTTP request method (specified with the METHOD attribute to the FORM tag
+; in the HTML form) that the server does not accept (HTTP error code 405),
+; if the user has set the Network/Server errors/Always show dialog box
+; preference.
+33424="HTTP-anropsmetoden godtogs inte av servern"
+
+; Used in a popup error message when the user tries to fetch a document by
+; clicking a link, and the server cannot send the requested document in a
+; format that matches the content of the HTTP accept headers sent in the
+; request (HTTP error code 406), if the user has set the Network/Server
+; errors/Always show dialog box preference. However, Opera accepts all
+; document formats and sends *.* in its accept header, so this is unlikely
+; to happen.
+33425="Servern kunde inte sända godtagbara data"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server needs more data from Opera to fulfill the
+; request, and Opera fails to deliver the data before the server times out
+; and cancels the request (HTTP error code 408). Unlikely to happen very
+; often. Visible if the user has set the Network/Server errors/Always show
+; dialog box preference
+33426="Servern bröt förbindelsen (tidsgräns nådd)"
+
+; Used in a popup error message when Opera has sent a HTTP request to fetch
+; or send a document to the server, and the server determins that there's
+; a conflict with a third part regarding the document, that can be solved
+; by the user (HTTP error message 409). This could happen when the user
+; submits a form that leads to a change of an online document, and the
+; server detects that the changes conflicts with other changes already
+; made to the document. Visible if the user has set the Network/Server
+; errors/Always show dialog box preference
+33427="Konflikt med existerande resurs på server"
+
+; Used in a popup error message when the user has requested a document and
+; the server answers that the document has been there, but has been
+; permanently removed (HTTP error code 410). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33428="Adressen är ej längre tillgänglig"
+
+; Used in a popup error message if the user has sent a request to the
+; server, and the server answers that it needs a Content-Length header to
+; process the request (HTTP error code 411). Opera never sends requests
+; without a valid Content-Lenght header. Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33429="HTTP-datalängd krävdes"
+
+; Used in a popup error message if the user has sent a request to the server
+; containing one or more precondition headers, and one or more of these
+; preconditions evaluated false on the server (HTTP error code 412). The
+; precondition headers could be If-Range and If-Modifified-Since, that
+; could be used to fetch the missing parts of a earlier partially fetched
+; documents, if the document is still the same. Unlikely to happen.
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33430="HTTP-förhandsvillkor misslyckades"
+
+; Used in a popup error message when the user has sent a request to a
+; server, and the server signalled that the request entity (the actual
+; request data) was too large (HTTP error code 413). Visible if the user
+; has set the Network/Server errors/Always show dialog box preference.
+33431="HTTP-anropsdata var för långt"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the URL is longer than the server can handle (HTTP error code 414).
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33432="HTTP-adressen är för lång"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the server didn't recognize the content type of the request entitiy
+; (HTTP error code 415). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33433="Servern kände inte igen datatypen"
+
+; Used in a popup error message if Opera has requested a part of a file that
+; does not exist (HTTP error code 416). This shouldn't happen. Visible if
+; the user has set the Network/Server errors/Always show dialog box
+; preference.
+33434="Servern kunde inte sända den begärda delen av filen"
+
+; Used in a popup error message if Opera has sent a request with certain
+; expectations in the HTTP header 'Expect', and the server can't meet that
+; expectation because vital features are not implemented. For example, the
+; server can be expected to handle HTTP_CONTINUE (HTTP reply code 100)
+; when sending in forms (HTTP error code 417). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33435="Förväntad HTTP-data felaktig"
+
+; Used in a popup error message when Opera has sent a request to a HTTP
+; proxy server, and the upstream server returned an invalid response code
+; (HTTP error code 502). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33436="HTTP-mellanservern misslyckades"
+
+; Used in a popup error message when the user has requested a document and
+; the server can't fulfill the request since it's overloaded or offline
+; (HTTP error code 503). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33437="Servern är överbelastad eller ej ansluten. Försök igen senare"
+
+; Used in a popup error message when the user has sent a request to a proxy
+; server, and the upstream server did not answer before the proxy server
+; timed out (HTTP error code 504). Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33438="HTTP-mellanservern bröt förbindelsen (tidsgräns nådd)"
+
+; Used in a popup error message when the user has requested a document from
+; a server, and the server doesn't support the HTTP version used (HTTP
+; error code 505). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33439="HTTP-versionen godtogs inte"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a server, using HTTP digest authentication to check the
+; documents integrity, and the authentication failed.
+33047="Autentisering misslyckades. Innehållet kan vara opålitligt"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a proxy server, using HTTP digest authentication to check
+; the documents integrity, and the authentication failed.
+33048="Autentisering mot mellanserver misslyckades. Innehållet kan vara opålitligt"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server answered that the ftp service was not
+; currently available (FTP error 421).
+33056="Ftp-servern är inte tillgänglig"
+
+; Used in a popup error message as a default error message when the user has
+; entered an FTP URL into the URL field and an error has occurred.
+33057="Internt fel i ftp-modulen"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server has rejected the connection.
+33058="Kunde inte ansluta till ftp-servern, troligen\r\när för många användare inloggade. Försök igen senare."
+
+; Can be used when the the user has entered an FTP URL into the URL field,
+; and the server has rejected the connection because the provided user
+; name didn't exist. Normally an authentication dialog is shown instead.
+33059="Användaren finns inte på ftp-servern"
+
+; Can be used when the the user has entered an FTP URL without user name and
+; password into the URL field to do an anonymous login, and the server did
+; not accept anonymous logins. Normally an authentication dialog is shown
+; instead.
+33060="Du måste ange användar-id och lösenord för att ansluta till ftp-servern"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the directory did not exist
+33061="Ftp-katalogen hittades inte"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the file did not exist.
+33062="Filen finns inte"
+
+; Used in a popup error message when an initiated FTP file download is
+; interrupted by the server, either by the connection being closed (FTP
+; error 426) or the download action being aborted (FTP error 451).
+33063="Anslutningen stängdes av ftp-servern"
+
+; Used in a popup error message when the user has entered an FTP URL in the
+; URL field to request a file download, and the server signals that it
+; can't set up a passive data channel to transfer the file (FTP error
+; 425).
+33064="Kunde inte öppna datakanal till ftp-servern"
+
+; Used in a popup error message when the user has entered a file URL
+; pointing to a file that does not exist in the URL field.
+33120="Kunde inte öppna filen"
+
+20017="Utskriftsskalan kan bara sättas mellan 20 och 400%. Ange ett giltigt värde"
+20018="Maximalt antal anslutningar mot en server måste vara mellan 1 och 99."
+20019="Maximalt antal anslutningar måste vara mellan 1 och 999."
+20020="Antalet rader i historiken måste vara mellan 0 och 999."
+; Used in a popup error message when the user has requested a file from the
+; server, and the server recieves the request but no data exists to return
+; (HTTP error code 204), if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33044="Servern returnerade inga data"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file is read-protected.
+32903="Tillgång nekas till filen"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file does not exist.
+32904="Filen finns inte"
+
+; Used in a popup error message when Opera has tried to write a file to disk
+; and there was not enough disk space left. This happens for example when
+; trying to save a page to disk, but also in many other places and
+; situations, not always connected with something that the user does.
+32905="Kunde inte skriva till filen. Disken är full."
+
+; Used in a popup error message when Opera has failed to write data into the
+; cache, for example when fetching a document.
+32906="Internt cachefel"
+
+20045="Slut på resurser. Kunde inte ladda sträng"
+; Used as default text on file upload input elements in forms in HTML
+; documents.
+20046="Bläddra..."
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no telnet application is specified in preferences.
+20048="Inget telnetprogram har angivits. Ange full sökväg till ett telnetprogram  i inställningarna."
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no host name has been specificed in the url.
+20049="Inget värdnamn har angivits"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no path to a TN3270 terminal application has been specified
+; in the preferences. (TN3270 is a variant of telnet used mainly on IBM
+; mainframes).
+20121="Inget TN3270-program har angivits. Ange full sökväg till ett TN3270-program i inställningarna."
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no host name has been specified. (TN3270 is a variant of
+; telnet used mainly on IBM mainframes).
+20122="Inget värdnamn har angivits"
+
+20226="Skalfiler (*.zip)|*.zip|Alla filer (*.*)|*.*|"
+20050="HTML-filer|*.htm;*.html|Textfiler|*.txt|GIF-filer|*.gif|JPEG-filer|*.jpg;*.jpeg|BMP-filer|*.bmp|Ljudfiler|*.wav|AVI-filmklipp|*.avi|MIDI-musikfiler|*.mid;*.midi|Fönsterinställningar|*.win|XML-filer|*.xml|Stilmallar|*.css|Alla filer (*.*)|*.*|"
+; Used in the File/Open dialog to let the user select what type of files the
+; dialog should show. The labels are visible in the File type dropdown
+; list.
+20051="HTML-filer (*.htm;*.html)|*.htm;*.html|Textfiler (*.txt)|*.txt|GIF-filer (*.gif)|*.gif|PNG-filer (*.png)|*.png|JPEG-filer (*.jpg)|*.jpg|BMP-filer (*.bmp)|*.bmp|Alla filer (*.*)|*.*|"
+
+20052="Programfiler (*.exe)|*.exe|Alla filer (*.*)|*.*|"
+30120="Ljudfiler (*.wav)|*.wav|Alla filer (*.*)|*.*|"
+20126="X509 (*.usr)|*.usr|PKCS #7 signerad (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (med hemlig nyckel) (*.p12)|*.p12;*.pfx|PEM-fil (*.pem)|*.pem|Alla filer|*.*|"
+20127="X509 (*.usr)|*.usr|PKCS #7 signerad (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (med hemlig) (*.p12)|*.p12;*.pfx|PEM-fil (*.pem)|*.pem|"
+20128="X509 (*.ca)|*.ca;*.crt;*.cer;*.509;*.der|PKCS #7 signerad (*.p7s)|*.p7s|PKCS #7(*.p7)|*.p7|PEM-fil (*.pem)|*.pem|Alla filer|*.*|"
+; Used in the authentication dialog when the user tries to access a password
+; protected document.
+20082="Ange användar-id och lösenord för sidan."
+
+; Used in the authentication dialog when the user has tried to access a
+; password protected HTML page and authentication has failed.
+20053="Kunde inte autentisera. Ange användar-id och lösenord på nytt."
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the proxy server requires authentication.
+20110="Ange användar-id och lösenord för mellanservern."
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the authentication to the proxy server fails.
+20109="Kunde inte autentisera mot mellanservern. Ange användar-id och lösenord på nytt."
+
+20118="Stilmallar (*.css)|*.css|HTML-filer (*.htm,*.html)|*.htm;*.html|Alla filer (*.*)|*.*|"
+20341="Bilder|*.gif;*.png;*.jpg;*.jpeg;*.jpe;*.bmp|Alla filer|*.*|"
+20059="GIF-filer (*.gif)|*.gif|PNG-filer (*.png)|*.png|JPEG-filer (*.jpg)|*.jpg|BMP-filer (*.bmp)|*.bmp|Alla filer (*.*)|*.*|"
+20073="Meddelande(n) postat/-de"
+; Used in a popup error message when Opera finds that the document type is
+; unknown, or no document exists. This is hard to produce, though, since
+; handle all unknown file/mime types by letting the user decide what to do
+; with them - save, open or other alternatives, and empty documents are
+; just ignored.
+20074="Okänt dokument, eller inget dokument angivet"
+
+20075="Kunde inte skapa Opera-katalogen. Försök igen med ett giltigt katalognamn"
+; Used in an error popup dialog when the user has entered a gopher or WAIS
+; url in the URL field, and no corresponding proxy has been set in
+; preferences.
+20076="Adresstypen kräver att du använder en mellanserver. Ställ in en mellanserver i inställningarna"
+
+; Used as the default text to substitute an image in an HTML document, if
+; the image can't be loaded (or viewing of images is turned off) and the
+; images alt attribute is empty.
+20078="Bild"
+
+; Used as the default prompt string to a searchable index specified with the
+; ISINDEX tag (an early form of forms functionality, deprecated in HTML
+; 4.X) in a HTML document, and is rendered in the document above an input
+; text area. (The label can be changed from this default with the PROMPT
+; attribute to the ISINDEX tag.)
+20079="Detta är ett sökbart index"
+
+; Used at the end of an HTML document that has not been fully loaded because
+; the user has cancelled the request with the Stop button.
+20081="  Överföringen avbruten!"
+
+20084="Detta är en intern typ. Den kan inte tas bort."
+22509="Ta bort filtyp"
+20085="Är du säker på att du vill ta bort filtypassocieringen (%s)?\n\nOpera kommer inte längre veta hur filer med denna typ skall hanteras om du gör det."
+20086="Detta är en intern typ. Namnet kan inte ändras."
+20090="Öppna e-postfil"
+20091="Spara e-postfil"
+20093="Opera e-post"
+30101="Importerar e-post från Eudora®"
+30100="Importerar e-post från Outlook Express®"
+30102="(Microsoft Outlook Express 4.x)"
+30103="(Microsoft Outlook Express 5.x)"
+30112="(Kommaavdelad adressboksfil)"
+30104="(Netscape Mail)"
+30109="(Qualcomm Eudora)"
+30105="(Microsoft Windows Messaging)"
+30106="(Microsoft Outlook)"
+30107="(UNIX-brevlådefil)"
+30108="Inga stödda program hittades!"
+30110="Ange i vilken mapp du har Outlook Express' brevlådor."
+30111="Ange i vilken mapp du har dina brevlådor."
+16615="Här kan välja vilka sorters reklam du vill se"
+; Search strings
+17059="&Inställningar..."
+17060="Söktyp"
+17061="Nyckelord"
+17062="<Förval>"
+
+; Search with x
+17063="%s-sökning"
+
+; Search for x
+17064="Sök %s"
+
+; Search x-domain
+17065="%sssökning"
+
+; Search in page
+17066="Sök i sidan"
+
+17056="Händelse"
+17057="Ljudfil"
+22461="&Öppna filen"
+22462="&Öppna filen med %s"
+22464="Vad vill du göra?"
+22463="Varning! Du bör alltid utföra viruskontroll innan filer öppnas"
+22468="Okänd server"
+22515="Dokument:"
+22516="Bilder:"
+22517="Summa:"
+22518="Hastighet:"
+22519="Tid:"
+; Used in the dialog title when user tried to download file to an invalid
+; directory.
+22736="Ogiltig hämtningkatalog"
+
+; The user tried to download a file to an invalid directory.
+22735="Du försökte hämta till en ogiltig katalog."
+
+20094="Felaktig marginalstorlek. Måste vara mellan 0 och 5 cm"
+20098="Ingen mottagare angiven. Välj en mottagare eller diskussionsgrupp"
+20101="Kunde inte spela multimediafil. Kontrollera att enheten är korrekt installerad."
+21020="Kunde inte starta det registrerade programmet. Windows har slut på minne eller programfilen är trasig."
+21021="Filen kunde inte hittas."
+21022="Sökvägen finns inte."
+21023="Kunde inte starta det registrerade programmet. Minnet slut."
+21024="Kunde inte starta det registrerade programmet. Ett bibliotek (DLL-fil) verkar vara felaktigt."
+21025="Kunde inte starta det registrerade programmet. Det kräver Windows 32-bitarsutökningar."
+21026="Inget program har angivits för denna filändelse."
+21027="Kunde inte starta det registrerade programmet."
+21030="Kunde inte starta programmet. Windows har slut på minne eller så är programfilen trasig."
+21031="Kunde inte hitta programmet."
+21032="Programsökvägen finns inte."
+21033="Kunde inte starta programmet. Minnet slut."
+21034="Kunde inte starta det registrerade programmet. Ett bibliotek (DLL-fil) verkar vara felaktigt."
+21035="Kunde inte starta programmet. Det kräver Windows 32-bitarsutökningar."
+21036="Kunde inte starta programmet."
+20102="Signaturfiler (*.sig)|*.sig|Textfiler (*.txt)|*.txt|Alla filer (*.*)|*.*|"
+22505="Du måste ange en MIME-typ."
+22506="Ingen MIME-typ angiven"
+22512="MIME-typen har redan definierats.\n\n%s\n\nVill du skriva över den?"
+22513="Skriva över MIME-typ?"
+; Popup error message when the user has tried to print a document and the
+; printer signals that it's out of paper. Currently unsorted.
+20103="Kunde inte skriva ut sidan. Skrivaren har slut på papper."
+
+; Used in the document window when showing an ftp file listing. 
+20125="Moderkatalog"
+
+; Used in the 'type' column of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field, when the list item type is a directory.
+22494="Katalog"
+
+; Used in the column titles of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field.
+22496="Namn"
+22497="Typ"
+22498="Storlek"
+22499="Tid"
+
+20200="Normal webbsidestext"
+20201="Webbsida <h1>"
+20202="Webbsida <h2>"
+20203="Webbsida <h3>"
+20204="Webbsida <h4>"
+20205="Webbsida <h5>"
+20206="Webbsida <h6>"
+20207="Webbsida <pre>"
+20208="Länkar <a>"
+20230="Enradiga textfält i formulär"
+20212="Flerradiga textfält i formulär"
+20213="Knapptext i formulär"
+20214="CSS-familj serif"
+20215="CSS-familj sans-serif"
+20216="CSS-familj cursive"
+20217="CSS-familj fantasy"
+20218="CSS-familj monospace"
+22072="Adressen är för lång."
+; Used in a popup error message when there is not enough free memory for
+; Opera to complete the current task.
+21002="Minnet slut."
+
+21249="Sökresultat"
+21180="Egen verktygsrad"
+21181="Tom sida"
+21199="Ny mapp"
+21200="Nytt"
+21201="Skapa"
+21202="Meny"
+21248="Sök"
+21193="Ny flik"
+21203="Nytt"
+21204="Öppna"
+21205="Spara"
+21206="Skriv ut"
+21207="Kopiera"
+21208="Sök"
+21209="Bakåt"
+21210="Hämta om"
+21211="Framåt"
+21212="Start"
+21213="Gå till"
+21214="Aktiva"
+21215="Sida vid sida"
+21216="Överlappande"
+21217="Skola"
+21218="MIME"
+21254="Listpanel"
+21255="Full"
+21197="Visa"
+21198="Sök"
+21194="Återuppta"
+21195="På nytt"
+21196="Stoppa"
+21010="Förhandsgr."
+21011="Som skärmen"
+21012="Aktiv ram"
+21013="Alla ramar"
+21050="Stänga alla fönster?"
+21051="&Bokmärken"
+; Used in the progress bar when a request for fetching a document has been
+; enqueued for sending to the server.
+21059="Anrop köat för sändning till %s..."
+
+; Used in the progress bar when Opera is looking up the name for the host to
+; fetch a document from.
+21060="Slår upp värdnamnet %s"
+
+; Used in the progress bar when connecting to the host to fetch the
+; requested document.
+21061="Ansluter till värden %s"
+
+; Used in the progress bar when sending a document request to the server.
+21062="Sänder anrop till %s"
+
+; Used in the progress bar when receiving data from the requested document
+; from the server.
+21063="Hämtar data från %s"
+
+; Used in the progress bar when starting the network before fetching a
+; requested document.
+21064="Kopplar upp mot nätverk/modem..."
+
+; Used in the progress bar (often too briefly to be seen, before the
+; hostname lookup) when searching for a complete name for the server to
+; fetch a requested document from.
+21065="Söker efter komplett servernamn..."
+
+; Used in the progress bar when setting up an encrypted connection with the
+; server before fetching a requested document.
+21066="Kopplar upp säker förbindelse..."
+
+; Used in the progress bar when connecting to a proxy server to fetch a
+; requested document.
+21067="Ansluter till mellanserver..."
+
+; Used in the progress bar when waiting for a connection to the server to be
+; set up, to fetch a requested document.
+21760="Väntar (%2 i kön) på anslutning till %1"
+
+; Used in the progress bar when a requested file has been loaded from the
+; server.
+21074="Slutförde anrop till %s"
+
+; Used in the progress bar when waiting for a reply from the server after
+; requesting a document.
+21068="Väntar på data från servern under maximalt 40 sekunder..."
+
+; Used in a popup warning message when the user has submitted a HTML form to
+; a server, which accepts the request, but never sends an HTTP_CONTINUE
+; (HTTP response code 100) to tell Opera to send the forms data. Opera
+; waits for 40 seconds before showing the warning message.
+33045="Det verkar vara ett problem med servern.\n\nOm inläsningen inte avslutas korrekt bör du stoppa överföringen och sända in formulärdata på nytt."
+
+; Used in the progress bar while the user selects to accept or reject a
+; cookie in the cookie warning/confirmation dialog, when accessing a site
+; that requires the server to set client cookies, and Opera is not set to
+; automatically receive this kind of cookie.
+21077="Väntar på att användaren skall bekräfta kakor..."
+
+; Used in the progress bar while Opera checks that the domain stated in the
+; cookie exists.
+21078="Väntar på att namnserver skall bekräfta domän(er) i kaka..."
+
+; Used in a popup error message if the user has entered an URL with a port
+; specification that is not the default port for that protocol, and is
+; among the ones that Opera uses internally (for example
+; www.example.com:25) in the URL field.
+33050="Av säkerhetsskäl är åtkomst till porten spärrad."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie with a domain attribute that does
+; not match the server name.
+33051="Servern försökte sända en kaka vars domän inte stämmer överens med värdnamnet. Kakan har avvisats eftersom den skulle kunna användas för utnyttja den andra servern.\r\n\r\nWebbserver kan inte anses vara trovärdig."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie, and Opera fails to look up the
+; domain stated in the cookie in the DNS.
+33052="Servern försökte sätta en kaka för en domän utan registrerad IP-adress. Av säkerhetsskäl är detta inte godtagbart, varför kakan har avvisats.\r\n\r\nDu kanske vill kontakta de ansvariga för webbplatsen och be dem lägga till en IP-adress för domänen som anges i kakan."
+
+; Used in about page.
+22726=", detta insticksprogram är inaktiverat"
+
+21080="Starta Opera"
+21081="Avsluta Opera"
+21082="Sida inläst"
+21079="Överföring klar"
+21083="Misslyckad laddning"
+21084="Följ länk"
+22259="Inkommet direktmeddelande"
+22260="Kontakt ansluten"
+21111="Ingen"
+22522="Inget skal"
+22469="Inget program registrerat för att visa %s-filer. Du måste ange ett program att visa dem med.\nAnge vilket program som skall användas genom att trycka [Avancerat]."
+22470="Inget program hittades"
+25142="Välj ljudfil att spela vid händelsen"
+21100="Windows börjar få dåligt med resurser. För att undgå problem bör du stänga några fönster eller ett program."
+21101="Windows börjar få dåligt med resurser. För att undgå problem bör du stänga några fönster eller ett program."
+21104="Fönsterinställningsfilen verkar vara trasig och kan inte användas."
+21112="Fönsterinställningar (*.win)|*.win|Alla filer (*.*)|*.*|"
+21247="Visa"
+21233="Sänd"
+21234="Inkludera"
+21235="Stopp"
+21236="Ladda"
+21237="Visa"
+21238="Av"
+21239="Färg"
+22502="Författarens"
+22503="Eget"
+; View source button
+22571="HTML"
+
+20105="Sida %d"
+; Used in an warning/confirmation dialog when the user has submitted a form
+; via email.
+20108="Detta formulär sänds via e-post. Tryck [Ja] för att avslöja namn och e-postadress till mottagaren. Tryck [Nej] för att använda en anonym e-postadress."
+
+; Used in an warning/confirmation dialog when the user has tried to submit
+; an HTML form insecurely.
+20111="Det här formuläret sänds in i okrypterad form. Vill du fortsätta?"
+
+; Used in a warning/confirmation dialog when the user has submitted an HTML
+; form, and the server wants to redirect the submitted data to another
+; server. GET and POST refers to HTTP commands. POST is to send the form
+; data again to the new destination, GET discards the data, but continues
+; to to the new destination.
+20119="Servern vill omdirigera ditt formulär.\n\nTryck [Ja] för att sända formuläret till den nya destinationen (POST)\n\nTryck [Nej] för att fortsätta till destinationen utan att sända formuläret (GET).\n\nTryck [Avbryt] om du inte vill fortsätta."
+
+21401="Ingen"
+21402="Låg"
+21403="Medel"
+21404="Hög"
+21405="Ingen säkerhet på servern"
+21407="Låg säkerhet på servern"
+21409="Medelstark säkerhet på servern"
+21411="Hög säkerhet på servern"
+21406="Låg säkerhet på servern. Okrypterade bilder"
+21408="Medelstark säkerhet på servern. Okrypterade bilder"
+21410="Hög säkerhet på servern. Okrypterade bilder"
+; Used in the title bar of the Certificate authorities dialog in the network
+; security preferences.
+21250="Certifikatutfärdare"
+
+; Used in the title bar of the Personal certificate dialog in the network
+; security preferences.
+21251="Personliga certifikat"
+
+; Used in a popup error message when the client was unable to connect to the
+; server.
+21252="Kunde inte ansluta mot servern. Detta kan bero på att den krypteringsmetod som stöds av servern inte är aktiverad i säkerhetsinställningarna."
+
+; Used in a poup error message to inform about a transmission failure.
+21253="Överföringsfel."
+
+; Used in a popup error message when the certificate is illegal or
+; non-verifiable.
+21258="Ogiltigt eller ej verifierbart certifikat."
+
+; Used in a popup error message when the certificate is unsupported.
+21259="Certifikatet stöds ej."
+
+; Used in a popup error message when the certificate has been revoked by its
+; issuer.
+21260="Certifikatet har dragits in av utgivaren."
+
+; Used in a popup error message when the certificate has expired.
+21261="Certifikatet har gått ut."
+
+; Used in a popup error message when the certificate is unknown.
+21262="Certifikatet är okänt."
+
+; Used in a popup error message, when the certificate is valid, but
+; permission denied.
+21265="Certifikatet är giltigt, men åtkomst nekades."
+
+; Used in a popup error message when an internal error has occurred.
+21271="Ett internt fel uppstod."
+
+; Used in a popup error message when the certificate's chain was not ordered
+; properly.
+21274="Fel ordningsföljd i certifikatkedjan."
+
+; Used in a popup error message when no acceptable SSL 2 encryption methods
+; have been found.
+21272="Inga godtagbara SSL 2-krypteringsmetoder hittades."
+
+; Used in a popup error message when an unknown error has been detected.
+21273="Ett okänt fel uppstod."
+
+; Used in a popup error message when the server only supports SSL 2, and SSL
+; 2 is not enabled in preferences.
+21319="Servern stöder endast SSL 2. Om du vill ansluta till servern måste du slå på SSL v2 i inställningarna."
+
+; Used as a title of a warning dialog.
+21276="Säker förbindelse: varning (%u)"
+21277="Säker förbindelse: varning (%u) från server"
+
+; Used as a title of a error dialog.
+21278="Säker förbindelse: ödesdigert fel (%u)"
+21279="Säker förbindelse: ödesdigert fel (%u) från servern"
+
+; Used in the security password dialog.
+21280="Ange säkerhetslösenordet"
+21281="Ange det gamla säkerhetslösenordet"
+21282="Ange det nya säkerhetslösenordet"
+21283="Ange det nya säkerhetslösenordet en gång till"
+21284="Fel lösenord, ange rätt säkerhetslösenord"
+
+; Error message during changing of password.
+21285="Ändring av säkerhetslösenordet misslyckades."
+
+; Information to the user about requirements on security password.
+21388="Ditt lösenord måste innehålla minst sex tecken, och bestå av minst en siffra och en bokstav"
+
+; Used in the security password dialog.
+21320="Ange ett säkerhetslösenord"
+
+; Used in a text label in the view certificates dialog.
+21286="Detta är de personliga certifikat som finns i databasen."
+21287="Detta är de certifikatutfärdare som finns i databasen."
+
+; Message during installation of certificate.
+21288="Installera certifikatutfärdarens certifikatkedja i databasen?"
+21289="Installera den personliga certifikatkedjan i databasen?"
+21330="Installera den PEM-kodade certifikatkedjan i databasen?"
+
+; Used in a popup error dialog when there is problem with the server's
+; certificate and the user is about to send a request to the server.
+21291="Du håller på att sända ett anrop till servern. Fortsätta?"
+
+; Used in a popup error dialog when there is problem with the server's
+; certificate, it did not match its hostname.
+21293="Serverns certifikat motsvarar inte dess värdnamn. Godta?"
+
+; Used as a dialog text when one of the certificates presented by the server
+; has expired.
+21378="Ett av certifikaten servern tillhandahöll har gått ut. Vill du godta certifikatet?"
+
+; Used in a dialog text when the user is prompted to select a certificate
+; for the server.
+21309="Servern bad om ett certifikat. Välj ett av dessa certifikat. Tryck [Avbryt] för att inte sända något."
+
+; Used in a popup error message when the signatures of the certificate could
+; not be verified.
+21331="Certifikatets signaturer kunde inte verifieras."
+
+; Used in a popup error message when the certificate cannot be used for the
+; intended purpose.
+21464="Detta certifikat kan inte användas för valt ändamål."
+
+; Used as a dialog title when installing certificates.
+21303="Installera utfärdarcertifikat"
+21304="Installera klientcertifikat"
+21336="Installera PEM-certifikat"
+
+; Used as a dialog title when the user should select a client certificate..
+21305="Välj klientcertifikat"
+
+; Used as a dialog title when there is a problem with the certificate.
+21306="Certifikatvarning"
+21307="Felaktigt certifikatnamn"
+21308="Utgånget certifikat"
+21377="Utgånget servercertifikat"
+
+; Used in a popup error message when the certificate has expired.
+21312="Certifikatet har gått ut. Du bör ta bort det och installera ett aktuellt certifikat."
+
+; Used in a dialog title when the server's certificate chain is incomplete.
+21314="Certifikatundertecknaren hittades inte"
+
+; Used in a dialog when the server's certificate chain is incomplete, during
+; certificate installation.
+21321="Serverns certifikatkedja är inte komplett, och undertecknarna är inte registrerade. Godta?"
+21322="Rotcertifikatet för servern är inte registrerat. Du kan installera certifikatet. Godta/installera?"
+
+; Used in a dialog during certificate installation. The certificate has been
+; installed and is usable, but Opera couldn't verify it, because the the
+; signer of certificate is missing.
+21315="Ditt certifikat har installerats, och du kan använda det, men Opera kunde inte verifiera det. Certifikatets undertecknare saknas. Installera undertecknarens certifikat om det är tillgängligt."
+
+21311="Installera"
+; Error message during changing of password.
+21323="Inställning av säkerhetslösenordet misslyckades."
+
+; Used in a popup error message when the installation of a certificate
+; failed.
+21316="Installationen av certifikatet misslyckades."
+
+; Used in a dialog during certificate installation, when the client
+; certificatea had no matching private key in the database.
+21317="Klientcertifikatet saknar motsvarande hemlig nyckel i databasen."
+
+; Used in a dialog during certificate installation, when the certificate's
+; chain was not ordered properly.
+21318="Fel ordningsföljd i certifikatkedjan."
+
+; Used in a popup error message when the installation of a certificate
+; failed, because there was a different client certificate already
+; installed.
+21324="Ett annat klientcertifikat är redan installerat för nyckeln. Installationen misslyckades."
+
+; Used in a popup error message when a different certificate already exist
+; for at least one of the installed certificate authorities.
+21325="Ett annat certifikat finns redan för åtminstone en av de installerade certifikatutfärdarna. Dessa ignorerades."
+
+21326="Genererar nyckel"
+21327="Opera generar din hemliga nyckel, var god vänta."
+; Error message when encryption is disabled.
+21328="Alla krypteringsmetoder har inaktiverats i inställningarna."
+
+; Used in a dialog during certificate installation, when the certificate is
+; unknown or has an illegal format.
+21329="Certifikatet är okänt eller har ett felaktigt format."
+
+; Error message when encryption is disabled.
+21332="Säkerhetsfunktioner är ej tillgängliga."
+21333="Säkerheten har stängts av."
+
+21334="Säkerhetsfunktionen är avslagen."
+21335="Utan denna säkerhets-DLL kan Operas säkerhetsfunktioner inte användas"
+21337="Godta"
+; Used in a popup error message when the server's certificate held an
+; illegal name expression.
+21338="Servercertifikatet innehöll ett ogiltigt namnuttryck"
+
+; Header for description of encryption type in certificate dialogs. Max 30
+; characters.
+21344="Anslutning"
+
+; IMPORTANT!!!! Do not change %u, %ld or \r and \n !!!!
+21346="Modulus:"
+21347="modulus:"
+21348="Exponent:"
+21349="öppenExponent:"
+21350="hemligExponent:"
+21351="primtal1:"
+21352="primtal2:"
+21353="exponent1:"
+21354="exponent2:"
+21355="koefficient:"
+21364="Nyckelalgoritmen stöds ej "
+21365="Okänt objekt-ID för utökning: "
+21367="Okänd signaturalgoritm "
+21368="Certifikatversion: %ld\r\n"
+21369="Serienummer: %s\r\n"
+21370="Ej giltig före: "
+21371="\r\nEj giltig efter: "
+21372="\r\nFingeravtryck: "
+21373="\r\n\r\nAlgoritm för öppen nyckel: "
+21374="\r\nSignaturalgoritm: "
+21375="\r\nUtökningar:\r\n"
+21376=" (Kritiskt)"
+21461="\r\n\r\nFingeravtryck för öppen nyckel (SHA-1):\r\n  "
+
+; Max 199 chars 
+21366="%u-bitars hemlig nyckel. Genererad %s.\r\nAdress: %s"
+
+21362="Certifikatet kan inte användas för SSL-autentisering eller att dela ut SSL-certifikat."
+21356="Certifikatet kan användas för SSL-klientautentisering."
+21357="Certifikatet kan användas för SSL-serverautentisering."
+21358="Certifikatet kan användas för SSL-klient- och -serverautentisering."
+21359="Certifikatet kan användas för att dela ut SSL-certifikat."
+21360="Certifikatet kan användas för SSL-klientautentisering, samt att dela ut SSL-certifikat."
+21361="Certifikatet kan användas för SSL-serverautentisering, samt att dela ut SSL-certifikat."
+21363="Certifikatet kan användas för SSL-klient- och -serverautentisering, samt att dela ut SSL-certifikat."
+; Used in a popup error message when the server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32901="Servern kräver en autentiseringsmetod som inte stöds."
+
+; Used in a popup error message when a proxy server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32902="Mellanservern kräver en autentiseringsmetod som inte stöds."
+
+; Used in a popup error message when the user has tried to authenticate to a
+; page outside of the given security realm.
+32907="Adressen finns inte i listan över adresser som kan autentiseras i det givna området.\r\nKan inte sända autentiseringsintyg."
+
+; Used in the progress bar while Opera is uploading a file to the server.
+21386="Sänder fil(er) till servern"
+
+21380="Kunde inte spara brevet i utkorgen."
+21382="Funktionen är inte tillgänglig i denna specialversion av Opera."
+21379="Denna funktion har stängts av"
+; Used as a title of the generated drives list page (opera:drives) on some
+; platforms.
+21383="Enheter"
+
+; Used as title of the generated plugin list page (opera:plugins) on some
+; platforms.
+21384="Insticksprogram"
+
+; Used as title of the generated history list page, when the user has
+; selected Windows/Special/History, or entered the URL opera:history.
+21385="Historik"
+
+21400="Kataloger med insticksprogram har genomsökts.\nInsticksprogram för nya filtyper har aktiverats.\nInsticksprogram som hanterar redan kända typer har lagts till, men inte aktiverats."
+; Used as title of the generated cache list page, when the user has selected
+; Windows/Special/Cache, or entered the URL opera:cache.
+21415="Cache"
+
+; Used in the Filename column of the created cache listing (created by
+; entering the special URL opera:cache into the URL field) when the file
+; is cached in memory and not to a file.
+22493="(Minne)"
+
+; Used in about page.
+22491="Källkod för"
+
+; Used as page title in a blank page created by entering the special URL
+; opera:blank in the URL field.
+22492="Tomt dokument"
+
+; Used as column titles in the generated cache list page, when the user has
+; selected Windows/Special/Cache, or entered the URL opera:cache.
+21416="Filnamn"
+21417="Adress"
+21418="Storlek"
+
+21420="Vill du verkligen avbryta överföringen?"
+; Used in a popup confirmation dialog when the user has gone to
+; Preferences/Multimedia, enabled plugins and pressed the 'Find plugins'
+; button, and new plugins needs to be activated.
+21764="Vill du associera insticksprogrammet "%1" med typen "%2"?"
+
+21421="Vill du associera detta insticksprogram med typen?"
+21425="Din utvärderingsperiod har %i dagar kvar"
+21428="Oregistrerad version"
+21501="Lägg till sida här..."
+21502="Välj som aktiv mapp"
+21504="Öppna alla mappens poster"
+21508="Fler bokmärken..."
+; Docked hotlist window
+21516="Adresslista"
+21517="Titel"
+21518="Använd"
+21520="Skapad"
+
+21525="Hantera bokmärken..."
+21519="&Visa"
+21600="Ett alias kan inte innehålla punkt, frågetecken, kolon, snedstreck eller omvänt snedstreck"
+21601="Ogiltigt alias"
+21609="Dina bokmärken är sorterade alfabetiskt.\n\nDu måste välja "egen sortering" i bokmärkesvyns meny innan du kan ändra ordningen på dina bokmärken."
+21610="Bokmärken sorterade alfabetiskt"
+; Open file dialog
+21511="Lägg fil till bokmärken"
+21512="Öppna bokmärkesfil"
+21513="Operabokmärkesfiler (*.adr)|*.adr|HTML / Netscapebokmärkesfiler (*.htm, *.html)|*.htm;*.html|Alla filer (*.*)|*.*|"
+21514="Skapa ny bokmärkesfil"
+
+; Autoimport after install
+21950="Automatiskt importerade"
+21951="Netscapebokmärken"
+21952="Internet Explorer-favoriter"
+
+; Save file
+21551="Opera (*.adr)|*.adr|"
+
+21606="Varning"
+21607="Är du säker på att du vill ta bort dessa %li poster?"
+21608="Bekräfta borttagning av flera poster"
+22520="Musgester"
+22521="Du har utfört en musgest för första gången.\n\nMusgester aktiveras genom musrörelser samtidigt som musknapp två hålls ned.\n\nTryck [Hjälp] för information om musgester.\n\nVill du fortsätta använda musgester?"
+; Skin removal
+22523="&Ta bort förgrund"
+22524="Ta bort &bakgrund"
+
+; Use skin from button set (buttons.ini)
+22738="Använda skal från knappuppsättning?"
+22737="Knappuppsättningen innehåller även skalbilder.\nVill du använda dem?"
+
+22739="Köp Opera och ta bort reklamfönstret"
+; Serial number stuff
+22004="Operaregistrering"
+22001="Opera är redan registrerat.\n\nVill du ändra registreringsinformationen?"
+22002="Registreringsinformationen du har angett verkar vara felaktig.\n\nKontrollera att du har angett den korrekt."
+22003="Opera är nu registrerat."
+22005="Registreringsinformationen är ej längre giltig.\nDu kan uppgradera via <https://www.opera.com/buy/>."
+22006="Registreringsinformationen är ej längre giltig.\nDu kan uppgradera via <https://www.opera.com/buy/>."
+
+21300="Genvägar"
+21301="Index"
+21342="Vid stängning av Opera."
+21343="Kakan sänds endast till säkra servrar i domänen."
+21393="Kakan kan sändas till alla servrar i domänen."
+21394="Kakan sänds endast till denna säkra server."
+21395="Kakan sänds endast till denna server."
+21396="Kakan kommer att tas bort från databasen."
+22071="Överföringar"
+22232="Egendefinierat"
+; Used in a popup error dialog during loading of global history list.
+21431="Din historikfil är trasig och kommer att rensas."
+
+; Probably deprecated. On O7 and O6 Win, the JavaScript error dialog is
+; popped up instead, if the user has requested in preferences/Multimedia
+; to be alerted of JavaScript errors.
+32825="JavaScriptkörning misslyckades"
+21450="Skriptkörning misslyckades."
+21451="Kompilering av skript misslyckades."
+
+; Used if Opera for some reason tries to run JavaScript in a non-HTML
+; document. This is not likely to happen.
+21452="javascript:-adresser kan endast köras från  HTML-dokument."
+
+; Used in a popup error message when the Opera fails to load the JavaScript
+; library at startup.
+21453="Kunde inte ladda systemfilen ES262-32.DLL. JavaScript kommer inte att köras."
+
+; Used in the progress bar while Opera is busy running a JavaScript program.
+21454="Kör JavaScript..."
+
+22073="Om du stänger överföringsfönstret kommer alla pågående överföringar att avbrytas.\n\nÄr du säker?"
+22074="Avbryta överföringar?"
+22076="Namn"
+22075="Storlek"
+22080="Typ"
+22077="Förlopp"
+22078="Tid"
+22079="Hastighet"
+22085="Färdig"
+22108="Färdig (storlek stämmer ej)"
+22086="Avbruten"
+22087="Fel"
+22089="Okänd"
+22090="Avbryt"
+22091="Återuppta"
+22186="Ta bort ur listan"
+22187="Hämta på nytt"
+22092="Öppna skal"
+22109="Kopiera filinformation"
+22093="Avbryta vald överföring?"
+22236="Den installerade översättningsfilen är inte skriven för Operabygge %s.\n\nTryck [Ja] för att starta om Opera med den inbyggda engelska texterna.\n\nTryck [Nej] för att använda språkfilen, med möjliga språkfel."
+22094="Ark."
+22096="Nytt"
+22095="Red."
+22099="Fel"
+22120="Filer"
+22121="Alla filer"
+22122="Alla filer (*.*)"
+14121="Sluta exekvera skript i denna sida"
+25266="&Visa inte dialogen igen"
+22151="Ny mapp"
+; Used in the title bar of a warning/confirmation dialog when a script tries
+; to read the content of a password input element in a form in a HTML
+; document.
+22486="Säkerhetsvarning från JavaScript"
+
+; Used in a warning/confirmation dialog when a script tries to read the
+; content of a password input element in a form in a HTML document.
+21430="Ett skript önskar läsa lösenord i formuläret.\r\n\r\nVill du ge skriptet tillgång till ditt/dina lösenord?"
+
+22102="Kunde inte stänga fjärranslutning (tidsgräns nådd)"
+22103="Stänga fjärranslutning?"
+22104="Du är ansluten mot %sVill du stänga dessa öppna fjärranslutningar?"
+22114="Egenskaper för bokmärkesmappen"
+22125="Egenskaper för kontaktmappen"
+22115="Bokmärkesegenskaper"
+22117="Bokmärken"
+22118="Kontakter"
+34304="Felaktig säkerhetskod"
+34305="Kunde inte verifiera signatur"
+34306="Kortläsaren används redan"
+34307="Det kan vara problem med kortet"
+34308="Ditt kortnummer motsvarar inte någon av mottagarna som visas i brevet"
+34309="Kunde inte kryptera (odefinierat fel)"
+22110="Bokmärken"
+22111="E-post"
+22112="Kontakter"
+22158="Panel"
+22159="Panel"
+22160="Panel"
+22124="&Lägg till alla"
+22127="Mapp"
+22128="Namn"
+22262="Frånkopplad"
+22263="Ansluten"
+22264="Borta"
+22265="Strax tillbaka"
+22266="Upptagen"
+22267="Stör ej"
+22268="Visa som frånkopplad"
+22269="Talar i telefon"
+69523="Ute på lunch"
+22415="Konst / kultur"
+22416="Bilar"
+22417="Böcker / tidsskrifter"
+22418="Datorer / spel"
+22419="Datorer / teknik"
+22420="Matlagning"
+22421="Mode / affärer"
+22422="Finans / investeringar"
+22423="Mat / vin"
+22424="Hälsa / kondition"
+22425="Hem / trädgård"
+22426="Filmer"
+22427="Musik"
+22428="Nyheter / evenemang"
+22429="Vetenskap / utbildning"
+22430="Sport / hobby"
+22431="Resor / fritid"
+22432="Ej angivet"
+22433="Under USD 25.000"
+22434="USD 25.000-35.999"
+22435="USD 36.000-49.999"
+22436="USD 50.000-75.999"
+22437="USD 76.000-99.999"
+22438="Mer än USD 100.000"
+22439="1900-1929"
+22440="1930-1949"
+22441="1950-1959"
+22442="1960-1969"
+22443="1970-1979"
+22444="1980-1989"
+22445="1990 eller senare"
+22446="Man"
+22447="Kvinna"
+22448="Ensamstående"
+22449="Ensamstående förälder"
+22450="Gift"
+22451="Gift, med barn"
+22452="Grundskola"
+22453="Gymnasium"
+22454="Kurser på högskola"
+22455="Kortare högskoleexamen"
+22456="Kandidatexamen"
+22457="Magisterexamen"
+21470="Sidan vill lagra en kaka\r\n   %s="%s"\r\n\r\nDetta värde kommer %satt sändas till %sdokument på %s%s%s%s, med sökvägar som börjar med /%s.\r\n\r\n"
+21471="endast "
+21472="säkra sidor "
+21473="servern "
+21474="alla servrar i domänen "
+21475=", port "
+22233="Registreringsinformationen är ej längre giltig.\nDu kan uppgradera via <https://www.opera.com/buy/>."
+22234="Uppgradera Opera"
+21476="Kakan kommer att tas bort när Opera stängs."
+21477=", men, om du inte ändrar det, kommer kakan att tas bort när Opera stängs."
+21478="Kakan är giltig till %s%s\r\n\r\n"
+21479="Kakan är giltig till %s och har utgått, eventuell existerande kaka med samma namn kommer att raderas.\r\n\r\n"
+21480="Tjänsten har sänt följande meddelande om kakans uppgift: "%s"\r\n"
+21481="\r\nYtterligare information kan finnas på <%s>\r\n%s\r\n\r\n"
+21482="Tjänsten tillhandahåller information om sina kakor på <%s>\r\n%s\r\n\r\n"
+21483="\r\nDu kan visa sidan genom att klicka på knappen "Visa kommentar" nedan.\r\n"
+21484="Ta emot denna och uppdateringar fram till Opera stängs"
+21485="Ta emot utan ändringar"
+21486="Ta emot, men ta bort när Opera stängs"
+21487="Ta emot och spara när Opera stängs"
+21488="Ta emot kakor från servern"
+21489="Avvisa kakor från servern"
+21490="Ta emot kakor från domänen"
+21491="Avvisa kakor från domänen"
+21499="\r\n----------------------\r\nHela kakan:\r\n\r\n"
+21738="Ta emot tredjepartskakor från servern"
+21739="Avvisa tredjepartskakor från servern"
+21740="Ta emot tredjepartskakor från domänen"
+21741="Avvisa tredjepartskakor från domänen"
+21492="Avvisa samtliga kakor"
+21493="Bestäm för varje enskild kaka"
+21494="Specialbehandling i serverhanteraren"
+21495="Ta emot samtliga kakor"
+21496="Ta enbart emot kakor för servern ifråga"
+21497="Avvisa samtliga kakor"
+21746="Bestäm för varje enskild kaka"
+21498="Ta emot samtliga kakor"
+22183="Opera måste startas om innan ändringarna kan genomföras.\n\nVill du stänga Opera?"
+22184="Stänga Opera?"
+22185="Inbyggt språk (engelska)"
+22210="Någon understödd version av Java Runtime Environment kunde inte hittas.\nDu måste installera version 1.2 eller senare av Java Runtime Environment från Sun.\nJava har automatiskt slagits av för detta arbetspass.\nVill du stänga av Java för framtida arbetspass?"
+22211="Operas Javaklasser har inte tillräckliga rättigheter för att köra.\nAntingen kunde inte filen opera.policy hittas, eller så ger inte policyfilen rättigheter för filen opera.jar. Javaminiprogram kommer inte att fungera."
+22212="Den installerade Java Runtime Environment-versionen är inkompatibel med denna version av Opera. Hämta JRE 1.2 eller senare från <http://www.javasoft.com/>."
+22213="Det dynamiska länkbiblioteket för Java finns inte där registret säger att det skall vara. Din Javainstallation verkar vara trasig. Javaminiprogram kommer inte att fungera."
+22214="Kunde inte skapa virtuell maskin för Java."
+22215="Den virtuella maskinen för Java avslutades.\n\nJava kommer att inaktiveras under resten av detta arbetspass."
+22216="Den virtuella maskinen för Java har avbrutits.\n\nJava kommer att inaktiveras under resten av detta arbetspass."
+22217="Kunde inte registrera egna Javametoder.\n\nAntingen har du en gammal version av filen opera.jar, eller så finns den inte i Operas sökväg för klasser (Classpath). Javaminiprogram kommer inte att fungera."
+22218="Vill du se information om hur du installerar Java Runtime Environment?"
+22219="Kunde inte hitta filen opera.jar\nAntingen har du inte angett "OPERA CLASSPATH" i [JAVA]-sektionen i din opera.ini-fil, eller så pekar den mot en felaktig sökväg.\nJavaminiprogram kommer inte att fungera."
+22220="Kunde inte hitta filen opera.policy\nAntingen har du inte angett "SECURITY POLICY" i [JAVA]-sektionen i din opera.ini-fil, eller så pekar den mot en felaktig sökväg.\nJavaminiprogram kommer inte att fungera."
+; Dialog title for signed Java applets certificate dialog.
+22221="Javasäkerhet"
+
+; Used in dialog for signed Java applets.
+22222="Ett undertecknat miniprogram begär ytterligare privilegier. Vill du ge detta miniprogram full tillgång?"
+
+22123="Ingen hittades"
+22173="Fel vid sändning av e-post"
+22174="Inget externt e-postprogram har angetts."
+22175="Fel vid sändning av e-post"
+22176="Kan inte starta externt e-postprogram"
+22179="E-post"
+22182="Du har inte ställt in ditt e-postidentitet korrekt ännu.\nVill du redigera dina e-postinställningar nu?"
+22180="Du har inte angivit någon extern e-postklient.\nVill du redigera dina e-postinställningar nu?"
+22181="Det finns ingen förvald e-postklient registrerad på din dator.\nVill du redigera dina e-postinställningar nu?"
+22177="Varning"
+22178="Den valda externa e-postklienten finns inte, eller så\när ej användar-id giltigt.\n\nSpara ändringar ändå?"
+21720="Identifiera som Opera"
+21721="Identifiera som Mozilla %s"
+21723="Identifiera som MSIE %s"
+21730="Ta emot från server"
+21731="Ta emot från domän"
+21732="Avvisa från server"
+21733="Avvisa från domän"
+21742="Ta emot tredjepartskaka från server"
+21743="Ta emot tredjepartskaka från domän"
+21744="Avvisa tredjepartskaka från server"
+21745="Avvisa tredjepartskaka från domän"
+21736="Godta felaktig sökväg"
+21737="Vägra felaktig sökväg"
+21734="&Avvisa"
+21735="&Ta emot"
+14217="Avbryt &förhandsgranskning\tP"
+14218="&Förhandsgranska utskrift..."
+22240="Välj den katalog som innehåller dina språkfiler"
+22514="Användardefinierad"
+; Used as default text on submit input elements in forms in HTML documents.
+13043="Sänd"
+
+; Used as default text on reset input elements in forms in HTML documents.
+13044="Återställ"
+
+; Used as default text on button input elements in forms in HTML documents.
+13045="Knapp"
+
+; Used at top of the document when trying to show an malformed XML document.
+; Followed by a more specific XML error message.
+13046="XML-tolkning misslyckades"
+
+; Used in a popup error message when the user has entered input in a text
+; input element in a WML document, and the input did not match the format
+; specification.
+13047="Ogiltig indata."
+
+11463="&Flikrad"
+11462="&Egen verktygsrad"
+11458="Visa sökmaskiner"
+11461="Visa extra&paneler"
+11326="Sortera enligt senaste användning"
+11327="Sortera enligt placering på flikrad"
+11328="Växla utan att visa lista"
+11459="Ange mapp Eudora är installerad i"
+11460="Ange mapp där Outlook Express har sina brevkorgar"
+; Preferences dialog options
+11521="Reklam"
+11500="Tillgänglighet"
+11501="Förvald läsare"
+11502="Teckensnitt"
+11503="E-post"
+11504="Filtyper"
+11505="Historik och cache"
+11506="Webbläsarutseende"
+11524="Sidutseende"
+11507="Språk"
+11508="Multimedia"
+11509="Nätverk"
+11511="Program och sökvägar"
+11512="Personlig information"
+11513="Insticksprogram"
+11514="Personlig integritet"
+11515="Säkerhet"
+11516="Ljud"
+11517="Uppstart/avstängning"
+11522="Sök"
+11518="Knapprader"
+11519="Fönster"
+
+11626="Kategori"
+11621="Verkställer nya inställningar, var god vänta..."
+11627="Namn"
+11628="Beskrivning"
+11629="Sökväg"
+17035="MIME-typ"
+17036="Filtyp(er)"
+; Unicode block names for the international font preferences
+11525="Automatiskt val"
+11526="Inga teckensnitt är tillgängliga"
+11527="Arabiska"
+11528="Armeniska"
+11529="Grundläggande latin"
+11530="Bengali"
+11531="Cherokee"
+11532="Valutasymboler"
+11533="Kinesiska (förenklad)"
+11534="Kinesiska (traditionell)"
+11535="Kyrilliska"
+11536="Devanagari"
+11537="Etiopiska"
+11538="Allmänna interpunktionssymboler"
+11539="Georgiska"
+11540="Grekiska"
+11541="Grekiska utökad"
+11542="Gujarati"
+11543="Gurmuki"
+11544="Halv- och helbreda format"
+11545="Hangul"
+11546="Hebreiska"
+11547="Hiragana"
+11548="CJK-symboler och -interpunktion"
+11572="Kanji"
+11549="Kanaresiska (kannada)"
+11550="Katakana"
+11551="Kambodjanska"
+11552="Laotiska"
+11553="Latin-1-utökning"
+11554="Latin utökning A"
+11555="Latin utökning B"
+11556="Latin ytterligare utökning"
+11557="Malayalam"
+11558="Mongoliska"
+11559="Burmesiska"
+11560="Sifferformer"
+11561="Ogham"
+11562="Oriya"
+11563="Runor"
+11564="Sinhala"
+11565="Syriska"
+11566="Tamil"
+11567="Telugo"
+11568="Thaana"
+11569="Thailändska"
+11570="Tibetanska"
+11571="Kanadensiska aborginsyllabiska"
+
+; About page
+11700="Om Opera"
+11701="Registreringsinformation"
+11702="Registrerad"
+11703="Namn"
+11704="Organisation"
+11705="Utvärdering"
+11706="Sökvägar"
+11707="System"
+11708="Inställningar"
+11709="Operas användarkatalog"
+11710="Lagrade fönster"
+11711="Bokmärken"
+11712="Sökväg till insticksprogram"
+11713="Cache"
+11714="Hjälpdokument"
+11715="Java"
+11716="Tredjeparter"
+11717="Opera Software tackar grupperna och individerna som anges ovan för deras bidrag."
+11718="Versionen av Java Runtime Environment på systemet stöds inte av denna version av Opera"
+11719="Ingen version av Java Runtime Environment är installerad"
+11720="Ja"
+11721="Nej"
+11722="ej tillgänglig"
+
+22248="bildpunkter"
+22250="bitar per bildpunkt"
+22249="byte"
+22244="Felmeddelande"
+22251="animerad i %i delbilder"
+22168="Spara fil(er)"
+22169="Öppna fil(er)"
+22170="Filen kunde inte hittas."
+22171="Ogiltigt filnamn."
+22167="Kontrollera att sökvägen och filnamnet är korrekt."
+22510="byte"
+22252="B"
+; Short for kilobyte
+22253="kB"
+
+22254="MB"
+22255="GB"
+22256="TB"
+22257="/s"
+; Used in about page.
+22480="Java ej installerat"
+
+22465="Välj mapp att spara filer i"
+; Used in about page.
+22481="Version"
+22482="Bygge"
+22483="Plattform"
+22484="Versionsinformation"
+22485="System"
+22568="Partner"
+
+22245="Ett problem uppstod när Opera försökta ansluta till din skrivare. Kontrollera skrivarinställningarna, om du använder dig av en nätverksskrivare, kontrollera nätverksförbindelsen."
+22246="Skrivarproblem"
+22247="Skrivare"
+; Hotlists toolbar buttons
+10927="Visa meny för kontaktvy"
+10926="Lägg till kontaktmapp"
+
+; Hotlists toolbar buttons and Mail Trash Toolbar
+10925="Lägg till kontakt"
+
+10920="Lägg aktiv sida till bokmärken"
+10921="Lägg till bokmärkesmapp"
+10922="Visa meny för bokmärkesvy"
+14494="Vill du\n\n     stänga alla fönster,\n\n     radera alla icke-beständiga kakor,\n\n     radera alla lösenord,\n\n     radera all historik\n     samt radera alla cachade sidor hämtade med lösenord eller kryptering?"
+14495="Ta bort personlig data"
+22163="Källkoden i detta fönster har ändrats. Vill du spara dem?"
+; Used in the window title when the page has been edit using the internal
+; source viewer.
+22164="(ändrad) "
+
+22235="Sida"
+; Used in a warning/confirmation dialog when the user has activated offline
+; mode and then requested Opera to access information that is only
+; available online.
+21433="Det nedkopplade läget är aktivt. Kan inte öppna\n\n%s\n\nVill du växla till uppkopplat läge?"
+
+22569="minut"
+22237="minut"
+22570="sekund"
+22723="sekund"
+22238="senast använd"
+22239="Du har angett ett felaktigt värde för omhämtningen.\n\nDu kan bara skriva in siffror, och värdet kan inte vara noll."
+; XML error message used at top of the document, following string 13046,
+; when trying to show an malformed XML document. Followed by a line and
+; character count to help finding the error in the XML file.
+25001="minnet slut"
+25002="syntaxfel"
+25003="inget element hittades"
+25004="ej välformat"
+25005="symbol ej stängd"
+25007="felplacerad tagg"
+25008="duplicerat attribut"
+25009="skräp efter dokumentelement"
+25010="felaktig parameterentitetsreferens"
+25011="odefinierad entitet"
+25012="rekursiv entitetsreferens"
+25013="asynkron entitet"
+25014="referens till ogiltigt teckennummer"
+25015="referens till binär entitet"
+25016="referens till extern entitet i attribut"
+25017="xml-tolkningsinstruktion ej in början av extern entitet"
+25018="okänd kodning"
+25019="kodning angiven i XML-deklaration är inkorrekt"
+25020="ej stängd CDATA-sektion"
+25021="fel i tolkning av extern entitetsreferens"
+25022="dokumentet är inte fristående"
+25000="okänt fel"
+
+; Error messages from XML
+25023="Rad:"
+25024="Tecken:"
+
+22154="Ogiltigt värde för "%s""
+21765=""%1" innehåller ett ogiltigt värde.\nVärdet måste vara mellan %2 och %3.\n\n"
+22156="Vill du återställa värdet?"
+22157="Återställer till senast korrekta värde."
+22243="Okänd"
+21766="%1 poster i %2 mappar, %3 poster totalt."
+; Used in a warning/confirmation dialog when an URL with a user name (like
+; http://username@www.example.com) is entered in the URL field.
+21463="Säkerhetsvarning:\n\nDu är på väg att gå till en adress som innehåller ett användar-id.\n\n    Användar-id: %s\n    Server: %s\n\nÄr du säker på att du vill gå till adressen?"
+
+22161="Söktexten hittades inte"
+22162="Kunde inte hitta texten "
+21120="Visa alla brevhuvud"
+; Label in the displayed header of a news/mail/MIME/MHTML message.
+21122="Datum"
+21123="Från"
+21124="Ärende"
+21125="Till"
+21121="Kopia"
+21126="Dold kopia"
+
+22703="Endast bilder"
+22704="Endast textetiketter"
+22705="Bilder med text under"
+22706="Bilder med text till höger"
+22715="Tillåt dokument skapa nya fönster"
+22716="Förhindra skapande av nya fönster"
+22717="Öppna skapade fönster i bakgrunden"
+22718="Blockera oönskade skapade fönster"
+25316="Bekräfta borttagning"
+25317="Bekräfta att extrapanelen skall tas bort permanent.\n\n%s"
+25318="Lägga till listpanel?"
+22729="Välj"
+22730="Opera är inställt på att öppna med dina sparade fönster"
+22731="Opera är inställt på att öppna med din startsida"
+22732="Opera är inställt på att fortsätta där du avslutade"
+22733="Opera är inställt på att öppna utan fönster"
+22734="Klicka här för att ändra"
+17171="Google"
+17187="AllTheWeb"
+17189="Super"
+17202="Ama&zon.com"
+17174="Prisjämförelse"
+17175="&TechTracker"
+17176="Domännamn"
+17178="&Aktiekurs"
+17180="Bild"
+17181="Film"
+17179="&Mp3/Ljud"
+17188="Googlegrupper"
+17182="Operas support"
+17183="&Sök i sidan"
+17203="Nyheter"
+; Prompting the user to enter the password protecting the key when importing
+; PKCS #12 key/certificate.
+21747="Ange lösenordet som skyddar nyckeln"
+
+; Prompting the user to enter the password protecting the key when exporting
+; PKCS #12 key/certificate.
+21748="Ange ett lösenord för att skydda den exporterade hemliga nyckeln"
+
+; Prompting the user to re-enter the password protecting the key when
+; exporting PKCS #12 key/certificate.
+21749="Ange lösenordet igen"
+
+; Used when importing private PKCS #12 key.
+21750="Importera hemlig nyckel"
+
+21751="Importera nyckel och certifikat"
+21752="Vill du importera den hemliga nyckeln och dessa bifogade certifikat?"
+; Ask the user if to import the private PKCS #12 key.
+21753="Vill du importera den hemliga nyckeln från filen?"
+
+; Error messages when importing PKCS #12 key/certificate.
+21754="Importen av hemliga nyckel och certifikat misslyckades"
+21755="Hemlig nyckel saknas i filen"
+21756="Den importerade hemliga nyckeln stämde inte med det bifogade certifikatets nyckel. Funktionen misslyckades."
+
+30211="Automatiskt inställning av mellanserver (proxy) misslyckades. \nMellanserverinställningarna inaktiveras automatiskt för detta arbetspass."
+22728="Du kan söka på webben i adressfältet"
+25411="Extern e-postram"
+25412="Hämtning av extern ramkälla undertryckt:"
+10018="Lägg alla fönster överlappande"
+10724="Växla mellan författarens och eget dokumentutseende"
+10596="Ange sidans zoomfaktor här (tryck på pilen för lista)"
+10009="Kopiera markerad text till Urklipp"
+10247="Slå på/av hämtning/visning av bilder"
+10072="Gå till startsidan"
+10052="Visar bokmärkena i den aktiva bokmärkesmappen"
+10000="Läs i ett nytt fönster"
+10031="Gå framåt till nästa sida (tryck pilen för alla senare)"
+10001="Öppna en lokal fil på din dator"
+10059="Gå till webbsida"
+10032="Gå bakåt till föregående sida (tryck pilen för alla tidigare)"
+10004="Skriv ut sidan"
+10069="Ange Internetadress här (tryck pilen för tidigare angivna adresser)"
+10056="Hämta den senaste versionen av sidan"
+10002="Spara sidan på din lokala dator"
+10227="Sök text i sidan"
+10143="Avbryt hämtning av sidan"
+10019="Lägg alla fönster sida vid sida vertikalt"
+13010="Slå på/av visning av listpanel"
+13011="Visa sidan på hela skärmen (växla med F11 på tangentbordet)"
+13030="Visa sidan som det skulle se ut vid utskrift"
+10314="Sök på Internet efter den angivna texten"
+10313="Skriv in din Internetsökning här (tryck på pilen för sökalternativ)"
+10308="Gå direkt till webbsidan i adressfältet"
+14134="Återuppta överföring"
+14135="Hämta filen på nytt"
+14136="Avbryt överföring"
+14137="Visa meny för överföringsvy"
+16245="Skriv e-post till personen"
+16246="Lägg till personen i kontaktlistan"
+4000="Kan inte köra "
+4001="Kan inte skapa dialogruta "
+4002="Kan inte ladda meny "
+4003="Kan inte ladda ikon "
+4004="Kan inte ladda bild "
+4005="Kan inte skapa fönster "
+67003="Storlek"
+67004="B"
+67005="S"
+67007="Trollspö"
+; Message shown in the status bar when Java Virtual Machine is
+; loading/starting up.
+67008="Startar virtuell maskin för Java..."
+
+; Attribution-line when replying to a mail
+67009="Den %Y-%m-%d %H:%M:%S skrev %f:"
+
+; Attribution-line when forwarding a mail
+67010="\\n\\n------- Vidaresänt brev -------\\nFrån: %:From:\\nTill: %:To:\\nÄrende: %:Subject:\\nDatum: %:Date:\\n"
+
+; Attribution-line when followup to a news message
+67011="Den %Y-%m-%d %H:%M:%S skrev %f:"
+
+; Attribution-line when replying by mail to a news message
+67012="Den %Y-%m-%d %H:%M:%S skrev du i %:Newsgroups::"
+
+; Attribution-line when forwarding by mail a news message
+67013="\\n\\n---- Vidaresänt Usenetinlägg ----\\nFrån: %:From:\\nGrupper: %:Newsgroups:\\nÄrende: %:Subject:\\nDatum: %:Date:\\nURL: news://%:Message-Id:\\n"
+
+67020="Trollspö"
+67021="Kollar mapp"
+67022="Hämtar mappar"
+67023="Hämtar brevkropp"
+67024="Hämtar bilaga"
+67025="Skapar mapp"
+67026="Tar bort mapp"
+67027="Byter namn på mapp"
+67028="Prenumererar på mapp"
+67029="Tar bort brev"
+67030="Lägger till brev"
+67031="Lagrar flagga"
+67032="Ansluter till server"
+67033="Fel storlek på brev"
+67034="Fel användar-id"
+67035="Fel lösenord"
+67036="Internt fel"
+67037="Brevet finns inte"
+67038="Problem när brevet skulle tas bort från servern"
+67039="TLS är inte tillgängligt på servern. Inaktivera den säkra förbindelsen för att kunna hämta brev från servern."
+67040="Ej angivet"
+67041="POP3-server ej tillgänglig. Nätverksproblem?"
+; About page
+67042="E-postkatalog"
+
+67043="Servern försökte utföra en ogiltig omdirigering"
+; Used in index category in M2
+67044="IMAP-mappar"
+67045="Filter"
+
+; Usined while M2 is searching. Padded by ' <search>...'
+67046="Söker efter"
+
+; Formats the M2 display of time today
+67047="Idag %X"
+
+; Used in M2 when a message has no label
+67048="Ingen etikett"
+
+; Priority of a M2 message
+67049="Högsta prioritet"
+67050="Hög prioritet"
+67051="Låg priorititet"
+67052="Lägsta prioritet"
+
+; Used in Mail|Manage Account
+67053="Konto"
+67054="Status"
+
+; Used in Mail|Newsgroups
+67055="Prenumererad"
+67056="Status"
+67057="Grupp"
+
+; Received news index in m2
+67058="Mottagna diskussionsgrupper"
+
+; Received list index in m2
+67059="Mottagna listor"
+
+; Clipboard index in m2
+67060="Urklipp"
+
+; Prefix for newsservers in serverlist in m2
+67061="Diskussiongrupper på"
+
+; Prefix for mailservers in serverlist in m2
+67062="E-post för"
+
+; Name for a new Imap folder in M2
+67063="Skapa"
+
+; Status-message when sending messages in M2
+67064="Sänder..."
+
+; Status-message when checking for messages in M2
+67065="Söker..."
+
+; Status-message when getting messages in M2
+67066="Hämtar brev (%u/%u)"
+
+; Status-message when done fetching messages in M2
+67067="%u togs emot"
+
+; Status-message when no messages was fetched in M2
+67068="Inga brev togs emot eller sändes"
+
+; Error-message if setting From or Organization in M2 failed
+67069="Kunde inte sätta från- ("%s") eller organisationsbrevhuvud ("%s")"
+
+; The From-address is not given according to standards
+67070="Felaktig avsändaradress"
+
+; M2 was unable to mime-encode a message
+67071="Mimekodning misslyckades"
+
+; Store::AddMessage failed
+67072="Kunde inte spara brev"
+
+; M2 needs Drafts and Outbox to store messages
+67073="Hittade inte Utkast eller Utkorg"
+
+; M2 will move a message to Outbox when sending or queueing it
+67074="Fel när brevet flyttades till utkorgen"
+
+; M2 will move a message from Drafts when it is sent or deleted
+67075="Fel när brevet flyttades till Utkast"
+
+; M2 got an error-message while sending a message
+67076="Kunde inte sända brev"
+
+; Default name for new indexes in M2
+67077="Nytt filter"
+
+; Used for invalid mbox files in M2
+67078="Filen är inte giltig"
+
+; Used various places in the import-code in M2
+67079="Importerad"
+
+; Progress-information in M2 import-code
+67080="redan importerat"
+
+; Used in the M2 Import Mail wizzard
+67081="Importera post"
+
+; Marks where quoted text has been removed when replying to a mail
+67082="<klippt>"
+
+; The file being downloaded is already being written to the selected file,
+; this is not possible!
+67083="Filen hämtas redan"
+67084="Skriver redan till filen, välj ett annat filnamn"
+
+; Period to view e-mails from
+67085="Idag"
+67086="Vecka"
+67087="Månad"
+67088="Tre månader"
+67089="År"
+67090="För alltid"
+
+; Remove folder warning dialog title
+67091="Ta bort %s"
+
+67092="Är du säker på att du vill avbeställa diskussionsgruppen?"
+67093="Är du säker på att du vill ta bort "%s"?"
+67094="Är du säker på att du vill avbeställa IMAP-mappen?"
+; Start a full search from the mail hotlist panel
+67095="Påbörja sökning"
+
+67096="Inga brev markerade"
+67097="Ingen vy markerad"
+; Title of button in compose window
+67098="Dold kopia"
+67099="Svarsadress"
+67100="Svara i"
+67101="Grupper"
+
+67102="(%d olästa)"
+67103="(%d olästa, %d totalt)"
+67104="Bilagor"
+67105="Storlek"
+67106="Ingen e-postadress inställd. Redigera kontot"
+67107="Serverinställning saknas"
+67108="Kontot har inte valt någon utgående e-postserver"
+67109="Ogiltig avsändaradress"
+67110="Kontot saknar e-postadress"
+67111="Ogiltigt brev"
+67112="Saknad adress eller ärende"
+67113="Annulera inlägg"
+67114="Är du säker på att du vill annulera detta inlägg?"
+; Priority of a M2 message
+67115="Normal prioritet"
+
+67116="Gå till webbadress här"
+67117="Snabbsökning"
+67118="Zoomfaktor"
+67119="Statusfält"
+67120="Ta bort konto"
+67121="Är du säker på att du vill ta bort detta konto?"
+67122="Hantera konton"
+67123="Egenskaper för konto"
+67124="%s-server"
+67125="Inkommande %s-server"
+67126="Utgående %s-server"
+67127="Förvald teckenkodning"
+67128="Städning av server"
+67129="Är du säker på att du vill ta bort lästa brev på servern?"
+67130="Typ"
+; General Do-not-show-this-dialog-again text for use in most new dialogs
+67131="Visa inte dialogen igen"
+
+67132="Nästa >"
+67133="< Tillbaka"
+67134="Slutför"
+67135="Av"
+67136="Medel"
+67137="Starkt"
+67138="Eller"
+37139="Och"
+67140="Ärende"
+67141="Namn på avsändare"
+67142="Från-huvud"
+67143="Till-huvud"
+67144="Kopie-huvud"
+67145="Svarsadress-huvud"
+67146="Diskussionsgrupper-huvud"
+67147="Valfritt brevhuvud"
+67148="Hela brevet"
+67149="Innehåller"
+67150="Inte innehåller"
+67151="Motsvarar reguljärt uttryck"
+67152="Träffa brev där "
+67153="Eller där "
+67154="Och där "
+67155="ärende"
+67156="namn på avsändaren"
+67157="valfritt brevhuvud"
+67158="hela brevet"
+67159="innehåller"
+67160="inte innehåller"
+67161="motsvarar reguljärt uttryck"
+; Used to format the title of a dialog, contact properties and similar
+67162="Egenskaper för %s"
+
+67163="Hämta Operaskal"
+67164="Hämtar skal..."
+67165="Använd hämtat skal"
+67166="Vill du behålla detta skal?"
+67167="Namn på skal:"
+67168="Författare:"
+67169="Hämtningen misslyckades"
+67170="Alla brev"
+67171="Senaste året"
+67172="Senaste månaden"
+67173="Föregående arbetspass (automatsparad)"
+67174="Börja med tom sida"
+67175="%d byte hämtade"
+67218="Ta bort"
+; Status-message when messages was sent in M2
+67361="%u sändes"
+
+67504="Brevkroppen har inte hämtats"
+67506="Vanlig e-post (POP)"
+67507="IMAP"
+67508="Diskussionsgrupper"
+67509="Importera e-post"
+67510="Opera Web Mail"
+67511="Importera från Opera 5/6"
+67512="Importera från Eudora"
+67513="Importera från Netscape 6/7"
+67514="Importera från Outlook Express"
+67515="Importera vanlig mbox-fil"
+67516="Mapp för brevlåda:"
+67517="Inställningsfil för Netscape (prefs.js):"
+67518="Filnamn för mbox-fil:"
+67540="Hämta"
+; Added in front of server response when POP server returnes an error
+67561="Svar från server:"
+
+; Used when IMAP folder subscription fails
+67589="Kunde inte ändra prenumeration för mapp! Du kanske redan har prenumererat/avbeställt mappen på servern."
+
+; Used when mailserver reports that it does not support TLS
+67590="TLS stöds ej av servern!"
+
+; Generic error when connection to IMAP server failed
+67591="Misslyckades att ansluta till IMAP-server."
+
+; Precedes IMAP alert messages
+67592="Varningsmeddelande från IMAP-server: "
+
+; Used when IMAP-server notifies that folder has been renamed on server
+67593="Mappnamnet "%s" har ändrats till "%s"."
+
+; Used when appending a message to an IMAP folder
+67594="Misslyckades att lägga till ett brev till en mapp."
+
+; Used when copying an IMAP message failed
+67595="Misslyckades kopiera ett brev."
+
+; Used when local storing of IMAP message failed
+67596="Misslyckades att lagra det hämtade brevet lokalt. Brevet kommer hämtas igen nästa gång du hämtar nya brev."
+
+; Used by M2 POP backend when storing a message fails
+67597="Opera försökte hämta brev %d (UIDL %s) från POP3-servern men misslyckades med att lagra det lokalt på din maskin."
+
+; Generic message when a M2 backend fails to connect to its server
+67598="Kunde inte ansluta till servern"
+
+; M2 SMTP error message
+67599="Brevet har sänts, men det gick inte att flytta det till din utkorg"
+67600="Misslyckades att sända brevet. Kanske är inte SMTP-servern korrekt inställd? Brevet har köats."
+67601="SMTP-tjänsten är inte tillgänglig"
+67602="Internt fel"
+67603="Tillfälligt serverfel"
+67604="Serverfel"
+67605="Syntaxfel för mottagare"
+67606="Mottagaren är inte tillgänglig"
+67607="Mottagaren är inte lokal"
+67608="Inget värdnamn har angivits"
+67609="SMTP-fel"
+67610="Fel på mottagare"
+67611="Fel vid SMTP-autentisering"
+67612="TLS stöds ej av servern"
+67613="SMTP-autentisering stöds inte av servern"
+67614="Ospecificerat SMTP-fel"
+
+; Used when M2 for some reason isn't able to flush a message to disk
+67615="Misslyckades att spara, kan bero på ett trasigt filsystem eller ett antivirusprogram (%i)"
+
+; String used in customize toolbar box
+68124="Dokument"
+68125="Bilder"
+68126="Summa"
+68127="Hastighet"
+68128="Tid"
+68129="Status för hämtning"
+68130="Allmänt"
+68131="Klocka"
+68132="Identifiera som"
+
+; Imported bookmarks are stored in this folder
+68133="Netscapebokmärken"
+68134="Internet Explorer-favoriter"
+68135="KDE1-bokmärken"
+68136="Konquerorbokmärken"
+
+; String to be used in preference font list for UI fonts
+69221="Menytext"
+69222="Knappradstext"
+69223="Dialogtext"
+69224="Paneltext"
+
+; String to be used in preference font list
+69225="Redigering av e-post"
+
+; String to be used in preference font list to identify a system default
+; font
+69226="(Förval)"
+
+; When a SMTP server drops the connection when MAIL FROM is sent, it usually
+; is because needed authentication isn't fulfilled.
+69229="Servern stängde förbindelsen. Den kräver kanske autentisering?"
+
+; String that is displated on about page when java is installed
+69230="Java Runtime Environment är installerad"
+
+; Version of Qt library that Opera uses. Shown on About page
+69231="Qt-bibliotek"
+
+; Text to be used on the menubars. Some languages need a separate string
+; here
+69240="Åter"
+
+; Used when saving a printer file to disk (from a filedialog box)
+69243="Postscriptfiler (*.ps)|*.ps|Alla filer (*.*)|*.*|"
+
+; Label in the displayed header of a news/mail message
+69244="Organisation"
+69245="Diskussionsgrupper"
+69246="Svara i"
+69247="Svarsadress"
+69248="Återsänt från"
+
+; Title string of the HTML text that displays certificate data
+69249="Certifikatinformation"
+
+; Header string for the detailed listing of certificate data
+69250="Detaljer"
+
+; DSA Private Key key list item
+69251="Hemlig nyckel (X)"
+
+; DSA Public Key list item
+69252="Hemlig nyckel (Y)"
+
+; Component P of DSA key
+69253="DSA-komponent P"
+
+; Component Q of DSA key
+69254="DSA-komponent Q"
+
+; Component G of DSA key
+69255="DSA-komponent G"
+
+; Diffie Hellman Private Key component
+69256="Hemling DH-nyckel"
+
+; Diffie Hellman Public Key Component
+69257="Öppen DH-nyckel"
+
+; Diffie Hellman Modulus Key component
+69258="DH-modulus"
+
+; Diffie Hellman Generator Key component
+69259="DH-generator"
+
+; Add characters here that can be used as fallback shortcuts (eg: of the
+; kind "File (A)"). An empty string will disable fallback shortcuts.
+69260=""
+
+67544="Hämta knappradsinställningar för Opera"
+67545="Hämtar knapprader..."
+67546="Verkställ knapprader"
+67547="Vill du behålla dessa knapprader?"
+67548="Hämta menyinställningar för Opera"
+67549="Hämtar menyer..."
+67550="Verkställ menyer"
+67551="Vill du behålla dessa menyer?"
+67552="Hämta musinställningar för Opera"
+67553="Hämtar musinställningar..."
+67554="Verkställ musinställningar"
+67555="Vill du behålla dessa musinställningar?"
+67556="Hämta tangentbordsinställningar för Opera"
+67557="Hämtar tangentbordsinställningar..."
+67558="Verkställ tangentbordsinställningar"
+67559="Vill du behålla dessa tangentbordsinställningar?"
+67560="Kopia av"
+67564="Är du säker på att du vill lita på utgivaren?"
+; Open file dialog
+67565="Operabokmärkesfiler (*.adr)|*.adr|"
+67566="HTML- / Netscapebokmärkesfiler (*.htm, *.html)|*.htm;*.html|"
+67567="Konquerorbokmärkesfiler (*.xml)|*.xml|"
+
+; InputAction treeview header
+67576="Funktion"
+67577="Inmatningssammanhang och -genvägar"
+
+67578="Inställningar för tangentbord"
+67579="Inställningar för mus"
+67580="Inställningar för knapprader"
+67581="Inställningar för menyer"
+67582="Skal"
+; Fonts and colors preferences
+67583="Typ"
+67584="Teckensnitt"
+
+; Cache preferences
+67585="Automatisk"
+
+; string appended to setupfilename if this is modified, in preferences
+; dialog
+67586="(ändrad)"
+
+; Info panel
+67616="- titel saknas -"
+67617="URL för huvudsida:"
+67618="Teckenkodning från server (använd av Opera):"
+67619="MIME-typ från server:"
+67620="Huvudsidans storlek:"
+67621="Antal element i sidan:"
+67622="Storlek på element i sidan:"
+67623="Lokal cachefil:"
+67624="- ej i cache -"
+67625="Säkerhet"
+67626="Sammanfattning:"
+67627="- ej säker -"
+67628="Ytterligare information"
+67629="Ramar"
+67630="Ram:"
+67631="Flytande ramar"
+67632="Flytande ram:"
+
+67675="Vidare"
+67679="Spara som"
+67680="Välj arbetspassfil"
+67681="Fönster"
+67682="Skriv ny anteckning här"
+67683="Bifoga filer"
+67685="Version"
+67686="Chiffer"
+67687="Mager"
+67688="Normal"
+67689="Fet"
+67690="Börja med tom sida"
+67691="Du är på väg att öppna %d kontakter\n\nFortsätta?"
+; History and cache preferences
+67692="Efter %d minuter"
+67693="Efter %d timmar"
+67694="Efter en timme"
+67695="Efter en vecka"
+
+67696="Du är på väg att öppna %d bokmärken\n\nFortsätta?"
+67697="Ditt första konto har skapats\n\nOperas banbrytande M2-klient för e-post och\ndiskussionsgrupper skiljer sig från vanliga e-postprogram\npå flesta sätt och vi rekommenderar därför att du\nläser vår nybörjarguide.\n\nVill du läsa den nu?"
+67698="Använda M2"
+67699="Nederst på sida vid sidhämtning"
+67700="Kom ihåg föregående storlek"
+67701="Maximera alltid"
+67702="Lägg alltid överlappande"
+; Checkbox string in filetype dialog box
+69261="Sänd webbadress direkt till programmet"
+
+; Used in preference dialog box (window page)
+69262="Öppna ny flik bredvid aktiv"
+
+; Info panel. When server does not supply an encoding
+69263="- ej angiven -"
+
+; Checkbox in download dialog for saving action
+69266="Kom ihåg val och visa inte dialogen igen"
+
+; Certificate verification servername mismatch
+69267="Servernamnet "%1" motsvarar inte certifikatnamnet "%2". Någon kanske försöker avlyssna din förbindelse."
+
+; Certificate not yet valid
+69268="Certifikatet för "%1" är inte giltigt före %2. Är klockan i din dator korrekt?"
+
+; The certificate expired on the given date
+69269="Certifikatet för "%1" gick ut %2. Ansvariga för webbplatsen bör uppdatera certifikaten."
+
+; Certificate warning
+69270="Du har bett om varning för certifikat från "%1""
+
+; Unknown certificate authority
+69271="Certifikatet för "%1" är undertecknat av den okända certifikatutfärdaren "%2". Det går inte att bekräfta om detta certifikat är giltigt"
+
+; Unknown root certificate authority
+69272="Opera känner inte till rotcertifikatet från "%1". Opera kan inte avgöra om detta certifikat är pålitligt."
+
+69300="Servern stängde förbindelsen under autentiseringen."
+69301="Ny Opera tillgänglig"
+69302="En ny version av Opera är tillgänglig.\nVill du hämta den uppdaterade versionen nu?"
+69303="MP3-filer |*.mp3|"
+; Typically telnet, tn3270, news, mailto
+69304="Protokoll"
+
+69305="Program"
+69308="Lägger till ny knapp med funktionen\n\n%s\n\nÄr du säker?"
+69309="Ny knapp"
+69332="Använder Operas banbrytande e-postklient: http://www.opera.com/m2/"
+; Status message when M2 is emptying trash
+69333="Tömmer papperskorg"
+
+; Button text in startup dialog
+69334="Köp Opera"
+
+; Message string shown in dialog box before auto reset in kiosk mode
+69347="Opera kommer återställas om %d sekunder på grund av inaktivitet"
+69348="Opera kommer återställas om 1 sekund på grund av inaktivitet"
+
+; Text for button in toolbar that can clear contents if edit field
+69349="Töm"
+
+; Message string used in a dialog box when user wants do do something that
+; requires online mode (eg. fetching mail)
+69352="Det nedkopplade läget är aktivt.\n\nVill du växla till uppkopplat läge?"
+
+; Used in a popup error dialog when the certificate authority os unknown for
+; the presented certificate.
+69353="Okänd certifikatutfärdare för det uppvisade certifikatet"
+
+; Used in a popup error dialog when handshake faild due to export
+; restrictions.
+69354="Handskakning misslyckades på grund av exportrestriktioner"
+
+; Used in a popup warning dialog when handshake faild because the server
+; does not want to accept the enabled SSL/TLS protocol versions.
+69355="Handskakningen misslyckades då servern inte vill godta de aktiverade protokollversionerna för SSL/TLS."
+
+; Used in a popup error dialog when handshake failed because the server
+; requires encryption methods more secure than those enabled.
+69356="Handskakningen misslyckades då servern kräver säkrare krypteringsmetoder än de som aktiverats."
+
+; Used in a popup warning dialog when the server wants to negotiate a
+; connection that does not encrypt the data, but only verifies integrity.
+69357="Servern vill förhandla en anslutning som *inte* krypterar data, utan enbart verifierar integriteten. Om du fortsätter kan de data som sänds läsas av vem som helst, men inte ändras."
+
+; Used in preference dialog box to control page redrawing
+69358="Rita om omedelbart"
+69359="Rita om efter 1 sekund"
+69360="Rita om efter %d sekunder"
+69361="Rita om efter hämtning"
+
+; Label in the preference dialog box for page redrawing feature
+69362="Hämtning"
+
+; Used in mail filter dialog
+69369="Brev från %s"
+
+; Used in mail filter dialog box
+69370="Visa ej brev i andra vyer"
+
+; View title in mail title dialog box
+69371="Visa"
+
+; Add filter dialog box
+69373="Filtrera följande brev till vyn"
+69374="Brev från avsändare"
+69375="Brev där ärenderaden innehåller"
+
+; Account properties dialog box
+69376="Kontokategori"
+
+; Message in reindex mail dialog box
+69378="Opera måste skapa nytt index för dina e-brev. Om du avbryter nu kommer Opera fortsätta nästa gång"
+
+; Used in pref. dialog box
+69379="Köp Opera och ta bort reklamfönstret"
+
+; Used in pref box (multimedia)
+69380="Visa bilder omedelbart"
+
+69396="Skriv ett snabbsvar till %s här"
+69397="motsvarar reguljärt uttryck"
+69398="Detta filter och lägg till regel"
+; Used in javascript option dialog box
+69399="Tillåt ändra storlek på fönster"
+69400="Tillåt flytta fönster"
+69401="Tillåt höja fönster"
+69402="Tillåt sänka fönster"
+
+; Used in javascript option dialog
+69403="Tillåt ändra statusfält"
+
+; Opens javascript options dialog box
+69404="Javaskriptalternativ...."
+
+; Label for window handling options
+69405="Fönsterhantering"
+
+; Option string for popup window management
+69406="Maximera alltid, även skapade fönster"
+
+; Window handling mode string
+69407="Öppna sidor i nytt fönster"
+
+; Window handling mode string (SDI mode)
+69408="Föredra separata fönster"
+
+; Message string used on startup in we cannot load plug-ins
+69410="Opera kan inte läsa in insticksbiblioteket "libnpp.so". Insticksprogram kommer inte att fungera.\n\nSe över din installation.\n"
+
+69416="Inställningsfil för Netscape (prefs.js)"
+69417="Vanliga mboxfiler (*.mb*)"
+; Fallback text for plug-in description when plug-in is missing this
+; resource
+69418="Ingen beskrivning"
+
+; Fallback text for plug-in name when plug-in is missing this resource
+69419="Namnlöst"
+
+; Message shown when downloaded skin can not be used
+69421="Kan inte fortsätta. Välj ett skal tillverkat för din version av Opera"
+
+69431="Söker länkar: "
+69432="Söker text: "
+69433=" (Inga träffar)"
+; Used when a newsgroup name is not sent in UTF-8
+69438="Namnen på vissa diskussionsgrupper på servern är inte kodade enligt standarden. De kommer istället visas enligt kontots utgående teckenkodning."
+
+; RSS folder
+69440="RSS-kanal"
+
+; Used for OE mail import, parameters are identity, account name and mailbox
+69441="%s [%s] (Importerat)/%s"
+
+; 
+69442="(%s) -importering misslyckades, [fel=%i]\n Id:%s\n Från:%s"
+69443=" redan importerat"
+69444=" omvandlas. Var god vänta..."
+69445="VARNING: OE-importering"
+69446="(%s) -tom brevlåda hoppades över"
+69447="Kanal"
+69448="Mapp"
+
+69449="Rum"
+69450="Användare"
+69451="Ämne"
+; 
+69454="Aliaset %s används redan. Ange ett nytt alias."
+
+69455="Rummet %s är lösenordsskyddat. Ange lösenord."
+69472="Lägg sida vid sida automatiskt"
+69473="%d / %d"
+69474="%d / %d  (%d sekunder kvar)"
+69475="%d / %d  (%d minuter kvar)"
+69522="%s\n(klicka här för visa olästa meddelanden)"
+69524="%s vill sända följande fil till dig. Vill du ta emot den?\n\nFil: %s\nStorlek: %s\n\nObservera: Du bör inte ta emot filer från okända användare eller filer du inte vet vad de gör."
+69525="Ta emot fil"
+69530="E-post (%d)"
+69531="Startar"
+69532="Filen "%s" har hämtats\n(klicka här för meny)"
+69533="Info"
+69536="Inbjudan till rum"
+69537="%s har bjudit in dig att gå med i rummet %s\nVill du godta inbjudan?"
+69539="Började tala med %s"
+69540="okänd kontakt"
+69541="%d användare, ämnet är: %s"
+69542="Går med i samtalsrum..."
+69543="Sänd fil"
+69544="Började tala i %s"
+69545="Frånkopplad från samtal"
+69546="%s har sparkat ut dig från samtalsrummet (Orsak: %s)"
+69547="Du har lämnat samtalsrummet"
+69548="%s har gått med i %s"
+69549="%s har kopplat från"
+69550="%s sparkades ut från %s av %s (Orsak: %s)"
+69551="%s har lämnat %s"
+69552="Rummets ämne är: %s"
+69553="%s byter rummets ämne till: %s"
+69554="Rummet är modererat"
+69555="%s sätter flaggan +m: rummet är nu modererat"
+69556="%s sätter flaggan -m: rummet är inte längre modererat"
+69557="%s sätter flaggan +l: max antal användare är nu %s"
+69558="%s sätter flaggan -l: ingen begränsning av antal användare"
+69559="%s sätter flaggan +t: ämnet kan nu endast ändras av operatörer"
+69560="%s sätter flaggan -t: ämnet kan nu ändras av vem som helst"
+69561="%s sätter flaggan +k: rummet är nu lösenordsskyddat"
+69562="%s sätter flaggan -k: rummet är inte längre lösenordsskyddat"
+69563="%s sätter flaggan +s: rummet är nu hemligt"
+69564="%s sätter flaggan -s: rummet är inte längre hemligt"
+69565="%s sätter flaggan %s"
+69566="%s sätter användarflaggan %s"
+69567="%s byter alias till %s"
+69568="%s sätter användarflaggan +o: %s är nu operatör i rummet"
+69569="%s sätter användarflaggan -o: %s är inte längre operatör i rummet"
+69570="%s sätter användarflaggan +v: %s kan nu tala om rummet är modererat"
+69571="%s sätter användarflaggan -v: %s kan inte längre tala om rummet är modererat"
+69572="%s är %s@%s (%s)"
+69573="%s befinner sig i dessa rum: %s"
+69574="%s använder servern %s (%s)"
+69575="%s är irc-operatör"
+69576="%s är borta (%s)"
+69577="%s är inloggad som %s"
+69578="%u timme"
+69579="%u timmar"
+69580="%u minut"
+69581="%u minuter"
+69582="%u sekund"
+69583="%u sekunder"
+69584=" och "
+69585="%s loggade in %s och har varit tyst %s"
+69586="%s loggade in %s"
+69676="Lycos"
+69677="SearchBoss"
+69678="Amazon"
+69679="Ebay"
+69680="Download.com"
+69723="Nya meddelanden i kanaler:\n%s"
+; Message box text shown when hotlists data has been imported
+69868="%d poster har importerats"
+69869="En post har importerats"
+
+; Used in File Handler Edit Dialog
+69873="Fråga innan program startas"
+
+; Short string in dialog header seaction
+69874="Fråga"
+
+; File handler dialog box string
+69875="Filer (reserv)"
+69876="Mappar"
+
+; Dialog box string shown before opening a folder
+69877="Öppna mapp"
+
+; Dialog box string shown before opening a file
+69878="Öppna fil"
+
+; String in dialog <open file><filename>WITH<application>
+69879="med"
+
+; Text on buttn that opens file handler dialog box
+69880="Hanterare för sparade filer..."
+
+69881="Importera från Apple Mail"
+69883="Popularitet"
+69892="Lista rum"
+69893="Nytt rum"
+69894="Byt alias"
+69895="Sänd e-post"
+69897="Hämta/sänd"
+69914="Fast avgränsare"
+69915="Dynamisk avgränsare"
+69916="Brytare"
+69920="Kanaler"
+; Message box string that is shown if mailto address contains command
+; character and we use an external e-mail client
+69937="E-postadressen innehåller styrtecken. Vill du utföra kommandot?"
+
+69940="Samtal (IRC)"
+69941="%u rum"
+; This warning will be displayed for anonymous Diffie Hellman secure SSL
+; connections.
+69945="Servern bad om en ANONYM anslutning, vilket medför att det inte är möjligt att verifiera serverns identitet. Är detta en tjänst som normalt sett skall vara anonym och går du med på att sända data till denna anonyma server?"
+
+; This warning is displayed if a low level encryption (level 1) is selected
+; by the server.
+69946="Servern angav en mycket låg och osäker krypteringsgrad. Om du har inaktiverat stark kryptering bör du aktivera den, i annat fall bör ansvariga uppgradera servern. Vill du fortsätta?"
+
+; Title of low encryption level dialog
+69947="Låg krypteringsgrad"
+
+69998="Paneler"
+; The title of the error page that is shown when loading an url fails.
+; Untranslated string
+70034="Error"
+
+; The error page that is shown when loading an url fails.
+; Untranslated string
+70035="The page is currently not available for Opera to display. Please check the following:"
+; Untranslated string
+70036="Are your proxy settings correct? Is a proxy required to connect to the Internet? Have you tried disabling proxies? Check that the hostname, IP address and port number is correct."
+; Untranslated string
+70037="Try enabling Synchronous DNS if it is disabled and disable it if it is enabled, in Opera's Network preferences."
+; Untranslated string
+70038="Are you using Internet security software, such as ZoneAlarm or Norton Internet Security? Is this software properly configured? What happens if you disable this software?"
+; Untranslated string
+70039="Are you behind a firewall on your LAN?"
+; Untranslated string
+70040="Does other software work? Other browsers? E-mail clients? If not, this is not an Opera related problem."
+; Untranslated string
+70041="If you are on a dialup connection, check the dialup properties for your connection and under Server types, make sure it is set to log on to the network."
+
+; Dialog title and components
+
+; Used in most dialogs
+1="OK"
+10362="OK"
+2="Avbryt"
+10358="Avbryt"
+
+; Cookie properties
+11005="&Namn"
+11007="Do&män"
+11009="&Sökväg"
+11011="&Skapad"
+11013="&Senast använd"
+11015="&Går ut"
+11018="&Påslagen"
+11019="&Kan kastas"
+11020="&Värde"
+10094="Hjälp"
+11022="Säker"
+
+; Opera as default browser
+10961="Välj filtyper och protokoll som skall associeras med Opera."
+10962="Filtyper"
+11050="*.htm"
+10963="*.html"
+12055="*.xml"
+11250="*.url"
+10966="*.bmp"
+10965="*.gif"
+10964="*.jpeg"
+11051="*.jpg"
+11258="*.png"
+10967="*.xbm"
+10968="Protokoll"
+10969="http"
+10970="https"
+10971="news"
+10972="ftp"
+10973="gopher"
+10974="wais"
+25177="Se om Opera är förvald läsare vid start"
+25241="Välj alla"
+
+; Print
+10103="Skriver ut sida..."
+
+; Password required
+14499="Autentisering"
+17211="Adress"
+11140="Information"
+10178="Användar-id"
+10179="Lösenord"
+
+; Send form without encryption?
+11151="&Visa inte dialogen igen"
+14100="Vill du sända detta formulär utan kryptering över nätet?"
+14500="Insändning av formulär"
+
+; Use Opera
+25176="Använd Opera som förvald webbläsare"
+25174="Opera är inte den förvalda webbläsaren på din dator.\n\nVill du att Opera skall vara ditt förvalda program för att visa webbsidor?"
+25175="&Visa inte dialogen igen"
+6="Ja"
+7="Nej"
+
+; Validate source
+25268="Kontrollera källkod"
+25267="Vill du sända sidan från din dator till ett källkodskontrollprogram på webben?"
+
+; Exit Opera?
+25150="&Spara fönster och visa nästa gång"
+14101="Vid avslut"
+11150="&Visa inte dialogen igen"
+
+; Opera
+10571="Meddelande"
+
+; Opera startup
+10918="Start av Opera"
+10701="Föregående körning av Opera avbröts."
+14124="F&ortsätt där jag var senast"
+14125="&Starta som vanligt"
+10649="Starta utan f&önster"
+14126="&Avancerat..."
+
+; Advanced startup settings
+14127="Avancerade startinställningar"
+10652="Minimera antalet samtidiga &anslutningar"
+10651="Minimera storleken på &nätverksbufferten"
+10415="Synkron DNS"
+
+; Progress
+10770="..."
+
+; Password
+10779="Ange säkerhetslösenord"
+10704="Ditt lösenord måste innehålla minst sex tecken, bestående av minst en siffra och en bokstav. Om inte kommer du bli tvungen att ange ett nytt lösenord."
+
+; Certificate
+10766="Certifikatnamn"
+10768="Utfärdat av"
+10758="Tillåt anslutningar mot webbplatser som använder detta certifikat"
+10759="Varna innan certifikatet används"
+10775="Godta"
+10776="Installera"
+
+; Performance
+10214="Prestanda"
+10213="Max anslutningar mot en server"
+10219="Max anslutningar totalt"
+10434="Storlek på n&ätverksbuffert (kbyte)"
+
+; Personal information
+11623="Personlig information"
+10938="Informationen kan klistras in i formulär med hjälp av höger musknapp"
+10874="Förnamn"
+10877="Efternamn"
+10878="Adress 1"
+10881="Adress 2"
+10882="Adress 3"
+10884="Postnummer"
+10886="Land"
+10888="Telefon"
+10890="Mobil/telefax"
+10892="E-post"
+10894="Hemsida"
+10896="Egen 1"
+10898="Egen 2"
+10900="Egen 3"
+
+; Fast bookmark access
+10949="Ange alias för bokmärke"
+
+; Server name completion
+11029="Sök efter lokal nätverksmaskin"
+11030="Försök komplettera namn, med"
+11031="Prefix"
+11032="Suffix"
+14118="Du kan ange kommaseparerade listor med prefix, t.ex "www,web" och suffix, t.ex "se,com,net,org""
+
+; Links in frame
+11260="&Sortera"
+11261="&Adresser"
+11263="&Initialcykel"
+11292="Öppna"
+11264="&Kopiera alla »"
+11259="&Rita om"
+11293="Stäng"
+
+; Import e-mail
+11420="Importera från"
+11426="Programsökväg"
+11427="Bläddra"
+11439="Importera till"
+11433="Importera till &nytt konto"
+11432="Importera till &konto"
+11424="Importera inställningar"
+11430="Importera e-pos&t"
+11431="I&mportera kontakter"
+11421="OK"
+
+; JavaScript execution error
+14061="Ett skript på sidan misslyckades. Detta kan förhindra att sidan visas eller fungerar korrekt."
+14117="JavaScriptfel"
+14066="URL"
+14065="Fel"
+14060="&Visa inte dialogen igen"
+
+; Cookie server filters
+11453="Ta &bort"
+11454="&Avvisa"
+11455="&Lägg till"
+
+; Cookie security problem
+14297="Ta emot"
+14298="Avvisa"
+14294="Adress"
+14293="Kaka"
+11297="En sökväg i kakan stämmer inte överens med sidans adress."
+11298="Be ansvariga för webbplatsen att använda giltiga kakor."
+11299="Vill du ta emot kakan?"
+14300="Visa inte dialogen igen"
+14503="Verkställ [Ta emot] eller [Avvisa] för hela domänen"
+
+; Update language file
+25302="Språkfil"
+25303="Din språkfil för Opera måste uppdateras."
+25304="Hämta ny språkfil"
+25305="Starta om Opera med engelskt språk"
+25306="Använd nuvarande språkfil"
+14501="&Visa inte dialogen igen"
+
+; Windows
+14355="&Fönsterlista"
+14350="&Aktivera"
+14351="&Hämta om"
+14352="&Minimera"
+14353="S&täng"
+
+; Automatic window reload
+14509="Aktivera"
+14510="Alternativ"
+14511="Hämta om efter"
+14518="minut"
+14513="sekund"
+14515="Förval »"
+14516="Hämta endast om servern säger att sidan utgått"
+
+; Image properties
+16055="Bild"
+16056="Dimensioner"
+16057="Djup"
+16058="Adress"
+16059="Bildtyp"
+16065="Filstorlek"
+
+; File download
+17010="Hämtning av filer från Internet"
+17020="Fil"
+17021="Server"
+17014="<B>Vad vill du göra?"
+17012="&Spara filen"
+17015="Fråga alltid innan denna typ av fil hämtas"
+17016="&Avancerat..."
+
+; Delete private data
+25155="Stänger samtliga fönster, avbryter samtliga aktiva överföringar och utför de alternativ som valts nedan."
+25166="Kakor"
+25156="Ta bort temporära kakor"
+25159="Ta bort samtliga kakor"
+25167="Cache"
+25157="Ta bort lösenordsskyddade sidor och data"
+25164="Töm hela cachen"
+25168="Historik"
+25160="Ta bort historiken över besökta sidor"
+25161="Ta bort historik över inskrivna adresser"
+25163="Ta bort historik över besökta länkar"
+25165="Ta bort överföringshistoriken"
+25154="Lösenord"
+25162="Ta bort lösenord för alla e-postkonton"
+25169="Ta bort alla lösenord ur Trollspöet"
+
+; Select currency
+25262="&Från"
+25264="&Till"
+
+; Panel properties
+25311="Panel"
+25312="&Titel"
+25314="&Adress"
+
+; Item properties
+10942="&Titel"
+10943="Alias"
+10944="Adress"
+10945="Beskrivning"
+10820="Modermapp"
+10824="Skapad"
+10825="Använd"
+
+; Contact folder properties
+10941="&Namn"
+14102="Senast sänt"
+
+; Bookmarks Properties
+25100="Namn på &lista"
+25102="Fil"
+25103="Namn"
+25105="&Storlek"
+25107="&Mer »"
+25108="Unicode"
+25109="&Innehåll"
+
+; Go to page
+10181="Ange en webbadress, eller välj en ur listan."
+
+; Set home page
+10455="Startsida"
+25371="Visa min startsida varje gång jag startar Opera"
+
+; Save windows
+10661="Spara fönsterinställningar till fil"
+10199="Bläddra"
+10665="Visa dessa fönster varje gång jag startar Opera"
+
+; Confirm file upload
+11108="Filerna som listas nedan har, utan att du förhindrat det, valts för att sändas till en annan dator. Vill du sända dessa filer?"
+11109="Destination"
+11110="Formuläradress"
+
+; Print options
+10208="Alternativ"
+11080="Skriv ut sidbakgrund"
+14212="Skriv ut sidhuvud och -fot"
+11115="Skala utskrift till"
+10257="Sidmarginaler (centimeter)"
+10268="Upptill"
+10266="Vänster"
+10267="Höger"
+10269="Nedtill"
+
+; Print preview
+14275="Förhandsgranska och skriv ut"
+14272="Sida som på &skärmen"
+14273="En &ram per blad"
+14274="&Aktiv ram"
+
+; Register Opera
+11193="Ange den registreringsinformation du fick i samband med att du köpte Opera."
+11194="Namn"
+11195="Organisation"
+11196="Registreringskod"
+11200="Personlig information"
+
+; Preferences
+10101="Verkställ"
+
+; Advertising
+16601="Reklam"
+16602="Land"
+16604="Födelseår"
+16606="Kön"
+16608="Civilstånd"
+16610="Utbildning"
+16616="Hushållets inkomst"
+16612="Önskade kategorier"
+
+; Privacy
+11600="Personlig integritet"
+10678="Aktivera referensloggning"
+10647="Aktivera automatisk dokumentomdirigering"
+14498="Använd kakor för att spåra lösenordsskyddade sidor"
+10677="Kakor"
+25394="Aktivera kakor"
+11456="Hantera kakor..."
+11280="Ta bort nya kakor när Opera avslutas"
+14299="Varna för felaktiga domäner i kakor"
+28507="Godta kakor med felaktig sökväg"
+14305="Varna för felaktiga sökvägar i kakor"
+
+; Accessibility
+11315="Mus"
+11317="Aktivera musgester"
+11329="Aktivera automatisk ordklicksmeny"
+11318="Vänsterhänta bakåt- och framåtgester"
+10096="Stryk under listposter när de pekas på"
+11316="Tangentbord"
+13039="Aktivera automatisk komplettering"
+10788="Invertera aktivt textelement"
+10954="&Menyliknande val i listpanelen"
+10955="&Skärmläsarkompatibla menyer"
+
+; Windows
+11324="Fönsterväxling"
+
+; Accessibility
+10452="Hjälpetiketter"
+10407="Kna&ppbeskrivning i hjälpetiketter"
+10406="&Länkadresser i hjälpetiketter"
+10947="&Elementtitel i hjälpetiketter"
+
+; Plug-ins
+11601="Insticksprogram"
+
+; Programs
+25405="Funktioner i Opera"
+25406="Aktivera e-post och samtal"
+25143="Sökvägar"
+10382="Operakatalog"
+25144="Hämtningskatalog"
+25146="Bläddra"
+10359="Källkodsvisare"
+25249="Öppna Opera"
+25250="Använd externt program"
+10360="Bläddra"
+11116="Program"
+10252="Telnetprogram"
+10253="Bläddra"
+10958="TN3270-program"
+10960="Bläddra"
+
+; Fonts and colors
+11055="Egna teckensnitt/färger"
+10093="Välj"
+12091="Minimal teckensnittsstorlek (bildpunkter)"
+11049="Bakgrundsfärg"
+10484="Välj"
+11728="Länkinställningar"
+10304="Eget länkutseende..."
+25248="Internationella"
+25247="Internationella teckensnitt..."
+
+; File type
+14128="Filtyp"
+10129="MIME-typ"
+10207="Filändelser"
+10706="Hantering"
+10134="Visa hämtningsdialog"
+10128="Öppna i Opera"
+10127="Spara på disk"
+14129="Öppna när överföringen är slutförd"
+14130="Fråga inte efter mapp, utan spara direkt i"
+14132="Bläddra"
+10546="Öppna med förvalt program"
+10133="Öppna med annat program"
+10717="Använd insticksprogram"
+
+; Network
+11606="Webbläsaridentifiering"
+12066="Internationella webbadresser"
+12065="Sänd internationella webbadresser som UTF-8"
+11608="Mellanservrar (proxy)"
+10391="Mellanservrar..."
+11609="Servernamnkomplettering"
+11035="Servernamnkomplettering..."
+11302="Serverfel"
+10447="Visa alltid serverfel"
+10448="Visa alltid dialog&ruta"
+10446="Visa svar från servern när &lämpligt"
+11607="FTP"
+25236="FTP-sökvägar relativt till användarkatalog"
+11094="Absoluta ftp-sökvägar"
+
+; Link style
+10282="Oanvända länkar"
+10098="Understrykning"
+10099="Genomstrykning"
+10097="Färg"
+10195="Välj"
+10281="Använda länkar"
+10283="Understrykning"
+10284="Genomstrykning"
+10288="Färg"
+10289="Välj"
+10499="Markera använda länkar"
+10500="dagar"
+10502="timmar"
+10480="Ram"
+10481="Alltid ram runt bildlänkar"
+10703="Alltid ram runt länkar"
+
+; International fonts
+25251="Förvalda teckensnitt"
+25252="Välj teckensnitt att använda när text inte visas korrekt."
+25253="Skriftsystem"
+25255="Proportionell text"
+25258="Fast breddsteg"
+
+; Browser look
+11076="Knapp&uppsättning"
+10780="&Visa alltid kant på knappar"
+10946="V&isa alltid knappar i färg"
+25238="Skal"
+17073="F&örgrundsskal i Opera"
+17074="Bläddra"
+17072="Ba&kgrundsskal i Opera"
+17075="Bläddra"
+10707="Teckensnitt och färger"
+11268="Använd s&ysteminställning"
+10691="Normal text"
+10693="Inaktiv text"
+10692="Listpaneltext"
+10857="Bakgrund"
+10694="Knappbakgrund"
+10711="Förlopp"
+
+; Cache
+11611="Historik"
+10223="&Framåt och bakåt"
+11612="adresser"
+10261="Inmatade"
+11613="adresser"
+25152="Töm"
+10816="Besökta"
+11614="adresser"
+25151="Töm"
+10172="RAM-cache"
+10226="Automatiska RAM-cacheinst&ällningar"
+10699="Cacha d&okument"
+10175="kbyte"
+10174="Cacha bi&lder"
+10176="kbyte"
+10329="Diskcache"
+11303="KB"
+10339="Cacha dokument"
+10340="Cacha bilder"
+10341="Cacha övrigt"
+10342="Töm vid avslutning"
+10343="Töm nu"
+10344="Kontrollera ändring"
+10354="Dokument"
+10345="Alltid"
+10346="Aldrig"
+10347="Dagar, timmar, minuter"
+10355="Bilder"
+10363="Alltid"
+10364="Aldrig"
+10365="Dagar, timmar, minuter"
+10356="Övrigt"
+10372="Alltid"
+10373="Aldrig"
+10374="Dagar, timmar, minuter"
+10829="Kontrollera alltid omdirigering"
+11091="Kontrollera alltid omdirigering"
+
+; Proxy servers
+10171="Mellanservrar"
+10301="HTTP"
+11305="Port"
+10840="HTTPS"
+11306="Port"
+10300="FTP"
+11307="Port"
+10299="Gopher"
+11308="Port"
+10302="WAIS"
+11309="Port"
+10303="Använd inte mellanserver för adresser nedan"
+11320="Använd automatisk mellanserverinställning"
+
+; E-mail client
+11615="E-post"
+13204="Använd Operas e-postklient"
+13208="Egenskaper..."
+13209="Nytt..."
+13206="Använd datorns förvalda e-postklient"
+13205="Använd specifik e-postklient"
+13211="Bläddra"
+13213="Ersätt saknade &parametrar med blanksteg"
+
+; Toolbars
+14310="Knapprader"
+14325="Huvudknapprad"
+14326="&Listpanel"
+14327="&Fönster"
+14328="&Adressrad"
+10256="&Visa sidknappar"
+10243="Visa [&Gå]-knapp"
+10244="Visa &sökfält och -knapp"
+10245="Visa &zoomfält"
+10222="Visa inuti adressraden"
+14320="Alla knappar lika &breda"
+14333="&Radbryt knapprad"
+
+; File types
+11616="Hantering av filtyper"
+10789="Bestäm hantering enligt MIME-typ"
+25148="Bestäm hantering av filtillägg om MIME-typ inte är tillförlitlig"
+10122="Skapa..."
+10135="Ta bort"
+10465="Redigera..."
+
+; Windows
+11624="Fönster"
+
+; Windows - OBSOLETE?
+25397="Visa fönster inuti Operas &arbetsyta"
+
+; Windows
+10463="Maximera alltid nya sidor"
+12045="&Panelen påverkas av "sida vid sida" och "överlappande""
+10102="&Lägg nya fönster sida vid sida"
+10592="Läsfönster"
+25372="Återanvänd existerande sida"
+13040="&Undvik flimmer"
+10828="Skapade fönster"
+10590="Visa rullningslister"
+10591="Visa adressrad"
+10839="Visa fönsterstorlek"
+12058="Huvudmeny"
+11036="Visa &kommandon i menyn Bokmärken"
+12059="Maximal meny&bredd"
+
+; Sounds
+11619="Ljud"
+10603="Aktivera programljud"
+25140="Välj..."
+25141="Inaktivera"
+10605="Testa"
+
+; Multimedia
+10438="Bilder"
+10441="Visa bilder"
+10443="Visa endast redan hämtade bilder"
+10439="Visa inga bilder"
+10644="GIF-animering"
+25239="Mediatyper"
+10645="Aktivera filmer i dokument"
+10646="Aktivera ljud i webbsidor"
+14123="Aktivera Java"
+10719="Aktivera insticksprogram"
+10721="Sök insticksprogram..."
+14105="JavaScript"
+10720="Aktivera JavaScript"
+11152="Visa felmeddelanden från JavaScript"
+
+; Security
+10726="Certifikat"
+10733="Personliga"
+10734="Utfärdare..."
+10735="Protokoll"
+10736="Aktivera SSL 2"
+10737="Aktivera SSL 3"
+10994="Aktivera TLS 1"
+10738="&Konfigurera SSL 2..."
+10739="K&onfigurera SSL 3 och TLS..."
+10749="Lösenord"
+10813="Be om lösenord"
+10753="När det behövs"
+10752="En gång per arbetspass"
+14490="Be om lösenord efter"
+14492="minuter"
+10750="Sätt lösenord..."
+10740="Varningar"
+10744="Varna innan formulär sänds okrypterat"
+25269="Varna innan sida kontrolleras"
+
+; Personal certificates
+10754="Certifikat"
+11726="Importera..."
+11727="Exportera..."
+
+; SSL configuration
+10812="Välj chiffer att aktivera för"
+
+; Cookie security breach
+14108="Adress"
+14109="Kaka"
+11407="Visa inte dialogen igen"
+
+; The server wishes to send you a cookie
+14505="Inkommande kaka"
+14114="Adress"
+14502="Åtgärd"
+11265="Stäng av kakor"
+11406="Visa kommentar"
+11266="Visa inte dialogen igen"
+14115="Hjälp"
+
+; Language
+14222="Språk i användargränssnittet"
+14235="Språk"
+14229="Observera att Opera måste startas om för att kunna byta språk i användargränssnittet"
+14223="Webbsidor"
+14228="Val av språk för webbsidor"
+14224="Lägg till..."
+14225="Ta bort"
+14226="Upp"
+14227="Ned"
+16619="Reservteckenkodning"
+16620="Teckenkodning att anta för sidor som inte anger någon"
+16621="HT&ML"
+
+; Accept language
+14233="Språk"
+14236="Välj webbspråk"
+14234="Eget val"
+
+; PREFS_STARTEXIT
+10489="Start"
+12042="Visa sparade fönsterinställningar"
+12044="Visa min startsida"
+10461="A&nvänd aktiv"
+25400="Visa startdialogen"
+11296="Avstängning"
+11294="Bekräfta avstängning"
+11295="Stäng fjärranslutningar när Opera stängs"
+
+; Page style
+25237="Förval"
+10588="Förvald zoomfaktor"
+12089="Författarläge som standard"
+11603="Ramar"
+10658="Aktivera ramar"
+11100="Aktivera flytande ramar"
+10762="Visa kant på aktiv ram"
+11039="Författarläge"
+12070="Författarens stilmall"
+12071="Författarens teckensnitt och färger"
+12072="Egen stilmall"
+12073="Egna teckensnitt och färger"
+12074="Eget länkutseende"
+12075="&Handdator"
+25240="Eget läge"
+12076="Författarens stilmall"
+12077="Författarens teckensnitt och färger"
+12078="Egen stilmall"
+12079="Egna teckensnitt och färger"
+12080="Eget länkutseende"
+12081="H&anddator"
+11605="Egen stilmall"
+
+; Search
+17025="Sök"
+17026="Välj förvald sökmaskin för nya fönster"
+17029="Önskat antal sökresultat per sida"
+9="Hjälp"
+
+; SPLASH
+25399="S&tarta"
+25395="Fönster &inuti Opera"
+25396="Fönster &på skrivbordet"
+14496="&Visa inte dialogen igen"
+
+; TRANSWIN_CLIENT
+14138="Detaljer"
+10997="Från"
+10999="Till"
+11001="Storlek"
+11003="Överfört"
+
+; Contact properties
+13301="Namn"
+
+; Net
+13305="&E-postadress(er)"
+13307="Hemsida"
+
+; Home
+13311="Postadress"
+13315="Telefon"
+13313="Fax"
+
+; Notes
+13309="Anteckningar"
+
+; Security
+13317="&Conax-säkerhetskortsnummer"
+
+; Send message to instant messaging address
+16333="Ange en direktsamtalsadress"
+
+; Instant messaging account
+16308="&Efternamn"
+16309="E-&post"
+16310="&Alias"
+16306="&Om mig"
+
+19000="Skriv ut"
+19001="Certifikat"
+19002="Önskat språk"
+19003="Avancerade startinställningar"
+19004="Verkställer ändringar"
+19005="Servern vill sända en kaka"
+19006="Genväg till bokmärke"
+19007="Lösenord"
+19008="JavaScriptfråga"
+19009="Lösenord krävs"
+19010="Hämta om dokument automatiskt"
+19011="Ta bort personliga data"
+19012="Egenskaper för kontakt"
+19013="Direktsamtal"
+19014="Hem"
+19015="Allmänt"
+19016="Anteckningar"
+19017="Säkerhet"
+19018="Bekräfta sändning av fil"
+19019="Säkerhetsproblem med kaka"
+19020="Säkerhetsöverträdelse rörande kaka"
+19021="Egenskaper för kaka"
+19022="Opera som förvald webbläsare"
+19023="Använd Opera"
+19024="Hämtning av fil"
+19025="Serverfilter för kakor"
+19026="Körfel för JavaScript"
+19027="Avsluta Opera?"
+19028="Felmeddelande"
+19029="Gå till sida"
+19030="Egenskaper för post"
+19031="Egenskaper för kontaktmapp"
+19032="Egenskaper för bokmärken"
+19033="Direktsamtalskonto"
+19034="Lägg till nytt direktsamtalskonto"
+19035="Begäran om tillåtelse"
+19036="Begär tillåtelse"
+19037="Direktsamtal"
+19038="Ange lösenord för direktsamtal"
+19041="Egenskaper för bild"
+19042="Importera e-post"
+19043="Sända formulär utan kryptering?"
+19044="Länkar i ram"
+19045="Opera"
+19046="Servernamnkomplettering"
+19047="Filtyp"
+19048="Egenskaper för extrapanel"
+19049="Prestanda"
+19050="Personliga certifikat"
+19051="Ange din säkerhetskod"
+19052="Insticksprogram"
+19053="Inställningar"
+19054="Förhandsgranska"
+19055="Utskriftsformat"
+19056="Förlopp"
+19057="Mellanservrar"
+19058="Spara fönster"
+19059="Registrera Opera"
+19060="Start av Opera"
+19061="Länkutseende"
+19063="Välj valuta"
+19064="Internationella teckensnitt"
+19065="Uppdatera språkfil"
+19066="Kontrollera källkod"
+19067="Fönster"
+19068="Välj startsida"
+26500="Användar-id"
+26501="Lösenord"
+26502="Användar-id och lösenord"
+26503="Välj alias"
+26504="Guide för nytt konto"
+26505="Namn"
+26506="Organisation"
+26507="E-postadress"
+26508="Inloggningsnamn"
+26509="Lösenord"
+26510="Server för inkommande brev"
+26511="Server för utgående brev"
+26512="Sök brev"
+26513="Gå med i samtalsrum"
+26514="Adresslista"
+26515="E-post"
+26516="Bokmärken"
+26517="Kontakter"
+26518="Samtal"
+26519="Historik"
+26520="Sänd"
+26521="Bifoga"
+26522="Från"
+26523="Till"
+26524="Kopia"
+26525="Ärende"
+26526="Skriv brev"
+26527="Se om ny post inkommit"
+26528="Skriv"
+26529="Svara"
+26530="Svara till alla"
+; Forward mail
+26531="Vidarebefordra"
+
+26532="Ta bort"
+26533="Snabbsvar"
+26534="Ta bort"
+26535="Inte skräp"
+26536="Läst"
+26537="Gå med i rum"
+26538="Lämna samtal"
+26539="Ändra ämne"
+26540="Spara logg"
+26541="Sänd"
+26542="Nytt bokmärke"
+26543="Ny mapp"
+26544="Visa"
+26545="Ny kontakt"
+26546="Ny mapp"
+26547="Visa"
+26548="Alias"
+26549="Välj irc-nätverk eller ange servernamn"
+26550="Sök endast i ärende"
+26551="Lägg till kontakt"
+26552="Olästa"
+26553="Olästa dolda"
+26554="Idag"
+26555="Mottagna"
+26556="Utkorg"
+26557="Sänt"
+26558="Utkast"
+26559="Skräppost"
+26560="Papperskorg"
+26561="Viktigt"
+26562="Att göra"
+26563="Svara"
+26564="Ring"
+26565="Möte"
+26566="Fest"
+26567="Roligt"
+26568="Värdefullt"
+26569="Musik"
+26570="Bilder"
+26571="Film"
+26572="Dokument"
+26573="Arkiv"
+26574="Den %Y-%m-%d %H:%M:%S skrev %f:"
+26575="%f skrev:"
+26576="Fann detta %:Message-id: i %g:"
+26577="Index"
+26578="Alla brev"
+26579="Aktiva kontakter"
+26580="Sändlistor"
+26581="Sökningar"
+26582="Diskussionsgrupper"
+26583="Etiketter"
+26584="Bilagor"
+26585="Aktiva trådar"
+26589="Rum"
+26590="Alias"
+26591="Till"
+26592="Ärende"
+26593="Sänt"
+26594="Etikett"
+26595="Från"
+26596="Ärende"
+26597="Sänt"
+26598="Etikett"
+26600="Kontostatus"
+26610="Redo att ansluta"
+26611="Ansluter"
+26612="Ansluten"
+26613="Autentiserar"
+26614="Hämtar brevhuvud"
+26615="Hämtar brev"
+26616="Hämtar grupper"
+26617="Sänder brev"
+28503="Använd som huvudlösenord för e-post och Trollspöet"
+67000="Allmänt"
+67001="Servrar"
+67002="Inkommande"
+67006="Utgående"
+67014="Filter"
+; Error dialog
+67015="Allmänt fel"
+
+67016="Bilder"
+67017="Stora"
+67018="Små"
+67019="Fält"
+67176="Hämta fil"
+67177="Prenumerera"
+67178="Ändra..."
+67179="Öppnas med"
+67180="Vill du öppna eller spara filen?"
+67181="Filändelser"
+67182="Visa hämtningsdialog"
+; New folder button
+67183="Skapa..."
+
+67184="Ta bort..."
+67185="Anpassa knapprader"
+67186="Dra knapparna till önskad knapprad"
+67187="Dra fälten till önskad knapprad"
+67188="Information om att ta bort brev"
+67189="Om du tar bort ett brev försvinner det från alla vyer."
+67190="Du kan återställa brevet genom att återskapa det från papperskorgen."
+67191="Filter"
+67192="Mönster"
+67193="Lägg till filter"
+67194="Ta bort filter"
+67195="Internt filter"
+67196="Markera träffade brev som lästa"
+67197="Filtrera befintliga brev"
+67198="Sök"
+67199="Sök i"
+67200="Tidsperiod"
+67201="Sök efter"
+67202="Hela frasen"
+67203="Orden för sig"
+67204="Sök endast i"
+67205="Sök i undervyer"
+67206="Kom ihåg lösenord"
+67207="Välj vilken typ av konto du vill skapa"
+67208="Använd säker förbindelse (TLS)"
+67209="Lämna brev på server"
+67210="Välj vilket program du vill importera från"
+67211="Importera kontakter"
+67212="Importera brev"
+67213="Bläddra..."
+67214="Vill du att Trollspöet (lösenordshanteraren) skall lagra lösenordet?"
+67215="Använd Ctrl+Enter eller klicka på Trollspöknappen för att logga in nästa gång."
+67216="Aldrig på denna sida"
+67217="Välj det användar-id du vill använda."
+67219="Ange en webbadress eller välj en ur listan"
+67220="Brevfilter"
+67221="Associerade filter"
+67222="Välkommen till Opera"
+67223="Fortsätt där jag var senast"
+67224="Fortsätt sparade arbetspass"
+67225="Starta med startsidan"
+67226="Starta utan att visa någon sida"
+67227="Namn"
+67228="Ytterligare e-postadresser"
+67229="Adress till bild"
+67230="Ikon"
+67231="Alias"
+67232="Adress"
+67323="Visa i listpanel"
+67324="Kontonamn"
+67325="Fullständigt namn"
+67326="Postadress"
+67327="Svarsadress"
+67328="NNTP-server"
+67329="Server"
+67330="Portnummer"
+67331="Säker förbindelse (TLS)"
+67332="Utgående SMTP-server"
+67333="Markera brev lästa om de redan hämtats"
+67334="Hämta brevkropp när nya brev söks"
+67335="Lagra brevkropp lokalt"
+67336="Sök efter ny e-post var x:te minut"
+67337="Ta med detta konto vid manuell sökning efter nya brev"
+67338="Spela ljud när nya brev inkommer"
+67339="Sökväg till IMAP-rotmapp"
+67340="Radbryt automatiskt utgående brev"
+67341="Köa e-post (sänd inte omedelbart)"
+67342="Signatur"
+67343="Sända brev i IMAP"
+67349="Lägg till kontakter när brev sänds"
+; Manage accounts
+67344="Skapa..."
+
+; Manage bookmarks
+67345="Skapa..."
+
+67346="Redigera..."
+67347="Klipp ut"
+67348="Klistra in"
+67491="Använd aktivt dokument som startsida"
+67492="Återgå till Operas förvalda startsida"
+67493="Använd denna adress"
+67494="Adress till startsida"
+67500="Öppna JavaScriptkonsol vid fel"
+; MDI/SDI switch
+67501="Öppna sidor i nytt fönster"
+
+67502="Fil för skal"
+67503="Aktivera specialeffekter"
+67505="Använd som huvudlösenord för e-post och Trollspöet"
+67519="Importera"
+67541="Överföringar"
+67542="Länkar"
+67543="Fönster"
+; Used for outgoing properties in E-mail account properties dialog
+67562="Sänd köad e-post efter hämtning"
+
+; Shown if a server message is sent to the authorization dialog in M2
+67563="Information från servern"
+
+67568="Är du säker på att du vill avsluta detta Operaarbetspass?"
+67569="För denna sida"
+67570="För hela servern"
+67571="Bläddra efter mapp"
+67574="Prenumerera på diskussionsgrupper"
+67575="Prenumerera på IMAP-mappar"
+67587="Aktiva överföringar"
+67588="Dina aktiva överföringar kommer avbrytas om du stänger Opera.\nÄr du säker på att du vill stänga Opera?"
+67684="Egenskaper"
+; What to do when mid clicking outside a link. Currently only used on Linux
+68000="Välj vad som skall ske vid mittknappsklick"
+
+; currently only used on Linux
+68001="Klistra in text från urklipp"
+68002="Börja panorera"
+68003="Aktivera horisontell panorering"
+
+; What do to when mid clicking on a link.
+68004="Välj vad som skall ske på länkar"
+
+68005="Öppna inte länk"
+68006="Öppna"
+68007="Öppna i ny flik"
+68008="Öppna i bakgrundsflik"
+68009="Öppna i nytt fönster"
+68010="Öppna i bakgrundsfönster"
+68011="Välj önskat skal och ikonstorlek"
+68012="Operas standardutseende"
+68013="Klassiskt Windowsutseende"
+68014="Eget skal"
+68015="Välj önskat utseende på knapprader"
+68016="Normala knapprader"
+68017="Minimala knapprader"
+68018="Skräddarsydda knapprader"
+68019="Fler skal och knapprader finns på my.opera.com"
+68020="Vad vill du göra med kakan?"
+; Dialog box title.
+68021="Alternativ för mittknappsklick"
+
+68022="Visa"
+68023="Certifikathanterare"
+68024="Utfärdare"
+68025="Aktuellt lösenord"
+68026="Nytt lösenord"
+68027="Bekräfta nytt lösenord"
+68028="Ärv filter från förälder"
+68029="Öppna i"
+68030="Hämta"
+68031="Bokmärk"
+68032="Hantera kontakter"
+68033="Återställ"
+68034="Serverhanterare"
+68035="Trollspöet"
+68036="Använd förvalda kakinställningar"
+68037="Använd inställningar för hela domänen"
+68038="Ta emot kakor från servern/domänen"
+68039="Ta emot tredjepartskakor från servern/domänen"
+68040="Kakor"
+68041="Egenskaper för server"
+68042="Hantera kakor..."
+68043="Hantera lösenord i Trollspöet..."
+68044="Ta bort senaste användningstid för bokmärken"
+68045="Välj teckensnitt"
+68046="Kursiv"
+68047="Understruken"
+68048="Streck ovanför"
+68049="Genomstruken"
+68050="Färg"
+68051="Exempel"
+68052="Säkerhetsprotokoll"
+68053="Välj chiffer att aktivera"
+68054="Sök efter"
+68055="Sök nästa"
+68056="Matcha hela ord"
+68057="Matcha gemener/VERSALER"
+68058="Sök uppåt"
+68059="Sök nedåt"
+68060="Starta med sparat arbetspass"
+68061="Genom att skriva "g opera" söker på efter Opera via sökmaskinen Google"
+68062="Skal"
+68063="Storlek"
+68064="Knapprader och menyer"
+68065="Byt namn"
+68066="Kopiera"
+68067="Ta bort"
+68068="Förloppsindikator"
+68069="Mus och tangentbord"
+68070="Redigera..."
+68071="Visa hjälpetiketter"
+68072="Nya sidor"
+68073="Jämn zoomning av bilder"
+68074="Dölj filtyper som öppnas i Opera"
+68075="Förvalt program"
+68076="Filtyper Opera stöder"
+68101="Protokoll Opera stöder"
+; HTML documents
+68077="HTML-dokument"
+
+; Default application
+68078="XML-dokument"
+
+; URL shortcuts
+68079="URL-genvägar"
+
+; Default application
+68080="GIF-bilder"
+68081="JPEG-bilder"
+68082="PNG-bilder"
+68083="BMP-bilder"
+68084="XBM-bilder"
+68085="mailto"
+
+68086="Arkiv    Redigera    Visa    Navigera    Bokmärken    E-post    Fönster    Hjälp"
+68087="Använd Opera"
+68088="Inmatade adresser"
+68089="Besökta adresser"
+68090="Minnescache"
+68091="Kontrollera dokument"
+68092="Kontrollera bilder"
+68093="Kontrollera övrigt"
+68094="Vanliga kakor"
+68095="Tredjepartskakor"
+68096="Trollspö"
+68097="Aktivera Trollspöet"
+68098="Huvudlösenord"
+68099="Säkerhetsprotokoll..."
+68100="Hantera certifikat..."
+; Currently only used on Linux
+68102="Tyngd"
+
+; Open application (source viewer etc) in a terminal
+68103="Öppna i terminal"
+
+; External news program
+68104="Program för diskussionsgrupper"
+
+; Label for image dropdown box
+68105="Bilder"
+
+; Label for favicon dropdown box
+68106="Sidikoner"
+
+; Label for java path text field
+68107="Javasökväg"
+
+; Button text for testing correct Java path
+68108="Kontrollera Javasökväg"
+
+; Dropdown menu string
+68109="Länkade och "favicon"-ikoner"
+68110="Endast länkade ikoner"
+68111="Visa inte ikoner"
+
+; String in message box when testing and path is correct
+68112="Javasökvägen verkar peka mot en giltig katalog."
+
+; String in message box when testing and path is not found
+68113="Kunde inte hittade någon giltig Javainstallation."
+
+; String in message box when testing and an alternate path has been found
+68114="Katalogen nedan verkar vara ett bättre alternativ. Vill du använda den katalogen istället?"
+
+; String in message box when testing and all failed
+68115="Ange en annan sökväg och försök igen."
+
+; Dialog caption and label string for plug-in path dialog box
+68117="Sökväg till insticksprogram"
+
+; Sub-paths of the plug-in path string
+68118="Sökvägar"
+
+; On top of a list showing all detected pug-ins
+68119="Detekterade insticksprogram"
+
+; Button text of a button starting a plug-in search
+68120="Sök nya..."
+
+; Button text of a button starting a dialog whe one can change the plug-in
+; path
+68121="Ändra sökväg..."
+
+; Dialog title of a dialog that detects plug-ins
+68122="Associering av insticksprogram"
+
+; Text above a list box
+68123="Välj det insticksprogram du vill associera"
+
+; filedialog title
+68137="Välj ny Operabokmärkesfil"
+
+; filedialog title 
+68138="Välj ny Operakontaktfil"
+
+; filedialog title
+68139="Välj Operabokmärkesfil"
+68140="Välj Operakontaktfil"
+68141="Exportera Operabokmärken"
+68142="Exportera Operakontakter"
+68143="Spara Operabokmärken som"
+68144="Spara Operakontakter som"
+68145="Spara Operabokmärken som HTML"
+68146="Spara Operakontakter som'HTML"
+68147="Spara valda Operabokmärken som"
+68148="Spara valda Operakontakter som"
+68149="Spara valda Operabokmärken som HTML"
+68150="Spara valda Operakontakter som HTML"
+68151="Välj Operabokmärken att importera"
+68152="Välj Operakontakter att importera"
+68153="Välj Netscapebokmärken att importera"
+68154="Välj mapp för Internet Explorer-favoriter att importera"
+68155="Välj Konquerorbokmärken att importera"
+68156="Välj KDE1-bokmärkesmapp att importera"
+
+; Filedialog title
+68157="Välj ljudfil"
+68158="Välj språkfil"
+68159="Välj stilmall"
+
+; Parttern string to be used in a file dialog box
+68160="Språkfiler |*.lng|"
+
+; Dialog title 
+68161="Redigera tangentbordsinställningar"
+
+; Dialog title
+68162="Redigera musinställningar"
+
+; Message box string shown when launching external programs
+68163="Du har inte angett något externt hjälpprogram. Vill du ändra inställningen nu?"
+
+; Used in dialog box text
+68164="E-postklient"
+
+; Shown in error dialog box
+68165="Kunde inte starta externt hjälpprogram. Vill du ändra inställningen nu?"
+
+; One of the authentication methods in M2
+69227="Auto"
+69228="Klartext"
+
+; Used in first time dialog box
+69238="Fler..."
+
+; Title of first time dialog box
+69239="Förstagångsinställning"
+
+; This string will be used to add custom filter types to filesdialogs.
+; Example: PHP becomes PHP files (*.PHP) Note that %1 and %2 must be used
+69241="%1-filer (*.%2)"
+
+; File dialog title
+69264="Importera certifikat"
+69265="Exportera certifikat"
+
+69310="Töm"
+69311="Minimera"
+69316="Ta endast bort från vyn. Snabbtangent: Ctrl+X"
+69317="Indatahanterare"
+69318="Aktivera HTTP 1.1 för mellanserver"
+69319="Visningslägen"
+69320="Mjuk rullning"
+69321="Förvalt läge"
+69322="Konfigurera visningslägen..."
+69323="Låt dokument styra utseende på formulär"
+69324="Låt dokument styra utseende på rullningslister"
+69325="Varna innan brev tas bort"
+; General title in message boxes that tell we could not saved a file
+69341="Misslyckades att spara"
+
+; Messagebox string telling saving failed for a hotlist file
+69342="Kunde inte spara bokmärkesfilen"
+
+; General message box string asking user to try action once more
+69343="Försöka igen?"
+
+; Message box text
+69344="Stäng alla flikar?"
+69345="Stäng alla flikar utom aktiv"
+
+; Dialog title for dialog box that will autoreset opera in kiosk mode
+69346="Återställ Opera"
+
+; Dialog title string. Keep in sync with corresponding menu entry
+69350="Hantera bokmärken"
+
+; Dialog title used when user wants to do something that requires online
+; mode (eg. fetching mail)
+69351="Frånkopplad"
+
+; General dialog button string 
+69364="Fortsätt"
+
+; General dialog button string
+69365="Pausa"
+
+; Dialog title for Add filter dialog box
+69372="Lägg till filter"
+
+; Caption for Reindex mail dialog box
+69377="Indexera om e-post"
+
+; Dialog caption javascript options dialog
+69409="JavaScriptalternativ"
+
+69411="Aldrig för hela servern"
+69412="Behandlar brev (%li%%) (Tot:%li)"
+69413="Behandlar brev (%li%%) %li/%li (Tot:%li)"
+69414="Import avslutad. %li brev importerade."
+69415="Välj fil(er) att importera"
+; for STRICT_CACHE_LIMIT when page is too huge
+32863="Övre minnesgräns nådd - avbryter hämtningen"
+
+; Dialog title when downloaded skin can not be used
+69420="Inkompatibel skalversion"
+
+; Dialog title when downloaded setupfile can not be used
+69866="Inkompatibel inställningsversion"
+
+; Dialog text when downloaded setupfile can not be used
+69867="De valda inställningarna kan inte användas. Välj inställningar skrivna för den version av Opera du använder."
+
+69423="Alternativ för mittknappsklick..."
+; Dialog title for save as file dialog
+69424="Spara med bilder som"
+
+69425="Gratisversionen av Opera visar annonser. Du kan välja vilken sorts annonser du vill ha i Operas inställningar."
+69426="Visa relevanta textannonser och relaterade sökningar som erbjuds via Google"
+69427="Information om vilken sida du går till, till exempel de sidadresser som normalt sänds till webbplatsen du besöker, kommer att sändas till Google för att välja vilka relevanta annonser som skall visas. Google och Opera har förbundit sig att skydda sina användares personliga integritet."
+69428="Läs mer"
+69429="Visa allmänna grafiska annonser"
+69430="Tillåt skript att fånga högerknappen"
+69434="Automatisk kopia till"
+69435="Automatisk dold kopia till"
+; Used in the dialog after having spellchecked the text
+69436="Stavningskontroll färdig"
+
+; Caption of spellcheck dialog
+69437="Stavningskontroll"
+
+; 
+69452="Prenumerera på RSS-kanaler"
+69453="Samtalsrum"
+69456="Namn"
+69457="Adress"
+69458="<nytt konto>"
+
+; Caption for the Encoding Mismatch dialog
+69478="Fel teckenkodning"
+
+; Text in the Encoding Mismatch dialog
+69479="Dessa tecken kan inte sändas med dina aktuella inställningar. Vill du sända detta brev i Unicode (UTF-8)? Välj [Nej] för att ersätta tecknen nedan med frågetecken.\n\n%s"
+
+; Used in print dialog box for selecting print range
+69481="Sidor (från-till)"
+
+; Account properties
+69519="Lägsta port för DCC"
+69520="Högsta port för DCC"
+69521="Använd server för egen IP-uppslagning"
+
+69526="Webbläsare"
+69527="Avgränsare"
+69528="Egna knappar"
+69529="Förslag"
+69534="Använda stavningskontroll"
+69535="Ingen stavningskontroll är tillgänglig. Vill du läsa om hur du ställer in stavningskontroll?"
+69538="Utför kommandon vid anslutning"
+69587="Hämtar rumsförteckning..."
+69588="Öppna privata samtalsfönster i bakgrunden"
+69589="Gå med"
+69590="Redigera"
+69591="Uppdatera"
+69592="Välj en knapprad utanför detta fönster för att ändra inställningarna"
+69593="Placering"
+69594="Brytning"
+69595="Visa endast vid behov"
+69596="Visa dolda knapprader medan dialogen är öppen"
+69597="Standardutseende"
+69598="Välj en knapprad utanför detta fönster för att visa dess standardutseende"
+69599="Återställ knappraden till standardutseende"
+69600="Knappar och fält"
+69601="Dra knappar och fält till valfri knapprad utanför detta fönster"
+69602="Uppdatera"
+69603="Regler"
+69604="Lär från meddelanden som flyttas till och från detta filter"
+69605="Ny regel"
+69606="Ta bort regel"
+69607="Markera brev filtrerade"
+69608="Begränsa filtret till brev i förälder"
+69609="Ange nytt alias"
+69610="Lösenord krävs"
+69611="Ämnet kan endast ändras av operatörer"
+69612="Bara operatörer och användare med röst kan tala"
+69613="Dölj rummet i rumsförteckningen"
+69614="Lösenordsskyddat"
+69615="Max antal användare"
+69616="Lägg till regel"
+69617="Filtrera följande brev"
+69618="Alias"
+69619="Inled kommandon med namn"
+69620="Stavningskontroll"
+69621="Usprunglig text"
+69622="Ersätt med"
+69623="Ignorera"
+69624="Ersätt"
+69625="Kom ihåg"
+69626="Ta bort"
+69627="Språk"
+69628="Visa startpanelen när det inte finns några sidor"
+69629="Information om kaka"
+69630="Namn"
+69631="Värde"
+69632="Giltig till"
+69633="Senast använd"
+69634="Säker"
+69635="Sänds endast till avsändaren"
+69636="Version"
+69637="Importera till:"
+69638="Alias"
+; The question to ask the user when wand wants to save some new or changed
+; form data related to eCommerce fields.
+69925="Du har angett ny eller ändrad eCommerce-information."
+
+; The continuation of the WAND_ECOM_ASK_NEW_DATA question.
+69926="Vill du lagra den så att du når den från andra eCommerce-platser?"
+
+; A description how to use the data now saved.
+69927="Tryck Ctrl+Enter eller klicka på Trollspöknappen för att använda informationen senare."
+
+; Dialog title for config dialog
+69871="Hanterare för sparade filer"
+
+; Dialog title for edit dialog
+69872="Redigera filhanterare"
+
+69882="Exportera brev till fil"
+69898="OperaNet, Europa"
+69899="Undernet, Europa"
+69900="Undernet, Nordamerika"
+69901="IRCnet, Afrika"
+69902="IRCnet, Asien"
+69903="IRCnet, Europa"
+69904="EFnet, Asien"
+69905="EFnet, Europa"
+69906="EFnet, Nordamerika"
+69907="DALnet, Asien"
+69908="DALnet, Europa"
+69909="DALnet, Nordamerika"
+69910="FreeNode, Europa"
+69911="FreeNode, Nordamerika"
+69912="FreeNode, Oceanien"
+69913="FreeNode, Sydamerika"
+69917="Ingen brytning"
+69918="Bryt till flera rader"
+69919="Visa fortsättningspil"
+69921="Webbläsarvy"
+69922="E-postläsarvy"
+; For license dialog
+69938="Jag godtar"
+69939="Jag godtar inte"
+
+; Untranslated string
+70003="Potential security risk"
+; Untranslated string
+70004="The setup file you just downloaded may be harmful, only install it if you trust the publisher. Do you want to proceed?"
+; Dialog that is shown when Clear private Data is executed when active
+; transfers are kept.
+; Untranslated string
+70042="Running transfers kept"
+; Untranslated string
+70043="Active transfer has not been removed."
+
+; Untranslated string
+70045="Kick chat user"
+; Untranslated string
+70046="Enter the reason for why you want to kick %s from the chat room"
+; Untranslated string
+70048="%u rooms"
+; Untranslated string
+70049="%u newsgroups"
+; Caption for the dialog displayed when nntp or rss automatically creates ap
+; Untranslated string
+70051="New access point"
+
+; Displayed when nntp or rss wants to automatically create an access point
+; Untranslated string
+70052="Accept new access point?"
+
+; Menu strings
+
+50844="&Dockad"
+50845="Flytande"
+54219="&Växla\tF4"
+50070="&Alltid överst"
+65307="Lägg till extrapanel..."
+65309="Redigera extrapanel..."
+65308="&Ta bort extrapanel..."
+65310="Hämta extrapaneler"
+51211="&Inställningar..."
+54000="&Öppna bokmärke"
+54020="Öppna i nytt fönster"
+54022="Öppna i bakgrunden"
+54023="Visa i egen verktygsrad"
+54001="Lägg till sida"
+54007="Lägg till alla"
+54002="Klipp ut"
+54003="Kopiera"
+54004="Klistra in"
+54005="Ta bort"
+63001="Markera allt"
+; Bookmark Item New menu
+180090="Skapa"
+54009="Mapp..."
+54008="Bokmärke..."
+
+180130="Arkiv"
+54013="Skapa..."
+54010="Öppna..."
+51071="Spara"
+54015="Spara som..."
+54014="Spara valda poster som..."
+54011="&Lägg in bokmärken..."
+54012="Importera Internet Explorer-&favoriter..."
+54006="Egenskaper..."
+54018="&Post..."
+144660="&Arkiv"
+50466="Nytt fönster"
+53028="Ny flik"
+50475="Stäng fönster"
+53027="Stäng flik"
+50001="Öppna..."
+50003="Spara som..."
+50977="Spara med bilder som..."
+162500="Importera"
+52250="E-post..."
+52251="Operabokmärken..."
+52252="Operakontakter..."
+52253="&Fönsterinställningar..."
+52254="Netscapebokmärken..."
+52255="Internet Explorer-favoriter..."
+162560="Exportera"
+52256="Operabokmärken..."
+52257="Operakontakter..."
+52258="&Fönsterinställningar..."
+50004="Skriv ut..."
+50005="Skrivarinställningar..."
+50476="Utskriftsformat...."
+54271="Förhandsgranska utskrift"
+51099="Arbeta nedkopplad"
+54493="Ta bort personlig data..."
+162000="Snabbinställningar"
+52200="Tillåt dokument skapa nya fönster"
+52201="Förhindra dokument att skapa nya fönster"
+52202="Öppna skapade fönster i bakgrunden"
+52203="Aktivera GIF-animering"
+52204="Aktivera filmer i dokument"
+52205="Aktivera ljud i webbsidor"
+52206="Aktivera Java"
+52207="Aktivera insticksprogram"
+52208="Aktivera JavaScript"
+52209="Aktivera kakor"
+52215="Aktivera referensloggning"
+52216="Aktivera mellanservrar (proxy)"
+52210="Identifiera som Opera"
+52211="Identifiera som Mozilla 5.0"
+52212="Identifiera som Mozilla 4.78"
+52213="Identifiera som Mozilla 3.0"
+52214="Identifiera som MSIE 6.0"
+50394="Inställningar..."
+50006="Avsluta"
+140070="&Redigera"
+50007="Ångra"
+50008="Klipp ut"
+50009="Kopiera"
+50010="Klistra in"
+50424="Ta bort"
+50641="Markera allt"
+50058="Sök..."
+50086="Sök nästa"
+52031="Sök föregående"
+50063="Integrerat sökfält"
+1124400="&Visa"
+148440="Listpanel"
+50846="In&gen"
+145550="Huvudknapprad"
+50555="&Enkel"
+50556="&Full"
+50554="In&gen"
+170510="Egen verktygsrad"
+53051="Överst"
+53052="Nederst"
+53053="Vänster"
+53054="Höger"
+53050="Ingen"
+53055="Visa &bokmärken"
+145570="Statusrad"
+50557="&Överst"
+50559="&Nederst"
+50558="In&gen"
+50916="&Visa tid"
+170210="Flikrad"
+53021="&Överst"
+53022="&Nederst"
+53023="&Vänster"
+53024="&Höger"
+53020="In&gen"
+180520="&Fönsterrad"
+54052="&Överst"
+54053="&Nederst"
+54054="&Vänster"
+54055="&Höger"
+54050="In&gen"
+150740="Adressrad"
+51074="&Överst"
+51075="&Nederst"
+51101="In&gen"
+50612="Rullningslister"
+157300="Zoomfaktor"
+51730="50%"
+51731="80%"
+51732="90%"
+51733="100%"
+51734="120%"
+51735="150%"
+51736="200%"
+51739="100%"
+51740="+100%"
+51737="-10%"
+51738="+10%"
+157500="Teckenkodning"
+51750="Automatiskt val"
+157510="Unicode"
+51751="UTF-8"
+51752="UTF-16"
+67447="UTF-32"
+67448="UTF-7"
+157530="Amerikansk &engelska"
+51753="US ASCII"
+157540="Västerländska"
+51754="ISO-8859-1"
+51771="Windows-1252"
+51767="ISO-8859-15"
+157550="Mellaneuropeiska"
+51755="ISO-8859-2"
+67449="ISO-8859-16"
+51769="Windows-1250"
+157560="Sydeuropeiska"
+51756="ISO-8859-3"
+157650="Baltiska"
+51765="ISO-8859-13"
+51776="Windows-1257"
+51757="ISO-8859-4"
+157630="Nordiska"
+51763="ISO-8859-10"
+51791="Windows-Sami-2"
+157660="Keltiska"
+51766="ISO-8859-14"
+157620="Turkiska"
+51762="ISO-8859-9"
+51773="Windows-1254"
+157770="Vietnamesiska"
+51777="Windows-1258"
+51783="VISCII"
+67450="VPS"
+157580="Kyrilliska"
+51758="ISO-8859-5"
+51768="KOI8-R"
+51785="KOI8-U"
+51770="Windows-1251"
+51792="Teckentabell 866"
+157600="Grekiska"
+51760="ISO-8859-7"
+51772="Windows-1253"
+157590="Arabiska"
+51759="ISO-8859-6"
+51775="Windows-1256"
+157610="Hebreiska"
+51761="ISO-8859-8 (logisk)"
+67451="ISO-8859-8 (visuell)"
+51774="Windows-1255"
+157640="Thailändska"
+51764="ISO-8859-11 (TIS-620)"
+157890="Kinesiska"
+51780="Big5 (Traditionell)"
+67452="Big5-HKSCS (Traditionell)"
+51790="EUC-TW (Traditionell)"
+51782="GBK/GB2312 (Förenklad)"
+51786="HZ-GB2312 (Förenklad)"
+67453="GB18030 (Förenklad)"
+67454="ISO-2022-CN"
+157880="Japanska"
+; Auto detect for Russian, Chinese and Japanese
+51788="Upptäck automatiskt"
+
+51778="Shift-JIS"
+51779="ISO-2022-JP"
+51781="EUC-JP"
+157840="Koreanska"
+51784="EUC-KR"
+51212="Uppdatera skärmen"
+44002="Källkod"
+50660="Ramkällkod"
+51215="Länkar i ram"
+44001="&Meny\tCtrl+F11"
+50995="Fullskärm"
+140320="&Navigera"
+50032="Bakåt"
+; Next
+50031="Framåt"
+
+50420="Avbryt"
+50477="Startsida"
+50065="Hämta om"
+44003="Hämta om ram"
+50725="Hämta om alla sidor"
+200000="Hämta om efter"
+56000="Aktivera"
+56001="Egna inställningar..."
+50270="Hämta alla bilder"
+50478="Ställ in startsida..."
+50059="Gå till sida..."
+65132="Gå till liknande sidor"
+50087="Lägg till bokmärken..."
+146790="&E-post"
+50679="Skriv..."
+; Send menu, Mail
+65180="Sänd länk"
+
+50979="Hämta"
+; Check menu, Mail
+51723="Hämta för alla konton"
+
+; Send menu, Mail
+54070="Sänd köade"
+
+54071="Sänd köade från &alla\tCtrl+Skift+Q"
+54214="Han&tera e-post\tCtrl+Alt+M"
+51143="S&ök..."
+51139="Filter..."
+51145="Nytt konto..."
+59999="Hantera konton..."
+54215="Hantera kontakter..."
+44004="Markera som läst"
+44005="Markera som oläst"
+44006="Visa &gamla inlägg"
+44007="Visa alla gruppe&r"
+50626="Visa &träd"
+60004="Upp&datera grupper"
+1123600="&Fönster"
+148360="Speciella fönster"
+50836="Överföringar"
+50837="Historik"
+50838="Insticksprogram"
+50835="Cache"
+54122="Javakonsol"
+50498="Kopiera"
+52035="Skapa länkat"
+50018="Överlappande"
+50019="Sida vid sida"
+51136="Över och under"
+50567="Återställ alla"
+50565="Minimera alla"
+50545="Maximera alla"
+50564="Stäng alla"
+50523="&Spara fönsterinställningar..."
+52034="Visa &alla..."
+140130="&Hjälp"
+50013="Innehåll"
+50479="Tangentbord"
+50525="Mus"
+60243="Berätta för en vän"
+60242="Köp Opera"
+50976="Registrera Opera..."
+242400="Opera på webben"
+; Opera on the Web menu
+60240="Ingångssida"
+60241="Support"
+50666="Kontaktinformation"
+60246="Operavänner"
+51131="Opera Web Mail"
+
+50015="Om Opera"
+; link menu
+50416="&Öppna länk\tKlicka"
+50417="Öppna i &nytt fönster\tSkift+klicka"
+50437="Öppna i bakgrunden"
+53018="Öppna i ny flik"
+53019="Öppna i bakgrundsflik"
+50418="Lägg till länk som bokmärke..."
+50216="Kopiera länkadress"
+50761="Spara mål som..."
+
+; mailto: link menu
+50436="&Sänd e-post..."
+50543="Lägg till k&ontaktlista..."
+50542="Kopiera e-postadress"
+50544="Kopiera &mailto:-adress"
+
+; mailto: image link menu
+50263="Visa bild"
+
+; mailto: image link and image link  menu
+65246="Hämta om bild"
+
+; mailto: image link menu and image link menu
+50262="Spara bild..."
+50251="Kopiera bild"
+50419="Kopiera bildadress"
+56064="Bildegenskaper..."
+200670="Använd bild som"
+56067="Förgrund i Opera"
+56068="Bakgrund i Opera"
+57076="Skrivbordsbakgrund"
+56069="Ta bort förgrund"
+56070="Ta bort bakgrund"
+
+; Default page menu
+50426="Bakåt"
+50427="Framåt"
+50429="Avbryt"
+50430="Startsida"
+50428="Hämta om"
+50423="Lägg till bokmärken"
+50215="Kopiera adress"
+65178="Sänd länk per e-post"
+292450="Bakgrund"
+
+; Default page menu and image link menu
+65245="Visa bild"
+
+; Default page menu
+50672="Spara bild"
+50671="Kopiera bild"
+50673="Kopiera bildadress"
+65244="Bildegenskaper"
+200710="Använd bild som"
+56071="&förgrund i Opera"
+56072="&bakgrund i Opera"
+57077="&skrivbordsbakgrund"
+50432="Kopiera fönster"
+
+; Select menu
+50872="Kopiera text"
+65184="Sök"
+291920="Sök med"
+65187="Ordbok"
+65188="Uppslagsverk"
+65186="Översätt valuta"
+291960="Översätt"
+65196="Engelska till franska"
+65197="Engelska till tyska"
+65198="Engelska till italienska"
+65199="Engelska till portugisiska"
+65200="Engelska till spanska"
+65202="Franska till engelska"
+65203="Franska till tyska"
+65204="Franska till italienska"
+65205="Franska till portugisiska"
+65206="Franska till spanska"
+65207="Tyska till engelska"
+65208="Tyska till franska"
+65209="Italienska till engelska"
+65210="Italienska till franska"
+65211="Portugisiska till engelska"
+65212="Spanska till engelska"
+65213="Spanska till franska"
+65214="Engelska till japanska"
+65215="Japanska till engelska"
+65218="Sänd per e-post"
+65191="&Visa i källkod"
+
+; View source menu
+65261="&Sluta visa källkod"
+
+; Image link menu
+44013="Öppna..."
+44014="Öppna i ny flik"
+44015="Lägg till länk som bokmärke"
+44016="Kopiera bild&adress"
+
+144670="&Arkiv"
+50467="&Öppna..."
+50468="&Spara..."
+50470="S&änd"
+50469="&Avsluta"
+140080="Redigera"
+242420="_banner_context_menu_"
+57055="&Inställningar..."
+; File menu
+148470="Arkiv"
+
+50847="Skriv &ut\tCtrl+P"
+50856="&Avsluta\tCtrl+W"
+148480="Redigera"
+50848="&Kopiera\tCtrl+C"
+50849="&Sök\tCtrl+F"
+; Navigation menu
+148510="Navigera"
+
+50851="&Bakåt\tCtrl+Vänster"
+50852="&Framåt\tCtrl+Höger"
+50853="&Startsida\tCtrl+Blanksteg"
+50854="&Alfabetiskt index\tF1"
+50855="Snabb&tangenter\tCtrl+B"
+1127000="Redigera"
+148700="Klistra in"
+50870="&Namn"
+50902="&Förnamn"
+50903="&Efternamn"
+50904="Adress &1"
+50905="Adress &2"
+50906="Adress &3"
+65242="&Postnummer"
+50907="Land"
+50908="&Telefon"
+50909="Telefa&x"
+50871="&E-post"
+50910="&Hemsida"
+50911="Egen &1"
+50912="Egen &2"
+50913="Egen &3"
+65243="&Redigera..."
+50864="Ångra"
+50865="Klipp ut"
+50866="Kopiera"
+50867="Klistra in"
+50868="Ta bort"
+50869="Markera allt"
+51265="Kopiera som &text"
+51266="Kopiera som &HTML"
+51267="Kopiera som &bokmärkesposter"
+; Button bar
+51321="Välj &knapprad..."
+50917="Knapprads&utseende..."
+
+56073="Hämta skal"
+; Hotlist window bookmarks view
+54150="Sortera enligt &egen sortering"
+54151="Sortera enligt &titel"
+54152="Sortera enligt t&itel, omvänt"
+54153="Sortera enligt &användning"
+54154="Sortera enligt a&nvändning, omvänt"
+54155="Sortera enligt &skapande"
+54156="Sortera enligt s&kapande, omvänt"
+54161="Visa s&ökfält"
+54157="&Visa trädstruktur"
+181580="S&palter"
+54158="&Visa spaltrubriker"
+52051="Visa "&använd"-spalt"
+52052="Visa "&skapad"-spalt"
+52053="A&utomatisk spaltbredd"
+
+; Bookmark item
+53056="&Ta bort\tDelete"
+53057="&Egenskaper..."
+
+; Hotlist window contacts view
+54159="Visa &trädstruktur"
+54160="Visa &spaltrubriker"
+
+; Transfers view
+54139="Visa detaljer"
+67520="Visa nya poster överst"
+51204="Visa &utanför Opera"
+51203="Lägg &överst vid ny överföring"
+
+294120="Flikrad"
+65412="N&y flik\tDubbelklicka"
+; Page bar item
+53025="&Flytta till nytt fönster\tDubbelklicka"
+65411="Stän&g flik\tSkift+klicka"
+
+; Go menu
+65130="&Gå till sida"
+65133="Gå till sidor som l&änkar till denna adress"
+
+146630="Ram"
+50663="Visa källkod"
+50781="Spara som..."
+56051="Kontrollera källkod"
+50669="Lägg till bokmärken"
+50668="Kopiera adress"
+65179="Sänd länk per e-post"
+50664="Hämta om"
+44012="Hämta alla bilder"
+50708="Maximera"
+53400="&Skriv nytt brev"
+56053="Besök &hemsida"
+53404="&Till:"
+53405="&Kopia:"
+53406="&Dold kopia:"
+54019="&Kontakt..."
+180210="&Arkiv"
+54021="&Ny..."
+53411="&Kopiera\tCtrl+C"
+53412="&Markera allt\tCtrl+A"
+53413="Skriv &ut\tCtrl+P"
+67350="Snabbhämtning"
+67351="Lås panel"
+67352="Hämta alla konton"
+67353="Läs e-post"
+67354="Markera och gå till nästa olästa"
+; Cancel newsmessage
+67355="Annullera inlägg"
+
+67356="Etikett"
+67357="Visa i"
+67358="Gå till"
+67362="Markera alla som lästa"
+67363="Töm papperskorg"
+67364="Omdirigera"
+67359="Nästa olästa"
+67360="Föregående olästa"
+67365="Tråd"
+; noun (in 'Go to' menu)
+67366="Kontakt"
+
+67367="Platt vy"
+67368="Trådad vy"
+67369="Till och från"
+67370="Miniatyrer"
+67371="Visa lästa"
+67372="Visa kastade"
+67373="Visa skräppost (spam)"
+67374="Visa sändlistor"
+67375="Visa diskussionsgrupper"
+67376="Visa snabbsvar"
+67377="Ta bort från vy"
+; Forward mail
+67378="Vidarebefordra"
+
+67379="Prioritet"
+67380="Sortera enligt egen sortering"
+67381="Sortera enligt namn"
+67382="Sortera enligt alias"
+67383="Sortera enligt adress"
+67384="Sortera enligt beskrivning"
+67385="Sortera enligt skapande"
+67386="Sortera enligt användning"
+67387="Stigande ordning"
+67388="Fallande ordning"
+67389="Öppna"
+67390="Visa"
+67391="Visa brev"
+67392="Besök hemsida"
+; Contact Item New menu
+67393="Skapa"
+
+67394="Gå till adress"
+; Help menu
+67395="Hjälp"
+
+; Window menu
+67396="Fönster"
+
+; Mail menu and button
+67397="E-post"
+
+; Bookmarks menu
+67398="Bokmärken"
+
+67399="Arbetspass"
+67400="Navigeringsrad"
+67401="Lås knappar"
+67402="Anpassa knapprader"
+67403="Skal"
+67404="Färgschema"
+; Browser View Menu
+67405="Stilmallar"
+
+67406="Liten skärm"
+67407="På webbplatsen"
+; Send mail menu
+67408="Sänd"
+
+67409="Läs"
+67410="Sök..."
+67411="Diskussionsgrupper..."
+67412="IMAP-mappar..."
+67413="Stäng alla utom aktivt"
+; Bookmark Item File menu
+67414="Importera Operabokmärken..."
+67415="Importera Netscapebokmärken..."
+67416="Importera Internet Explorer-favoriter..."
+67417="Exportera Operabokmärken..."
+
+; Contact Item New menu
+67418="Mapp..."
+67419="Kontakt..."
+
+; Contact Item File menu
+67420="Skapa..."
+
+; File/Session menu
+67421="Öppna arbetspass..."
+67422="Sätt in arbetspass..."
+67423="Spara arbetspass..."
+
+; Quick Preferences
+67424="Blockera oönskade skapade fönster"
+
+; View Hotlist Menu
+67425="Bokmärken"
+67426="E-post"
+
+67427="Kontakter"
+; View Hotlist Menu
+67428="Historik"
+67429="Överföringar"
+67430="Länkar"
+67431="Fönster"
+
+; View Navigation Bar Menu
+67432="Automatisk"
+
+67433="Inget färgschema"
+67434="Systemets färgschema"
+67435="Guld"
+67436="Brandgult"
+67437="Grönt"
+67438="Ljusblå"
+67439="Blå"
+67440="Indigo"
+67441="Purpur"
+67442="Blodröd"
+67443="Röd"
+67444="Specialeffekter"
+67445="Författarläge"
+67446="Eget läge"
+; Reload Menu
+67455="5 sekunder"
+67456="15 sekunder"
+67457="30 sekunder"
+67458="1 minut"
+67459="2 minuter"
+67460="5 minuter"
+67461="15 minuter"
+67462="30 minuter"
+
+; Site Navigation Menu
+67463="Start"
+67464="Index"
+67465="Innehåll"
+67466="Sök"
+67467="Ordlista"
+67468="Hjälp"
+67469="Första"
+67470="Föregående"
+67471="Nästa"
+67472="Sista"
+67473="Upp"
+67474="Upphovsrätt"
+67475="Författare"
+
+67476="JavaScriptkonsol"
+67477="Återuppta överföring"
+67478="Ta bort överföring"
+67479="Stil"
+67480="Ta bort extrapanel"
+67481="Ta bort från knapprad"
+67482="Ljud"
+67483="Stäng alla"
+67484="Stäng alla utom aktivt"
+; Remove from Personal Bar
+67485="Ta bort"
+
+67486="Återställ knapprader"
+67487="Stora bilder"
+67488="Visa överföringar vid ny hämtning"
+67489="Knapprad"
+; Right-click on address field
+67490="Gå till urklipp"
+
+; Links Panel Toolbar
+67495="Lås"
+
+67496="Fullskärm"
+67497="Säkerhet"
+67498="Visa bilder"
+; New page
+67499="Skapa"
+
+; Used in menus to show the keyboard shortcut, typically Ctrl+t
+67538="Ctrl"
+
+67521="Skift"
+67522="Alt"
+67523="Home"
+67524="End"
+67525="PageUp"
+67526="PageDown"
+67527="Upp"
+67528="Ned"
+67529="Vänster"
+67530="Höger"
+67531="Esc"
+67532="Ins"
+67533="Del"
+67534="Backsteg"
+67535="Tabb"
+67536="Blanksteg"
+67537="Enter"
+; Caption for fast forward button for automatic login using Wand
+67539="Logga in"
+
+67572="Detta filter"
+67573="Ytterligare poster"
+67633="Öppna i bakgrundsfönster"
+67634="Visa"
+67635="Manuellt"
+67636="Efter 1 sekund"
+67637="Efter 2 sekunder"
+67638="Efter 3 sekunder"
+67639="Efter 5 sekunder"
+67640="Efter 10 sekunder"
+67641="Föredra ren text"
+67642="Föredra HTML"
+67643="Förhindra externa element i brev"
+67644="Visa allt"
+67645="Delad vy"
+67646="En mapp"
+67647="Ny anteckning"
+67648="Åter"
+67649="Vidare"
+67650="Hämta bild"
+67651="Öppna bild"
+67652="Kopiera till anteckningar"
+67653="Klistra in personligt"
+67654="Klistra in anteckning"
+67655="Töm"
+67656="Klistra in i anteckning"
+67657="Menyrad"
+67658="Länkar..."
+67659="Lägg till kontakt här"
+67660="Lägg till alla kontakter i mapp"
+67661="Importera KDE1-bokmärken..."
+67662="Importera Konquerorbokmärken..."
+67663="Exportera som HTML..."
+67664="Spara valda poster som HTML..."
+67665="Importera Operakontakter..."
+67666="Exportera Operakontakter..."
+67667="Spara valda kontakter som..."
+67668="KDE1-bokmärken..."
+67669="Konquerorbokmärken..."
+67670="Bokmärken som HTML..."
+67671="Info"
+67672="Anteckningar"
+; Revert an undo operation
+68116="Gör om"
+
+; Edit popup menu string. Translate with ampersand
+69000="&Ångra"
+69001="&Gör om"
+69002="&Klipp ut"
+69003="K&opiera"
+69004="K&listra in"
+69005="T&öm"
+69006="&Markera allt"
+
+; Workspace popup menu string. Translate with ampersand
+69007="&Återställ"
+69008="&Flytta"
+69009="&Storlek"
+69010="&Minimera"
+69011="Ma&ximera"
+69012="&Stäng"
+69013="&Nästa"
+69014="&Standard"
+69015="&Klassisk"
+69016="&Dekoration"
+
+; Print dialog. Detination tab
+69017="Mål"
+
+; Print dialog. Options tab
+69018="Alternativ"
+
+; Print dialog. Printer program tab
+69019="Utskriftsprogram"
+
+; Print dialog.
+69020="Skrivare"
+
+; Print dialog. List column header
+69021="Skrivare"
+69022="Värd"
+69023="Kommentar"
+
+; Print dialog. Checkbox
+69024="Skriv till fil"
+
+; Print dialog. Frame text label
+69025="Skriv ut"
+69026="Exemplar"
+69027="Alla"
+
+; Print dialog
+69028="Markerat"
+69029="Sidor"
+
+; Print dialog.
+69030="Från:"
+
+; Print dialog
+69031="Till:"
+69032="Antal exemplar"
+69033="Första sidan först"
+69034="Sista sidan först"
+
+; Print dialog. Frame text label
+69035="Färg"
+69036="Alternativ"
+69037="Pappersformat"
+
+; Print dialog
+69038="Skriv ut med färg om möjligt"
+69039="Skriv ut i gråskala"
+69040="Stående"
+69041="Liggande"
+
+; Print dialog. Printer parameter
+69042="Flaggor"
+
+; Print dialog. Help text label
+69043="Skrivarprogrammet måste läsa från standard in.\nFlaggorna sänds till programmet som en sträng."
+
+; Print dialog. Dialog title
+69044="Skriv ut"
+
+; Print dialog. Paper type
+69045="A0 (841 × 1189 mm)"
+69046="A1 (594 × 841 mm)"
+69047="A2 (420 × 594 mm)"
+69048="A3 (297 × 420 mm)"
+69049="A4 (210 × 297 mm)"
+69050="A5 (148 × 210 mm)"
+69051="A6 (105 × 148 mm)"
+69052="A7 (74 × 105 mm)"
+69053="A8 (52 × 74 mm)"
+69054="A9 (37 × 52 mm)"
+69055="B0 (1030 × 1456 mm)"
+69056="B1 (728 × 1030 mm)"
+69057="B2 (515 × 728 mm)"
+69058="B3 (364 × 515 mm)"
+69059="B4 (257 × 364 mm)"
+69060="B5 (182 × 257 mm)"
+69061="B6 (128 × 182 mm)"
+69062="B7 (91 × 128 mm)"
+69063="B8 (64 × 91 mm)"
+69064="B9 (45 × 64 mm)"
+69065="B10 (32 × 45 mm)"
+69066="C5E (163 × 229 mm)"
+69067="DLE (110 × 220 mm)"
+69068="Executive (191 × 254 mm)"
+69069="Folio (210 × 330 mm)"
+69070="Ledger (432 × 279 mm)"
+69071="Legal (216 × 356 mm)"
+69072="Letter (211 × 279 mm)"
+69073="Tabloid (279 × 432 mm)"
+69074="US Common #10 Envelope (105 × 241 mm)"
+
+; Print dialog.
+69075="Lokalt program"
+69076="Egendefinierad skrivare"
+
+; Print dialog. Fileselector title
+69077="Välj utdatafil"
+69078="Välj program"
+
+; Print dialog. Printer connection
+69079="Lokalt ansluten"
+
+; Print dialog. Alternate printer names
+69080="Alias:"
+
+; Print dialog. Unknown printer location
+69081="Okänd plats"
+
+; Print dialog. Unknown printer
+69082="okänd"
+
+; Dialog title. When no printer was found
+69083="Ingen skrivare installerad"
+
+; Dialog help text
+69084="Inga giltiga skrivare har angivits\n\nDu kan välja att skriva till en fill eller ange\nen egen skrivare i utskriftsdialogen"
+
+; Column header label when listing plug-ins
+69085="Använd"
+
+; First time dialog help text
+69086="Tryck Skift+mittenknappen för att ställa in vad som skall ske vid mittknappsklick.\n\nVill du ställa in mittknappsklicket nu?"
+
+; Dialog close button
+69087="Stäng"
+
+; Dialog apply button
+69088="Verkställ"
+69089="Skriv ut"
+
+; Dialog help button
+69090="Hjälp"
+
+; Qt library strings (colordialog)
+69100="Lägg &till egna färger"
+69101="Gr&undfärger"
+69102="Egna f&ärger"
+69103="&Definiera egna färger >>"
+69104="Gr&ön:"
+69105="&Röd:"
+69106="&Blå:"
+69107="&Mättnad:"
+69108="&Ljusstyrka:"
+69109="&Nyans:"
+69110="&Alfakanal"
+69111="Välj färg"
+
+; Qt library strings (filedialog)
+69112="%1\nHittade inte filen.\nKontrollera sökväg och filnamn."
+69113="&Ta bort"
+69114="&Nej"
+69115="&Ja"
+69116="&Öppna"
+69117="&Byt namn"
+69118="&Spara"
+69119="&Osorterat"
+69120="<qt>Är du säker på att du vill ta bort %1 %2?</qt>"
+69121="Alla filer (*)"
+69122="Attribut"
+69123="Tillbaka"
+69124="Kopiera eller flytta en fil"
+69125="Skapa ny mapp"
+69126="Datum"
+69127="Ta bort %1"
+69128="Information"
+69129="Kat"
+69130="Kataloger"
+69131="Katalog:"
+69132="Fel"
+69133="Fil&namn:"
+69134="Fil&typ:"
+69135="Fil"
+69136="Sök katalog"
+69137="Oåtkomlig"
+69138="Lista"
+69139="Leta &i:"
+69140="Namn"
+69141="Ny mapp %1"
+69142="Ny mapp 1"
+69143="Ny mapp"
+69144="Upp en nivå"
+69145="Öppna"
+69146="Förhandsgranska innehåll i filer"
+69147="Förhandsgranska filinformation"
+69148="Upp&datera"
+69149="Skrivskyddad"
+69150="Skrivbar"
+69151="Läs: %1"
+69152="Spara som"
+69153="Spara"
+69154="&Visa dolda filer"
+69155="Storlek"
+69156="Sortera"
+69157="efter &skapandedatum"
+69158="efter &namn"
+69159="efter &storlek"
+
+; Qt library strings (filedialog) - Not regular file
+69160="Special"
+
+; Qt library strings (filedialog)
+69161="Symbolisk länk till katalog"
+69162="Symbolisk länk till fil"
+69163="Symbolisk länk till special"
+69164="Typ"
+69165="Endast skrivbar"
+69166="Skriv: %1"
+69167="katalogen"
+69168="filen"
+69169="symboliska länken"
+
+; General message box strings
+69200="Du måste välja ett filnamn först"
+69201="Filnamn saknas"
+69202="Det valda filnamnet existerar redan. Om du\nfortsätter kommer innehållet i den befintliga filen\natt gå förlorat.\n\nVill du fortsätta?"
+69203="Ersätt fil"
+69204="Det valda filnamnet finns redan. Välj en annan fil"
+69205="Ogiltigt filnamn"
+69206="Skrivningen misslyckades. Data har inte lagrats.\n\nKontrollera att du har skrivbehörighet till den\nkatalog filen skulle ha lagrats i och att det\nfinns tillräckligt med ledigt diskutrymme."
+69207="Misslyckades att spara"
+69208="Du har inte skrivbehörighet för den angivna platsen."
+69209="Du har inte skrivbehörighet till den angivna %1.\n\nNamn: %2"
+69210="Tillgång nekas"
+69211="katalog"
+69212="fil"
+
+; Message box title
+69213="Ogiltig version på insticksprogram"
+
+; Message box help text
+69214="Upptäckte felaktig version på Netscapeinsticksprogram. Opera kan inte använda insticksprogramm innan detta har rättats. Installera det mellaninsticksprogram ("proxy plug-in") som följde med denna version av Opera."
+
+; Message box title
+69215="Sökning efter insticksprogram"
+
+; Message box help text for delayed plug-in search (after startup)
+69216="Insticksprogram installerades inte vid start. Installationen påbörjas nu."
+
+; Message box help text
+69217="Vid senaste sökningen efter insticksprogram uppstod ett ödesdigert fel.\n\nVill du påbörja sökning efter insticksprogram nu?"
+
+; Text above a list of directories
+69218="Registrerade kataloger för insticksprogram"
+
+; Help text for setting display resolution (DPI)
+69219="Skärmupplösning"
+
+; Default display resolution value
+69220="Systemförval"
+
+; Fast forward 
+69232="Nästa"
+
+; Fast forward
+69233="Nästa bild"
+69234="Logga in"
+69235="Logga in med Trollspöet"
+69236="Visa"
+69237="Visa bild"
+
+; Menu entry for adding a mailto link to the contact list
+69242="Lägg till som kontakt..."
+
+67306="Musik"
+69313="Brevlista"
+69314="Brevkropp"
+69315="Lista och kropp"
+; Page menu string
+69336="Stäng"
+69337="Aktivera"
+69338="Återställ"
+69339="Minimera"
+69340="Maximera"
+
+; Used in toolbar popup menus to control visibility of extender arrow
+69363="Visa fortsättningspil"
+
+; Used in M2 menus (in the show account menu)
+69366="Alla konton"
+69367="E-postkonton"
+69368="Diskussionsgruppskonton"
+
+; General menu string 
+69381="Exportera..."
+
+; m2 submenu string (in hotlist)
+69382="Visa konto"
+
+; m2 menu string (in hotlist)
+69383="Visa kontoväljare"
+
+; Submenu that hold all closed window entries
+69384="Stängda"
+
+; Main help entry (F1 action)
+69385="Hjälp för Opera"
+
+; Contents sub menu in help menu
+69386="Ämnen"
+
+; Help topic
+69387="Listpanel"
+69388="Knapprader"
+69389="Menyer"
+69390="Dialoger"
+69391="Inställningar"
+
+; On the web menu entry
+69392="Funktioner och guider"
+69393="Tillgänglighet"
+69394="Säkerhet och personlig integritet"
+
+; Meta key
+69395="Meta"
+
+; Menu string in transfer panel
+69422="Ta bort alla avslutade"
+
+69482="Anpassa till fönsterbredd"
+; Displayed user css file name
+69483="Efterlikna textbaserad webbläsare"
+69484="Nostalgi"
+69485="Förbättra läsbarhet"
+69486="Enbart bilder och länkar"
+69487="Högkontrast (svart)"
+69488="Högkontrast (vit)"
+69489="Dölj bilder som inte är länkar"
+69490="Dölj element med vissa storlekar (aggresiv)"
+69491="Stäng av tabeller"
+69492="Visa strukturelement"
+69493="Felsök med kantlinjer"
+
+69639="Markera"
+69640="Markera som skräppost"
+69641="Markera som ej skräppost"
+69642="Innehåll"
+69643="Visa snabbknappar"
+69644="Visa kanaler"
+69645="Visa filtrerade"
+69646="Endast brevlista"
+69647="Endast brevkropp"
+69648="Brevlista med brev under"
+69649="Brevlista med brev till höger"
+69650="Töm skräppostkorg"
+69651="Nytt filter"
+69652="Kanaler..."
+69653="Aktivera smilisar"
+69654="Ny avgränsare"
+69655="Ansluten"
+69656="Upptagen"
+69657="Strax tillbaka"
+69658="Borta"
+69659="Talar i telefon"
+69660="Ute på lunch"
+69661="Visa som frånkopplad"
+69662="Frånkopplad"
+69663="Lista rum..."
+69664="Nytt rum..."
+69665="Gå med i rum"
+69666="Lämna rum"
+69667="Användarinformation"
+69668="Enskild diskussion..."
+69669="Styr"
+69670="Lägg till alias i kontakt"
+69671="Operator"
+69672="Ej operatör"
+69673="Ge röst"
+69674="Ta bort röst"
+69675="Sparka ut"
+69681="Verktyg"
+69682="Paneler"
+69683="Knapprader"
+; ui
+69684="Konsoler"
+
+69685="Start"
+69686="Placering av paneler"
+69687="Placering av panelväljare"
+69688="Visa panelväxlare"
+69689="Alla bilder"
+69690="Endast redan hämtade bilder"
+69691="Inga bilder"
+69692="Paneler"
+69693="Diskussionsgrupper"
+69694="Samtalsrum"
+69695="Ordlista"
+69696="Öppna"
+69697="Öppna mapp"
+69698="Visa överföringar"
+69699="Visa överföringspanel vid ny överföring"
+69884="Koppla loss"
+69885="Visa Ny flik-knapp"
+69886="Öppna Opera"
+69887="Kakor..."
+69888="Lösenord i Trollspöet..."
+69889="Avancerade"
+69896="Göm Opera"
+69944="Samtal"
+; Untranslated string
+70044="Kick with reason"
+; Untranslated string
+70047="Ban"

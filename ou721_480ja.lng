@@ -1,0 +1,4635 @@
+; Opera language file version 2.0
+; Copyright © 1995-2003 Opera Software ASA. All rights reserved.
+; Created on 2003-10-16 11:44
+; Lines starting with ; (like this) are comments and need not be translated
+
+[Info]
+Language="ja"
+; The string below is the language name in its own language
+LanguageName="日本語"
+Charset="utf-8"
+Build.Linux=480
+Version.Linux=7.21
+DB.version=111
+
+[Translation]
+
+; General strings
+
+; Used in a popup error message when Opera can't connect to the remote
+; server due to other phenomena than the one stated in 32873.
+32869="リモートサーバーに接続できませんでした"
+
+; The error code corresponding to this string is used in a number of
+; situations when the server has abruptly closed the connection, and then
+; the string can be used in a popup error message.
+32864="リモートサーバーから切断されました"
+
+; Used in a popup error message when Opera has failed to load a requested
+; page more than once.
+32874="このページを読み込もうと何度か試みましたが、完全には読み込むことができませんでした。\r\n\r\nサーバーに問題がある可能性があります。"
+
+; Used in a popup error message when Operas request to connect to a server
+; is refused. (For example when the server exists but does not answer on
+; the specified port.)
+32873="リモートサーバーに接続できませんでした"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain exists but the server itself does not (for example
+; http://fff.example.com).
+32871="リモートサーバーが見つかりませんでした"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain doesn't exist (for example http://invalid).
+32872="このアドレスはお使いのコンピュータからは利用できません"
+
+; Used as default error message in a popup error message, when no other
+; network error message applies.
+32868="内部コミュニケーションエラー"
+
+; Used in a popup error message when there is no route from the client's
+; subnet to the server's subnet, likely due to a badly configured network.
+32881="ネットワークが使用不可にされています。システム管理者に連絡してください"
+
+; Used in a number of error situations, when the user has entered a
+; malformed URL, such as opera:nonexistant, into the URL field. The http
+; respose error code 400 (Bad request), and some other http error codes
+; between 400 and 500 (signifying client errors) also give the same
+; result.
+32832="不正なアドレスです"
+
+; Used in a popup error message when the network of the underlying system is
+; down. This could be due to errors in the protocol stack, network card or
+; driver, or in the physical network outside of the system.
+32865="ネットワークに問題があります"
+
+; Used in a popup error message when the server has tried to redirect a
+; document request from Opera to an adress and Opera fails to connect to
+; that server.
+21462="サーバーが不正なアドレスに転送しようとしました。\r\nサイトの管理者に報告してください。"
+
+; Used in a popup error message when a proxy server has been specified for a
+; specific request type, and the proxy server doesn't answer when an URL
+; of that type is entered in the URL field.
+32897="プロキシサーバーに接続できませんでした"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain exists but the server itself does not (for example
+; fff.opera.com).
+32898="プロキシサーバーが見つかりませんでした"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain doesn't exist (for example fjdlsakhngfjf).
+32899="プロキシサーバーに接続できませんでした。サーバーが使用不可にされています"
+
+; Used in a popup error message when Operas request to connect to a proxy
+; server is refused. (For example when the server exists but does not
+; answer on the specified port.)
+32900="プロキシサーバーに接続できませんでした。アクセスが拒否されました"
+
+; Used when Opera has tried to open a network socket to a server and the
+; socket is busy. This message should be handled internally most of the
+; time.
+32866="ネットワークソケットがブロックされました"
+
+; Used in a popup error message when a non-recoverable error has occurred in
+; the network protocol stack or network drivers of the system.
+32883="ネットワークソケットに問題があります。ネットワークドライバを確認してください。"
+
+32885="リモートサーバーがタイムアウトしました。時間をおいて再試行して下さい。"
+; Used in a popup error message when not enough socket resources (file
+; handles, network buffers) are free.
+32867="ネットワークソケットのリソースに問題があります。再試行して下さい。"
+
+; The default error message, used in any situation where no more specific
+; error message can be created.
+20000="プログラムの内部エラーが発生しました。"
+
+20001="現在の印刷ジョブが完了するまでお待ちください"
+20002="新しいウィンドウを作成できませんでした。メモリまたはリソースが不足しています"
+20003="アドレスタイプが不明であるか、サポートされていません"
+; Might be used in a popup error message when the user has clicked the Home
+; button and no home page is set in preferences, but the Set homepage
+; dialog seems to appear instead. Obsolete?
+20005="ホームページが設定されていません"
+
+20009="このMIMEタイプはすでに定義されています"
+20011="検索された文字列は見つかりませんでした"
+20013="プリンタとの接続を確立できません"
+20014="ファイルの表示に使用するプログラムを指定してください"
+; Used in an error popup message when the printer has encountered an error
+; while printing (as opposed to 20013 which pops up if the printing can't
+; even start, which is more likely.)
+20015="ページを印刷できませんでした。プリンタが接続されてるかどうか確認してください"
+
+20016="印刷中…"
+; Used in a popup error message when the user has requested a file from the
+; server that it's not allowed to fetch (HTTP response code 403), if the
+; user has set the Network/Server errors/Always show dialog box
+; preference.
+33040="リモートサーバーがリクエストの実行を拒否しました。\r\nこのアドレスは利用できません。 "
+
+; Used in a popup error message when the user has requested a file from the
+; server that does not exist (HTTP response code 404), if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33041="アドレスが見つかりませんでした"
+
+; Used in a popup error message as a default message when the user has made
+; a valid request for a file from the server, and the server encounters an
+; error that prevents it to fulfill the request (HTTP response code 5xx
+; and 6xx), if the user has set the Network/Server errors/Always show
+; dialog box preference.
+33042="リモートサーバーまたはファイルが見つかりませんでした。"
+
+; Used in a popup error message when the user has requested a file from the
+; server, and the server could not fulfill the request since this
+; functionality wasn't implemented (HTTP error code 501), if the user has
+; set the Network/Server errors/Always show dialog box preference.
+33043="リモートサーバーに必要な機能が不足しています"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server sends the document using HTTP compression, and
+; the document decoder couldn't decode the data properly.
+33046="データのデコード中に問題が発生しました。データが壊れているかもしれません。"
+
+; Used in a popup error message when the user has submitted a form using a
+; HTTP request method (specified with the METHOD attribute to the FORM tag
+; in the HTML form) that the server does not accept (HTTP error code 405),
+; if the user has set the Network/Server errors/Always show dialog box
+; preference.
+33424="HTTPリクエストメソッドがサーバーに受け容れられませんでした。"
+
+; Used in a popup error message when the user tries to fetch a document by
+; clicking a link, and the server cannot send the requested document in a
+; format that matches the content of the HTTP accept headers sent in the
+; request (HTTP error code 406), if the user has set the Network/Server
+; errors/Always show dialog box preference. However, Opera accepts all
+; document formats and sends *.* in its accept header, so this is unlikely
+; to happen.
+33425="サーバーが受け容れ可能なデータを送信できませんでした"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server needs more data from Opera to fulfill the
+; request, and Opera fails to deliver the data before the server times out
+; and cancels the request (HTTP error code 408). Unlikely to happen very
+; often. Visible if the user has set the Network/Server errors/Always show
+; dialog box preference
+33426="サーバーがタイムアウトしました"
+
+; Used in a popup error message when Opera has sent a HTTP request to fetch
+; or send a document to the server, and the server determins that there's
+; a conflict with a third part regarding the document, that can be solved
+; by the user (HTTP error message 409). This could happen when the user
+; submits a form that leads to a change of an online document, and the
+; server detects that the changes conflicts with other changes already
+; made to the document. Visible if the user has set the Network/Server
+; errors/Always show dialog box preference
+33427="サーバー上の既存リソースとの衝突が発生しています"
+
+; Used in a popup error message when the user has requested a document and
+; the server answers that the document has been there, but has been
+; permanently removed (HTTP error code 410). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33428="このアドレスはもう利用できません"
+
+; Used in a popup error message if the user has sent a request to the
+; server, and the server answers that it needs a Content-Length header to
+; process the request (HTTP error code 411). Opera never sends requests
+; without a valid Content-Lenght header. Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33429="HTTP content lengthが要求されました"
+
+; Used in a popup error message if the user has sent a request to the server
+; containing one or more precondition headers, and one or more of these
+; preconditions evaluated false on the server (HTTP error code 412). The
+; precondition headers could be If-Range and If-Modifified-Since, that
+; could be used to fetch the missing parts of a earlier partially fetched
+; documents, if the document is still the same. Unlikely to happen.
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33430="HTTP条件整備に失敗しました"
+
+; Used in a popup error message when the user has sent a request to a
+; server, and the server signalled that the request entity (the actual
+; request data) was too large (HTTP error code 413). Visible if the user
+; has set the Network/Server errors/Always show dialog box preference.
+33431="HTTPリクエストデータが長すぎます"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the URL is longer than the server can handle (HTTP error code 414).
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33432="HTTPアドレスが長すぎます"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the server didn't recognize the content type of the request entitiy
+; (HTTP error code 415). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33433="サーバーがコンテントタイプを認識できませんでした"
+
+; Used in a popup error message if Opera has requested a part of a file that
+; does not exist (HTTP error code 416). This shouldn't happen. Visible if
+; the user has set the Network/Server errors/Always show dialog box
+; preference.
+33434="サーバーがファイルのリクエストされた部分を送信できませんでした"
+
+; Used in a popup error message if Opera has sent a request with certain
+; expectations in the HTTP header 'Expect', and the server can't meet that
+; expectation because vital features are not implemented. For example, the
+; server can be expected to handle HTTP_CONTINUE (HTTP reply code 100)
+; when sending in forms (HTTP error code 417). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33435="HTTP予測に失敗しました"
+
+; Used in a popup error message when Opera has sent a request to a HTTP
+; proxy server, and the upstream server returned an invalid response code
+; (HTTP error code 502). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33436="HTTPゲートウェイに失敗しました"
+
+; Used in a popup error message when the user has requested a document and
+; the server can't fulfill the request since it's overloaded or offline
+; (HTTP error code 503). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33437="サーバーが高負荷であるかオフラインになっています。しばらく経ってから再試行してください"
+
+; Used in a popup error message when the user has sent a request to a proxy
+; server, and the upstream server did not answer before the proxy server
+; timed out (HTTP error code 504). Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33438="HTTPゲートウェイがタイムアウトしました"
+
+; Used in a popup error message when the user has requested a document from
+; a server, and the server doesn't support the HTTP version used (HTTP
+; error code 505). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33439="HTTPのバージョンが受け容れられませんでした"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a server, using HTTP digest authentication to check the
+; documents integrity, and the authentication failed.
+33047="認証に失敗しました。コンテンツが、信頼できない可能性があります"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a proxy server, using HTTP digest authentication to check
+; the documents integrity, and the authentication failed.
+33048="プロキシの認証に失敗しました。コンテンツが信頼できない可能性があります"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server answered that the ftp service was not
+; currently available (FTP error 421).
+33056="FTPサーバーが利用不可にされています"
+
+; Used in a popup error message as a default error message when the user has
+; entered an FTP URL into the URL field and an error has occurred.
+33057="FTPモジュール内でエラーが発生しました"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server has rejected the connection.
+33058="FTPサーバーに接続できませんでした。 \r\n 恐らく接続しているユーザーが多すぎるためと思われます｡ \r\n時間をおいて再試行してください"
+
+; Can be used when the the user has entered an FTP URL into the URL field,
+; and the server has rejected the connection because the provided user
+; name didn't exist. Normally an authentication dialog is shown instead.
+33059="FTPサーバーにアカウントが見つかりませんでした"
+
+; Can be used when the the user has entered an FTP URL without user name and
+; password into the URL field to do an anonymous login, and the server did
+; not accept anonymous logins. Normally an authentication dialog is shown
+; instead.
+33060="このFTPサーバーへの接続にはユーザー名とパスワードが必要です"
+
+33061="ディレクトリが見つかりませんでした"
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the file did not exist.
+33062="ファイルが見つかりませんでした"
+
+; Used in a popup error message when an initiated FTP file download is
+; interrupted by the server, either by the connection being closed (FTP
+; error 426) or the download action being aborted (FTP error 451).
+33063="リモートFTPサーバーにより接続が切断されました"
+
+; Used in a popup error message when the user has entered an FTP URL in the
+; URL field to request a file download, and the server signals that it
+; can't set up a passive data channel to transfer the file (FTP error
+; 425).
+33064="リモートFTPチャンネルを開けませんでした"
+
+; Used in a popup error message when the user has entered a file URL
+; pointing to a file that does not exist in the URL field.
+33120="ファイルを開けませんでした"
+
+20017="プリンタのスケール設定は20%から400%である必要があります。正しい数値を入力してください"
+20018="一つのサーバーに対する最大接続数は 1 から 99 である必要があります。"
+20019="最大接続数は1から999である必要があります。"
+20020="履歴の行数設定は0から999である必要があります。"
+; Used in a popup error message when the user has requested a file from the
+; server, and the server recieves the request but no data exists to return
+; (HTTP error code 204), if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33044="リモートサーバーはリクエストに応答しましたが、コンテンツがありませんでした"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file is read-protected.
+32903="このファイルへのアクセスが拒否されました"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file does not exist.
+32904="ファイルが存在しませんでした"
+
+; Used in a popup error message when Opera has tried to write a file to disk
+; and there was not enough disk space left. This happens for example when
+; trying to save a page to disk, but also in many other places and
+; situations, not always connected with something that the user does.
+32905="ファイルとして保存できません。ディスクが一杯です"
+
+; Used in a popup error message when Opera has failed to write data into the
+; cache, for example when fetching a document.
+32906="内部キャッシュエラー"
+
+20045="リソースが不足しています。文字列を読み込めませんでした"
+; Used as default text on file upload input elements in forms in HTML
+; documents.
+20046="選択"
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no telnet application is specified in preferences.
+20048="Telnetプログラム名が指定されていません。設定からTlenetアプリケーションのフルパスを入力してください。"
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no host name has been specificed in the url.
+20049="ホスト名が指定されていません"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no path to a TN3270 terminal application has been specified
+; in the preferences. (TN3270 is a variant of telnet used mainly on IBM
+; mainframes).
+20121="TN3270プログラム名が指定されていません。設定からTN3270アプリケーションのフルパスを入力してください。"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no host name has been specified. (TN3270 is a variant of
+; telnet used mainly on IBM mainframes).
+20122="ホスト名が指定されていません"
+
+20226="スキンファイル (*.zip)|*.zip|すべてのファイル (*.*)|*.*|"
+20050="HTMLファイル|*.htm;*.html|テキストファイル|*.txt|GIFファイル|*.gif|JPEGファイル|*.jpg;*.jpeg|BMPファイル|*.bmp|サウンドファイル|*.wav|AVIビデオファイル|*.avi|MIDI 音楽ファイル|*.mid;*.midi|Operaウィンドウ設定|*.win|XMLファイル|*.xml|スタイルシート|*.css|すべてのファイル (*.*)|*.*|"
+; Used in the File/Open dialog to let the user select what type of files the
+; dialog should show. The labels are visible in the File type dropdown
+; list.
+20051="HTMLファイル (*.htm;*.html)|*.htm;*.html|テキストファイル (*.txt)|*.txt|GIFファイル (*.gif)|*.gif|PNGファイル (*.png)|*.png|JPEGファイル (*.jpg*.jpeg)|*.jpg;*.jpeg|BMPファイル (*.bmp)|*.bmp|すべてのファイル (*.*)|*.*|"
+
+20052="プログラムファイル (*.exe)|*.exe|すべてのファイル (*.*)|*.*|"
+30120="サウンドファイル (*.wav)|*.wav|すべてのファイル (*.*)|*.*|"
+20126="X509 (*.usr)|*.usr|PKCS #7 signed (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (プライベートキー含む) (*.p12)|*.p12;*.pfx|PEMファイル(*.pem)|*.pem|すべてのファイル(*.*)|*.*|"
+20127="X509 (*.usr)|*.usr|PKCS #7 signed (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (プライベートキー含む) (*.p12)|*.p12;*.pfx|PEMファイル(*.pem)|*.pem|"
+20128="X509 (*.ca)|*.ca;*.crt;*.cer;*.509;*.der|PKCS #7 signed (*.p7s)|*.p7s|PKCS #7(*.p7)|*.p7|PEMファイル(*.pem)|*.pem|すべてのファイル(*.*)|*.*|"
+; Used in the authentication dialog when the user tries to access a password
+; protected document.
+20082="このページのユーザー名とパスワードを入力してください｡"
+
+; Used in the authentication dialog when the user has tried to access a
+; password protected HTML page and authentication has failed.
+20053="このページの認証に失敗しました｡ユーザー名とパスワードを再入力してください｡"
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the proxy server requires authentication.
+20110="このプロキシサーバーのユーザー名とパスワードを入力してください。"
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the authentication to the proxy server fails.
+20109="プロキシサーバーへの認証ができませんでした。ユーザー名とパスワードを再入力してください"
+
+20118="CSSファイル (*.css)|*.css|HTMLファイル (*.htm,*.html)|*.htm;*.html|すべてのファイル (*.*)|*.*|"
+20341="画像ファイル|*.gif;*.png;*.jpg;*.jpeg;*.jpe;*.bmp|すべてのファイル|*.*|"
+20059="GIFファイル (*.gif)|*.gif|PNGファイル (*.png)|*.png|JPEGファイル (*.jpg)|*.jpg|BMPファイル (*.bmp)|*.bmp|すべてのファイル (*.*)|*.*|"
+20073="メッセージが送信されました"
+; Used in a popup error message when Opera finds that the document type is
+; unknown, or no document exists. This is hard to produce, though, since
+; handle all unknown file/mime types by letting the user decide what to do
+; with them - save, open or other alternatives, and empty documents are
+; just ignored.
+20074="不明なドキュメントであるか指定されたドキュメントが存在しません"
+
+20075="Operaディレクトリを作成できませんでした。正しいディレクトリ名を入力して再試行して下さい。"
+; Used in an error popup dialog when the user has entered a gopher or WAIS
+; url in the URL field, and no corresponding proxy has been set in
+; preferences.
+20076="このアドレスにはプロキシサーバーの使用が必要です。設定でプロキシサーバーを指定してください"
+
+; Used as the default text to substitute an image in an HTML document, if
+; the image can't be loaded (or viewing of images is turned off) and the
+; images alt attribute is empty.
+20078="画像"
+
+; Used as the default prompt string to a searchable index specified with the
+; ISINDEX tag (an early form of forms functionality, deprecated in HTML
+; 4.X) in a HTML document, and is rendered in the document above an input
+; text area. (The label can be changed from this default with the PROMPT
+; attribute to the ISINDEX tag.)
+20079="これは検索可能な索引です"
+
+; Used at the end of an HTML document that has not been fully loaded because
+; the user has cancelled the request with the Stop button.
+20081="  ダウンロードが中断されました！"
+
+20084="このファイルタイプは現在使用されているため削除できません。"
+22509="ファイルタイプの削除"
+20085="本当にファイルタイプ情報:[%s]を削除してよろしいですか？\n\n 削除するとOperaはこのタイプのファイルの処理方法を判断できなくなります。"
+20086="このファイルタイプは現在使用されているため名前を変更できません。"
+20090="メールファイルを開く"
+20091="メールファイルの保存"
+20093="Opera E-mail"
+30101="Eudoraからメールをインポート"
+30100="Outlook Expressからメールをインポート"
+30102="(Microsoft Outlook Express 4.x)"
+30103="(Microsoft Outlook Express 5.x)"
+30112="(カンマ区切りアドレス帳ファイル)"
+30104="(Netscapeメール)"
+30109="(Qualcomm Eudora)"
+30105="(Microsoft Windows Messaging)"
+30106="(Microsoft Outlook)"
+30107="(UNIXメールボックスファイル)"
+30108="サポートされているプログラムが見つかりません！"
+30110="Outlook Express メールボックスのあるフォルダを指定してください。"
+30111="メールボックスのあるフォルダを指定してください。"
+16615="これらのオプションを設定することで、特定の種類の広告を見ることができるようになります。"
+; Search strings
+17059="設定(&R)..."
+17060="サーチタイプ"
+17061="キーワード"
+17062="<サイトの標準>"
+
+; Search with x
+17063="%sで検索"
+
+; Search for x
+17064="%sを検索"
+
+; Search x-domain
+17065="%s内を検索"
+
+; Search in page
+17066="ページ内を検索"
+
+17056="イベント"
+17057="サウンドファイル"
+22461="ファイルを開く(&O)"
+22462="ファイルを %sで開く(&O)"
+22464="どのように処理しますか?"
+22463="警告！　ファイルを開く前には必ずウイルスをチェックしてください"
+22468="不明なサーバー"
+22515="文書:"
+22516="画像:"
+22517="総数:"
+22518="速度:"
+22519="時間:"
+22736="ダウンロードディレクトリが不正です"
+22735="不正なダウンロードディレクトリからダウンロードしようとしました。"
+20094="余白サイズが不正です。0 ～ 5 cm (2 inch)の間で設定しなおしてください。"
+20098="受取人が指定されていません。受取人 または ニュースグループを設定してください。"
+20101="マルチメディアファイルを再生できませんでした。デバイスが正しくインストールされているか確認してください。"
+21020="登録されたアプリケーションを開始できませんでした。Windowsのメモリが不足しているかアプリケーションのプログラムファイルが不正です。"
+21021="ファイルが見つかりません。"
+21022="パスが見つかりません。"
+21023="登録されたアプリケーションを開始できませんでした。メモリ不足です。"
+21024="登録されたアプリケーションを開始できませんでした。ライブラリ (DLLファイル)が正しくないようです。"
+21025="登録されたアプリケーションを開始できませんでした。アプリケーションは32ビットWindows対応である必要があります。"
+21026="この拡張子に登録されているアプリケーションがありません"
+21027="登録されたアプリケーションを開始できませんでした。"
+21030="アプリケーションを開始できませんでした。Windowsのメモリが不足しているかアプリケーションのプログラムファイルが不正です。"
+21031="プログラムが見つかりません。"
+21032="プログラムパスが見つかりません。"
+21033="アプリケーションを開始できませんでした。メモリ不足です。"
+21034="アプリケーションを開始できませんでした。ライブラリ(DLLファイル)が正しくないようです。"
+21035="アプリケーションを開始できませんでした。アプリケーションは32ビットWindows対応である必要があります。"
+21036="アプリケーションを開始できませんでした。"
+20102="署名ファイル(*.sig)|*.sig|テキストファイル(*.txt)|*.txt|すべァイル(*.*)|*.*|"
+22505="MIMEタイプの指定が必要です。"
+22506="MIMEタイプが指定されていません"
+22512="このMIMEタイプはすでに存在します。\n\n%s\n\n上書きしてよろしいですか？"
+22513="MIMEタイプを上書きしますか？"
+; Popup error message when the user has tried to print a document and the
+; printer signals that it's out of paper. Currently unused.
+20103="ページを印刷できません。プリンタの用紙切れです。"
+
+; Used in the document window when showing an ftp file listing. 
+20125="親ディレクトリ"
+
+; Used in the 'type' column of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field, when the list item type is a directory.
+22494="ディレクトリ"
+
+; Used in the column titles of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field.
+22496="ファイル名"
+22497="ファイルタイプ"
+22498="サイズ"
+22499="更新日時"
+
+20200="通常のテキスト"
+20201="見出し 1 <H1>"
+20202="見出し 2 <H2>"
+20203="見出し 3 <H3>"
+20204="見出し 4 <H4>"
+20205="見出し 5 <H5>"
+20206="見出し 6 <H6>"
+20207="整形済テキスト <PRE>"
+20208="リンク <A>"
+20230="シングルライン入力欄の文字"
+20212="マルチライン入力欄の文字"
+20213="ボタンの文字"
+20214="CSSフォントファミリー セリフ"
+20215="CSSフォントファミリー サンセリフ"
+20216="CSSフォントファミリー カーシブ"
+20217="CSSフォントファミリー ファンタジー"
+20218="CSSフォントファミリー モノスペース"
+22072="アドレスが長すぎます。"
+; Used in a popup error message when there is not enough free memory for
+; Opera to complete the current task.
+21002="メモリ不足です。"
+
+21249="検索結果"
+21180="パーソナルバー"
+21181="空白のページ"
+21199="新規フォルダ"
+21200="追加"
+21201="追加"
+21202="メニュー"
+21248="検索"
+21193="新規ページ"
+21203="新規ブラウザ"
+21204="開く"
+21205="保存"
+21206="印刷"
+21207="コピー"
+21208="ページ検索"
+21209="戻る"
+21210="更新"
+21211="進む"
+21212="ホームページ"
+21213="移動"
+21214="ブックマーク"
+21215="並べて表示"
+21216="重ねて表示"
+21217="School"
+21218="MIME"
+21254="ホットリスト"
+21255="全画面表示"
+21197="移動"
+21198="検索"
+21194="再開"
+21195="再ダウンロード"
+21196="中止"
+21010="印刷プレビュー"
+21011="スクリーン"
+21012="アクティブFL"
+21013="全フレーム"
+21050="すべてのウィンドウを閉じますか?"
+21051="ブックマーク(&B)"
+; Used in the progress bar when a request for fetching a document has been
+; enqueued for sending to the server.
+21059="%s にリクエストを要求しています..."
+
+; Used in the progress bar when Opera is looking up the name for the host to
+; fetch a document from.
+21060="%s のホスト名を解決しています..."
+
+; Used in the progress bar when connecting to the host to fetch the
+; requested document.
+21061="リモートホスト %s に接続しています..."
+
+; Used in the progress bar when sending a document request to the server.
+21062="%s にリクエストを送信しています ..."
+
+; Used in the progress bar when receiving data from the requested document
+; from the server.
+21063="%s のデータを受信しています..."
+
+; Used in the progress bar when starting the network before fetching a
+; requested document.
+21064="ネットワーク/モデムに接続しています ..."
+
+; Used in the progress bar (often too briefly to be seen, before the
+; hostname lookup) when searching for a complete name for the server to
+; fetch a requested document from.
+21065="完全なサーバー名を検索しています..."
+
+; Used in the progress bar when setting up an encrypted connection with the
+; server before fetching a requested document.
+21066="セキュリティ設定を適用しています..."
+
+; Used in the progress bar when connecting to a proxy server to fetch a
+; requested document.
+21067="プロキシサーバーに接続しています..."
+
+; Used in the progress bar when waiting for a connection to the server to be
+; set up, to fetch a requested document.
+21760="しばらく (#%2) お待ちください。 %1へ接続中です。"
+
+; Used in the progress bar when a requested file has been loaded from the
+; server.
+21074=" %s へのリクエストが完了しました"
+
+; Used in the progress bar when waiting for a reply from the server after
+; requesting a document.
+21068="40秒間アクティブでしたが、タイムアウトしました。データを待っています..."
+
+; Used in a popup warning message when the user has submitted a HTML form to
+; a server, which accepts the request, but never sends an HTTP_CONTINUE
+; (HTTP response code 100) to tell Opera to send the forms data. Opera
+; waits for 40 seconds before showing the warning message.
+33045="このサーバーには問題があるようです。\n\nもし読み込みが正しく完了しない場合は、リクエストを中止しフォームを再送信してください。"
+
+; Used in the progress bar while the user selects to accept or reject a
+; cookie in the cookie warning/confirmation dialog, when accessing a site
+; that requires the server to set client cookies, and Opera is not set to
+; automatically receive this kind of cookie.
+21077="クッキーによるユーザー情報の確認を待っています..."
+
+; Used in the progress bar while Opera checks that the domain stated in the
+; cookie exists.
+21078="クッキードメインのDNS確認を待っています..."
+
+; Used in a popup error message if the user has entered an URL with a port
+; specification that is not the default port for that protocol, and is
+; among the ones that Opera uses internally (for example
+; www.example.com:25) in the URL field.
+33050="セキュリティ上の理由により、このポートへのアクセスは無効にされています。"
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie with a domain attribute that does
+; not match the server name.
+33051="サーバーが不正なクッキーを設定しようとしました。このクッキーに対するサーバーのホスト名とドメイン属性の組み合わせは受けいれられません。このため、クッキーは拒絶されました。 \r\n\r\nサイト管理者に、正しいクッキーを設定するよう要望してみてください。"
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie, and Opera fails to look up the
+; domain stated in the cookie in the DNS.
+33052="サーバーが認証されていないIPアドレスのあるドメインにクッキーを設定しようとしました。セキュリティ上の理由により、この処理は受けいれられません。このため、クッキーは拒絶されました。\r\n\r\nサイト管理者に、指定されたドメインのIPアドレスのクッキーを作成するよう要望してみてください。"
+
+22726="このプラグインは無効です"
+21080="Operaの起動"
+21081="Operaの終了"
+21082="ページの読み込み完了"
+21079="ダウンロードの完了"
+21083="失敗"
+21084="リンクのフォロー"
+22259="インスタントメッセージの受信"
+22260="コンタクトユーザーのオンライン"
+21111="なし"
+22522="スキンを使用しない"
+22469="%s-ファイルに登録されたビューアがありません。ファイルを開くアプリケーションを指定してください。\n [詳細設定]ボタンを押して使用するアプリケーションを特定してください。"
+22470="アプリケーションが見つかりません"
+25142="イベント時に演奏するサウンドファイルを選択してください"
+21100="システムリソースが不足しています。アプリケーションウィンドウを閉じ、問題を解消してください。 "
+21101="システムリソースが不足しています。アプリケーションウィンドウを閉じ、問題を解消してください。 "
+21104="保存したウィンドウファイルが壊れていると思われます。使用できません。 "
+21112="Operaウィンドウ設定ファイル (*.win)|*.win|すべてのファイル (*.*)|*.*|"
+21247="表示"
+21233="送信"
+21234="添付"
+21235="中止"
+21236="画像読込"
+21237="キャッシュ画像"
+21238="画像非表示"
+21239="カラー表示"
+22502="作成者モード"
+22503="ユーザーモード"
+; View source button
+22571="HTML"
+
+20105="ページ"
+20108="このフォームの内容はメール経由で送信されます。あなたの名前とメールアドレスを送信相手に知らせたい場合は「はい｣を押してください。匿名で送信したい場合は｢いいえ｣を押してください。"
+; Used in an warning/confirmation dialog when the user has tried to submit
+; an HTML form insecurely.
+20111="このフォームの内容は暗号化されることなく送信されようとしています。続行しますか？ "
+
+; Used in a warning/confirmation dialog when the user has submitted an HTML
+; form, and the server wants to redirect the submitted data to another
+; server. GET and POST refers to HTTP commands. POST is to send the form
+; data again to the new destination, GET discards the data, but continues
+; to to the new destination.
+20119="入力フォームの内容が転送されようとしています。\n\n｢はい｣を押すと新たな送信先に再送信され、 \n\n｢いいえ｣を押すと再送信せずに続行します。 \n\n続行したくない場合は｢キャンセル｣を押してください。"
+
+21401="非セキュリティ"
+21402="低セキュリティ"
+21403="中セキュリティ"
+21404="高セキュリティ"
+21405="サーバー上にセキュリティーが設定されていません。"
+21407="サーバー上に 低い(最小限の)セキュリティーが設定されています。 "
+21409="サーバー上に 中程度のセキュリティーが設定されています。 "
+21411="サーバー上に 高度なセキュリティーが設定されています。"
+21406="サーバー上に 低い(最小限の)セキュリティーが設定されています。(画像ファイルは暗号化されていません)"
+21408="サーバー上に 中程度のセキュリティーが設定されています。 (画像ファイルは暗号化されていません)"
+21410="サーバー上に 高度なセキュリティーが設定されています。(画像ファイルは暗号化されていません)"
+; Used in the title bar of the Certificate authorities dialog in the network
+; security preferences.
+21250="認証機関"
+
+; Used in the title bar of the Personal certificate dialog in the network
+; security preferences.
+21251="個人証明書"
+
+21252="サーバーへの接続に失敗しました。 "
+21253="送信に失敗しました。 "
+21258="不正または認証不能な証明書です"
+21259="サポートされていない形式の証明書です"
+21260="証明書が発行人により無効にされています"
+21261="証明書の有効期限が切れています"
+21262="不明な証明書です"
+21265="証明書は有効ですが、認証を拒否されました。 "
+21271="内部エラーが発生しました"
+21274="証明書一式が正しく命令されませんでした。 "
+21272="受理可能なSSL 2の暗号化方法が見つかりません。 "
+21273="原因不明のエラーが発見されました"
+21319="このサーバーはSSL 2のみをサポートしています。接続したい場合には、設定のSSL 2を使用可能にする必要があります。"
+21276="セキュリティ接続: 警告 (%u)"
+21277="セキュリティ接続: サーバーからの警告 (%u)"
+21278="セキュリティ接続: 致命的なエラー (%u)"
+21279="セキュリティ接続: サーバーからの致命的なエラー (%u)"
+21280="セキュリティパスワードを入力してください"
+21281="旧の(変更前の)セキュリティパスワードを入力してください"
+21282="新しい(変更後の)セキュリティパスワードを入力してください"
+21283="確認のため、もう一度新しいセキュリティパスワード入力してください"
+21284="パスワードが間違っています。正しいセキュリティパスワード を入力してください"
+21285="セキュリティパスワードの変更に失敗しました。 "
+21388="パスワードは最低6文字で、アルファベットと\n数字が1字以上含まれている必要があります。"
+21320="セキュリティパスワードを入力してください。"
+21286="個人証明書がデータベースに登録されています。 "
+21287="認証機関がデータベースに登録されています。 "
+21288="データベースにこの認証機関の証明書一式をインストールしますか？ "
+21289="データベースにこの個人証明書一式をインストールしますか？ "
+21330="データベースにこのPEMでエンコードした証明書一式 をインストールしますか？ "
+21291="このサーバーへリクエストを送信します。続行しますか？"
+21293="サーバーの証明書はサーバーのホスト名と一致していません。承認しますか？ "
+21378="サーバーから提供された証明書の1つが有効期限切れです証明書の承認しますか？"
+21309="サーバーが証明書を要求しています。次の証明書の中から1つを選択するか、何も送信しない場合には[キャンセル]を押してください。"
+21331="証明書の署名が認証されませんでした。"
+21464="この証明書はこの目的には使用できません。"
+21303="認証機関の証明書のインストール"
+21304="個人証明書のインストール"
+21336="PEM 証明書のインストール"
+21305="個人証明書を選択してください"
+21306="証明書の警告"
+21307="証明書の名前が間違っています"
+21308="証明書の有効期限切れです"
+21377="サーバーの証明書の有効期限切れです"
+21312="この証明書は有効期限切れです。削除した上でアップデートされた証明書をインストールしてください。"
+21314="証明書の署名者が見つかりませんでした"
+21321="サーバーの証明書一式が不完全です。署名者が登録されませんでした。承認しますか？"
+21322="このサーバーの基本となる証明書が登録されていませんこの証明書のインストールをお勧めします。承認/インストールを行いますか？"
+21315="この証明書の署名は失敗しています｡署名者の証明書をインストールしてください。この証明書をインストールし使用することはできますが、Operaによる確認はできません"
+21311="インストール"
+21323="セキュリティパスワードの設定に失敗しました。"
+21316="証明書のインストールに失敗しました。"
+21317="個人証明書がデータベースのプライベートキーと一致しません。"
+21318="証明書一式が正しく命令されませんでした。"
+21324="このキーにはすでに別の個人証明書がインストールされています。インストールに失敗しました。"
+21325="インストールされた認証機関発行の別の証明書が、すでに少なくとも1つ存在します。これらは無視されます。"
+21326="キーの作成中"
+21327="お待ちください。Operaはプライベートキーを作成しています。"
+21328="すべての暗号化の方法が設定で無効にされています。"
+21329="不明な証明書または不正なフォーマットです。"
+21332="セキュリティオペレーションは利用できません。"
+21333="セキュリティが無効です。"
+21334="このセキュリティオペレーションは無効です。"
+21335="このセキュリティDLLがないと、Operaのセキュリティ機能は使用できません。"
+21337="承認する"
+21338="サーバーの証明書が不正な名前の表現で実行されました"
+; Max 30 characters
+21344="接続"
+
+; IMPORTANT!!!! Do not change %u, %ld or \r and \n !!!!
+21346="モジュール:"
+21347="モジュール:"
+21348="発行者:"
+21349="パブリック発行者:"
+21350="プライベート発行者:"
+21351="prime1:"
+21352="prime2:"
+21353="発行者1:"
+21354="発行者2:"
+21355="係数:"
+21364="サポートされていないキーアルゴリズムです "
+21365="拡張子のオブジェクトIDが不明です "
+21367="署名アルゴリズムが不明です "
+21368="証明書のバージョン: %ld\r\n"
+21369="シリアル№ %s\r\n"
+21370="有効期間の開始: "
+21371="\r\n有効期間の終了: "
+21372="\r\n署名: "
+21373="\r\n\r\nパブリックキーアルゴリズム: "
+21374="\r\n署名アルゴリズム: "
+21375="\r\n拡張子:\r\n"
+21376=" (緊急)"
+21461="\r\n\r\nパブリックキーの署名 (SHA-1):\r\n  "
+
+; Max 199 chars 
+21366="%u ビットのプライベートキーです。作成日 %s \r\nURL: %s"
+
+21362="この証明書はSSLの認証またはSSL証明書の編集には使用されません。"
+21356="この証明書は SSLクライアントの認証に使用されます。"
+21357="この証明書は SSLサーバーの認証に使用されます。"
+21358="この証明書はSSLクライアントとサーバーの認証に使用されます。"
+21359="この証明書は SSL証明書の編集に使用されます。"
+21360="この証明書はSSLクライアントの認証とSSL証明書の編集に使用されます"
+21361="この証明書はSSLサーバーの認証とSSL証明書の編集に使用されます。"
+21363="この証明書はSSLクライアントとサーバーの認証およびSSL証明書の編集に使用されます。"
+; Used in a popup error message when the server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32901="サーバーがサポートされていない認証方法によるログインをリクエストしました。"
+
+; Used in a popup error message when a proxy server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32902="プロキシサーバーがサポートされていない認証方法によるログインをリクエストしました。"
+
+; Used in a popup error message when the user has tried to authenticate to a
+; page outside of the given security realm.
+32907="このURLは認証された領域内のURLリストにありません。\r\n認証証明書を送信できません。"
+
+; Used in the progress bar while Opera is uploading a file to the server.
+21386="サーバーへファイルのアップロード中"
+
+21380="メールを送信箱に保存できません。"
+21382="この機能はこのOperaスペシャルバージョンでは使用できません。"
+21379="この機能は使用不可にされています"
+21383="ドライブ"
+; Used as title of the generated plugin list page (oprea:plugins) on some
+; platforms.
+21384="プラグイン"
+
+; Used as title of the generated history list page, when the user has
+; selected Windows/Special/History, or entered the URL opera:history.
+21385="履歴"
+
+21400="プラグインディレクトリがスキャンされました。\n新たなファイルタイプに対応したプラグインがアクティブにされました。\n不明なファイルタイプに対応したプラグインも追加されましたが、アクティブにはなっていません。"
+; Used as title of the generated cache list page, when the user has selected
+; Windows/Special/Cache, or entered the URL opera:cache.
+21415="キャッシュ"
+
+; Used in the Filename column of the created cache listing (created by
+; entering the special URL opera:cache into the URL field) when the file
+; is cached in memory and not to a file.
+22493="(メモリ)"
+
+22491="ソース"
+; Used as page title in a blank page created by entering the special URL
+; opera:blank in the URL field.
+22492="空白のページ"
+
+; Used as column titles in the generated cache list page, when the user has
+; selected Windows/Special/Cache, or entered the URL opera:cache.
+21416="ファイル名"
+21417="アドレス"
+21418="サイズ"
+
+21420="本当にダウンロードをキャンセルしますか？"
+; Used in a popup confirmation dialog when the user has gone to
+; Preferences/Multimedia, enabled plugins and pressed the 'Find plugins'
+; button, and new plugins needs to be activated.
+21764="プラグイン "%1" にファイルタイプ"%2"を関連付けますか？"
+
+21421="このプラグインをファイルに関連付けますか?"
+21425="試用期間の残りは %i 日です"
+21428="未ライセンスバージョン"
+21501="ページをここに追加...(A)"
+21502="このフォルダをアクティブにする"
+21504="フォルダ内のすべてを開く(O)"
+21508="ブックマークの続きを表示..."
+; Docked hotlist window
+21516="ホットリスト"
+21517="タイトル"
+21518="表示日時"
+21520="更新日時"
+
+21525="ブックマークの編集...(M)"
+21519="表示(&V)"
+21600="ニックネームにピリオド、コロン、スラッシュを含める事はできません。"
+21601="不正なニックネームです"
+21609="ブックマークは名前順に並べられています。\n\nブックマークの表示順を変更する前に\n表示メニューのブックマークから "ユーザー定義順" を指定する必要があります。"
+21610="名前順に並べられたブックマーク"
+; Open file dialog
+21511="ファイルをブックマークに追加"
+21512="ブックマークファイルを開く"
+21513="Operaブックマークファイル (*.adr)|*.adr|HTML / Netscapeブックマークファイル (*.htm, *.html)|*.htm;*.html|すべてのファイル (*.*)|*.*|"
+21514="ブックマークファイルの新規作成"
+
+; Autoimport after install
+21950="オートインポート"
+21951="Netscapeブックマーク"
+21952="Internet Explorerお気に入り"
+
+; Save file
+21551="Opera (*.adr)|*.adr|"
+
+21606="警告"
+21607="本当にこれら %li 個のアイテムを削除してよろしいですか？"
+21608="複数アイテムの削除確認"
+22520="マウスジェスチャー"
+22521="Operaのマウスジェスチャーを\n初めて使用しようとしています\n\nマウスジェスチャーとは、\nマウスの右クリックボタンを押しながら移動させ\nボタンを離すといった動作により\nシンプルな操作を実現する機能です。\n\n利用できるコマンドの一覧については  [ヘルプ] を参照してください。\n\nOperaのマウスジェスチャーはブラウジングを\nまさしく高速なものとするためにデザインされています。\n他の動作との重複をもたらす場合もあります。\n\nマウスジェスチャーを有効にしますか？"
+; Skin removal
+22523="表面スキンを削除(&R)"
+22524="背景スキンを削除(&B)"
+
+; Use skin from button set (buttons.ini)
+22738="ボタンセットからスキンを使用しますか？"
+22737="ボタンセットの中にはスキンの画像も含まれています。\nスキンも使用しますか？"
+
+22739="Operaを購入して広告バナーを削除するには、ここをクリックしてください。"
+; Serial number stuff
+22004="Operaのユーザー登録"
+22001="Operaはすでにライセンス登録されています。\n\nライセンス情報を変更しますか？"
+22002="入力されたライセンス情報が正しくないようです。\n\n確認して正しく入力してください。"
+22003="Operaがライセンス登録されました。"
+22005="ライセンス情報が有効期限切れになっています。\n <https://www.opera.com/order/register.html> へお越しの上アップグレードしてください。"
+22006="ライセンス情報が有効期限切れになっています。\n <https://www.opera.com/order/register.html> へお越しの上アップグレードしてください。"
+
+21300="ショートカット"
+21301="目次"
+21342="Operaの終了時"
+21343="このクッキーはドメイン内の安全なサーバーにのみ送信されます。"
+21393="このクッキーはドメイン内のすべてのサーバーに送信されます。"
+21394="このクッキーはこの安全なサーバーにのみ送信されます"
+21395="このクッキーはこのサーバーにのみ送信されます。"
+21396="このクッキーはデータベースから削除されます。"
+22071="ファイルのダウンロード"
+22232="ユーザー定義"
+21431="履歴ファイルが不正です。クリアされます"
+; Probably deprecated. On O7 and O6 Win, the JavaScript error dialog is
+; popped up instead, if the user has requested in preferences/Multimedia
+; to be alerted of JavaScript errors.
+32825="JavaScriptの実行に失敗しました"
+21450="スクリプトの実行に失敗しました。"
+21451="スクリプトの編集に失敗しました。"
+
+; Used if Opera for some reason tries to run JavaScript in a non-HTML
+; document. This is not likely to happen.
+21452="javascript: URLは HTML との組み合わせによってのみ実行できます。"
+
+; Used in a popup error message when the Opera fails to load the JavaScript
+; library at startup.
+21453="システムファイルES262-32.DLLを読み込めませんでした。JavaScriptは実行されません。"
+
+; Used in the progress bar while Opera is busy running a JavaScript program.
+21454="JavaScriptの実行中..."
+
+22073="ダウンロードウィンドウを閉じるとすべてのダウンロードが中断されます。\n\nよろしいですか？"
+22074="ダウンロードをキャンセルしますか？"
+22076="ファイル名"
+22075="サイズ"
+22080="ファイルタイプ"
+22077="進行状況"
+22078="残り時間"
+22079="転送速度"
+22085="完了"
+22108="完了 (サイズ不一致)"
+22086="中断"
+22087="エラー"
+22089="不明"
+22090="ダウンロードを中止する"
+22091="中断を再開（リジューム）する"
+22186="リストから削除する"
+22187="再ダウンロードする"
+22092="シェルを開く"
+22109="ファイルの情報をコピー(P)"
+22093="選択されたダウンロードを中止しますか？ "
+22236="この言語ファイルはbuild%sのOperaに対応した記載となっていません。 \n\n「はい」を押すと英語モードで再起動します。\n\n「いいえ」を押すとこのファイルを使用しますが、言語エラーの発生する可能性があります。"
+22094="ファイル"
+22096="新しいウィンドウ"
+22095="編集"
+22099="エラー"
+22120="ファイル"
+22121="すべてのファイル"
+22122="すべてのファイル(*.*)"
+14121="このページのスクリプトの実行を中止する"
+25266="次からこのダイアログを表示しない(&D)"
+22151="新しいフォルダ"
+; Used in the title bar of a warning/confirmation dialog when a script tries
+; to read the content of a password input element in a form in a HTML
+; document.
+22486="JavaScriptセキュリティの警告"
+
+; Used in a warning/confirmation dialog when a script tries to read the
+; content of a password input element in a form in a HTML document.
+21430="スクリプトがフォームからパスワードの読み込みを求めています。\n\nスクリプトにパスワードを読み込ませてもよろしいですか？"
+
+22102="ダイヤルアップを切断できません（タイムアウトしました）"
+22103="ダイヤルアップを切断しますか？ "
+22104="現在 %s に接続しています。ダイアルアップ接続を切断しますか "
+22107="Tipファイルが読み込めません"
+22114="ブックマークフォルダのプロパティ"
+22125="コンタクトフォルダのプロパティ"
+22115="ブックマークのプロパティ"
+22117="ブックマーク"
+22118="コンタクト"
+34304="誤ったPINコードです"
+34305="署名が確認できません"
+34306="カードリーダはすでに使用中です"
+34307="カードに問題があります"
+34308="あなたのカード番号は、電子メールにリストされた受取人のうちの誰とも一致しません。"
+34309="暗号化できません(未定義のエラー)"
+22110="ブックマーク"
+22111="メール"
+22112="コンタクト"
+22158="パネル"
+22159="パネル"
+22160="パネル"
+22124="すべて追加(&A)"
+22127="フォルダ"
+22128="名前"
+22415="芸術 / 文化"
+22416="自動車"
+22417="本 / 雑誌"
+22418="コンピュータ / ゲーム"
+22419="コンピュータ / テクノロジー"
+22420="料理"
+22421="ファッション / 買物"
+22422="金融 / 経済"
+22423="食べ物 / ワイン"
+22424="健康 / フィットネス"
+22425="日曜大工 / ガーデニング"
+22426="映画"
+22427="音楽"
+22428="ニュース / 出来事"
+22429="科学 / 教養"
+22430="スポーツ / ホビー"
+22431="旅行 / レジャー"
+22432="指定なし"
+22433="$25,000未満"
+22434="$25,000-35,999"
+22435="$36,000-49,999"
+22436="$50,000-75,999"
+22437="$76,000-99,999"
+22438="$100,000以上"
+22439="1900-1929"
+22440="1930-1949"
+22441="1950-1959"
+22442="1960-1969"
+22443="1970-1979"
+22444="1980-1989"
+22445="1990 以降"
+22446="男性"
+22447="女性"
+22448="独身"
+22449="独身の中高年"
+22450="既婚"
+22451="子供連れの既婚"
+22452="中学卒"
+22453="高校卒"
+22454="短大卒"
+22455="大学卒"
+22456="修士卒"
+22457="大学院卒"
+21470="このページがクッキーを設定するよう求めています。\r\n   %s="%s"\r\n\r\nこの値%sが次のドキュメント%sに送信されます｡ %s%s%s%s, また、パスは次の文字で始まります。 /%s.\r\n\r\n"
+21471="だけ"
+21472="安全なページ "
+21473="サーバー "
+21474="ドメイン内のすべてのサーバー "
+21475="、ポート "
+22233="このライセンス情報は有効期限切れです。\n<https://www.opera.com/order/register.html> にてアップグレードして下さい。"
+22234="Operaのアップグレード"
+21476="クッキーは Opera の終了時に削除されます。"
+21477="、ただし上書きしなければ、クッキーは Operaの終了時に削除されます。"
+21478="このクッキーの有効期限は %s%s までです\r\n\r\n"
+21479="このクッキーの有効期限は %s までです。期限切れの後は同じ名前のクッキーはすべて削除されます。\r\n\r\n"
+21480="サービスがクッキーを目的として次のメッセージを送信しました: "%s"\r\n"
+21481="\r\n追加されたメッセージが次の場所に見つかりました <%s>\r\n%s\r\n\r\n"
+21482="サービスがクッキーについての情報を場所に表示しています <%s>\r\n%s\r\n\r\n"
+21483="\r\n下の"コメントを見る"ボタンをクリックして、ページを見ることができます。\r\n"
+21484="Operaの終了までのアップデートを含め受けいれる"
+21485="変更せず受けいれる"
+21486="受けいれ、Operaの終了時に削除する"
+21487="受けいれ、Operaの終了時に保存する"
+21488="このサーバーからのクッキーを受けいれる"
+21489="このサーバーからのクッキーを拒絶する"
+21490="このドメインからのクッキーを受けいれる"
+21491="このドメインからのクッキーを拒絶する"
+21499="\r\n----------------------\r\nフルクッキーリクエスト:\r\n\r\n"
+21738="このサーバーからのサードパーティーのクッキーを受けいれる"
+21739="このサーバーからのサードパーティーのクッキーを拒絶する"
+21740="このドメインからのサードパーティーのクッキーを受けいれる"
+21741="このドメインからのサードパーティーのクッキーを拒絶する"
+21492="すべて拒絶する"
+21493="ダイアログボックスでメニューを表示する"
+21494="サーバーマネージャーの指定に従って処理する"
+21495="すべて受けいれる"
+21496="サーバー自身に設定されているクッキーのみを受けいれる"
+21497="すべて拒絶する"
+21746="ダイアログボックスでメニューを表示する"
+21498="すべて受けいれる"
+22183="変更を反映させるにはOperaを再起動する必要があります。\n\nOperaを終了しますか？"
+22184="Operaを終了しますか？"
+22185="標準の言語（英語）"
+22210="サポートされたバージョンのJavaランタイム環境が見つかりませんでした\nVersion 1.2以降のランタイム環境をSunよりインストールする必要があります。\nJavaは自動的にこのセッションでは無効にされます。\n以降のセッションでもJavaを無効にしますか？"
+22211="Opera Java classesの実行に必要な許可を確保できません。\nOperaポリシーファイルが見つからないか、ポリシーファイルが\nOpera.jarファイルに許可を与えませんでした。Javaアプレッットは動作しません。"
+22212="インストールされているバージョンの Javaランタイム環境は、Operaでは使用できません。<http://www.javasoft.com> よりJRE 1.2またはこれ以降のバージョンをダウンロードしてください。"
+22213="Java DLLがレジストリの指定する場所に見つかりませんでした\nJavaのインストールが正しく行われていないと思われます\nJavaアプレットは動作しません。"
+22214="Java VMの作成に失敗しました。"
+22215="Java VM が終了されました。\n\nJava はこのセッションの間は無効にされています。"
+22216="Java VM が中止されました。\n\nJava はこのセッションの間は無効にされています。"
+22217="Javaのローカライズ処理方法の登録に失敗しました。\n\n古いOpera.jarファイルを使用しているか、\nOpera Classpathに存在しません。Javaアプレットは動作しません。"
+22218="Javaランタイム環境のインストール内容を確認しますか？"
+22219="Opera.jarファイルが見つかりません\nOpera.iniファイルの'OPERA CLASSPATH' の[JAVA]セクションに値が登録されていないか、\n値が誤ったパスになっています。\nJavaアプレットは動作しません。"
+22220="Opera.policyファイルが見つかりません。\nOpera.iniファイルの'SECURITY POLICY'の[JAVA]セクションに値が登録されていないか、\n値が誤ったパスになっています。\nJavaアプレットは動作しません。"
+22221="Java セキュリティ"
+22222="署名されたアプレットが追加の権限を求めています。このアプレットにすべての許可を与えますか？"
+22123="見つかりません"
+22173="メールの送信エラー"
+22174="外部メールアプリケーションが指定されていません。"
+22175="メールの送信エラー"
+22176="外部メールアプリケーションを起動できません。"
+22179="メール"
+22182="Opera メールアカウントのプロパティが正しくセットアップされていません。\n今すぐメールの設定を編集しますか？"
+22180="選択されたメールクライアントが指定されていません。\nメールの設定を今すぐ編集しますか？"
+22181="標準で使用するメールクライアントがコンピュータに登録されていません。\n今すぐメールの設定を編集しますか？"
+22177="警告"
+22178="選択された外部メールクライアントが存在しないか\nまたは正しいアカウントが設定されていません。\n\nいずれかの設定を変更しますか？"
+21720="Opera として認識させる"
+21721="Mozilla %s として認識させる"
+21723="MSIE %s として認識させる"
+21730="ｻｰﾊﾞｰのｸｯｷｰを受けいれる"
+21731="ﾄﾞﾒｲﾝのｸｯｷｰを受けいれる"
+21732="ｻｰﾊﾞｰのｸｯｷｰを拒絶する"
+21733="ﾄﾞﾒｲﾝのｸｯｷｰを拒絶する"
+21742="ｻｰﾊﾞｰのｻｰﾄﾞﾊﾟｰﾃｨｰのｸｯｷｰを受けいれる"
+21743="ﾄﾞﾒｲﾝのｻｰﾄﾞﾊﾟｰﾃｨｰのｸｯｷｰを受けいれる"
+21744="ｻｰﾊﾞｰのｻｰﾄﾞﾊﾟｰﾃｨｰのｸｯｷｰを拒絶する"
+21745="ﾄﾞﾒｲﾝのｻｰﾄﾞﾊﾟｰﾃｨｰのｸｯｷｰを拒絶する"
+21736="不正なパスを受けいれる"
+21737="不正なﾊﾟｽを拒絶する"
+21734="拒絶する(&F)"
+21735="受けいれる(&C)"
+14217="印刷プレビューの終了(&V)\tP"
+14218="印刷プレビュー(&V)..."
+22240="言語ファイルの含まれているディレクトリを選択してください"
+22514="ユーザー定義"
+; Used as default text on submit input elements in forms in HTML documents.
+13043="送信"
+
+; Used as default text on reset input elements in forms in HTML documents.
+13044="リセット"
+
+; Used as default text on button input elements in forms in HTML documents.
+13045="ボタン"
+
+; Used at top of the document when trying to show an malformed XML document.
+; Followed by a more specific XML error message.
+13046="XML の解析に失敗しました"
+
+; Used in a popup error message when the user has entered input in a text
+; input element in a WML document, and the input did not match the format
+; specification.
+13047="入力内容が正しくありません"
+
+11463="ページバー(&P)"
+11462="パーソナルバー(&E)"
+11458="検索エンジンを表示(S)"
+11461="カスタムパネルを表示(&S)"
+11326="最近の使用順に循環させる"
+11327="ページバーの順に循環させる"
+11328="一覧を表示しない"
+11459="Eudoraのあるフォルダを指定してください"
+11460="Outlook Expressメールボックスのあるフォルダを指定してください"
+; Preferences dialog options
+11521="広告"
+11500="ユーザー補助"
+11501="デフォルトブラウザ"
+11502="フォント"
+11503="メール"
+11504="ファイルタイプ"
+11505="履歴とキャッシュ"
+11506="ブラウザの外観"
+11524="ページスタイル"
+11507="言語"
+11508="マルチメディア"
+11509="ネットワーク"
+11511="プログラムとパス"
+11512="個人情報"
+11513="プラグイン"
+11514="プライバシー"
+11515="セキュリティ"
+11516="サウンド"
+11517="起動と終了"
+11522="ネットサーチ"
+11518="ブラウザのレイアウト"
+11519="ウィンドウ"
+
+11626="カテゴリー"
+11621="新たな設定を適用しています。しばらくお待ちください..."
+11627="名前"
+11628="説明"
+11629="パス"
+17035="MIMEタイプ"
+17036="拡張子"
+; Unicode block names for the international font preferences
+11525="自動選択"
+11526="使用できるフォントがありません"
+11527="アラビア文字"
+11528="アルメニア文字"
+11529="ラテン文字 基本"
+11530="ベンガル文字"
+11531="チェロキー文字"
+11532="通貨記号"
+11533="中国語（簡体字）"
+11534="中国語（繁体字）"
+11535="キリル文字"
+11536="デバナガリ文字"
+11537="エチオピア文字"
+11538="括弧・単位記号"
+11539="グルジア文字"
+11540="ギリシャ文字"
+11541="ギリシャ文字 拡張"
+11542="グジャラト文字"
+11543="グルムキー文字"
+11544="半角･全角記号"
+11545="韓国語（ハングル）"
+11546="ヘブライ文字"
+11547="日本語(ひらがな)"
+11548="象形･記号(日中韓)"
+11572="日本語（漢字）"
+11549="カンナダ文字"
+11550="日本語(カタカナ)"
+11551="クメール文字"
+11552="ラオス文字"
+11553="ラテン文字 追加-1"
+11554="ラテン文字 拡張-A"
+11555="ラテン文字 拡張-B"
+11556="ラテン文字 拡張追加"
+11557="マラヤーラム文字"
+11558="モンゴル文字"
+11559="ビルマ文字"
+11560="数字（アラビア・ローマ）"
+11561="オガム文字"
+11562="オーリア文字"
+11563="ルーン文字"
+11564="シンハラ文字"
+11565="シリア文字"
+11566="タミル文字"
+11567="テルグ文字"
+11568="ターナ文字"
+11569="タイ文字"
+11570="チベット文字"
+11571="カナダ原住民統一音節文字"
+
+; About page
+11700="Operaについて"
+11701="ライセンス情報"
+11702="ライセンス登録"
+11703="名前"
+11704="所属"
+11705="試用"
+11706="パス"
+11707="システム"
+11708="設定"
+11709="Operaディレクトリ"
+11710="保存ウィンドウ"
+11711="ブックマーク"
+11712="プラグインのパス"
+11713="キャッシュ"
+11714="ヘルプファイル"
+11715="Java"
+11716="サードパーティー"
+11717="Opera Softwareは、貢献いただいた個人ならびに団体に心より感謝いたします。"
+11718="インストールされているJavaランタイム環境はこのバージョンのOperaではサポートされていません"
+11719="Java ランタイム環境がインストールされていません"
+11720="ライセンス済"
+11721="未ライセンス"
+11722="N/A"
+
+22248="ピクセル"
+22250="ビット/ピクセル"
+22249="バイト"
+22244="エラーメッセージ"
+22251=": %i個のフレームで動作"
+22168="ファイルを保存"
+22169="ファイルを開く"
+22170="ファイルが見つかりません"
+22171="ファイル名が不正です"
+22167="パスとファイル名が正しいかどうか確認してください。"
+22510="バイト"
+22252="B"
+22253="KB"
+22254="MB"
+22255="GB"
+22256="TB"
+22257="/秒"
+22480="Javaがインストールされていません"
+22465="ファイルを保存するフォルダの選択"
+22481="バージョン"
+22482="Build"
+22483="プラットフォーム"
+22484="バージョン情報"
+22485="システム"
+22568="パートナー"
+22245="プリンタに接続しようとして問題が発生しました。プリンタの設定を確認してください。リモートプリンタやネットワークプリンタを使用している場合はネットワークの接続を確認してください。"
+22246="プリンタの問題"
+22247="プリンタ"
+; Hotlists toolbar buttons
+10927="コンタクト表示メニューを表示します"
+10926="コンタクトフォルダを追加します"
+
+; Hotlists toolbar buttons and Mail Trash Toolbar
+10925="コンタクトを追加"
+
+10920="表示中のページをブックマークに追加します"
+10921="ブックマークフォルダを作成します"
+10922="ブックマークアクションメニューを表示します"
+14494="次の処理を行いますか？\n\n     すべてのウィンドウを閉じる、\n     継続していないクッキーをすべて削除する、\n     パスワードをすべて削除する、\n     履歴をすべて削除する\n     パスワードまたは認証でキャッシュされたページを削除する"
+14495="個人データの削除"
+22163="このウィンドウのソースコードは編集されています。保存しますか？"
+22164="(編集済) "
+22235="ページメニュー"
+; Used in a warning/confirmation dialog when the user has activated offline
+; mode and then requested Opera to access information that is only
+; available online.
+21433="オフラインモードが有効にされています。\n\n%s\n\nを開けません。オンラインモードに切り替えますか？"
+
+22569="分"
+22237="分"
+22570="秒"
+22723="秒"
+22238="最終使用"
+22239="不正なリロード値が入力されています。\n\nリロード値には数字のみが使用でき、また 0 は使用できません。"
+; XML error message used at top of the document, following string 13046,
+; when trying to show an malformed XML document. Followed by a line and
+; character count to help finding the error in the XML file.
+25001="メモリ不足"
+25002="Syntaxエラー"
+25003="エレメントが見つかりません"
+25004="フォームが不正です"
+25005="トークンが閉じられていません"
+25007="タグの不一致"
+25008="属性の重複"
+25009="エレメント後のごみ"
+25010="不正な実体(エンティティ)参照のパラメーター"
+25011="未定義の実体(エンティティ)"
+25012="実体(エンティティ)の反復参照"
+25013="非同期の実体(エンティティ)"
+25014="無効な文字列を参照する"
+25015="バイナリ実体(エンティティ)を参照する"
+25016="属性中の外部実体(エンティティ)を参照する"
+25017="外部実体(エンティティ)を開始しない xml 処理構成"
+25018="不明なエンコード形式です"
+25019="XML情報に指定されたエンコーディングが不正です"
+25020="CDATAセクションが閉じられていません"
+25021="外部実体(エンティティ)参照中のエラー"
+25022="ドキュメントがスタンドアロン形式ではありません"
+25000="不明なエラー"
+
+; Error messages from XML
+25023="行:"
+25024="文字: "
+
+22154="'%s' の不正な値"
+21765="'%1' に不正な値が含まれています。\n数値は %2 から %3 の間であることが必要です。\n\n"
+22156="この値をリセットしますか？"
+22157="最終の有効値へリセット中。"
+22243="不明"
+21766="アイテム数 %1、フォルダ数 %2、アイテム総数 %3 "
+; Used in a warning/confirmation dialog when an URL with a user name (like
+; http://username@www.example.com) is entered in the URL field.
+21463="セキュリティ警告:\n\nユーザー名を含むアドレスへ移動しようとしています。\n\n    ユーザー名 : %s \n    サーバー : %s\n\nこのアドレスへ移動してよろしいですか？"
+
+22161="見つかりません"
+22162="テキストが見つかりません "
+21120="すべてのヘッダを表示"
+21122="日付"
+21123="送信者"
+21124="件名"
+21125="宛先"
+21121="Cc"
+21126="Bcc"
+22703="画像のみ表示する(I)"
+22704="テキストのみ表示する(E)"
+22705="画像の下にテキストを表示する(M)"
+22706="画像の右にテキストを表示する(A)"
+22715="ポップアップを有効にする"
+22716="ポップアップを無効にする"
+22717="ポップアップをバックグラウンドで開く"
+22718="要求したポップアップのみ開く"
+25316="削除の確認"
+25317="このパネルを完全に削除してもよろしいですか？\n\n%s"
+25318="ホットリストパネルを追加しますか？"
+22729="モード選択"
+22730="Operaは保存したウィンドウ設定を開くように設定されています"
+22731="Operaはホームページを開くよう設定されています"
+22732="Operaは前回終了時の場所からブラウジングするよう設定されています"
+22733="Operaはウィンドウを表示させないよう設定されています"
+22734="変更するにはここをクリックしてください"
+17171="Google"
+17187="AllTheWeb"
+17189="Super"
+17202="Amazon.com(&Z)"
+17174="価格比較"
+17175="TechTracker(&T)"
+17176="ドメイン名"
+17178="株式市況(&Q)"
+17180="画像"
+17181="ビデオクリップ"
+17179="Mp3/音楽(&M)"
+17188="Googleグループ"
+17182="Operaサポート"
+17183="ページ内検索(&F)"
+17203="ニュース"
+21747="キーを保護するためのパスワードを入力してください"
+21748="エクスポートされたプライベートキーを保護するためのパスワードを入力してください"
+21749="パスワードを再入力してください"
+21750="プライベートキーをインポートしてください"
+21751="キーと証明書をインポートしてください"
+21752="プライベートキーとこれらの付属証明書をインポートしますか？"
+21753="このファイルに格納されたプライベートキーをインポートしますか？"
+21754="プライベートキーと証明書のインポートに失敗しました"
+21755="ファイルにプライベートキーがありません"
+21756="インポートされたプライベートキーが証明書に付属するキー と一致しません。オペレーションに失敗しました。"
+30211="プロキシの自動設定に失敗しました｡\nプロキシ設定はこのセッションには自動的に無効にされます。"
+22728="アドレス欄でウェブ検索を実行できます"
+25411="外部メールフレーム"
+25412="外部フレームソースの読み込みを中断:"
+10018="全ウィンドウを重ねて表示します"
+10724="作成者モードとユーザーモードの切り替えを行います"
+10596="ページの表示倍率をここに入力します(リストからの選択には矢印を押してください)"
+10009="選択された文をクリップボードにコピーします"
+10247="画像読み込み/表示モードの切り替えを行います"
+10072="ホームページへ移動します"
+10052="アクティブなフォルダからブックマークを表示します"
+10000="新しいブラウザウィンドウを開きます"
+10031="次のページへ進みます(それ以降のページに進むには矢印を押してください)"
+10001="ローカルコンピュータ上のファイルを開きます"
+10059="ウェブページへ移動します"
+10032="前のページへ戻ります(それ以前のページに戻るには矢印を押してください)"
+10004="ページを印刷します"
+10069="インターネットアドレスを入力します(過去に入力したアドレスを表示するには矢印を押してください)"
+10056="ページを最新の情報に更新します"
+10002="ページをローカルコンピュータにを保存します"
+10227="ページ内の文字列を検索します"
+10143="ページの読み込みを中止します"
+10019="全ウィンドウを左右に並べて表示します"
+13010="ホットリストの 表示/非表示 を切り替えます"
+13011="ページをスクリーン全体に表示します(キーボードのF11で切り替わります)"
+13030="ページを印刷されたときの状態にプレビューします"
+10314="インターネットを検索します"
+10313="文字列を入力して検索します"
+10308="アドレス欄のウェブページへ移動します"
+14134="ダウンロードを再開(R)"
+14135="もう一度最初から再ダウンロードします"
+14136="ダウンロードを中止(S)"
+14137="ダウンロードメニューを表示します"
+16245="このユーザーに新しいメールを作成します"
+16246="このユーザーをコンタクトに追加します"
+4000="実行できません "
+4001="ダイアログボックスを作成できません "
+4002="メニューを読み込めません "
+4003="アイコンを読み込めません "
+4004="ビットマップを読み込めません "
+4005="ウィンドウを作成できません "
+67003="サイズ"
+67004="処理"
+67005="S"
+67007="認証管理"
+; Message shown in the status bar when Java Virtual Machine is
+; loading/starting up.
+67008="Java仮想マシンを起動しています..."
+
+; Attribution-line when replying to a mail
+67009="On %:Date:, %f wrote:"
+
+; Attribution-line when forwarding a mail
+67010="\\n\\n------- Forwarded message -------\\nFrom: %:From:\\nTo: %:To:\\nSubject: %:Subject:\\nDate: %:Date:\\n"
+
+; Attribution-line when followup to a news message
+67011="On %:Date:, %f wrote:"
+
+; Attribution-line when replying by mail to a news message
+67012="On %:Date:, you wrote in %:Newsgroups::"
+
+; Attribution-line when forwarding by mail a news message
+67013="\\n\\n---- Forwarded Usenet-message ----\\nFrom: %:From:\\nNewsgroups: %:Newsgroups:\\nSubject: %:Subject:\\nDate: %:Date:\\nURL: news://%:Message-Id:\\n"
+
+67020="認証管理"
+67021="フォルダのチェック中"
+67022="フォルダの受信中"
+67023="本文の受信中"
+67024="添付ファイルの受信中"
+67025="フォルダの作成中"
+67026="フォルダの削除中"
+67027="プラグインの改名中"
+67028="フォルダの購読中"
+67029="メッセージの削除中"
+67030="メッセージの添付中"
+67031="フラッグを保存中"
+67032="サーバーに接続中"
+67033="不正なメールサイズ"
+67034="不正なユーザー名"
+67035="不正なパスワード"
+67036="内部エラー"
+67037="メールが存在しません！"
+67038="サーバー上のメッセージ削除中の問題です"
+67039="TLSはこのサーバーでは利用できません。このサーバーからメールを受信するには安全な接続を利用しない様する必要があります。"
+67040="指定なし"
+67041="POP3サーバーが利用できません。ネットワークの問題かもしれません。"
+; About page
+67042="メールディレクトリ"
+
+67043="サーバーが不正なリダイレクトを行おうとしました"
+; Used in index category in M2
+67044="IMAPフォルダ"
+67045="ビュー"
+
+; Usined while M2 is searching. Padded by ' <search>...'
+67046="検索中: "
+
+; Formats the M2 display of time today
+67047="今日 %X"
+
+; Used in M2 when a message has no label
+67048="ラベルなし"
+
+; Priority of a M2 message
+67049="優先度: 最高"
+67050="優先度: 高"
+67051="優先度: 低"
+67052="優先度: 最低"
+
+; Used in Mail|Manage Account
+67053="アカウント"
+67054="状態"
+
+; Used in Mail|Newsgroups
+67055="購読"
+67056="状態"
+67057="ニュースグループ"
+
+; Received news index in m2
+67058="受信済ニュース"
+
+; Received list index in m2
+67059="受信済リスト"
+
+; Clipboard index in m2
+67060="クリップボード"
+
+; Prefix for newsservers in serverlist in m2
+67061="ニュース: "
+
+; Prefix for mailservers in serverlist in m2
+67062="メールサーバー"
+
+; Name for a new Imap folder in M2
+67063="新規作成"
+
+; Status-message when sending messages in M2
+67064="送信中..."
+
+; Status-message when checking for messages in M2
+67065="メッセージをチェック中..."
+
+; Status-message when getting messages in M2
+67066="メッセージの受信中 (%u/%u)"
+
+; Status-message when done fetching messages in M2
+67067="%u通のメッセージを受信しました"
+
+; Status-message when no messages was fetched in M2
+67068="送受信したメッセージはありません"
+
+; Error-message if setting From or Organization in M2 failed
+67069="差出人("%s")/組織("%s")ヘッダの設定に失敗しました"
+
+; The From-address is not given according to standards
+67070="不正な送信者アドレス"
+
+; M2 was unable to mime-encode a message
+67071="MIMEエンコーディングに失敗しました"
+
+; Store::AddMessage failed
+67072="メッセージの保存に失敗しました"
+
+; M2 needs Drafts and Outbox to store messages
+67073="草稿/送信ボックスに保存できませんでした"
+
+; M2 will move a message to Outbox when sending or queueing it
+67074="送信ボックスへのメッセージ移動に失敗しました"
+
+; M2 will move a message from Drafts when it is sent or deleted
+67075="草稿ボックスからのメッセージ移動に失敗しました"
+
+; M2 got an error-message while sending a message
+67076="メッセージの送信に失敗しました"
+
+; Default name for new indexes in M2
+67077="新規ビュー(N)"
+
+; Used for invalid mbox files in M2
+67078="ファイルが不正です"
+
+; Used various places in the import-code in M2
+67079="インポートされました"
+
+; Progress-information in M2 import-code
+67080="インポート済"
+
+; Used in the M2 Import Mail wizzard
+67081="インポート項目"
+
+; Marks where quoted text has been removed when replying to a mail
+67082="<略>"
+
+; The file being downloaded is already being written to the selected file,
+; this is not possible!
+67083="このファイルは既に読み込んでいます"
+67084="このファイルは書き込み中です。別のファイル名を選択してください"
+
+; Period to view e-mails from
+67085="今日"
+67086="今週"
+67087="最近1ヶ月"
+67088="最近3ヶ月"
+67089="最近1年"
+67090="すべて表示"
+
+; Remove folder warning dialog title
+67091="ビューを削除"
+
+67092="このニュースグループの購読をとりやめます。よろしいですか？"
+67093="このビューを削除します。よろしいですか？"
+67094="このIMAPフォルダの購読をとりやめます。よろしいですか"
+; Start a full search from the mail hotlist panel
+67095="検索開始"
+
+67096="メッセージが選択されていません"
+67097="フォルダが選択されていません"
+; Title of button in compose window
+67098="Bcc"
+67099="ReplyTo"
+67100="フォローアップ"
+67101="ニュース"
+
+67102="(%d件の未読)"
+67103="(%d件の未読、全%d件)"
+67104="添付ファイル"
+67105="サイズ"
+67106="メールアドレスが設定されていません。アカウントを編集してください"
+67107="サーバーの設定に不足しているところがあります"
+67108="アカウントの設定に送信メールサーバーがありません"
+67109="不正な送信者アドレス"
+67110="アカウントの設定にメールアドレスがありません"
+67111="不正なメッセージ"
+67112="アドレスか件名がありません"
+67113="メッセージのキャンセル"
+67114="このメッセージをキャンセルします。よろしいですか？"
+; Priority of a M2 message
+67115="優先度: 通常"
+
+67116="ウェブアドレスを入力します"
+67117="クイック検索"
+67118="ズーム"
+67119="ステータス表示欄"
+67120="アカウントを削除"
+67121="このアカウントを削除します。よろしいですか？"
+67122="アカウントの編集"
+67123="アカウントのプロパティ"
+67124="%s サーバー "
+67125="受信 %s サーバー"
+67126="送信 %s サーバー"
+67127="標準のエンコーディング"
+67128="サーバーのクリーンアップ"
+67129="サーバー上の既読メッセージを削除します。よろしいですか？"
+67130="タイプ"
+; General Do-not-show-this-dialog-again text for use in most new dialogs
+67131="次からこのダイアログを表示しない"
+
+67132="次へ >"
+67133="< 戻る"
+67134="完了"
+67135="オフ"
+67136="中"
+67137="強"
+67138="または"
+37139="かつ"
+67140="件名"
+67141="送信者名"
+67142="送信者ヘッダ"
+67143="宛先ヘッダ"
+67144="Ccヘッダ"
+67145="Reply-toヘッダ"
+67146="ニュースグループヘッダ"
+67147="すべてのヘッダ"
+67148="メッセージ全体"
+67149="が次を含む: "
+67150="が次を含まない: "
+67151="正規表現で一致:"
+67152="[一致条件] "
+67153="[または] "
+67154="[かつ] "
+67155="件名"
+67156="送信者名"
+67157="すべてのヘッダ"
+67158="メッセージ全体"
+67159="が次を含む: "
+67160="が次を含まない: "
+67161="正規表現で一致: "
+; Used to format the title of a dialog, contact properties and similar
+67162="%s のプロパティ"
+
+67163="Operaスキンのダウンロード"
+67164="スキンのダウンロード中..."
+67165="ダウンロードしたスキンの適用"
+67166="このスキンを適用しますか？"
+67167="スキン名: "
+67168="作成者:"
+67169="ダウンロードに失敗しました"
+67170="すべてのメッセージ"
+67171="最近1年"
+67172="最近1ヶ月"
+67173="前回のセッション（自動保存）"
+67174="ページを何も表示せずに起動する"
+67175="%dバイトダウンロードしました"
+67218="削除"
+; Status-message when messages was sent in M2
+67361="%u 通のメッセージを送信しました"
+
+67504="メッセージ本文がダウンロードされていません"
+67506="通常のメール(POP)"
+67507="IMAP"
+67508="ニュースグループ"
+67509="メールのインポート"
+67510="OperaMail（ウェブメール）"
+67511="Opera 5/6からインポート"
+67512="Eudoraからインポート"
+67513="Netscape 6/7からインポート"
+67514="Outlook Expressからインポート"
+67515="一般的なmboxファイルをインポート"
+67516="メールボックスフォルダ:"
+67517="Netscapeのprefsファイル(prefs.js):"
+67518="一般的なmboxファイル:"
+67540="受信"
+; Added in front of server response when POP server returnes an error
+67561="サーバーレスポンス:"
+
+; Used when IMAP folder subscription fails
+67589="IMAPフォルダの設定は失敗しました。既に設定されているため、サーバーによって取り消されました"
+
+; Used when mailserver reports that it does not support TLS
+67590="このサーバーではTLSをサポートしてません"
+
+; Generic error when connection to IMAP server failed
+67591="IMAPサーバーへの接続に失敗しました"
+
+; Precedes IMAP alert messages
+67592="IMAPサーバーからの警告メッセージ"
+
+; Used when IMAP-server notifies that folder has been renamed on server
+67593="フォルダ名を"%s"から"%s"に変更しました"
+
+; Used when appending a message to an IMAP folder
+67594="フォルダへのメッセージの追加に失敗しました"
+
+; Used when copying an IMAP message failed
+67595="メッセージのコピーに失敗しました"
+
+; Used when local storing of IMAP message failed
+67596="取得したメッセージの保存に失敗しました。失敗したメッセージは次回新着メッセージチェック時に取得します。"
+
+; Used by M2 POP backend when storing a message fails
+67597="POP3サーバーからメッセージ %d (UIDL %s )を取得しようとしましたが、保存できませんでした。"
+
+; Generic message when a M2 backend fails to connect to its server
+67598="サーバーに接続できませんでした"
+
+; M2 SMTP error message
+67599="メッセージは送信されましたが送信済に移動することができませんでした。"
+67600="メールの送信に失敗しました。\nおそらくSMTPサーバーが正しく設定されていないと思われます。\nメールは送信箱に保存してあります。"
+67601="SMTPサービスが利用できません。"
+67602="内部エラー"
+67603="テンポラリーサーバーエラー"
+67604="サーバーエラー"
+67605="宛先構文エラー"
+67606="宛先利用不可能"
+67607="送信者がサーバーによって拒否されました。"
+67608="サーバー名が指定されていません"
+67609="SMTPエラー"
+67610="宛先エラー"
+67611="SMTP認証エラー"
+67612="TLSはサーバーでサポートされていません"
+67613="SMTP認証はサーバーでサポートされていません"
+67614="不明なSMTPエラー"
+
+; Used when M2 for some reason isn't able to flush a message to disk
+67615="おそらくファイルシステムの問題か、ウイルスチェック実行中のため、保存に失敗しました。 (%i)"
+
+; String used in customize toolbar box
+68124="文書:"
+68125="画像:"
+68126="総数:"
+68127="速度:"
+68128="経過:"
+68129="プログレスバー"
+68130="一般"
+68131="時計"
+68132="ブラウザ識別"
+
+; Imported bookmarks are stored in this folder
+68133="Netscapeブックマーク"
+68134="Internet Explorerお気に入り"
+68135="KDE1ブックマーク"
+68136="Konquerorブックマーク"
+
+; String to be used in preference font list for UI fonts
+69221="メニューのテキスト"
+69222="ツールバーのテキスト"
+69223="ダイアログのテキスト"
+69224="パネルのテキスト"
+
+; String to be used in preference font list
+69225="メール作成のテキスト"
+
+; String to be used in preference font list to identify a system default
+; font
+69226="(標準)"
+
+; When a SMTP server drops the connection when MAIL FROM is sent, it usually
+; is because needed authentication isn't fulfilled.
+69229="サーバーが接続を中止しました。認証が必要なサーバーではないでしょうか？"
+
+; String that is displated on about page when java is installed
+69230="Javaランタイム環境がインストールされました。"
+
+; Version of Qt library that Opera uses. Shown on About page
+69231="QT ライブラリー"
+
+; Text to be used on the menubars. Some languages need a separate string
+; here
+69240="巻き戻す"
+
+; Used when saving a printer file to disk (from a filedialog box)
+69243="ポストスクリプトファイル (*.ps)|*.ps|すべてのファイル (*.*)|*.*|"
+
+; Label in the displayed header of a news/mail message
+69244="所属"
+69245="ニュースグループ"
+69246="Followup-To"
+69247="Reply-to"
+69248="Resent-From"
+
+; Title string of the HTML text that displays certificate data
+69249="証明書の情報"
+
+; Header string for the detailed listing of certificate data
+69250="詳細"
+
+; DSA Private Key key list item
+69251="プライベートキー (X)"
+
+; DSA Public Key list item
+69252="パブリックキー (Y)"
+
+; Component P of DSA key
+69253="DSA コンポネント P"
+
+; Component Q of DSA key
+69254="DSA コンポネント Q"
+
+; Component G of DSA key
+69255="DSA コンポネント G"
+
+; Diffie Hellman Private Key component
+69256="DH プライベートキー"
+
+; Diffie Hellman Public Key Component
+69257="DH パブリックキー"
+
+; Diffie Hellman Modulus Key component
+69258="DH モジュール"
+
+; Diffie Hellman Generator Key component
+69259="DH ジェネレイター"
+
+; Add characters here that can be used as fallback shortcuts (eg: of the
+; kind "File (A)"). An empty string will disable fallback shortcuts.
+69260="[B][Z][Q][W][Y][J][K][G][F][P][V][I][D][L][1][2][3][4][5][6][7][8][9][0][?]"
+
+67544="Operaツールバー設定のダウンロード"
+67545="ツールバー設定のダウンロード中..."
+67546="ツールバー設定の適用"
+67547="このツールバー設定を使用しますか？"
+67548="Operaメニュー設定のダウンロード"
+67549="メニュー設定のダウンロード中..."
+67550="メニュー設定を適用"
+67551="このメニュー設定を使用しますか？"
+67552="Operaマウス設定のダウンロード"
+67553="マウス設定のダウンロード中..."
+67554="マウス設定の適用"
+67555="このマウス設定を使用しますか？"
+67556="Operaキーボード設定のダウンロード"
+67557="キーボード設定のダウンロード中..."
+67558="キーボード設定の適用"
+67559="このキーボード設定を使用しますか？"
+67560="(コピー) "
+67564="この発行者を信頼しますか？"
+; Open file dialog
+67565="Opera ブックマークファイル(*.adr)|*.adr|"
+67566="Netscapeブックマークファイル (*.htm, *.html)|*.htm;*.html|すべてのファイル (*.*)|*.*|"
+67567="Konquerorブックマークファイル (*.xml)|*.xml|"
+
+; InputAction treeview header
+67576="処理"
+67577="入力内容・ショートカット"
+
+67578="キーボード設定"
+67579="マウス設定"
+67580="ツールバー設定"
+67581="メニュー設定"
+67582="スキン"
+; Fonts and colors preferences
+67583="タイプ"
+67584="フォント"
+
+; Cache preferences
+67585="自動"
+
+; string appended to setupfilename if this is modified, in preferences
+; dialog
+67586="(変更済）"
+
+; Info panel
+67616="- タイトル無し -"
+67617="URL"
+67618="サーバーエンコード（Opera表示エンコード）"
+67619="サーバーMIMEタイプ"
+67620="ページのサイズ"
+67621="インライン要素数"
+67622="インライン要素サイズ"
+67623="ローカルキャッシュファイル"
+67624="- キャッシュファイル無し -"
+67625="セキュリティ"
+67626="要約:"
+67627="- 安全ではありません -"
+67628="詳細情報"
+67629="フレーム"
+67630="フレーム:"
+67631="インラインフレーム"
+67632="インラインフレーム:"
+
+67675="早送り"
+67679="名前を付けて保存"
+67680="セッションファイルの選択"
+67681="ウィンドウ"
+67682="ここに新しいメモを記入します"
+67683="添付ファイル"
+67685="バージョン"
+67686="暗号"
+67687="細字"
+67688="通常"
+67689="太字"
+67690="空白のページを表示して起動"
+67691="%d個のコンタクトを開こうとしています\n続行しますか？"
+; History and cache preferences
+67692="%d分毎"
+67693="%d時間毎"
+67694="1時間毎"
+67695="1週間毎"
+
+67696="%d個のブックマークを開こうとしています\n続行しますか？"
+67697="初めてのアカウントがセットアップされました。\n\nOperaのメールとニュース用の画期的なM2クライアントは\n通常のメールプログラムと多くの操作方法が\n異なっています。\nそのためチュートリアルを読む事を強くお勧めします。"
+67698="M2を使用"
+67699="ページの下部にポップアップ表示"
+67700="前回終了時のサイズで表示"
+67701="常に最大化して表示"
+67702="常に重ねて表示"
+; Checkbox string in filetype dialog box
+69261="ウェブアドレスを直接アプリケーションに渡す"
+
+; Used in preference dialog box (window page)
+69262="新しいページをアクティブなページの隣に開く"
+
+; Info panel. When server does not supply an encoding
+69263="- 情報なし -"
+
+; Checkbox in download dialog for saving action
+69266="選択を記憶して、次からこのダイアログを表示しない"
+
+; Certificate verification servername mismatch
+69267="サーバー名 "%1" は、証明署名 "%2"に一致しません。誰かが盗聴しようとしているかもしれません。"
+
+; Certificate not yet valid
+69268=""%1"に対する証明書は、%2 以前では有効でありません。コンピュータの時計は合っていますか？"
+
+; The certificate expired on the given date
+69269=""%1"に対する証明書は %2 に有効期限が切れています。ウェブサイト管理者が証明書を更新する必要があります。"
+
+; Certificate warning
+69270=""%1"からの証明書について警告を表示するようにしています"
+
+; Unknown certificate authority
+69271=""%1"に対する証明書は、不明の証明書認証機関 "%2" によって署名されています。この証明書は正当な証明書であるとは証明できません。"
+
+; Unknown root certificate authority
+69272=""%1"からのルート証明書はOperaには未知の証明書です。Operaはこの証明書が信頼できるものかどうか判断できません。"
+
+69300="認証時にサーバーが接続を中断しました。このアカウントは代わりの認証方法として、よりセキュアでない認証方法を使います。"
+69301="新しいOperaが利用できます"
+69302="新しいバージョンのOperaが利用できます。\n更新されたバージョンを今すぐダウンロードしますか？"
+69303="MP3ファイル |*.mp3|"
+; Typically telnet, tn3270, news, mailto
+69304="プロトコル"
+
+69305="プログラム"
+; Voice XML related message from the Voice log panel
+69307="ボイスステータスのログ..."
+
+69308="次の機能のボタンを新しく追加します\n\n%s\n\nよろしいですか？"
+69309="新規ボタン"
+69312="ボイスログ"
+69332="Operaの革新的メールクライアント, M2を使用しています: http://www.opera.com/m2/"
+; Status message when M2 is emptying trash
+69333="ごみ箱を空にしています"
+
+; Button text in startup dialog
+69334="Operaの購入"
+
+; Message string shown in dialog box before auto reset in kiosk mode
+69347="何も入力されなかったため、Operaは%d秒後にリセットされます"
+69348="何も入力されなかったため、Operaは1秒後にリセットされます"
+
+; Text for button in toolbar that can clear contents if edit field
+69349="クリア"
+
+; Message string used in a dialog box when user wants do do something that
+; requires online mode (eg. fetching mail)
+69352="オフラインモードが有効にされています。\n\nオンラインモードに切り替えますか？"
+
+69353="与えられた証明書に対する証明書証明機関が不明です"
+69354="エクスポートの制限により、ハンドシェイクは失敗しました"
+69355="サーバーが有効にされているSSL/TLSのバージョンを受けいれようとしないため、ハンドシェイクは失敗しました。"
+69356="サーバーが有効にされているものよりもより安全な暗号化方式を要求するため、ハンドシェイクは失敗しました。"
+69357="サーバーはデータを暗号化「しない」接続を交渉しようとしていますが、サーバーは完全な状態を検証するだけです。"
+; Used in preference dialog box to control page redrawing
+69358="すぐに再描画する"
+69359="1秒後に再描画する"
+69360="%d秒後に再描画する"
+69361="読み込まれたときに再描画する"
+
+; Label in the preference dialog box for page redrawing feature
+69362="読み込み"
+
+; Used in mail filter dialog
+69369="%sからのメッセージ"
+
+; Used in mail filter dialog box
+69370="他のビューからのメッセージを表示しない"
+
+; View title in mail title dialog box
+69371="ビュー"
+
+; Add filter dialog box
+69373="以下のメッセージをこのビューにフィルタリングする"
+69374="送信者からのメッセージ"
+69375="以下の件名を含むメッセージ"
+
+; Account properties dialog box
+69376="アカウントのカテゴリ"
+
+; Message in reindex mail dialog box
+69378="Operaはメールメッセージの一部を再インデックスする必要があります。今すぐキャンセルしても、Operaは次回続行します。"
+
+; Used in pref. dialog box
+69379="Operaを購入して広告バナーを削除"
+
+; Used in pref box (multimedia)
+69380="すぐに画像を描画する"
+
+69396="ここに%sへのクイック返信を書きます"
+69397="が正規表現で一致 "
+69398="このビューにフィルタリングして追加"
+; Used in javascript option dialog box
+69399="ウィンドウのサイズ変更を許可する"
+69400="ウィンドウの移動を許可する"
+69401="ウィンドウの強制表示を許可する"
+69402="ウィンドウの強制非表示を許可する"
+
+; Used in javascript option dialog
+69403="ステータス欄のテキストの変更を許可する"
+
+; Opens javascript options dialog box
+69404="JavaScriptの詳細設定..."
+
+; Label for window handling options
+69405="ウィンドウの処理"
+
+; Option string for popup window management
+69406="ポップアップを含め常に最大化して表示"
+
+; Window handling mode string
+69407="ウィンドウ内にページを表示(MDIモード)"
+
+; Window handling mode string (SDI mode)
+69408="別々にウィンドウを表示(SDIモード)"
+
+; Message string used on startup in we cannot load plug-ins
+69410="Operaはプラグインライブラリ 'libnpp.so' を読み込めませんでした。プラグインは有効になりません。\n\n正しくインストールされているかを確認してください。\n"
+
+69416="NetscapeのPrefsファイル (prefs.js):"
+69417="一般的なmboxファイル (*.mb?)"
+; Fallback text for plug-in description when plug-in is missing this
+; resource
+69418="説明なし"
+
+; Fallback text for plug-in name when plug-in is missing this resource
+69419="名前なし"
+
+; Message shown when downloaded skin can not be used
+69421="続行することができません。お使いのOperaのバージョンにあったスキンを選択してください。"
+
+69431="リンクの検索: "
+69432="テキストの検索: "
+69433="(一致なし)"
+
+; Dialog title and components
+; Used in most dialogs
+1="OK"
+10362="OK"
+2="キャンセル"
+10358="キャンセル"
+
+; Cookie properties
+11005="名前(&N)"
+11007="ドメイン(&M)"
+11009="パス(&P)"
+11011="作成日(&R)"
+11013="最終使用日(&L)"
+11015="変更(&X)"
+11018="有効にする(&E)"
+11019="廃棄する（&D）"
+11020="評価（&V）"
+10094="ヘルプ"
+11022="確保する"
+
+; Opera as default browser
+10961="Operaに関連付けるファイルタイプとプロトコルを選択してください。"
+10962="ファイルタイプ"
+11050="*.htm"
+10963="*.html"
+12055="*.xml"
+11250="*.url"
+10966="*.bmp"
+10965="*.gif"
+10964="*.jpeg"
+11051="*.jpg"
+11258="*.png"
+10967="*.xbm"
+10968="プロトコル"
+10969="http"
+10970="https"
+10971="news"
+10972="ftp"
+10973="gopher"
+10974="wais"
+25177="起動時にOperaが標準ブラウザがどうかを確認"
+25241="すべて選択"
+
+; Print
+10103="ページを印刷中..."
+
+; Password required
+14499="認証"
+17211="アドレス"
+11140="メッセージ"
+10178="ユーザー名"
+10179="パスワード"
+
+; Send form without encryption?
+11151="次からこのダイアログを表示しない(&D)"
+14100="ネット上で保護されていないフォームへ送信しますか?"
+14500="送信の警告"
+
+; Use Opera
+25176="Operaを標準のウェブブラウザとして使用する"
+25174="Operaは標準のウェブブラウザとして\n設定されていません。\n\n標準のウェブページビューアとして設定しますか？"
+25175="次からこのダイアログを表示しない(&D)"
+6="はい"
+7="いいえ"
+
+; Validate source
+25268="HTMLソースの認証"
+25267="このページをローカルコンピュータから、オンラインのHTMLソースコード検証システムにアップロードします。よろしいですか？"
+
+; Exit Opera?
+25150="ウィンドウ状態を保存して次回起動時に表示する(&S)"
+14101="終了前の動作"
+11150="次からこのダイアログを表示しない(&D)"
+
+; Opera
+10571="メッセージ"
+
+; Opera startup
+10918="Operaの起動"
+10701="前回のOperaのセッションは正しく終了されていません。"
+14124="前回終了時の場所から続行する(&C)"
+14125="通常の設定で起動する(&U)"
+10649="ウィンドウを表示させずに起動する(&N)"
+14126="詳細設定(&A)..."
+
+; Advanced startup settings
+14127="起動の詳細設定"
+10652="最小の接続数で起動する(&S)"
+10651="最小のネットワークバッファサイズで起動する(&B)"
+10415="DNSを同期する"
+
+; Progress
+10770="..."
+
+; Password
+10779="パスワードを入力してください。"
+10704="パスワードは最低6文字で、アルファベットと数字が1字以上含まれている必要があります。そうでない場合、新たなパスワードを入力するように要求されます。"
+
+; Certificate
+10766="証明書の名前"
+10768="発行者"
+10758="この証明書を使うサイトへの接続を許可する"
+10759="この証明書を使う前にダイアログボックスを表示する"
+10775="承認する"
+10776="インストール"
+
+; Performance
+10214="パフォーマンス"
+10213="サーバーへの最大接続数"
+10219="最大の総接続数"
+10434="ネットワークバッファサイズ(KB)"
+
+; Personal information
+11623="個人情報"
+10938="この情報はマウスの右クリックからフォームに貼り付けられます。"
+10874="姓"
+10877="名"
+10878="住所"
+10881="市区町村"
+10882="都道府県"
+10884="郵便番号"
+10886="国"
+10888="電話番号"
+10890="Fax/携帯"
+10892="メール"
+10894="ホームページ"
+10896="特記情報1"
+10898="特記情報2"
+10900="特記情報3"
+
+; Fast bookmark access
+10949="ブックマークのニックネームを入力してください。"
+
+; Server name completion
+11029="ローカルネットワークマシンを探す"
+11030="次の語句を使用してコンプリートを行う"
+11031="接頭"
+11032="接尾"
+14118="接頭の場合は"www,web" 接尾の場合は"com,net,org"のように、 カンマで区切ったリスト入力も可能です。"
+
+; Links in frame
+11260="整列(&S)"
+11261="アドレス(&A)"
+11263="最初の文字のみを検索(&F)"
+11292="開く"
+11264="全コピー(&C)≫"
+11259="更新(&R)"
+11293="閉じる"
+
+; Import e-mail
+11420="インポート元"
+11426="プログラムパス"
+11427="選択"
+11439="インポート先"
+11433="新しいアカウントにインポートする(&N)"
+11432="現在のアカウントにインポートする(&A)"
+11424="設定をインポートする"
+11430="メールをインポートする(&E)"
+11431="コンタクトをインポートする(&C)"
+11421="OK"
+
+; Tip of the day
+12003="閉じる(&C)"
+12006="<B>ご存知でしたか..."
+12009="トピックス No."
+12000="起動時にトピックスを表示(&S)"
+12002="≪"
+12001="≫"
+
+; JavaScript execution error
+14061="このページのスクリプトの実行に失敗しました。ページの正確な表示または動作が行えないかもしれません。"
+14117="JavaScriptエラー"
+14066="URL"
+14065="エラー"
+14060="次からこのダイアログを表示しない(&D)"
+
+; Cookie server filters
+11453="削除(&R)"
+11454="拒絶(&F)"
+11455="追加(&A)"
+
+; Cookie security problem
+14297="承認"
+14298="拒絶する"
+14294="アドレス"
+14293="クッキー"
+11297="クッキー中のパスがページのアドレスと一致しません。"
+11298="サイトの管理者に正しいクッキーを設定するよう求めて下さい。"
+11299="このクッキーを承認しますか? "
+14300="次からこのダイアログを表示しない"
+14503="[承諾] または [拒絶] をドメイン全体に適用する"
+
+; Update language file
+25302="言語ファイル"
+25303="言語ファイルのアップデートが必要です。"
+25304="新しい言語ファイルをダウンロードする"
+25305="英語でOperaを再起動する"
+25306="既存の言語ファイルを使用する"
+14501="次からこのダイアログを表示しない(&D)"
+
+; Windows
+14355="<B>ウィンドウリスト(&W)"
+14350="ｱｸﾃｨﾌﾞ化(&A)"
+14351="更新する(&R)"
+14352="最小化(&M)"
+14353="閉じる(&C)"
+
+; Automatic window reload
+14509="自動更新を有効にする"
+14510="オプション"
+14511="次の時間毎"
+14518="分"
+14513="秒"
+14515="ﾌﾟﾘｾｯﾄ≫"
+14516="ページが有効期限切れになったときだけ更新する"
+
+; Image properties
+16055="画像"
+16056="大きさ"
+16057="色の濃さ"
+16058="アドレス"
+16059="種類"
+16065="ファイルサイズ"
+
+; File download
+17010="インターネットからファイルをダウンロード中"
+17020="ファイル"
+17021="サーバー"
+17014="<B>処理を指定してください"
+17012="ファイルを保存する(&S)"
+17015="このタイプのファイルをダウンロードする前に常に確認する"
+17016="詳細設定(&D)..."
+
+; Delete private data
+25155="以下で指定する処理の実行をすると、\nすべてのウィンドウが閉じられるとともに、\n現在進行中のダウンロードが中断されます"
+25166="クッキー"
+25156="テンポラリクッキーを削除"
+25159="すべてのクッキーを削除"
+25167="キャッシュ"
+25157="パスワードで保護されたページとデータを削除"
+25164="すべてのキャッシュを削除"
+25168="履歴"
+25160="ページの表示履歴をクリア"
+25161="アドレス入力履歴をクリア"
+25163="リンクの表示履歴をクリア"
+25165="ダウンロードの履歴をクリア"
+25154="パスワード"
+25162="すべてのメールアカウントのパスワードをクリア"
+25169="すべての認証管理パスワードをクリア"
+
+; Select currency
+25262="換算元(&F)"
+25264="換算先(&T)"
+
+; Panel properties
+25311="カスタムパネル"
+25312="タイトル(&T)"
+25314="アドレス(&A)"
+
+; Item properties
+10942="タイトル(&T)"
+10943="ニックネーム"
+10944="アドレス"
+10945="説明"
+10820="親フォルダ"
+10824="作成日時"
+10825="表示日時"
+
+; Contact folder properties
+10941="名前(&N)"
+14102="最終送信"
+
+; Bookmarks Properties
+25100="ホットリスト名(&H)"
+25102="ファイル"
+25103="名前"
+25105="サイズ(&S)"
+25107="詳細(&M)>>"
+25108="Unicode"
+25109="コンテンツ(&C)"
+
+; Go to page
+10181="ウェブページアドレスを入力するか、リストから選択してください。"
+
+; Set home page
+10455="ホームページ"
+25371="Operaの起動時にホームページを表示する"
+
+; Save windows
+10661="ウィンドウの状態をファイルに保存"
+10199="選択"
+10665="Operaの起動時に保存したウィンドウ状態を表示する"
+
+; Confirm file upload
+11108="次のファイルが確認なく、別のコンピュータへ送信されるために選択されていますこれらのファイルを送信してよろしいですか？"
+11109="送信先"
+11110="フォームアドレス"
+
+; Print options
+10208="オプション"
+11080="背景を印刷する"
+14212="ヘッダとフッターを印刷する"
+11115="印刷サイズ"
+10257="ページ余白(cm)"
+10268="上"
+10266="左"
+10267="右"
+10269="下"
+
+; Print preview
+14275="プレビューと印刷"
+14272="スクリーン風にページ表示(&P)"
+14273="1枚につき1フレーム(&O)"
+14274="アクティブなフレーム(&A)"
+
+; Register Opera
+11193="Operaを購入の際に受け取った\nライセンス情報を入力してください。"
+11194="名前"
+11195="所属"
+11196="ライセンスコード"
+11200="個人情報"
+
+; Preferences
+10101="適用"
+
+; Advertising
+16601="広告"
+16602="国"
+16604="生年"
+16606="性別"
+16608="配偶者の有無"
+16610="知識レベル"
+16616="世帯の収入"
+16612="趣味のカテゴリ"
+
+; Privacy
+11600="プライバシー情報"
+10678="リファラーのログを有効にする"
+10647="オートリダイレクトを有効にする"
+14498="パスワードで保護されたページへの反映にクッキーを使用する"
+10677="クッキー"
+25394="クッキーを有効にする"
+11456="クッキーの編集..."
+11280="Operaの終了時にクッキーを削除する"
+14299="不正なドメインをダイアログボックスで表示する"
+28507="不正なパスのクッキーを受けいれる"
+14305="不正なパスをダイアログボックスで表示する"
+
+; Accessibility
+11315="マウス"
+11317="マウスのジェスチャーモードを有効にする"
+11329="ホットクリックメニューを有効にする"
+11318="｢進む｣と｢戻る｣を左手用に設定する"
+10096="マウスが指したリストアイテムに下線を表示する"
+11316="キーボード"
+13039="ドロップダウンのオートコンプリートを有効にする"
+10788="アクティブなテキストを反転して表示する"
+10954="ホットリストのアイテム選択をメニュースタイルにする(&M)"
+10955="スクリーンリーダーをメニューに適合させる(&S)"
+
+; Windows
+11324="ページの循環"
+
+; Accessibility
+10452="ポップアップコメントの表示"
+10407="ボタンの説明をコメント表示する(&B)"
+10406="リンク先の説明をコメント表示する(&L)"
+10947="TITLE属性の内容をコメント表示する(&E)"
+
+; Plug-ins
+11601="プラグイン"
+
+; Programs
+25405="Operaクライアント"
+25406="メールクライアントを表示する(&M)"
+25143="パス"
+10382="Operaディレクトリ"
+25144="ダウンロードディレクトリ"
+25146="選択"
+10359="ソースビューア"
+25249="Operaを使用する"
+25250="外部プログラムを使用する"
+10360="選択"
+11116="プログラム"
+10252="Telnetプログラム"
+10253="選択"
+10958="TN3270プログラム"
+10960="選択"
+
+; Fonts and colors
+11055="ユーザーフォントと配色"
+10093="選択"
+12091="最小フォントサイズ (ピクセル)"
+11049="背景の色"
+10484="選択"
+11728="リンクスタイル"
+10304="ユーザーリンクスタイル..."
+25248="各国語の表示"
+25247="各国語フォント..."
+
+; File type
+14128="ファイルタイプ"
+10129="MIMEタイプ"
+10207="拡張子"
+10706="処理"
+10134="ダウンロードダイアログを表示する"
+10128="Operaで開く"
+10127="ディスクに保存する"
+14129="ダウンロードが完了したら開く"
+14130="フォルダを探さず直接保存する"
+14132="選択"
+10546="標準のアプリケーションで開く"
+10133="他のアプリケーションで開く"
+10717="プラグインを使用する"
+
+; Network
+11606="ブラウザの識別"
+12066="各国語ウェブアドレスのエンコード"
+12065="すべてのアドレスをUTF-8でエンコードする"
+11608="プロキシサーバー"
+10391="プロキシサーバー..."
+11609="サーバーネームのコンプリート"
+11035="サーバーネームのコンプリート..."
+11302="サーバーエラー"
+10447="常にサーバーエラーを表示する"
+10448="常にダイアログボックスを表示する(&B)"
+10446="必要に応じサーバーからのレスポンスを表示する(&R)"
+11607="FTP(&F)"
+25236="FTPパスをユーザーディレクトリに関連付ける"
+11094="FTPパスは絶対パスを使用する"
+
+; Link style
+10282="未表示のリンク"
+10098="下線"
+10099="取消線"
+10097="色"
+10195="選択"
+10281="表示済のリンク"
+10283="下線"
+10284="打消線"
+10288="色"
+10289="選択"
+10499="表示されたリンクのマーク"
+10500="日"
+10502="時間"
+10480="リンクに枠を表示する"
+10481="画像リンクを枠で囲む"
+10703="リンクを枠で表示する"
+
+; International fonts
+25251="標準のフォント"
+25252="テキストが正しく表示されない場合に使用するフォントを選択してください。"
+25253="文字コードセット"
+25255="プロポーショナルフォント"
+25258="等幅フォント"
+
+; Browser look
+11076="ボタンセット(&S)"
+10780="常にボタン周りに枠を表示する(&A)"
+10946="常にボタンをカラーで表示する(&C)"
+25238="スキンの画像"
+17073="表面スキンの画像(&F)"
+17074="選択"
+17072="背景スキンの画像(&B)"
+17075="選択"
+10707="フォントと配色"
+11268="標準設定を使用する(&U)"
+10691="通常の文字"
+10693="非アクティブの文字"
+10692="ホットリストの文字"
+10857="全体の背景色"
+10694="ボタンの背景色"
+10711="プログレスの色"
+
+; Cache
+11611="履歴"
+10223="｢進む｣｢戻る｣の履歴(&B)"
+11612="アドレス"
+10261="直接入力の履歴"
+11613="アドレス"
+25152="クリア"
+10816="全体の表示履歴"
+11614="アドレス"
+25151="クリア"
+10172="RAMキャッシュ"
+10226="オートRAMキャッシュを有効にする(&N)"
+10699="ドキュメント(&C)"
+10175="KB"
+10174="画像(&M)"
+10176="KB"
+10329="ディスクキャッシュ"
+11303="KB"
+10339="ドキュメント"
+10340="画像"
+10341="その他"
+10342="終了時に空にする"
+10343="今すぐ空にする"
+10344="サーバーのチェック"
+10354="ドキュメント"
+10345="常にチェックする"
+10346="チェックしない"
+10347="日.時間.分 毎にチェック"
+10355="画像"
+10363="常にチェックする"
+10364="チェックしない"
+10365="日.時間.分 毎にチェック"
+10356="その他"
+10372="常にチェックする"
+10373="チェックしない"
+10374="日.時間.分 毎にチェック"
+10829="常にﾘﾀﾞｲﾚｸﾄをﾁｪｯｸ"
+11091="常にﾘﾀﾞｲﾚｸﾄをﾁｪｯｸ"
+
+; Proxy servers
+10171="プロキシサーバー"
+10301="HTTP"
+11305="ポート"
+10840="HTTPS"
+11306="ポート"
+10300="FTP"
+11307="ポート"
+10299="Gopher"
+11308="ポート"
+10302="WAIS"
+11309="ポート"
+10303="以下のアドレスにはプロキシを使用しない"
+11320="プロキシの自動設定を使用する"
+
+; E-mail client
+11615="メールクライアント"
+13204="Operaのアカウントを使用する"
+13208="プロパティ..."
+13209="新規作成..."
+13206="標準設定されているメールクライアントを使う"
+13205="特定のメールクライアントを使う"
+13211="選択"
+13213="不明なパラメータをスペースに置き換える(&R)"
+
+; Toolbars
+14310="ツールバー"
+14325="メインバーのボタン"
+14326="ホットリストのボタン(&O)"
+14327="ウィンドウのボタン(&W)"
+14328="アドレスバーのボタン(&A)"
+10256="アドレスバーにページボタンを表示する(&P)"
+10243="アドレスバーに移動ボタンを表示する(&G)"
+10244="アドレスバーに検索欄とボタンを表示する(&S)"
+10245="アドレスバーにズーム欄を表示する(&Z)"
+10222="アドレスバーの中に表示"
+14320="ボタンの幅を固定して表示する(&F)"
+14333="ツールバーのボタンを折り返して表示する(&T)"
+
+; File types
+11616="ファイルタイプの処理"
+10789="MIMEタイプで処理を判断する"
+25148="信頼できないMIMEタイプの場合は拡張子で処理を判断する"
+10122="新規作成..."
+10135="削除"
+10465="編集..."
+
+; Windows
+11624="全ウィンドウ共通"
+
+; Windows - OBSOLETE?
+25397="ウィンドウをOperaのワークスペース内に開く"
+
+; Windows
+10463="常に新しいページを最大化で表示する"
+12045="ウィンドウの並べ表示や重ね表示に浮動ホットリストを含める(&F)"
+10102="新しいウィンドウを開いた時に自動的に並べて表示する(&T)"
+10592="ブラウザウィンドウ"
+25372="新しいページを自動で開かない"
+13040="ちらつきを防止する(&A)"
+10828="ポップアップ"
+10590="スクロールバーを表示する"
+10591="アドレスバーを表示する"
+10839="ウィンドウサイズを表示する"
+12058="メインメニュー"
+11036="ブックマークメニューにコマンドを表示する(&O)"
+12059="メニューの最大幅(&X)"
+
+; Sounds
+11619="サウンド"
+10603="サウンドを有効にする"
+25140="選択"
+25141="クリア"
+10605="テスト"
+
+; Multimedia
+10438="画像"
+10441="画像を表示する"
+10443="キャッシュされた画像のみ表示する"
+10439="画像を表示しない"
+10644="GIFアニメーションを有効にする"
+25239="メディアタイプ"
+10645="ビデオクリップの上映を有効にする"
+10646="ウェブページのサウンドを有効にする"
+14123="Javaを有効にする"
+10719="プラグインを有効にする"
+10721="プラグインを検索..."
+14105="JavaScript"
+10720="JavaScriptを有効にする"
+11152="JavaScriptのエラーを告知する"
+
+; Security
+10726="証明書"
+10733="個人証明書"
+10734="認証機関..."
+10735="プロトコル"
+10736="SSL 2を有効にする"
+10737="SSL 3を有効にする"
+10994="TLS 1を有効にする"
+10738="SSL 2の設定(&C)..."
+10739="SSL 3とTLSの設定(&N)..."
+10749="パスワード"
+10813="パスワードの確認"
+10753="常に確認する"
+10752="セッション毎に確認する"
+14490="一定の時間毎に確認する"
+14492="分"
+10750="パスワードの設定..."
+10740="警告"
+10744="保護されていないフォームの送信前にﾀﾞｲｱﾛｸﾞﾎﾞｯｸｽを表示する"
+25269="ページのHTMLを検証する前にダイアログボックスを表示する"
+
+; Personal certificates
+10754="証明書"
+11726="ｲﾝﾎﾟｰﾄ..."
+11727="ｴｸｽﾎﾟｰﾄ..."
+
+; SSL configuration
+10812="有効にする暗号を選択してください"
+
+; Cookie security breach
+14108="アドレス"
+14109="クッキー"
+11407="次からこのダイアログを表示しない"
+
+; The server wishes to send you a cookie
+14505="クッキーの受信"
+14114="アドレス"
+14502="処理方法"
+11265="クッキーを無効にする"
+11406="コメントを見る"
+11266="次からこのダイアログを表示しない"
+14115="ヘルプ"
+
+; Language
+14222="ユーザーインターフェイスの言語"
+14235="言語"
+14229="ユーザーインターフェイスの言語を変更するにはOperaの再起動が必要になりますのでご注意ください"
+14223="ウェブページ"
+14228="ウェブページ閲覧時に優先する言語の設定"
+14224="追加..."
+14225="削除"
+14226="上へ移動"
+14227="下へ移動"
+16619="エンコーディングのフォールバック"
+16620="エンコード情報が不足しているページに使用するエンコード方法"
+16621="HTML(&T)"
+
+; Accept language
+14233="言語"
+14236="ウェブ言語の選択"
+14234="ユーザー定義"
+
+; PREFS_STARTEXIT
+10489="起動"
+12042="保存したウィンドウ設定を表示する"
+12044="ホームページを表示する"
+10461="現在のページ(&A)"
+25400="起動ダイアログを表示する"
+11296="終了"
+11294="終了を確認する"
+11295="終了時にダイアルアップ接続を閉じる"
+
+; Page style
+25237="標準の設定"
+10588="標準の拡大率"
+12089="作成者モードを標準で使用する"
+11603="フレーム"
+10658="フレームを有効にする"
+11100="インラインフレームを有効にする"
+10762="アクティブなフレームに枠を表示する"
+11039="作成者モード"
+12070="作成者CSS"
+12071="作成者フォントと配色 "
+12072="ユーザースタイルシート"
+12073="ユーザーフォントと配色"
+12074="ユーザーリンクスタイル"
+12075="携帯等端末(&H)"
+25240="ユーザーモード"
+12076="作成者CSS"
+12077="作成者フォントと配色 "
+12078="ユーザースタイルシート"
+12079="ユーザーフォントと配色"
+12080="ユーザーリンクスタイル"
+12081="携帯等端末(&E)"
+11605="ユーザースタイルシート"
+
+; Search
+17025="ネットサーチ"
+17026="標準として使用するサーチエンジンを選択してください"
+17029="1ページあたりの検索結果の表示数"
+9="ヘルプ"
+
+; SPLASH
+25399="起動(&S)"
+25395="マルチウィンドウ[MDI](&I)"
+25396="シングルウィンドウ[SDI](&O)"
+14496="次からこのダイアログを表示しない(&D)"
+
+; TRANSWIN_CLIENT
+14138="詳細"
+10997="転送元"
+10999="転送先"
+11001="サイズ"
+11003="受信済"
+
+; Contact properties
+13301="名前"
+
+; Net
+13305="メールアドレス(&E)"
+13307="ホームページ"
+
+; Home
+13311="郵便番号・住所"
+13315="電話番号"
+13313="FAX番号"
+
+; Notes
+13309="メモ"
+
+; Security
+13317="Conax セキュリティカードナンバー(&S)"
+
+; Send message to instant messaging address
+16333="インスタントメッセージングアドレスを入力してください"
+
+; Instant messaging account
+16308="姓(&L)"
+16309="メール(&E)"
+16310="ニックネーム(&N)"
+16306="自己紹介(&M)"
+
+19000="印刷"
+19001="証明書"
+19002="受けいれる言語"
+19003="起動の詳細設定"
+19004="設定を適用しています"
+19005="サーバーがクッキーを送信するよう求めています"
+19006="ホットリスト高速アクセス"
+19007="パスワード"
+19008="JavaScriptプロンプト"
+19009="パスワードが必要です"
+19010="ページの自動更新"
+19011="個人情報の削除"
+19012="コンタクトユーザーのプロパティ"
+19013="メッセージング"
+19014="住所"
+19015="一般"
+19016="メモ"
+19017="セキュリティ"
+19018="ファイルアップロードの確認"
+19019="クッキーセキュリティの問題"
+19020="クッキーセキュリティの破損"
+19021="クッキーのプロパティ"
+19022="Operaのデフォルトブラウザ設定"
+19023="Operaの使用"
+19024="ファイルのダウンロード"
+19025="クッキーサーバーフィルタの設定"
+19026="JavaScriptの実行エラー"
+19027="Operaを終了しますか?"
+19028="エラーメッセージ"
+19029="ページへの移動"
+19030="アイテムのプロパティ"
+19031="コンタクトフォルダのプロパティ"
+19032="ブックマークのプロパティ"
+19033="インスタントメッセージングのアカウント"
+19034="新規インスタントメッセージングアカウントの追加"
+19035="アクセス許可リクエストの受信"
+19036="アクセス許可のリクエストの送信"
+19037="インスタントメッセージング"
+19038="インスタントメッセージングのパスワード入力"
+19041="画像のプロパティ"
+19042="メールのインポート"
+19043="保護されていないフォームへ送信しますか？"
+19044="フレーム内リンク"
+19045="Opera"
+19046="サーバーネームのコンプリート"
+19047="ファイルタイプ"
+19048="カスタムパネルのプロパティ"
+19049="パフォーマンス"
+19050="個人証明書"
+19051="PINコードを入力してください"
+19052="プラグイン"
+19053="設定"
+19054="印刷プレビュー"
+19055="印刷のオプション"
+19056="プログレス"
+19057="プロキシサーバー"
+19058="保存ウィンドウ"
+19059="Operaのライセンス登録"
+19060="Operaの起動"
+19061="リンクの表示"
+19062="今日のトピックス"
+19063="換算する通貨単位の選択"
+19064="各国語フォントの設定"
+19065="言語ファイルのアップデート"
+19066="HTMLソースの検証"
+19067="ウィンドウ"
+19068="ホームページの設定"
+26500="ユーザー名"
+26501="パスワード"
+26502="ユーザー名とパスワード"
+26503="ニックネームを選択してください"
+26504="アカウントウィザード"
+26505="名前"
+26506="所属"
+26507="メールアドレス"
+26508="ログイン名"
+26509="パスワード"
+26510="受信サーバー"
+26511="送信サーバー"
+26512="メッセージの検索"
+26513="チャットに参加"
+26514="ホットリスト"
+26515="メール"
+26516="ブックマーク"
+26517="コンタクト"
+26518="チャット"
+26519="履歴"
+26520="送信 "
+26521="添付"
+26522="送信者"
+26523="宛先"
+26524="CC"
+26525="件名"
+26526="メッセージを作成"
+26527="メールのチェック(H)"
+26528="新規作成"
+26529="返信"
+26530="すべてに返信"
+; Forward mail
+26531="転送"
+
+26532="削除"
+26533="クイック返信"
+26534="復元"
+26535="メッセージを登録"
+26536="既読化"
+26537="チャットに参加"
+26538="チャットをやめる"
+26539="トピックの変更"
+26540="ログを保存"
+26541="送信"
+26542="新規ブックマーク(K)"
+26543="新規フォルダ(F)"
+26544="表示"
+26545="新規コンタクト"
+26546="新規フォルダ"
+26547="表示"
+26548="ニックネーム"
+26549="IRCサーバー"
+26550="件名のみで検索"
+26551="コンタクトに追加"
+26552="未読 "
+26553="未読を非表示 "
+26554="今日"
+26555="受信済"
+26556="送信箱"
+26557="送信済"
+26558="草稿"
+26559="未登録メール"
+26560="ごみ箱"
+26561="重要"
+26562="予定"
+26563="要返信"
+26564="要連絡"
+26565="会議"
+26566="パーティー"
+26567="娯楽"
+26568="貴重"
+26569="音楽"
+26570="画像"
+26571="ビデオ"
+26572="ドキュメント"
+26573="アーカイブ"
+26574="On %:Date:, %f wrote:"
+26575="%f wrote:"
+26576="Found this %:Message-id: in %g:"
+26577="Index"
+26578="すべてのメッセージ"
+26579="アクティブなコンタクト"
+26580="メーリングリスト"
+26581="検索"
+26582="ニュースグループ"
+26583="ラベル"
+26584="添付ファイル"
+26585="アクティブなスレッド"
+26589="チャット"
+26590="ニックネーム"
+26591="宛先"
+26592="件名"
+26593="送信日時"
+26594="ラベル"
+26595="送信者"
+26596="件名"
+26597="送信日時"
+26598="ラベル"
+26600="アカウントの状態"
+26610="切断しました"
+26611="接続中"
+26612="接続しました"
+26613="認証中"
+26614="ヘッダの受信中"
+26615="メッセージの受信中"
+26616="グループの受信中"
+26617="メッセージの送信中"
+28503="メールと認証管理にマスターパスワードを使用"
+67000="一般"
+67001="サーバー"
+67002="受信"
+67006="送信"
+67014="フィルタ"
+; Error dialog
+67015="一般エラー"
+
+67016="画像"
+67017="大きなアイコン"
+67018="小さなアイコン"
+67019="検索・入力欄等"
+67176="ファイルのダウンロード"
+67177="購読"
+67178="変更..."
+67179="開く: "
+67180="このファイルを開きますか？　保存しますか？"
+67181="ファイル拡張子"
+67182="ダウンロードダイアログを表示する"
+; New folder button
+67183="新規作成..."
+
+67184="削除..."
+67185="ツールバーのカスタマイズ"
+67186="ボタンをツールバーにドラッグしてください"
+67187="検索・入力欄等をツールバーにドラッグしてください"
+67188="メッセージの削除について"
+67189="削除したメッセージはすべてのビューから削除されます。"
+67190="ごみ箱から復元したメッセージは元のビューに戻されます。"
+67191="フィルタ"
+67192="一致"
+67193="フィルタを追加"
+67194="フィルタを削除"
+67195="内部フィルタ"
+67196="一致したメッセージは既読にする"
+67197="既存のメッセージもフィルタリング"
+67198="検索"
+67199="検索領域"
+67200="期間"
+67201="検索条件"
+67202="全文一致"
+67203="単語単位"
+67204="検索フォルダ"
+67205="下層のビューを含めて検索"
+67206="パスワードを記憶する"
+67207="作成するアカウントの種類を選択してください"
+67208="安全(セキュア)な接続(TLS)を使用"
+67209="サーバー上にメッセージを残す"
+67210="インポートするプログラムの種類を選択してください"
+67211="コンタクトのインポート"
+67212="メッセージのインポート"
+67213="開く..."
+67214="認証管理（パスワードマネージャー）にパスワードを記憶させますか？"
+67215="次回からはCtrl+Enterか認証管理ボタンを押すことでログインできます"
+67216="このページには使用しない"
+67217="使用するユーザー名を選択してください。"
+67219="ウェブページアドレスを入力するか、リストから選択してください。"
+67220="メッセージフィルタ"
+67221="関連フィルタ"
+67222="Operaへようこそ"
+67223="前回終了時の場所から続行する"
+67224="保存したセッションを続行する"
+67225="ホームページを表示して起動する"
+67226="ウィンドウを表示させずに起動する"
+67227="名前"
+67228="追加メールアドレス"
+67229="写真のURL"
+67230="アイコン"
+67231="ニックネーム"
+67232="URL"
+67323="ホットリストのパネルに表示"
+67324="アカウント名"
+67325="フルネーム"
+67326="メールアドレス"
+67327="Reply-to"
+67328="NNTPサーバー"
+67329="サーバー"
+67330="ポート番号"
+67331="安全(セキュア)な接続(TLS)"
+67332="送信SMTPサーバー"
+67333="ダウンロード済のメッセージは既読にする"
+67334="チェックの時にメッセージ本文をダウンロードする"
+67335="メッセージ本文をローカルにコピーする"
+67336="#分ごとに新しいメッセージをチェックする"
+67337="手動チェックの時にこのアカウントを含める"
+67338="新着メッセージ受信時にサウンドを演奏する"
+67339="IMAPルートフォルダへのパス"
+67340="送信メッセージを自動改行する"
+67341="メッセージを一旦送信箱に保存する（すぐ送信しない）"
+67342="署名"
+67343="IMAP送信済フォルダ"
+67349="メッセージ送信時にコンタクトに追加する"
+; Manage accounts
+67344="新規作成..."
+
+; Manage bookmarks
+67345="新規作成..."
+
+67346="編集..."
+67347="切り取り"
+67348="貼り付け"
+67491="現在のページをホームページに設定"
+67492="インストール時のホームページに戻す"
+67493="上に入力するアドレスを使用"
+67494="ホームページアドレス"
+67500="エラー発生時にJavaScriptコンソールを開く"
+; MDI/SDI switch
+67501="新しいウィンドウで開く"
+
+67502="スキンファイル"
+67503="特殊効果を有効にする"
+67505="メールと認証管理にマスターパスワードを使用"
+67519="インポート"
+67541="ダウンロード"
+67542="リンク"
+67543="ウィンドウ"
+; Used for outgoing properties in E-mail account properties dialog
+67562="新しいメールのチェック後に、送信箱のメールを送信する"
+
+; Shown if a server message is sent to the authorization dialog in M2
+67563="サーバーメッセージ"
+
+67568="Operaを終了します。よろしいですか？"
+67569="このページに対して適用させる"
+67570="サーバー全体に対して適用させる"
+67571="フォルダを開く"
+67574="ニュースグループの購読"
+67575="IMAPフォルダの購読"
+67587="アクティブなダウンロードがあります"
+67588="現在ダウンロード進行中です。\nOperaを終了するとダウンロードも終了します。\nOperaを終了してよろしいですか？"
+67684="プロパティ"
+; What to do when mid clicking outside a link. Currently only used on Linux
+68000="マウスセンタークリックの動作を選択"
+
+; currently only used on Linux
+68001="クリップボードから貼り付け"
+68002="パンニング開始"
+68003="水平パンニングを有効にする"
+
+; What do to when mid clicking on a link.
+68004="リンククリック時の処理を選択"
+
+68005="リンクを開かない"
+68006="開く"
+68007="新しいページで開く"
+68008="バックグラウンドのページで開く"
+68009="新しいウィンドウで開く"
+68010="バックグラウンドのウィンドウで開く"
+68011="スキン、アイコンサイズを選択"
+68012="Opera Standard"
+68013="Classic Windows"
+68014="ユーザースキン"
+68015="ツールバー設定を選択"
+68016="標準のツールバー"
+68017="小さいツールバー"
+68018="カスタマイズしたツールバー"
+68019="この他のｽｷﾝ、ﾂｰﾙﾊﾞｰ設定は my.opera.com から利用できます。"
+68020="クッキーをどのように処理しますか？"
+; Dialog box title.
+68021="センタークリック時の処理を選択"
+
+68022="表示"
+68023="証明書マネージャー"
+68024="認証機関"
+68025="現在のパスワード"
+68026="新しいパスワード"
+68027="新しいパスワード（再入力）"
+68028="親階層のフィルタを継承"
+68029="指定して開く"
+68030="ダウンロード"
+68031="ブックマーク"
+68032="コンタクトの編集"
+68033="標準の設定"
+68034="サーバーマネージャー"
+68035="認証管理ログイン"
+68036="通常のクッキーに対する設定を適用"
+68037="設定をドメイン全体に適用させる"
+68038="ｻｰﾊﾞｰ/ﾄﾞﾒｲﾝに対するクッキーを受けいれる"
+68039="ｻｰﾊﾞｰ/ﾄﾞﾒｲﾝに対するｻｰﾄﾞﾊﾟｰﾃｨｰのクッキーを受けいれる"
+68040="クッキー"
+68041="サーバーのプロパティ"
+68042="クッキーの編集..."
+68043="認証管理パスワードの編集..."
+68044="ブックマークの表示日時をクリア"
+68045="フォントの選択"
+68046="イタリック体"
+68047="下線"
+68048="上線"
+68049="打消線"
+68050="色"
+68051="サンプル表示"
+68052="セキュリティプロトコル"
+68053="有効にする暗号を選択してください"
+68054="検索する語句を入力してください"
+68055="次を検索"
+68056="完全に一致した語句のみ検索"
+68057="大文字と小文字を区別する"
+68058="上へ検索"
+68059="下へ検索"
+68060="保存したセッションを表示して起動する"
+68061="'g opera' と入力すると、GoogleでOperaを検索します。"
+68062="スキン"
+68063="サイズ"
+68064="ツールバーとメニュー"
+68065="名前の変更"
+68066="複製"
+68067="削除"
+68068="プログレスバー"
+68069="マウスとキーボード"
+68070="編集..."
+68071="ツールチップを表示する"
+68072="新しいページ"
+68073="画像をスムーズに拡大・縮小する"
+68074="Operaで開くファイルタイプを表示しない"
+68075="標準のアプリケーション"
+68076="Operaで処理するファイルタイプ"
+68101="Operaで処理するプロトコル"
+; HTML documents
+68077="HTMLドキュメント"
+
+; Default application
+68078="XMLドキュメント"
+
+; URL shortcuts
+68079="インターネットショートカット"
+
+; Default application
+68080="GIF画像"
+68081="JPEG画像"
+68082="PNG画像"
+68083="BMP画像"
+68084="XBM画像"
+68085="mailtoスキーム"
+
+68086="ファイル    編集    表示    移動    ブックマーク    メール    ウィンドウ    ヘルプ"
+68087="Opera(M2)を使う"
+68088="直接入力アドレス"
+68089="表示済アドレス"
+68090="メモリキャッシュ"
+68091="ドキュメント"
+68092="画像"
+68093="その他"
+68094="通常のクッキー"
+68095="サードパーティーのクッキー"
+68096="認証管理"
+68097="有効にする"
+68098="マスターパスワード"
+68099="セキュリティプロトコル..."
+68100="証明書の編集..."
+; Currently only used on Linux
+68102="ウェイト"
+
+; Open application (source viewer etc) in a terminal
+68103="ターミナルで開く"
+
+; External news program
+68104="ニュースプログラム"
+
+; Label for image dropdown box
+68105="画像"
+
+; Label for favicon dropdown box
+68106="ページアイコン"
+
+; Label for java path text field
+68107="Javaパス"
+
+; Button text for testing correct Java path
+68108="Javaパスの検証"
+
+; Dropdown menu string
+68109="埋め込まれたアイコン・faviconsを表示"
+68110="埋め込まれたアイコンのみを表示"
+68111="アイコンを表示しない"
+
+; String in message box when testing and path is correct
+68112="Javaパスは正しいディレクトリを指定しているようです。"
+
+; String in message box when testing and path is not found
+68113="正しくインストールされたJavaが見つかりませんでした"
+
+; String in message box when testing and an alternate path has been found
+68114="下記ディレクトリのJavaを使用した方が良いようです。このディレクトリを代わりに使用しますか？"
+
+; String in message box when testing and all failed
+68115="他のディレクトリで再試行してください"
+
+; Dialog caption and label string for plug-in path dialog box
+68117="プラグインのパス"
+
+; Sub-paths of the plug-in path string
+68118="パス"
+
+; On top of a list showing all detected pug-ins
+68119="検知されたプラグイン"
+
+; Button text of a button starting a plug-in search
+68120="新たに検索..."
+
+; Button text of a button starting a dialog whe one can change the plug-in
+; path
+68121="パスの変更..."
+
+; Dialog title of a dialog that detects plug-ins
+68122="プラグインの関連付け"
+
+; Text above a list box
+68123="関連付けるプラグインを選択してください。"
+
+; filedialog title
+68137="ブックマークファイルの新規作成"
+
+; filedialog title 
+68138="コンタクトファイルの新規作成"
+
+; filedialog title
+68139="ブックマークファイルの選択"
+68140="Operaコンタクトファイルの選択"
+68141="Operaブックマークをエクスポート"
+68142="Operaコンタクトをエクスポート"
+68143="Operaブックマークを名前を付けて保存"
+68144="Operaコンタクトを名前を付けて保存"
+68145="OperaブックマークをHTML形式で保存"
+68146="OperaコンタクトをHTML形式で保存"
+68147="Operaブックマークを保存"
+68148="Operaコンタクトを保存"
+68149="OperaブックマークをHTML形式で保存"
+68150="OperaコンタクトをHTML形式で保存"
+68151="インポートするOperaブックマークの選択"
+68152="インポートするOperaコンタクトの選択"
+68153="インポートするNetscapeブックマークの選択"
+68154="インポートするInternet Explorerお気に入りフォルダの選択"
+68155="インポートするKonquerorブックマークの選択"
+68156="インポートするKDE1ブックマークの選択"
+
+; Filedialog title
+68157="サウンドファイルの選択"
+68158="言語ファイルの選択"
+68159="スタイルシートファイルの選択"
+
+; Parttern string to be used in a file dialog box
+68160="言語ファイル |*.lng|"
+
+; Dialog title 
+68161="キーボード設定の編集"
+
+; Dialog title
+68162="マウス設定の編集"
+
+; Message box string shown when launching external programs
+68163="外部ヘルパー・アプリケーションを指定していません。設定を今すぐ修正しますか？"
+
+; Used in dialog box text
+68164="メールクライアント"
+
+; Shown in error dialog box
+68165="外部ヘルパー・アプリケーションが起動できませんでした。設定を今すぐ修正しますか？"
+
+; One of the authentication methods in M2
+69227="自動"
+69228="プレーンテキスト"
+
+; Used in first time dialog box
+69238="詳細..."
+
+; Title of first time dialog box
+69239="クイックセットアップ"
+
+; This string will be used to add custom filter types to filesdialogs.
+; Example: PHP becomes PHP files (*.PHP) Note that %1 and %2 must be used
+69241="%1 ファイル(*.%2)"
+
+; File dialog title
+69264="証明書のインポート"
+69265="証明書のエクスポート"
+
+69310="クリア"
+69311="最小化"
+69316="このビューから削除するだけです。キーボードショートカット: Ctrl+X"
+69317="インプットマネージャー"
+69318="プロクシへのHTTP 1.1を有効にする"
+69319="プレゼンテーションモード"
+69320="スクロールを滑らかにする"
+69321="標準の表示モード"
+69322="表示モードの設定..."
+69323="フォームのスタイルを有効にする"
+69324="スクロールバーのスタイルを有効にする"
+69325="メッセージを削除する前に警告する"
+69326="ボイス設定"
+69327="リスニングモード"
+69328="PPTキー"
+69329="ボイスログのレベル"
+69330="マウスキーを下に動かすとボイスをキャンセルします"
+69331="設定の変更を有効にするにはOperaの再起動が必要となります。"
+; General title in message boxes that tell we could not saved a file
+69341="保存に失敗しました"
+
+; Messagebox string telling saving failed for a hotlist file
+69342="ホットリストファイルを保存できませんでした"
+
+; General message box string asking user to try action once more
+69343="もう一度試しますか？"
+
+; Message box text
+69344="すべてのページを閉じます。よろしいですか？"
+69345="アクティブなページ以外をすべて閉じます"
+
+; Dialog title for dialog box that will autoreset opera in kiosk mode
+69346="Operaをリセットします"
+
+; Dialog title string. Keep in sync with corresponding menu entry
+69350="ブックマークの編集"
+
+; Dialog title used when user wants to do something that requires online
+; mode (eg. fetching mail)
+69351="オフライン"
+
+; General dialog button string 
+69364="続ける"
+
+; General dialog button string
+69365="止める"
+
+; Dialog title for Add filter dialog box
+69372="フィルタを追加"
+
+; Caption for Reindex mail dialog box
+69377="メールを再インデックス"
+
+; Dialog caption javascript options dialog
+69409="JavaScriptの詳細設定"
+
+69411="このサーバーには適用しない"
+69412="メッセージを処理しています (%li%%) (Tot:%li)"
+69413="メッセージを処理しています (%li%%) %li/%li (Tot:%li)"
+69414="インポートが完了しました。%li通のメッセージがインポートされました。"
+69415="インポートするファイルの選択"
+; Dialog title when downloaded skin can not be used
+69420="このスキンのバージョンは互換性がないものです"
+
+69423="センタークリックの詳細設定..."
+; Dialog title for save as file dialog
+69424="画像を含め完全に保存"
+
+69425="無料バージョンのOperaでは広告が表示されます。表示される広告の種類は、Operaの設定から変更することができます。"
+69426="Googleから提供される関連のある広告・検索結果を表示"
+69427="訪問するウェブページのアドレスなどのブラウザのリクエスト情報は、関連する広告を選択・表示するためにGoogleに送信されます。GoogleとOperaはユーザーのプライバシーを保護することを約束します。"
+69428="詳細"
+69429="一般的な画像の広告を表示"
+69430="右クリックを制御するスクリプトを許可する"
+69434="自動的にCCに追加"
+69435="自動的にBCCに追加"
+
+; Menu strings
+50844="固定表示(&D)"
+50845="浮動表示(F)"
+54219="表示の切り替え(&T)\tF4"
+50070="常に前面に表示(&A)"
+65307="パネルを追加...(A)"
+65309="パネルを編集(E)"
+65308="カスタムパネルを削除(&P)..."
+65310="パネルを入手"
+51211="設定(&P)..."
+54000="ブックマークを開く(&O)"
+54020="新しいウィンドウで開く(N)"
+54022="バックグラウンドで開く"
+54023="パーソナルバー上に表示"
+54001="ページを追加"
+54007="すべて追加"
+54002="切り取り(C)"
+54003="コピー(Y)"
+54004="貼り付け(A)"
+54005="削除(D)"
+63001="すべて選択"
+; Bookmark Item New menu
+180090="新規作成"
+54009="フォルダ..."
+54008="ブックマーク..."
+
+180130="ファイル"
+54013="新規作成...(N)"
+54010="ファイルを開く...(O)"
+51071="ファイルを保存"
+54015="ファイルを別名で保存...(S)"
+54014="選択中のアイテムを保存...(A)"
+54011="ブックマークを挿入(&F)..."
+54012="Internet Explorer お気に入りをインポート(&E)..."
+54006="プロパティ...(I)"
+54018="アイテム(&I)..."
+144660="ファイル(&F)"
+50466="新しいウィンドウ(E)"
+53028="新しいページ(N)"
+50475="ウィンドウを閉じる(L)"
+53027="ページを閉じる(C)"
+50001="開く...(O)"
+50003="保存..."
+50977="画像を含め完全に保存...(A)"
+162500="インポート(M)"
+52250="メールをインポート...(M)"
+52251="Operaブックマークをインポート..."
+52252="Operaコンタクトをインポート..."
+52253="Operaウィンドウ設定をインポート(&W)..."
+52254="Netscapeブックマークをインポート..."
+52255="Internet Explorerお気に入りをインポート..."
+162560="エクスポート(X)"
+52256="Operaブックマークをエクスポート..."
+52257="Operaコンタクトをエクスポート..."
+52258="Operaウィンドウ設定をエクスポート(&W)..."
+50004="印刷...(P)"
+50005="プリンタの設定...(R)"
+50476="印刷オプション...(T)"
+54271="印刷プレビュー(V)"
+51099="オフライン作業(W)"
+54493="個人情報の削除...(D)"
+162000="クイック設定(Q)"
+52200="ポップアップウィンドウを有効にする(A)"
+52201="ポップアップウィンドウを無効にする(R)"
+52202="ポップアップウィンドウをバックグラウンドで開く(O)"
+52203="GIFアニメーションを有効にする"
+52204="ビデオの上映を有効にする(&V)"
+52205="ウェブページのサウンドを有効にする(N)"
+52206="Javaを有効にする"
+52207="プラグインを有効にする"
+52208="JavaScriptを有効にする"
+52209="クッキーを有効にする(C)"
+52215="リファラーのログを有効にする"
+52216="プロキシサーバーを有効にする(X)"
+52210="Operaとして認識させる"
+52211="Mozilla 5.0として認識させる"
+52212="Mozilla 4.78として認識させる"
+52213="Mozilla 3.0として認識させる"
+52214="MSIE 6.0として認識させる"
+50394="設定...(F)"
+50006="Operaの終了"
+140070="編集(&E)"
+50007="元に戻す(U)"
+50008="切り取り(C)"
+50009="コピー(O)"
+50010="貼り付け(A)"
+50424="削除"
+50641="すべて選択(E)"
+50058="ページ内検索...(F)"
+50086="次を検索(I)"
+52031="前を検索(N)"
+50063="インライン検索"
+1124400="表示(&V)"
+148440="ホットリスト(H)"
+50846="表示しない(&O)"
+145550="メインバー(M)"
+50555="シンプル表示(&S)"
+50556="フル表示(&F)"
+50554="表示しない(&O)"
+170510="パーソナルバー(P)"
+53051="上に表示(T)"
+53052="下に表示(B)"
+53053="左に表示(L)"
+53054="右に表示(R)"
+53050="表示しない"
+53055="ブックマークを表示(&S)"
+145570="ステータスバー(S)"
+50557="上に表示(&T)"
+50559="下に表示(&B)"
+50558="表示しない(&O)"
+50916="時計を表示(&S)"
+170210="ページバー(A)"
+53021="上に表示(&T)"
+53022="下に表示(&B)"
+53023="左に表示(&L)"
+53024="右に表示(&R)"
+53020="表示しない(&O)"
+180520="ウィンドウバー(&W)"
+54052="上に表示(&T)"
+54053="下に表示(&B)"
+54054="左に表示(&L)"
+54055="右に表示(&R)"
+54050="表示しない(&O)"
+150740="アドレスバー(D)"
+51074="上に表示(&T)"
+51075="下に表示(&B)"
+51101="表示しない(&O)"
+50612="スクロールバー(C)"
+157300="ズーム(Z)"
+51730="50%"
+51731="80%"
+51732="90%"
+51733="100%"
+51734="120%"
+51735="150%"
+51736="200%"
+51739="-100%"
+51740="+100%"
+51737="-10%"
+51738="+10%"
+157500="エンコード(E)"
+51750="自動選択(A)"
+157510="Unicode"
+51751="UTF-8"
+51752="UTF-16"
+67447="UTF-32"
+67448="UTF-7"
+157530="英語(アメリカ)(&I)"
+51753="US ASCII"
+157540="西ヨーロッパ言語(W)"
+51754="ISO-8859-1"
+51771="Windows-1252"
+51767="ISO-8859-15"
+157550="中央ヨーロッパ言語(C)"
+51755="ISO-8859-2"
+67449="ISO-8859-1"
+51769="Windows-1250"
+157560="南ヨーロッパ言語(S)"
+51756="ISO-8859-3"
+157650="バルト言語(B)"
+51765="ISO-8859-13"
+51776="Windows-1257"
+51757="ISO-8859-4"
+157630="北欧言語(N)"
+51763="ISO-8859-10"
+51791="Windows-Sami-2"
+157660="ケルト言語(E)"
+51766="ISO-8859-14"
+157620="トルコ語(T)"
+51762="ISO-8859-9"
+51773="Windows-1254"
+157770="ベトナム語(V)"
+51777="Windows-1258"
+51783="VISCII"
+67450="VPS"
+157580="キリル言語(Y)"
+51758="ISO-8859-5"
+51768="KOI8-R"
+51785="KOI8-U"
+51770="Windows-1251"
+51792="Codepage 866"
+157600="ギリシャ語(G)"
+51760="ISO-8859-7"
+51772="Windows-1253"
+157590="アラビア語(R)"
+51759="ISO-8859-6"
+51775="Windows-1256"
+157610="ヘブライ語(H)"
+51761="ISO-8859-8 (Logical)"
+67451="ISO-8859-8"
+51774="Windows-1255"
+157640="タイ語(I)"
+51764="ISO-8859-11 (TIS-620)"
+157890="中国語"
+51780="Big5 (繁体字)"
+67452="Big5-HKSCS (繁体字)"
+51790="EUC-TW (繁体字)"
+51782="GB2312(簡体字)"
+51786="HZ-GB2312 (簡体字)"
+67453="GB2312 (簡体字)"
+67454="ISO-2022-CN"
+157880="日本語(J)"
+; Auto detect for Russian, Chinese and Japanese
+51788="自動判別(A)"
+
+51778="Shift-JIS"
+51779="ISO-2022-JP"
+51781="EUC-JP"
+157840="韓国語(K)"
+51784="EUC-KR"
+51212="画面表示のリフレッシュ(R)"
+44002="ページのソースを表示"
+50660="フレームのソースを表示(F)"
+51215="フレーム内リンク"
+44001="メニュー(&M)\tCtrl+F11"
+50995="フルスクリーン表示"
+140320="移動(&N)"
+50032="戻る(B)"
+; Next
+50031="進む(F)"
+
+50420="中止(S)"
+50477="ホームページへ移動(H)"
+50065="ページを更新(E)"
+44003="フレームを更新(L)"
+50725="すべてのページを更新(O)"
+200000="自動更新(D)"
+56000="自動更新を有効にする(E)"
+56001="カスタム...(C)"
+50270="すべての画像を読み込む(I)"
+50478="ホームページの設定...(T)"
+50059="アドレスを指定して移動...(G)"
+65132="関連ページへ移動(M)"
+50087="ブックマークに追加...(K)"
+146790="メール(&M)"
+50679="新規作成...(C)"
+; Send menu, Mail
+65180="リンクをメールで送信(E)"
+
+50979="受信(H)"
+; Check menu, Mail
+51723="すべてチェック(C)"
+
+; Send menu, Mail
+54070="送信箱のメッセージを送信(S)"
+
+54071="全アカウントの未送信メールを送信(&A)\tCtrl+Shift+Q"
+54214="メールの編集(&M)\tCtrl+Alt+M"
+51143="メールを検索(&F)..."
+51139="フィルタ...(F)"
+51145="新規アカウント..."
+59999="アカウントの編集..."
+54215="コンタクトの編集...(A)"
+44004="既読にする"
+44005="未読にする(U)"
+44006="過去の開封済記事をリストに表示(&O)"
+44007="すべてのグループをリストに表示(&A)"
+50626="スレッドを表示(&T)"
+60004="ニュースグループリストを更新(&U)"
+1123600="ウィンドウ(&W)"
+148360="特殊ウィンドウ(S)"
+50836="ダウンロード"
+50837="履歴(H)"
+50838="プラグイン"
+50835="キャッシュ(C)"
+54122="Javaコンソール"
+50498="ページを複製(D)"
+52035="リンク先となるウィンドウを作成"
+50018="重ねて表示(A)"
+50019="左右に並べて表示(T)"
+51136="上下に並べて表示(I)"
+50567="すべて元のサイズに戻す(E)"
+50565="すべて最小化(M)"
+50545="すべて最大化(X)"
+50564="すべて閉じる"
+50523="現在のウィンドウ設定を保存(&S)..."
+52034="ウィンドウリスト(&I)..."
+140130="ヘルプ(&H)"
+50013="ヘルプ目次"
+50479="キーボードショートカット一覧(K)"
+50525="マウスジェスチャー一覧(M)"
+60340="今日のトピックス(&T)..."
+60243="友人にOperaを紹介"
+60242="Operaの購入"
+50976="Operaのライセンス登録..."
+242400="Operaオンラインコンテンツ"
+; Opera on the Web menu
+60240="ホームページ(H)"
+60241="サポートページ(S)"
+50666="Opera社に連絡"
+60246="コミュニティ(C)"
+51131="OperaMail"
+
+50015="Operaについて"
+; link menu
+50416="リンクを開く(&O)\tClick"
+50417="リンクを新しいウィンドウで開く(&N)\tShift+Click"
+50437="バックグラウンドで開く"
+53018="新しいページで開く(P)"
+53019="バックグラウンドのページで開く(E)"
+50418="リンクをブックマークに追加...(A)"
+50216="リンクのアドレスをコピー"
+50761="リンク先を保存...(S)"
+
+; mailto: link menu
+50436="アドレスにメールを送信(&S)..."
+50543="アドレスをコンタクトに追加(&A)..."
+50542="メールアドレスをコピー"
+50544="mailto:をつけてアドレスをコピー(&L)"
+
+; mailto: image link menu
+50263="画像を表示"
+
+; mailto: image link and image link  menu
+65246="画像を更新"
+
+; mailto: image link menu and image link menu
+50262="画像を保存...(V)"
+50251="画像をコピー"
+50419="画像のアドレスをコピー(Y)"
+56064="画像のプロパティ(I)"
+200670="画像使用メニュー(U)"
+56067="表面スキンに使用"
+56068="背景スキンに使用"
+57076="デスクトップの壁紙に使用(D)"
+56069="表面スキンを削除"
+56070="背景スキンを削除"
+
+; Default page menu
+50426="戻る(B)"
+50427="進む(F)"
+50429="中止(S)"
+50430="ホームページへ移動(H)"
+50428="ページを更新(E)"
+50423="ブックマークに追加"
+50215="アドレスをコピー(C)"
+65178="リンクをメールで送信(N)"
+292450="背景メニュー(K)"
+
+; Default page menu and image link menu
+65245="画像を表示"
+
+; Default page menu
+50672="画像を保存"
+50671="画像をコピー"
+50673="画像のアドレスをコピー"
+65244="画像のプロパティ"
+200710="画像使用メニュー"
+56071="表面スキンに使用(&F)"
+56072="背景スキンに使用(&B)"
+57077="デスクトップの壁紙に使用(&D)"
+50432="ページを複製(U)"
+
+; Select menu
+50872="テキストをコピー(C)"
+65184="検索(S)"
+291920="データベースで検索(E)"
+65187="辞書(D)"
+65188="百科事典(N)"
+65186="通貨換算"
+291960="翻訳(T)"
+65196="英語⇒フランス語(E)"
+65197="英語⇒ドイツ語(N)"
+65198="英語⇒イタリア語(G)"
+65199="英語⇒ポルトガル語(L)"
+65200="英語⇒スペイン語(I)"
+65202="フランス語⇒英語(F)"
+65203="フランス語⇒ドイツ語(R)"
+65204="フランス語⇒イタリア語(C)"
+65205="フランス語⇒ポルトガル語(H)"
+65206="フランス語⇒スペイン語(T)"
+65207="ドイツ語⇒英語(M)"
+65208="ドイツ語⇒フランス語(A)"
+65209="イタリア語⇒英語(O)"
+65210="イタリア語⇒フランス語"
+65211="ポルトガル語⇒英語(O)"
+65212="スペイン語⇒英語(S)"
+65213="スペイン語⇒フランス語"
+65214="英語⇒日本語(J)"
+65215="日本語⇒英語"
+65218="メールで送信(B)"
+65191="ソースで表示(&V)"
+
+; View source menu
+65261="ソースの表示を中止(&S)"
+
+; Image link menu
+44013="開く"
+44014="新しいページで開く"
+44015="リンクをブックマークに追加(A)"
+44016="画像のアドレスをコピー(&A)"
+
+144670="ファイル操作メニュー(&F)"
+50467="開く(&O)..."
+50468="保存(&S)..."
+50470="送信(&E)"
+50469="終了(&X)"
+140080="編集"
+242420="_banner_context_menu_"
+57055="広告の設定(&R)..."
+; File menu
+148470="ファイル(F)"
+
+50847="印刷(&P)\tCtrl+P"
+50856="終了(&X)\tCtrl+W"
+148480="編集(E)"
+50848="コピー(&C)\tCtrl+C"
+50849="検索(&F)\tCtrl+F"
+; Navigation menu
+148510="移動(N)"
+
+50851="戻る(&B)\tZ"
+50852="進む(&F)\tX"
+50853="ホームページへ移動(&H)\tCtrl+Space"
+50854="目次(&A)\tF1"
+50855="キーボードショートカット(&K)\tCtrl+B"
+1127000="編集(E)"
+148700="挿入"
+50870="フルネーム(&N)"
+50902="名(&F)"
+50903="姓(&L)"
+50904="住所(&A)"
+50905="都市(&C)"
+50906="州(&E)"
+65242="郵便番号(&Z)"
+50907="国(&C)"
+50908="電話番号(&T)"
+50909="Fax番号(&F)"
+50871="メール(&M)"
+50910="ホームページ(&H)"
+50911="特記情報1(&1)"
+50912="特記情報2(&2)"
+50913="特記情報3(&3)"
+65243="個人情報を編集(&E)..."
+50864="元に戻す(U)"
+50865="切り取り(C)"
+50866="コピー(O)"
+50867="貼り付け(A)"
+50868="削除"
+50869="すべて選択(S)"
+51265="テキスト形式でコピー(&T)"
+51266="HTML形式でコピー(&H)"
+51267="ホットリストアイテムにコピー(&L)"
+; Button bar
+51321="ブラウザの外観(&K)..."
+50917="ブラウザのレイアウト(&Y)..."
+
+56073="スキンを入手(G)"
+; Hotlist window bookmarks view
+54150="ユーザー定義順に表示(&M)"
+54151="タイトル順に表示(&T)"
+54152="タイトルの逆順に表示(&R)"
+54153="表示日時順に表示(&V)"
+54154="表示日時の逆順に表示(&I)"
+54155="更新日時順に表示(&E)"
+54156="更新日時の逆順に表示(&D)"
+54161="検索欄を表示(&S)"
+54157="フォルダをツリー表示(&F)"
+181580="カラム表示メニュー(&C)"
+54158="カラムヘッダを表示(&H)"
+52051="表示日時カラムを表示(&V)"
+52052="更新日時カラムを表示(&C)"
+52053="カラムサイズを自動調整する(&A)"
+
+; Bookmark item
+53056="削除(&D)\tDelete"
+53057="プロパティ(&P)..."
+
+; Hotlist window contacts view
+54159="フォルダをツリー表示(&F)"
+54160="カラムヘッダを表示(&H)"
+
+; Transfers view
+54139="詳細情報を表示(S)"
+67520="新規ダウンロードを一番上に表示(H)"
+51204="Operaの外側に表示(&O)"
+51203="ダウンロード開始時に手前に表示(&B)"
+
+294120="ページバー"
+65412="新しいページを開く(&N)\tDoubleclick"
+; Page bar item
+53025="新しいウィンドウに移動(&M)\tDoubleclick"
+65411="ページを閉じる(&C)\tShift+Click"
+
+; Go menu
+65130="入力されたアドレスへ移動(&G)"
+65133="アドレスにリンクしているページへ移動(&L)"
+
+146630="フレームメニュー(M)"
+50663="ソースを表示(V)"
+50781="名前を付けて保存(S)"
+56051="HTMLソースの検証"
+50669="ブックマークに追加(A)"
+50668="アドレスをコピー(C)"
+65179="リンクをメールで送信"
+50664="フレームを更新(R)"
+44012="すべての画像を読み込む(L)"
+50708="フレームを最大化(M)"
+53400="メールの新規作成(&E)"
+56053="ホームページへ移動(&H)"
+53404="宛先(&O):"
+53405="Cc(&:):"
+53406="Bcc(&B):"
+54019="コンタクトユーザー(&C)..."
+180210="ファイル操作メニュー(&F)"
+54021="コンタクトファイルの新規作成(&N)..."
+53411="コピー(&C)\tCtrl+C"
+53412="すべて選択(&S)\tCtrl+A"
+53413="印刷(&P)\tCtrl+P"
+67350="クイックダウンロード"
+67351="パネルを固定(L)"
+67352="すべてのアカウントを受信(G)"
+67353="メールを表示...(R)"
+67354="既読にして次の未読へ移動(N)"
+; Cancel newsmessage
+67355="投稿をキャンセル"
+
+67356="ラベルメニュー(L)"
+67357="ビューメニュー"
+67358="移動メニュー"
+67362="すべて既読にする(K)"
+67363="ごみ箱を空にする(E)"
+67364="リダイレクト(R)"
+67359="次の未読へ(N)"
+67360="前の未読へ(P)"
+67365="スレッドへ(T)"
+; noun (in 'Go to' menu)
+67366="このコンタクトのメッセージへ(C)"
+
+67367="フラット表示"
+67368="スレッド表示"
+67369="宛先と送信者"
+67370="サムネイル"
+67371="既読を表示"
+67372="ごみ箱を表示"
+67373="未登録メッセージを表示"
+67374="メーリングリストを表示"
+67375="ニュースグループを表示"
+67376="クイック返信を表示"
+67377="ビューから削除"
+; Forward mail
+67378="転送(F)"
+
+67379="優先度"
+67380="ユーザー定義順に表示(O)"
+67381="名前順に表示(R)"
+67382="ニックネーム順に表示(T)"
+67383="アドレス順に表示(B)"
+67384="説明順に表示(Y)"
+67385="作成日時順に表示(C)"
+67386="表示日時順に表示(V)"
+67387="昇順に表示(A)"
+67388="降順に表示(D)"
+67389="開く(O)"
+67390="表示(V)"
+67391="メッセージを表示"
+67392="ホームページへ移動"
+; Contact Item New menu
+67393="新規"
+
+67394="URLへ移動"
+; Help menu
+67395="ヘルプ(H)"
+
+; Window menu
+67396="ウィンドウ(W)"
+
+; Mail menu and button
+67397="メール(M)"
+
+; Bookmarks menu
+67398="ブックマーク(B)"
+
+67399="セッション(I)"
+67400="ナビゲーションバー(N)"
+67401="ボタンを固定"
+67402="ツールバーのカスタマイズ...(U)"
+67403="スキン(K)"
+67404="外観の配色(O)"
+; Browser View Menu
+67405="スタイル(T)"
+
+67406="スモールスクリーン表示"
+67407="サイトナビゲーション(N)"
+; Send mail menu
+67408="送信(D)"
+
+67409="メッセージを表示...(R)"
+67410="検索...(E)"
+67411="ニュースグループ...(N)"
+67412="IMAPフォルダ...(I)"
+67413="アクティブなページ以外すべて閉じる"
+; Bookmark Item File menu
+67414="Operaブックマークをインポート..."
+67415="Netscapeブックマークをインポート..."
+67416="Internet Explorer お気に入りをインポート..."
+67417="Operaブックマークをエクスポート"
+
+; Contact Item New menu
+67418="フォルダ..."
+67419="コンタクト..."
+
+; Contact Item File menu
+67420="新規作成...(N)"
+
+; File/Session menu
+67421="セッションを開く...(O)"
+67422="セッションを挿入...(I)"
+67423="セッションを保存...(S)"
+
+; Quick Preferences
+67424="要求したポップアップウィンドウのみ開く(E)"
+
+; View Hotlist Menu
+67425="ブックマーク"
+67426="メール"
+
+67427="コンタクト"
+; View Hotlist Menu
+67428="履歴"
+67429="ダウンロード"
+67430="リンク"
+67431="ウィンドウ"
+
+; View Navigation Bar Menu
+67432="自動表示"
+
+67433="外観の配色を利用しない(N)"
+67434="システムカラーの配色を利用(S)"
+67435="金(G)"
+67436="砂(A)"
+67437="密林(J)"
+67438="海(E)"
+67439="青(B)"
+67440="藍(I)"
+67441="紫(P)"
+67442="深紅(C)"
+67443="赤(R)"
+67444="特殊効果(S)"
+67445="作成者モード"
+67446="ユーザーモード(U)"
+; Reload Menu
+67455="5秒"
+67456="15秒"
+67457="30秒"
+67458="1分"
+67459="2分"
+67460="5分"
+67461="15分"
+67462="30分"
+
+; Site Navigation Menu
+67463="ホーム"
+67464="索引"
+67465="目次"
+67466="検索"
+67467="用語集"
+67468="ヘルプ"
+67469="最初"
+67470="前へ"
+67471="次へ"
+67472="最後"
+67473="親階層"
+67474="著作権"
+67475="作成者"
+
+67476="JavaScriptコンソール"
+67477="ダウンロードをやり直す(E)"
+67478="ダウンロードを削除(M)"
+67479="スタイル(T)"
+67480="パネルを削除(V)"
+67481="ツールバーから削除(V)"
+67482="オーディオ"
+67483="すべて閉じる(A)"
+67484="アクティブなページ以外すべて閉じる(S)"
+; Remove from Personal Bar
+67485="削除(V)"
+
+67486="ツールバーをデフォルトの状態に戻す"
+67487="大きな画像を使用"
+67488="ダウンロード開始時にウィンドウをポップアップ表示(P)"
+67489="ツールバー"
+; Right-click on address field
+67490="貼り付けて移動(G)"
+
+; Links Panel Toolbar
+67495="固定"
+
+67496="全画面表示"
+67497="セキュリティ"
+67498="画像を表示"
+; New page
+67499="新規"
+
+; Used in menus to show the keyboard shortcut, typically Ctrl+t
+67538="Ctrl"
+
+67521="Shift"
+67522="Alt"
+67523="Home"
+67524="End"
+67525="PageUp"
+67526="PageDown"
+67527="↑"
+67528="↓"
+67529="←"
+67530="→"
+67531="Esc"
+67532="Ins"
+67533="Del"
+67534="Backspace"
+67535="Tab"
+67536="Space"
+67537="Enter"
+; Caption for fast forward button for automatic login using Wand
+67539="ログイン"
+
+67572="このビューに追加"
+67573=">>"
+67633="バックグラウンドのウィンドウで開く(W)"
+67634="本文の表示形式(S)"
+67635="手動(M)"
+67636="1秒後"
+67637="2秒後"
+67638="3秒後"
+67639="5秒後"
+67640="10秒後"
+67641="プレーンテキストで表示(P)"
+67642="HTMLで表示"
+67643="外部埋め込みファイルを表示しない(S)"
+67644="1画面ツリー表示"
+67645="2画面ツリー表示"
+67646="単一フォルダ表示(S)"
+67647="新しいメモ"
+67648="巻き戻す(R)"
+67649="早送り(A)"
+67650="画像を読み込む(L)"
+67651="画像を開く(M)"
+67652="メモにコピー(Y)"
+67653="個人情報の挿入(I)"
+67654="メモを挿入(N)"
+67655="すべてクリア(L)"
+67656="メモに貼り付け(S)"
+67657="メニューバー"
+67658="ページ内のリンクを表示...(I)"
+67659="コンタクトをここに追加"
+67660="フォルダ内のすべてのコンタクトを追加"
+67661="KDE1ブックマークをインポート..."
+67662="Konquerorブックマークをインポート..."
+67663="HTMLとしてエクスポート..."
+67664="選択した項目をHTMLとして保存..."
+67665="Operaコンタクトをインポート..."
+67666="Operaコンタクトをエクスポート..."
+67667="選択したコンタクトを保存...(A)"
+67668="KDE1ブックマーク..."
+67669="Konquerorブックマーク..."
+67670="ブックマークをHTMLで保存..."
+67671="ページ情報"
+67672="メモ"
+67673="ボイス"
+67674="ボイス設定..."
+67676="ボイス"
+67677="リスニング"
+67678="スピーキング"
+; Revert an undo operation
+68116="やり直す(R)"
+
+; Edit popup menu string. Translate with ampersand
+69000="元に戻す(&U)"
+69001="やり直す(&R)"
+69002="切り取り(&T)"
+69003="コピー(&C)"
+69004="貼り付け(&P)"
+69005="クリア(&L)"
+69006="すべて選択(&A)"
+
+; Workspace popup menu string. Translate with ampersand
+69007="削除(&R)"
+69008="移動(&M)"
+69009="サイズ(&S)"
+69010="最小化(&N)"
+69011="最大化(&X)"
+69012="閉じる(&C)"
+69013="次(&N)"
+69014="&Standard"
+69015="&Classic"
+69016="装飾(&D)"
+
+; Print dialog. Detination tab
+69017="送信先"
+
+; Print dialog. Options tab
+69018="オプション"
+
+; Print dialog. Printer program tab
+69019="プリンタプログラム"
+
+; Print dialog.
+69020="プリンタ(&P)"
+
+; Print dialog. List column header
+69021="プリンタ"
+69022="ホスト"
+69023="コメント"
+
+; Print dialog. Checkbox. Translate with ampersand
+69024="ファイルに出力(&F)"
+
+; Print dialog. Frame text label
+69025="印刷範囲"
+69026="複製"
+69027="すべて(&A)"
+
+; Print dialog. Translate with ampersand
+69028="選択範囲(&S)"
+69029="ページ指定(&E)"
+69030="From:"
+69031="To:"
+69032="部数"
+69033="最初のページから印刷(&I)"
+69034="最後のページから印刷(&L"
+
+; Print dialog. Frame text label
+69035="色"
+69036="オプション"
+69037="ページフォーマット"
+
+; Print dialog. Translate with ampersand
+69038="可能の場合、カラーで印刷"
+69039="グレースケールで印刷"
+
+; Print dialog
+69040="ポートレート"
+69041="ランドスケープ"
+
+; Print dialog. Printer parameter
+69042="パラメーター"
+
+; Print dialog. Help text label
+69043="プリンタープログラムは標準入力から読まれます。パラメーターはプログラムに文字列として渡されます。"
+
+; Print dialog. Dialog title
+69044="印刷"
+
+; Print dialog. Paper type
+69045="A0 (841 x 1189 mm)"
+69046="A1 (594 x 841 mm"
+69047="A2 (420 x 594 mm)"
+69048="A3 (297 x 420 mm)"
+69049="A4 (210x297 mm, 8.26x11.7 inches)"
+69050="A5 (148 x 210 mm)"
+69051="A6 (105 x 148 mm)"
+69052="A7 (74 x 105 mm)"
+69053="A8 (52 x 74 mm)"
+69054="A9 (37 x 52 mm)"
+69055="B0 (1030 x 1456 mm)"
+69056="B1 (728 x 1030 mm)"
+69057="B2 (515 x 728 mm)"
+69058="B3 (364 x 515 mm)"
+69059="B4 (257 x 364 mm)"
+69060="B5 (182x257 mm, 7.17x10.13 inches"
+69061="B6 (128 x 182 mm)"
+69062="B7 (91 x 128 mm)"
+69063="B8 (64 x 91 mm)"
+69064="B9 (45 x 64 mm)"
+69065="B10 (32 x 45 mm)"
+69066="C5E (163 x 229 mm)"
+69067="DLE (110 x 220 mm)"
+69068="Executive (7.5x10 inches, 191x254 mm)"
+69069="Folio (210 x 330 mm)"
+69070="Ledger (432 x 279 mm)"
+69071="Legal (8.5x14 inches, 216x356 mm)"
+69072="Letter (8.5x11 inches, 216x279 mm)"
+69073="Tabloid (279 x 432 mm)"
+69074="US Common #10 Envelope (105 x 241 mm)"
+
+; Print dialog.
+69075="ローカルプログラム"
+69076="カスタムプリンタ"
+
+; Print dialog. Fileselector title
+69077="出力先を選択"
+69078="アプリケーションを選択"
+
+; Print dialog. Printer connection
+69079="ローカルに接続"
+
+; Print dialog. Alternate printer names
+69080="エイリアス"
+
+; Print dialog. Unknown printer location
+69081="未知のロケーション"
+
+; Print dialog. Unknown printer
+69082="不明"
+
+; Dialog title. When no printer was found
+69083="プリンタがインストールされていません"
+
+; Dialog help text
+69084="印刷ダイアログ・ボックスでファイルへの出力、あるいは、プリンタを指定できます。"
+
+; Column header label when listing plug-ins
+69085="使用"
+
+; First time dialog help text
+69086="センタークリック時の動作は Shift+センタークリック で設定できます。\n\n今すぐこの設定をしますか？"
+
+; Dialog close button
+69087="閉じる"
+
+; Dialog apply button
+69088="適用"
+69089="印刷"
+
+; Dialog help button
+69090="ヘルプ"
+
+; Qt library strings (colordialog)
+69100="カスタムカラーを追加(&A)"
+69101="ベーシックカラー(&B)"
+69102="カラーのカスタマイズ(&C)"
+69103="カスタム色の定義(&D) >>"
+69104="緑(&G)"
+69105="赤(&R)"
+69106="青(&U)"
+69107="彩度(&S)"
+69108=" 明度(&V）"
+69109="色相(&E)"
+69110="アルファチャンネル(&L)"
+69111="色を選択"
+
+; Qt library strings (filedialog)
+69112="%1\nは見つかりません\nファイル名とパスを確認してください。"
+69113="削除(&D)"
+69114="いいえ(&N)"
+69115="はい(&Y)"
+69116="開く(&O)"
+69117="名前の変更(&R)"
+69118="保存(&S)"
+69119="ソート無し(&U)"
+69120="%1 %2を削除します。よろしいですか？"
+69121="すべてのファイル(*)"
+69122="属性"
+69123="戻る"
+69124="複写もしくは移動"
+69125="フォルダの作成"
+69126="日付"
+69127="%1を削除"
+69128="詳細"
+69129="Dir"
+69130="ディレクトリ"
+69131="ディレクトリ:"
+69132="エラー"
+69133="ファイル名(&N)"
+69134="ファイルタイプ(&T)"
+69135="ファイル"
+69136="ディレクトリの検索"
+69137="アクセスできません"
+69138="一覧(&L)"
+69139="場所(&I)"
+69140="名前"
+69141="新規フォルダ %1"
+69142="新規フォルダ 1"
+69143="新規フォルダ"
+69144="上階層へ"
+69145="開く"
+69146="ファイル内容のプレビュー"
+69147="ファイル情報のプレビュー"
+69148="更新(&R)"
+69149="Read-only"
+69150="Read-write"
+69151="読み込み: %1"
+69152="名前を付けて保存"
+69153="保存"
+69154="隠しファイルを表示(&h)"
+69155="サイズ"
+69156="整列(&S)"
+69157="更新日時順に表示(&D)"
+69158="名前順に表示(&N)"
+69159="サイズ順に表示(&S)"
+
+; Qt library strings (filedialog) - Not regular file
+69160="スペシャルファイル"
+
+; Qt library strings (filedialog)
+69161="ディレクトリへのシンボリックリンク"
+69162="ファイルへのシンボリックリンク"
+69163="スペシャルファイルへのシンボリックリンク"
+69164="タイプ"
+69165="Write-only"
+69166="書き込み: %1"
+69167="ディレクトリ"
+69168="ファイル"
+69169="シンボリックリンク"
+
+; General message box strings
+69200="先にファイル名を選択してください"
+69201="ファイル名が見つかりません"
+69202="指定されたファイル名は既に存在します。\n上書きすると既存のファイルの内容が失われます。\n上書きしますか？"
+69203="上書き"
+69204="選択したファイル名は既に存在します。別のファイルを選択してください。"
+69205="不正なファイル名です"
+69206="書き込みに失敗しました。\nデータは保存されていません。\n書き込み権限や十分な空き領域があるかを確認してください。"
+69207="保存に失敗しました"
+69208="指定された場所への書き込み権限がありません。"
+69209="指定された%1への書き込み権限を持っていません。\n\nName: %2"
+69210="アクセスが拒否されました"
+69211="ディレクトリ"
+69212="ファイル"
+
+; Message box title
+69213="無効なプラグインのバージョンです"
+
+; Message box help text
+69214="このバージョンのNetscapeプラグインは無効です。Operaはこのプラグインを使用することができません。このバージョンのOperaに付属したプロキシプラグインをインストールしてください。"
+
+; Message box title
+69215="プラグインの検索"
+
+; Message box help text for delayed plug-in search (after startup)
+69216="プラグインは起動時にインストールされていませんでした。インストールを開始します。"
+
+; Message box help text
+69217="前回プラグインの検索を試みた際に、致命的な問題が発生していました。\n\n今すぐプラグインの検索を開始しますか？"
+
+; Text above a list of directories
+69218="登録されたプラグインのディレクトリ"
+
+; Help text for setting display resolution (DPI)
+69219="解像度"
+
+; Default display resolution value
+69220="システムの標準設定"
+
+; Fast forward 
+69232="次へ"
+
+; Fast forward
+69233="次の画像へ"
+69234="ログイン"
+69235="認証管理ログイン"
+69236="表示"
+69237="画像を表示"
+
+; Menu entry for adding a mailto link to the contact list
+69242="アドレスをコンタクトに追加...(A)"
+
+67306="音楽"
+69313="メッセージ一覧を表示(M)"
+69314="メッセージ本文を表示(E)"
+69315="一覧と本文を表示(A)"
+; Page menu string
+69336="閉じる(C)"
+69337="アクティブにする(A)"
+69338="元のサイズに戻す(E)"
+69339="最小化(M)"
+69340="最大化(X)"
+
+; Used in toolbar popup menus to control visibility of extender arrow
+69363="エクステンダーを表示"
+
+; Used in M2 menus (in the show account menu)
+69366="すべてのアカウント"
+69367="メールアカウント"
+69368="ニュースアカウント"
+
+; General menu string 
+69381="エクスポート...(X)"
+
+; m2 submenu string (in hotlist)
+69382="アカウントの表示(O)"
+
+; m2 menu string (in hotlist)
+69383="アカウント選択メニューを表示"
+
+; Submenu that hold all closed window entries
+69384="閉じたページ(C)"
+
+; Main help entry (F1 action)
+69385="Operaヘルプ"
+
+; Contents sub menu in help menu
+69386="ヘルプ目次(C)"
+
+; Help topic
+69387="ホットリスト(H)"
+69388="ツールバー(T)"
+69389="メニュー(E)"
+69390="ダイアログ(D)"
+69391="設定(P)"
+
+; On the web menu entry
+69392="機能とチュートリアル(F)"
+69393="アクセシビリティ(A)"
+69394="セキュリティとプライバシー(E)"
+
+; Meta key
+69395="Meta"
+
+; Menu string in transfer panel
+69422="完了したダウンロードをすべて削除"

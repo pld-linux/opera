@@ -1,0 +1,4636 @@
+; Opera language file version 2.0
+; Copyright © 1995-2003 Opera Software ASA. All rights reserved.
+; Translated by Rijk van Geijtenbeek <rijk@opera.com>
+; Created on 2003-10-16 11:44
+; Lines starting with ; (like this) are comments and need not be translated
+
+[Info]
+Language="nl"
+; The string below is the language name in its own language
+LanguageName="Nederlands"
+Charset="iso-8859-1"
+Build.Linux=480
+Version.Linux=7.21
+DB.version=111
+
+[Translation]
+
+; General strings
+
+; Used in a popup error message when Opera can't connect to the remote
+; server due to other phenomena than the one stated in 32873.
+32869="Verbinding met server mislukt"
+
+; The error code corresponding to this string is used in a number of
+; situations when the server has abruptly closed the connection, and then
+; the string can be used in a popup error message.
+32864="Verbinding verbroken door server"
+
+; Used in a popup error message when Opera has failed to load a requested
+; page more than once.
+32874="Ondanks herhaalde pogingen kan deze pagina niet geheel worden geladen.\r\n\r\nMogelijk heeft de server een probleem."
+
+; Used in a popup error message when Operas request to connect to a server
+; is refused. (For example when the server exists but does not answer on
+; the specified port.)
+32873="Verbinding met server mislukt"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain exists but the server itself does not (for example
+; http://fff.example.com).
+32871="Server niet gevonden"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain doesn't exist (for example http://invalid).
+32872="Het adres is niet beschikbaar vanaf dit apparaat"
+
+; Used as default error message in a popup error message, when no other
+; network error message applies.
+32868="Interne communicatiefout"
+
+; Used in a popup error message when there is no route from the client's
+; subnet to the server's subnet, likely due to a badly configured network.
+32881="Netwerk niet beschikbaar. Neem contact op met de systeembeheerder"
+
+; Used in a number of error situations, when the user has entered a
+; malformed URL, such as opera:nonexistant, into the URL field. The http
+; respose error code 400 (Bad request), and some other http error codes
+; between 400 and 500 (signifying client errors) also give the same
+; result.
+32832="Ongeldig adres"
+
+; Used in a popup error message when the network of the underlying system is
+; down. This could be due to errors in the protocol stack, network card or
+; driver, or in the physical network outside of the system.
+32865="Netwerkprobleem"
+
+; Used in a popup error message when the server has tried to redirect a
+; document request from Opera to an adress and Opera fails to connect to
+; that server.
+21462="De server probeerde om te leiden naar een ongeldig adres.\r\nRapporteer dit a.u.b. aan de Webmaster van de site."
+
+; Used in a popup error message when a proxy server has been specified for a
+; specific request type, and the proxy server doesn't answer when an URL
+; of that type is entered in the URL field.
+32897="Verbinding met proxyserver mislukt"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain exists but the server itself does not (for example
+; fff.opera.com).
+32898="Proxyserver niet gevonden"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain doesn't exist (for example fjdlsakhngfjf).
+32899="Verbinding met proxyserver mislukt. Server niet beschikbaar"
+
+; Used in a popup error message when Operas request to connect to a proxy
+; server is refused. (For example when the server exists but does not
+; answer on the specified port.)
+32900="Verbinding met proxyserver mislukt. Geen toegang"
+
+; Used when Opera has tried to open a network socket to a server and the
+; socket is busy. This message should be handled internally most of the
+; time.
+32866="Blokkering netwerk-socket "
+
+; Used in a popup error message when a non-recoverable error has occurred in
+; the network protocol stack or network drivers of the system.
+32883="Problemen met netwerk-socket. Controleer uw netwerkdrivers a.u.b."
+
+32885="Te lang gewacht op server. Probeer later nog eens a.u.b."
+; Used in a popup error message when not enough socket resources (file
+; handles, network buffers) are free.
+32867="Bronproblemen met netwerk-socket. Probeer het opnieuw"
+
+; The default error message, used in any situation where no more specific
+; error message can be created.
+20000="Interne programmafout."
+
+20001="Even wachten a.u.b. totdat de huidige afdrukopdracht is verwerkt"
+20002="Kon geen nieuw venster aanmaken. Onvoldoende geheugen of bronnen beschikbaar"
+20003="De adressoort is onbekend of wordt niet ondersteund"
+; Might be used in a popup error message when the user has clicked the Home
+; button and no home page is set in preferences, but the Set homepage
+; dialog seems to appear instead. Obsolete?
+20005="Geen startpagina ingesteld. Stel er een in a.u.b."
+
+20009="Het MIME-type is reeds ingesteld"
+20011="Zoektekst niet gevonden"
+20013="Verbinding met de printer mislukt"
+20014="Geef aan welk programma gebruikt moet worden om het bestand te bekijken"
+; Used in an error popup message when the printer has encountered an error
+; while printing (as opposed to 20013 which pops up if the printing can't
+; even start, which is more likely.)
+20015="Pagina kon niet worden afgedrukt. Controleer a.u.b. of de printer beschikbaar is"
+
+20016="Afdrukken pagina"
+; Used in a popup error message when the user has requested a file from the
+; server that it's not allowed to fetch (HTTP response code 403), if the
+; user has set the Network/Server errors/Always show dialog box
+; preference.
+33040="De server weigert het verzoek uit te voeren\r\nDit adres is niet beschikbaar."
+
+; Used in a popup error message when the user has requested a file from the
+; server that does not exist (HTTP response code 404), if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33041="Adres niet gevonden"
+
+; Used in a popup error message as a default message when the user has made
+; a valid request for a file from the server, and the server encounters an
+; error that prevents it to fulfill the request (HTTP response code 5xx
+; and 6xx), if the user has set the Network/Server errors/Always show
+; dialog box preference.
+33042="Server of bestand niet gevonden"
+
+; Used in a popup error message when the user has requested a file from the
+; server, and the server could not fulfill the request since this
+; functionality wasn't implemented (HTTP error code 501), if the user has
+; set the Network/Server errors/Always show dialog box preference.
+33043="De server beschikt niet over de benodigde functionaliteit"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server sends the document using HTTP compression, and
+; the document decoder couldn't decode the data properly.
+33046="Probleem ondervonden tijdens decoderen gegevens. Mogelijk ten gevolge van beschadigde gegevens."
+
+; Used in a popup error message when the user has submitted a form using a
+; HTTP request method (specified with the METHOD attribute to the FORM tag
+; in the HTML form) that the server does not accept (HTTP error code 405),
+; if the user has set the Network/Server errors/Always show dialog box
+; preference.
+33424="De HTTP-aanvraagmethode werd niet geaccepteerd door de server"
+
+; Used in a popup error message when the user tries to fetch a document by
+; clicking a link, and the server cannot send the requested document in a
+; format that matches the content of the HTTP accept headers sent in the
+; request (HTTP error code 406), if the user has set the Network/Server
+; errors/Always show dialog box preference. However, Opera accepts all
+; document formats and sends *.* in its accept header, so this is unlikely
+; to happen.
+33425="De server kan geen acceptabele gegevens zenden"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server needs more data from Opera to fulfill the
+; request, and Opera fails to deliver the data before the server times out
+; and cancels the request (HTTP error code 408). Unlikely to happen very
+; often. Visible if the user has set the Network/Server errors/Always show
+; dialog box preference
+33426="De server overschreed de tijdslimiet"
+
+; Used in a popup error message when Opera has sent a HTTP request to fetch
+; or send a document to the server, and the server determins that there's
+; a conflict with a third part regarding the document, that can be solved
+; by the user (HTTP error message 409). This could happen when the user
+; submits a form that leads to a change of an online document, and the
+; server detects that the changes conflicts with other changes already
+; made to the document. Visible if the user has set the Network/Server
+; errors/Always show dialog box preference
+33427="Conflict met bestaande bron op de server"
+
+; Used in a popup error message when the user has requested a document and
+; the server answers that the document has been there, but has been
+; permanently removed (HTTP error code 410). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33428="Het adres is niet langer beschikbaar"
+
+; Used in a popup error message if the user has sent a request to the
+; server, and the server answers that it needs a Content-Length header to
+; process the request (HTTP error code 411). Opera never sends requests
+; without a valid Content-Lenght header. Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33429="HTTP-inhoudlengte werd vereist."
+
+; Used in a popup error message if the user has sent a request to the server
+; containing one or more precondition headers, and one or more of these
+; preconditions evaluated false on the server (HTTP error code 412). The
+; precondition headers could be If-Range and If-Modifified-Since, that
+; could be used to fetch the missing parts of a earlier partially fetched
+; documents, if the document is still the same. Unlikely to happen.
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33430="Niet aan HTTP-vereisten voldaan"
+
+; Used in a popup error message when the user has sent a request to a
+; server, and the server signalled that the request entity (the actual
+; request data) was too large (HTTP error code 413). Visible if the user
+; has set the Network/Server errors/Always show dialog box preference.
+33431="HTTP-aanvraaggegevens te lang"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the URL is longer than the server can handle (HTTP error code 414).
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33432="Het HTTP-adres is te lang"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the server didn't recognize the content type of the request entitiy
+; (HTTP error code 415). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33433="De server herkende het inhoudstype niet"
+
+; Used in a popup error message if Opera has requested a part of a file that
+; does not exist (HTTP error code 416). This shouldn't happen. Visible if
+; the user has set the Network/Server errors/Always show dialog box
+; preference.
+33434="De server kon aangevraagd deel van bestand niet verzenden"
+
+; Used in a popup error message if Opera has sent a request with certain
+; expectations in the HTTP header 'Expect', and the server can't meet that
+; expectation because vital features are not implemented. For example, the
+; server can be expected to handle HTTP_CONTINUE (HTTP reply code 100)
+; when sending in forms (HTTP error code 417). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33435="HTTP-verwachtingen mislukt"
+
+; Used in a popup error message when Opera has sent a request to a HTTP
+; proxy server, and the upstream server returned an invalid response code
+; (HTTP error code 502). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33436="HTTP-gateway mislukt"
+
+; Used in a popup error message when the user has requested a document and
+; the server can't fulfill the request since it's overloaded or offline
+; (HTTP error code 503). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33437="De dienst is overbelast of offline. Probeer later nog eens"
+
+; Used in a popup error message when the user has sent a request to a proxy
+; server, and the upstream server did not answer before the proxy server
+; timed out (HTTP error code 504). Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33438="HTTP gateway overschreed tijdslimiet"
+
+; Used in a popup error message when the user has requested a document from
+; a server, and the server doesn't support the HTTP version used (HTTP
+; error code 505). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33439="HTTP-versie werd niet geaccepteerd"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a server, using HTTP digest authentication to check the
+; documents integrity, and the authentication failed.
+33047="Waarmerken mislukt. Inhoud mogelijk niet betrouwbaar"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a proxy server, using HTTP digest authentication to check
+; the documents integrity, and the authentication failed.
+33048="Proxy-waarmerking mislukt. Inhoud mogelijk niet betrouwbaar"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server answered that the ftp service was not
+; currently available (FTP error 421).
+33056="FTP-server niet beschikbaar"
+
+; Used in a popup error message as a default error message when the user has
+; entered an FTP URL into the URL field and an error has occurred.
+33057="Interne fout in de FTP-module"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server has rejected the connection.
+33058="Verbinding met FTP-server mislukt, mogelijk vanwege\r\nteveel gebruikers. Probeer het later opnieuw."
+
+; Can be used when the the user has entered an FTP URL into the URL field,
+; and the server has rejected the connection because the provided user
+; name didn't exist. Normally an authentication dialog is shown instead.
+33059="Gebruiker niet gevonden op FTP-server"
+
+; Can be used when the the user has entered an FTP URL without user name and
+; password into the URL field to do an anonymous login, and the server did
+; not accept anonymous logins. Normally an authentication dialog is shown
+; instead.
+33060="Voor verbinding met deze FTP-server is een gebruikersnaam en wachtwoord vereist"
+
+33061="FTP-directory niet gevonden"
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the file did not exist.
+33062="Bestand niet gevonden"
+
+; Used in a popup error message when an initiated FTP file download is
+; interrupted by the server, either by the connection being closed (FTP
+; error 426) or the download action being aborted (FTP error 451).
+33063="Verbinding verbroken door de FTP-server"
+
+; Used in a popup error message when the user has entered an FTP URL in the
+; URL field to request a file download, and the server signals that it
+; can't set up a passive data channel to transfer the file (FTP error
+; 425).
+33064="FTP-kanaal kon niet worden geopend"
+
+; Used in a popup error message when the user has entered a file URL
+; pointing to a file that does not exist in the URL field.
+33120="Bestand kon niet worden geopend"
+
+20017="De afdrukschaal kan alleen worden ingesteld tussen 20 en 400%. Voer een geldige waarde in a.u.b."
+20018="Maximaal aantal verbindingen naar een enkele server dient tussen de 1 en 99 te liggen."
+20019="Maximaal aantal verbindingen dient tussen de 1 en 999 te liggen."
+20020="Het aantal regels Geschiedenis moet tussen 0 en 999 worden ingesteld."
+; Used in a popup error message when the user has requested a file from the
+; server, and the server recieves the request but no data exists to return
+; (HTTP error code 204), if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33044="Server accepteerde het verzoek - geen inhoud teruggestuurd"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file is read-protected.
+32903="Toegang tot dit bestand geweigerd"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file does not exist.
+32904="Bestand bestaat niet"
+
+; Used in a popup error message when Opera has tried to write a file to disk
+; and there was not enough disk space left. This happens for example when
+; trying to save a page to disk, but also in many other places and
+; situations, not always connected with something that the user does.
+32905="Kon geen bestand wegschrijven. Schijf is vol."
+
+; Used in a popup error message when Opera has failed to write data into the
+; cache, for example when fetching a document.
+32906="Interne opslagfout"
+
+20045="Geen bronnen beschikbaar. Kon tekst niet laden"
+; Used as default text on file upload input elements in forms in HTML
+; documents.
+20046="Bladeren..."
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no telnet application is specified in preferences.
+20048="Geen Telnet-toepassing aangegeven. Voer a.u.b. het volledige pad in van een Telnet-toepassing in de Voorkeuren."
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no host name has been specificed in the url.
+20049="Geen host-naam aangegeven"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no path to a TN3270 terminal application has been specified
+; in the preferences. (TN3270 is a variant of telnet used mainly on IBM
+; mainframes).
+20121="Geen TN3270-toepassing aangegeven. Voer a.u.b. het volledige pad in van een TN3270-toepassing in de Voorkeuren/Paden"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no host name has been specified. (TN3270 is a variant of
+; telnet used mainly on IBM mainframes).
+20122="Geen host-naam aangegeven"
+
+20226="Skin-bestanden (*.zip)|*.zip|Alle bestanden (*.*)|*.*|"
+20050="HTML-bestanden|*.htm;*.html|Tekstbestanden|*.txt|GIF-bestanden|*.gif|JPEG-bestanden|*.jpg;*.jpeg|BMP-bestanden|*.bmp|Geluidsbestanden|*.wav|AVI-videobestanden|*.avi|MIDI-muziekbestanden|*.mid;*.midi|Opera sessies|*.win|XML-bestanden|*.xml|Stylesheets|*.css|Alle bestanden (*.*)|*.*|"
+; Used in the File/Open dialog to let the user select what type of files the
+; dialog should show. The labels are visible in the File type dropdown
+; list.
+20051="HTML-bestanden (*.htm;*.html)|*.htm;*.html|Tekstbestanden (*.txt)|*.txt|GIF-bestanden (*.gif)|*.gif|PNG-bestanden (*.png)|*.png|JPEG-bestanden (*.jpg)|*.jpg|BMP-bestanden (*.bmp)|*.bmp|Alle bestanden (*.*)|*.*|"
+
+20052="Programma-bestanden (*.exe)|*.exe|Alle bestanden (*.*)|*.*|"
+30120="Geluidsbestanden (*.wav)|*.wav|Alle bestanden (*.*)|*.*|"
+20126="X509 (*.usr)|*.usr|PKCS #7 ondertekend (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (met persoonlijke sleutel) (*.p12)|*.p12;*.pfx|PEM-bestand (*.pem)|*.pem|Alle bestanden|*.*|"
+20127="X509 (*.usr)|*.usr|PKCS #7 ondertekend (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (met persoonlijke sleutel) (*.p12)|*.p12;*.pfx|PEM-bestand (*.pem)|*.pem|"
+20128="X509 (*.ca)|*.ca;*.crt;*.cer;*.509;*.der|PKCS #7 ondertekend (*.p7s)|*.p7s|PKCS #7(*.p7)|*.p7|PEM-bestand (*.pem)|*.pem|Alle bestanden|*.*|"
+; Used in the authentication dialog when the user tries to access a password
+; protected document.
+20082="Voer a.u.b. gebruikersnaam en wachtwoord in voor deze pagina."
+
+; Used in the authentication dialog when the user has tried to access a
+; password protected HTML page and authentication has failed.
+20053="Waarmerken van pagina niet gelukt. A.u.b. gebruikersnaam en wachtwoord opnieuw invoeren."
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the proxy server requires authentication.
+20110="Voer a.u.b. gebruikersnaam en wachtwoord in voor deze proxyserver."
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the authentication to the proxy server fails.
+20109="Waarmerken van proxyserver niet gelukt. A.u.b. naam en wachtwoord opnieuw invoeren."
+
+20118="CSS-bestanden |*.css|HTML-bestanden (*.htm,*.html)|*.htm;*.html|Alle bestanden (*.*)|*.*|"
+20341="Afbeeldingen|*.gif;*.png;*.jpg;*.jpeg;*.jpe;*.bmp|Alle bestanden|*.*|"
+20059="GIF-bestanden (*.gif)|*.gif|PNG-bestanden (*.png)|*.png|JPEG-bestanden (*.jpg)|*.jpg|BMP-bestanden (*.bmp)|*.bmp|Alle bestanden (*.*)|*.*|"
+20073="E-mail(s) verzonden"
+; Used in a popup error message when Opera finds that the document type is
+; unknown, or no document exists. This is hard to produce, though, since
+; handle all unknown file/mime types by letting the user decide what to do
+; with them - save, open or other alternatives, and empty documents are
+; just ignored.
+20074="Onbekend document of geen document aangegeven"
+
+20075="Opera-directory kon niet worden aangemaakt. A.u.b. opnieuw proberen met een geldige directory-naam"
+; Used in an error popup dialog when the user has entered a gopher or WAIS
+; url in the URL field, and no corresponding proxy has been set in
+; preferences.
+20076="Deze adressoort vereist gebruik van een proxyserver. Geef een proxyserver aan in Voorkeuren a.u.b."
+
+; Used as the default text to substitute an image in an HTML document, if
+; the image can't be loaded (or viewing of images is turned off) and the
+; images alt attribute is empty.
+20078="Figuur"
+
+; Used as the default prompt string to a searchable index specified with the
+; ISINDEX tag (an early form of forms functionality, deprecated in HTML
+; 4.X) in a HTML document, and is rendered in the document above an input
+; text area. (The label can be changed from this default with the PROMPT
+; attribute to the ISINDEX tag.)
+20079="Dit is een doorzoekbare index"
+
+; Used at the end of an HTML document that has not been fully loaded because
+; the user has cancelled the request with the Stop button.
+20081=" Overdracht gestopt!"
+
+20084="Dit is een intern type en kan niet worden verwijderd."
+22509="Bestandsformaat verwijderen"
+20085="Weet u zeker dat u de verbinding van bestandsformaat: [%s] wilt verwijderen?\n\n Opera zal niet langer weten wat te doen met dit soort bestanden als u doorgaat."
+20086="Dit is een intern type en kan niet worden hernoemd."
+20090="E-mailbestand openen"
+20091="E-mailbestand opslaan"
+20093="Opera e-mail"
+30101="E-mail uit Eudora® importeren"
+30100="E-mail uit Outlook Express® importeren"
+30102="(Microsoft Outlook Express 4.x)"
+30103="(Microsoft Outlook Express 5.x)"
+30112="(Kommagescheiden adresboekbestand)"
+30104="(Netscape Mail)"
+30109="(Qualcomm Eudora)"
+30105="(Microsoft Windows Messaging)"
+30106="(Microsoft Outlook)"
+30107="(UNIX postvakbestand)"
+30108="Geen ondersteunde programma's gevonden!"
+30110="Geef de map aan waar de Outlook Express postvakken zich bevinden."
+30111="Geef de map aan waarin uw postvakken zich bevinden."
+16615="U kunt deze opties instellen als u bepaalde soorten advertenties wilt zien"
+; Search strings
+17059="&Voorkeuren..."
+17060="Soort zoekopdracht"
+17061="Sleutel"
+17062="<Standaard>"
+
+; Search with x
+17063="%s zoeker"
+
+; Search for x
+17064="%s zoeker"
+
+; Search x-domain
+17065="%s domeinzoeker"
+
+; Search in page
+17066="Zoeken in pagina"
+
+17056="Gebeurtenis"
+17057="Geluidsbestand"
+22461="Het bestand &openen"
+22462="Het bestand &openen met %s"
+22464="Wat wilt u doen?"
+22463="Bestanden voor het openen altijd checken op virussen!"
+22468="Onbekende server"
+22515="Document:"
+22516="Afbeelding:"
+22517="Totaal:"
+22518="Snelheid:"
+22519="Tijd:"
+22736="Ongeldige downloaddirectory"
+22735="U probeerde naar een ongeldige directory te downloaden."
+20094="Ongeldige afmetingen marge. Moet tussen 0 en 5 cm zijn"
+20098="Geen ontvanger aangegeven. Geef een ontvanger of een nieuwsgroep aan a.u.b."
+20101="Multimediabestand kon niet worden afgespeeld. Ga na of het apparaat goed geïnstalleerd is."
+21020="Geregistreerde toepassing kon niet worden gestart. Windows heeft geen geheugen beschikbaar of het programmabestand is beschadigd."
+21021="Bestand niet gevonden."
+21022="Pad niet gevonden."
+21023="Geregistreerde toepassing kon niet worden gestart. Geen geheugen beschikbaar."
+21024="Geregistreerde toepassing kon niet worden gestart. Waarschijnlijk is een programmabibliotheek (DLL-bestand) beschadigd."
+21025="Geregistreerde toepassing kon niet worden gestart. Het vereist 32-bits Windows-uitbreidingen."
+21026="Geen geregistreerde toepassing voor deze bestandsuitgang."
+21027="Geregistreerde toepassing kon niet worden gestart."
+21030="Toepassing kon niet gestart worden. Windows heeft geen geheugen beschikbaar of het programmabestand is beschadigd."
+21031="Programma niet gevonden."
+21032="Programmapad niet gevonden."
+21033="Toepassing kon niet gestart worden. Geen geheugen beschikbaar."
+21034="Geregistreerde toepassing kon niet worden gestart. Waarschijnlijk is een programmabibliotheek (DLL-bestand) beschadigd."
+21035="Toepassing kon niet gestart worden. Het vereist 32-bits Windows-uitbreidingen."
+21036="Toepassing kon niet gestart worden."
+20102="Handtekeningsbestanden(*.sig)|*.sig|Tekstbestanden (*.txt)|*.txt|Alle Bestanden (*.*)|*.*|"
+22505="U moet een MIME-type instellen"
+22506="MIME-type niet ingesteld"
+22512="Dit MIME-type is reeds gedefinieerd.\n\n%s\n\nWilt u het overschrijven?"
+22513="MIME-type overschrijven?"
+; Popup error message when the user has tried to print a document and the
+; printer signals that it's out of paper. Currently unused.
+20103="Pagina kon niet afgedrukt worden. De printer heeft geen papier meer."
+
+; Used in the document window when showing an ftp file listing. 
+20125="Bovenliggende directory"
+
+; Used in the 'type' column of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field, when the list item type is a directory.
+22494="Directory"
+
+; Used in the column titles of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field.
+22496="Naam"
+22497="Soort"
+22498="Grootte"
+22499="Tijd"
+
+20200="Normaal"
+20201="Kop 1 <H1>"
+20202="Kop 2 <H2>"
+20203="Kop 3 <H3>"
+20204="Kop 4 <H4>"
+20205="Kop 5 <H5>"
+20206="Kop 6 <H6>"
+20207="Voorgeformatteerde tekst <PRE>"
+20208="Links <A>"
+20230="Formulier tekstveld (enkelregelig)"
+20212="Formulier tekstveld (meerregelig)"
+20213="Tekst formulierknoppen"
+20214="CSS font-family serif"
+20215="CSS font-family sans-serif"
+20216="CSS font-family cursive"
+20217="CSS font-family fantasy"
+20218="CSS font-family monospace"
+22072="Het adres is te lang."
+; Used in a popup error message when there is not enough free memory for
+; Opera to complete the current task.
+21002="Geen geheugen beschikbaar."
+
+21249="Zoekresultaten"
+21180="Persoonlijke balk"
+21181="Blanco pagina"
+21199="Nieuwe map"
+21200="Toevoegen"
+21201="Toevoegen"
+21202="Menu"
+21248="Zoeken"
+21193="Nieuwe pagina"
+21203="Nieuw"
+21204="Openen"
+21205="Opslaan"
+21206="Afdrukken"
+21207="Kopiëren"
+21208="Zoeken"
+21209="Terug"
+21210="Herladen"
+21211="Vooruit"
+21212="Start"
+21213="Ga naar"
+21214="Actieve"
+21215="Naast elkaar"
+21216="Trapsgewijs"
+21217="School"
+21218="MIME"
+21254="Hotlist"
+21255="Volledig"
+21197="Ga"
+21198="Zoeken"
+21194="Hervatten"
+21195="Opnieuw"
+21196="Stop"
+21010="Afdrukvb"
+21011="Als in beeld"
+21012="Actief frame"
+21013="Alle frames"
+21050="Alle vensters sluiten?"
+21051="Bl&adwijzers"
+; Used in the progress bar when a request for fetching a document has been
+; enqueued for sending to the server.
+21059="Verzoek staat klaar voor verzending naar %s..."
+
+; Used in the progress bar when Opera is looking up the name for the host to
+; fetch a document from.
+21060="Zoeken naar hostnaam van %s..."
+
+; Used in the progress bar when connecting to the host to fetch the
+; requested document.
+21061="Bezig met verbinden met internethost %s..."
+
+; Used in the progress bar when sending a document request to the server.
+21062="Bezig met versturen verzoek aan internethost %s..."
+
+; Used in the progress bar when receiving data from the requested document
+; from the server.
+21063="Ontvang gegevens van %s..."
+
+; Used in the progress bar when starting the network before fetching a
+; requested document.
+21064="Bezig met verbinden met netwerk/modem..."
+
+; Used in the progress bar (often too briefly to be seen, before the
+; hostname lookup) when searching for a complete name for the server to
+; fetch a requested document from.
+21065="Zoeken naar complete servernaam..."
+
+; Used in the progress bar when setting up an encrypted connection with the
+; server before fetching a requested document.
+21066="Bezig met opzetten beveiligde verbinding..."
+
+; Used in the progress bar when connecting to a proxy server to fetch a
+; requested document.
+21067="Bezig met verbinden met proxyserver..."
+
+; Used in the progress bar when waiting for a connection to the server to be
+; set up, to fetch a requested document.
+21760="Wacht (#%2) op verbinding met %1"
+
+; Used in the progress bar when a requested file has been loaded from the
+; server.
+21074="Aanvraag aan %s gereed"
+
+; Used in the progress bar when waiting for a reply from the server after
+; requesting a document.
+21068="40 seconden wachttijd geactiveerd. Wachten op gegevens..."
+
+; Used in a popup warning message when the user has submitted a HTML form to
+; a server, which accepts the request, but never sends an HTTP_CONTINUE
+; (HTTP response code 100) to tell Opera to send the forms data. Opera
+; waits for 40 seconds before showing the warning message.
+33045="Er lijkt een probleem te zijn met deze server.\n\nAls het laden niet goed wordt voltooid, kies dan stop en verzend het formulier opnieuw."
+
+; Used in the progress bar while the user selects to accept or reject a
+; cookie in the cookie warning/confirmation dialog, when accessing a site
+; that requires the server to set client cookies, and Opera is not set to
+; automatically receive this kind of cookie.
+21077="Wacht op bevestiging gebruiker voor cookie(s)..."
+
+; Used in the progress bar while Opera checks that the domain stated in the
+; cookie exists.
+21078="Wacht op DNS-bevestiging van cookie-domein(en)..."
+
+; Used in a popup error message if the user has entered an URL with a port
+; specification that is not the default port for that protocol, and is
+; among the ones that Opera uses internally (for example
+; www.example.com:25) in the URL field.
+33050="Toegang tot deze poort is om veiligheidsredenen uitgeschakeld."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie with a domain attribute that does
+; not match the server name.
+33051="De server probeerde een ongeldige cookie te plaatsen. De combinatie van de hostnaam van de server en het domeinattribuut voor deze cookie is niet acceptabel, en de cookie is daarom geweigerd\r\n\r\nU zou de webmaster van de site kunnen vragen om geldige cookies te plaatsen."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie, and Opera fails to look up the
+; domain stated in the cookie in the DNS.
+33052="De server probeerde een cookie te plaatsen voor een domein zonder geregistreerd IP-adres. Dit is vanwege veiligheidsredenen niet acceptabel, en de cookie is dan ook geweigerd\r\n\r\nU zou de webmaster van de site kunnen vragen om een IP-adres aan te maken voor het in de cookie opgegeven domein."
+
+22726=", deze plug-in is uitgeschakeld"
+21080="Opera opstarten"
+21081="Opera afsluiten"
+21082="Pagina geladen"
+21079="Overdracht gereed"
+21083="Mislukt"
+21084="Link volgen"
+22259="Chatbericht ontvangen"
+22260="Relatie online"
+21111="Geen"
+22522="Geen skins"
+22469="Geen geregistreerde viewer voor %s-bestanden, u dient een toepassing op te geven waarmee dit bestandstype geopend moet worden.\nKlik op de knop [Geavanceerd] en geef aan welke toepassing gebruikt moet worden."
+22470="Geen toepassing gevonden"
+25142="Kies een geluidsbestand om af te spelen bij gebeurtenissen"
+21100="De Windowssysteembronnen raken uitgeput. Het is verstandig om enkele vensters of een toepassing af te sluiten om problemen te voorkomen."
+21101="De Windowssysteembronnen raken uitgeput. Het is verstandig om enkele vensters of een toepassing af te sluiten om problemen te voorkomen."
+21104="De opgeslagen Opera-sessies zijn mogelijk beschadigd en kunnen niet gebruikt worden."
+21112="Opera-sessies (*.win)|*.win|Alle bestanden (*.*)|*.*|"
+21247="Beeld"
+21233="Verzenden"
+21234="Invoegen"
+21235="Stop"
+21236="Laden"
+21237="Tonen"
+21238="Uit"
+21239="Kleur"
+22502="Auteur"
+22503="Gebruiker"
+; View source button
+22571="HTML"
+
+20105="Pagina"
+20108="Dit formulier wordt verzonden per e-mail. Als u uw naam en e-mailadres bekend wil maken aan de ontvanger, klik dan [Ja]. Als u een anoniem e-mailadres wilt gebruiken, kies dan [Nee]."
+; Used in an warning/confirmation dialog when the user has tried to submit
+; an HTML form insecurely.
+20111="Dit formulier wordt onbeveiligd verzonden. Wilt u doorgaan?"
+
+; Used in a warning/confirmation dialog when the user has submitted an HTML
+; form, and the server wants to redirect the submitted data to another
+; server. GET and POST refers to HTTP commands. POST is to send the form
+; data again to the new destination, GET discards the data, but continues
+; to to the new destination.
+20119="De server wil uw formulier omleiden.\n\nKlik [Ja] om het formulier opnieuw te verzenden (POST), naar de nieuwe server.\n\nKlik [Nee] om naar de nieuwe bestemming te gaan (GET) zonder het formulier te verzenden.\n\nKlik [Annuleren] als u niet verder wilt gaan."
+
+21401="Geen"
+21402="Laag"
+21403="Matig"
+21404="Hoog"
+21405="Onbeveiligde server"
+21407="Laag beveiligde server"
+21409="Matig beveiligde server"
+21411="Hoog beveiligde server"
+21406="Laag beveiligde server. Niet-versleutelde afbeeldingen"
+21408="Matig beveiligde server. Niet-versleutelde afbeeldingen"
+21410="Hoog beveiligde server. Niet-versleutelde afbeeldingen"
+; Used in the title bar of the Certificate authorities dialog in the network
+; security preferences.
+21250="Certificaat-instellingen"
+
+; Used in the title bar of the Personal certificate dialog in the network
+; security preferences.
+21251="Persoonlijke certificaten"
+
+21252="Verbinding met server mislukt."
+21253="Transmissie mislukt."
+21258="Ongeldig, of oncontroleerbaar certificaat."
+21259="Niet ondersteund certificaat."
+21260="Het certificaat is ingetrokken door de verstrekker."
+21261="Het certificaat is verlopen."
+21262="Het certificaat is onbekend."
+21265="Het certificaat is geldig, maar de toegang is geweigerd."
+21271="Een interne fout is opgetreden."
+21274="De certificaatketting was niet goed geordend."
+21272="Geen acceptabele SSL 2 versleutelingsmethoden gevonden."
+21273="Onbekende fout waargenomen."
+21319="Deze server ondersteunt alleen SSL 2. Als u met deze server wilt verbinden moet u SSL 2 inschakelen in de Voorkeuren."
+21276="Veilige verbinding: waarschuwing (%u)"
+21277="Veilige verbinding: waarschuwing (%u) van server"
+21278="Veilige verbinding: fatale fout (%u)"
+21279="Veilige verbinding: fatale fout (%u) van server"
+21280="Beveiligingswachtwoord invoeren a.u.b."
+21281="Het oude beveiligingswachtwoord invoeren a.u.b."
+21282="Het nieuwe beveiligingswachtwoord a.u.b."
+21283="Opnieuw het nieuwe beveiligingswachtwoord invoeren a.u.b."
+21284="Verkeerd wachtwoord, voer het juiste beveiligingswachtwoord in a.u.b."
+21285="Veranderen van beveiligingswachtwoord is mislukt."
+21388="Uw wachtwoord moet uit minstens zes tekens bestaan, waaronder tenminste één letter en één cijfer"
+21320="Een beveiligingswachtwoord invoeren a.u.b."
+21286="Dit zijn de in de database geregistreerde persoonlijke certificaten."
+21287="Dit zijn de in de database geregistreerde certificaat-instellingen."
+21288="De certificaat-ketting van deze certificaat-instelling in de database installeren?"
+21289="Deze persoonlijke certificaat-ketting installeren in de database?"
+21330="Deze PEM-gecodeerde certificaat-ketting installeren in de database?"
+21291="U gaat een verzoek zenden naar deze server. Doorgaan?"
+21293="Het certificaat van de server komt niet overeen met de hostnaam. Accepteren?"
+21378="Een van de aan de server aangeboden certificaten is verlopen. Accepteert u het certificaat?"
+21309="De server vroeg naar een certificaat. Kies a.u.b. een van deze certificaten, of klik [Annuleren] om er geen te zenden."
+21331="De handtekeningen van dit certificaat konden niet worden gecontroleerd."
+21464="Dit certificaat kan niet worden gebruikt voor dit doel."
+21303="Certificaat van instelling installeren"
+21304="Certificaat van client installeren"
+21336="PEM-certificaat installeren"
+21305="Selecteer client-certificaat"
+21306="Certificaat waarschuwing"
+21307="Verkeerde naam van het certificaat"
+21308="Certificaat verlopen"
+21377="Server-certificaat verlopen"
+21312="Dit certificaat is verlopen. U dient het te verwijderen, en een bijgewerkt certificaat installeren."
+21314="Certificaat-ondertekenaar niet gevonden"
+21321="De certificaat-ketting van de server is onvolledig, en de ondertekenaar(s) zijn niet geregistreerd. Accepteren?"
+21322="Het basiscertificaat voor deze server is niet geregistreerd. U kunt dit certificaat installeren. Accepteren/installeren?"
+21315="Uw certificaat is geïnstalleerd, en u kunt het gebruiken, maar Opera kon het niet verifiëren. De ondertekenaar van het certificaat ontbreekt. Installeer a.u.b. het certificaat van de ondertekenaar als dit beschikbaar is."
+21311="Installeren"
+21323="Instellen van beveiligingswachtwoord is mislukt."
+21316="Installatie van het certificaat mislukt."
+21317="Het client-certificaat had geen overeenkomende persoonlijke sleutel in de database."
+21318="De certificaatketting was niet juist geordend."
+21324="Een ander client-certificaat is al geïnstalleerd voor deze sleutel. Installatie mislukt."
+21325="Een ander certificaat bestaat al voor minstens één van de geïnstalleerde certificaatinstellingen. Deze zijn genegeerd."
+21326="Sleutel genereren"
+21327="Even geduld a.u.b., Opera genereert uw persoonlijke sleutel."
+21328="Alle versleutelingsmethoden zijn uitgeschakeld in Voorkeuren."
+21329="Het certificaat is onbekend of heeft een ongeldige opmaak."
+21332="Beveiligingsacties zijn niet beschikbaar."
+21333="Beveiliging is uitgeschakeld."
+21334="Deze beveiligingsactie is uitgeschakeld."
+21335="Zonder deze beveiligings-DLL kunnen Opera's veiligheidstoepassingen niet worden gebruikt"
+21337="Accepteren"
+21338="Het certificaat van de server bevat een verboden naam-uitdrukking"
+; Max 30 characters
+21344="Verbinding"
+
+; IMPORTANT!!!! Do not change %u, %ld or \r and \n !!!!
+21346="Modulus:"
+21347="modulus:"
+21348="Exponent:"
+21349="openbareExponent:"
+21350="persoonlijkeExponent:"
+21351="prime1:"
+21352="prime2:"
+21353="exponent1:"
+21354="exponent2:"
+21355="coefficient:"
+21364="Niet ondersteund sleutelalgoritme "
+21365="Onbekend extensie-object ID "
+21367="Onbekend ondertekeningsalgoritme "
+21368="Certificaatversie : %ld\r\n"
+21369="Serienummer: %s\r\n"
+21370="Niet geldig voor: "
+21371="\r\nNiet geldig na: "
+21372="\r\nVingerafdruk: "
+21373="\r\n\r\nOpenbare sleutel-algoritme : "
+21374="\r\nOndertekeningsalgoritme : "
+21375="\r\nExtensies:\r\n"
+21376=" (Kritiek)"
+21461="\r\n\r\nFingerprint openbare sleutel (SHA-1):\r\n  "
+
+; Max 199 chars 
+21366="%u-bit persoonlijke sleutel. %s gegenereerd.\r\nURL: %s"
+
+21362="Het Certificaat mag niet worden gebruikt voor SSL-waarmerking of om SSL-certificaten uit te geven."
+21356="Het Certificaat mag worden gebruikt voor SSL-clientwaarmerking."
+21357="Het Certificaat mag worden gebruikt voor SSL-serverwaarmerking."
+21358="Het Certificaat mag worden gebruikt voor SSL-client- en serverwaarmerking."
+21359="Het Certificaat mag worden gebruikt om SSL-certificaten uit te geven."
+21360="Het Certificaat mag worden gebruikt voor SSL-clientwaarmerking, en om SSL-certificaten uit te geven."
+21361="Het Certificaat mag worden gebruikt voor SSL-serverwaaarmerking, en om SSL-certificaten uit te geven."
+21363="Het Certificaat mag worden gebruikt voor SSL client- en serverwaarmerking, en om SSL-certificaten uit te geven."
+; Used in a popup error message when the server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32901="De server verzocht een login-waarmerkingsprocedure die niet wordt ondersteund."
+
+; Used in a popup error message when a proxy server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32902="De proxyserver verzocht een login-waarmerkingsprocedure die niet wordt ondersteund."
+
+; Used in a popup error message when the user has tried to authenticate to a
+; page outside of the given security realm.
+32907="Deze URL staat niet in de lijst van URL's die kunnen worden gewaarmerkt door het gegeven bereik.\r\nKan geen Waarmerkingsgegevens zenden."
+
+; Used in the progress bar while Opera is uploading a file to the server.
+21386="Bestand(en) worden verzonden naar de server"
+
+21380="E-mail kon niet opgeslagen worden in het Uitvak."
+21382="Deze functie niet beschikbaar in deze speciale versie van Opera."
+21379="Deze functie is uitgeschakeld"
+21383="Schijven"
+; Used as title of the generated plugin list page (oprea:plugins) on some
+; platforms.
+21384="Plug-ins"
+
+; Used as title of the generated history list page, when the user has
+; selected Windows/Special/History, or entered the URL opera:history.
+21385="Geschiedenis"
+
+21400="De plug-in directories zijn doorzocht.\nPlug-ins voor nieuwe bestandsformaten zijn geactiveerd.\nPlug-ins voor bekende bestandsformaten zijn toegevoegd, maar niet geactiveerd."
+; Used as title of the generated cache list page, when the user has selected
+; Windows/Special/Cache, or entered the URL opera:cache.
+21415="Tijdelijke opslag"
+
+; Used in the Filename column of the created cache listing (created by
+; entering the special URL opera:cache into the URL field) when the file
+; is cached in memory and not to a file.
+22493="(Geheugen)"
+
+22491="Bron van "
+; Used as page title in a blank page created by entering the special URL
+; opera:blank in the URL field.
+22492="Blanco pagina"
+
+; Used as column titles in the generated cache list page, when the user has
+; selected Windows/Special/Cache, or entered the URL opera:cache.
+21416="Bestandsnaam"
+21417="Adres"
+21418="Grootte"
+
+21420="Wilt u deze overdracht werkelijk beëindigen?"
+; Used in a popup confirmation dialog when the user has gone to
+; Preferences/Multimedia, enabled plugins and pressed the 'Find plugins'
+; button, and new plugins needs to be activated.
+21764="Wilt u de "%1"-plug-in verbinden met het type "%2"?"
+
+21421="Wilt u de plug-in verbinden met dit type?"
+21425="Uw begrensde evaluatie heeft nog %i dagen te gaan"
+21428="Ongeregistreerd exemplaar"
+21501="Pagina hier toevoegen..."
+21502="Dit de actieve map maken"
+21504="Alle mapitems openen"
+21508="Meer bladwijzers..."
+; Docked hotlist window
+21516="Hotlist"
+21517="Titel"
+21518="Bezocht"
+21520="Gemaakt "
+
+21525="Bladwijzers beheren..."
+21519="Beel&d"
+21600="Een bijnaam kan geen punt, dubbele punt of schuine streep bevatten."
+21601="Bijnaam niet toegestaan"
+21609="Uw bladwijzers zijn alfabetisch gesorteerd.\n\nU dient "mijn volgorde" te kiezen in het bladwijzersmenu Beeld\nvoordat u de volgorde van uw bladwijzers kunt wijzigen."
+21610="Bladwijzers alfabetisch gesorteerd"
+; Open file dialog
+21511="Bestand toevoegen aan bladwijzers"
+21512="Bladwijzerbestand openen"
+21513="Opera-bladwijzerbestanden (*.adr)|*.adr|HTML / Netscape-bladwijzerbestanden (*.htm, *.html)|*.htm;*.html|Alle bestanden (*.*)|*.*|"
+21514="Nieuw bladwijzerbestand maken"
+
+; Autoimport after install
+21950="Automatisch geïmporteerd"
+21951="Netscape-bladwijzers"
+21952="Internet Explorer-favorieten"
+
+; Save file
+21551="Opera (*.adr)|*.adr|"
+
+21606="Waarschuwing"
+21607="Wilt u echt deze %li onderdelen verwijderen?"
+21608="Verwijdering van meerdere onderdelen bevestigen"
+22520="Muisgebaren"
+22521="U heeft voor de eerste keer een muisgebaar uitgevoerd.\n\nMuisgebaren worden geactiveerd door muisbewegingen\nterwijl de tweede muisknop wordt ingedrukt.\n\nKlik [Help] om meer over muisgebaren te leren.\n\nWilt u doorgaan met het gebruik van muisgebaren?"
+; Skin removal
+22523="&Verwijder voorgrondskin"
+22524="Ver&wijder achtergrondskin"
+
+; Use skin from button set (buttons.ini)
+22738="Skin uit knoppenset gebruiken?"
+22737="De knoppenset bevat ook afbeeldingen voor skins.\nWilt u deze gebruiken?"
+
+22739="Klik hier om Opera te kopen en de advertentie-banner te verwijderen"
+; Serial number stuff
+22004="Opera registratie"
+22001="Opera is reeds geregistreerd.\n\nWilt u de registratiegegevens wijzigen?"
+22002="De door u ingevoerde registratiegegevens lijken ongeldig te zijn.\nControleer a.u.b. of deze goed zijn ingevoerd."
+22003="Opera is nu geregistreerd."
+22005="Deze registratie-informatie is verlopen\nGa naar <http://www.opera.com/buy/> voor een upgrade."
+22006="Deze registratie-informatie is verlopen\nGa naar <http://www.opera.com/buy/> voor een upgrade."
+
+21300="Sneltoetsen"
+21301="Help-index"
+21342="Als Opera wordt afgesloten."
+21343="Deze cookie zal alleen naar veilige servers in het domein worden verzonden."
+21393="Deze cookie kan naar elke server in het domein worden verzonden."
+21394="Deze cookie zal alleen worden verzonden naar deze veilige server."
+21395="Deze cookie zal alleen naar deze server worden verzonden."
+21396="Deze cookie zal uit de database worden verwijderd."
+22071="Overdrachten"
+22232="Door gebruiker bepaald"
+21431="Uw geschiedenislijst is beschadigd en zal worden gewist."
+; Probably deprecated. On O7 and O6 Win, the JavaScript error dialog is
+; popped up instead, if the user has requested in preferences/Multimedia
+; to be alerted of JavaScript errors.
+32825="Uitvoering JavaScript mislukt"
+21450="Uitvoering van script mislukt."
+21451="Compileren van script mislukt."
+
+; Used if Opera for some reason tries to run JavaScript in a non-HTML
+; document. This is not likely to happen.
+21452="javascript:-URL's werken alleen met een HTML-document."
+
+; Used in a popup error message when the Opera fails to load the JavaScript
+; library at startup.
+21453="Kon het systeembestand ES262-32.DLL niet laden. JavaScript zal niet worden uitgevoerd."
+
+; Used in the progress bar while Opera is busy running a JavaScript program.
+21454="JavaScript wordt uitgevoerd..."
+
+22073="Het sluiten van het overdrachtsvenster zal alle overdrachten afbreken.\n\nWeet u het zeker?"
+22074="Overdrachten afbreken?"
+22076="Naam"
+22075="Grootte"
+22080="Soort"
+22077="Voortgang"
+22078="Tijd"
+22079="Snelheid"
+22085="Klaar"
+22108="Klaar (Grootte incorrect)"
+22086="Gestopt"
+22087="Fout"
+22089="Onbekend"
+22090="Stoppen"
+22091="Hervatten"
+22186="Verwijder uit de lijst"
+22187="Opnieuw overdragen"
+22092="Shell openen"
+22109="Bestandsinformatie kopiëren"
+22093="Gekozen overdracht stoppen?"
+22236="De geïnstalleerde vertaling is niet geschreven voor Opera build %s.\n\nKlik [Ja] om Opera opnieuw te starten met de Engelse teksten.\n\nKlik [Nee] om de vertaling te gebruiken, met mogelijk taalfouten tot gevolg."
+22094="Bestand"
+22096="Nieuw"
+22095="Bewerken"
+22099="Fout"
+22120="Bestanden"
+22121="Alle bestanden"
+22122="Alle bestanden (*.*)"
+14121="Uitvoeren scripts in deze pagina stopzetten"
+25266="&Dit venster niet meer weergeven"
+22151="Nieuwe map"
+; Used in the title bar of a warning/confirmation dialog when a script tries
+; to read the content of a password input element in a form in a HTML
+; document.
+22486="JavaScript beveiligingswaarschuwing"
+
+; Used in a warning/confirmation dialog when a script tries to read the
+; content of a password input element in a form in a HTML document.
+21430="Een script wil het (de) wachtwoord(en) in dit formulier lezen.\n\nWilt u het script toegang geven tot uw wachtwoord(en)?"
+
+22102="Sluiten inbelverbindingen mislukt (te lange wachttijd)"
+22103="Inbelverbindingen verbreken?"
+22104="U bent verbonden met %sWilt u deze open inbelverbinding(en) verbreken?"
+22107="Kan bestand met Tip van de dag niet lezen"
+22114="Eigenschappen Bladwijzermap"
+22125="Eigenschappen Relatiesmap"
+22115="Eigenschappen Bladwijzer"
+22117="Bladwijzers"
+22118="Relaties"
+34304="Verkeerde PIN-code"
+34305="Handtekening kon niet worden geverifieerd"
+34306="De paslezer is reeds in gebruik"
+34307="Mogelijk is de pas niet in orde"
+34308="Uw pasnummer komt niet overeen met die van een van de ontvangers, genoemd in het bericht"
+34309="Versleuteling mislukt (ongedefinieerde fout)"
+22110="Bladwijzers"
+22111="E-mail"
+22112="Relaties"
+22158="Paneel"
+22159="Paneel"
+22160="Paneel"
+22124="&Allen toevoegen"
+22127="Map"
+22128="Naam"
+22415="Kunst / Cultuur"
+22416="Auto's"
+22417="Boeken / Bladen"
+22418="Computer / Games"
+22419="Computer / Technologie"
+22420="Koken"
+22421="Mode / Winkels"
+22422="Geld / Beleggen"
+22423="Eten / Wijn"
+22424="Gezondheid / Fitness"
+22425="Huis / Tuin"
+22426="Films"
+22427="Muziek"
+22428="Nieuws / Actueel"
+22429="Wetenschap / Onderwijs"
+22430="Sporten / Hobbies"
+22431="Reizen / Vrije tijd"
+22432="Niet ingesteld"
+22433="Minder dan USD 25,000"
+22434="USD 25,000-35,999"
+22435="USD 36,000-49,999"
+22436="USD 50,000-75,999"
+22437="USD 76,000-99,999"
+22438="USD 100,000+"
+22439="1900-1929"
+22440="1930-1949"
+22441="1950-1959"
+22442="1960-1969"
+22443="1970-1979"
+22444="1980-1989"
+22445="1990 en later"
+22446="Man"
+22447="Vrouw"
+22448="Alleenstaand"
+22449="Alleenstaande ouder"
+22450="Gehuwd"
+22451="Gehuwd en kinderen"
+22452="Lagere school"
+22453="Middelbare school"
+22454="MBO"
+22455="HBO"
+22456="Universiteit"
+22457="Afgestudeerd"
+21470="Deze pagina wil de cookie\r\n %s="%s"\r\n\r\nzetten. Deze waarde zal %sworden verzonden naar %sdocumenten op %s%s%s%s, en paden die beginnen in /%s.\r\n\r\n"
+21471="alleen "
+21472="beveiligde pagina's "
+21473="de server "
+21474="alle servers in het domein "
+21475=", poort(en) "
+22233="Deze registratie-informatie is verlopen\nGa naar <http://www.opera.com/buy/> voor een upgrade."
+22234="Opera opwaarderen"
+21476="Deze cookie zal worden gewist bij het afsluiten van Opera."
+21477=", maar de cookie zal worden gewist bij het afsluiten van Opera, tenzij u anders aangeeft."
+21478="De cookie is geldig tot %s%s\r\n\r\n"
+21479="De cookie is geldig tot %s en is verlopen, elke bestaande cookie met dezelfde naam zal worden gewist.\r\n\r\n"
+21480="Deze dienst heeft het volgende bericht verzonden m.b.t. het doel van de cookie: "%s"\r\n"
+21481="\r\nVerdere informatie kan worden gevonden op <%s>\r\n%s\r\n"
+21482="Deze dienst geeft informatie over haar cookies op <%s>\r\n%s\r\n\r\n"
+21483="\r\nU kunt deze pagina zien door te klikken op de knop "Opmerkingen" onderaan.\r\n"
+21484="Accepteren, inclusief updates voor afsluiten van Opera"
+21485="Accepteren zonder veranderingen"
+21486="Accepteren, maar wissen bij afsluiten van Opera"
+21487="Accepteren, maar bewaren bij afsluiten van Opera"
+21488="Cookies vanuit deze server accepteren"
+21489="Cookies vanaf deze server weigeren"
+21490="Cookies vanuit dit domein accepteren"
+21491="Cookies vanuit dit domein weigeren"
+21499="\r\n----------------------\r\nVolledig cookie-verzoek:\r\n\r\n"
+21738="Cookies van derden vanaf deze server accepteren"
+21739="Cookies van derden vanaf deze server weigeren"
+21740="Cookies van derden vanuit dit domein accepteren"
+21741="Alle cookies van derden vanuit dit domein weigeren"
+21492="Allen weigeren zonder vragen"
+21493="Weergeven in dialoogvenster met meerdere keuzes"
+21494="Behandelen als ingesteld in Serverbeheerder"
+21495="Alles accepteren zonder vragen"
+21496="Alleen cookies voor de server zelf accepteren"
+21497="Allen weigeren zonder vragen"
+21746="Weergeven in dialoogvenster met meerdere keuzes"
+21498="Alles accepteren zonder vragen"
+22183="Opera moet opnieuw worden gestart voordat de wijzigingen effect hebben\n\nWilt u Opera afsluiten?"
+22184="Opera afsluiten?"
+22185="Standaardtaal (Engels)"
+22210="Er kon geen ondersteunde versie van de Java Runtime Environment worden gevonden.\nU dient versie 1.2 of hoger van de Java Runtime Environment van Sun te installeren.\nJava zal voor deze sessie automatisch worden uitgeschakeld.\nWilt u Java ook voor toekomstige sessies uitschakelen?"
+22211="De Opera Java-classes hebben niet genoeg uitvoeringsrechten.\nHet bestand opera.policy kon ofwel niet worden gevonden, ofwel het policy-bestand\ngeeft geen toegangsrechten tot het bestand opera.jar. Java-applets zullen niet werken."
+22212="De geïnstalleerde versie van de Java Runtime Environment is incompatibel met deze versie van Opera. Download a.u.b. JRE 1.2 of later vanaf <http://www.javasoft.com>."
+22213="De Java-DLL kon niet worden gevonden op de door het\nregister aangegeven plaats. Uw Java installatie\nlijkt beschadigd. Java-applets zullen niet werken."
+22214="Aanmaak van Java Virtual Machine mislukt."
+22215="Java Virtual Machine is beëindigd.\n\nJava is voor de rest van deze sessie uitgeschakeld."
+22216="Java Virtual Machine is afgebroken.\n\nJava is voor de rest van deze sessie uitgeschakeld."
+22217="Het registreren van 'native Java methods' is mislukt.\n\nU gebruikt een oud opera.jar-bestand of het\nstaat niet in het Opera Classpath. Java-applets zullen niet werken."
+22218="Wilt u de installatie-instructies voor de Java Runtime Environment bekijken?"
+22219="Bestand opera.jar niet gevonden\nU heeft ofwel geen 'OPERA CLASSPATH' regel in de [JAVA]-sectie\nvan uw opera.ini-bestand, ofwel deze regel bevat het verkeerde pad.\nJava-applets zullen niet werken."
+22220="Bestand opera.policy niet gevonden.\nOfwel u heeft geen 'SECURITY POLICY' regel in de [JAVA]-sectie\nvan uw opera.ini-bestand, ofwel deze regel bevat het verkeerde pad.\nJava-applets zullen niet werken."
+22221="Java-beveiliging"
+22222="Een ondertekend applet vraagt aanvullende rechten. Wilt u dit applet alle rechten toewijzen?"
+22123="Geen gevonden"
+22173="Fout met verzenden e-mail"
+22174="Geen extern e-mailprogramma ingesteld."
+22175="Fout met verzenden e-mail"
+22176="Extern e-mailprogramma kon niet worden gestart"
+22179="E-mail"
+22182="De eigenschappen van uw Opera e-mailaccount zijn niet goed ingesteld.\nWilt u uw voorkeuren voor e-mail nu bewerken?"
+22180="Het gekozen externe e-mailprogramma in niet opgegeven.\nWilt u uw voorkeuren voor e-mail nu bewerken?"
+22181="Er is geen standaard e-mailtoepassing op uw computer.\nWilt u uw voorkeuren voor e-mail nu bewerken?"
+22177="Waarschuwing"
+22178="Het gekozen externe e-mailprogramma bestaat niet\nof heeft geen geldig account ingesteld.\n\nWijzigingen toch toepassen?"
+21720="Identificeer als Opera"
+21721="Identificeren als Mozilla %s"
+21723="Identificeren als MSIE %s"
+21730="Accepteren vanaf server"
+21731="Accepteren vanuit domein"
+21732="Weigeren vanaf server"
+21733="Weigeren vanuit domein"
+21742="Accepteren van derden vanaf server"
+21743="Accepteren van derden vanuit domein"
+21744="Weigeren van derden vanaf server"
+21745="Weigeren van derden vanuit domein"
+21736="Ongeldige paden toestaan"
+21737="Ongeldige paden weigeren"
+21734="&Weigeren"
+21735="&Accepteren"
+14217="Ei&nde afdrukvoorbeeld"
+14218="Afdruk&voorbeeld"
+22240="Kies de directory die uw taalmodules bevat"
+22514="Door gebruiker bepaald"
+; Used as default text on submit input elements in forms in HTML documents.
+13043="Inzenden"
+
+; Used as default text on reset input elements in forms in HTML documents.
+13044="Herstellen"
+
+; Used as default text on button input elements in forms in HTML documents.
+13045="Knop"
+
+; Used at top of the document when trying to show an malformed XML document.
+; Followed by a more specific XML error message.
+13046="XML-parsing mislukt"
+
+; Used in a popup error message when the user has entered input in a text
+; input element in a WML document, and the input did not match the format
+; specification.
+13047="De invoer is ongeldig"
+
+11463="Pagina&balk"
+11462="&Persoonlijke balk"
+11458="Zoekopdrachten tonen"
+11461="Panelen &tonen"
+11326="Wisselen in laatst gebruikte volgorde"
+11327="Wisselen in aangemaakte volgorde"
+11328="Wisselen zonder lijst te tonen"
+11459="Selecteer de map waarin Eudora zich bevindt"
+11460="Geef a.u.b. de map aan waar uw Outlook Express postvakken zich bevinden"
+; Preferences dialog options
+11521="Advertentie"
+11500="Toegankelijkheid"
+11501="Standaardbrowser"
+11502="Lettertypen"
+11503="E-mail"
+11504="Bestandsformaten"
+11505="Geschiedenis/opslag"
+11506="Uiterlijk browser"
+11524="Paginastijl"
+11507="Talen"
+11508="Multimedia"
+11509="Netwerk"
+11511="Programma's en paden"
+11512="Persoonlijke info"
+11513="Plug-ins"
+11514="Privacy"
+11515="Beveiliging"
+11516="Geluiden"
+11517="Opstarten en sluiten"
+11522="Zoeken"
+11518="Indeling browser"
+11519="Vensters"
+
+11626="Onderdeel"
+11621="Nieuwe voorkeuren toepassen, even geduld a.u.b. ..."
+11627="Naam"
+11628="Beschrijving"
+11629="Pad"
+17035="MIME-type"
+17036="Bestandsuitgang(en)"
+; Unicode block names for the international font preferences
+11525="Automatisch"
+11526="Geen lettertypen beschikbaar"
+11527="Arabisch"
+11528="Armeens"
+11529="Basis Latijn"
+11530="Bengalees"
+11531="Cherokee"
+11532="Muntsymbolen"
+11533="Chinees vereenvoudigd"
+11534="Chinees traditioneel"
+11535="Cyrillisch"
+11536="Devanagari"
+11537="Ethiopisch"
+11538="Algemene interpunctie"
+11539="Georgisch"
+11540="Grieks"
+11541="Grieks Uitgebreid"
+11542="Gujarati"
+11543="Gurmukhi"
+11544="Halfbreedte en Volbreedte vormen"
+11545="Hangul"
+11546="Hebreeuws"
+11547="Hiragana"
+11548="CJK Symbolen en Interpunctie"
+11572="Kanji"
+11549="Kannada"
+11550="Katakana"
+11551="Khmer"
+11552="Lao"
+11553="Latijn-1 Supplement"
+11554="Latijn Uitbreiding-A"
+11555="Latijn Uitbreiding-B"
+11556="Latijn Uitbreiding Toevoeging"
+11557="Malayalam"
+11558="Mongools"
+11559="Myanmar"
+11560="Getalvormen"
+11561="Ogham"
+11562="Oriya"
+11563="Runic"
+11564="Sinhala"
+11565="Syriac"
+11566="Tamil"
+11567="Telugu"
+11568="Thaana"
+11569="Thais"
+11570="Tibetaans"
+11571="Unified Canadian Aboriginal Syllabic"
+
+; About page
+11700="Over Opera"
+11701="Informatie over registratie"
+11702="Geregistreerd"
+11703="Naam"
+11704="Organisatie"
+11705="Evaluatie"
+11706="Paden"
+11707="Systeem"
+11708="Voorkeuren"
+11709="Opera gebruikersdirectory"
+11710="Opgeslagen vensters"
+11711="Bladwijzers"
+11712="Pad naar plug-ins"
+11713="Tijdelijke opslag"
+11714="Help-documenten"
+11715="Java"
+11716="Bijdragen van derden"
+11717="Opera Software bedankt de hierboven genoemde groepen en personen voor hun bijdragen. Nederlandse vertaling: Rijk van Geijtenbeek."
+11718="Deze Java Runtime Environment versie wordt niet ondersteund door deze versie van Opera"
+11719="Geen Java Runtime Environment geïnstalleerd"
+11720="Ja"
+11721="Nee"
+11722="n.v.t."
+
+22248="pixels"
+22250="bits per pixel"
+22249="bytes"
+22244="Foutmelding"
+22251="bewegend met %i frames"
+22168="Bestand(en) bewaren"
+22169="Bestand(en) openen"
+22170="Bestand niet gevonden."
+22171="Ongeldige bestandsnaam."
+22167="Ga na of het pad en de bestandsnaam juist zijn."
+22510="byte"
+22252="B"
+22253="KB"
+22254="MB"
+22255="GB"
+22256="TB"
+22257="/s"
+22480="Java niet geïnstalleerd"
+22465="Kies een map om bestanden op te slaan"
+22481="Versie"
+22482="Build"
+22483="Platform"
+22484="Versie-informatie"
+22485="Systeem"
+22568="Partner"
+22245="Er trad een probleem op toen Opera wilde verbinden met de printer. Controleer de printerinstellingen. Als u een netwerkprinter gebruikt, controleer dan uw netwerkverbinding."
+22246="Printerprobleem"
+22247="Printer"
+; Hotlists toolbar buttons
+10927="Beeldmenu relaties weergeven"
+10926="Relatiesmap toevoegen"
+
+; Hotlists toolbar buttons and Mail Trash Toolbar
+10925="Relatie"
+
+10920="Bladwijzer toevoegen"
+10921="Bladwijzermap toevoegen"
+10922="Beeldmenu bladwijzers weergeven"
+14494="Wilt u\n\n     alle vensters sluiten,\n     alle tijdelijke cookies wissen,\n     alle wachtwoorden wissen,\n     alle geschiedenis wissen\n     en tijdelijk opgeslagen pagina's met wachtwoorden of versleuteling wissen?"
+14495="Privé-gegevens verwijderen"
+22163="De broncode in dit venster is bewerkt. Wilt u het opslaan?"
+22164="(bewerkt) "
+22235="Pagina"
+; Used in a warning/confirmation dialog when the user has activated offline
+; mode and then requested Opera to access information that is only
+; available online.
+21433="Offline modus is ingeschakeld. Kan \n\n%s\n\nniet openen. Wilt u omschakelen naar de online modus?"
+
+22569="minuut"
+22237="minuten"
+22570="seconde"
+22723="seconden"
+22238="laatst gebruikt"
+22239="De door u ingevoerde herlaad-waarde is niet toegestaan.\n\nAlleen getallen zijn toegestaan, en de herlaad-waarde kan geen nul zijn."
+; XML error message used at top of the document, following string 13046,
+; when trying to show an malformed XML document. Followed by a line and
+; character count to help finding the error in the XML file.
+25001="gebrek aan geheugen"
+25002="syntaxfout"
+25003="geen element gevonden"
+25004="niet 'well-formed'"
+25005="ongesloten token"
+25007="niet aansluitende tag"
+25008="dubbel gebruikt attribuut"
+25009="rommel na documentelement"
+25010="ongeldige parameter entiteitverwijzing"
+25011="niet gedefinieerde entiteit"
+25012="recursieve entiteitverwijzing"
+25013="asynchrone entiteit"
+25014="verwijzing naar ongeldig karakternummer"
+25015="verwijzing naar binaire entiteit"
+25016="verwijzing naar externe entiteit in attribuut"
+25017="XML-verwerkingsinstructie ontbreekt bij begin van externe entiteit"
+25018="onbekende codering"
+25019="codering gebruikt in XML-declaratie is incorrect"
+25020="ongesloten CDATA-sectie"
+25021="fout in verwerken externe entiteitverwijzing"
+25022="document staat niet op zichzelf"
+25000="onbekende fout"
+
+; Error messages from XML
+25023="Regel:"
+25024="Karakter:"
+
+22154="Ongeldige waarde voor '%s'"
+21765="'%1' bevat een ongeldige waarde.\nEen getal tussen %2 en %3 is vereist.\n\n"
+22156="Wilt u deze waarde herstellen?"
+22157="Herstellen naar laatste geldige waarde."
+22243="Onbekend"
+21766="%1 items in %2 mappen, totaal %3 items"
+; Used in a warning/confirmation dialog when an URL with a user name (like
+; http://username@www.example.com) is entered in the URL field.
+21463="Veiligheidswaarschuwing:\n\nU staat op het punt naar een adres te gaan, dat een gebruikersnaam bevat.\n\n    Gebruikersnaam : %s \n    Server : %s\n\nWeet u zeker dat u naar dit adres wilt gaan?"
+
+22161="Niet gevonden"
+22162="De tekst kon niet worden gevonden "
+21120="Alle koppen tonen"
+21122="Datum"
+21123="Van"
+21124="Onderwerp"
+21125="Aan"
+21121="Cc"
+21126="Bcc"
+22703="Alleen afbeeldingen"
+22704="Alleen tekst"
+22705="Afbeeldingen met tekst eronder"
+22706="Afbeeldingen met tekst ernaast"
+22715="Pop-up-vensters accepteren"
+22716="Pop-up-vensters weigeren"
+22717="Pop-up-vensters naar achtergrond"
+22718="Alleen gevraagde pop-ups openen"
+25316="Verwijdering bevestigen"
+25317="Bevestig a.u.b. het permanent verwijderen van dit paneel.\n\n%s"
+25318="Hotlistpaneel toevoegen?"
+22729="Kies"
+22730="Opera is ingesteld om te openen met opgeslagen sessie(s)"
+22731="Opera is ingesteld om te openen met uw startpagina"
+22732="Opera is ingesteld om verder te gaan met browsen waar u gebleven was"
+22733="Opera is ingesteld om te openen zonder browservensters"
+22734="Klik hier om dit te wijzigen"
+17171="Google"
+17187="AllTheWeb"
+17189="Super"
+17202="Ama&zon.com"
+17174="Prijsvergelijking"
+17175="&TechTracker"
+17176="Domeinnaam"
+17178="Stock &quote"
+17180="Afbeeldingen"
+17181="Video"
+17179="&Mp3/Audio"
+17188="Google groups"
+17182="Opera support"
+17183="In pagina &zoeken"
+17203="Nieuws"
+21747="Voer a.u.b. een wachtwoord in om de sleutel te beschermen"
+21748="Voer a.u.b. een wachtwoord in om de uitgevoerde persoonlijke sleutel te beschermen"
+21749="Het wachtwoord a.u.b. opnieuw invoeren"
+21750="Persoonlijke sleutel importeren"
+21751="Sleutel en certificaat importeren"
+21752="Wilt u de persoonlijke sleutel en de bijgevoegde certificaten importeren?"
+21753="Wilt u de persoonlijke sleutel die is opgeslagen in dit bestand importeren?"
+21754="Importeren van de persoonlijke sleutel en het certificaat mislukt"
+21755="Het bestand bevatte geen persoonlijke sleutel"
+21756="De geïmporteeerde persoonlijke sleutel past niet bij de sleutel van het bijgevoegde certificaat. Opdracht mislukt."
+30211="Automatische proxyconfiguratie mislukt. \nProxyconfiguratie is automatisch uitgeschakeld voor deze sessie."
+22728="U kunt webzoekopdrachten uitvoeren in het adresveld"
+25411="Extern e-mail frame"
+25412="Laden van externe frame-bron onderdrukt:"
+10018="Alle vensters trapsgewijs schikken"
+10724="Wisselen tussen Auteur- en Gebruikersmodus"
+10596="In/uitzoomwaarde van de pagina hier invoeren (klik op het pijltje voor een lijst)"
+10009="Geselecteerde tekst naar het klembord kopiëren"
+10247="Wisselen tussen het laden en weergeven van afbeeldingen"
+10072="Ga naar de startpagina"
+10052="Toegang tot bladwijzers in actieve bladwijzermap"
+10000="In een nieuw venster browsen"
+10031="Ga vooruit naar volgende pagina (klik op het pijltje voor alle volgende)"
+10001="Lokaal bestand openen"
+10059="Ga naar een webpagina"
+10032="Ga terug naar de vorige pagina (klik op het pijltje voor alle voorgaande)"
+10004="De pagina afdrukken"
+10069="Voer hier Internetadressen in (klik op het pijltje voor eerder ingevoerde adressen)"
+10056="De laatste versie van deze pagina ophalen"
+10002="Pagina opslaan op uw computer"
+10227="Bepaalde tekst zoeken in de pagina"
+10143="Laden van de pagina stoppen"
+10019="Alle vensters naast elkaar schikken"
+13010="Hotlist tonen/verbergen"
+13011="Pagina op volledig scherm weergeven (aan/uit met F11 op toetsenbord)"
+13030="De pagina bekijken zoals deze zal worden afgedrukt"
+10314="Op het internet zoeken naar de ingevoerde tekst"
+10313="Hier uw Internet-zoekopdracht invoeren (klik op het pijltje voor andersoortige zoekopdrachten)"
+10308="Ga naar de webpagina in het adresveld"
+14134="Overdracht hervatten"
+14135="Opnieuw overdragen"
+14136="Overdracht stoppen"
+14137="Beeldmenu overdrachten weergeven"
+16245="Een e-mail opstellen voor deze persoon"
+16246="Deze persoon toevoegen aan de Relaties"
+4000="Kan niet opstarten "
+4001="Kan geen dialoogvenster maken "
+4002="Kan menu niet laden "
+4003="Kan pictogram niet laden "
+4004="Kan bitmap niet laden "
+4005="Kan geen venster maken "
+67003="Grootte"
+67004="A"
+67005="S"
+67007="Toverstaf"
+; Message shown in the status bar when Java Virtual Machine is
+; loading/starting up.
+67008="Opstarten Java VM"
+
+; Attribution-line when replying to a mail
+67009="Op %:Date: schreef %f:"
+
+; Attribution-line when forwarding a mail
+67010="\\n\\n------- Doorgestuurd bericht -------\\nVan: %:From:\\nAan: %:To:\\nOnderwerp: %:Subject:\\nDatum: %:Date:\\n"
+
+; Attribution-line when followup to a news message
+67011="%f schreef op %:Date::"
+
+; Attribution-line when replying by mail to a news message
+67012="Op %1:Date: schreef je in %:Newsgroups:"
+
+; Attribution-line when forwarding by mail a news message
+67013="\\n\\n---- Doorgestuurd Usenet-bericht ----\\nVan: %:From:\\nNewsgroepen: %:Newsgroups:\\nOnderwerp: %:Subject:\\nDatum: %:Date:\\nURL: news://%:Message-Id:\\n"
+
+67020="Toverstaf"
+67021="Map controleren"
+67022="Map binnenhalen"
+67023="Tekst binnenhalen"
+67024="Bijlagen binnenhalen"
+67025="Map aanmaken"
+67026="Map verwijderen"
+67027="Map hernoemen"
+67028="Abonneren op map"
+67029="Bericht verwijderen"
+67030="Bericht toevoegen"
+67031="Vlag bewaren"
+67032="Aanmelden bij server"
+67033="Verkeerde mailgrootte"
+67034="Verkeerde gebruikersnaam"
+67035="Verkeerd wachtwoord"
+67036="Interne fout"
+67037="E-mail bestaat niet!"
+67038="Probleem tijdens verwijderen van bericht op de server"
+67039="TLS is niet beschikbaar op deze server. Om mail van deze server te krijgen dient u de beveiligde verbinding uit te schakelen"
+67040="Niet ingesteld"
+67041="POP3-server niet beschikbaar. Netwerkproblemen?"
+; About page
+67042="E-mail directory"
+
+67043="De server poogde een ongeldige omleiding uit te voeren"
+; Used in index category in M2
+67044="IMAP-mappen"
+67045="Zichten"
+
+; Usined while M2 is searching. Padded by ' <search>...'
+67046="Zoeken naar"
+
+; Formats the M2 display of time today
+67047="Vandaag %X"
+
+; Used in M2 when a message has no label
+67048="Geen label"
+
+; Priority of a M2 message
+67049="Hoogste prioriteit"
+67050="Hoge prioriteit"
+67051="Lage prioriteit"
+67052="Laagste prioriteit"
+
+; Used in Mail|Manage Account
+67053="Account"
+67054="Status"
+
+; Used in Mail|Newsgroups
+67055="Geabonneerd"
+67056="Status"
+67057="Groep"
+
+; Received news index in m2
+67058="Ontvangen nieuws"
+
+; Received list index in m2
+67059="Ontvangen lijst"
+
+; Clipboard index in m2
+67060="Klembord"
+
+; Prefix for newsservers in serverlist in m2
+67061="Nieuws van"
+
+; Prefix for mailservers in serverlist in m2
+67062="Mail voor"
+
+; Name for a new Imap folder in M2
+67063="Nieuw"
+
+; Status-message when sending messages in M2
+67064="Verzenden..."
+
+; Status-message when checking for messages in M2
+67065="Ophalen..."
+
+; Status-message when getting messages in M2
+67066="Berichten halen (%u/%u)"
+
+; Status-message when done fetching messages in M2
+67067="%u ontvangen"
+
+; Status-message when no messages was fetched in M2
+67068="Geen berichten ontvangen of verzonden"
+
+; Error-message if setting From or Organization in M2 failed
+67069="Instellen Van ("%s")- of Organisatie ("%s")-kop mislukt"
+
+; The From-address is not given according to standards
+67070="Ongeldig 'Van'-adres"
+
+; M2 was unable to mime-encode a message
+67071="Mime-codering mislukt"
+
+; Store::AddMessage failed
+67072="Kon bericht niet opslaan"
+
+; M2 needs Drafts and Outbox to store messages
+67073="Kon Klad of Uitvak niet vinden"
+
+; M2 will move a message to Outbox when sending or queueing it
+67074="Bericht verplaatsen naar Uitvak mislukt"
+
+; M2 will move a message from Drafts when it is sent or deleted
+67075="Bericht verplaatsen uit Klad mislukt"
+
+; M2 got an error-message while sending a message
+67076="Verzenden bericht mislukt"
+
+; Default name for new indexes in M2
+67077="Nieuwe zicht"
+
+; Used for invalid mbox files in M2
+67078="Ongeldig bestand"
+
+; Used various places in the import-code in M2
+67079="Geïmporteerd"
+
+; Progress-information in M2 import-code
+67080="reeds geïmporteerd"
+
+; Used in the M2 Import Mail wizzard
+67081="Item importeren"
+
+; Marks where quoted text has been removed when replying to a mail
+67082="<knip>"
+
+; The file being downloaded is already being written to the selected file,
+; this is not possible!
+67083="Dit bestand wordt reeds geladen"
+67084="Dit bestand wordt al gebruikt, kies een andere bestandsnaam"
+
+; Period to view e-mails from
+67085="Vandaag"
+67086="Week"
+67087="Maand"
+67088="Kwartaal"
+67089="Jaar"
+67090="Altijd"
+
+; Remove folder warning dialog title
+67091="Verwijder zicht"
+
+67092="Wilt u echt het abonnement opzeggen van deze nieuwsgroep?"
+67093="Wilt u echt deze zicht verwijderen?"
+67094="Wilt u echt het abonnement opzeggen van deze IMAP-map?"
+; Start a full search from the mail hotlist panel
+67095="Zoeken starten"
+
+67096="Geen berichten gekozen"
+67097="Geen zicht gekozen"
+; Title of button in compose window
+67098="Bcc"
+67099="Antwoord-aan"
+67100="Vervolgen naar"
+67101="Nieuwsgroepen"
+
+67102="(%d ongelezen)"
+67103="(%d ongelezen, %d totaal)"
+67104="Bijlage"
+67105="Grootte"
+67106="Geen e-mailadres ingesteld. Bewerk het account a.u.b."
+67107="Serverinstellingen onbreken"
+67108="Account heeft geen uitgaande-mailserver"
+67109="Ongeldig 'van'-adres"
+67110="Account heeft geen e-mailadres"
+67111="Ongeldig bericht"
+67112="Adres of onderwerp ontbreekt"
+67113="Bericht annuleren"
+67114="Wilt u echt dit bericht annuleren?"
+; Priority of a M2 message
+67115="Normale prioriteit"
+
+67116="Hier webadres invoeren"
+67117="Snelvinden"
+67118="Schaal"
+67119="Statusveld"
+67120="Verwijder account"
+67121="Wilt u echt dit account verwijderen?"
+67122="Accounts beheren"
+67123="Eigenschappen account"
+67124="%s server "
+67125="Inkomende %s-server"
+67126="Uitgaande %s-server"
+67127="Terugval-codering"
+67128="Server opschoning"
+67129="Wilt u echt de gelezen berichten van de server verwijderen?"
+67130="Soort"
+; General Do-not-show-this-dialog-again text for use in most new dialogs
+67131="Dit bericht niet meer weergeven"
+
+67132="Volgende >"
+67133="< Terug"
+67134="Gereed"
+67135="Uit"
+67136="Matig"
+67137="Sterk"
+67138="Of"
+37139="En"
+67140="Onderwerp"
+67141="Naam van afzender"
+67142="Van-kop"
+67143="Aan-kop"
+67144="CC-kop"
+67145="Antwoord-aan-kop"
+67146="Nieuwsgroepkop"
+67147="Alle koppen"
+67148="Gehele bericht"
+67149="Bevat"
+67150="Bevat niet"
+67151="Regexp"
+67152="Berichten waarin "
+67153="Of waarin "
+67154="En waarin "
+67155="onderwerp"
+67156="naam van afzender"
+67157="alle koppen"
+67158="gehele bericht"
+67159="bevat"
+67160="niet bevat"
+67161="overeenkomt met regexp"
+; Used to format the title of a dialog, contact properties and similar
+67162="Eigenschappen %s"
+
+67163="Opera-skin binnenhalen"
+67164="Skin binnenhalen.."
+67165="Binnengehaalde skin gebruiken"
+67166="Wilt u deze skin houden?"
+67167="Naam skin:"
+67168="Auteur:"
+67169="Binnenhalen mislukt"
+67170="Alle berichten"
+67171="Afgelopen jaar"
+67172="Afgelopen maand"
+67173="Vorige sessie (automatisch opgeslagen)"
+67174="Starten met blanco pagina"
+67175="%d bytes binnengehaald"
+67218="Verwijderen"
+; Status-message when messages was sent in M2
+67361="%u verzonden"
+
+67504="Berichttekst niet binnengehaald"
+67506="Normale e-mail (POP)"
+67507="IMAP"
+67508="Nieuwsgroepen"
+67509="E-mail importeren"
+67510="OperaMail webmail"
+67511="Importeren uit Opera 5/6"
+67512="Importeren uit Eudora"
+67513="Importeren uit Netscape 6/7"
+67514="Importeren uit Outlook Express"
+67515="Generieke mbox-bestanden importeren"
+67516="Mailbox map:"
+67517="Netscape instellingen (prefs.js):"
+67518="Generiek mbox-bestand:"
+67540="Ophalen"
+; Added in front of server response when POP server returnes an error
+67561="Serverantwoord:"
+
+; Used when IMAP folder subscription fails
+67589="Wijzigen van map-abonnement mislukt! Misschien was de map al dan niet geabonneerd op de server."
+
+; Used when mailserver reports that it does not support TLS
+67590="TLS wordt niet ondersteund door deze server!"
+
+; Generic error when connection to IMAP server failed
+67591="Verbinding met IMAP-server mislukt."
+
+; Precedes IMAP alert messages
+67592="Waarschuwing van IMAP-server:"
+
+; Used when IMAP-server notifies that folder has been renamed on server
+67593="De naam van de map "%s" is veranderd in "%s"."
+
+; Used when appending a message to an IMAP folder
+67594="Toevoegen van een bericht aan een map mislukt."
+
+; Used when copying an IMAP message failed
+67595="Kopiëren van een bericht mislukt"
+
+; Used when local storing of IMAP message failed
+67596="Lokaal opslaan van binnengehaald bericht mislukt. Het bericht zal bij de volgende controle op nieuwe berichten opnieuw worden binnengehaald."
+
+; Used by M2 POP backend when storing a message fails
+67597="Opera probeerde bericht %d (UIDL %s) van de POP3-server binnen te halen, maar kon het niet opslaan op uw machine."
+
+; Generic message when a M2 backend fails to connect to its server
+67598="Verbinding met server mislukt"
+
+; M2 SMTP error message
+67599="Bericht verzonden, maar het kon niet uit het uitvak verplaatst worden"
+67600="Bericht verzenden mislukt. Misschien is de SMTP-server niet goed ingesteld? E-mail in wachtrij."
+67601="SMTP-dienst niet beschikbaar"
+67602="Interne fout"
+67603="Tijdelijke serverfoutmelding"
+67604="Serverfoutmelding"
+67605="Syntax ontvanger fout"
+67606="Ontvanger niet beschikbaar fout"
+67607="Ontvangen niet lokaal"
+67608="Geen server aangegeven"
+67609="SMTP foutmelding"
+67610="Ontvanger fout"
+67611="SMTP-waarmerkingsfout"
+67612="TLS niet ondersteund door server"
+67613="SMTP-waarmerken niet ondersteund door server"
+67614="Onbepaalde SMTP foutmelding"
+
+; Used when M2 for some reason isn't able to flush a message to disk
+67615="Opslaan mislukt, mogelijk vanwege een beschadigd bestandssysteem of een virusscanner (%i)"
+
+; String used in customize toolbar box
+68124="Document"
+68125="Afbeeldingen"
+68126="Totaal"
+68127="Snelheid"
+68128="Verstreken"
+68129="Voortgang"
+68130="Algemeen"
+68131="Klok"
+68132="Identificeren als"
+
+; Imported bookmarks are stored in this folder
+68133="Netscape-bladwijzers"
+68134="Internet Explorer-favorieten"
+68135="KDE-bladwijzers"
+68136="Konqueror-bladwijzers"
+
+; String to be used in preference font list for UI fonts
+69221="Menutekst"
+69222="Werkbalktekst"
+69223="Dialoogtekst"
+69224="Paneeltekst"
+
+; String to be used in preference font list
+69225="E-mail opsteltekst"
+
+; String to be used in preference font list to identify a system default
+; font
+69226="(Standaard)"
+
+; When a SMTP server drops the connection when MAIL FROM is sent, it usually
+; is because needed authentication isn't fulfilled.
+69229="Server heeft de verbinding verbroken. Mogelijk is waarmerking vereist?"
+
+; String that is displated on about page when java is installed
+69230="Java Runtime Environment geïnstalleerd"
+
+; Version of Qt library that Opera uses. Shown on About page
+69231="Qt-library"
+
+; Text to be used on the menubars. Some languages need a separate string
+; here
+69240="SnelTerug"
+
+; Used when saving a printer file to disk (from a filedialog box)
+69243="Postscript-bestanden (*.ps)|*.ps|Alle bestanden (*.*)|*.*|"
+
+; Label in the displayed header of a news/mail message
+69244="Organisatie"
+69245="Nieuwsgroepen"
+69246="Vervolgen-Naar"
+69247="Antwoord-Aan"
+69248="Herzonden-Vanaf"
+
+; Title string of the HTML text that displays certificate data
+69249="Certificaatinformatie"
+
+; Header string for the detailed listing of certificate data
+69250="Details"
+
+; DSA Private Key key list item
+69251="Persoonlijke sleutel (X)"
+
+; DSA Public Key list item
+69252="Openbare sleutel (Y)"
+
+; Component P of DSA key
+69253="DSA Component P"
+
+; Component Q of DSA key
+69254="DSA Component Q"
+
+; Component G of DSA key
+69255="DSA Component G"
+
+; Diffie Hellman Private Key component
+69256="DH Persoonlijke sleutel"
+
+; Diffie Hellman Public Key Component
+69257="DH Openbare sleutel"
+
+; Diffie Hellman Modulus Key component
+69258="DH Modulus"
+
+; Diffie Hellman Generator Key component
+69259="DH Generator"
+
+; Add characters here that can be used as fallback shortcuts (eg: of the
+; kind "File (A)"). An empty string will disable fallback shortcuts.
+69260=""
+
+67544="Opera werkbalk-instellingen binnenhalen"
+67545="Werkbalk-instellingen binnenhalen..."
+67546="Werkbalk-instellingen gebruiken"
+67547="Wilt u deze werkbalken blijven gebruiken?"
+67548="Opera menu-instellingen binnenhalen"
+67549="Menu-instellingen binnenhalen..."
+67550="Menu-instellingen gebruiken"
+67551="Wilt u dit menu blijven gebruiken?"
+67552="Opera muis-instellingen binnenhalen"
+67553="Muis-instellingen binnenhalen..."
+67554="Muis-instellingen gebruiken"
+67555="Wilt u deze muisgebaren blijven gebruiken?"
+67556="Opera toetsenbord-instellingen binnenhalen"
+67557="Toetsenbord-instellingen binnenhalen..."
+67558="Toetsenbord-instellingen gebruiken"
+67559="Wilt u deze sneltoetsen blijven gebruiken?"
+67560="Kopie van"
+67564="Weet u zeker dat u de uitgever vertrouwt?"
+; Open file dialog
+67565="Opera-bladwijzerbestanden (*.adr)|*.adr|"
+67566="HTML / Netscape-bladwijzerbestanden (*.htm, *.html)|*.htm;*.html|"
+67567="Konqueror-bladwijzerbstanden (*.xml)|*.xml|"
+
+; InputAction treeview header
+67576="Acties"
+67577="Invoer context en sneltoetsen"
+
+67578="Sneltoetsen"
+67579="Muisgebaren"
+67580="Werkbalken"
+67581="Menu's"
+67582="Skins"
+; Fonts and colors preferences
+67583="Soort"
+67584="Lettertype"
+
+; Cache preferences
+67585="Automatisch"
+
+; string appended to setupfilename if this is modified, in preferences
+; dialog
+67586="(Aangepast)"
+
+; Info panel
+67616="- geen titel -"
+67617="URL van hoofdpagina:"
+67618="Codering van server (gebruikt door Opera):"
+67619="MIME-type van server:"
+67620="Grootte van hoofdpagina:"
+67621="Aantal inline elementen:"
+67622="Groote van inline elementen:"
+67623="Lokaal cache-bestand:"
+67624="- geen cache-bestand -"
+67625="Beveiliging"
+67626="Samenvatting:"
+67627="- niet beveiligd -"
+67628="Meer informatie"
+67629="Frames"
+67630="Frame:"
+67631="Inline frames"
+67632="IFrame:"
+
+67675="SnelVooruit"
+67679="Opslaan als"
+67680="Sessiebestand verwijderen"
+67681="Venster"
+67682="Schrijf hier nieuwe notitie"
+67683="Bestanden toevoegen"
+67685="Versie"
+67686="Cijfer"
+67687="Licht"
+67688="Normaal"
+67689="Vet"
+67690="Starten met blanco pagina"
+67691="U staat op het punt %d relaties te openen\n\nDoorgaan?"
+; History and cache preferences
+67692="Elke %d minuten"
+67693="Elke %d uren"
+67694="Elk uur"
+67695="Elke week"
+
+67696="U staat op het punt %d bladwijzers te openen\n\nDoorgaan?"
+67697="Uw eerste account is ingesteld\n\nOpera's revolutionaire e-mail- en nieuwsgroepenprogramma M2\nis in veel opzichten anders dan gewone e-mailprogramma's.\nHet wordt daarom sterk aanbevolen dat u een handleiding\ndoorneemt.\n\nWilt u deze nu lezen?"
+67698="M2 gebruiken"
+67699="Pop-up onderaan de pagina"
+67700="Laatste afmetingen onthouden"
+67701="Altijd maximaliseren"
+67702="Altijd trapsgewijs"
+; Checkbox string in filetype dialog box
+69261="Geef webadres rechtstreeks door aan toepassing"
+
+; Used in preference dialog box (window page)
+69262="Nieuwe pagina naast actieve openen"
+
+; Info panel. When server does not supply an encoding
+69263="- niet opgegeven -"
+
+; Checkbox in download dialog for saving action
+69266="Keuze onthouden en bericht niet meer weergeven"
+
+; Certificate verification servername mismatch
+69267="De servernaam "%1" komt niet overeen met de certificaatnaam "%2". Mogelijk probeert iemand u af te luisteren."
+
+; Certificate not yet valid
+69268="Het certificaat voor "%1" is niet geldig voor %2. Is de klok van uw computer goed ingesteld?"
+
+; The certificate expired on the given date
+69269="Het certificaat voor "%1" is %2 verlopen. De webmaster zou het certificaat moeten bijwerken."
+
+; Certificate warning
+69270="U wilde gewaarschuwd worden over certificaten van "%1""
+
+; Unknown certificate authority
+69271="Het certificaat voor "%1" is ondertekend door de onbekende Certificaat-instelling "%2". Het is niet mogelijk te verifiëren of dit een geldig certificaat is."
+
+; Unknown root certificate authority
+69272="Het basiscertificaat van "%1" is onbekend voor Opera. Opera kan niet beslissen of dit certificaat kan worden vertrouwd."
+
+69300="Server heeft de verbinding verbroken tijdens het waarmerken. Dit account zal nu een minder veilige waarmerking gebruiken"
+69301="Nieuwe Opera beschikbaar"
+69302="Er is een nieuwe versie van Opera beschikbaar.\nWilt u de bijgewerkte versie nu binnenhalen?"
+69303="MP3-bestanden |*.mp3|Alle bestanden|*.*|"
+; Typically telnet, tn3270, news, mailto
+69304="Protocol"
+
+69305="Programma"
+; Voice XML related message from the Voice log panel
+69307="Log Spraakstatus..."
+
+69308="Nieuwe knop wordt toegevoegd, met actie\n\n%s\n\nWeet u het zeker?"
+69309="Nieuwe knop"
+69312="Spraaklog"
+69332="Gemaakt met M2, Opera's revolutionaire e-mailprogramma: http://www.opera.com/m2/"
+; Status message when M2 is emptying trash
+69333="Prullenbak wordt geleegd"
+
+; Button text in startup dialog
+69334="Opera kopen"
+
+; Message string shown in dialog box before auto reset in kiosk mode
+69347="Opera wordt over %d seconden herstart vanwege inactiviteit"
+69348="Opera wordt over 1 seconde herstart vanwege inactiviteit"
+
+; Text for button in toolbar that can clear contents if edit field
+69349="Wissen"
+
+; Message string used in a dialog box when user wants do do something that
+; requires online mode (eg. fetching mail)
+69352="Offline modus is ingeschakeld.\n\nWilt u omschakelen naar de online modus?"
+
+69353="Certificaat-instelling voor het aangeboden certificaat is onbekend"
+69354="Handschudding mislukt wegens exportbeperkingen"
+69355="Handschudding mislukt omdat de server de ingeschakelde SSL/TLS-protocolversies niet wil accepteren."
+69356="Handschudding mislukt omdat de server versleutelingsmethodes vereist die veiliger zijn dan de ingeschakelde."
+69357="De server will een verbinding overeenkomen die de gegevens *niet* versleutelt, maar enkel de integriteit verifieerd."
+; Used in preference dialog box to control page redrawing
+69358="Direct verversen"
+69359="Na 1 seconde verversen"
+69360="Na %d seconden verversen"
+69361="Na laden verversen"
+
+; Label in the preference dialog box for page redrawing feature
+69362="Laden"
+
+; Used in mail filter dialog
+69369="Berichten van %s"
+
+; Used in mail filter dialog box
+69370="Berichten voor andere zichten verbergen"
+
+; View title in mail title dialog box
+69371="Zicht"
+
+; Add filter dialog box
+69373="Filter de volgende berichten naar deze zicht"
+69374="Berichten van afzender"
+69375="Berichten waarvan onderwerp bevat"
+
+; Account properties dialog box
+69376="Accountcategorie"
+
+; Message in reindex mail dialog box
+69378="Opera moet een gedeelte van uw mail herindexeren. Als u nu afbreekt, zal Opera de volgende keer verdergaan."
+
+; Used in pref. dialog box
+69379="Opera kopen en de advertenties verwijderen"
+
+; Used in pref box (multimedia)
+69380="Afbeeldingen direct weergeven"
+
+69396="Schrijf hier een snel antwoord aan %s"
+69397="overeenkomt met regexp"
+69398="Deze zicht en filter toevoegen"
+; Used in javascript option dialog box
+69399="Veranderen van venstergrootte toestaan"
+69400="Verplaatsen van vensters toestaan"
+69401="Verheffen van vensters toestaan"
+69402="Verlagen van vensters toestaan"
+
+; Used in javascript option dialog
+69403="Veranderen van statusveld toestaan"
+
+; Opens javascript options dialog box
+69404="JavaScript opties..."
+
+; Label for window handling options
+69405="Vensterafhandeling"
+
+; Option string for popup window management
+69406="Altijd maximaliseren, inclusief pop-ups"
+
+; Window handling mode string
+69407="Bij voorkeur pagina's binnen venster"
+
+; Window handling mode string (SDI mode)
+69408="Bij voorkeur aparte vensters"
+
+; Message string used on startup in we cannot load plug-ins
+69410="Opera kon de plug-in-library 'libnpp.so' niet laden. Plug-ins zullen niet werken.\n\nControleer uw installatie.\n"
+
+69416="Netscape-instellingen (prefs.js)"
+69417="Generieke mbox-bestanden (*.mb?)"
+; Fallback text for plug-in description when plug-in is missing this
+; resource
+69418="Geen beschrijving"
+
+; Fallback text for plug-in name when plug-in is missing this resource
+69419="Geen naam"
+
+; Message shown when downloaded skin can not be used
+69421="Kan niet verder gaan. Kies een skin die gemaakt is voor uw versie van Opera."
+
+69431="Op zoek naar links:"
+69432="Op zoek naar tekst:"
+69433="(Geen resultaten)"
+
+; Dialog title and components
+; Used in most dialogs
+1="OK"
+10362="OK"
+2="Annuleren"
+10358="Annuleren"
+
+; Cookie properties
+11005="&Naam"
+11007="D&omein"
+11009="&Pad"
+11011="Aange&maakt"
+11013="&Laatst gebruikt"
+11015="&Geldigheidsduur"
+11018="&Ingeschakeld"
+11019="&Verwijderbaar"
+11020="&Waarde"
+10094="Help"
+11022="Veilig"
+
+; Opera as default browser
+10961="Kies a.u.b. bestandsformaten en protocollen om te verbinden met Opera"
+10962="Bestandsformaten"
+11050="*.htm"
+10963="*.html"
+12055="*.xml"
+11250="*.url"
+10966="*.bmp"
+10965="*.gif"
+10964="*.jpeg"
+11051="*.jpg"
+11258="*.png"
+10967="*.xbm"
+10968="Protocollen"
+10969="http"
+10970="https"
+10971="news"
+10972="ftp"
+10973="gopher"
+10974="wais"
+25177="Bij opstarten nagaan of Opera de standaardbrowser is"
+25241="Alles selecteren"
+
+; Print
+10103="Pagina afdrukken..."
+
+; Password required
+14499="Waarmerking"
+17211="Adres"
+11140="Boodschap"
+10178="Gebruikersnaam"
+10179="Wachtwoord"
+
+; Send form without encryption?
+11151="&Dit bericht niet meer weergeven"
+14100="Wilt u dit formulier zonder versleuteling over het net verzenden?"
+14500="Waarschuwing bij inzenden"
+
+; Use Opera
+25176="Opera als standaard Webbrowser gebruiken"
+25174="Opera is niet ingesteld als de standaard webbrowser op uw computer.\n\nWilt u Opera gebruiken als uw standaardtoepassing voor het bekijken van webpagina's?"
+25175="&Dit bericht niet meer weergeven"
+6="Ja"
+7="Nee"
+
+; Validate source
+25268="Broncode valideren"
+25267="Wilt u deze pagina uploaden van uw computer naar een online broncode-validator?"
+
+; Exit Opera?
+25150="&Vensters opslaan en volgende keer tonen"
+14101="Acties voor afsluiten"
+11150="&Dit bericht niet meer weergeven"
+
+; Opera
+10571="Bericht"
+
+; Opera startup
+10918="Opera opstarten"
+10701="De vorige Opera-sessie werd onderbroken."
+14124="&Verder gaan met browsen waar ik gebleven was"
+14125="&Starten zoals gebruikelijk"
+10649="Starten &zonder vensters"
+14126="&Geavanceerd..."
+
+; Advanced startup settings
+14127="Geavanceerde opstartinstellingen"
+10652="Aantal gelijktijdige verbindingen &minimaliseren"
+10651="&Omvang netwerkbuffer minimaliseren"
+10415="Synchrone DNS"
+
+; Progress
+10770="..."
+
+; Password
+10779="Voer a.u.b. een beveiligingswachtwoord in"
+10704="Uw wachtwoord moet uit minstens zes tekens bestaan, waaronder tenminste één letter en één cijfer. Zo niet, dan zal u worden gevraagd een nieuw wachtwoord in te voeren"
+
+; Certificate
+10766="Naam certificaat"
+10768="Uitgever"
+10758="Verbindingen naar sites die dit certificaat gebruiken toelaten"
+10759="Dialoogvenster tonen voor het gebruik van dit certificaat"
+10775="Accepteren"
+10776="Installeren"
+
+; Performance
+10214="Prestaties"
+10213="Max. verbindingen met server"
+10219="Maximum totaal verbindingen"
+10434="&Omvang van netwerkbuffer (KB)"
+
+; Personal information
+11623="Persoonlijke informatie"
+10938="Deze informatie kan met de rechtermuisknop worden geplakt in formulieren"
+10874="Voornaam"
+10877="Achternaam"
+10878="Adres"
+10881="Plaatsnaam"
+10882="Provincie"
+10884="Postcode"
+10886="Land"
+10888="Telefoon"
+10890="Fax/mobiel"
+10892="E-mail"
+10894="Homepage"
+10896="Speciaal 1"
+10898="Speciaal 2"
+10900="Speciaal 3"
+
+; Fast bookmark access
+10949="Voer a.u.b. bijnaam van bladwijzer in"
+
+; Server name completion
+11029="Naar server op  het lokale netwerk zoeken"
+11030="Naam proberen af te maken met"
+11031="Begin"
+11032="Einde"
+14118="U kunt een door komma's gescheiden lijst invoeren van voorvoegsels en achtervoegsels, bijvoorbeeld "www,web" en "nl,com,org"."
+
+; Links in frame
+11260="&Sorteren"
+11261="&Adres"
+11263="&Eerste-letterronde"
+11292="Openen"
+11264="&Alles kopiëren »"
+11259="&Vernieuwen"
+11293="Sluiten"
+
+; Import e-mail
+11420="Importeren uit"
+11426="Programmapad"
+11427="Bladeren..."
+11439="Importeren naar"
+11433="Importeren naar nieuw a&ccount"
+11432="Importeren naar &account"
+11424="Instellingen importeren"
+11430="&E-mail importeren"
+11431="&Relaties importeren"
+11421="OK"
+
+; Tip of the day
+12003="&Sluiten"
+12006="<B>Wist U dat..."
+12009="Tip nummer"
+12000="&Tips tonen bij het opstarten"
+12002="«"
+12001="»"
+
+; JavaScript execution error
+14061="Een script op deze pagina kan niet worden uitgevoerd. Mogelijk verslechtert dit het weergeven of functioneren van deze pagina."
+14117="JavaScript-fout"
+14066="URL"
+14065="Fout"
+14060="&Dit bericht niet meer weergeven"
+
+; Cookie server filters
+11453="&Verwijderen"
+11454="&Weigeren"
+11455="&Toevoegen"
+
+; Cookie security problem
+14297="Accepteren"
+14298="Weigeren"
+14294="Adres"
+14293="Cookie"
+11297="Een pad in een cookie komt niet overeen met het adres van de pagina."
+11298="U kunt de Webmaster van de site verzoeken om correcte cookies in te stellen."
+11299="Accepteert u deze cookie?"
+14300="&Dit bericht niet meer weergeven"
+14503="Laat [Accepteren] en [Weigeren] van toepassing zijn op het hele domein"
+
+; Update language file
+25302="Taalmodule"
+25303="Uw Opera-taalmodule is verouderd."
+25304="Een nieuwe taalmodule binnenhalen"
+25305="Opera herstarten in de Engelse taal"
+25306="Mijn huidige taalmodule gebruiken"
+14501="&Dit bericht niet meer weergeven"
+
+; Windows
+14355="&Vensterlijst"
+14350="&Activeren"
+14351="&Herladen"
+14352="&Minimaliseren"
+14353="&Sluiten"
+
+; Automatic window reload
+14509="Inschakelen"
+14510="Opties"
+14511="Herladen elke"
+14518="minuten"
+14513="seconden"
+14515="Voorkeuzes »"
+14516="Alleen als de pagina is verlopen volgens de server"
+
+; Image properties
+16055="Afbeelding"
+16056="Afmetingen"
+16057="Kleurdiepte"
+16058="Adres"
+16059="Soort"
+16065="Bestandsgrootte"
+
+; File download
+17010="Bestand binnenhalen van het Internet"
+17020="Bestand"
+17021="Server"
+17014="<B>Wat wilt u doen?"
+17012="Het &bestand opslaan"
+17015="Altijd vragen voor het binnenhalen van dit soort bestanden"
+17016="&Geavanceerd"
+
+; Delete private data
+25155="Doorgaan zal alle vensters sluiten, de huidige overdrachten stoppen en de onderstaande acties uitvoeren."
+25166="Cookies"
+25156="Tijdelijke cookies verwijderen"
+25159="Alle cookies verwijderen"
+25167="Tijdelijke opslag"
+25157="Met wachtwoord beschermde pagina's en gegevens verwijderen"
+25164="Gehele tijdelijke opslag (cache) wissen"
+25168="Geschiedenis"
+25160="Geschiedenis van bezochte pagina's wissen"
+25161="Geschiedenis van ingetypte adressen wissen"
+25163="Geschiedenis van gevolgde links wissen"
+25165="Geschiedenis van overgedragen bestanden wissen"
+25154="Wachtwoorden"
+25162="Alle e-mailaccount-wachtwoorden wissen"
+25169="Alle Toverstaf-wachtwoorden wissen"
+
+; Select currency
+25262="&Van"
+25264="&Naar"
+
+; Panel properties
+25311="Paneel"
+25312="&Titel"
+25314="&Adres"
+
+; Item properties
+10942="&Titel"
+10943="Bijnaam"
+10944="Adres"
+10945="Beschrijving"
+10820="Map"
+10824="Gemaakt"
+10825="Bezocht"
+
+; Contact folder properties
+10941="&Naam"
+14102="Laatst verzonden"
+
+; Bookmarks Properties
+25100="&Hotlist-naam"
+25102="Bestand"
+25103="Naam"
+25105="&Grootte"
+25107="&Meer »"
+25108="Unicode"
+25109="&Inhoud"
+
+; Go to page
+10181="Voer het adres van een webpagina in of kies er een uit de lijst."
+
+; Set home page
+10455="Startpagina"
+25371="Mijn startpagina tonen elke keer als ik Opera start"
+
+; Save windows
+10661="Sessie opslaan in bestand"
+10199="Bladeren..."
+10665="Deze sessie tonen iedere keer als ik Opera start"
+
+; Confirm file upload
+11108="De onderstaande bestanden zijn buiten u om geselecteerd, om naar een andere computer te worden verzonden. Wilt u deze bestanden verzenden?"
+11109="Bestemming"
+11110="Formulieradres"
+
+; Print options
+10208="Opties"
+11080="Pagina-achtergrond afdrukken"
+14212="Kop- en voettekst afdrukken"
+11115="Afdruk schalen naar"
+10257="Paginamarges (in centimeters)"
+10268="Top"
+10266="Links"
+10267="Rechts"
+10269="Onder"
+
+; Print preview
+14275="Afdrukvoorbeeld en afdrukken"
+14272="&Pagina als op scherm"
+14273="&Eén frame per vel"
+14274="&Actief frame"
+
+; Register Opera
+11193="Voer het registratienummer in dat u heeft ontvangen bij de aankoop van Opera."
+11194="Naam"
+11195="Organisatie"
+11196="Registratiecode"
+11200="Persoonlijke informatie"
+
+; Preferences
+10101="Toepassen"
+
+; Advertising
+16601="Advertentie"
+16602="Land"
+16604="Geboortejaar"
+16606="Geslacht"
+16608="Burgerlijke staat"
+16610="Opleidingsniveau"
+16616="Inkomen"
+16612="Voorkeurscategorieën"
+
+; Privacy
+11600="Privacy"
+10678="Informatie Referrer meezenden"
+10647="Automatisch omleiden inschakelen"
+14498="Wachtwoord-beschermde pagina's met cookies volgen"
+10677="Cookies"
+25394="Cookies inschakelen"
+11456="Cookies beheren..."
+11280="Cookies bij het afsluiten van Opera verwijderen"
+14299="Illegale domeinen weergeven in dialoogvenster"
+28507="Cookies met ongeldige paden accepteren"
+14305="Illegale paden weergeven in dialoogvenster"
+
+; Accessibility
+11315="Muis"
+11317="Muisgebaren inschakelen"
+11329="Snelklikmenu inschakelen"
+11318="Linkshandige Terug- en Vooruit-gebaren"
+10096="Items onderstrepen indien aangewezen"
+11316="Toetsenbord"
+13039="Uitklappen van automatisch aanvullen inschakelen"
+10788="Actief tekstelement in negatief"
+10954="Menu-stijl selectie &bladwijzers in Hotlist"
+10955="&Voor schermlezer geschikte menu's"
+
+; Windows
+11324="Vensterwisseling"
+
+; Accessibility
+10452="Tooltips"
+10407="Tooltip tonen voor &knoppen"
+10406="&Tooltip tonen voor links"
+10947="Tooltip tonen voor &elementtitels"
+
+; Plug-ins
+11601="Plug-ins"
+
+; Programs
+25405="Opera-onderdelen"
+25406="E-&mailprogramma tonen"
+25143="Paden"
+10382="Opera-directory"
+25144="Downloaddirectory"
+25146="Bladeren..."
+10359="Broncode bekijken met"
+25249="Opera gebruiken"
+25250="Extern programma gebruiken"
+10360="Bladeren..."
+11116="Programma's"
+10252="Telnet-programma"
+10253="Bladeren..."
+10958="TN3270-programma"
+10960="Bladeren..."
+
+; Fonts and colors
+11055="Mijn lettertypen en kleuren"
+10093="Kiezen"
+12091="Minimale lettergrootte (pixels)"
+11049="Achtergrondkleur"
+10484="Kiezen"
+11728="Linkstijl"
+10304="Mijn linkstijl..."
+25248="Internationaal"
+25247="Internationale lettertypen..."
+
+; File type
+14128="Bestandsformaat"
+10129="MIME-type"
+10207="Bestandsuitgangen"
+10706="Actie"
+10134="Downloadvenster tonen"
+10128="Openen met Opera"
+10127="Opslaan op schijf"
+14129="Openen als overdracht gereed is"
+14130="Niet vragen naar map, maar direct opslaan in"
+14132="Bladeren..."
+10546="Openen met standaardtoepassing"
+10133="Openen met andere toepassing"
+10717="Plug-in gebruiken"
+
+; Network
+11606="Browseridentificatie"
+12066="Internationale Webadressen"
+12065="Internationale webadressen met UTF-8 coderen"
+11608="Proxyservers"
+10391="Proxyservers..."
+11609="Servernaam afmaken"
+11035="Servernaam afmaken..."
+11302="Serverfoutmeldingen"
+10447="Altijd reactie server tonen"
+10448="Altijd &dialoogvenster tonen"
+10446="&Reacties van de server tonen indien gepast"
+11607="&FTP"
+25236="FTP-paden relatief t.o.v. gebruikersdirectory"
+11094="Absolute FTP-paden"
+
+; Link style
+10282="Niet bezocht"
+10098="Onderstrepen"
+10099="Doorhalen"
+10097="Kleur"
+10195="Kiezen"
+10281="Bezocht"
+10283="Onderstrepen"
+10284="Doorhalen"
+10288="Kleur"
+10289="Kiezen"
+10499="Bezochte links gemarkeerd"
+10500="dagen"
+10502="uren"
+10480="Kaders"
+10481="Altijd kader om afbeelding-links"
+10703="Altijd kader om links"
+
+; International fonts
+25251="Standaard lettertypen"
+25252="Kies lettertype om te gebruiken wanneer tekst niet correct wordt weergegeven."
+25253="Schriftsysteem"
+25255="Normaal lettertype"
+25258="Niet-proportioneel lettertype"
+
+; Browser look
+11076="&Knoppenverzameling"
+10780="&Altijd kaders om knoppen tonen"
+10946="Altijd &gekleurde knoppen"
+25238="Skin-afbeeldingen"
+17073="&Voorgrond skin-afbeelding"
+17074="Bladeren..."
+17072="A&chtergrond skin-afbeelding"
+17075="Bladeren..."
+10707="Lettertypen en kleuren"
+11268="&Systeemstandaard gebruiken"
+10691="Normale tekst"
+10693="Inactieve tekst"
+10692="Hotlist tekst"
+10857="Achtergrond"
+10694="Knopachtergrond"
+10711="Voortgang"
+
+; Cache
+11611="Geschiedenis"
+10223="&Terug en vooruit"
+11612="adressen"
+10261="Ingetypt"
+11613="adressen"
+25152="Wissen"
+10816="Bezocht"
+11614="adressen"
+25151="Wissen"
+10172="Tijdelijke RAM-opslag"
+10226="Automatische RAM-opslag &inschakelen"
+10699="Docu&mentenopslag"
+10175="KB"
+10174="A&fbeeldingenopslag"
+10176="KB"
+10329="Tijdelijke schijfopslag"
+11303="KB"
+10339="Documenten opslaan"
+10340="Afbeeldingen opslaan"
+10341="Diversen opslaan"
+10342="Legen bij afsluiten"
+10343="Nu legen"
+10344="Server controleren"
+10354="Documenten"
+10345="Altijd"
+10346="Nooit"
+10347="Dagen, uren, min."
+10355="Afbeeldingen"
+10363="Altijd"
+10364="Nooit"
+10365="Dagen, uren, min."
+10356="Diversen"
+10372="Altijd"
+10373="Nooit"
+10374="Dagen, uren, min."
+10829="Altijd omleiden controleren"
+11091="Altijd omleiden controleren"
+
+; Proxy servers
+10171="Proxyservers"
+10301="HTTP"
+11305="Poort"
+10840="HTTPS"
+11306="Poort"
+10300="FTP"
+11307="Poort"
+10299="Gopher"
+11308="Poort"
+10302="WAIS"
+11309="Poort"
+10303="Proxyserver niet gebruiken bij onderstaande adressen"
+11320="Automatische proxyconfiguratie gebruiken"
+
+; E-mail client
+11615="E-mail"
+13204="Opera-account gebruiken"
+13208="Kenmerken..."
+13209="Nieuw..."
+13206="Standaard e-mailprogramma gebruiken"
+13205="Specifiek extern programma gebruiken"
+13211="Bladeren..."
+13213="Ont&brekende parameters door een spatie vervangen"
+
+; Toolbars
+14310="Werkbalken"
+14325="Hoofdwerkbalk"
+14326="H&otlist"
+14327="&Vensters"
+14328="&Adresbalk"
+10256="&Paginaknoppen tonen"
+10243="Knop [&Ga] tonen"
+10244="&Zoekveld en -knop tonen"
+10245="Inzoomfunctie &tonen"
+10222="In adresbalk tonen"
+14320="Knoppen met gelijke &breedte"
+14333="Hoofdwerk&balk omslaan over rijen"
+
+; File types
+11616="Afhandeling van bestandsformaten"
+10789="Afhandeling aan de hand van MIME-type bepalen"
+25148="Afhandeling aan de hand van bestandsuitgang als MIME-type onbetrouwbaar is"
+10122="Nieuw..."
+10135="Verwijderen"
+10465="Bewerken..."
+
+; Windows
+11624="Vensters"
+
+; Windows - OBSOLETE?
+25397="Vensters &openen binnen de Opera werkruimte"
+
+; Windows
+10463="Nieuwe pagina's altijd maximaliseren"
+12045="Z&wevende Hotlist meenemen tijdens vensterschikken"
+10102="Vensters &naast elkaar na aanmaken nieuw venster"
+10592="Browservensters"
+25372="Bestaande pagina hergebruiken"
+13040="Flikkeringen &vermijden"
+10828="Pop-ups"
+10590="Schuifbalken tonen"
+10591="Adresbalk tonen"
+10839="Afmetingen venster tonen"
+12058="Hoofdmenu"
+11036="Opdrachten in bladwijzermenu &tonen"
+12059="Ma&ximale menubreedte"
+
+; Sounds
+11619="Geluiden"
+10603="Programmageluiden inschakelen"
+25140="Kiezen..."
+25141="Wissen"
+10605="Test"
+
+; Multimedia
+10438="Afbeeldingen"
+10441="Afbeeldingen weergeven"
+10443="Alleen opgeslagen afbeeldingen weergeven"
+10439="Geen afbeeldingen weergeven"
+10644="GIF-animatie"
+25239="Andere media"
+10645="Embedded video inschakelen"
+10646="Geluid in webpagina's inschakelen"
+14123="Java inschakelen"
+10719="Plug-ins inschakelen"
+10721="Plug-ins zoeken"
+14105="JavaScript"
+10720="JavaScript inschakelen"
+11152="JavaScript-fouten melden"
+
+; Security
+10726="Certificaten"
+10733="Persoonlijk"
+10734="Instellingen..."
+10735="Protocollen"
+10736="SSL 2 inschakelen"
+10737="SSL 3 inschakelen"
+10994="TLS 1 Inschakelen"
+10738="&SSL 2 configureren..."
+10739="SSL 3 en &TLS configureren..."
+10749="Wachtwoord"
+10813="Om wachtwoord vragen"
+10753="Altijd wanneer nodig"
+10752="Eén keer per sessie"
+14490="Vraag naar wachtwoord na"
+14492="minuten"
+10750="Wachtwoord instellen..."
+10740="Waarschuwingen"
+10744="Dialoogvenster tonen voor onveilige verzending formulieren"
+25269="Dialoogvenster tonen voor het valideren van een pagina"
+
+; Personal certificates
+10754="Certificaten"
+11726="Importeren..."
+11727="Exporteren..."
+
+; SSL configuration
+10812="Versleutelingsmethoden voor"
+
+; Cookie security breach
+14108="Adres"
+14109="Cookie"
+11407="&Dit venster niet meer weergeven"
+
+; The server wishes to send you a cookie
+14505="Inkomende cookie"
+14114="Adres"
+14502="Actie"
+11265="Cookies uitschakelen"
+11406="Opmerkingen tonen"
+11266="Dit bericht niet meer weergeven"
+14115="Help"
+
+; Language
+14222="Taal voor gebruiksomgeving"
+14235="Taal"
+14229="Merk op dat de taalwijziging pas van kracht wordt na het opnieuw opstarten van Opera"
+14223="Webpagina's"
+14228="Voorkeurstaal voor webpagina's"
+14224="Toevoegen..."
+14225="Verwijderen"
+14226="Omhoog"
+14227="Omlaag"
+16619="Terugvalcodering"
+16620="Verwachte codering voor pagina's zonder aanduiding"
+16621="&HTML"
+
+; Accept language
+14233="Taal"
+14236="Kies taal"
+14234="Zelf ingesteld"
+
+; PREFS_STARTEXIT
+10489="Opstarten"
+12042="Opgeslagen sessie(s) tonen"
+12044="Mijn startpagina tonen"
+10461="&Huidige"
+25400="Opstartdialoog tonen"
+11296="Afsluiten"
+11294="Afsluiten bevestigen"
+11295="Inbelverbindingen sluiten bij afsluiten"
+
+; Page style
+25237="Standaard"
+10588="Standaardzoom"
+12089="Auteurmodus als standaard"
+11603="Frames"
+10658="Frames inschakelen"
+11100="Inline frames inschakelen"
+10762="Altijd kader van actief frame tonen"
+11039="Auteurmodus"
+12070="Stylesheet pagina"
+12071="Lettertypen en kleuren pagina "
+12072="Mijn stylesheet"
+12073="Mijn lettertypen en kleuren"
+12074="Mijn linkstijl"
+12075="&Handheld"
+25240="Gebruikersmodus"
+12076="Stylesheet pagina"
+12077="Lettertypen en kleuren pagina "
+12078="Mijn stylesheet"
+12079="Mijn lettertypen en kleuren"
+12080="Mijn linkstijl"
+12081="Handh&eld"
+11605="Mijn stylesheet"
+
+; Search
+17025="Zoeken"
+17026="Kies standaard zoekmachine voor nieuwe vensters"
+17029="Gewenst aantal zoekresultaten per pagina"
+9="Help"
+
+; SPLASH
+25399="&Starten"
+25395="Vensters &binnen Opera"
+25396="Vensters &op bureaublad"
+14496="Dit &niet opnieuw vragen"
+
+; TRANSWIN_CLIENT
+14138="Details"
+10997="Bron"
+10999="Naar"
+11001="Grootte"
+11003="Overgedragen"
+
+; Contact properties
+13301="Naam"
+
+; Net
+13305="&E-mailadres(sen)"
+13307="Homepage"
+
+; Home
+13311="Postadres"
+13315="Telefoon"
+13313="Fax"
+
+; Notes
+13309="Aantekeningen"
+
+; Security
+13317="&Conax veiligheidspasnummer"
+
+; Send message to instant messaging address
+16333="Voer een chatnummer in"
+
+; Instant messaging account
+16308="&Achternaam"
+16309="&E-mail"
+16310="&Bijnaam"
+16306="Over &mij"
+
+19000="Afdrukken"
+19001="Certificaat"
+19002="Te accepteren taal"
+19003="Geavanceerde opstartinstellingen"
+19004="Toepassen voorkeuren"
+19005="De server wil u een cookie sturen"
+19006="Snelle toegang bladwijzers"
+19007=" "
+19008="JavaScript-boodschap"
+19009="Wachtwoord vereist"
+19010="Automatisch pagina herladen"
+19011="Privé-gegevens verwijderen"
+19012="Eigenschappen relatie"
+19013="Chatten"
+19014="Thuis"
+19015="Algemeen"
+19016="Opmerkingen"
+19017="Beveiliging"
+19018="Verzenden bestand bevestigen"
+19019="Cookie beveiligingsprobleem"
+19020="Cookie beveiligingsinbreuk"
+19021="Eigenschappen Cookie"
+19022="Opera als standaardbrowser"
+19023="Opera gebruiken"
+19024="Bestand binnenhalen"
+19025="Cookie serverfilters"
+19026="Fout in uitvoering JavaScript"
+19027="Opera afsluiten?"
+19028="Foutmelding"
+19029="Ga naar pagina"
+19030="Eigenschappen item"
+19031="Eigenschappen relatiesmap"
+19032="Eigenschappen bladwijzers"
+19033="Chataccount"
+19034="Nieuw chataccount toevoegen"
+19035="Toestemmingsaanvraag"
+19036="Toestemming aanvragen"
+19037="Chatten"
+19038="Uw wachtwoord voor chatserver invoeren"
+19041="Eigenschappen afbeelding"
+19042="E-mail importeren"
+19043="Formulier onbeveiligd verzenden?"
+19044="Links in kader"
+19045="Opera"
+19046="Servernaam afmaken"
+19047="Bestandsformaat"
+19048="Eigenschappen paneel"
+19049="Prestaties"
+19050="Persoonlijke certificaten"
+19051="Voer uw PIN-code in"
+19052="Plug-ins"
+19053="Voorkeuren"
+19054="Afdrukvoorbeeld"
+19055="Afdrukopties"
+19056="Voortgang"
+19057="Proxyservers"
+19058="Vensters opslaan"
+19059="Registreer Opera"
+19060="Opstarten Opera"
+19061="Linkstijl"
+19062="Tip van de dag"
+19063="Kies munteenheid"
+19064="Internationale lettertypen"
+19065="Taalmodule opwaarderen"
+19066="Broncode valideren"
+19067="Vensters"
+19068="Startpagina instellen"
+26500="Gebruikersnaam"
+26501="Wachtwoord"
+26502="Gebruikersnaam en wachtwoord"
+26503="Kies bijnaam"
+26504="Wizard nieuw account"
+26505="Echte naam"
+26506="Organisatie"
+26507="E-mailadres"
+26508="Loginnaam"
+26509="Wachtwoord"
+26510="Inkomende server"
+26511="Uitgaande server"
+26512="Naar berichten zoeken"
+26513="Meedoen aan chatsessie"
+26514="Hotlist"
+26515="E-mail"
+26516="Bladwijzers"
+26517="Relaties"
+26518="Chat"
+26519="Geschiedenis"
+26520="Verzenden"
+26521="Bijlage"
+26522="Van"
+26523="Aan"
+26524="CC"
+26525="Onderwerp"
+26526="Bericht opstellen"
+26527="Mail ophalen"
+26528="Opstellen"
+26529="Antwoord"
+26530="Antwoord allen"
+; Forward mail
+26531="Doorsturen"
+
+26532="Wissen"
+26533="Snelantwoord"
+26534="Terugzetten"
+26535="Geen spam"
+26536="Gelezen"
+26537="Meedoen aan sessie"
+26538="Chat verlaten"
+26539="Onderwerp wijzigen"
+26540="Log opslaan"
+26541="Verzenden"
+26542="Nieuwe bladwijzer"
+26543="Nieuwe map"
+26544="Beeld"
+26545="Nieuwe relatie"
+26546="Nieuwe map"
+26547="Beeld"
+26548="Bijnaam"
+26549="IRC-server "
+26550="Alleen in onderwerp zoeken"
+26551="Relatie"
+26552="Ongelezen "
+26553="Ongelezen verborgen"
+26554="Vandaag"
+26555="Ontvangen"
+26556="Uitvak"
+26557="Verzonden"
+26558="Klad"
+26559="Spam"
+26560="Prullenbak"
+26561="Belangrijk"
+26562="Te doen"
+26563="Terugmailen"
+26564="Terugbellen"
+26565="Vergadering"
+26566="Feest"
+26567="Leuk"
+26568="Waardevol"
+26569="Muziek"
+26570="Afbeeldingen"
+26571="Video"
+26572="Documenten"
+26573="Archieven"
+26574="Op %:Date: schreef %f:"
+26575="%f schreef:"
+26576="Vond dit %:Message-id: in %g:"
+26577="Index"
+26578="Alle berichten"
+26579="Actieve relaties"
+26580="Mailinglijsten"
+26581="Zoekopdrachten"
+26582="Nieuwsgroepen"
+26583="Labels"
+26584="Bijlagen"
+26585="Actieve discussies"
+26589="Chatroom"
+26590="Bijnaam"
+26591="Aan"
+26592="Onderwerp"
+26593="Verzonden"
+26594="Label"
+26595="Van"
+26596="Onderwerp"
+26597="Verzonden"
+26598="Label"
+26600="Accountstatus"
+26610="Geen verbinding"
+26611="Verbinden"
+26612="Verbonden"
+26613="Waarmerken"
+26614="Koppen binnenhalen"
+26615="Berichten binnenhalen"
+26616="Groepen binnenhalen"
+26617="Berichten verzenden"
+28503="Als hoofdwachtwoord voor e-mail en Toverstaf gebruiken"
+67000="Algemeen"
+67001="Servers"
+67002="Inkomend"
+67006="Uitgaand"
+67014="Filter"
+; Error dialog
+67015="Algemene fout"
+
+67016="Afbeeldingen"
+67017="Groot"
+67018="Klein"
+67019="Velden"
+67176="Bestand binnenhalen"
+67177="Abonneren"
+67178="Wijzigen..."
+67179="Opent met"
+67180="Wilt u het bestand openen of opslaan?"
+67181="Bestandsuitgangen"
+67182="Downloadvenster tonen"
+; New folder button
+67183="Nieuw..."
+
+67184="Verwijderen..."
+67185="Werkbalken aanpassen"
+67186="Sleep knoppen naar elke werkbalk"
+67187="Sleep velden naar elke werkbalk"
+67188="Opmerking over het verwijderen van berichten"
+67189="Door verwijderen verdwijnt een bericht uit alle zichten."
+67190="Herstellen uit de prullenbak plaatst het bericht terug in de oorspronkelijke zichten."
+67191="Filters"
+67192="Waarin"
+67193="Filter toevoegen"
+67194="Filter verwijderen"
+67195="Intern filter"
+67196="Gevonden berichten als gelezen markeren"
+67197="Reeds aanwezige berichten filteren"
+67198="Vind"
+67199="Zoeken in"
+67200="Tijdvak"
+67201="Zoeken naar"
+67202="Gehele zin"
+67203="Elk woord"
+67204="Alleen in"
+67205="Inclusief subzichten"
+67206="Wachtwoord onthouden"
+67207="Kies het soort account dat u wilt aanmaken"
+67208="Beveiligde verbinding (TLS) gebruiken"
+67209="Berichten op server laten"
+67210="Kies uit welk programma u wilt importeren"
+67211="Relaties importeren"
+67212="Berichten importeren"
+67213="Bladeren..."
+67214="Wilt u dat de Toverstaf (wachtwoordbeheerder) het wachtwoord opslaat?"
+67215="De volgende keer kunt u inloggen met Ctrl+Enter of een klik op de Toverstaf-knop"
+67216="Nooit op deze pagina"
+67217="Kies de gebruikersnaam die u wilt gebruiken."
+67219="Voer het adres van een webpagina in of kies er een uit de lijst."
+67220="Berichtfilters"
+67221="Bijbehorende filters"
+67222="Welkom bij Opera"
+67223="Verder gaan met vorige sessie"
+67224="Verder gaan met opgeslagen sessie(s)"
+67225="Starten met de startpagina"
+67226="Starten zonder pagina's"
+67227="Naam"
+67228="Extra e-mailadressen"
+67229="URL afbeelding"
+67230="Pictogram"
+67231="Bijnaam"
+67232="URL"
+67323="In hotlistpaneel tonen"
+67324="Accountnaam"
+67325="Volledige naam"
+67326="E-mailadres"
+67327="Antwoord aan"
+67328="NNTP-server"
+67329="Server"
+67330="Poortnummer"
+67331="Veilige verbinding (TLS)"
+67332="Uitgaande SMTP-server"
+67333="Berichten markeren als gelezen indien reeds eerder binnengehaald"
+67334="Berichttekst binnenhalen tijdens ophalen"
+67335="Lokale kopie van berichttekst bewaren"
+67336="Elke #minuten nieuwe berichten ophalen"
+67337="Account meenemen met handmatige ophaalactie"
+67338="Geluid afspelen als nieuwe berichten binnenkomen"
+67339="Pad naar IMAP-rootmap"
+67340="Automatische regeleindes voor uitgaande berichten"
+67341="Berichten in uitvak plaatsen (niet gelijk verzenden)"
+67342="Handtekening"
+67343="IMAP verzonden-map"
+67349="Relatie toevoegen bij verzenden bericht"
+; Manage accounts
+67344="Nieuw..."
+
+; Manage bookmarks
+67345="Nieuw..."
+
+67346="Bewerken..."
+67347="Knippen"
+67348="Plakken"
+67491="Huidige pagina als startpagina instellen"
+67492="Door Opera geleverde startpagina terugzetten"
+67493="Hier ingevoerd adres gebruiken"
+67494="Adres startpagina"
+67500="Javascript-console openen bij fouten"
+; MDI/SDI switch
+67501="Pagina's openen in nieuw venster"
+
+67502="Skinbestand"
+67503="Speciale effecten"
+67505="Als master-wachtwoord voor e-mail en Toverstaf gebruiken"
+67519="Importeren"
+67541="Overdrachten"
+67542="Links"
+67543="Vensters "
+; Used for outgoing properties in E-mail account properties dialog
+67562="Verstuur e-mail in uitvak na ophalen e-mail"
+
+; Shown if a server message is sent to the authorization dialog in M2
+67563="Serverbericht"
+
+67568="Wilt u echt deze Opera-sessie afsluiten?"
+67569="Voor deze pagina"
+67570="Voor de gehele server"
+67571="Blader naar map"
+67574="Nieuwsgroepen abonneren"
+67575="Abonneren op IMAP-mappen"
+67587="Actieve overdrachten"
+67588="Er zijn overdrachten bezig die zullen worden beëindigd als u Opera sluit.\nWeet u zeker dat u Opera wilt afsluiten?"
+67684="Eigenschappen"
+; What to do when mid clicking outside a link. Currently only used on Linux
+68000="Actie voor middel-muisklik kiezen"
+
+; currently only used on Linux
+68001="Tekst plakken vanaf het klembord"
+68002="Begin met autoscroll"
+68003="Horizontaal autoscroll inschakelen"
+
+; What do to when mid clicking on a link.
+68004="Kies linkklikactie"
+
+68005="Link niet openen"
+68006="Openen"
+68007="Openen in nieuwe pagina"
+68008="Openen in pagina op de achtergrond"
+68009="Openen in nieuw venster"
+68010="Openen in venster op de achtergrond"
+68011="Kies de gewenste skin en pictogrammengrootte"
+68012="Opera standaard"
+68013="Klassiek Windows"
+68014="Mijn skin"
+68015="Kies de gewenste werkbalken"
+68016="Standaard werkbalken"
+68017="Minimale werkbalken"
+68018="Mijn aangepaste werkbalken"
+68019="Meer skins en werkbalken zijn beschikbaar op my.opera.com"
+68020="Wat wilt u doen met de cookie?"
+; Dialog box title.
+68021="Middel-muisklik opties"
+
+68022="Bekijk"
+68023="Certificaten beheren"
+68024="Instellingen"
+68025="Huidig wachtwoord"
+68026="Nieuw wachtwoord"
+68027="Bevestig nieuw wachtwoord"
+68028="Filter van ouder overnemen"
+68029="Openen in"
+68030="Download"
+68031="Bladwijzer"
+68032="Relaties beheren"
+68033="Standaard"
+68034="Servers beheren"
+68035="Toverstaf-logins"
+68036="Instellingen voor normale cookies overnemen"
+68037="Deze instellingen op het hele domein toepassen"
+68038="Cookies voor server/domein accepteren"
+68039="Cookies van derden voor server/domein accepteren"
+68040="Cookies"
+68041="Eigenschappen server"
+68042="Cookies beheren..."
+68043="Toverstaf-logins beheren..."
+68044="Laatst-bezocht tijd bladwijzers wissen"
+68045="Lettertype selecteren"
+68046="Cursief"
+68047="Onderstrepen"
+68048="Overstrepen"
+68049="Doorhalen"
+68050="Kleur"
+68051="Voorbeeld"
+68052="Beveiligingsprotocollen"
+68053="Kies sleutels om in te schakelen"
+68054="Zoek dit:"
+68055="Opnieuw"
+68056="Alleen hele woorden"
+68057="Hoofdlettergevoelig"
+68058="Omhoog zoeken"
+68059="Omlaag zoeken"
+68060="Starten met opgeslagen sessies"
+68061="De invoer van 'g Opera' zoekt naar 'Opera' met de zoekmachine Google"
+68062="Skin"
+68063="Grootte"
+68064="Werkbalken en menu's"
+68065="Hernoemen"
+68066="Dupliceren"
+68067="Verwijderen"
+68068="Voortgangsbalk"
+68069="Muis en toetsenbord"
+68070="Bewerken..."
+68071="Tooltips tonen"
+68072="Nieuwe pagina's"
+68073="Afbeeldingen vloeiend inzoomen"
+68074="Door Opera te openen bestandsformaten verbergen"
+68075="Standaardtoepassing"
+68076="Door Opera af te handelen formaten"
+68101="Door Opera af te handelen protocollen"
+; HTML documents
+68077="HTML-documenten"
+
+; Default application
+68078="XML-documenten"
+
+; URL shortcuts
+68079="URL-sneltoetsen"
+
+; Default application
+68080="GIF-afbeeldingen"
+68081="JPEG-afbeeldingen"
+68082="PNG-afbeeldingen"
+68083="BMP-afbeeldingen"
+68084="XBM-afbeeldingen"
+68085="mailto"
+
+68086="Bestand  Bewerken  Beeld  Navigatie  Bladwijzers  E-mail  Vensters  Help"
+68087="Opera gebruiken"
+68088="Ingetypte adressen"
+68089="Bezochte adressen"
+68090="Tijdelijke geheugenopslag"
+68091="Controleer documenten"
+68092="Controleer afbeeldingen"
+68093="Controleer overigen"
+68094="Normale cookies"
+68095="Cookies van derden"
+68096="Toverstaf"
+68097="Toverstaf inschakelen"
+68098="Hoofdwachtwoord"
+68099="Beveiligingsprotocollen..."
+68100="Certificaten beheren..."
+; Currently only used on Linux
+68102="Dikte"
+
+; Open application (source viewer etc) in a terminal
+68103="Openen in terminal"
+
+; External news program
+68104="Nieuwsgroepenprogramma"
+
+; Label for image dropdown box
+68105="Afbeeldingen"
+
+; Label for favicon dropdown box
+68106="Pagina-iconen"
+
+; Label for java path text field
+68107="Pad naar Java"
+
+; Button text for testing correct Java path
+68108="Java-pad valideren"
+
+; Dropdown menu string
+68109="Embedded iconen en favicons"
+68110="Alleen embedded iconen"
+68111="Geen iconen tonen"
+
+; String in message box when testing and path is correct
+68112="Het Java-pad leidt naar een geldige directory."
+
+; String in message box when testing and path is not found
+68113="Kon geen geldige Java-installatie vinden."
+
+; String in message box when testing and an alternate path has been found
+68114="De onderstaande directory lijkt een beter alternatief. Wilt u deze directory gebruiken?"
+
+; String in message box when testing and all failed
+68115="Voer een andere directory in en probeer het opnieuw."
+
+; Dialog caption and label string for plug-in path dialog box
+68117="Pad naar plug-ins"
+
+; Sub-paths of the plug-in path string
+68118="Paden"
+
+; On top of a list showing all detected pug-ins
+68119="Gevonden plug-ins"
+
+; Button text of a button starting a plug-in search
+68120="Nieuw gevonden..."
+
+; Button text of a button starting a dialog whe one can change the plug-in
+; path
+68121="Pad wijzigen..."
+
+; Dialog title of a dialog that detects plug-ins
+68122="Plug-in-verbinding"
+
+; Text above a list box
+68123="Kies de plug-ins die u wilt verbinden."
+
+; filedialog title
+68137="Kies een nieuw Opera-bladwijzerbestand"
+
+; filedialog title 
+68138="Kies een nieuw Opera-relatiesbestand"
+
+; filedialog title
+68139="Kies Opera-bladwijzerbestand"
+68140="Kies Opera-relatiebestand"
+68141="Opera-bladwijzers exporteren"
+68142="Opera-relaties exporteren"
+68143="Opera-bladwijzers opslaan als"
+68144="Opera-relaties opslaan als"
+68145="Opera-bladwijzers opslaan als HTML"
+68146="Opera-relaties opslaan als HTML"
+68147="Geselecteerde Opera-bladwijzers opslaan als"
+68148="Geselecteerde Opera-relaties opslaan als"
+68149="Geselecteerde Opera-bladwijzers opslaan als HTML"
+68150="Geselecteerde Opera-relaties opslaan als HTML"
+68151="Kies Opera-bladwijzers om te importeren"
+68152="Kies Opera-relaties om te importeren"
+68153="Kies Netscape-bladwijzers om te importeren"
+68154="Kies Internet Explorer-favorietenmap om te importeren"
+68155="Kies Konqueror-bladwijzers om te importeren"
+68156="Kies KDE1-bladwijzermap om te importeren"
+
+; Filedialog title
+68157="Kies geluidsbestand"
+68158="Kies taalmodule"
+68159="Kies stylesheetbestand"
+
+; Parttern string to be used in a file dialog box
+68160="Taalmodules |*.lng|"
+
+; Dialog title 
+68161="Bewerk sneltoetsen"
+
+; Dialog title
+68162="Bewerk muisgebaren"
+
+; Message box string shown when launching external programs
+68163="U heeft geen externe hulptoepassing ingesteld. Wilt u de instellingen nu aanpassen?"
+
+; Used in dialog box text
+68164="E-mailprogramma"
+
+; Shown in error dialog box
+68165="Kon externe hulptoepassing niet starten. Wilt u de instellingen nu aanpassen?"
+
+; One of the authentication methods in M2
+69227="Auto"
+69228="Platte tekst"
+
+; Used in first time dialog box
+69238="Meer..."
+
+; Title of first time dialog box
+69239="Instellingen eerste keer "
+
+; This string will be used to add custom filter types to filesdialogs.
+; Example: PHP becomes PHP files (*.PHP) Note that %1 and %2 must be used
+69241="%1-bestanden (*.%2)"
+
+; File dialog title
+69264="Certificaat importeren"
+69265="Certificaat exporteren"
+
+69310="Wissen"
+69311="Minimaliseren"
+69316="Alleen uit deze zicht verwijderen. Sneltoets: Ctrl+X"
+69317="Invoer beheren"
+69318="HTTP 1.1 inschakelen voor proxyservers"
+69319="Weergavemodi"
+69320="Vloeiend schuiven"
+69321="Standaardmodus"
+69322="Modi instellen..."
+69323="Opmaak van formulieren inschakelen"
+69324="Opmaak van schuifbalken inschakelen"
+69325="Waarschuwen voor het verwijderen van berichten"
+69326="Spraakvoorkeuren"
+69327="Luisterstand"
+69328="PTT-sleutel"
+69329="Niveau spraaklog"
+69330="Muisklik-neer schakelt spraak uit"
+69331="Opmerking: Wijzigingen in de instellingen vereisen het herstarten van Opera voordat ze effect hebben."
+; General title in message boxes that tell we could not saved a file
+69341="Opslaan mislukt"
+
+; Messagebox string telling saving failed for a hotlist file
+69342="Kon hotlistbestand niet opslaan"
+
+; General message box string asking user to try action once more
+69343="Opnieuw proberen?"
+
+; Message box text
+69344="Alle pagina's sluiten?"
+69345="Alle pagina's behalve actieve sluiten?"
+
+; Dialog title for dialog box that will autoreset opera in kiosk mode
+69346="Opera herstellen"
+
+; Dialog title string. Keep in sync with corresponding menu entry
+69350="Bladwijzers beheren"
+
+; Dialog title used when user wants to do something that requires online
+; mode (eg. fetching mail)
+69351="Offline"
+
+; General dialog button string 
+69364="Verdergaan"
+
+; General dialog button string
+69365="Pauzeren"
+
+; Dialog title for Add filter dialog box
+69372="Filter toevoegen"
+
+; Caption for Reindex mail dialog box
+69377="E-mail herindexeren"
+
+; Dialog caption javascript options dialog
+69409="JavaScript opties"
+
+69411="Nooit op de gehele server"
+69412="Berichten verwerken (%li%%)(Tot:%li)"
+69413="Beichten verwerken (%li%%) %li/%li (Tot:%li)"
+69414="Importeren gereed. %li berichten geïmporteerd."
+69415="Bestand(en) kiezen om te importeren"
+; Dialog title when downloaded skin can not be used
+69420="Ongeschikte skin-versie"
+
+69423="Middel-muisklik opties..."
+; Dialog title for save as file dialog
+69424="Opslaan met afbeeldingen als"
+
+69425="De gratis versie van Opera zal advertenties weergeven. U kunt in Opera's voorkeuren kiezen, welk soort advertenties u wilt."
+69426="Relevante tekstadvertenties en verwante zoekopdrachten tonen, via Google"
+69427="De browser aanvraag-informatie, waaronder pagina-adressen zoals verzonden aan websites die u bezoekt, zal naar Google worden gezonden om relevante advertenties te kunnen laten zien. Google en Opera beschermen de privacy van hun gebruikers."
+69428="Meer lezen"
+69429="Een algemene selectie van grafische advertenties tonen"
+69430="Toestaan dat script rechter-muiskliks ontvangt"
+69434="Automatisch CC aan"
+69435="Automatisch BCC aan"
+
+; Menu strings
+50844="&Vastgepind"
+50845="Zwevend"
+54219="&Uit\tF4"
+50070="&Altijd bovenop"
+65307="Paneel toevoegen..."
+65309="Paneel bewerken"
+65308="Pa&neel verwijderen..."
+65310="Panelen ophalen"
+51211="&Voorkeuren..."
+54000="Bladwijzer &openen"
+54020="Openen in nieuw venster"
+54022="Openen op de achtergrond"
+54023="Op persoonlijke balk tonen"
+54001="Pagina toevoegen"
+54007="Alles toevoegen"
+54002="Knippen"
+54003="Kopiëren"
+54004="Plakken"
+54005="Verwijderen"
+63001="Alles selecteren"
+; Bookmark Item New menu
+180090="Nieuw"
+54009="Map..."
+54008="Bladwijzer..."
+
+180130="Bestand"
+54013="Nieuw..."
+54010="Openen..."
+51071="Opslaan"
+54015="Opslaan als..."
+54014="Geselecteerde items opslaan als..."
+54011="&Bladwijzers invoegen..."
+54012="Internet &Explorer-favorieten invoegen..."
+54006="Eigenschappen..."
+54018="&Item..."
+144660="&Bestand"
+50466="Nieuw venster"
+53028="Nieuwe pagina"
+50475="Venster sluiten"
+53027="Pagina sluiten"
+50001="Openen..."
+50003="Opslaan als..."
+50977="Opslaan met afbeeldingen als..."
+162500="Importeren"
+52250="E-mail..."
+52251="Opera-bladwijzers..."
+52252="Opera-relaties..."
+52253="Opera-&sessies..."
+52254="Netscape-bladwijzers..."
+52255="Internet Explorer-favorieten..."
+162560="Exporteren"
+52256="Opera-bladwijzers..."
+52257="Opera-relaties..."
+52258="Opera-&sessies..."
+50004="Afdrukken..."
+50005="Printerinstellingen..."
+50476="Afdrukopties..."
+54271="Afdrukvoorbeeld"
+51099="Offline werken"
+54493="Privé-gegevens verwijderen..."
+162000="Snelvoorkeuren"
+52200="Pop-up-vensters accepteren"
+52201="Pop-up-vensters weigeren"
+52202="Pop-up-vensters naar achtergrond"
+52203="GIF-animatie inschakelen"
+52204="&Embedded video inschakelen"
+52205="Geluid in webpagina's inschakelen"
+52206="Java inschakelen"
+52207="Plug-ins inschakelen"
+52208="Javascript inschakelen"
+52209="Cookies inschakelen"
+52215="Referrer logging inschakelen"
+52216="Proxyservers inschakelen"
+52210="Identificeren als Opera"
+52211="Identificeren als Mozilla 5.0"
+52212="Identificeren als Mozilla 4.78"
+52213="Identificeren als Mozilla 3.0"
+52214="Identificeren als MSIE 6.0"
+50394="Voorkeuren..."
+50006="Afsluiten"
+140070="Be&werken"
+50007="Ongedaan maken"
+50008="Knippen"
+50009="Kopiëren"
+50010="Plakken"
+50424="Verwijderen"
+50641="Alles selecteren"
+50058="Zoeken..."
+50086="Opnieuw zoeken"
+52031="Vorige zoeken"
+50063="In pagina zoeken"
+1124400="Beel&d"
+148440="Hotlist"
+50846="&Uit"
+145550="Hoofdwerkbalk"
+50555="&Kort"
+50556="V&olledig"
+50554="&Uit"
+170510="Persoonlijke balk"
+53051="Boven"
+53052="Onder"
+53053="Links"
+53054="Rechts"
+53050="Uit"
+53055="Bladwijzers &tonen"
+145570="Statusbalk"
+50557="&Boven"
+50559="&Onder"
+50558="&Uit"
+50916="&Tijd tonen"
+170210="Paginabalk"
+53021="&Boven"
+53022="&Onder"
+53023="&Links"
+53024="&Rechts"
+53020="&Uit"
+180520="&Vensterbalk"
+54052="&Boven"
+54053="&Onder"
+54054="&Links"
+54055="&Rechts"
+54050="&Uit"
+150740="Adresbalk"
+51074="&Boven"
+51075="&Onder"
+51101="&Uit"
+50612="Schuifbalken"
+157300="Zoom"
+51730="50%"
+51731="80%"
+51732="90%"
+51733="100%"
+51734="120%"
+51735="150%"
+51736="200%"
+51739="-100%"
+51740="+100%"
+51737="-10%"
+51738="+10%"
+157500="Codering"
+51750="Automatische selectie"
+157510="Unicode"
+51751="UTF-8"
+51752="UTF-16"
+67447="UTF-32"
+67448="UTF-7"
+157530="US &Engels"
+51753="US ASCII"
+157540="West-Europees"
+51754="ISO-8859-1"
+51771="Windows-1252"
+51767="ISO-8859-15"
+157550="Midden-Europees"
+51755="ISO-8859-2"
+67449="ISO-8859-1"
+51769="Windows-1250"
+157560="Zuid-Europees"
+51756="ISO-8859-3"
+157650="Baltisch"
+51765="ISO-8859-13"
+51776="Windows-1257"
+51757="ISO-8859-4"
+157630="Noords"
+51763="ISO-8859-10"
+51791="Windows-Sami-2"
+157660="Keltisch"
+51766="ISO-8859-14"
+157620="Turks"
+51762="ISO-8859-9"
+51773="Windows-1254"
+157770="Vietnamees"
+51777="Windows-1258"
+51783="VISCII"
+67450="VPS"
+157580="Cyrillisch"
+51758="ISO-8859-5"
+51768="KOI8-R"
+51785="KOI8-U"
+51770="Windows-1251"
+51792="Codepage 866"
+157600="Grieks"
+51760="ISO-8859-7"
+51772="Windows-1253"
+157590="Arabisch"
+51759="ISO-8859-6"
+51775="Windows-1256"
+157610="Hebreeuws"
+51761="ISO-8859-8 (Logisch)"
+67451="ISO-8859-8 (Visual)"
+51774="Windows-1255"
+157640="Thais"
+51764="ISO-8859-11 (TIS-620)"
+157890="Chinees"
+51780="Big5 (Traditioneel)"
+67452="Big5-HKSCS (Traditioneel)"
+51790="EUC-TW (Traditioneel)"
+51782="GBK/GB2312 (Vereenvoudigd)"
+51786="HZ-GB2312 (Vereenvoudigd)"
+67453="GB18030 (Vereenvoudigd)"
+67454="ISO-2022-CN"
+157880="Japans"
+; Auto detect for Russian, Chinese and Japanese
+51788="Automatische detectie"
+
+51778="Shift-JIS"
+51779="ISO-2022-JP"
+51781="EUC-JP"
+157840="Koreaans"
+51784="EUC-KR"
+51212="Weergave verversen"
+44002="Broncode"
+50660="Frame-broncode"
+51215="Links in frame"
+44001="&Menu"
+50995="Volledig scherm"
+140320="&Navigatie"
+50032="Terug"
+; Next
+50031="Vooruit"
+
+50420="Stop"
+50477="Startpagina"
+50065="Herladen"
+44003="Frame herladen"
+50725="Alle pagina's herladen"
+200000="Herladen elke"
+56000="Inschakelen"
+56001="Aanpassen..."
+50270="Alle afbeeldingen laden"
+50478="Startpagina instellen..."
+50059="Ga naar pagina..."
+65132="Ga naar gelijksoortige pagina's"
+50087="Toevoegen aan bladwijzers"
+146790="E-mail"
+50679="Bericht opstellen..."
+; Send menu, Mail
+65180="Link verzenden"
+
+50979="Ophalen"
+; Check menu, Mail
+51723="Alle ophalen"
+
+; Send menu, Mail
+54070="Uitvak verzenden"
+
+54071="Alle uitvakken verzenden"
+54214="E-mail beheren..."
+51143="&Zoeken..."
+51139="Filters..."
+51145="Nieuw account..."
+59999="Accounts beheren..."
+54215="Relaties beheren..."
+44004="Markeren als gelezen"
+44005="Markeren als ongelezen"
+44006="O&ude artikelen tonen"
+44007="Alle groepen &tonen"
+50626="D&iscussies tonen"
+60004="Nieuws&groepen vernieuwen"
+1123600="&Vensters"
+148360="Speciaal"
+50836="Overdrachten"
+50837="Geschiedenis"
+50838="Plug-ins"
+50835="Tijdelijke opslag"
+54122="Java-console"
+50498="Dupliceren"
+52035="Gekoppeld venster maken"
+50018="Trapsgewijs"
+50019="Naast elkaar"
+51136="Onder elkaar"
+50567="Alle vensters herstellen"
+50565="Alle minimaliseren"
+50545="Alle maximaliseren"
+50564="Alle sluiten"
+50523="&Sessie opslaan..."
+52034="Over&zicht tonen..."
+140130="&Help"
+50013="Inhoud"
+50479="Toetsenbord"
+50525="Muis"
+60340="Tip van de &dag..."
+60243="Geef het door"
+60242="Opera kopen"
+50976="Opera registreren..."
+242400="Opera op het Web"
+; Opera on the Web menu
+60240="Homepage"
+60241="Ondersteuning"
+50666="Contact"
+60246="Gemeenschap"
+51131="Operamail"
+
+50015="Over Opera"
+; link menu
+50416="Link &openen\tKlik"
+50417="Openen in &nieuw venster\tShift+Klik"
+50437="Openen op de achtergrond"
+53018="Openen in nieuwe pagina"
+53019="Openen in pagina op de achtergrond"
+50418="Voeg link toe aan bladwijzers..."
+50216="Linkadres kopiëren"
+50761="Doel opslaan als..."
+
+; mailto: link menu
+50436="&Zend e-mail..."
+50543="&Toevoegen aan Relaties..."
+50542="E-mailadres kopiëren"
+50544="Mailto:-adres ko&piëren"
+
+; mailto: image link menu
+50263="Afbeelding tonen"
+
+; mailto: image link and image link  menu
+65246="Afbeelding herladen"
+
+; mailto: image link menu and image link menu
+50262="Afbeelding opslaan..."
+50251="Afbeelding kopiëren"
+50419="Adres van afbeelding kopiëren"
+56064="Eigenschappen afbeelding"
+200670="Afbeelding gebruiken als"
+56067="Voorgrondskin"
+56068="Achtergrondskin"
+57076="Bureaublad-achtergrond"
+56069="Voorgrondskin verwijderen"
+56070="Achtergrondskin verwijderen"
+
+; Default page menu
+50426="Terug"
+50427="Vooruit"
+50429="Stop"
+50430="Startpagina"
+50428="Herladen"
+50423="Toevoegen aan bladwijzers"
+50215="Adres kopiëren"
+65178="Link per e-mail verzenden"
+292450="Achtergrond"
+
+; Default page menu and image link menu
+65245="Afbeelding tonen"
+
+; Default page menu
+50672="Afbeelding opslaan"
+50671="Afbeelding kopiëren"
+50673="Adres afbeelding kopiëren"
+65244="Eigenschappen afbeelding..."
+200710="Afbeelding gebruiken als"
+56071="&Voorgrondskin"
+56072="&Achtergrondskin"
+57077="&Bureaublad-achtergrond"
+50432="Dupliceren"
+
+; Select menu
+50872="Tekst kopiëren"
+65184="Zoeken"
+291920="Zoeken met"
+65187="Woordenboek"
+65188="Encyclopedie"
+65186="Geld omrekenen..."
+291960="Vertalen"
+65196="Engels naar Frans"
+65197="Engels naar Duits"
+65198="Engels naar Italiaans"
+65199="Engels naar Portugees"
+65200="Engels naar Spaans"
+65202="Frans naar Engels"
+65203="Frans naar Duits"
+65204="Frans naar Italiaans"
+65205="Frans naar Portugees"
+65206="Frans naar Spaans"
+65207="Duits naar Engels"
+65208="Duits naar Frans"
+65209="Italiaans naar Engels"
+65210="Italiaans naar Frans"
+65211="Portugees naar Engels"
+65212="Spaans naar Engels"
+65213="Spaans naar Frans"
+65214="Engels naar &Japans"
+65215="Japans naar Engels"
+65218="Verzenden per e-mail"
+65191="&Bekijken in broncode"
+
+; View source menu
+65261="&Stoppen met bekijken broncode"
+
+; Image link menu
+44013="Openen"
+44014="Openen in nieuwe pagina"
+44015="Link toevoegen aan bladwijzers"
+44016="Ad&res van afbeelding kopiëren"
+
+144670="&Bestand"
+50467="&Openen..."
+50468="Op&slaan..."
+50470="&Zenden"
+50469="&Afsluiten"
+140080="Bewerken"
+242420="_banner_context_menu_"
+57055="&Voorkeuren..."
+; File menu
+148470="Bestand"
+
+50847="Afdrukken"
+50856="Sluiten"
+148480="Bewerken"
+50848="Kopiëren"
+50849="Zoeken"
+; Navigation menu
+148510="Navigatie"
+
+50851="Terug"
+50852="Vooruit"
+50853="Startpagina"
+50854="&Alfabetische index\tF1"
+50855="Sneltoetsen"
+1127000="Bewerken"
+148700="Invoegen"
+50870="Volledige &Naam"
+50902="&Voornaam"
+50903="&Achternaam"
+50904="A&dres"
+50905="&Staat"
+50906="&Plaats"
+65242="Post&code"
+50907="Land"
+50908="&Telefoon"
+50909="&Fax/mobiel"
+50871="&E-mail"
+50910="&Homepage"
+50911="Speciaal &1"
+50912="Speciaal &2"
+50913="Speciaal &3"
+65243="Be&werken..."
+50864="Ongedaan maken"
+50865="Knippen"
+50866="Kopiëren"
+50867="Plakken"
+50868="Verwijderen"
+50869="Alles selecteren"
+51265="Kopiëren als &tekst"
+51266="Kopiëren als &HTML"
+51267="Kopiëren als &Bladwijzers"
+; Button bar
+51321="Bro&wser uiterlijk..."
+50917="Browser &indeling..."
+
+56073="Skins ophalen"
+; Hotlist window bookmarks view
+54150="In &mijn volgorde"
+54151="Sorteren op &titel"
+54152="Sorteren op titel &omgekeerd"
+54153="Sorteren op &bezoekdatum"
+54154="Sorteren op be&zoekdatum omgekeerd"
+54155="Sorteren op &aanmaakdatum"
+54156="Sorteren op aan&maakdatum omgekeerd"
+54161="Zoekveld &tonen"
+54157="&Mappenboom tonen"
+181580="&Kolommen"
+54158="Kolomkoppen &tonen"
+52051="Kolom &bezocht tonen"
+52052="Kolom &gemaakt tonen"
+52053="&Automatische kolombreedte"
+
+; Bookmark item
+53056="&Verwijderen\tDelete"
+53057="&Eigenschappen..."
+
+; Hotlist window contacts view
+54159="&Mappenboom tonen"
+54160="&Kolomkoppen tonen"
+
+; Transfers view
+54139="Details tonen"
+67520="Nieuwe items bovenaan tonen"
+51204="&Buiten Opera tonen"
+51203="Naar voren &brengen bij nieuwe overdracht"
+
+294120="Paginabalk"
+65412="&Nieuwe pagina\tDubbelklik"
+; Page bar item
+53025="&Verplaatsen naar nieuw venster\tDubbelklik"
+65411="&Pagina sluiten\tShift+Klik"
+
+; Go menu
+65130="&Ga naar pagina"
+65133="Ga naar pagina's die &linken naar deze pagina"
+
+146630="Frame"
+50663="Broncode tonen"
+50781="Opslaan als"
+56051="Broncode valideren"
+50669="Toevoegen aan bladwijzers..."
+50668="Adres kopiëren"
+65179="Link per e-mail verzenden"
+50664="Herladen"
+44012="Alle afbeeldingen laden"
+50708="Maximaliseren"
+53400="E-&mailbericht opstellen"
+56053="&Homepage bezoeken"
+53404="&Aan:"
+53405="&Cc:"
+53406="&Bcc:"
+54019="&Relatie..."
+180210="Bestan&d"
+54021="&Nieuw..."
+53411="Kopiëren"
+53412="Alles selecteren"
+53413="Afdrukken"
+67350="Sneldownload"
+67351="Paneel vergrendelen"
+67352="Ophalen van alle accounts "
+67353="E-mail lezen..."
+67354="Markeren en naar volgende ongelezen"
+; Cancel newsmessage
+67355="Bericht annuleren"
+
+67356="Labelen als"
+67357="Tonen in"
+67358="Ga naar"
+67362="Alles markeren als gelezen"
+67363="Prullenbak legen"
+67364="Omleiden"
+67359="Volgende ongelezen"
+67360="Vorige ongelezen"
+67365="Discussie"
+; noun (in 'Go to' menu)
+67366="Alles van relatie"
+
+67367="Plat"
+67368="Discussies"
+67369="Aan en van"
+67370="Miniaturen"
+67371="Gelezen tonen"
+67372="Prullenbak tonen"
+67373="Spam tonen"
+67374="Mailinglijsten tonen"
+67375="Nieuwsgroepen tonen"
+67376="Snelantwoord tonen"
+67377="Verwijderen uit deze zicht"
+; Forward mail
+67378="Doorsturen"
+
+67379="Prioriteit"
+67380="In mijn volgorde"
+67381="Sorteren op naam"
+67382="Sorteren op bijnaam"
+67383="Sorteren op adres"
+67384="Sorteren op beschrijving"
+67385="Sorteren op aanmaakdatum"
+67386="Sorteren op bezoekdatum"
+67387="Oplopend sorteren"
+67388="Aflopend sorteren"
+67389="Openen"
+67390="Beeld"
+67391="Berichten tonen"
+67392="Homepage bezoeken"
+; Contact Item New menu
+67393="Nieuw"
+
+67394="Ga naar URL"
+; Help menu
+67395="Help"
+
+; Window menu
+67396="Vensters "
+
+; Mail menu and button
+67397="E-mail"
+
+; Bookmarks menu
+67398="Bladwijzers"
+
+67399="Sessies"
+67400="Navigatiebalk"
+67401="Knoppen vergrendelen"
+67402="Werkbalken aanpassen..."
+67403="Skin"
+67404="Kleurenschema"
+; Browser View Menu
+67405="Stijl"
+
+67406="Klein scherm"
+67407="Site-navigatie"
+; Send mail menu
+67408="Zenden"
+
+67409="Lezen..."
+67410="Zoeken..."
+67411="Nieuwsgroepen..."
+67412="IMAP-mappen..."
+67413="Alle sluiten behalve actieve"
+; Bookmark Item File menu
+67414="Opera-bladwijzers importeren..."
+67415="Netscape-bladwijzers importeren..."
+67416="Internet Explorer-favorieten importeren..."
+67417="Opera-bladwijzers exporteren..."
+
+; Contact Item New menu
+67418="Map..."
+67419="Relatie..."
+
+; Contact Item File menu
+67420="Nieuw..."
+
+; File/Session menu
+67421="Sessie openen..."
+67422="Sessie invoegen..."
+67423="Sessie opslaan..."
+
+; Quick Preferences
+67424="Alleen gevraagde pop-ups openen"
+
+; View Hotlist Menu
+67425="Bladwijzers"
+67426="E-mail"
+
+67427="Relaties"
+; View Hotlist Menu
+67428="Geschiedenis"
+67429="Overdrachten"
+67430="Links"
+67431="Vensters "
+
+; View Navigation Bar Menu
+67432="Auto"
+
+67433="Geen kleurenschema"
+67434="Kleurenschema systeem"
+67435="Goud"
+67436="Zand"
+67437="Jungle"
+67438="Zee"
+67439="Blauw"
+67440="Indigo"
+67441="Paars"
+67442="Purper"
+67443="Rood"
+67444="Speciale effecten"
+67445="Auteurmodus"
+67446="Gebruikersmodus"
+; Reload Menu
+67455="5 seconden"
+67456="15 seconden"
+67457="30 seconden"
+67458="1 minuut"
+67459="2 minuten"
+67460="5 minuten"
+67461="15 minuten"
+67462="30 minuten"
+
+; Site Navigation Menu
+67463="Home"
+67464="Index"
+67465="Inhoud"
+67466="Zoeken"
+67467="Woordenlijst"
+67468="Help"
+67469="Eerste"
+67470="Vorige"
+67471="Volgende"
+67472="Laatste"
+67473="Omhoog"
+67474="Copyright"
+67475="Auteur"
+
+67476="JavaScript-console"
+67477="Opnieuw overdragen"
+67478="Overdracht verwijderen"
+67479="Stijl"
+67480="Paneel verwijderen"
+67481="Verwijderen van de werkbalk"
+67482="Geluid"
+67483="Alle sluiten"
+67484="Alle sluiten behalve actieve"
+; Remove from Personal Bar
+67485="Verwijderen"
+
+67486="Werkbalk herstellen"
+67487="Grote afbeeldingen"
+67488="Overdrachtsvenster tonen bij overdracht"
+67489="Werkbalk"
+; Right-click on address field
+67490="Plak en ga"
+
+; Links Panel Toolbar
+67495="Vergrendelen"
+
+67496="Volledig scherm"
+67497="Beveiliging"
+67498="Afbeeldingen tonen"
+; New page
+67499="Nieuw"
+
+; Used in menus to show the keyboard shortcut, typically Ctrl+t
+67538="Ctrl"
+
+67521="Shift"
+67522="Alt"
+67523="Home"
+67524="End"
+67525="PageUp"
+67526="PageDown"
+67527="Omhoog"
+67528="PijlOmlaag"
+67529="PijlLinks"
+67530="PijlRechts"
+67531="Esc"
+67532="Ins"
+67533="Delete"
+67534="Backspace"
+67535="Tab"
+67536="Spatie"
+67537="Enter"
+; Caption for fast forward button for automatic login using Wand
+67539="Inloggen"
+
+67572="Deze zicht"
+67573="Meer items"
+67633="Openen in venster op de achtergrond"
+67634="Weergave"
+67635="Handmatig"
+67636="Na 1 seconde"
+67637="Na 2 seconden"
+67638="Na 3 seconden"
+67639="Na 5 seconden"
+67640="Na 10 seconden"
+67641="Bij voorkeur platte tekst"
+67642="Bij voorkeur HTML"
+67643="Onderdruk externe onderdelen"
+67644="Volledig beeld"
+67645="Gesplitst beeld"
+67646="Eén folder"
+67647="Nieuwe notitie"
+67648="SnelTerug"
+67649="SnelVooruit"
+67650="Afbeelding laden"
+67651="Afbeelding openen"
+67652="Kopiëren naar notitie"
+67653="Persoonlijke info invoegen"
+67654="Notitie invoegen"
+67655="Alles wissen"
+67656="Plak als notitie"
+67657="Menubalk"
+67658="Links..."
+67659="Relatie hier toevoegen"
+67660="Alle relaties in map toevoegen"
+67661="KDE1-bladwijzers importeren..."
+67662="Konqueror-bladwijzers importeren..."
+67663="Exporteren als HTML..."
+67664="Geselecteerde items opslaan als HTML..."
+67665="Opera-relaties importeren..."
+67666="Opera-relaties exporteren..."
+67667="Geselecteerde relaties opslaan als..."
+67668="KDE1-bladwijzers..."
+67669="Konqueror-bladwijzers..."
+67670="Bladwijzer als HTML..."
+67671="Info"
+67672="Notities"
+67673="Spraak"
+67674="Spraakvoorkeuren..."
+67676="Spraak"
+67677="Luisteren"
+67678="Spreken"
+; Revert an undo operation
+68116="Opnieuw"
+
+; Edit popup menu string. Translate with ampersand
+69000="&Ongedaan maken"
+69001="O&pnieuw"
+69002="&Knippen"
+69003="K&opiëren"
+69004="P&lakken"
+69005="&Wissen"
+69006="&Alles selecteren"
+
+; Workspace popup menu string. Translate with ampersand
+69007="&Vorig formaat"
+69008="Ve&rplaatsen"
+69009="&Grootte"
+69010="Mi&nimaliseren"
+69011="&Maximaliseren"
+69012="&Sluiten"
+69013="&Volgende >"
+69014="&Standaard"
+69015="&Classic"
+69016="&Aankleding"
+
+; Print dialog. Detination tab
+69017="Bestemming"
+
+; Print dialog. Options tab
+69018="Opties"
+
+; Print dialog. Printer program tab
+69019="Printerprogramma"
+
+; Print dialog.
+69020="&Printers"
+
+; Print dialog. List column header
+69021="Printer"
+69022="Host"
+69023="Opmerking"
+
+; Print dialog. Checkbox. Translate with ampersand
+69024="Print naar &bestand"
+
+; Print dialog. Frame text label
+69025="Afdrukbereik"
+69026="Kopiën"
+69027="&Allen"
+
+; Print dialog. Translate with ampersand
+69028="&Selectie"
+69029="P&agina's"
+69030="&Van"
+69031="&Aan"
+69032="Aa&ntal examplaren"
+69033="&Eerste pagina eerst afdrukken"
+69034="&Laatste pagina eerst afdrukken"
+
+; Print dialog. Frame text label
+69035="Kleur"
+69036="Opties"
+69037="Papierformaat"
+
+; Print dialog. Translate with ampersand
+69038="&In kleur afdrukken indien mogelijk"
+69039="In &grijswaarden afdrukken"
+
+; Print dialog
+69040="Staand"
+69041="Liggend"
+
+; Print dialog. Printer parameter
+69042="Parameter"
+
+; Print dialog. Help text label
+69043="Het printerprogramma moet van stdin lezen.\nParameters worden als één tekst doorgegeven aan het programma."
+
+; Print dialog. Dialog title
+69044="Afdrukken"
+
+; Print dialog. Paper type
+69045="A0 (841 x 1189 mm)"
+69046="A1 (594 x 841 mm)"
+69047="A2 (420 x 594 mm)"
+69048="A3 (297 x 420 mm)"
+69049="A4 (210x297 mm, 8.26x11.7 inches)"
+69050="A5 (148 x 210 mm)"
+69051="A6 (105 x 148 mm)"
+69052="A7 (74 x 105 mm)"
+69053="A8 (52 x 74 mm)"
+69054="A9 (37 x 52 mm)"
+69055="B0 (1030 x 1456 mm)"
+69056="B1 (728 x 1030 mm)"
+69057="B2 (515 x 728 mm)"
+69058="B3 (364 x 515 mm)"
+69059="B4 (257 x 364 mm)"
+69060="B5 (182x257 mm, 7.17x10.13 inches)"
+69061="B6 (128 x 182 mm)"
+69062="B7 (91 x 128 mm)"
+69063="B8 (64 x 91 mm)"
+69064="B9 (45 x 64 mm)"
+69065="B10 (32 x 45 mm)"
+69066="C5E (163 x 229 mm)"
+69067="DLE (110 x 220 mm)"
+69068="Executive (7.5x10 inches, 191x254 mm)"
+69069="Folio (210 x 330 mm)"
+69070="Ledger (432 x 279 mm)"
+69071="Legal (8.5x14 inches, 216x356 mm)"
+69072="Letter (8.5x11 inches, 216x279 mm)"
+69073="Tabloid (279 x 432 mm)"
+69074="US Common #10 Envelope (105 x 241 mm)"
+
+; Print dialog.
+69075="Lokaal programma"
+69076="Aangepaste printer"
+
+; Print dialog. Fileselector title
+69077="Kies uitvoerbestand"
+69078="Kies toepassing"
+
+; Print dialog. Printer connection
+69079="Lokaal verbonden"
+
+; Print dialog. Alternate printer names
+69080="Aliassen"
+
+; Print dialog. Unknown printer location
+69081="onbekende lokatie"
+
+; Print dialog. Unknown printer
+69082="onbekend"
+
+; Dialog title. When no printer was found
+69083="Geen printer geïnstalleerd"
+
+; Dialog help text
+69084="Er is geen geldige printer ingesteld\n\nU kunt naar een bestand afdrukken, of een aangepaste\nprinter kiezen in het dialoogvenster Afdrukken"
+
+; Column header label when listing plug-ins
+69085="Gebruik"
+
+; First time dialog help text
+69086="De middel-muisklik-actie kan worden ingesteld met een Shift+middel-muisklik.\n\nWilt u deze actie nu instellen?"
+
+; Dialog close button
+69087="Sluiten"
+
+; Dialog apply button
+69088="Toepassen"
+69089="Afdrukken"
+
+; Dialog help button
+69090="Help"
+
+; Qt library strings (colordialog)
+69100="Aa&n aangepaste kleuren toevoegen"
+69101="&Basiskleuren"
+69102="&Aangepaste kleuren"
+69103="Aangepa&ste kleuren instellen >>"
+69104="&Groen:"
+69105="&Rood:"
+69106="&Blauw:"
+69107="&Verz.:"
+69108="&Waarde"
+69109="&Toon"
+69110="A&lpha-kanaal"
+69111="Kleur kiezen"
+
+; Qt library strings (filedialog)
+69112="%1\nBestand niet gevonden.\nControleer pad en bestandsnaam."
+69113="&Verwijderen"
+69114="&Nee"
+69115="&Ja"
+69116="&Openen"
+69117="&Hernoemen"
+69118="Op&slaan"
+69119="&Ongesorteerd"
+69120="<qt>Wilt u echt %1 %2 verwijderen?</qt>"
+69121="Alle bestanden (*.*)"
+69122="Attributen"
+69123="Terug"
+69124="Kopieer of verplaats een bestand"
+69125="Nieuwe map aanmaken"
+69126="Datum"
+69127="%1 wissen"
+69128="Details"
+69129="Dir"
+69130="Directories"
+69131="Directory:"
+69132="Fout"
+69133="Bestands&naam"
+69134="Bestandsformaa&t:"
+69135="Bestand"
+69136="Directory zoeken"
+69137="Ontoegankelijk"
+69138="Beeld lijst"
+69139="Zoeken &in:"
+69140="Naam"
+69141="Nieuwe map %1"
+69142="Nieuwe map 1"
+69143="Nieuwe map"
+69144="Een directory omhoog"
+69145="Openen"
+69146="Voorbeeld bestandsinhoud"
+69147="Voorbeeld bestandsinfo"
+69148="&Herladen"
+69149="Alleen lezen"
+69150="Lezen-schrijven"
+69151="Lezen: %1"
+69152="Opslaan als"
+69153="Opslaan"
+69154="&Verborgen bestanden tonen"
+69155="Grootte"
+69156="Sorteren"
+69157="Sorteren op &datum"
+69158="Sorteren op &naam"
+69159="Sorteren op &grootte"
+
+; Qt library strings (filedialog) - Not regular file
+69160="Speciaal"
+
+; Qt library strings (filedialog)
+69161="Symlink naar Directory"
+69162="Symlink naar Bestand"
+69163="Symlink naar Speciaal"
+69164="Soort"
+69165="Alleen schrijven"
+69166="Schrijf: %1"
+69167="de directory"
+69168="het bestand"
+69169="de symlink"
+
+; General message box strings
+69200="U moet eerst een bestandsnaam kiezen"
+69201="Ontbrekende bestandsnaam"
+69202="De gekozen bestandsnaam bestaat al. Als u\ndoorgaat, zal de inhoud van het huidige bestand\nverloren gaan.\n\nWilt u doorgaan?"
+69203="Filters vervangen"
+69204="De gekozen bestandsnaam bestaat al. Kies een ander bestand"
+69205="Ongeldige bestandsnaam"
+69206="Schrijven mislukt. Gegevens zijn niet opgeslagen.\n\nControleer of u schrijfrechten heeft voor de\ndirectory waar het bestand moet worden opgeslagen\nen dat er voldoende vrije schrijfruimte is."
+69207="Opslaan mislukt"
+69208="U heeft geen schrijfrechten op de opgegeven lokatie"
+69209="U heeft geen schrijfrechten voor de ingestelde %1.\n\nNaam: %2"
+69210="Toegang geweigerd"
+69211="directory"
+69212="bestand"
+
+; Message box title
+69213="Ongeldige plug-in-versie"
+
+; Message box help text
+69214="Ongeldige Netscape proxy-plug-inversie ontdekt. Opera kan geen plug-ins gebruiken voordat dit is hersteld. Installeer de proxy-plug-in die met deze versie van Opera werd geleverd."
+
+; Message box title
+69215="Plug-ins zoeken"
+
+; Message box help text for delayed plug-in search (after startup)
+69216="Plug-ins zijn niet geïnstalleerd tijdens het opstarten. Installatie zal nu beginnen."
+
+; Message box help text
+69217="De vorige keer dat naar plug-ins werd gezocht, trad een fatale fout op.\n\nWilt u nu naar plug-ins gaan zoeken?"
+
+; Text above a list of directories
+69218="Geregistreerde plug-in-directories"
+
+; Help text for setting display resolution (DPI)
+69219="Weergaveresolutie"
+
+; Default display resolution value
+69220="Systeemstandaard"
+
+; Fast forward 
+69232="Volgende"
+
+; Fast forward
+69233="Volgende afbeelding"
+69234="Inloggen"
+69235="Toverstaf-login"
+69236="Diashow"
+69237="Diashow afbeelding"
+
+; Menu entry for adding a mailto link to the contact list
+69242="Link toevoegen aan Relaties..."
+
+67306="Muziek"
+69313="Berichtenlijst"
+69314="Berichttekst"
+69315="Lijst en tekst"
+; Page menu string
+69336="Sluiten"
+69337="Activeren"
+69338="Vorig formaat"
+69339="Minimaliseren"
+69340="Maximaliseren"
+
+; Used in toolbar popup menus to control visibility of extender arrow
+69363="Verlenger tonen"
+
+; Used in M2 menus (in the show account menu)
+69366="Alle accounts "
+69367="Mail accounts "
+69368="Nieuws accounts"
+
+; General menu string 
+69381="Exporteren..."
+
+; m2 submenu string (in hotlist)
+69382="Accounts kiezen"
+
+; m2 menu string (in hotlist)
+69383="Accountkiezer tonen"
+
+; Submenu that hold all closed window entries
+69384="Gesloten"
+
+; Main help entry (F1 action)
+69385="Opera Help"
+
+; Contents sub menu in help menu
+69386="Inhoud"
+
+; Help topic
+69387="Hotlist"
+69388="Werkbalken"
+69389="Menu's"
+69390="Dialoogvensters"
+69391="Voorkeuren"
+
+; On the web menu entry
+69392="Mogelijkheden en handleidingen"
+69393="Toegankelijkheid"
+69394="Beveiliging en privacy"
+
+; Meta key
+69395="Meta"
+
+; Menu string in transfer panel
+69422="Alle complete downloads verwijderen"

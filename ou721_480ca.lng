@@ -1,0 +1,4636 @@
+; Opera language file version 2.0
+; Copyright © 1995-2003 Opera Software ASA. All rights reserved.
+; Translated by Marc Belzunces <marcbel@softcatala.org>
+; Created on 2003-10-16 11:42
+; Lines starting with ; (like this) are comments and need not be translated
+
+[Info]
+Language="ca"
+; The string below is the language name in its own language
+LanguageName="Català"
+Charset="iso-8859-1"
+Build.Linux=480
+Version.Linux=7.21
+DB.version=111
+
+[Translation]
+
+; General strings
+
+; Used in a popup error message when Opera can't connect to the remote
+; server due to other phenomena than the one stated in 32873.
+32869="No s'ha pogut connectar al servidor remot"
+
+; The error code corresponding to this string is used in a number of
+; situations when the server has abruptly closed the connection, and then
+; the string can be used in a popup error message.
+32864="El servidor remot ha tancat la connexió"
+
+; Used in a popup error message when Opera has failed to load a requested
+; page more than once.
+32874="Han fracassat els intents de carregar completament aquesta pàgina.\r\n\r\nDeu haver-hi un problema al servidor."
+
+; Used in a popup error message when Operas request to connect to a server
+; is refused. (For example when the server exists but does not answer on
+; the specified port.)
+32873="No s'ha pogut connectar al servidor remot"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain exists but the server itself does not (for example
+; http://fff.example.com).
+32871="No s'ha pogut trobar el servidor remot"
+
+; Used in a popup error message when Opera has tried to resolve a server
+; name with the DNS to fetch a requested document from it, and the server
+; domain doesn't exist (for example http://invalid).
+32872="L'adreça no està disponible des d'aquesta màquina"
+
+; Used as default error message in a popup error message, when no other
+; network error message applies.
+32868="S'ha produït un error intern de comunicació"
+
+; Used in a popup error message when there is no route from the client's
+; subnet to the server's subnet, likely due to a badly configured network.
+32881="La xarxa no està disponible. Contacteu amb l'administrador  del vostre sistema"
+
+; Used in a number of error situations, when the user has entered a
+; malformed URL, such as opera:nonexistant, into the URL field. The http
+; respose error code 400 (Bad request), and some other http error codes
+; between 400 and 500 (signifying client errors) also give the same
+; result.
+32832="Adreça no vàlida"
+
+; Used in a popup error message when the network of the underlying system is
+; down. This could be due to errors in the protocol stack, network card or
+; driver, or in the physical network outside of the system.
+32865="Problema de la xarxa"
+
+; Used in a popup error message when the server has tried to redirect a
+; document request from Opera to an adress and Opera fails to connect to
+; that server.
+21462="El servidor ha tractat de canviar l'adreça a una de no vàlida.\r\n Comuniqueu-ho al gestor del lloc."
+
+; Used in a popup error message when a proxy server has been specified for a
+; specific request type, and the proxy server doesn't answer when an URL
+; of that type is entered in the URL field.
+32897="No s'ha pogut connectar al servidor intermediari"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain exists but the server itself does not (for example
+; fff.opera.com).
+32898="No s'ha pogut trobar el servidor intermediari"
+
+; Used in a popup error message when Opera has tried to resolve a proxy
+; server name with the DNS to fetch a requested document from it, and the
+; server domain doesn't exist (for example fjdlsakhngfjf).
+32899="No s'ha pogut accedir al servidor intermediari. El servidor no està disponible"
+
+; Used in a popup error message when Operas request to connect to a proxy
+; server is refused. (For example when the server exists but does not
+; answer on the specified port.)
+32900="No s'ha pogut accedir al servidor intermediari. Accés denegat"
+
+; Used when Opera has tried to open a network socket to a server and the
+; socket is busy. This message should be handled internally most of the
+; time.
+32866="El sòcol de xarxa està blocat"
+
+; Used in a popup error message when a non-recoverable error has occurred in
+; the network protocol stack or network drivers of the system.
+32883="Problemes amb el sòcol de xarxa. Comproveu els controladors de xarxa"
+
+32885="La connexió al servidor ha caducat. Torneu a provar-ho després."
+; Used in a popup error message when not enough socket resources (file
+; handles, network buffers) are free.
+32867="Problemes de recursos del sòcol de xarxa. Intenteu-ho novament."
+
+; The default error message, used in any situation where no more specific
+; error message can be created.
+20000="S'ha produït un error intern del programa."
+
+20001="Espereu fins què la impressió actual s'hagi completat."
+20002="No s'ha pogut generar cap finestra nova. Manca de memòria o recursos."
+20003="El tipus d'adreça és desconegut o no és acceptat."
+; Might be used in a popup error message when the user has clicked the Home
+; button and no home page is set in preferences, but the Set homepage
+; dialog seems to appear instead. Obsolete?
+20005="No hi ha cap pàgina inicial definida. Definiu-ne una."
+
+20009="El tipus de fitxer MIME ja està definit."
+20011="No s'ha trobat la cadena que cerqueu"
+20013="No s'ha pogut establir la connexió amb la impressora"
+20014="Determineu el programa que voleu utilitzar per mostrar aquest fitxer"
+; Used in an error popup message when the printer has encountered an error
+; while printing (as opposed to 20013 which pops up if the printing can't
+; even start, which is more likely.)
+20015="No s'ha pogut imprimir la pàgina. Comproveu si la impressora està a punt"
+
+20016="Imprimint la pàgina"
+; Used in a popup error message when the user has requested a file from the
+; server that it's not allowed to fetch (HTTP response code 403), if the
+; user has set the Network/Server errors/Always show dialog box
+; preference.
+33040="El servidor remot rebutja d'executar la sol·licitud.\r\nAquesta adreça no està disponible."
+
+; Used in a popup error message when the user has requested a file from the
+; server that does not exist (HTTP response code 404), if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33041="No s'ha trobat l'adreça"
+
+; Used in a popup error message as a default message when the user has made
+; a valid request for a file from the server, and the server encounters an
+; error that prevents it to fulfill the request (HTTP response code 5xx
+; and 6xx), if the user has set the Network/Server errors/Always show
+; dialog box preference.
+33042="No s'ha trobat el servidor remot o el fitxer"
+
+; Used in a popup error message when the user has requested a file from the
+; server, and the server could not fulfill the request since this
+; functionality wasn't implemented (HTTP error code 501), if the user has
+; set the Network/Server errors/Always show dialog box preference.
+33043="El servidor remot manca d'algunes funcions necessàries"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server sends the document using HTTP compression, and
+; the document decoder couldn't decode the data properly.
+33046="S'ha trobat un problema mentre es codificaven les dades. Pot ser a causa d'haver-hi dades corrompudes."
+
+; Used in a popup error message when the user has submitted a form using a
+; HTTP request method (specified with the METHOD attribute to the FORM tag
+; in the HTML form) that the server does not accept (HTTP error code 405),
+; if the user has set the Network/Server errors/Always show dialog box
+; preference.
+33424="El servidor no ha acceptat el mètode HTTP de la sol·licitud"
+
+; Used in a popup error message when the user tries to fetch a document by
+; clicking a link, and the server cannot send the requested document in a
+; format that matches the content of the HTTP accept headers sent in the
+; request (HTTP error code 406), if the user has set the Network/Server
+; errors/Always show dialog box preference. However, Opera accepts all
+; document formats and sends *.* in its accept header, so this is unlikely
+; to happen.
+33425="El servidor no ha estat capaç d'enviar dades acceptables"
+
+; Used in a popup error message when the user has requested a document from
+; the server, the server needs more data from Opera to fulfill the
+; request, and Opera fails to deliver the data before the server times out
+; and cancels the request (HTTP error code 408). Unlikely to happen very
+; often. Visible if the user has set the Network/Server errors/Always show
+; dialog box preference
+33426="El servidor ha superat el temps d'espera"
+
+; Used in a popup error message when Opera has sent a HTTP request to fetch
+; or send a document to the server, and the server determins that there's
+; a conflict with a third part regarding the document, that can be solved
+; by the user (HTTP error message 409). This could happen when the user
+; submits a form that leads to a change of an online document, and the
+; server detects that the changes conflicts with other changes already
+; made to the document. Visible if the user has set the Network/Server
+; errors/Always show dialog box preference
+33427="Conflicte amb algun recurs existent"
+
+; Used in a popup error message when the user has requested a document and
+; the server answers that the document has been there, but has been
+; permanently removed (HTTP error code 410). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33428="L'adreça ja no està disponible"
+
+; Used in a popup error message if the user has sent a request to the
+; server, and the server answers that it needs a Content-Length header to
+; process the request (HTTP error code 411). Opera never sends requests
+; without a valid Content-Lenght header. Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33429="Calia posar-hi la longitud del contingut HTTP"
+
+; Used in a popup error message if the user has sent a request to the server
+; containing one or more precondition headers, and one or more of these
+; preconditions evaluated false on the server (HTTP error code 412). The
+; precondition headers could be If-Range and If-Modifified-Since, that
+; could be used to fetch the missing parts of a earlier partially fetched
+; documents, if the document is still the same. Unlikely to happen.
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33430="Han fallat les condicions prèvies HTTP"
+
+; Used in a popup error message when the user has sent a request to a
+; server, and the server signalled that the request entity (the actual
+; request data) was too large (HTTP error code 413). Visible if the user
+; has set the Network/Server errors/Always show dialog box preference.
+33431="Les dades HTTP sol·licitades eren massa llargues"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the URL is longer than the server can handle (HTTP error code 414).
+; Visible if the user has set the Network/Server errors/Always show dialog
+; box preference.
+33432="L'adreça HTTP és massa llarga"
+
+; Used in a popup error message when the user has sent a request to a server
+; and the server didn't recognize the content type of the request entitiy
+; (HTTP error code 415). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33433="El servidor no ha reconegut el tipus de contingut"
+
+; Used in a popup error message if Opera has requested a part of a file that
+; does not exist (HTTP error code 416). This shouldn't happen. Visible if
+; the user has set the Network/Server errors/Always show dialog box
+; preference.
+33434="El servidor no ha pogut enviar la part sol·licitada del fitxer"
+
+; Used in a popup error message if Opera has sent a request with certain
+; expectations in the HTTP header 'Expect', and the server can't meet that
+; expectation because vital features are not implemented. For example, the
+; server can be expected to handle HTTP_CONTINUE (HTTP reply code 100)
+; when sending in forms (HTTP error code 417). Visible if the user has set
+; the Network/Server errors/Always show dialog box preference.
+33435="L'espera HTTP ha fallat"
+
+; Used in a popup error message when Opera has sent a request to a HTTP
+; proxy server, and the upstream server returned an invalid response code
+; (HTTP error code 502). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33436="La passarel·la (gateway) HTTP ha fallat"
+
+; Used in a popup error message when the user has requested a document and
+; the server can't fulfill the request since it's overloaded or offline
+; (HTTP error code 503). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33437="El servei està sobrecarregat o no es troba en línia. Torneu a intentar-ho després"
+
+; Used in a popup error message when the user has sent a request to a proxy
+; server, and the upstream server did not answer before the proxy server
+; timed out (HTTP error code 504). Visible if the user has set the
+; Network/Server errors/Always show dialog box preference.
+33438="Ha caducat el temps de la passarel·la (gateway) HTTP"
+
+; Used in a popup error message when the user has requested a document from
+; a server, and the server doesn't support the HTTP version used (HTTP
+; error code 505). Visible if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33439="La versió HTTP no ha estat acceptada"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a server, using HTTP digest authentication to check the
+; documents integrity, and the authentication failed.
+33047="Ha fallat l'autenticació. El contingut pot no ser fiable"
+
+; Used in a warning popup message when the user has tried to fetch a
+; document from a proxy server, using HTTP digest authentication to check
+; the documents integrity, and the authentication failed.
+33048="Ha fallat l'autenticació del servidor intermediari. El contingut pot no ser fiable"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server answered that the ftp service was not
+; currently available (FTP error 421).
+33056="El servidor d'FTP no està disponible"
+
+; Used in a popup error message as a default error message when the user has
+; entered an FTP URL into the URL field and an error has occurred.
+33057="Hi ha un error intern al mòdul d'FTP"
+
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the server has rejected the connection.
+33058="No hi ha connexió al servidor d'FTP, possiblement per\r\nhaver-hi massa usuaris. Torneu a provar-ho després."
+
+; Can be used when the the user has entered an FTP URL into the URL field,
+; and the server has rejected the connection because the provided user
+; name didn't exist. Normally an authentication dialog is shown instead.
+33059="No s'ha trobat l'usuari al servidor d'FTP"
+
+; Can be used when the the user has entered an FTP URL without user name and
+; password into the URL field to do an anonymous login, and the server did
+; not accept anonymous logins. Normally an authentication dialog is shown
+; instead.
+33060="La connexió a aquest servidor d'FTP requereix el nom d'usuari i la contrasenya"
+
+33061="No s'ha trobat el directori d'FTP"
+; Used in a popup error message when the user has entered an FTP URL into
+; the URL field, and the file did not exist.
+33062="No s'ha trobat el fitxer"
+
+; Used in a popup error message when an initiated FTP file download is
+; interrupted by the server, either by the connection being closed (FTP
+; error 426) or the download action being aborted (FTP error 451).
+33063="El servidor d'FTP remot ha tancat la connexió"
+
+; Used in a popup error message when the user has entered an FTP URL in the
+; URL field to request a file download, and the server signals that it
+; can't set up a passive data channel to transfer the file (FTP error
+; 425).
+33064="No s'ha pogut obrir un canal d'FTP remot"
+
+; Used in a popup error message when the user has entered a file URL
+; pointing to a file that does not exist in the URL field.
+33120="No s'ha pogut obrir el fitxer"
+
+20017="L'escala d'impressió ha de tenir valors entre 20 i 400%. Introduïu un nombre vàlid"
+20018="Les connexions màximes a un sol servidor han de ser entre 1 i 99."
+20019="Les connexions totals màximes han de ser entre 1 i 999."
+20020="El nombre de línies de l'historial ha de ser definit entre 0 i 999."
+; Used in a popup error message when the user has requested a file from the
+; server, and the server recieves the request but no data exists to return
+; (HTTP error code 204), if the user has set the Network/Server
+; errors/Always show dialog box preference.
+33044="El servidor remot ha acceptat la petició - no hi ha cap contingut retornat"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file is read-protected.
+32903="S'ha denegat l'accés a aquest fitxer"
+
+; Used in a popup error message when the user has entered a file URL in the
+; URL field and the file does not exist.
+32904="No existeix el fitxer"
+
+; Used in a popup error message when Opera has tried to write a file to disk
+; and there was not enough disk space left. This happens for example when
+; trying to save a page to disk, but also in many other places and
+; situations, not always connected with something that the user does.
+32905="No s'ha pogut escriure al fitxer. El disc està ple."
+
+; Used in a popup error message when Opera has failed to write data into the
+; cache, for example when fetching a document.
+32906="Hi ha un error intern a la memòria cau"
+
+20045="Hi manquen recursos. No s'ha pogut carregar la cadena de text"
+; Used as default text on file upload input elements in forms in HTML
+; documents.
+20046="Trieu"
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no telnet application is specified in preferences.
+20048="No s'ha definit cap aplicació de Telnet. Introduïu el camí complet de l'aplicació Telnet a les preferències."
+
+; Used in a popup error message when the user has entered a telnet URL
+; (starts with 'telnet:') in the URL field to start a telnet session, and
+; no host name has been specificed in the url.
+20049="No s'ha definit el nom del servidor"
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no path to a TN3270 terminal application has been specified
+; in the preferences. (TN3270 is a variant of telnet used mainly on IBM
+; mainframes).
+20121="No s'ha determinat cap aplicació TN3270. Introduïu el camí complet d'una aplicació TN3270 a les preferències."
+
+; Used in a popup error message when the user has entered a TN3270 URL
+; (starting with tn3270:) in the URL field, to connect to a server with
+; TN3270, and no host name has been specified. (TN3270 is a variant of
+; telnet used mainly on IBM mainframes).
+20122="No s'ha definit el nom del servidor"
+
+20226="Fitxers d'aparença (*.zip)|*.zip|Tots els fitxers (*.*)|*.*|"
+20050="Fitxers HTML|*.htm;*.html|Fitxers de text|*.txt|Fitxers GIF|*.gif|Fitxers JPEG|*.jpg;*.jpeg|Fitxers BMP|*.bmp|Fitxers de so|*.wav|Fitxers de vídeo AVI|*.avi|Fitxers de música MIDI|*.mid;*.midi|Configuració de finestres de l'Opera|*.win|Fitxers XML|*.xml|Fulls d'estil|*.css|Tots els fitxers (*.*)|*.*|"
+; Used in the File/Open dialog to let the user select what type of files the
+; dialog should show. The labels are visible in the File type dropdown
+; list.
+20051="Fitxers HTML (*.htm;*.html)|*.htm;*.html|Fitxers de Text (*.txt)|*.txt|Imatges GIF (*.gif)|*.gif|Fitxers PNG (*.png)|*.png|imatges JPEG (*.jpg)|*.jpg|imatges BMP (*.bmp)|*.bmp|Tots els fitxers (*.*)|*.*|"
+
+20052="Fitxers de programa (*.exe)|*.exe|Tots els fitxers (*.*)|*.*|"
+30120="Fitxers de so (*.wav)|*.wav|Tots els fitxers (*.*)|*.*|"
+20126="X509 (*.usr)|*.usr|PKCS #7 signat (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (amb clau privada) (*.p12)|*.p12;*.pfx|Fitxer PEM (*.pem)|*.pem|Tots els fitxers|*.*|"
+20127="X509 (*.usr)|*.usr|PKCS #7 signat (*.p7s)|*.p7s|PKCS #7 (*.p7)|*.p7|PKCS #12 (amb clau privada) (*.p12)|*.p12;*.pfx|fitxer PEM (*.pem)|*.pem|"
+20128="X509 (*.ca)|*.ca;*.crt;*.cer;*.509;*.der|PKCS #7 signat (*.p7s)|*.p7s|PKCS #7(*.p7)|*.p7|fitxer PEM (*.pem)|*.pem|Tots els fitxers|*.*|"
+; Used in the authentication dialog when the user tries to access a password
+; protected document.
+20082="Introduïu el nom d'usuari i la contrasenya per a aquesta pàgina."
+
+; Used in the authentication dialog when the user has tried to access a
+; password protected HTML page and authentication has failed.
+20053="No s'ha pogut autenticar amb la pàgina. Torneu a introduir el nom d'usuari i la contrasenya."
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the proxy server requires authentication.
+20110="Introduïu el nom d'usuari i la contrasenya per a aquest servidor intermediari."
+
+; Used when the user has tried to access an URL type that according to the
+; settings in preferences should be accessed through a proxy server, and
+; the authentication to the proxy server fails.
+20109="No s'ha pogut autenticar amb el servidor intermediari. Torneu a introduir el nom d'usuari i la contrasenya."
+
+20118="Fitxers CSS (*.css)|*.css|Fitxers HTML (*.htm, *.html)|*.htm;*.html|Tots els fitxers (*.*)|*.*|"
+20341="Imatges|*.gif;*.png;*.jpg;*.jpeg;*.jpe;*.bmp|Tots els fitxers|*.*|"
+20059="Fitxers GIF (*.gif)|*.gif|Fitxers PNG (*.png)|*.png|Fitxers JPEG (*.jpg)|*.jpg|Fitxers BMP (*.bmp)|*.bmp|Tots els fitxers (*.*)|*.*|"
+20073="S'han enviat els missatges"
+; Used in a popup error message when Opera finds that the document type is
+; unknown, or no document exists. This is hard to produce, though, since
+; handle all unknown file/mime types by letting the user decide what to do
+; with them - save, open or other alternatives, and empty documents are
+; just ignored.
+20074="Document desconegut o no definit"
+
+20075="No s'ha pogut crear un directori per l'Opera. Intenteu-ho novament amb un nom de directori vàlid"
+; Used in an error popup dialog when the user has entered a gopher or WAIS
+; url in the URL field, and no corresponding proxy has been set in
+; preferences.
+20076="Aquest tipus d'adreça requereix l'ús d'un servidor intermediari. Determineu-ne un a les Preferències"
+
+; Used as the default text to substitute an image in an HTML document, if
+; the image can't be loaded (or viewing of images is turned off) and the
+; images alt attribute is empty.
+20078="Imatge"
+
+; Used as the default prompt string to a searchable index specified with the
+; ISINDEX tag (an early form of forms functionality, deprecated in HTML
+; 4.X) in a HTML document, and is rendered in the document above an input
+; text area. (The label can be changed from this default with the PROMPT
+; attribute to the ISINDEX tag.)
+20079="Aquest és un índex recercable"
+
+; Used at the end of an HTML document that has not been fully loaded because
+; the user has cancelled the request with the Stop button.
+20081="Transmissió aturada!"
+
+20084="Aquest tipus és intern i no es pot suprimir"
+22509="Suprimeix el tipus de fitxer"
+20085="Esteu segur que voleu suprimir l'associació del tipus de fitxer: [%s] ?\n\n Si ho feu, després l'Opera no sabrà què ha de fer amb els fitxers d'aquest tipus."
+20086="Aquest tipus és intern i no se li pot canviar el nom"
+20090="Obre un fitxer de correu"
+20091="Desa un fitxer de correu"
+20093="Correu de l'Opera"
+30101="Importa correu d'Eudora(c)"
+30100="Importa correu des d'Outlook Express(c)"
+30102="(Microsoft Outlook Express 4.x)"
+30103="(Microsoft Outlook Express 5.x)"
+30112="(Fitxer de llibre d'adreces delimitat per comes)"
+30104="(Correu Netscape)"
+30109="(Qualcomm Eudora)"
+30105="(Microsoft Windows Messaging)"
+30106="(Microsoft Outlook)"
+30107="(Fitxer de bústia d'UNIX)"
+30108="No s'ha trobat cap programa acceptat!"
+30110="Determineu la carpeta on teniu les bústies d'Outlook Express."
+30111="Determineu la carpeta on teniu les vostres bústies."
+16615="Podeu personalitzar aquestes opcions si voleu veure un determinat tipus d'anunci"
+; Search strings
+17059="&Preferències..."
+17060="Tipus de cerca"
+17061="Paraula clau"
+17062="<Per defecte>"
+
+; Search with x
+17063="Cerca a %s"
+
+; Search for x
+17064="Cerca %s"
+
+; Search x-domain
+17065="Cerca %s"
+
+; Search in page
+17066="Cerca a la pàgina"
+
+17056="Esdeveniment"
+17057="Fitxer de so"
+22461="&Obre el fitxer"
+22462="&Obre el fitxer amb %s"
+22464="Què voleu fer?"
+22463="Precaució! Comproveu sempre si hi ha cap virus abans d'obrir els fitxers."
+22468="Servidor desconegut"
+22515="Document:"
+22516="Imatges:"
+22517="Total:"
+22518="Velocitat:"
+22519="Temps:"
+22736="El directori de descàrrega no és vàlid"
+22735="Heu intentat fer una descàrrega a un directori no vàlid."
+20094="La mida del marge no és vàlida. Ha de ser entre 0 i 5 cm"
+20098="No s'ha determinat cap destinatari. Determineu un destinatari o un grup de discussió"
+20101="No es pot reproduir el fitxer multimèdia. Comproveu que el dispositiu està instal·lat correctament."
+21020="No es pot executar l'aplicació registrada. S'ha esgotat la memòria de Windows o el fitxer de l'aplicació s'ha corromput."
+21021="No s'ha trobat el fitxer."
+21022="No s'ha trobat el camí."
+21023="No es pot executar l'aplicació registrada. No hi ha memòria."
+21024="No es pot executar l'aplicació registrada. Una biblioteca (fitxer DLL) sembla corrupta."
+21025="No es pot executar l'aplicació registrada. Es necessiten extensions Windows de 32 bits."
+21026="No hi ha cap aplicació registrada per a aquesta extensió."
+21027="No es pot iniciar l'aplicació registrada."
+21030="No es pot executar l'aplicació . S'ha esgotat la memòria de Windows o el fitxer de l'aplicació és corrupte."
+21031="No s'ha trobat el programa."
+21032="No s'ha trobat el camí del programa."
+21033="No es pot iniciar l'aplicació. Manca memòria."
+21034="No es pot iniciar l'aplicació. Una biblioteca (fitxer DLL) sembla corrupte."
+21035="No es pot iniciar l'aplicació. Es necessiten extensions Windows de 32 bits."
+21036="No es pot iniciar l'aplicació."
+20102="Fitxers de signatura(*.sig)|*.sig|Fitxers de text (.txt)|*.txt|Tots els fitxers (*.*)|*.*|"
+22505="Cal definir un tipus MIME."
+22506="Tipus MIME no definit"
+22512="Aquest tipus MIME ja està definit.\n\n%s\n\nVoleu sobreescriure'l?"
+22513="Voleu sobreescriure el tipus MIME?"
+; Popup error message when the user has tried to print a document and the
+; printer signals that it's out of paper. Currently unused.
+20103="No s'ha pogut imprimir la pàgina. La impressora no té paper."
+
+; Used in the document window when showing an ftp file listing. 
+20125="Directori superior"
+
+; Used in the 'type' column of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field, when the list item type is a directory.
+22494="Directori"
+
+; Used in the column titles of the created directory listing when a file URL
+; pointing to a directory (for example file://localhost/C:/) has been
+; entered in the URL field.
+22496="Nom"
+22497="Tipus"
+22498="Mida"
+22499="Temps"
+
+20200="Normal"
+20201="Encapçalament 1 <H1>"
+20202="Encapçalament 2 <H2>"
+20203="Encapçalament 3 <H3>"
+20204="Encapçalament 4 <H4>"
+20205="Encapçalament 5 <H5>"
+20206="Encapçalament 6 <H6>"
+20207="Text preformatat <PRE>"
+20208="Enllaços <A>"
+20230="Text dels camps dels formularis de línia única"
+20212="Text dels camps dels formularis de línies múltiples"
+20213="Text dels botons dels formularis"
+20214="Tipus CSS serif"
+20215="Tipus CSS sans-serif"
+20216="Tipus CSS cursiva"
+20217="Tipus CSS fantasia"
+20218="Tipus CSS d'espai fix"
+22072="L'adreça és massa llarga."
+; Used in a popup error message when there is not enough free memory for
+; Opera to complete the current task.
+21002="Manca memòria."
+
+21249="Resultats de la cerca"
+21180="Barra personal"
+21181="Pàgina buida"
+21199="Carpeta nova"
+21200="Afegeix"
+21201="Afegeix"
+21202="Menú"
+21248="Cerca"
+21193="Pàgina nova"
+21203="Nou"
+21204="Obre"
+21205="Desa"
+21206="Impressió"
+21207="Copia"
+21208="Cerca"
+21209="Anterior"
+21210="Actualitza"
+21211="Següent"
+21212="Pàgina inicial"
+21213="Vés a"
+21214="Actiu"
+21215="Mosaic"
+21216="Cascada"
+21217="Col·legi"
+21218="MIME"
+21254="Preferits"
+21255="Sencera"
+21197="Vés a"
+21198="Cerca"
+21194="Reprèn"
+21195="Reinicia"
+21196="Atura"
+21010="Previsualitza"
+21011="Imprimeix com en la pantalla"
+21012="Imprimeix el marc actiu"
+21013="Imprimeix tots els marcs"
+21050="Voleu tancar totes les finestres?"
+21051="P&referits"
+; Used in the progress bar when a request for fetching a document has been
+; enqueued for sending to the server.
+21059="Sol·licitud a la cua per a enviar a %s..."
+
+; Used in the progress bar when Opera is looking up the name for the host to
+; fetch a document from.
+21060="S'està cercant el servidor %s..."
+
+; Used in the progress bar when connecting to the host to fetch the
+; requested document.
+21061="S'està connectant al servidor remot %s..."
+
+; Used in the progress bar when sending a document request to the server.
+21062="S'està enviant la sol·licitud a %s..."
+
+; Used in the progress bar when receiving data from the requested document
+; from the server.
+21063="Recepció de dades des de... %s..."
+
+; Used in the progress bar when starting the network before fetching a
+; requested document.
+21064="S'està connectant a la xarxa/mòdem..."
+
+; Used in the progress bar (often too briefly to be seen, before the
+; hostname lookup) when searching for a complete name for the server to
+; fetch a requested document from.
+21065="S'està cercant el nom complet del servidor..."
+
+; Used in the progress bar when setting up an encrypted connection with the
+; server before fetching a requested document.
+21066="S'està configurant una connexió segura..."
+
+; Used in the progress bar when connecting to a proxy server to fetch a
+; requested document.
+21067="S'està connectant al servidor intermediari..."
+
+; Used in the progress bar when waiting for a connection to the server to be
+; set up, to fetch a requested document.
+21760="S'està esperant (#%2) per connectar-se a %1"
+
+; Used in the progress bar when a requested file has been loaded from the
+; server.
+21074="S'ha completat la sol·licitud a %s"
+
+; Used in the progress bar when waiting for a reply from the server after
+; requesting a document.
+21068="S'ha activat un temps de termini de 40 segons. S'espera la resposta..."
+
+; Used in a popup warning message when the user has submitted a HTML form to
+; a server, which accepts the request, but never sends an HTTP_CONTINUE
+; (HTTP response code 100) to tell Opera to send the forms data. Opera
+; waits for 40 seconds before showing the warning message.
+33045="Sembla que hi ha un problema en aquest servidor.\n\nSi la càrrega no finalitza com cal, atureu la petició i torneu a emplenar el formulari."
+
+; Used in the progress bar while the user selects to accept or reject a
+; cookie in the cookie warning/confirmation dialog, when accessing a site
+; that requires the server to set client cookies, and Opera is not set to
+; automatically receive this kind of cookie.
+21077="S'espera la confirmació de l'usuari per a la galeta o galetes..."
+
+; Used in the progress bar while Opera checks that the domain stated in the
+; cookie exists.
+21078="S'està esperant la confirmació DNS de la galeta del(s) domini(s)..."
+
+; Used in a popup error message if the user has entered an URL with a port
+; specification that is not the default port for that protocol, and is
+; among the ones that Opera uses internally (for example
+; www.example.com:25) in the URL field.
+33050="S'ha inhabilitat l'accés a aquest port per motius de seguretat."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie with a domain attribute that does
+; not match the server name.
+33051="El servidor ha intentat instal·lar una galeta no vàlida. La combinació del nom del servidor i l'atribut del domini per a aquesta galeta no és acceptable, i per tant s'ha rebutjat la galeta\r\n\r\nHaureu de demanar al responsable del web la instal·lació de galetes vàlides."
+
+; Used in a popup error message, along with the complete cookie data, when
+; the server wants to set an HTTP cookie, and Opera fails to look up the
+; domain stated in the cookie in the DNS.
+33052="El servidor a intentat instal·lar una galeta per a un domini amb una adreça IP no registrada. Això no és acceptable per raons de seguretat, i per tant s'ha rebutjat la galeta\r\n\r\nHaureu de preguntar al responsable del web la creació d'una adreça IP vàlida per al domini especificat a la galeta."
+
+22726=", s'ha inhabilitat aquest connector"
+21080="Inici de l'Opera"
+21081="Sortida de l'Opera"
+21082="S'ha carregat la pàgina"
+21079="Transferència feta"
+21083="Fallada"
+21084="Segueix l'enllaç"
+22259="S'ha rebut un missatge instantani"
+22260="Contacte en línia"
+21111="Cap"
+22522="No hi ha cap aparença definida"
+22469="No hi ha visualitzador registrat per als fitxers %s, cal definir una aplicació que obri el tipus de fitxer.\nPitgeu el botó [Avançats] i determineu l'aplicació a utilitzar."
+22470="No s'ha trobat l'aplicació"
+25142="Determineu un fitxer de so perquè soni en l'esdeveniment"
+21100="Els recursos de Windows s'estan esgotant. És recomanable tancar algunes finestres o una aplicació, per evitar problemes."
+21101="Els recursos de Windows s'estan esgotant. És recomanable tancar algunes finestres o una aplicació, per evitar problemes."
+21104="El fitxer de finestres desat sembla corrupte i no es pot utilitzar."
+21112="Configuració de finestres de l'Opera(*.win)|*.win|Tots els fitxers (*.*)|*.*|"
+21247="Visualitza"
+21233="Envia"
+21234="Inclou"
+21235="Atura"
+21236="Càrrega"
+21237="Mostra"
+21238="Desconnexió"
+21239="Color"
+22502="Autor"
+22503="Usuari"
+; View source button
+22571="HTML"
+
+20105="Pàgina "
+20108="El correu electrònic està enviant les dades d'aquest formulari. Si voleu revelar els vostres nom i adreça electrònica al destinatari, pitgeu [Sí]. Si voleu utilitzar una adreça de correu anònima, pitgeu [No]."
+; Used in an warning/confirmation dialog when the user has tried to submit
+; an HTML form insecurely.
+20111="Les dades d'aquest formulari es transmeten sense xifrar-les. Voleu continuar?"
+
+; Used in a warning/confirmation dialog when the user has submitted an HTML
+; form, and the server wants to redirect the submitted data to another
+; server. GET and POST refers to HTTP commands. POST is to send the form
+; data again to the new destination, GET discards the data, but continues
+; to to the new destination.
+20119="El servidor pretén redirigir el formulari.\n\nPitgeu [Sí] per reENVIAR el formulari a la nova destinació\n\n Pitgeu [No] per OBTENIR la destinació nova sense reenviar el formulari.\n\nPitgeu [Cancel·la] si no voleu continuar."
+
+21401="Cap"
+21402="Baixa"
+21403="Mitjana"
+21404="Alta"
+21405="Sense seguretat al servidor"
+21407="Seguretat baixa al servidor"
+21409="Seguretat mitjana al servidor"
+21411="Seguretat alta al servidor"
+21406="Seguretat baixa al servidor. Imatges sense xifrar"
+21408="Seguretat mitjana al servidor. Imatges sense xifrar"
+21410="Seguretat alta al servidor. Imatges sense xifrar"
+; Used in the title bar of the Certificate authorities dialog in the network
+; security preferences.
+21250="Autoritats de certificació"
+
+; Used in the title bar of the Personal certificate dialog in the network
+; security preferences.
+21251="Certificats personals"
+
+21252="No és possible connectar al servidor."
+21253="Fallada de transmissió."
+21258="El certificat és il·legal o no verificable."
+21259="Certificat no acceptat."
+21260="El certificat ha estat revocat pel seu emissor."
+21261="El certificat ha caducat."
+21262="El certificat és desconegut."
+21265="El certificat és vàlid, però el permís ha estat denegat."
+21271="S'ha produït un error intern."
+21274="La cadena del certificat no ha estat ordenada correctament."
+21272="No s'ha trobat cap mètode de xifratge SSL 2 acceptable."
+21273="S'ha detectat un error desconegut."
+21319="Aquest servidor únicament permet l'ús d'SSL 2. Si voleu connectar amb aquest servidor heu d'habilitar el SSL 2 a les preferències."
+21276="Connexió segura: avís (%u)"
+21277="Connexió segura: avís (%u) del servidor"
+21278="Connexió segura: error fatal (%u)"
+21279="Connexió segura: error fatal (%u) del servidor"
+21280="Introduïu la contrasenya de seguretat"
+21281="Introduïu la contrasenya de seguretat antiga"
+21282="Introduïu la contrasenya de seguretat nova"
+21283="Repetiu la contrasenya de seguretat nova"
+21284="La contrasenya és incorrecta. Introduïu la contrasenya de seguretat correcta"
+21285="Ha fallat el canvi de contrasenya de seguretat."
+21388="La contrasenya ha de tenir almenys 6 caràcters, entre els quals cal que n'hi hagi un d'alfabètic i un de numèric com a mínim"
+21320="Inseriu una contrasenya de seguretat"
+21286="Aquests són els certificats personals registrats a la base de dades."
+21287="Aquestes són les autoritats de certificació registrades a la base de dades."
+21288="Voleu instal·lar aquesta cadena de certificats d'autoritats de certificació a la base de dades?"
+21289="Voleu instal·lar aquesta cadena de certificats personals a la base de dades?"
+21330="Voleu instal·lar aquesta cadena de certificats amb xifratge PEM a la base de dades?"
+21291="Esteu a punt d'enviar una sol·licitud a aquest servidor. Voleu continuar?"
+21293="El certificat del servidor no coincideix amb el seu nom. L'accepteu malgrat tot?"
+21378="Un dels certificats presentats pel servidor ha caducat. Voleu acceptar-lo malgrat tot?"
+21309="El servidor ha sol·licitat un certificat. Seleccioneu-ne un, o pitgeu [Cancel·la] per no enviar-ne cap."
+21331="No s'han pogut verificar les signatures d'aquest certificat."
+21464="No es pot utilitzar aquest certificat per a aquest propòsit."
+21303="Instal·la un certificat d'autoritat"
+21304="Instal·la un certificat d'usuari"
+21336="Instal·la un certificat PEM"
+21305="Selecciona un certificat d'usuari"
+21306="Avís de certificat"
+21307="El nom del certificat és erroni"
+21308="El certificat ha caducat"
+21377="El certificat del servidor ha caducat"
+21312="Aquest certificat ha caducat. Heu d'esborrar-lo i instal·lar-ne un d'actualitzat."
+21314="No s'ha trobat el signant del certificat"
+21321="La cadena de certificats d'aquest servidor és incompleta i el(s) signant(s) no estan registrats. Ho accepteu malgrat tot?"
+21322="El certificat arrel per a aquest servidor no està registrat. Podeu instal·lar el certificat. Voleu fer-ho?"
+21315="S'ha instal·lat el vostre certificat, i el podeu utilitzar, però l'Opera no el pot verificar. Manca el signat d'aquest certificat. Instal·leu el certificat del signant si està disponible."
+21311="Instal·la"
+21323="La definició de la contrasenya de seguretat ha fallat."
+21316="La instal·lació del certificat ha fallat."
+21317="El certificat del client carregat no tenia una clau privada corresponent a la base de dades."
+21318="La cadena del certificat no ha estat ordenada correctament."
+21324="Ja hi ha instal·lat un altre certificat d'usuari per a aquesta clau. La instal·lació ha fallat."
+21325="Hi ha un altre certificat per a almenys una de les autoritats de certificació instal·lades. Serà ignorat."
+21326="S'està generant una clau"
+21327="Espereu-vos, l'Opera està generant la vostra clau privada."
+21328="Tots els mètodes de xifratge estan inhabilitats a Preferències."
+21329="El certificat és desconegut o té un format no vàlid."
+21332="Les operacions de seguretat no estan disponibles."
+21333="La seguretat està desactivada."
+21334="Aquesta operació de seguretat està desactivada."
+21335="Sense aquesta DLL de seguretat no es podran utilitzar les funcions de seguretat de l'Opera"
+21337="Accepta"
+21338="El certificat del servidor contenia una expressió de nom no vàlida"
+; Max 30 characters
+21344="Connexió"
+
+; IMPORTANT!!!! Do not change %u, %ld or \r and \n !!!!
+21346="Mòdul:"
+21347="mòdul:"
+21348="Exponent:"
+21349="Exponent públic:"
+21350="Exponent privat:"
+21351="primer1:"
+21352="primer2:"
+21353="exponent1:"
+21354="exponent2:"
+21355="coeficient:"
+21364="Algorisme de clau  desconegut "
+21365="Identitat d'objecte d'extensió desconeguda "
+21367="Algorisme de signatura desconegut "
+21368="Versió del certificat: %ld\r\n"
+21369="Número de sèrie: %s\r\n"
+21370="No vàlid abans de: "
+21371="\r\nNo vàlid després de: "
+21372="\r\nEmpremta digital: "
+21373="\r\n\r\nAlgorisme de clau pública: "
+21374="\r\nAlgorisme de signatura: "
+21375="\r\nExtensions:\r\n"
+21376=" (Crític)"
+21461="\r\n\r\nEmpremta digital de la clau pública (SHA-1):\r\n  "
+
+; Max 199 chars 
+21366="Clau privada de %u bits. Generats %s.\r\nURL: %s"
+
+21362="No es pot utilitzar el certificat per a l'autenticació SSL, o per emetre certificats SSL."
+21356="El certificat es pot utilitzar per a l'autenticació del client SSL."
+21357="El certificat es pot utilitzar per a l'autenticació del servidor SSL."
+21358="El certificat es pot utilitzar per a l'autenticació del client i del servidor SSL."
+21359="El certificat es pot utilitzar per a l'emissió de certificats SSL."
+21360="El certificat es pot utilitzar per a l'autenticació del client SSL, i per emetre certificats SSL."
+21361="El certificat es pot utilitzar per a l'autenticació del servidor SSL, i per emetre certificats SSL."
+21363="El certificat es pot utilitzar per a l'autenticació del client i del servidor SSL, i per emetre certificats SSL."
+; Used in a popup error message when the server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32901="El servidor ha sol·licitat un mètode d'autenticació de l'entrada no permès."
+
+; Used in a popup error message when a proxy server has requested an
+; authentication method that Opera does not support, when fetching a
+; document.
+32902="El servidor intermediari ha sol·licitat un mètode d'autenticació de l'entrada no permès."
+
+; Used in a popup error message when the user has tried to authenticate to a
+; page outside of the given security realm.
+32907="Aquesta URL no és a la llista d'URL que es poden autenticar en la zona determinada.\r\nNo es poden enviar les credencials d'autenticació."
+
+; Used in the progress bar while Opera is uploading a file to the server.
+21386="Tramesa de fitxer(s) cap al servidor"
+
+21380="No s'ha pogut desar el correu a la bústia de sortida."
+21382="Aquesta funció no està disponible en aquesta versió especial de l'Opera."
+21379="Aquesta funció ha estat inhabilitada"
+21383="Discos"
+; Used as title of the generated plugin list page (oprea:plugins) on some
+; platforms.
+21384="Connectors"
+
+; Used as title of the generated history list page, when the user has
+; selected Windows/Special/History, or entered the URL opera:history.
+21385="Historial"
+
+21400="S'han escanejat els directoris dels connectors.\nS'han activat els connectors per als tipus de fitxer nous.\n Els connectors per als tipus de fitxer coneguts s'hi han afegit, però no s'han activat."
+; Used as title of the generated cache list page, when the user has selected
+; Windows/Special/Cache, or entered the URL opera:cache.
+21415="Memòria cau"
+
+; Used in the Filename column of the created cache listing (created by
+; entering the special URL opera:cache into the URL field) when the file
+; is cached in memory and not to a file.
+22493="(Memòria)"
+
+22491="Origen de"
+; Used as page title in a blank page created by entering the special URL
+; opera:blank in the URL field.
+22492="Pàgina en blanc"
+
+; Used as column titles in the generated cache list page, when the user has
+; selected Windows/Special/Cache, or entered the URL opera:cache.
+21416="Nom del fitxer"
+21417="Adreça"
+21418="Mida"
+
+21420="Voleu cancel·lar la transferència de debò?"
+; Used in a popup confirmation dialog when the user has gone to
+; Preferences/Multimedia, enabled plugins and pressed the 'Find plugins'
+; button, and new plugins needs to be activated.
+21764="Voleu associar el connector "%1" amb el tipus "%2"?"
+
+21421="Voleu associar aquesta aplicació amb el tipus de fitxer?"
+21425="Al vostre temps d'avaluació li resten %i dies"
+21428="Versió no registrada"
+21501="Afegeix la pàgina aquí..."
+21502="Defineix com a carpeta activa"
+21504="Obre tots els elements de la carpeta"
+21508="Més preferits..."
+; Docked hotlist window
+21516="Preferits"
+21517="Títol"
+21518="Darrera visita"
+21520="Data de creació"
+
+21525="Gestiona els preferits..."
+21519="&Visualitza"
+21600="Un sobrenom no pot contenir un punt, dos punts o una barra"
+21601="Sobrenom no vàlid."
+21609="Els vostres preferits estan ordenats alfabèticament.\n\nCal seleccionar "la meva ordenació" al menú Visualitza dels preferits\nabans que pugueu canviar l'ordenació dels vostres preferits."
+21610="Els preferits estan ordenats alfabèticament"
+; Open file dialog
+21511="Afegeix el fitxer als preferits"
+21512="Obre un fitxer dels preferits"
+21513="Fitxers preferits de l'Opera (*.adr)|*.adr|HTML /Fitxers preferits de Netscape (*.htm, *.html)|*.htm;*.html|Tots els fitxers (*.*)|*.*|"
+21514="Crear un fitxer de preferits nou"
+
+; Autoimport after install
+21950="Autoimportats"
+21951="Preferits del Netscape"
+21952="Preferits de l'Internet Explorer"
+
+; Save file
+21551="Preferits de l'Opera (*.adr)|*.adr|"
+
+21606="Avís"
+21607="Esteu segur que voleu suprimir els elements %li?"
+21608="Confirmeu la supressió dels múltiples elements?"
+22520="Gestos de ratolí"
+22521="Heu realitzat un gest de ratolí per primer cop.\n\nEls gestos del ratolí s'activen pels moviments del ratolí \nmentre manteniu pitjat el botó secundari del ratolí.\n\nFeu clic a [Ajuda] per aprendre els gestos del ratolí.\n\nVoleu continuar emprant els gestos del ratolí?"
+; Skin removal
+22523="Suprimeix l'aparença de primer pla"
+22524="Suprimeix l'aparença de fons"
+
+; Use skin from button set (buttons.ini)
+22738="Voleu usar l'aparença del joc de botons?"
+22737="El joc de botons també conté imatges d'aparença.\nVoleu usar-les?"
+
+22739="Feu clic aquí per comprar l'Opera i llevar el rètol publicitari"
+; Serial number stuff
+22004="Registre de l'Opera"
+22001="Ja us trobeu registrats a Opera.\n\nVoleu canviar la informació del registre?"
+22002="La informació de registre que heu introduït no sembla correcta.\nAssegureu-vos d'inserir-la correctament."
+22003="L'Opera està registrat ara."
+22005="Aquesta informació de registre ha caducat.\nSi us plau, actualitzeu-la a <http://www.opera.com/buy/>."
+22006="Aquesta informació de registre ha caducat.\nSi us plau, actualitzeu-la a <http://www.opera.com/buy/>."
+
+21300="Accés Directe"
+21301="Índex"
+21342="Quan l'Opera es tanqui."
+21343="Aquesta galeta només serà enviada a servidors segurs al domini."
+21393="Aquesta galeta es pot enviar a qualsevol servidor al domini."
+21394="Aquesta galeta només serà enviada a aquest servidor segur."
+21395="Aquesta galeta només serà enviada a aquest servidor."
+21396="Aquesta galeta serà esborrada de la base de dades."
+22071="Transferències"
+22232="Definit per l'usuari"
+21431="El vostre fitxer d'historial és corrupte i serà buidat."
+; Probably deprecated. On O7 and O6 Win, the JavaScript error dialog is
+; popped up instead, if the user has requested in preferences/Multimedia
+; to be alerted of JavaScript errors.
+32825="Fallada en l'execució del JavaScript"
+21450="Ha fallat l'execució de la seqüència."
+21451="Ha fallat la compilació de la seqüència."
+
+; Used if Opera for some reason tries to run JavaScript in a non-HTML
+; document. This is not likely to happen.
+21452="Els URL de JavaScript només es poden executar amb documents HTML"
+
+; Used in a popup error message when the Opera fails to load the JavaScript
+; library at startup.
+21453="No s'ha pogut carregar el fitxer de sistema ES262-32.DLL. El JavaScript no s'executarà."
+
+; Used in the progress bar while Opera is busy running a JavaScript program.
+21454="S'està executant JavaScript..."
+
+22073="Tancar la finestra de transferència aturaria totes les transferències en curs.\n\nVoleu fer-ho de debò?"
+22074="Cancel·la les transferències?"
+22076="Nom"
+22075="Mida"
+22080="Tipus"
+22077="Progrés"
+22078="Temps"
+22079="Velocitat"
+22085="Acabada"
+22108="Acabada (no coincideix la mida)"
+22086="Aturada"
+22087="Error"
+22089="Desconegut"
+22090="Atura"
+22091="Recupera"
+22186="Esborra de la llista"
+22187="Repeteix la transferència"
+22092="Obre l'intèrpret d'ordres"
+22109="Copia la informació del fitxer"
+22093="Aturar la transferència seleccionada?"
+22236="El fitxer de català instal·lat no s'ha escrit per a la versió de l'Opera %s.\n\nPitgeu [Sí] per tornar a iniciar l'Opera utilitzant l'anglès per defecte.\n\nPitgeu [No] per utilitzar el fitxer de català, amb possibles errors."
+22094="Fitxer"
+22096="Nou"
+22095="Edita"
+22099="Error"
+22120="Fitxers"
+22121="Tots els fitxers"
+22122="Tots els fitxers (*.*)"
+14121="Atura l'execució de fitxers de seqüència al document"
+25266="&No mostris més aquesta finestra"
+22151="Carpeta nova"
+; Used in the title bar of a warning/confirmation dialog when a script tries
+; to read the content of a password input element in a form in a HTML
+; document.
+22486="Avís de seguretat del JavaScript"
+
+; Used in a warning/confirmation dialog when a script tries to read the
+; content of a password input element in a form in a HTML document.
+21430="Una seqüència (script) pretén llegir la contrasenya o les contrasenyes del formulari.\r\n\r\nVoleu permetre-l'hi l'accés?"
+
+22102="Ha fallat el tancament de la connexió per mòdem (temps excedit)"
+22103="Tanco les connexions de marcatge directe?"
+22104="Esteu connectat a %s. Voleu tancar aquesta connexió per mòdem?"
+22107="No s'ha pogut llegir el fitxer de consells del dia"
+22114="Propietats de la carpeta dels preferits"
+22125="Propietats de la carpeta de contactes"
+22115="Propietats de preferits"
+22117="Preferits"
+22118="Contactes"
+34304="El codi PIN és erroni"
+34305="No s'ha pogut verificar la signatura"
+34306="El lector de targes ja s'està utilitzant"
+34307="Pot ser que hi hagi un problema amb la targeta"
+34308="El número de la vostra targeta no correspon amb cap dels destinataris de la llista del correu"
+34309="No s'ha pogut xifrar (error indefinit)"
+22110="Preferits"
+22111="Correu"
+22112="Contactes"
+22158="Tauler"
+22159="Tauler"
+22160="Tauler"
+22124="&Afegeix-los tots"
+22127="Carpeta"
+22128="Nom"
+22415="Art / Cultura"
+22416="Automòbils"
+22417="Llibres / Revistes"
+22418="Ordinador / Jocs"
+22419="Ordinador / Tecnologia"
+22420="Cuina"
+22421="Moda / Botigues"
+22422="Finances / Inversió"
+22423="Menjar / Vins"
+22424="Salut / Forma física"
+22425="Casa / Jardí"
+22426="Pel·lícules"
+22427="Música"
+22428="Notícies / Esdeveniments"
+22429="Ciència / Educació"
+22430="Esports / Aficions"
+22431="Viatges / Lleure"
+22432="Sense definir"
+22433="Menys de 25.000 USD"
+22434="25.000-35.999 USD"
+22435="36.000-49.999 USD"
+22436="50.000-75.999 USD"
+22437="76.000-99.999 USD"
+22438="100.000 USD o més"
+22439="1900-1930"
+22440="1930-1950"
+22441="1950-1960"
+22442="1960-1970"
+22443="1970-1980"
+22444="1980-1990"
+22445="1990-fins avui"
+22446="Home"
+22447="Dona"
+22448="Solter"
+22449="Família monoparental"
+22450="Casat(da) "
+22451="Casat(da) amb fills"
+22452="Educació primària"
+22453="Educació secundària"
+22454="Estudis universitaris inacabats"
+22455="Tècnic mitjà / superior"
+22456="Llicenciatura"
+22457="Postgrau"
+21470="Aquesta pàgina vol instal·lar la galeta\r\n   %s="%s"\r\n\r\nAquest valor %sserà enviat als %sdocuments de %s%s%s%s, i als camins que s'estan iniciant a /%s.\r\n\r\n"
+21471="només "
+21472="pàgina segura "
+21473="el servidor "
+21474="tots els servidors en el domini "
+21475=", port(s) "
+22233="La informació del registre ha caducat.\nSi us plau, actualitzeu-la a <http://www.opera.com/buy/>."
+22234="Actualització de l'Opera"
+21476="La galeta s'esborrarà quan es tanqui l'Opera."
+21477=", però, si no determineu altra cosa, la galeta s'esborrarà en tancar l'Opera."
+21478="La galeta és vàlida fins %s%s\r\n\r\n"
+21479="La galeta és vàlida fins %s i ha caducat, qualsevol galeta amb el mateix nom serà esborrada.\r\n\r\n"
+21480="El servei ha enviat el següent missatge sobre l'objectiu de la galeta: "%s"\r\n"
+21481="\r\nPodeu trobar informació addicional a <%s>\r\n%s\r\n\r\n"
+21482="El servei subministra informació sobre les seves galetes  a <%s>\r\n%s\r\n\r\n"
+21483="\r\nPodeu visualitzar aquesta pàgina fent clic en el botó "Visualitza Comentari" a sota.\r\n"
+21484="Accepta-la, incloent les actualitzacions abans de tancar l'Opera"
+21485="Accepta-la sense canvis"
+21486="Accepta-la, però esborra-la al tancar l'Opera"
+21487="Accepta-la, i desa-la al tancar l'Opera"
+21488="Accepta les galetes d'aquest servidor"
+21489="Rebutja les galetes d'aquest servidor"
+21490="Accepta les galetes de aquest domini"
+21491="Rebutja les galetes d'aquest domini"
+21499="\r\n----------------------\r\nLa demanda completa de la galeta és:\r\n\r\n"
+21738="Accepta les galetes de tercers d'aquest servidor"
+21739="Rebutja les galetes de tercers per aquest servidor"
+21740="Accepta les galetes de tercers d'aquest domini"
+21741="Rebutja les galetes de tercers per aquest domini"
+21492="Rebutja-les totes sense preguntar"
+21493="Mostra-les en un quadre de diàleg amb diverses opcions"
+21494="Tracta-les com s'especifica al gestor de servidors"
+21495="Accepta-les totes sense preguntar"
+21496="Accepta només les galetes assignades al propi servidor"
+21497="Rebutja-les totes sense preguntar"
+21746="Mostra-les en un quadre de diàleg amb diverses opcions"
+21498="Accepta-les totes sense preguntar"
+22183="Perquè els canvis siguin efectius, cal tornar a iniciar l'Opera.\n\nVoleu tancar l'Opera?"
+22184="Voleu tancar l'Opera?"
+22185="Llengua per defecte (Anglès)"
+22210="No s'ha trobat cap versió acceptada de l'entorn d'execució  Java.\nCal instal·lar la versió de l'entorn d'execució Java de Sun 1.2 o posterior.\nEl Java ha estat desactivat automàticament per a aquesta sessió.\nVoleu desactivar el Java per a futures sessions?"
+22211="Les classes Java de l'Opera no tenen suficients permisos per executar-se.\n O el fitxer opera.policy no s'ha trobat, o el fitxer de policy\nno atorga els permisos al fitxer opera.jar. Les miniaplicacions Java no funcionaran."
+22212="La versió instal·lada de l'entorn d'execució Java és incompatible amb aquesta versió de l'Opera. Descarregueu JRE 1.2 o posterior de <http://www.javasoft.com>."
+22213="La DLL del Java no s'ha trobat on el\n registre indicava. La instal·lació del Java\nsembla corrompuda. Les miniaplicacions Java no funcionaran."
+22214="Ha estat impossible crear la màquina virtual del Java."
+22215="La màquina virtual del Java s'ha tancat.\n\nS'ha desactivat Java per a la resta de la sessió."
+22216="S'ha abandonat la màquina virtual del Java.\n\nS'ha desactivat Java per a la resta de la sessió."
+22217="L'enregistrament dels mètodes nadius de Java ha fallat.\n\nPotser useu una versió antiga del fitxer opera.jar o \n no es troba en el camí de classes de l'Opera.\nLes miniaplicacions Java no funcionaran."
+22218="Voleu consultar les instruccions d'instal·lació de l'entorn d'execució Java?"
+22219="L'Opera no ha pogut trobar el fitxer opera.jar\nPotser hi manca 'OPERA CLASSPATH' en la secció [JAVA] \ndel fitxer opera.ini, o l'entrada marca un camí erroni.\nLes miniaplicacions Java no funcionaran."
+22220="L'Opera no ha pogut trobar el fitxer opera.policy.\nPotser hi manca 'SECURITY POLICY' en la secció [JAVA] \ndel fitxer opera.ini, o l'entrada marca un camí erroni.\nLes miniaplicacions Java no funcionaran."
+22221="Seguretat Java"
+22222="Una miniaplicació signada sol·licita privilegis addicionals. Voleu atorgar-li tots els permisos?"
+22123="No se n'ha trobat cap"
+22173="S'ha produït un error a l'enviar un missatge de correu"
+22174="No s'ha definit cap gestor de correu extern."
+22175="S'ha produït un error a l'enviar un missatge de correu"
+22176="No s'ha pogut iniciar el gestor de correu extern"
+22179="Correu"
+22182="El vostre compte de correu de l'Opera no està configurat correctament.\nVoleu editar les vostres preferències de correu ara?"
+22180="No s'ha determinat el gestor de correu extern.\nVoleu editar les vostres preferències de correu ara?"
+22181="No hi ha un gestor de correu predeterminat al vostre ordinador.\nVoleu editar les vostres preferències de correu ara?"
+22177="Avís"
+22178="El gestor de correu extern seleccionat no existeix\no no està configurat per a un compte de correu vàlid.\n\nTot i això, voleu aplicar els canvis?"
+21720="Identifica't com a Opera"
+21721="Identifica't com a Mozilla %s"
+21723="Identifica't com a MSIE %s"
+21730="Accepta'n del servidor"
+21731="Accepta'n dels dominis"
+21732="Rebutja'n del servidor"
+21733="Rebutja'n del domini"
+21742="Accepta'n de terceres parts del servidor"
+21743="Accepta'n de terceres parts dels dominis"
+21744="Rebutja'n de terceres parts del servidor"
+21745="Rebutja'n de tercers parts del domini"
+21736="Accepta camins no vàlids"
+21737="Rebutjar els camins no vàlids"
+21734="Rebut&ja"
+21735="Ac&cepta"
+14217="Surt de la &visualització prèvia d'impressió\tP"
+14218="Pre&visualitza la impressió"
+22240="Seleccioneu el directori que conté els fitxers de llengua"
+22514="Definit per l'usuari"
+; Used as default text on submit input elements in forms in HTML documents.
+13043="Envia"
+
+; Used as default text on reset input elements in forms in HTML documents.
+13044="Torna a iniciar"
+
+; Used as default text on button input elements in forms in HTML documents.
+13045="Botó"
+
+; Used at top of the document when trying to show an malformed XML document.
+; Followed by a more specific XML error message.
+13046="Hi ha un error en la interpretació de XML"
+
+; Used in a popup error message when the user has entered input in a text
+; input element in a WML document, and the input did not match the format
+; specification.
+13047="L'entrada no és vàlida."
+
+11463="Barra de &pàgines"
+11462="Barra p&ersonal"
+11458="Mostra els camps de cerca"
+11461="&Mostra els taulers"
+11326="per ordre d'ús més recent"
+11327="en l'ordre de la barra de pàgines"
+11328="sense mostrar la llista"
+11459="Selecciona la carpeta on és l'Eudora"
+11460="Especifiqueu la carpeta on teniu les bústies de l'Outlook Express"
+; Preferences dialog options
+11521="Publicitat"
+11500="Accessibilitat"
+11501="Navegador per defecte"
+11502="Tipus de lletra"
+11503="Correu electrònic"
+11504="Tipus de fitxer"
+11505="Historial i memòria cau"
+11506="Aparença del navegador"
+11524="Estil de pàgina"
+11507="Llengües"
+11508="Multimèdia"
+11509="Xarxa"
+11511="Programes i camins"
+11512="Informació personal"
+11513="Connectors"
+11514="Privadesa"
+11515="Seguretat"
+11516="Sons"
+11517="Inici i sortida"
+11522="Cerca"
+11518="Distribució"
+11519="Finestres"
+
+11626="Categoria"
+11621="S'estan aplicant les preferències noves; espereu-vos..."
+11627="Nom"
+11628="Descripció"
+11629="Camí"
+17035="Tipus MIME"
+17036="Extensions de fitxers"
+; Unicode block names for the international font preferences
+11525="Automàtic"
+11526="Tipus de lletra no disponibles"
+11527="Àrab"
+11528="Armeni"
+11529="Llatí bàsic"
+11530="Bengalí"
+11531="Cherokee"
+11532="Símbols monetaris"
+11533="Xinès simplificat"
+11534="Xinès tradicional"
+11535="Ciríl·lic"
+11536="Devanagari"
+11537="Etiòpic"
+11538="Puntuació general"
+11539="Georgià"
+11540="Grec"
+11541="Grec ampliat"
+11542="Gujarati"
+11543="Gurmukhi"
+11544="Formularis Halfwidth i Fullwidth"
+11545="Hangul"
+11546="Hebreu"
+11547="Hiragana"
+11548="Símbols i puntuació CJK"
+11572="Kanji"
+11549="Kanarés"
+11550="Katakana"
+11551="Cambotjà"
+11552="Laosià"
+11553="Suplement del Llatí-1"
+11554="Llatí ampliat-A"
+11555="Llatí ampliat-B"
+11556="Llatí ampliat addicional"
+11557="Malaialam"
+11558="Mongol"
+11559="Birmà"
+11560="Formes numèriques"
+11561="Ogham"
+11562="Oriya"
+11563="Runic"
+11564="Sinhala"
+11565="Siríac"
+11566="Tàmil"
+11567="Telugu"
+11568="Thaana"
+11569="Thai"
+11570="Tibetà"
+11571="Aborigen canadenc unificat sil·làbic"
+
+; About page
+11700="Quant a l'Opera"
+11701="Informació de registre"
+11702="Està registrat?"
+11703="Nom"
+11704="Organització"
+11705="Avaluació"
+11706="Camins"
+11707="Sistema"
+11708="Preferències"
+11709="Directori de l'Opera"
+11710="Finestres desades"
+11711="Preferits"
+11712="Connectors"
+11713="Memòria cau"
+11714="Documents de l'ajuda"
+11715="Java"
+11716="Terceres parts"
+11717="Opera Software agraeix als grups i les persones esmentades les seves contribucions."
+11718="Aquesta versió de l'Opera no permet l'ús de la versió instal·lada de l'entorn d'execució Java"
+11719="No s'ha instal·lat l'entorn d'execució Java"
+11720="Sí"
+11721="No"
+11722="No disponible"
+
+22248="píxels"
+22250="bits per píxel"
+22249="bytes"
+22244="Missatge d'error"
+22251="animat en %i fotogrames"
+22168="Desa el(s) fitxer(s)"
+22169="Obre el(s) fitxer(s)"
+22170="No s'ha trobat el fitxer."
+22171="El nom del fitxer no és vàlid."
+22167="Comproveu que el camí i el nom del fitxer són correctes."
+22510="byte"
+22252="B"
+22253="kB"
+22254="MB"
+22255="GB"
+22256="TB"
+22257="/s"
+22480="El Java no està instal·lat"
+22465="Trieu una carpeta per desar-hi els fitxers"
+22481="Versió"
+22482="Muntatge"
+22483="Plataforma"
+22484="Informació de la versió"
+22485="Sistema"
+22568="Soci"
+22245="Ha ocorregut un problema quan l'Opera ha tractat de connectar la impressora. Comproveu la configuració de la impressora. Si és una impressora remota, en xarxa, comproveu la vostra connexió en xarxa."
+22246="Hi ha un problema amb la impressora"
+22247="Impressora"
+; Hotlists toolbar buttons
+10927="Mostra el menú de visualització dels contactes"
+10926="Crea una carpeta de contactes"
+
+; Hotlists toolbar buttons and Mail Trash Toolbar
+10925="Afegeix un contacte"
+
+10920="Afegeix el document actiu als preferits"
+10921="Crea una carpeta de documents preferits"
+10922="Mostra el menú de visualització dels preferits"
+14494="Voleu\n\n     tancar totes les finestres, \n     esborrar les galetes no persistents, \n     esborrar totes les contrasenyes, \n     esborrar l'historial, \n     i esborrar les pàgines de la memòria cau xifrats o amb contrasenya?"
+14495="Esborra les dades personals"
+22163="El codi font d'aquesta finestra ha estat editat. El voleu desar?"
+22164="(editat) "
+22235="Pàgina"
+; Used in a warning/confirmation dialog when the user has activated offline
+; mode and then requested Opera to access information that is only
+; available online.
+21433="El mode fora de línia està habilitat. No es pot obrir\n\n%s\n\nVoleu canviar al mode en línia?"
+
+22569="minut"
+22237="minuts"
+22570="segon"
+22723="segons"
+22238="última utilització"
+22239="Heu introduït un valor d'actualització no vàlid.\n\nNomés es poden posar xifres, i el valor d'actualització no pot ser zero."
+; XML error message used at top of the document, following string 13046,
+; when trying to show an malformed XML document. Followed by a line and
+; character count to help finding the error in the XML file.
+25001="memòria insuficient"
+25002="error sintàctic"
+25003="no s'hi ha trobat cap element"
+25004="mal format"
+25005="símbol no tancat"
+25007="etiqueta mal adaptada"
+25008="atribut duplicat"
+25009="ha restat brossa després de l'element del document"
+25010="referència de l'entitat del paràmetre no vàlida"
+25011="entitat no definida"
+25012="referència a una entitat recursiva"
+25013="entitat asíncrona"
+25014="referència a un número de caràcter no vàlid"
+25015="referència a una entitat binària"
+25016="referència a una entitat externa en l'atribut"
+25017="la instrucció de processament XML no és a l'inici de l'entitat externa"
+25018="codificació desconeguda"
+25019="la codificació definida en la declaració XML no és correcta"
+25020="secció de CDATA no tancada"
+25021="error en el processament de la referència d'una entitat externa"
+25022="el document no és independent"
+25000="error desconegut"
+
+; Error messages from XML
+25023="Línia:"
+25024="Caràcter:"
+
+22154="Nombre no vàlid per a '%s'"
+21765="'%1' conté un valor no vàlid.\nCal un nombre entre %2 i %3.\n\n"
+22156="Voleu reiniciar aquest valor?"
+22157="S'està tornant a l'últim valor correcte."
+22243="Desconegut"
+21766="%1 elements a %2 carpetes, %3 elements totals"
+; Used in a warning/confirmation dialog when an URL with a user name (like
+; http://username@www.example.com) is entered in the URL field.
+21463="Advertiment de seguretat:\n\nEsteu tractant d'anar a una adreça que conté un nom d'usuari.\n\n    Nom d'usuari: %s \n    Servidor: %s\n\nEsteu segur que voleu anar a aquesta adreça?"
+
+22161="No s'ha trobat"
+22162="No s'ha pogut trobar el text "
+21120="Mostra totes les capçaleres"
+21122="Data"
+21123="De"
+21124="Assumpte"
+21125="A"
+21121="a/c"
+21126="c/o"
+22703="Només imatges"
+22704="Només text"
+22705="Imatges amb el text a sota"
+22706="Imatges amb el text a la dreta"
+22715="Accepta les finestres emergents"
+22716="Rebutja les finestres emergents"
+22717="Obre les finestres emergents en segon pla"
+22718="Obre només les finestres emergents sol·licitades"
+25316="Confirmeu la supressió"
+25317="Confirmeu la supressió permanent d'aquest tauler.\n\n%s"
+25318="Voleu afegir el tauler del preferit?"
+22729="Selecciona"
+22730="L'Opera està preparat per obrir-se amb la vostra configuració de finestres desades"
+22731="L'Opera està preparat per obrir-se amb la vostra pàgina inicial"
+22732="L'Opera està preparat per obrir-se on vau deixar la navegació"
+22733="L'Opera està preparat per obrir-se sense finestres"
+22734="Feu clic aquí per canviar-ho"
+17171="Google"
+17187="AllTheWeb"
+17189="Super"
+17202="Ama&zon.com"
+17174="Comparació de preus"
+17175="&TechTracker"
+17176="Nom de domini"
+17178="Stock &quote"
+17180="Imatge"
+17181="Vídeo"
+17179="&Mp3/Àudio"
+17188="Google groups"
+17182="Assistència de l'Opera"
+17183="&Cerca a la pàgina"
+17203="Grups de discussió"
+21747="Introduïu la contrasenya que protegeix la clau"
+21748="introduïu una contrasenya per protegir la clau privada exportada"
+21749="Torneu a introduir la contrasenya"
+21750="Importa la clau privada"
+21751="Importa la clau i el certificat"
+21752="Voleu importar la clau privada i aquests certificats adjunts?"
+21753="Voleu importar la clau privada emmagatzemada  en aquest fitxer?"
+21754="Ha fallat la importació de la clau privada i el certificat"
+21755="No havia cap clau privada al fitxer"
+21756="La clau privada importada no coincidia amb el certificat adjunt de la clau. Ha fallat l'operació."
+30211="Ha fallat la configuració automàtica del servidor intermediari. \nDurant aquesta sessió, s'inhabilitarà automàticament la configuració del servidor intermediari."
+22728="Podeu realitzar les cerques al web al camp d'adreces"
+25411="Marc del correu extern"
+25412="S'ha suprimit la càrrega de la font del marc extern:"
+10018="Disposa les finestres en cascada"
+10724="Alterna entre el mode autor i el mode usuari"
+10596="Introduïu aquí el valor del zoom (pitgeu la fletxeta per visualitzar-ne la llista)"
+10009="Copia el text seleccionat al porta-retalls"
+10247="Alterna entre els modes de càrrega i visualització de les imatges (totes, cap o les de la memòria cau)"
+10072="Obre la pàgina inicial"
+10052="Accedeix als URL de preferits en el  directori de preferits actiu"
+10000="Crea a una finestra nova"
+10031="Avança al document següent (pitgeu la fletxeta per a tots els següents)"
+10001="Obre un fitxer al teu ordinador local"
+10059="Vés a una pàgina web"
+10032="Torna a la pàgina anterior (pitgeu la fletxeta per a tots els anteriors)"
+10004="Imprimeix la pàgina"
+10069="Introduïu aquí les adreces d'Internet (pitgeu la fletxeta per a les adreces escrites anteriorment)"
+10056="Carrega la darrera versió de la pàgina"
+10002="Desa la pàgina al vostre ordinador local"
+10227="Cerca un text específic a la pàgina"
+10143="Atura la càrrega de la pàgina"
+10019="Disposa totes les finestres en mosaic vertical"
+13010="Mostra o amaga els preferits"
+13011="Mostra la pàgina a pantalla sencera o normal (alterneu amb F11 en el teclat)"
+13030="Previsualitza la pàgina tal com s'imprimirà"
+10314="Cerca el text introduït a Internet"
+10313="Escriviu aquí el que cerqueu a Internet (pitgeu la fletxeta per a altres tipus de cerca)"
+10308="Vés a la pàgina web del camp d'adreces"
+14134="Reprèn la transferència"
+14135="Transfereix novament"
+14136="Atura la transferència"
+14137="Mostra el menú de visualització de transferències"
+16245="Envia un missatge a aquesta persona"
+16246="Afegeix aquesta persona als contactes"
+4000="No es pot executar "
+4001="No es pot crear el quadre de diàleg "
+4002="No es pot carregar el menú "
+4003="No es pot carregar la icona "
+4004="No es pot carregar el mapa de bits "
+4005="No es pot crear la finestra "
+67003="Mida"
+67004="A"
+67005="S"
+67007="Vareta"
+; Message shown in the status bar when Java Virtual Machine is
+; loading/starting up.
+67008="S'està iniciant la màquina virtual del Java"
+
+; Attribution-line when replying to a mail
+67009="El dia %:Date:, %f va escriure:"
+
+; Attribution-line when forwarding a mail
+67010="\\n\\n------- Missatge reenviat -------\\nDe: %:From:\\nPer a: %:To:\\nAssumpte: %:Subject:\\nData: %:Date:\\n"
+
+; Attribution-line when followup to a news message
+67011="El %:Date:, %f vau escriure:"
+
+; Attribution-line when replying by mail to a news message
+67012="El %:Date:, vau escriure al %:Newsgroups::"
+
+; Attribution-line when forwarding by mail a news message
+67013="\\n\\n---- Missatge d'Usenet reenviat ----\\nDe: %:From:\\nGrups de discussió: %:Newsgroups:\\nAssumpte: %:Subject:\\nData: %:Date:\\nURL: news://%:Message-Id:\\n"
+
+67020="Vareta"
+67021="S'està comprovant la carpeta"
+67022="S'estan recollint les carpetes"
+67023="S'està recollint el cos del missatge"
+67024="S'està recollint el fitxer adjunt"
+67025="S'està creant la carpeta"
+67026="S'està suprimint la carpeta"
+67027="S'està canviant el nom a la carpeta"
+67028="S'està subscrivint a la carpeta"
+67029="S'està esborrant el missatge"
+67030="S'està afegint el missatge"
+67031="S'està emmagatzemant el senyal"
+67032="S'està contactant el servidor"
+67033="Mida del missatge incorrecta"
+67034="El nom d'usuari és incorrecte"
+67035="La contrasenya és incorrecta"
+67036="Hi ha un error intern"
+67037="El missatge no existeix!"
+67038="Hi ha hagut un problema mentre s'intentava suprimir el missatge al servidor"
+67039="El TLS no està disponible en aquest servidor. Per recuperar el correu des d'aquest servidor cal inhabilitar la connexió segura."
+67040="Sense definir"
+67041="El servidor POP3 no està disponible. Teniu problemes de xarxa?"
+; About page
+67042="Directori del correu"
+
+67043="El servidor ha intentat realitzar un redirecció no permesa"
+; Used in index category in M2
+67044="Carpetes Imap"
+67045="Visualitzacions"
+
+; Usined while M2 is searching. Padded by ' <search>...'
+67046="S'està cercant"
+
+; Formats the M2 display of time today
+67047="Avui %X"
+
+; Used in M2 when a message has no label
+67048="Sense etiqueta"
+
+; Priority of a M2 message
+67049="Prioritat màxima"
+67050="Prioritat alta"
+67051="Prioritat baixa"
+67052="Prioritat mínima"
+
+; Used in Mail|Manage Account
+67053="Compte"
+67054="Estat"
+
+; Used in Mail|Newsgroups
+67055="Subscrit"
+67056="Estat"
+67057="Grup"
+
+; Received news index in m2
+67058="Missatges rebuts"
+
+; Received list index in m2
+67059="Llista rebuda"
+
+; Clipboard index in m2
+67060="Porta-retalls"
+
+; Prefix for newsservers in serverlist in m2
+67061="Missatges a "
+
+; Prefix for mailservers in serverlist in m2
+67062="Correu per a"
+
+; Name for a new Imap folder in M2
+67063="Nou"
+
+; Status-message when sending messages in M2
+67064="S'està enviant..."
+
+; Status-message when checking for messages in M2
+67065="S'està comprovant..."
+
+; Status-message when getting messages in M2
+67066="S'estan recuperant els missatges (%u/%u)"
+
+; Status-message when done fetching messages in M2
+67067="%u rebuts"
+
+; Status-message when no messages was fetched in M2
+67068="No s'ha rebut o enviat cap missatge"
+
+; Error-message if setting From or Organization in M2 failed
+67069="El paràmetre de la capçalera De ("%s") o Organització ("%s") no és correcte"
+
+; The From-address is not given according to standards
+67070="Adreça d'origen no vàlida"
+
+; M2 was unable to mime-encode a message
+67071="La codificació Mime ha fallat "
+
+; Store::AddMessage failed
+67072="Ha fallat l'emmagatzematge del missatge"
+
+; M2 needs Drafts and Outbox to store messages
+67073="No es pot localitzar la carpeta Esborranys o la Bústia de Sortida"
+
+; M2 will move a message to Outbox when sending or queueing it
+67074="No s'ha pogut moure el missatge a la Bústia de sortida"
+
+; M2 will move a message from Drafts when it is sent or deleted
+67075="No s'ha pogut moure el missatge des dels Esborranys"
+
+; M2 got an error-message while sending a message
+67076="Ha fallat l'enviament del correu"
+
+; Default name for new indexes in M2
+67077="Visualització nova"
+
+; Used for invalid mbox files in M2
+67078="El fitxer no és vàlid"
+
+; Used various places in the import-code in M2
+67079="Importat"
+
+; Progress-information in M2 import-code
+67080="Ja ha estat importat"
+
+; Used in the M2 Import Mail wizzard
+67081="Importa l'element"
+
+; Marks where quoted text has been removed when replying to a mail
+67082="<tall>"
+
+; The file being downloaded is already being written to the selected file,
+; this is not possible!
+67083="El fitxer ja s'està carregant"
+67084="El fitxer s'està desant, trieu un altre nom de fitxer"
+
+; Period to view e-mails from
+67085="Avui"
+67086="Setmana"
+67087="Mes"
+67088="Tres mesos"
+67089="Any"
+67090="Sempre"
+
+; Remove folder warning dialog title
+67091="Suprimeix la visualització"
+
+67092="Esteu segur que voleu  cancel·lar la subscripció a aquest grup de discussió?"
+67093="Esteu segur que voleu suprimir aquesta visualització?"
+67094="Esteu segur que voleu cancel·lar la subscripció d'aquesta carpeta IMAP?"
+; Start a full search from the mail hotlist panel
+67095="Inicia la cerca"
+
+67096="No s'ha seleccionat cap missatge"
+67097="No s'ha seleccionat cap vista"
+; Title of button in compose window
+67098="c/o"
+67099="ResponA"
+67100="Seguiment"
+67101="Grups de discussió"
+
+67102="(%d per llegir)"
+67103="(%d per llegir, %d total(s))"
+67104="Adjunt"
+67105="Mida"
+67106="No s'ha definit cap adreça de correu. Editeu el compte"
+67107="No hi ha paràmetres de servidor"
+67108="No s'ha definit al compte cap servidor de correu de sortida"
+67109="Adreça d'origen no vàlida"
+67110="El compte no té una adreça de correu-e"
+67111="El missatge no és vàlid"
+67112="No hi ha adreça o assumpte"
+67113="Cancel·la el missatge"
+67114="Esteu segur que voleu cancel·lar aquest missatge?"
+; Priority of a M2 message
+67115="Prioritat normal"
+
+67116="Vés a l'adreça web aquí"
+67117="Cerca ràpida"
+67118="Zoom"
+67119="Camp d'estat"
+67120="Suprimeix el compte"
+67121="Esteu segur que voleu suprimir aquest compte?"
+67122="Gestiona els comptes"
+67123="Propietats del compte"
+67124="Servidor %s"
+67125="Servidor %s d'entrada"
+67126="Servidor %s de sortida"
+67127="Codificació per defecte"
+67128="Neteja del servidor"
+67129="Voleu suprimir del servidor els missatges llegits?"
+67130="Tipus"
+; General Do-not-show-this-dialog-again text for use in most new dialogs
+67131="No tornis a mostrar aquest diàleg"
+
+67132="Següent >"
+67133="< Endarrere"
+67134="Finalitza"
+67135="Desactivat"
+67136="Mitjà"
+67137="Fort"
+67138="O"
+37139="I"
+67140="Assumpte"
+67141="Nom del remitent"
+67142="Capçalera De"
+67143="Capçalera Per a"
+67144="Capçalera a/c"
+67145="Capçalera Respon-a"
+67146="Capçalera dels grups de discussió"
+67147="Qualsevol capçalera"
+67148="Missatge sencer"
+67149="conté"
+67150="no conté"
+67151="Expressió regular coincident"
+67152="Aplica als missatges on "
+67153="O on"
+67154="I on"
+67155="Assumpte"
+67156="Nom del remitent"
+67157="Qualsevol capçalera"
+67158="missatge sencer"
+67159="conté"
+67160="no conté"
+67161="Expressió regular coincident"
+; Used to format the title of a dialog, contact properties and similar
+67162="propietats del %s"
+
+67163="Descàrrega d'una aparença de l'Opera"
+67164="S'està descarregant una aparença..."
+67165="Aplicació de l'aparença descarregada"
+67166="Voleu mantenir aquesta aparença? "
+67167="Nom de l'aparença"
+67168="Autor"
+67169="No s'ha pogut descarregar"
+67170="Tots els missatges"
+67171="Darrer any"
+67172="Darrer mes"
+67173="Sessió anterior (desament automàtic)"
+67174="Inicia'l amb una pàgina buida"
+67175="S'han descarregat %d bytes"
+67218="Suprimeix"
+; Status-message when messages was sent in M2
+67361="%u enviats"
+
+67504="No s'ha descarregat el cos del missatge"
+67506="Correu electrònic habitual (POP)"
+67507="IMAP"
+67508="Grups de discussió"
+67509="Importació de correu electrònic"
+67510="Correu web OperaMail"
+67511="Importa des de l'Opera 5/6"
+67512="Importa des de l'Eudora"
+67513="Importa des del Netscape 6/7"
+67514="Importa des de l'Outlook Express"
+67515="Importa un fitxer mbox genèric"
+67516="Carpeta de la bústia:"
+67517="Fitxer prefs del Netscape (prefs.js):"
+67518="Fitxer mbox genèric"
+67540="Comprova"
+; Added in front of server response when POP server returnes an error
+67561="Resposta del servidor:"
+
+; Used when IMAP folder subscription fails
+67589="No s'ha pogut canviar la subscripció de la carpeta! Potser la subscripció de la carpeta ja s'havia fet o cancel·lat  al servidor"
+
+; Used when mailserver reports that it does not support TLS
+67590="Aquest servidor no permet l'ús de TLS!"
+
+; Generic error when connection to IMAP server failed
+67591="Ha fallat la connexió al servidor IMAP."
+
+; Precedes IMAP alert messages
+67592="Missatge d'avís des del servidor IMAP: "
+
+; Used when IMAP-server notifies that folder has been renamed on server
+67593="El nom de la carpeta "%s" ha estat canviat a "%s"."
+
+; Used when appending a message to an IMAP folder
+67594="Ha fallat l'adjunció d'un missatge a una carpeta."
+
+; Used when copying an IMAP message failed
+67595="Ha fallat la còpia d'un missatge."
+
+; Used when local storing of IMAP message failed
+67596="No s'ha pogut emmagatzemar localment el missatge recollit. Es tornarà a recollir el missatge la propera vegada que comproveu el correu."
+
+; Used by M2 POP backend when storing a message fails
+67597="L'Opera ha intentat recuperar el missatge %d (UIDL %s) del servidor POP3, però no s'ha pogut emmagatzemar a la vostra màquina."
+
+; Generic message when a M2 backend fails to connect to its server
+67598="No s'ha pogut connectar al servidor"
+
+; M2 SMTP error message
+67599="S'ha enviat el missatge, però no ha estat possible moure'l fora de la bústia de sortida"
+67600="No s'ha pogut enviar el missatge. Potser el servidor SMTP no està configurat adequadament? S'ha posat en cua."
+67601="El servei SMTP no està disponible"
+67602="Hi ha un error intern"
+67603="Error temporal del servidor"
+67604="Error del servidor"
+67605="Error sintàctic al destinatari"
+67606="Error de destinatari no disponible"
+67607="Destinatari no local"
+67608="No s'ha definit cap servidor"
+67609="Error de SMTP"
+67610="Error de destinatari"
+67611="Error d'autenticació SMTP"
+67612="El servidor no permet l'ús de TLS"
+67613="El servidor no permet l'autenticació SMTP"
+67614="Error SMTP sense especificar"
+
+; Used when M2 for some reason isn't able to flush a message to disk
+67615="No s'ha pogut desar, potser degut a un sistema de fitxers corrupte o a un escàner de virus (%i)"
+
+; String used in customize toolbar box
+68124="Document"
+68125="Imatges"
+68126="Total"
+68127="Velocitat"
+68128="Transcorregut"
+68129="Estat del progrés"
+68130="General"
+68131="Rellotge"
+68132="Identifica't com a"
+
+; Imported bookmarks are stored in this folder
+68133="Preferits del Netscape"
+68134="Preferits de l'Internet Explorer"
+68135="Preferits del KDE1"
+68136="Preferits del Konqueror"
+
+; String to be used in preference font list for UI fonts
+69221="Text dels menús"
+69222="Text de les barres d'eines"
+69223="Text dels diàlegs"
+69224="Text dels taulers"
+
+; String to be used in preference font list
+69225="Text de redacció d'un missatge"
+
+; String to be used in preference font list to identify a system default
+; font
+69226="(Predeterminat)"
+
+; When a SMTP server drops the connection when MAIL FROM is sent, it usually
+; is because needed authentication isn't fulfilled.
+69229="El servidor ha perdut la connexió. Cal potser autenticació?"
+
+; String that is displated on about page when java is installed
+69230="S'ha instal·lat l'entorn d'execució Java."
+
+; Version of Qt library that Opera uses. Shown on About page
+69231="Biblioteca Qt"
+
+; Text to be used on the menubars. Some languages need a separate string
+; here
+69240="Rebobina"
+
+; Used when saving a printer file to disk (from a filedialog box)
+69243="Fitxers Postscript (*.ps)|*.ps|Tots els fitxers (*.*)|*.*|"
+
+; Label in the displayed header of a news/mail message
+69244="Organització"
+69245="Grups de discussió"
+69246="Seguiment-A"
+69247="Respon-A"
+69248="Reenviat-De"
+
+; Title string of the HTML text that displays certificate data
+69249="Informació del certificat"
+
+; Header string for the detailed listing of certificate data
+69250="Detalls"
+
+; DSA Private Key key list item
+69251="Clau privada (X)"
+
+; DSA Public Key list item
+69252="Clau pública (Y)"
+
+; Component P of DSA key
+69253="Component P (DSA)"
+
+; Component Q of DSA key
+69254="Component Q (DSA)"
+
+; Component G of DSA key
+69255="Component G (DSA)"
+
+; Diffie Hellman Private Key component
+69256="Clau privada DH"
+
+; Diffie Hellman Public Key Component
+69257="Clau pública DH"
+
+; Diffie Hellman Modulus Key component
+69258="Mòdul DH"
+
+; Diffie Hellman Generator Key component
+69259="Generador DH"
+
+; Add characters here that can be used as fallback shortcuts (eg: of the
+; kind "File (A)"). An empty string will disable fallback shortcuts.
+69260=""
+
+67544="Descàrrega d'una configuració de barres d'eines de l'Opera"
+67545="S'està descarregant una configuració de barres d'eines..."
+67546="Aplicació de la configuració de barres d'eines"
+67547="Voleu continuar utilitzant aquesta configuració de barres d'eines?"
+67548="Descàrrega d'una configuració de menús de l'Opera"
+67549="S'està descarregant una configuració de menús..."
+67550="Aplicació de la configuració de menús"
+67551="Voleu continuar utilitzant aquesta configuració de menús? "
+67552="Descàrrega d'una configuració de ratolí de l'Opera"
+67553="S'està descarregant una configuració de ratolí..."
+67554="Aplicació de la configuració de ratolí"
+67555="Voleu continuar utilitzant aquesta  configuració de ratolí?"
+67556="Descàrrega d'una configuració de teclat de l'Opera"
+67557="S'està descarregant una configuració de teclat..."
+67558="Aplicació de la configuració de teclat"
+67559="Voleu continuar utilitzant aquesta configuració de teclat?"
+67560="Copia de"
+67564="Esteu segur que voleu confiar en aquest emissor?"
+; Open file dialog
+67565="Fitxers de preferits de l'Opera (*.adr)|*.adr|"
+67566="Fitxers de preferits del Netscape / HTML  (*.htm, *.html)|*.htm;*.html|"
+67567="Fitxers de preferits del Konqueror (*.xml)|*.xml|"
+
+; InputAction treeview header
+67576="Accions"
+67577="Context d'entrada i dreceres"
+
+67578="Configuració de teclat"
+67579="Configuració de ratolí"
+67580="Configuració de barra d'eines"
+67581="Configuració de menús"
+67582="Aparences"
+; Fonts and colors preferences
+67583="Tipus"
+67584="Tipus de lletra"
+
+; Cache preferences
+67585="Automàtica"
+
+; string appended to setupfilename if this is modified, in preferences
+; dialog
+67586="(Modificat)"
+
+; Info panel
+67616="- sense títol -"
+67617="URL de la pàgina principal:"
+67618="Codificació del servidor (utilitzada per l'Opera):"
+67619="Tipus MIME del servidor:"
+67620="Mida de la pàgina principal:"
+67621="Nombre d'elements inserits:"
+67622="Mida dels elements inserits:"
+67623="Fitxer local de memòria cau:"
+67624="- sense fitxer de memòria cau -"
+67625="Seguretat"
+67626="Resum:"
+67627="- no segur -"
+67628="Més informació"
+67629="Marcs"
+67630="Marc:"
+67631="Marcs inserits"
+67632="MarcI:"
+
+67675="Avanç Ràpid"
+67679="Anomena i desa"
+67680="Seleccioneu el fitxer de sessió"
+67681="Finestra"
+67682="Escriu aquí la nota nova"
+67683="Adjunts"
+67685="Versió"
+67686="Algorisme de xifratge"
+67687="Clar"
+67688="Normal"
+67689="Negreta"
+67690="Inicia'l amb una pàgina buida"
+67691="Aneu a obrir %d contactes\n\nVoleu continuar?"
+; History and cache preferences
+67692="Cada %d minuts"
+67693="Cada %d hores"
+67694="Cada hora"
+67695="Cada setmana"
+
+67696="Aneu a obrir %d preferits\n\nVoleu continuar?"
+67697="S'ha configurat el vostre primer compte\n\nEl revolucionari gestor M2 d'Opera per a correu i grups de discussió\nés diferent dels programes de correu normals en molts sentits,\ni per tant és molt recomanable que llegiu\nel tutorial.\n\nVoleu llegir-lo ara?"
+67698="Esteu utilitzant l'M2"
+67699="Emergeix a la part inferior de la pàgina"
+67700="Recorda la darrera mida"
+67701="Maximitza-les sempre"
+67702="Sempre en cascada"
+; Checkbox string in filetype dialog box
+69261="Passa l'adreça web directament a l'aplicació"
+
+; Used in preference dialog box (window page)
+69262="Obre la pàgina nova al costat de l'activa"
+
+; Info panel. When server does not supply an encoding
+69263="- no subministrada -"
+
+; Checkbox in download dialog for saving action
+69266="Recorda la tria i no tornis a mostra el diàleg"
+
+; Certificate verification servername mismatch
+69267="El nom del servidor "%1" no coincideix amb el nom del certificat "%2". Potser algú està intentant espiar la comunicació."
+
+; Certificate not yet valid
+69268="El certificat per "%1" no és vàlid abans del %2. Està bé el rellotge del vostre ordinador?"
+
+; The certificate expired on the given date
+69269="El certificat per "%1" ha expirat el %2. L'administrador hauria d'actualitzar el(s) certificat(s)."
+
+; Certificate warning
+69270="Heu demanat ser avisats amb els certificats de "%1""
+
+; Unknown certificate authority
+69271="El certificat de "%1" està signat per l'autoritat de certificació desconeguda "%2". No és possible verificar si aquest és un certificat vàlid"
+
+; Unknown root certificate authority
+69272="L'Opera no coneix el certificat primari de "%1". L'Opera no pot decidir si es pot confiar en aquest certificat."
+
+69300="El servidor ha perdut la connexió quan s'estava autenticant. En substitució aquest compte farà servir una autenticació menys segura."
+69301="Hi ha disponible un Opera nou"
+69302="Hi ha disponible una versió de l'Opera nova.\nVoleu descarregar la versió nova ara?"
+69303="Fitxers MP3 |*.mp3|"
+; Typically telnet, tn3270, news, mailto
+69304="Protocol"
+
+69305="Programa"
+; Voice XML related message from the Voice log panel
+69307="Estat del registre de veu..."
+
+69308="S'està afegint un botó amb acció nou\n\n%s\n\nEsteu segur?"
+69309="Botó nou"
+69312="Registre de veu"
+69332="Correu escrit amb l'M2, el revolucionari gestor de correu de l'Opera: http://www.opera.com/m2/"
+; Status message when M2 is emptying trash
+69333="S'està buidant la paperera"
+
+; Button text in startup dialog
+69334="Compreu l'Opera"
+
+; Message string shown in dialog box before auto reset in kiosk mode
+69347="Es reiniciarà l'Opera en %d segons a causa de la inactivitat"
+69348="Es reiniciarà l'Opera en 1 segon a causa de la inactivitat"
+
+; Text for button in toolbar that can clear contents if edit field
+69349="Neteja"
+
+; Message string used in a dialog box when user wants do do something that
+; requires online mode (eg. fetching mail)
+69352="El mode fora de línia està habilitat.\n\nVoleu canviar al mode en línia?"
+
+69353="No es coneix l'autoritat de certificació del certificat presentat"
+69354="El Handshake ha fallat a causa de les restriccions d'exportació"
+69355="La negociació ha fallat perquè el servidor no vol acceptar les versions habilitadades del protocol SSL/TLS."
+69356="La negociació ha fallat perquè el servidor requereix mètodes de xifratge més segurs que els habilitats."
+69357="El servidor vol negociar una connexió que *no* xifra les dades, i només en verifica la integritat."
+; Used in preference dialog box to control page redrawing
+69358="Redibuixa instantàniament"
+69359="Redibuixa al cap d'un segon"
+69360="Redibuixa al cap de %d segons"
+69361="Redibuixa quan s'hagi carregat"
+
+; Label in the preference dialog box for page redrawing feature
+69362="Càrrega"
+
+; Used in mail filter dialog
+69369="Missatges de %s"
+
+; Used in mail filter dialog box
+69370="Oculta els missatges d'altres visualitzacions"
+
+; View title in mail title dialog box
+69371="Visualització"
+
+; Add filter dialog box
+69373="Filtra els següents missatges per aquesta visualització"
+69374="Missatges del remitent"
+69375="Missatges on l'assumpte conté"
+
+; Account properties dialog box
+69376="Categoria del compte"
+
+; Message in reindex mail dialog box
+69378="L'Opera ha de reindexar alguns dels vostres missatges de correu. Si cancel·leu ara, l'Opera continuarà la propera vegada"
+
+; Used in pref. dialog box
+69379="Compreu l'Opera i lleveu el rètol publicitari"
+
+; Used in pref box (multimedia)
+69380="Dibuixa les imatges instantàniament"
+
+69396="Escriviu aquí una resposta ràpida a %s"
+69397="coincideix amb l'expressió regular"
+69398="Aquesta visualització i afegeix un filtre"
+; Used in javascript option dialog box
+69399="Permet la redimensió de les finestres"
+69400="Permet el moviment de les finestres"
+69401="Permet l'aixecament de les finestres"
+69402="Permet l'abaixament de les finestres"
+
+; Used in javascript option dialog
+69403="Permet el canvi del camp d'estat"
+
+; Opens javascript options dialog box
+69404="Opcions del JavaScript..."
+
+; Label for window handling options
+69405="Gestió de finestres"
+
+; Option string for popup window management
+69406="Maximitza sempre, incloent-hi les finestres emergents"
+
+; Window handling mode string
+69407="Prefereixo les pàgines a dins de la finestra"
+
+; Window handling mode string (SDI mode)
+69408="Prefereixo finestres separades"
+
+; Message string used on startup in we cannot load plug-ins
+69410="L'Opera no ha pogut carregar la biblioteca connectora 'libnpp.so'. Els connectors no funcionaran.\n\nComproveu la vostra instal·lació.\n"
+
+69416="Prefs del Netscape (prefs.js)"
+69417="Fitxers mbox genèrics (*.mb?)"
+; Fallback text for plug-in description when plug-in is missing this
+; resource
+69418="Sense descripció"
+
+; Fallback text for plug-in name when plug-in is missing this resource
+69419="Sense nom"
+
+; Message shown when downloaded skin can not be used
+69421="No s'ha pogut continuar. Seleccioneu una aparença feta per a la vostra versió de l'Opera."
+
+69431="S'estant cercant els enllaços:"
+69432="S'està cercant el text:"
+69433="(Sense coincidències)"
+
+; Dialog title and components
+; Used in most dialogs
+1="D'acord"
+10362="D'acord"
+2="Cancel·la"
+10358="Cancel·la"
+
+; Cookie properties
+11005="&Nom"
+11007="Do&mini"
+11009="&Camí"
+11011="C&reat"
+11013="Darrer uti&litzat"
+11015="Cad&uca"
+11018="Habili&tat"
+11019="&Descartable"
+11020="&Valor"
+10094="Ajuda"
+11022="Segur"
+
+; Opera as default browser
+10961="Seleccioneu els protocols i els tipus de fitxer per associar-los a l'Opera"
+10962="Tipus de fitxer"
+11050="*.htm"
+10963="*.html"
+12055="*.xml"
+11250="*.url"
+10966="*.bmp"
+10965="*.gif"
+10964="*.jpeg"
+11051="*.jpg"
+11258="*.png"
+10967="*.xbm"
+10968="Protocols"
+10969="http"
+10970="https"
+10971="news"
+10972="ftp"
+10973="gopher"
+10974="wais"
+25177="Comprova a l'inici si l'Opera és el navegador per defecte"
+25241="Selecciona'ls tots"
+
+; Print
+10103="S'està imprimint la pàgina..."
+
+; Password required
+14499="Autenticació"
+17211="Adreça"
+11140="Missatge"
+10178="Nom d'usuari"
+10179="Contrasenya"
+
+; Send form without encryption?
+11151="N&o mostris més aquesta finestra"
+14100="Voleu enviar aquest formulari a la xarxa sense xifratge?"
+14500="Avís de la tramesa de dades"
+
+; Use Opera
+25176="Utilitza l'Opera com a navegador predeterminat"
+25174="L'Opera no és el navegador predeterminat al vostre sistema.\n\nVoleu utilitzar-lo com el navegador predeterminat per visualitzar les pàgines web?"
+25175="N&o mostris més aquesta finestra"
+6="Sí"
+7="No"
+
+; Validate source
+25268="Valida el codi font"
+25267="Voleu penjar aquesta pàgina des de el vostre ordinador a un verificador en línia de codi font?"
+
+; Exit Opera?
+25150="&Desa les finestres i mostra-les la propera vegada"
+14101="Accions abans de sortir"
+11150="N&o mostris més aquesta finestra"
+
+; Opera
+10571="Missatge"
+
+; Opera startup
+10918="Inici de l'Opera"
+10701="La sessió anterior de l'Opera es va interrompre."
+14124="&Continua navegant on era el darrer cop"
+14125="Comença com semp&re"
+10649="Comença &sense finestres"
+14126="&Avançat..."
+
+; Advanced startup settings
+14127="Opcions avançades d'inici"
+10652="Minimitza el nombre de connexions &simultànies"
+10651="Minimitza la mida de la &memòria intermèdia de xarxa"
+10415="DNS síncron"
+
+; Progress
+10770="..."
+
+; Password
+10779="Inseriu la contrasenya de seguretat"
+10704="La contrasenya ha de tenir almenys 6 caràcters, entre els quals cal que n'hi hagi d'alfabètics i de numèrics. Altrament, se us demanarà d'introduir-ne una de nova."
+
+; Certificate
+10766="Nom del certificat"
+10768="Emissor"
+10758="Permet les connexions als llocs utilitzant aquest certificat"
+10759="Mostra el quadre de diàleg abans d'utilitzar aquest certificat"
+10775="Accepta"
+10776="Instal·la"
+
+; Performance
+10214="Rendiment"
+10213="Connex. màx. a un servidor"
+10219="Connexions màx. en total"
+10434="Mida de la memòria intermèdia de &xarxa (kB)"
+
+; Personal information
+11623="Informació personal"
+10938="Aquesta informació pot enganxar-se a formularis utilitzant el botó dret del ratolí"
+10874="Nom"
+10877="Cognom"
+10878="Adreça"
+10881="Ciutat"
+10882="Regió/estat"
+10884="Codi Postal"
+10886="País"
+10888="Telèfon"
+10890="Fax/mòbil"
+10892="Correu electrònic"
+10894="Pàgina inicial"
+10896="Especial 1"
+10898="Especial 2"
+10900="Especial 3"
+
+; Fast bookmark access
+10949="Introduïu un pseudònim o preferit"
+
+; Server name completion
+11029="Cerca un ordinador de la xarxa local"
+11030="Prova la compleció de nom, utilitzant"
+11031="Prefixos"
+11032="Sufixos"
+14118="Podeu introduir una llista separada per comes de prefixos, com "www, web", i sufixos, com "com, net, org"."
+
+; Links in frame
+11260="Or&dena"
+11261="&Adreça"
+11263="Cerca &per lletra inicial"
+11292="Obre"
+11264="&Copia-ho tot  »"
+11259="Actualit&za"
+11293="Tanca"
+
+; Import e-mail
+11420="Importa de"
+11426="Camí del programa"
+11427="Tria"
+11439="Importa a"
+11433="Importa'l com a un compte &nou"
+11432="Importa'l al compt&e"
+11424="Importa'n els paràmetres"
+11430="Importa el corr&eu"
+11431="Importa els &contactes"
+11421="D'acord"
+
+; Tip of the day
+12003="&Tanca"
+12006="<B>Sabíeu que..."
+12009="Número de Consell"
+12000="Mo&stra els consells en iniciar"
+12002="«"
+12001="»"
+
+; JavaScript execution error
+14061="L'execució d'una seqüència ha fallat en aquesta pàgina. Això pot ocasionar que la pàgina no es vegi o que no funcioni com cal."
+14117="Hi ha un error de JavaScript"
+14066="URL"
+14065="Error"
+14060="&No mostris més aquesta finestra."
+
+; Cookie server filters
+11453="Sup&rimeix"
+11454="Re&butja"
+11455="&Afegeix"
+
+; Cookie security problem
+14297="Accepta"
+14298="Rebutja"
+14294="Adreça"
+14293="Galeta"
+11297="Un camí d'una galeta no coincideix amb l'adreça de la pàgina."
+11298="Podeu demanar al gestor del lloc que configuri galetes vàlides."
+11299="Voleu acceptar aquesta galeta? "
+14300="No tornis a mostrar aquest diàleg"
+14503="Permet l'aplicació de [Accepta] o [Rebutja] per al domini sencer"
+
+; Update language file
+25302="Fitxer de llengua"
+25303="Es necessita actualitzar el vostre fitxer de llengua de l'Opera."
+25304="Descarrega un fitxer de llengua nou"
+25305="Reinicia l'Opera en anglès"
+25306="Utilitza el meu fitxer de llengua existent"
+14501="&No mostris més aquesta finestra"
+
+; Windows
+14355="Llista de &finestres"
+14350="&Activa"
+14351="Actualit&za"
+14352="&Minimitza"
+14353="Tan&ca"
+
+; Automatic window reload
+14509="Habilita"
+14510="Opcions"
+14511="Actualitza cada"
+14518="minuts"
+14513="segons"
+14515="Predefinits [bb]"
+14516="Actualitza només si el servidor diu que la pàgina ha caducat"
+
+; Image properties
+16055="Imatge"
+16056="Dimensions"
+16057="Profunditat"
+16058="Adreça"
+16059="Tipus d'imatge"
+16065="Mida del fitxer"
+
+; File download
+17010="Descàrrega d'un fitxer d'Internet"
+17020="Fitxer"
+17021="Servidor"
+17014="<B>Què és el que voleu fer?"
+17012="&Desa el fitxer"
+17015="Pregunta abans de descarregar fitxers d'aquest tipus"
+17016="A&vançat..."
+
+; Delete private data
+25155="Si procediu es tancaran totes les finestres, s'aturaran totes les transferències en marxa i es duran a terme les accions especificades aquí sota."
+25166="Galetes"
+25156="Suprimeix les galetes temporals"
+25159="Suprimeix totes les galetes"
+25167="Memòria cau"
+25157="Esborra les pàgines i les dades protegides per contrasenya"
+25164="Esborra tota la memòria cau"
+25168="Historial"
+25160="Neteja l'historial de les pàgines visitades"
+25161="Neteja l'historial de les adreces introduïdes"
+25163="Neteja l'historial dels enllaços visitats"
+25165="Neteja l'historial dels fitxers transferits"
+25154="Contrasenyes"
+25162="Neteja totes les contrasenyes dels comptes de correu"
+25169="Suprimeix totes les contrasenyes de la vareta"
+
+; Select currency
+25262="&De"
+25264="&A"
+
+; Panel properties
+25311="Tauler"
+25312="&Títol"
+25314="&Adreça"
+
+; Item properties
+10942="&Títol"
+10943="Sobrenom"
+10944="Adreça"
+10945="Descripció"
+10820="Carpeta mare"
+10824="Data de creació"
+10825="Darrera visita"
+
+; Contact folder properties
+10941="&Nom"
+14102="Darrer enviat"
+
+; Bookmarks Properties
+25100="&Nom de preferits"
+25102="Fitxer"
+25103="Nom"
+25105="Mi&da"
+25107="&Més >>"
+25108="Unicode"
+25109="&Contingut"
+
+; Go to page
+10181="Introduïu un adreça de pàgina web o trieu-ne una de la llista."
+
+; Set home page
+10455="Pàgina inicial"
+25371="Mostra la meva pàgina inicial cada cop que iniciï l'Opera"
+
+; Save windows
+10661="Desa la configuració de finestra al fitxer"
+10199="Tria"
+10665="Mostra aquestes finestres cada cop que iniciï l'Opera"
+
+; Confirm file upload
+11108="Els fitxers llistats han estat seleccionats, sense la vostra intervenció, per enviar-los a un altre ordinador. Voleu enviar aquests fitxers?"
+11109="Destinació"
+11110="Adreça del formulari"
+
+; Print options
+10208="Opcions"
+11080="Imprimeix el fons de pàgina"
+14212="Imprimeix les capçaleres i els peus de pàgina"
+11115="Escala d'impressió al"
+10257="Marges de la pàgina (en cm)"
+10268="Superior"
+10266="Esquerre"
+10267="Dret"
+10269="Inferior"
+
+; Print preview
+14275="Previsualitza i imprimeix"
+14272="&Pàgina com a la pantalla"
+14273="Un marc per full"
+14274="Marc &actiu"
+
+; Register Opera
+11193="Introduïu la informació de registre que vau rebre en comprar l'Opera."
+11194="Nom"
+11195="Organització"
+11196="Codi de registre"
+11200="Informació personal"
+
+; Preferences
+10101="Aplica"
+
+; Advertising
+16601="Publicitat"
+16602="País"
+16604="Any de naixement"
+16606="Sexe"
+16608="Estat civil"
+16610="Nivell d'estudis"
+16616="Ingressos familiars"
+16612="Categories preferides"
+
+; Privacy
+11600="Privadesa"
+10678="Habilita l'enregistrament del web d'origen"
+10647="Habilita la redirecció automàtica"
+14498="Usa galetes per rastrejar pàgines protegides per contrasenya"
+10677="Galetes"
+25394="Habilita les galetes"
+11456="Gestiona les galetes..."
+11280="Esborra les galetes al sortir de l'Opera"
+14299="Mostra els dominis no vàlids al quadre de diàleg"
+28507="Accepta les galetes amb camins no vàlids"
+14305="Mostra els camins no vàlids al quadre de diàleg"
+
+; Accessibility
+11315="Ratolí"
+11317="Habilita els gestos de ratolí"
+11329="Habilita el menú de clic ràpid"
+11318="Gestos per anar endavant i endarrere amb la mà esquerra"
+10096="Subratlla els elements de llista quan s'assenyalin"
+11316="Teclat"
+13039="Habilita la llista desplegable de compleció automàtica"
+10788="Inverteix l'element actiu de text"
+10954="Selecció de l'estil de menú als preferits"
+10955="&Menús compatibles amb lectors de pantalla"
+
+; Windows
+11324="Cicla les pàgines"
+
+; Accessibility
+10452="Rètol indicador de funció"
+10407="Mostra el rètol indicador de funció per als &botons"
+10406="Mostra el rètol indicador de funció per als en&llaços"
+10947="Mostra el rètol indicador de funció per als títols dels &elements"
+
+; Plug-ins
+11601="Connectors"
+
+; Programs
+25405="Gestors de l'Opera"
+25406="&Mostra el gestor de correu"
+25143="Camins"
+10382="Directori de l'Opera"
+25144="Directori de descàrrega"
+25146="Tria"
+10359="Visualitzador del codi font"
+25249="Utilitza l'Opera"
+25250="Utilitza un programa extern"
+10360="Tria"
+11116="Programes"
+10252="Programa de Telnet"
+10253="Tria"
+10958="Programa de TN3270"
+10960="Tria"
+
+; Fonts and colors
+11055="Els meus tipus de lletra i colors"
+10093="Tria"
+12091="Mida mínima de la lletra (píxels)"
+11049="Color de fons"
+10484="Tria"
+11728="Estil d'enllaç"
+10304="El meu estil d'enllaç..."
+25248="Internacional"
+25247="Tipus de lletra internacionals..."
+
+; File type
+14128="Tipus de fitxer"
+10129="Tipus MIME"
+10207="Extensions de fitxer"
+10706="Acció"
+10134="Mostra la finestra de descàrrega"
+10128="Obre'l amb l'Opera"
+10127="Desa'l al disc"
+14129="Obre'l quan s'hagi completat la transferència"
+14130="No demanis la carpeta, desa'l directament a"
+14132="Tria"
+10546="Obre'l amb l'aplicació per defecte"
+10133="Obre'l amb una altra aplicació"
+10717="Usa un connector"
+
+; Network
+11606="Identificació del navegador"
+12066="Adreces web internacionals"
+12065="Codifica les adreces web internacionals amb UTF-8"
+11608="Servidors intermediaris"
+10391="Servidors intermediaris..."
+11609="Compleció de noms de servidor"
+11035="Compleció de nom de servidor..."
+11302="Errors del servidor"
+10447="Mostra sempre els errors del servidor"
+10448="Mostra sempre un quadre de diàle&g"
+10446="Mostra la &resposta del servidor quan sigui escaient"
+11607="&FTP"
+25236="Camins FTP relatius al directori d'usuari"
+11094="Camins FTP absoluts"
+
+; Link style
+10282="No visitat"
+10098="Subratllat"
+10099="Barrat"
+10097="Color"
+10195="Tria"
+10281="Visitat"
+10283="Subratllat"
+10284="Barrat"
+10288="Color"
+10289="Tria"
+10499="Marca els enllaços visitats"
+10500="dies"
+10502="hores"
+10480="Vores"
+10481="Sempre vores als enllaços d'imatge"
+10703="Sempre vores als enllaços"
+
+; International fonts
+25251="Tipus de lletra per defecte"
+25252="Trieu el tipus de lletra a usar quan el text no es visualitza correctament."
+25253="Sistema d'escriptura"
+25255="Tipus de lletra normal"
+25258="Tipus de lletra d'espai fix"
+
+; Browser look
+11076="Joc de boton&s"
+10780="Sempre vora &al voltant dels botons"
+10946="Sempre botons amb &colors"
+25238="Imatges d'aparença"
+17073="Imatge d'aparen&ça de primer pla"
+17074="Tria"
+17072="Imatge d'aparença de fon&s"
+17075="Tria"
+10707="Tipus de lletra i colors"
+11268="&Usa els valors per defecte del sistema"
+10691="Text normal"
+10693="Text inactiu"
+10692="Text dels Preferits"
+10857="Fons"
+10694="Fons del botó"
+10711="Progrés"
+
+; Cache
+11611="Historial"
+10223="Endarrere i enda&vant "
+11612="adreces"
+10261="Escrit a"
+11613="adreces"
+25152="Neteja"
+10816="Darrera visita"
+11614="adreces"
+25151="Neteja"
+10172="Memòria cau RAM"
+10226="Habilita la memòria cau RAM automàtica"
+10699="Mem. cau de do&cuments"
+10175="KB"
+10174="Memòria cau d'i&matges"
+10176="KB"
+10329="Memòria cau al disc"
+11303="KB"
+10339="Memoritza els documents"
+10340="Memoritza les imatges"
+10341="Memoritza altres"
+10342="Buida-la en sortir"
+10343="Buida-la ara"
+10344="El servidor està comprovant"
+10354="Documents"
+10345="Sempre"
+10346="Mai"
+10347="Dies, hores, minuts"
+10355="Imatges"
+10363="Sempre"
+10364="Mai"
+10365="Dies, hores, minuts"
+10356="Altres"
+10372="Sempre"
+10373="Mai"
+10374="Dies, hores, minuts"
+10829="Comprova sempre la redirecció"
+11091="Comprova sempre la redirecció"
+
+; Proxy servers
+10171="Servidors intermediaris"
+10301="HTTP"
+11305="Port"
+10840="HTTPS"
+11306="Port"
+10300="FTP"
+11307="Port"
+10299="Gopher"
+11308="Port"
+10302="WAIS"
+11309="Port"
+10303="No usis servidors intermediaris a les adreces de sota"
+11320="Usa la configuració automàtica del servidor intermediari"
+
+; E-mail client
+11615="Correu electrònic"
+13204="Utilitza el compte d'Opera"
+13208="Propietats..."
+13209="Nou..."
+13206="Utilitza el gestor de correu predeterminat a l'ordinador"
+13205="Utilitza un gestor de correu específic"
+13211="Tria"
+13213="Substitueix els pa&ràmetres que manquen per un espai"
+
+; Toolbars
+14310="Barres d'eines"
+14325="Barra principal"
+14326="&Preferits"
+14327="&Finestres"
+14328="B&arra d'adreces"
+10256="Mostra els botons de &pàgina"
+10243="Mostra el botó [&Vés a]"
+10244="Mo&stra el botó i el camp de cerca"
+10245="Mostra el camp del &zoom"
+10222="Mostra dins la barra d'adreces"
+14320="Botons d'amplada &fixa"
+14333="A&justa la barra d'eines en files"
+
+; File types
+11616="Gestió dels tipus de fitxer"
+10789="Determina l'acció pel tipus MIME"
+25148="Determina l'acció per l'extensió del fitxer si el tipus MIME no és fiable"
+10122="Nou..."
+10135="Suprimeix"
+10465="Edita..."
+
+; Windows
+11624="Finestres"
+
+; Windows - OBSOLETE?
+25397="Obr&e les finestres dins l'àrea de treball de l'Opera"
+
+; Windows
+10463="Sempre maximitza les pàgines noves"
+12045="Inclou els preferits en el mosaic i cascada quan siguin flotants"
+10102="Fes un mosaic en crear una fines&tra nova"
+10592="Finestres del navegador"
+25372="Reutilitza una finestra existent"
+13040="Evit&a el parpelleig"
+10828="Finestres emergents"
+10590="Mostra les barres de desplaçament"
+10591="Mostra la barra d'adreces"
+10839="Mostra la mida de la finestra"
+12058="Menú principal"
+11036="M&ostra les ordres al menú de Preferits"
+12059="Amplada mà&xima del menú"
+
+; Sounds
+11619="Sons"
+10603="Habilita els sons del programa"
+25140="Tria"
+25141="Neteja"
+10605="Prova"
+
+; Multimedia
+10438="Imatges"
+10441="Mostra les imatges"
+10443="Mostra només les imatges en memòria cau"
+10439="No mostris imatges"
+10644="Animació GIF"
+25239="Tipus de medi"
+10645="Habilita el vídeo encastat"
+10646="Habilita el so a les pàgines web"
+14123="Habilita el Java"
+10719="Habilita els connectors"
+10721="Cerca connectors..."
+14105="JavaScript"
+10720="Habilita el JavaScript"
+11152="Informa d'errors del JavaScript"
+
+; Security
+10726="Certificats"
+10733="Personal"
+10734="Autoritats..."
+10735="Protocols"
+10736="Habilita l'SSL 2 "
+10737="Habilita l'SSL 3"
+10994="Activa el TLS 1.0"
+10738="&Configura l'SSL 2..."
+10739="Co&nfigura l'SSL 3 i el TLS..."
+10749="Contrasenya"
+10813="Demana la contrasenya"
+10753="Quan calgui"
+10752="Una vegada per sessió"
+14490="Demana la contrasenya després"
+14492="minuts"
+10750="Defineix la contrasenya..."
+10740="Avisos"
+10744="Mostra el quadre de diàleg abans d'enviar un formulari d'una\r\nmanera insegura"
+25269="Mostra el quadre de diàleg abans de validar una pàgina"
+
+; Personal certificates
+10754="Certificats"
+11726="Importa..."
+11727="Exporta..."
+
+; SSL configuration
+10812="Trieu els algorismes de xifratge a activar"
+
+; Cookie security breach
+14108="Adreça"
+14109="Galeta"
+11407="N&o mostris més aquesta finestra"
+
+; The server wishes to send you a cookie
+14505="Entrada d'una galeta"
+14114="Adreça"
+14502="Acció"
+11265="Inhabilita les galetes"
+11406="Visualitza els comentaris"
+11266="No tornis a mostrar aquest diàleg"
+14115="Ajuda"
+
+; Language
+14222="Llengua de la interfície d'usuari"
+14235="Llengua"
+14229="L'Opera s'ha de tornar a iniciar per canviar la llengua de la interfície d'usuari"
+14223="Pàgines web"
+14228="Llengües preferides per a les pàgines web"
+14224="Afegeix..."
+14225="Suprimeix"
+14226="Puja"
+14227="Abaixa"
+16619="Codificació alternativa predefinida"
+16620="Codificació a assumir per a pàgines sense especificació"
+16621="H&TML"
+
+; Accept language
+14233="Llengua"
+14236="Seleccioneu la llengua del web"
+14234="Definida per l'usuari"
+
+; PREFS_STARTEXIT
+10489="Comença"
+12042="Mostra la configuració de finestres desada"
+12044="Mostra la meva pàgina inicial"
+10461="Usa l'&activa"
+25400="Mostra el diàleg d'inici"
+11296="&Sortida"
+11294="Confirma la sortida"
+11295="Tanca les connexions de marcatge directe en sortir"
+
+; Page style
+25237="Valors per defecte"
+10588="Zoom per defecte"
+12089="Mode Autor com a predeterminat"
+11603="Marcs"
+10658="Habilita els marcs"
+11100="Habilita els marcs interiors"
+10762="Mostra la vora del marc actiu"
+11039="Mode Autor"
+12070="Full d'estil de la pàgina"
+12071="Tipus de lletra i colors de la pàgina"
+12072="El meu full d'estil"
+12073="Els meus tipus de lletra i colors"
+12074="El meu estil d'enllaç"
+12075="&Ordinador de mà"
+25240="Mode Usuari"
+12076="Full d'estil de la pàgina"
+12077="Tipus de lletra i colors de la pàgina"
+12078="El meu full d'estil"
+12079="Els meus tipus de lletra i colors"
+12080="El meu estil d'enllaç"
+12081="&Ordinador de mà"
+11605="El meu full d'estil"
+
+; Search
+17025="Cerca"
+17026="Seleccioneu el motor de cerca predeterminat per a les finestres noves"
+17029="Nombre preferit de resultats de la cerca per pàgina"
+9="Ajuda"
+
+; SPLASH
+25399="&Inici"
+25395="Finestres din&s l'Opera"
+25396="Finestres a l'escript&ori"
+14496="&No tornis a preguntar-m'ho"
+
+; TRANSWIN_CLIENT
+14138="Detalls"
+10997="De"
+10999="A"
+11001="Mida"
+11003="Transferit"
+
+; Contact properties
+13301="Nom"
+
+; Net
+13305="Adreça(ces) de correu"
+13307="Pàgina inicial"
+
+; Home
+13311="Adreça postal"
+13315="Telèfon"
+13313="Fax"
+
+; Notes
+13309="Notes"
+
+; Security
+13317="Número de la targeta de &seguretat Conax"
+
+; Send message to instant messaging address
+16333="Inseriu una adreça de missatgeria instantània"
+
+; Instant messaging account
+16308="&Cognoms"
+16309="Co&rreu-e"
+16310="&Sobrenom"
+16306="Quant a &mi mateix"
+
+19000="Impressió"
+19001="Certificat"
+19002="Accepta la llengua"
+19003="Paràmetres d'inici avançats"
+19004="Aplicació de les preferències"
+19005="El servidor vol enviar-vos una galeta"
+19006="Accés ràpid als preferits"
+19007="Contrasenya"
+19008="Indicador de JavaScript"
+19009="Contrasenya requerida"
+19010="Actualització automàtica de la pàgina"
+19011="Esborra les dades personals"
+19012="Propietats del contacte"
+19013="Missatges"
+19014="Domicili"
+19015="General"
+19016="Notes"
+19017="Seguretat"
+19018="Confirma l'enviament del fitxer"
+19019="Hi ha un problema de seguretat a la galeta"
+19020="Hi ha una escletxa de seguretat a la galeta"
+19021="Propietats de les galetes"
+19022="Opera com a navegador predeterminat"
+19023="Usa l'Opera"
+19024="Descàrrega del fitxer"
+19025="Filtres dels servidors per a les galetes"
+19026="Hi ha un error d'execució de JavaScript"
+19027="Sortir de l'Opera?"
+19028="Missatge d'error"
+19029="Vés a la pàgina"
+19030="Propietats de l'element"
+19031="Propietats de la carpeta de contactes"
+19032="Propietats dels preferits"
+19033="Compte de missatgeria instantània"
+19034="Afegeix un compte de missatgeria instantània nou"
+19035="Petició d'autorització"
+19036="Demana autorització"
+19037="Missatgeria instantània"
+19038="Inseriu la vostra contrasenya de missatgeria instantània"
+19041="Propietats de la imatge"
+19042="Importació de correu electrònic"
+19043="Voleu enviar el formulari sense xifratge?"
+19044="Enllaços al marc"
+19045="Opera"
+19046="Compleció de noms de servidor"
+19047="Tipus de fitxer"
+19048="Propietats del tauler"
+19049="Rendiment"
+19050="Certificats personals"
+19051="Inseriu el vostre codi PIN"
+19052="Connectors"
+19053="Preferències"
+19054="Previsualització de la impressió"
+19055="Opcions d'impressió"
+19056="Progrés"
+19057="Servidors intermediaris"
+19058="Desa les finestres"
+19059="Registre de l'Opera"
+19060="Opera"
+19061="Estil d'enllaç"
+19062="Consell del dia"
+19063="Selecciona moneda"
+19064="Tipus de lletra internacionals"
+19065="Actualitza el fitxer de llengua"
+19066="Valida l'origen"
+19067="Finestres"
+19068="Defineix la pàgina inicial"
+26500="Nom d'usuari"
+26501="Contrasenya"
+26502="Nom d'usuari i contrasenya"
+26503="Trieu el vostre sobrenom"
+26504="Auxiliar de creació de comptes"
+26505="Nom real"
+26506="Organització"
+26507="Adreça de correu"
+26508="Nom d'entrada"
+26509="Contrasenya"
+26510="Servidor d'entrada"
+26511="Servidor de sortida"
+26512="Cerca els missatges"
+26513="Uneix-te a una sala de xat"
+26514="Preferits"
+26515="Correu"
+26516="Preferits"
+26517="Contactes"
+26518="Xat"
+26519="Historial"
+26520="Envia"
+26521="Adjunta-hi"
+26522="De"
+26523="Per a"
+26524="a/c"
+26525="Assumpte"
+26526="Redacta un missatge"
+26527="Comprova el correu"
+26528="Redacta"
+26529="Respon"
+26530="Respon a tots"
+; Forward mail
+26531="Reenvia"
+
+26532="Suprimeix"
+26533="Resposta ràpida"
+26534="Restaura"
+26535="No és correu brossa"
+26536="Llegeix"
+26537="Uneix-te a la sala"
+26538="Deixa el xat"
+26539="Canvia el tema"
+26540="Desa el registre"
+26541="Envia"
+26542="Preferit nou"
+26543="Carpeta nova"
+26544="Visualitza"
+26545="Contacte nou"
+26546="Carpeta nova"
+26547="Visualitza"
+26548="Sobrenom"
+26549="Servidor IRC"
+26550="Només cerca a l'assumpte"
+26551="Afegeix un contacte"
+26552="Per llegir"
+26553="Per llegir ocults"
+26554="Avui"
+26555="Rebuts"
+26556="Bústia de sortida"
+26557="Enviats"
+26558="Esborranys"
+26559="Correu brossa"
+26560="Paperera"
+26561="Important"
+26562="A fer"
+26563="Cal respondre"
+26564="Cal trucar"
+26565="Reunió"
+26566="Festa"
+26567="Divertit"
+26568="Valuós"
+26569="Música"
+26570="Imatges"
+26571="Vídeo"
+26572="Documents"
+26573="Arxius"
+26574="El %:Date:, %f vau escriure:"
+26575="%f va escriure:"
+26576="S'ha trobat aquest %:Message-id: a %g:"
+26577="Índex"
+26578="Tots els missatges"
+26579="Contactes actius"
+26580="Llistes de correu"
+26581="Cerques"
+26582="Grups de discussió"
+26583="Etiquetes"
+26584="Adjunts"
+26585="Fils actius"
+26589="Sala"
+26590="Sobrenom"
+26591="A"
+26592="Assumpte"
+26593="Data d'enviament"
+26594="Etiqueta"
+26595="De"
+26596="Assumpte"
+26597="Data d'enviament"
+26598="Etiqueta"
+26600="Estat del compte"
+26610="Desconnectat"
+26611="S'està connectant"
+26612="Connectat"
+26613="S'està autenticant"
+26614="S'estan recollint les capçaleres"
+26615="S'estan recollint els missatges"
+26616="S'estan recollint els grups"
+26617="S'està enviant els missatges"
+28503="Usa com a contrasenya mestra per al correu-e i la vareta"
+67000="General"
+67001="Servidors"
+67002="Recepció"
+67006="Enviament"
+67014="Filtre"
+; Error dialog
+67015="Error genèric"
+
+67016="Imatges"
+67017="Gran"
+67018="Petit"
+67019="Camps"
+67176="Descarrega el fitxer"
+67177="Subscriu-te"
+67178="Canvia..."
+67179="S'obre amb"
+67180="Voleu obrir o desar el fitxer?"
+67181="Extensions de fitxer"
+67182="Mostra el diàleg de descàrrega"
+; New folder button
+67183="Nou..."
+
+67184="Suprimeix..."
+67185="Personalitza les barres d'eines"
+67186="Arrossegueu els botons a qualsevol barra d'eines"
+67187="Arrossegueu els camps a qualsevol barra d'eines"
+67188="Nota sobre la supressió de missatges"
+67189="Al suprimir el missatge s'eliminarà de totes les visualitzacions."
+67190="La restauració des de la paperera el tornarà un altre cop a la seva visualització original"
+67191="Filtres"
+67192="Quan"
+67193="Afegeix un filtre"
+67194="Suprimeix el filtre"
+67195="Filtre intern"
+67196="Marca els missatges coincidents com a llegits"
+67197="Filtra els missatges existents"
+67198="Cerca"
+67199="Cerca a"
+67200="Període"
+67201="Cerca"
+67202="Frase sencera"
+67203="Cada paraula"
+67204="Cerca només a"
+67205="Inclou les subvisualitzacions"
+67206="Recorda la contrasenya"
+67207="Seleccioneu quina mena de compte voleu crear"
+67208="Utilitza una connexió segura (TLS)"
+67209="Deixa els missatges al servidor"
+67210="Seleccioneu a partir de quin programa s'importa"
+67211="Importa els contactes"
+67212="Importa els missatges"
+67213="Navega..."
+67214="Voleu que la vareta (gestor de contrasenyes) desi la contrasenya?"
+67215="El proper cop podeu entrar amb Ctrl+Retorn o feu clic al botó de la vareta"
+67216="Mai en aquesta pàgina"
+67217="Seleccioneu el nom d'usuari que voleu utilitzar"
+67219="Introduïu una adreça web o trieu-ne una de la llista"
+67220="Filtres de missatges"
+67221="Filtres associats"
+67222="Benvingut a l'Opera"
+67223="Continua des d'on era el darrer cop"
+67224="Continua amb les sessions desades"
+67225="Inicia'l amb la pàgina inicial"
+67226="Inicia'l sense finestres"
+67227="Nom"
+67228="Adreces electròniques addicionals"
+67229="URL de la imatge"
+67230="Icona"
+67231="Sobrenom"
+67232="URL"
+67323="Mostra al tauler de preferits"
+67324="Nom del compte"
+67325="Nom complet"
+67326="Adreça de correu"
+67327="Respon-a"
+67328="Servidor NNTP"
+67329="Servidor"
+67330="Número de port"
+67331="Connexió segura (TLS)"
+67332="Servidor de sortida SMTP"
+67333="Marca els missatges com a llegits si ja s'hi han descarregat"
+67334="Descarrega el cos del missatge quan s'estigui comprovant"
+67335="Conserva una còpia local del cos del missatge"
+67336="Mira si hi ha correu nou cada n minuts"
+67337="Inclou el compte quan la comprovació es faci manualment"
+67338="Reprodueix un so quan arribi un missatge nou"
+67339="Camí a la carpeta arrel IMAP"
+67340="Ajusta automàticament els missatges de sortida"
+67341="Posa el correu en cua (no l'enviïs immediatament)"
+67342="Signatura"
+67343="Carpeta enviats de l'IMAP"
+67349="Afegeix el contacte quan s'enviï el missatge"
+; Manage accounts
+67344="Nou..."
+
+; Manage bookmarks
+67345="Nou..."
+
+67346="Edita..."
+67347="Retalla"
+67348="Enganxa"
+67491="Defineix la pàgina actual com a pàgina inicial"
+67492="Torna a la pàgina inicial que venia amb l'Opera"
+67493="Utilitza l'adreça introduïda aquí"
+67494="Pàgina inicial"
+67500="Obre la consola del Javascript quan hi hagi un error"
+; MDI/SDI switch
+67501="Obre les pàgines en una finestra nova"
+
+67502="Fitxer d'aparença"
+67503="Habilita els efectes especials"
+67505="Utilitza com a contrasenya mestra per al correu electrònic i la vareta"
+67519="Importa"
+67541="Transferències"
+67542="Enllaços"
+67543="Finestres"
+; Used for outgoing properties in E-mail account properties dialog
+67562="Envia els missatges en cua després de comprovar el correu"
+
+; Shown if a server message is sent to the authorization dialog in M2
+67563="Missatge del servidor"
+
+67568="Esteu segur que voleu finalitzar aquesta sessió de l'Opera?"
+67569="Per aquesta pàgina"
+67570="Per al servidor sencer"
+67571="Navega per carpeta"
+67574="Subscripció als grups de discussió"
+67575="Subscripció a les carpetes IMAP"
+67587="Transferències actives"
+67588="Teniu transferències en marxa que seran finalitzades si tanqueu l'Opera.\nEsteu segur que voleu tancar l'Opera?"
+67684="Propietats"
+; What to do when mid clicking outside a link. Currently only used on Linux
+68000="Seleccioneu l'acció del clic central del ratolí"
+
+; currently only used on Linux
+68001="Copia  text des del porta-retalls"
+68002="Inicia el desplaçament ancorat"
+68003="Habilitat el desplaçament ancorat horitzontal"
+
+; What do to when mid clicking on a link.
+68004="Seleccioneu l'acció al fer clic a l'enllaç"
+
+68005="No obris l'enllaç"
+68006="Obre'l"
+68007="Obre'l en una pàgina nova"
+68008="Obre'l en segon pla"
+68009="Obre'l en una finestra nova"
+68010="Obre'l en segon pla"
+68011="Trieu la vostra aparença i mida d'icona preferides"
+68012="Opera estàndard"
+68013="Finestres clàssiques"
+68014="La meva aparença"
+68015="Trieu la vostra configuració de barra d'eines preferida"
+68016="Barra d'eines estàndard"
+68017="Barres d'eines mínimes"
+68018="Les meves barres d'eines personalitzades"
+68019="Hi ha disponibles més configuracions d'aparences i barra d'eines a my.opera.com"
+68020="Què voleu fer amb la galeta?"
+; Dialog box title.
+68021="Opcions del clic central"
+
+68022="Visualitza"
+68023="Gestor de certificats"
+68024="Autoritats"
+68025="Contrasenya actual"
+68026="Contrasenya nova"
+68027="Confirmeu la contrasenya nova"
+68028="Hereta filtre del pare"
+68029="Obre a"
+68030="Descarrega"
+68031="Preferit"
+68032="Gestiona els contactes"
+68033="Per defecte"
+68034="Gestor de servidors"
+68035="Entrades de la vareta"
+68036="Comparteix els paràmetres per a les galetes normals"
+68037="Aplica aquests paràmetres per al domini sencer"
+68038="Accepta les galetes per al servidor/domini"
+68039="Accepta les galetes de tercers per al servidor/domini"
+68040="Galetes"
+68041="Propietats del servidor"
+68042="Gestiona les galetes..."
+68043="Contrasenyes de la vareta..."
+68044="Esborra l'hora de la darrera visita del preferit"
+68045="Selecciona el tipus de lletra"
+68046="Cursiva"
+68047="Subratllat"
+68048="Sobreratllat"
+68049="Barrat"
+68050="Color"
+68051="Mostra"
+68052="Protocols de seguretat"
+68053="Seleccioneu els algorismes de xifratge a habilitar"
+68054="Cerca"
+68055="Cerca el següent"
+68056="Fes coincidir només la paraula sencera"
+68057="Fes coincidir majúscules i minúscules"
+68058="Cerca cap a dalt"
+68059="Cerca cap a baix"
+68060="Inicia'l amb la sessió desada"
+68061="Entrant 'g opera' cercareu Opera utilitzant el motor de cerca Google"
+68062="Aparença"
+68063="Mida"
+68064="Barres d'eines i menús"
+68065="Reanomena"
+68066="Duplica"
+68067="Suprimeix"
+68068="Barra de progrés"
+68069="Ratolí i teclat"
+68070="Edita..."
+68071="Mostra els indicadors de funció"
+68072="Pàgines noves"
+68073="Suavitza el zoom de les imatges"
+68074="Oculta els tipus de fitxer oberts amb l'Opera"
+68075="Aplicació per defecte"
+68076="Tipus de fitxer gestionats per l'Opera"
+68101="Protocols gestionats per l'Opera"
+; HTML documents
+68077="Documents HTML"
+
+; Default application
+68078="Documents XML"
+
+; URL shortcuts
+68079="Dreceres d'URL"
+
+; Default application
+68080="Imatges GIF"
+68081="Imatges JPEG"
+68082="Imatges PNG"
+68083="Imatges BMP"
+68084="Imatges XBM"
+68085="mailto"
+
+68086="Fitxer    Edita    Visualitza    Navegació    Preferits    Correu     Finestra     Ajuda"
+68087="Utilitza l'Opera"
+68088="Adreces introduïdes"
+68089="Adreces visitades"
+68090="Memòria cau"
+68091="Comprova els documents"
+68092="Comprova les imatges"
+68093="Comprovació d'altres"
+68094="Galetes normals"
+68095="Terceres parts"
+68096="Vareta"
+68097="Habilita la vareta"
+68098="Contrasenya mestra"
+68099="Protocols de seguretat..."
+68100="Gestiona els certificats..."
+; Currently only used on Linux
+68102="Estil"
+
+; Open application (source viewer etc) in a terminal
+68103="Obre al terminal"
+
+; External news program
+68104="Programa de grups de discussió"
+
+; Label for image dropdown box
+68105="Imatges"
+
+; Label for favicon dropdown box
+68106="Icones de la pàgina"
+
+; Label for java path text field
+68107="Camí del Java"
+
+; Button text for testing correct Java path
+68108="Valida el camí del Java"
+
+; Dropdown menu string
+68109="Icones incrustades i favicones"
+68110="Només les icones incrustades"
+68111="No mostris cap icona"
+
+; String in message box when testing and path is correct
+68112="El camí del Java sembla especificar un directori vàlid."
+
+; String in message box when testing and path is not found
+68113="No s'ha pogut trobar cap instal·lació vàlida del Java."
+
+; String in message box when testing and an alternate path has been found
+68114="El directori de sota sembla ser una alternativa millor. Utilitzo aquest directori en el seu lloc?"
+
+; String in message box when testing and all failed
+68115="Introduïu un altre directori i torneu a provar."
+
+; Dialog caption and label string for plug-in path dialog box
+68117="Camí del connector"
+
+; Sub-paths of the plug-in path string
+68118="Camins"
+
+; On top of a list showing all detected pug-ins
+68119="Connectors detectats"
+
+; Button text of a button starting a plug-in search
+68120="Cerca nou..."
+
+; Button text of a button starting a dialog whe one can change the plug-in
+; path
+68121="Canvia el camí..."
+
+; Dialog title of a dialog that detects plug-ins
+68122="Associació del connector"
+
+; Text above a list box
+68123="Seleccioneu els connectors que voleu associar"
+
+; filedialog title
+68137="Seleccioneu un fitxer de preferits de l'Opera nou"
+
+; filedialog title 
+68138="Seleccioneu un fitxer de contacte de l'Opera nou"
+
+; filedialog title
+68139="Seleccioneu un fitxer de preferits de l'Opera"
+68140="Seleccioneu el fitxer de contacte de l'Opera"
+68141="Exporta els preferits de l'Opera"
+68142="Exporta els contactes de l'Opera"
+68143="Anomena i desa els preferits de l'Opera"
+68144="Anomena i desa els contactes de l'Opera"
+68145="Desa els preferits de l'Opera com a HTML"
+68146="Desa els contactes de l'Opera com a HTML"
+68147="Anomena i desa els preferits seleccionats de l'Opera"
+68148="Anomena i desa els contactes seleccionats de l'Opera"
+68149="Desa els preferits seleccionats de l'Opera com a HTML"
+68150="Desa els contactes seleccionats de l'Opera com a HTML"
+68151="Seleccioneu els preferits de l'Opera a importar"
+68152="Seleccioneu els contactes de l'Opera a importar"
+68153="Seleccioneu els preferits del Netscape a importar"
+68154="Seleccioneu la carpeta de preferits de l'Internet Explorer a importar"
+68155="Seleccioneu els preferits del Konqueror a importar"
+68156="Seleccioneu la carpeta de preferits del KDE1 a importar"
+
+; Filedialog title
+68157="Seleccioneu el fitxer de so"
+68158="Seleccioneu el fitxer de llengua"
+68159="Seleccioneu el fitxer de full d'estil"
+
+; Parttern string to be used in a file dialog box
+68160="Fitxers de llengua |*.lng|"
+
+; Dialog title 
+68161="Edita la configuració de teclat"
+
+; Dialog title
+68162="Edita la configuració de ratolí"
+
+; Message box string shown when launching external programs
+68163="No heu especificat una aplicació externa d'ajuda. Voleu modificar la configuració ara?"
+
+; Used in dialog box text
+68164="Gestor de correu-e"
+
+; Shown in error dialog box
+68165="No s'ha pogut iniciar l'aplicació externa d'ajuda. Voleu modificar la configuració ara?"
+
+; One of the authentication methods in M2
+69227="Automàtica"
+69228="Text"
+
+; Used in first time dialog box
+69238="Més..."
+
+; Title of first time dialog box
+69239="Configuració inicial"
+
+; This string will be used to add custom filter types to filesdialogs.
+; Example: PHP becomes PHP files (*.PHP) Note that %1 and %2 must be used
+69241="fitxers %1 (*.%2)"
+
+; File dialog title
+69264="Importa el certificat"
+69265="Exporta el certificat"
+
+69310="Neteja"
+69311="Minimitza"
+69316="Suprimeix només d'aquesta visualització. Drecera de teclat: Ctrl+X"
+69317="Gestor d'entrada"
+69318="Habilita el HTTP 1.1 per al servidor intermediari"
+69319="Modes de presentació"
+69320="Suavitza el desplaçament"
+69321="Mode per defecte"
+69322="Configura els modes..."
+69323="Habilita l'estil dels formularis"
+69324="Habilita l'estil de les barres de desplaçament"
+69325="Avisa abans d'esborrar els missatges"
+69326="Preferències de veu"
+69327="Mode d'escolta"
+69328="Clau PTT"
+69329="Nivell del registre de veu"
+69330="Un clic del ratolí anul·la la veu"
+69331="Nota: Caldrà reiniciar l'Opera per tal que els canvis als paràmetres tinguin efecte."
+; General title in message boxes that tell we could not saved a file
+69341="No s'ha pogut desar"
+
+; Messagebox string telling saving failed for a hotlist file
+69342="No s'ha pogut desar el fitxer de preferit"
+
+; General message box string asking user to try action once more
+69343="Ho torno a provar?"
+
+; Message box text
+69344="Tanco totes les pàgines?"
+69345="Tanca-les totes excepte l'activa"
+
+; Dialog title for dialog box that will autoreset opera in kiosk mode
+69346="Reinici de l'Opera"
+
+; Dialog title string. Keep in sync with corresponding menu entry
+69350="Gestiona els preferits"
+
+; Dialog title used when user wants to do something that requires online
+; mode (eg. fetching mail)
+69351="Fora de línia"
+
+; General dialog button string 
+69364="Continua"
+
+; General dialog button string
+69365="Pausa"
+
+; Dialog title for Add filter dialog box
+69372="Afegeix-ne un filtre"
+
+; Caption for Reindex mail dialog box
+69377="Reindexa el correu"
+
+; Dialog caption javascript options dialog
+69409="Opcions del de JavaScript"
+
+69411="Mai al servidor sencer"
+69412="S'estan processant els missatges (%li%%) (Tot:%li)"
+69413="S'estan processant els missatges (%li%%) %li/%li (Tot:%li)"
+69414="Ha finalitzat la importació. S'han importat %li missatges."
+69415="Seleccioneu els fitxers a importar"
+; Dialog title when downloaded skin can not be used
+69420="Versió d'aparença incompatible"
+
+69423="Opcions del clic central..."
+; Dialog title for save as file dialog
+69424="Anomena i desa amb imatges"
+
+69425="La versió gratuïta de l'Opera mostrarà publicitat. Podeu canviar el tipus d'anunci que preferiu a les preferències de l'Opera."
+69426="Mostra anuncis de text i cerques relacionades oferides a través del Google"
+69427="La informació sol·licitada del vostre navegador, incloent-hi les adreces de les pàgines típicament enviades als llocs webs que visiteu, serà enviada al Google per tal de triar els anuncis relacionats per mostrar. Google i Opera estan compromesos en la protecció de la privadesa dels nostres usuaris."
+69428="Lleigeix més"
+69429="Mostra una selecció d'anuncis gràfics"
+69430="Permet a les seqüències rebre clics drets"
+69434="A/C automàticament"
+69435="C/O automàticament"
+
+; Menu strings
+50844="&Ancorat"
+50845="Flotant"
+54219="&Commuta\tF4"
+50070="&Sempre al davant"
+65307="Afegeix un tauler..."
+65309="Edita el tauler"
+65308="Su&primeix un tauler..."
+65310="Aconsegueix taulers"
+51211="&Preferències..."
+54000="&Obre un preferit"
+54020="Obre en una finestra nova"
+54022="Obre en segon pla"
+54023="Mostra a la barra personal"
+54001="Afegeix la pàgina"
+54007="Afegeix-les totes"
+54002="Retalla"
+54003="Copia"
+54004="Enganxa"
+54005="Suprimeix"
+63001="Selecciona-ho tot"
+; Bookmark Item New menu
+180090="Nou"
+54009="Carpeta..."
+54008="Preferit..."
+
+180130="Fitxer"
+54013="Nou..."
+54010="Obre..."
+51071="Desa"
+54015="Anomena i desa..."
+54014="Anomena i desa els seleccionats..."
+54011="Insereix &preferit..."
+54012="Insereix els preferits d'Internet &Explorer..."
+54006="Propietats..."
+54018="&Element..."
+144660="&Fitxer"
+50466="Finestra nova"
+53028="Pàgina nova"
+50475="Tanca la finestra"
+53027="Tanca la pàgina"
+50001="Obre..."
+50003="Anomena i desa..."
+50977="Anomena i desa amb imatges..."
+162500="Importa"
+52250="Correu..."
+52251="Preferits de l'Opera..."
+52252="Contactes de l'Opera..."
+52253="Configuració de &finestres de l'Opera..."
+52254="Preferits del Netscape..."
+52255="Preferits de l'Internet Explorer..."
+162560="Exporta"
+52256="Preferits de l'Opera..."
+52257="Contactes de l'Opera..."
+52258="Configuració de finestres de l'Opera..."
+50004="Imprimeix..."
+50005="Configuració de la impressió..."
+50476="Opcions d'impressió"
+54271="Previsualització de la impressió"
+51099="Treballa fora de línia"
+54493="Suprimeix les dades privades..."
+162000="Preferències d'accés ràpid"
+52200="Accepta les finestres emergents"
+52201="Rebutja les finestres emergents"
+52202="Obre les finestres emergents en segon pla"
+52203="Habilita l'animació de les GIF"
+52204="Habilita el &vídeo encastat"
+52205="Habilita el so a les pàgines web"
+52206="Habilita el Java"
+52207="Habilita els connectors"
+52208="Habilita el JavaScript"
+52209="Habilita les galetes "
+52215="Habilita l'enregistrament del web d'origen"
+52216="Habilita els servidors intermediaris"
+52210="Identifica't com a Opera"
+52211="Identifica't com a Mozilla 5.0"
+52212="Identifica't com a Mozilla 4.78"
+52213="Identifica't com a Mozilla 3.0"
+52214="Identifica't com a MSIE 6.0"
+50394="Preferències..."
+50006="Surt"
+140070="&Edita"
+50007="Desfés"
+50008="Retalla"
+50009="Copia"
+50010="Enganxa"
+50424="Suprimeix"
+50641="Selecciona-ho tot"
+50058="Cerca..."
+50086="Cerca el següent"
+52031="Cerca l'anterior"
+50063="Cerca integrada"
+1124400="&Visualització"
+148440="Preferits"
+50846="&Inhabilitat"
+145550="Barra principal"
+50555="&Simple"
+50556="&Completa"
+50554="&Inhabilitada"
+170510="Barra personal"
+53051="Superior"
+53052="Inferior"
+53053="Esquerra"
+53054="Dreta"
+53050="Inhabilitada"
+53055="Mos&tra els preferits"
+145570="Barra d'estat"
+50557="&Superior"
+50559="In&ferior"
+50558="&Inhabilitada"
+50916="Mo&stra l'hora"
+170210="Barra de pàgines"
+53021="&Superior"
+53022="&Inferior"
+53023="&Esquerra"
+53024="&Dreta"
+53020="&Inhabilitada"
+180520="Barra de &finestres"
+54052="&Superior"
+54053="&Inferior"
+54054="&Esquerra"
+54055="&Dreta"
+54050="&Inhabilitada"
+150740="Barra d'adreces"
+51074="&Superior"
+51075="&Inferior"
+51101="&Inhabilitada"
+50612="Barres de desplaçament"
+157300="Zoom"
+51730="50%"
+51731="80%"
+51732="90%"
+51733="100%"
+51734="120%"
+51735="150%"
+51736="200%"
+51739="-100%"
+51740="+100%"
+51737="-10%"
+51738="+10%"
+157500="Codificació"
+51750="Selecció automàtica"
+157510="Unicode"
+51751="UTF-8"
+51752="UTF-16"
+67447="UTF-32"
+67448="UTF-7"
+157530="Angl&ès dels EUA"
+51753="ASCII dels EUA"
+157540="Occidental"
+51754="ISO-8859-1"
+51771="Windows-1252"
+51767="ISO-8859-15"
+157550="Europeu central"
+51755="ISO-8859-2"
+67449="ISO-8859-16"
+51769="Windows-1250"
+157560="Europeu meridional"
+51756="ISO-8859-3"
+157650="Bàltic"
+51765="ISO-8859-13"
+51776="Windows-1257"
+51757="ISO-8859-4"
+157630="Nòrdic"
+51763="ISO-8859-10"
+51791="Windows-Sami-2"
+157660="Cèltic"
+51766="ISO-8859-14"
+157620="Turc"
+51762="ISO-8859-9"
+51773="Windows-1254"
+157770="Vietnamita"
+51777="Windows-1258"
+51783="VISCII"
+67450="VPS"
+157580="Ciríl·lic"
+51758="ISO-8859-5"
+51768="KOI8-R"
+51785="KOI8-U"
+51770="Windows-1251"
+51792="Codepage 866"
+157600="Grec"
+51760="ISO-8859-7"
+51772="Windows-1253"
+157590="Àrab"
+51759="ISO-8859-6"
+51775="Windows-1256"
+157610="Hebreu"
+51761="ISO-8859-8 (Lògic)"
+67451="ISO-8859-8 (Visual)"
+51774="Windows-1255"
+157640="Thai"
+51764="ISO-8859-11 (TIS-620)"
+157890="Xinès"
+51780="Big5 (Tradicional)"
+67452="Big5-HKSCS (Tradicional)"
+51790="EUC-TW (Tradicional)"
+51782="GBK/GB2312 (Simplificat)"
+51786="HZ-GB2312 (Simplificat)"
+67453="GB18030 (Simplificat)"
+67454="ISO-2022-CN"
+157880="Japonès"
+; Auto detect for Russian, Chinese and Japanese
+51788="Detecció automàtica"
+
+51778="Shift-JIS"
+51779="ISO-2022-JP"
+51781="EUC-JP"
+157840="Coreà"
+51784="EUC-KR"
+51212="Actualitza la visualització"
+44002="Codi font"
+50660="Codi font del marc"
+51215="Enllaços al marc"
+44001="&Menú\tCtrl+F11"
+50995="Pantalla completa"
+140320="&Navegació"
+50032="Anterior"
+; Next
+50031="Següent"
+
+50420="Atura"
+50477="Pàgina inicial"
+50065="Actualitza"
+44003="Actualitza el marc"
+50725="Actualitza totes les pàgines"
+200000="Actualitza cada"
+56000="Habilita"
+56001="Personalitza..."
+50270="Carrega totes les imatges"
+50478="Defineix la pàgina inicial..."
+50059="Vés a la pàgina..."
+65132="Vés a pàgines similars"
+50087="Afegeix als preferits..."
+146790="&Correu"
+50679="Redacta..."
+; Send menu, Mail
+65180="Envia l'enllaç"
+
+50979="Comprova"
+; Check menu, Mail
+51723="Totes les bústies"
+
+; Send menu, Mail
+54070="Envia els missatges en cua"
+
+54071="En&via el de tots els comptes en cua\tCtrl+Maj+Q"
+54214="Gestio&na el correu\tCtrl+Alt+M"
+51143="&Cerca..."
+51139="Filtres..."
+51145="Compte nou ..."
+59999="Gestiona els comptes..."
+54215="Gestiona els contactes..."
+44004="Marca'l com a llegit"
+44005="Marca'l per llegir"
+44006="&Fes la llista dels missatges antics"
+44007="Fes la llist&a de tots els grups de discussió"
+50626="Mos&tra els fils"
+60004="Act&ualitza els grups de discussió"
+1123600="&Finestra"
+148360="Especial"
+50836="Transferències"
+50837="Historial"
+50838="Connectors"
+50835="Memòria cau"
+54122="Consola del Java"
+50498="Duplica"
+52035="Crea una finestra enllaçada"
+50018="Cascada"
+50019="Mosaic vertical"
+51136="Mosaic horitzontal"
+50567="Restaura-les totes"
+50565="Minimitza-les totes"
+50545="Maximitza-les totes"
+50564="Tanca-les totes"
+50523="&Desa la configuració de finestres..."
+52034="&Llista de finestres..."
+140130="&Ajuda"
+50013="Continguts"
+50479="Teclat"
+50525="Ratolí"
+60340="Consell del &dia..."
+60243="Digueu-ho a un amic"
+60242="Compreu l'Opera"
+50976="Registre de l'Opera..."
+242400="Opera al web"
+; Opera on the Web menu
+60240="Pàgina inicial"
+60241="Assistència"
+50666="Contacte"
+60246="Comunitat"
+51131="Operamail"
+
+50015="Quant a l'Opera"
+; link menu
+50416="&Obre l'enllaç\tClic"
+50417="Obre'l en una finestra &nova\tMaj+Clic"
+50437="Obre'l en segon pla"
+53018="Obre en una pàgina nova"
+53019="Obre en una pàgina en segon pla"
+50418="Afegeix l'enllaç als preferits..."
+50216="Copia l'adreça de l'enllaç"
+50761="Anomena i desa l'objectiu..."
+
+; mailto: link menu
+50436="&Envia un correu..."
+50543="&Afegeix als contactes..."
+50542="Copia l'adreça de correu-e"
+50544="Copia mai&lto:address"
+
+; mailto: image link menu
+50263="Mostra la imatge"
+
+; mailto: image link and image link  menu
+65246="Torna a carregar la imatge"
+
+; mailto: image link menu and image link menu
+50262="Desa la imatge..."
+50251="Copia la imatge"
+50419="Copia l'adreça de la imatge"
+56064="Propietats de la imatge..."
+200670="Usa la imatge com a"
+56067="Aparença de primer pla"
+56068="Aparença de fons"
+57076="Fons d'escriptori"
+56069="Suprimeix l'aparença en primer pla"
+56070="Suprimeix l'aparença de fons"
+
+; Default page menu
+50426="Anterior"
+50427="Següent"
+50429="Atura"
+50430="Pàgina inicial"
+50428="Actualitza"
+50423="Afegeix als preferits"
+50215="Copia l'adreça"
+65178="Envia l'enllaç per correu"
+292450="Fons"
+
+; Default page menu and image link menu
+65245="Mostra la imatge"
+
+; Default page menu
+50672="Desa la imatge..."
+50671="Copia la imatge"
+50673="Copia l'adreça de la imatge"
+65244="Propietats de la imatge"
+200710="Usa la imatge com"
+56071="Aparen&ça de primer pla"
+56072="Aparença de fons"
+57077="Fons &d'escriptori"
+50432="Duplica"
+
+; Select menu
+50872="Copia el text"
+65184="Cerca"
+291920="Cerca amb"
+65187="Diccionari"
+65188="Enciclopèdia"
+65186="Canvia de moneda"
+291960="Tradueix"
+65196="Anglès a Francès"
+65197="Anglès a Alemany"
+65198="Anglès a Italià"
+65199="Anglès a Portuguès"
+65200="Anglès a Espanyol"
+65202="Francès a Anglès"
+65203="Francès a Alemany"
+65204="Francès a Italià"
+65205="Francès a Portuguès"
+65206="Francès a Espanyol"
+65207="Alemany a Anglès"
+65208="Alemany a Francès"
+65209="Italià a Anglès"
+65210="Italià a Francès"
+65211="Portuguès a Anglès"
+65212="Espanyol a Anglès"
+65213="Espanyol a Francès"
+65214="Anglès a Japonès "
+65215="Japonès a Anglès"
+65218="Envia per correu"
+65191="Visualitza en codi font"
+
+; View source menu
+65261="&Atura la visualització del codi font"
+
+; Image link menu
+44013="Obre'l"
+44014="Obre'l a una finestra nova"
+44015="Afegeix l'enllaç als preferits"
+44016="Copia l'adreça &de la imatge"
+
+144670="&Fitxer"
+50467="&Obre..."
+50468="&Desa..."
+50470="En&via"
+50469="&Surt"
+140080="Edita"
+242420="_menú_contextual_d'anuncis_"
+57055="P&referències..."
+; File menu
+148470="Fitxer"
+
+50847="&Imprimeix\tCtrl+P"
+50856="S&urt\tCtrl+W"
+148480="Edita"
+50848="C&opia\tCtrl+C"
+50849="&Cerca\tCtrl+F"
+; Navigation menu
+148510="Navegació"
+
+50851="&Anterior\tZ"
+50852="&Següent\tX"
+50853="&Pàgina inicial\tCtrl+Espai"
+50854="Índex &alfabètic\tF1"
+50855="Dre&ceres\tCtrl+B"
+1127000="Edita"
+148700="Insereix"
+50870="No&m i cognoms"
+50902="&Nom"
+50903="&Cognoms"
+50904="A&dreça"
+50905="Ciu&tat"
+50906="&Estat"
+65242="&Codi postal"
+50907="País"
+50908="&Telèfon"
+50909="&Fax"
+50871="Cor&reu"
+50910="&Pàgina inicial"
+50911="Especial &1"
+50912="Especial &2"
+50913="Especial &3"
+65243="&Edita..."
+50864="Desfés"
+50865="Retalla"
+50866="Copia"
+50867="Enganxa"
+50868="Suprimeix"
+50869="Selecciona-ho tot"
+51265="Copia com a &text"
+51266="Copia com a HTML"
+51267="Copia com a elements de preferits"
+; Button bar
+51321="Aparen&ça del navegador..."
+50917="Format del nave&gador..."
+
+56073="Aconsegueix aparences"
+; Hotlist window bookmarks view
+54150="Ordena per la &meva ordenació"
+54151="Ordena per &títol"
+54152="Ordena inve&rsament per títol"
+54153="Ordena per darrera &visita"
+54154="Ordena inversament per v&isitats"
+54155="Ordena per cr&eació"
+54156="Ordena in&versament per creació"
+54161="Mo&stra el camp de cerca"
+54157="Mostra l'arbre de carpetes"
+181580="&Columnes"
+54158="Mostra les cap&çaleres de les columnes"
+52051="Mostra la columna de darrera &visita"
+52052="Mostra la columna de data de &creació"
+52053="Redimensiona automàticament les columnes"
+
+; Bookmark item
+53056="&Suprimeix\tDelete"
+53057="&Propietats..."
+
+; Hotlist window contacts view
+54159="Mostra l'&arbre de carpetes"
+54160="Mostra les cap&çaleres de columna"
+
+; Transfers view
+54139="Mostra els detalls"
+67520="Mostra els elements nous a dalt"
+51204="Mostra f&ora de l'Opera"
+51203="Mostra en primer &terme amb una descàrrega nova"
+
+294120="Barra de pàgines"
+65412="Pàgina &nova\tDoble clic"
+; Page bar item
+53025="&Desplaça a una finestra nova\tDoble clic"
+65411="Tan&ca la pàgina\tMaj+Clic"
+
+; Go menu
+65130="Vés &a l'adreça"
+65133="Vés a les pàgines que enllacen amb aquesta adreça"
+
+146630="Marc"
+50663="Visualitza el codi font"
+50781="Anomena i desa"
+56051="Valida el codi font"
+50669="Afegeix als preferits"
+50668="Copia l'adreça"
+65179="Envia l'enllaç per correu"
+50664="Actualitza"
+44012="Carrega totes les imatges"
+50708="Maximitza"
+53400="Redacta un missatge"
+56053="Visita la &pàgina inicial"
+53404="&A:"
+53405="a/c&:"
+53406="c/&o:"
+54019="&Contacte..."
+180210="&Fitxer"
+54021="&Nou..."
+53411="&Copiar\tCtrl+C"
+53412="&Seleccionar-ho tot\tCtrl+A"
+53413="&Imprimeix\tCtrl+P"
+67350="Descàrrega ràpida"
+67351="Bloca el tauler"
+67352="Recupera tots els comptes"
+67353="Llegeix el correu..."
+67354="Marca'l i vés al següent per llegir"
+; Cancel newsmessage
+67355="Cancel·la l'enviament"
+
+67356="Etiqueta'l com"
+67357="Mostra a"
+67358="Vés a"
+67362="Marca-ho tot com a llegit"
+67363="Buida la paperera"
+67364="Redirigeix"
+67359="Següent per llegir"
+67360="Anterior per llegir"
+67365="Fil"
+; noun (in 'Go to' menu)
+67366="Contacte"
+
+67367="Pla"
+67368="En fils"
+67369="Per a i de"
+67370="Miniatures"
+67371="Mostra els llegits"
+67372="Mostra els suprimits"
+67373="Mostra el correu brossa"
+67374="Mostra les llistes de correu"
+67375="Mostra els grups de discussió"
+67376="Mostra la resposta ràpida"
+67377="Suprimeix de la visualització"
+; Forward mail
+67378="Reenvia"
+
+67379="Prioritat"
+67380="Ordena per la meva ordenació"
+67381="Ordena per nom"
+67382="Ordena per sobrenom"
+67383="Ordena per adreça"
+67384="Ordena per descripció"
+67385="Ordena per data de creació"
+67386="Ordena per darrera visita"
+67387="Ordena en sentit ascendent"
+67388="Ordena en sentit descendent"
+67389="Obre"
+67390="Visualitza"
+67391="Visualitza els missatges"
+67392="Visita la pàgina inicial"
+; Contact Item New menu
+67393="Nou"
+
+67394="Vés a la URL"
+; Help menu
+67395="Ajuda"
+
+; Window menu
+67396="Finestra"
+
+; Mail menu and button
+67397="Correu"
+
+; Bookmarks menu
+67398="Preferits"
+
+67399="Sessions"
+67400="Barra de navegació"
+67401="Bloca els botons"
+67402="Personalitza les barres d'eines..."
+67403="Aparença"
+67404="Combinació de colors"
+; Browser View Menu
+67405="Estil"
+
+67406="Pantalla petita"
+67407="Navegació del lloc"
+; Send mail menu
+67408="Envia"
+
+67409="Llegeix..."
+67410="Cerca..."
+67411="Grups de discussió..."
+67412="Carpetes IMAP..."
+67413="Tanca-les totes excepte l'activa"
+; Bookmark Item File menu
+67414="Importa els preferits de l'Opera..."
+67415="Importa els preferits del Netscape..."
+67416="Importa els preferits de l'Internet Explorer..."
+67417="Exporta els preferits de l'Opera"
+
+; Contact Item New menu
+67418="Carpeta..."
+67419="Contacte..."
+
+; Contact Item File menu
+67420="Nou..."
+
+; File/Session menu
+67421="Obre una sessió"
+67422="Insereix una sessió..."
+67423="Desa la sessió..."
+
+; Quick Preferences
+67424="Obre només les finestres emergents sol·licitades"
+
+; View Hotlist Menu
+67425="Preferits"
+67426="Correu"
+
+67427="Contactes"
+; View Hotlist Menu
+67428="Historial"
+67429="Transferències"
+67430="Enllaços"
+67431="Finestres"
+
+; View Navigation Bar Menu
+67432="Automàtica"
+
+67433="Sense combinació de colors"
+67434="Combinació de colors del sistema"
+67435="Or"
+67436="Sorra"
+67437="Jungla"
+67438="Mar"
+67439="Blau"
+67440="Anyil"
+67441="Púrpura"
+67442="Carmesí"
+67443="Vermell"
+67444="Efectes especials"
+67445="Mode Autor"
+67446="Mode Usuari"
+; Reload Menu
+67455="5 segons"
+67456="15 segons"
+67457="30 segons"
+67458="1 minut"
+67459="2 minuts"
+67460="5 minuts"
+67461="15 minuts"
+67462="30 minuts"
+
+; Site Navigation Menu
+67463="Inicial"
+67464="Índex"
+67465="Continguts"
+67466="Cerca"
+67467="Glossari"
+67468="Ajuda"
+67469="Primera"
+67470="Anterior"
+67471="Següent"
+67472="Darrera"
+67473="Amunt"
+67474="Copyright"
+67475="Autor"
+
+67476="Consola del JavaScript"
+67477="Reinicia la transferència"
+67478="Suprimeix la transferència"
+67479="Estil"
+67480="Suprimeix el tauler"
+67481="Suprimeix de la barra d'eines"
+67482="Àudio"
+67483="Tanca-les totes"
+67484="Tanca-les totes excepte l'activa"
+; Remove from Personal Bar
+67485="Suprimeix"
+
+67486="Reinicia la barra d'eines"
+67487="Imatges grans"
+67488="Fes emergir la finestra de transferències al transferir"
+67489="Barra d'eines"
+; Right-click on address field
+67490="Enganxa i vés"
+
+; Links Panel Toolbar
+67495="Bloca"
+
+67496="Pantalla completa"
+67497="Seguretat"
+67498="Mostra les imatges"
+; New page
+67499="Nova"
+
+; Used in menus to show the keyboard shortcut, typically Ctrl+t
+67538="Ctrl"
+
+67521="Maj"
+67522="Alt"
+67523="Inici"
+67524="Final"
+67525="Reg Pàg"
+67526="Av Pàg"
+67527="Dalt"
+67528="A baix"
+67529="Esquerra"
+67530="Dreta"
+67531="Esc"
+67532="Inser"
+67533="Supr"
+67534="Retrocés"
+67535="Tab"
+67536="Espai"
+67537="Retorn"
+; Caption for fast forward button for automatic login using Wand
+67539="Entrada"
+
+67572="Aquesta visualització"
+67573="Més elements"
+67633="Obre en una finestra en segon pla"
+67634="Mostra"
+67635="Manualment"
+67636="Després 1 segon"
+67637="Després de 2 segons"
+67638="Després de 3 segons"
+67639="Després de 5 segons"
+67640="Després de 10 segons"
+67641="Prefereixo text net"
+67642="Prefereixo HTML"
+67643="Suprimeix incrustacions externes"
+67644="Visualització completa"
+67645="Visualització dividida"
+67646="Carpeta única"
+67647="Nota nova"
+67648="Rebobina"
+67649="Avanç ràpid"
+67650="Carrega la imatge"
+67651="Obre la imatge"
+67652="Copia en una nota"
+67653="Insereix dades personals"
+67654="Insereix una nota"
+67655="Neteja-ho tot"
+67656="Enganxa en una nota"
+67657="Barra de menú"
+67658="Enllaços..."
+67659="Afegeix el contacte aquí"
+67660="Afegeix tots els contactes a la carpeta"
+67661="Importa els preferits del KDE1..."
+67662="Importa els preferits del Konqueror..."
+67663="Exporta com a HTML..."
+67664="Anomena i desa els seleccionats com a HTML"
+67665="Importa els contactes de l'Opera..."
+67666="Exporta els contactes de l'Opera..."
+67667="Anomena i desa els contactes seleccionats..."
+67668="Preferits del KDE1"
+67669="Preferits del Konqueror"
+67670="Preferits com a HTML..."
+67671="Informació"
+67672="Notes"
+67673="Veu"
+67674="Preferències de veu..."
+67676="Veu"
+67677="S'està escoltant"
+67678="S'està parlant"
+; Revert an undo operation
+68116="Refés"
+
+; Edit popup menu string. Translate with ampersand
+69000="&Desfés"
+69001="&Refés"
+69002="Re&talla"
+69003="&Copia"
+69004="Engan&xa"
+69005="&Neteja"
+69006="Seleccion&a-ho tot"
+
+; Workspace popup menu string. Translate with ampersand
+69007="&Restaura"
+69008="&Mou"
+69009="&Mida"
+69010="Mi&nimitza"
+69011="Ma&ximitza"
+69012="Tan&ca"
+69013="Següe&nt"
+69014="&Estàndard"
+69015="&Clàssic"
+69016="&Decoració"
+
+; Print dialog. Detination tab
+69017="Destinació"
+
+; Print dialog. Options tab
+69018="Opcions"
+
+; Print dialog. Printer program tab
+69019="Programa de l'impressora"
+
+; Print dialog.
+69020="Im&pressores"
+
+; Print dialog. List column header
+69021="Impressora"
+69022="Ordinador central"
+69023="Comentari"
+
+; Print dialog. Checkbox. Translate with ampersand
+69024="Imprimeix a un &fitxer"
+
+; Print dialog. Frame text label
+69025="Àrea d'impressió"
+69026="Còpies"
+69027="&Tots"
+
+; Print dialog. Translate with ampersand
+69028="&Selecció"
+69029="Pàgin&es"
+69030="De:"
+69031="A:"
+69032="Nombre de &còpies"
+69033="&Imprimeix primer la primera pàgina"
+69034="Imprimeix primer &la darrera pàgina"
+
+; Print dialog. Frame text label
+69035="Color"
+69036="Opcions"
+69037="Format del paper"
+
+; Print dialog. Translate with ampersand
+69038="Imprimeix en &color si està disponible"
+69039="Imprimeix en escala de grisos"
+
+; Print dialog
+69040="Vertical"
+69041="Horitzontal"
+
+; Print dialog. Printer parameter
+69042="Paràmetre"
+
+; Print dialog. Help text label
+69043="El programa de la impressora ha de llegir des de stdin.\nEls paràmetres s'han passat al programa com a una cadena."
+
+; Print dialog. Dialog title
+69044="Imprimeix"
+
+; Print dialog. Paper type
+69045="A0 (841 x 1189 mm)"
+69046="A1 (594 x 841 mm)"
+69047="A2 (420 x 594 mm)"
+69048="A3 (297 x 420 mm)"
+69049="A4 (210x297 mm, 8.26x11.7 polzades)"
+69050="A5 (148 x 210 mm)"
+69051="A6 (105 x 148 mm)"
+69052="A7 (74 x 105 mm)"
+69053="A8 (52 x 74 mm)"
+69054="A9 (37 x 52 mm)"
+69055="B0 (1030 x 1456 mm)"
+69056="B1 (728 x 1030 mm)"
+69057="B2 (515 x 728 mm)"
+69058="B3 (364 x 515 mm)"
+69059="B4 (257 x 364 mm)"
+69060="B5 (182x257 mm, 7.17x10.13 polzades)"
+69061="B6 (128 x 182 mm)"
+69062="B7 (91 x 128 mm)"
+69063="B8 (64 x 91 mm)"
+69064="B9 (45 x 64 mm)"
+69065="B10 (32 x 45 mm)"
+69066="C5E (163 x 229 mm)"
+69067="DLE (110 x 220 mm)"
+69068="Executiu (7.5x10 polzades, 191x254 mm)"
+69069="Foli (210 x 330 mm)"
+69070="Registre (432 x 279 mm)"
+69071="Legal (8.5x14 polzades, 216x356 mm)"
+69072="Carta (8.5x11 polzades, 216x279 mm)"
+69073="Tabloide (279 x 432 mm)"
+69074="Sobre #10 comú dels EUA (105 x 241 mm)"
+
+; Print dialog.
+69075="Programa local"
+69076="Impressora personalitzada"
+
+; Print dialog. Fileselector title
+69077="Trieu el fitxer de sortida"
+69078="Tria l'aplicació"
+
+; Print dialog. Printer connection
+69079="Connectat localment"
+
+; Print dialog. Alternate printer names
+69080="Àlies:"
+
+; Print dialog. Unknown printer location
+69081="Ubicació desconeguda"
+
+; Print dialog. Unknown printer
+69082="desconegut"
+
+; Dialog title. When no printer was found
+69083="No hi ha instal·lada cap impressora"
+
+; Dialog help text
+69084="No s'ha especificat una impressora vàlida\n\nPodeu triar imprimir a un fitxer o especificar una impressora\npersonalitzada al requadre de diàleg d'impressió."
+
+; Column header label when listing plug-ins
+69085="Ús"
+
+; First time dialog help text
+69086="L'acció del botó central del ratolí es pot configurar pitjant Maj+Clic central.\n\nVoleu configurar l'acció ara?"
+
+; Dialog close button
+69087="Tanca"
+
+; Dialog apply button
+69088="Aplica"
+69089="Imprimeix"
+
+; Dialog help button
+69090="Ajuda"
+
+; Qt library strings (colordialog)
+69100="&Afegeix als colors personalitzats"
+69101="Colors &bàsics"
+69102="&Colors personalitzats"
+69103="&Defineix els colors personalitzats >>"
+69104="&Verd:"
+69105="Ve&rmell:"
+69106="Bla&u"
+69107="&Sat:"
+69108="&Val:"
+69109="Ma&tís"
+69110="Cana&l alfa"
+69111="Seleccioneu el color"
+
+; Qt library strings (filedialog)
+69112="%1\nNo s'ha trobat el fitxer.\nComproveu el camí i el nom del fitxer."
+69113="&Suprimeix"
+69114="&No"
+69115="&Sí"
+69116="&Obre"
+69117="&Reanomena"
+69118="De&sa"
+69119="&Sense ordenar"
+69120="<qt>Esteu segur que voleu suprimir %1 %2?</qt>"
+69121="Tots els fitxers (*)"
+69122="Atributs"
+69123="Endarrere"
+69124="Copia o mou un fitxer"
+69125="Crea una carpeta nova"
+69126="Data"
+69127="Suprimeix %1"
+69128="Visualització detallada"
+69129="Dir"
+69130="Directoris"
+69131="Directori:"
+69132="Error"
+69133="&Nom del fitxer:"
+69134="&Tipus de fitxer:"
+69135="Fitxer"
+69136="Directori de cerca"
+69137="Inaccessible"
+69138="Visualitza en llista"
+69139="M&ira a:"
+69140="Nom"
+69141="Carpeta nova %1"
+69142="Carpeta nova 1"
+69143="Carpeta nova"
+69144="Puja un directori"
+69145="Obre"
+69146="Previsualitza els continguts del fitxer"
+69147="Previsualitza la informació del fitxer"
+69148="Act&ualitza"
+69149="Només lectura"
+69150="Lectura-escriptura"
+69151="Llegeix: %1"
+69152="Anomena i desa"
+69153="Desa"
+69154="Mostra els fit&xers ocults"
+69155="Mida"
+69156="Ordena"
+69157="Ordena per &data"
+69158="Ordena per &nom"
+69159="Ordena per &mida"
+
+; Qt library strings (filedialog) - Not regular file
+69160="Especial"
+
+; Qt library strings (filedialog)
+69161="Enllaç simbòlic al directori"
+69162="Enllaç simbòlic al fitxer"
+69163="Enllaç simbòlic a l'especial"
+69164="Tipus"
+69165="Només escriptura"
+69166="Escriptura: %1"
+69167="el directori"
+69168="el fitxer"
+69169="L'enllaç simbòlic"
+
+; General message box strings
+69200="Heu de seleccionar un nom de fitxer primer"
+69201="Nom del fitxer desaparegut"
+69202="El nom de fitxer seleccionat ja existeix. Si\ncontinueu, els continguts del fitxer existent\nes perdran.\n\nVoleu continuar?"
+69203="Reemplaça el fitxer"
+69204="El nom de fitxer seleccionat ja existeix. Seleccioneu un altre fitxer"
+69205="Nom de fitxer no permès"
+69206="L'operació d'escriptura ha fallat. No s'han desat dades.\n\nVerifiqueu que teniu permisos d'escriptura al\ndirectori on s'ha d'emmagatzemar el fitxer\ni que hi ha prou espai lliure al disc. "
+69207="No s'ha pogut desar el fitxer"
+69208="No teniu accés d'escriptura a la ubicació especificada."
+69209="No teniu accés d'escriptura al %1 especificat.\n\nNom: %2"
+69210="S'ha denegat l'accés"
+69211="directori"
+69212="fitxer"
+
+; Message box title
+69213="La versió del connector no és vàlida"
+
+; Message box help text
+69214="S'ha detectat una versió no vàlida del connector de servidor intermediari del Netscape. Opera no pot utilitzar els connectors fins que no s'hagi corregit això. Instal·leu el connector de servidor intermediari que venia amb aquesta versió de l'Opera."
+
+; Message box title
+69215="Cerca de connectors"
+
+; Message box help text for delayed plug-in search (after startup)
+69216="A l'inici no s'instal·laren els connectors. La seva instal·lació s'iniciarà ara."
+
+; Message box help text
+69217="El darrer cop que es va intentar la cerca de connectors es va produir un error fatal\n\nVoleu iniciar un cerca de connectors ara?"
+
+; Text above a list of directories
+69218="Directoris de connectors registrats"
+
+; Help text for setting display resolution (DPI)
+69219="Resolució de la pantalla"
+
+; Default display resolution value
+69220="Valor per defecte del sistema"
+
+; Fast forward 
+69232="Següent"
+
+; Fast forward
+69233="Imatge següent"
+69234="Entrada"
+69235="Entrada de la vareta"
+69236="Mostra"
+69237="Mostra la imatge"
+
+; Menu entry for adding a mailto link to the contact list
+69242="Afegeix l'enllaç als contactes..."
+
+67306="Música"
+69313="Llista de missatges"
+69314="Cos del missatge"
+69315="Llista i cos"
+; Page menu string
+69336="Tanca"
+69337="Activa"
+69338="Restaura"
+69339="Minimitza"
+69340="Maximitza"
+
+; Used in toolbar popup menus to control visibility of extender arrow
+69363="Mostra l'extensor"
+
+; Used in M2 menus (in the show account menu)
+69366="Tots els comptes"
+69367="Comptes de correu"
+69368="Comptes de grups de discussió"
+
+; General menu string 
+69381="Exporta..."
+
+; m2 submenu string (in hotlist)
+69382="Mostra el compte"
+
+; m2 menu string (in hotlist)
+69383="Mostra el selector de comptes"
+
+; Submenu that hold all closed window entries
+69384="Tancades"
+
+; Main help entry (F1 action)
+69385="Ajuda de l'Opera"
+
+; Contents sub menu in help menu
+69386="Continguts"
+
+; Help topic
+69387="Preferits"
+69388="Barres d'eines"
+69389="Menús"
+69390="Diàlegs"
+69391="Preferències"
+
+; On the web menu entry
+69392="Característiques i tutorials"
+69393="Accessibilitat"
+69394="Seguretat i privadesa"
+
+; Meta key
+69395="Meta"
+
+; Menu string in transfer panel
+69422="Suprimeix totes les finalitzades"
