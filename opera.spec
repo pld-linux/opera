@@ -25,7 +25,7 @@
 %define	x86_static_rel		%{dirrel}.1
 %define	sparc_shared_rel	%{dirrel}.2
 %define	sparc_static_rel	%{dirrel}.1
-%define	ppc_shared_rel		%{dirrel}.2
+%define	ppc_shared_rel		%{dirrel}.3
 %define	ppc_static_rel		%{dirrel}.1
 %if %{with shared}
 %define	type		shared
@@ -247,8 +247,8 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{na
 %endif
 
 %if %{need_ppc_shared}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	354fea6dc688e1a7b0e0a7e64059ee14
+Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+# Source22-md5:	f8aaa57fdac6db86743cf2e3b31b70d4
 %{!?with_distributable:NoSource:	22}
 %endif
 
