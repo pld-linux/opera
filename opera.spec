@@ -15,7 +15,7 @@
 %else
 %define	ver		8.00
 %define	sver		8.0
-%define	fix		.b1
+%define	fix		b1
 %define	dirrel		20050104
 %define	reltype		beta
 %endif
