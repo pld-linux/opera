@@ -2,8 +2,8 @@
 # There're some problems with "shared" version
 #
 %define ver	7.21
-%define	rel	20031003.1
-%define	dirrel	20031003
+%define	rel	20031009.1
+%define	dirrel	20031009
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -13,18 +13,18 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	http://snapshot.opera.com/unix/intel-linux/447-%{dirrel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-Source0:	http://snapshot.opera.com/unix/7.21-Preview-2/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source0:	http://snapshot.opera.com/unix/7.21-Preview-3/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
 #Source1:	http://snapshot.opera.com/unix/ppc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-Source1:	http://snapshot.opera.com/unix/7.21-Preview-1/ppc-linux/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+Source1:	http://snapshot.opera.com/unix/7.21-Preview-3/ppc-linux/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 #Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
 %ifarch sparc
 #Source1:	http://snapshot.opera.com/unix/sparc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
-Source1:	http://snapshot.opera.com/unix/7.21-Preview-1/sparc-linux/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
+Source1:	http://snapshot.opera.com/unix/7.21-Preview-3/sparc-linux/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 %endif
 # polish language file
