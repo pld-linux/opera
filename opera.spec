@@ -24,7 +24,7 @@ Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
 NoSource:	0
 URL:		http://www.opera.com/
-ExclusiveArch:	%{ix86} ppc
+ExclusiveArch:	%{ix86} ppc sparc sparc64
 Requires:	freetype >= 2
 Requires:	openmotif >= 2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,11 +48,11 @@ linkowana z qt.
 %ifarch %{ix86}
 %setup -q  -n %{name}-%{ver}-%{rel}-%{type}-qt.i386
 %endif
-%ifarch sparc
-%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
+%ifarch sparc sparc64
+%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
 %endif
 %ifarch ppc
-%setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
+%setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
 %endif
 
 %install
