@@ -3,41 +3,38 @@
 #
 %bcond_with	shared
 
-%define	ver		7.50
-%define	dirrel		20040414
-%define	x86_shared_rel		%{dirrel}.5
-%define	x86_static_rel		%{dirrel}.1
+%define ver		7.50
+%define dirrel		20040414
+%define x86_shared_rel		%{dirrel}.5
+%define x86_static_rel		%{dirrel}.1
 %define sparc_shared_rel	%{dirrel}.2
 %define sparc_static_rel	%{dirrel}.1
 %define ppc_shared_rel		%{dirrel}.2
 %define ppc_static_rel		%{dirrel}.1
 %if %{with shared}
+%define type		shared
 %ifarch %{ix86}
-%define	rel		%{x86_shared_rel}
-%define	type		shared
+%define rel		%{x86_shared_rel}
 %endif
 %ifarch sparc64 sparc
 %define rel             %{sparc_shared_rel}
-%define type            shared
 %endif
 %ifarch ppc
 %define rel             %{ppc_shared_rel}
-%define type            shared
 %endif
 %else
+%define type		static
 %ifarch %{ix86}
 %define rel             %{x86_static_rel}
-%define type            static
 %endif
 %ifarch sparc sparc64
 %define rel             %{sparc_static_rel}
-%define type            static
 %endif
 %ifarch ppc
-%define	rel		%{ppc_static_rel}
-%define	type		static
+%define rel		%{ppc_static_rel}
 %endif
 %endif
+
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -45,27 +42,42 @@ Version:	%{ver}.%{rel}
 Release:	0.1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
+%if %{without shared}
+%ifarch %{ix86}
 # Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
 Source0:	http://snapshot.opera.com/unix/7.50-Preview-4/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+NoSource:	0
+%endif
+%ifarch sparc64 sparc
 # Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
 Source1:	http://snapshot.opera.com/unix/7.50-Preview-4/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+NoSource:	1
+%endif
+%ifarch ppc
 # Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
 Source2:        http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+NoSource:	2
+%endif
+%else
+%ifarch %{ix86}
+# Source20:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+Source20:	http://snapshot.opera.com/unix/7.50-Preview-4/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+NoSource:	20
+%endif
+%ifarch sparc sparc64
+# Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+Source21:	http://snapshot.opera.com/unix/7.50-Preview-4/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+NoSource:	21
+%endif
+%ifarch ppc
+# Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+Source22:	http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+NoSource:	22
+%endif
+%endif
 # polish language file (taken from where?)
 Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
-# Source20:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-Source20:	http://snapshot.opera.com/unix/7.50-Preview-4/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-Source21:	http://snapshot.opera.com/unix/7.50-Preview-4/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-Source22:	http://snapshot.opera.com/unix/7.50-Preview-4/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-NoSource:	0
-NoSource:	1
-NoSource:	2
-NoSource:	20
-NoSource:	21
-NoSource:	22
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 Requires:	freetype >= 2
