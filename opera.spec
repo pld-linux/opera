@@ -211,7 +211,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/opera/chartables-be.bin
 %endif
 %attr(755,root,root) %{_datadir}/opera/opera6.adr
-%{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*.so
 %dir %{_libdir}/opera
 %dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
