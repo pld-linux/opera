@@ -28,8 +28,8 @@ Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{v
 Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
 Source20:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.i386-en.tar.bz2
-Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.sparc-en.tar.bz2
-Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.ppc-en.tar.bz2
+Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{dirrel}.2-shared-qt.sparc-en.tar.bz2
+Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{dirrel}.2-shared-qt.ppc-en.tar.bz2
 NoSource:	0
 NoSource:	1
 NoSource:	2
