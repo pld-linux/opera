@@ -1,8 +1,8 @@
 #
 # There're some problems with "shared" version
 #
-%define ver	7.11
-%define	rel	20030515.1
+%define ver	7.20
+%define	rel	20030807.1
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -11,10 +11,14 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-# Source0-md5:	5dacb87719576669d4c6e56df5a68fdd
+#Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source0:	http://snapshot.opera.com/unix/intel-linux/437-%{rel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
-Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+#Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+Source1:	http://snapshot.opera.com/unix/ppc-linux/437-%{rel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+%endif
+%ifarch sparc
+Source1:	http://snapshot.opera.com/unix/sparc-linux/437-%{rel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %endif
 # polish language file
 Source2:	%{name}-2887.lng	
@@ -48,10 +52,17 @@ linkowana z qt.
 %ifarch ppc
 %setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
 %endif
+%ifarch sparc
+%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
+cat install.sh | sed 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' > install2.sh
+mv install2.sh install.sh
+
+echo y |\
 sh install.sh \
   --prefix=$RPM_BUILD_ROOT%{_prefix} \
   --wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
