@@ -89,6 +89,8 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 #ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
 #ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
 
+sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
