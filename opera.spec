@@ -11,6 +11,7 @@ Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{name}-%{version}-%{subversion}-dynamic.i386.tar.gz
 Source1:	%{name}.sh
+Source2:	%{name}.desktop
 URL:		http://www.opera.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,6 +38,7 @@ install -d $RPM_BUILD_ROOT%{_prefix}/bin
 install -d $RPM_BUILD_ROOT%{_prefix}/share
 install -d $RPM_BUILD_ROOT%{_prefix}/opera
 install -d $RPM_BUILD_ROOT%{_prefix}/opera/{buttons,help,images,styles}
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 
 for i in buttons help images styles;
 do cp -r $i $RPM_BUILD_ROOT%{_prefix}/share/opera;
@@ -45,6 +47,7 @@ done
 cp opera.adr $RPM_BUILD_ROOT%{_prefix}/share/opera
 cp opera $RPM_BUILD_ROOT%{_prefix}/bin/opera-bin
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_prefix}/bin/opera
+cp %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 
 %clean
 rm -rf $RPM_BUILD_ROOT
