@@ -10,7 +10,7 @@ Version:	%{ver}.%{rel}
 Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
+Source0:	http://snapshot.opera.com/unix/353-20030214-P1/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
 %ifarch ppc
 Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/static/%{name}-%{ver}-%{rel}-static-qt.ppc.tar.gz
 %endif
