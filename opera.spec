@@ -7,7 +7,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	1
+Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/602/final/en/qt_static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
@@ -23,6 +23,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NoSource:	0
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_plugindir	%{_libdir}/mozilla/opera
+%define		_operadocdir	%{_docdir}/%{name}-%{ver}.%{rel}
+%define		configfile	%{_datadir}/opera/config/opera6rc
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
@@ -40,45 +43,64 @@ linkowana z qt.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_prefix}/opera,%{_libdir}/opera/plugins,%{_mandir}/man1,/usr/share,/usr/lib,%{_pixmapsdir},%{_applnkdir}/Network/WWW}
-install -d $RPM_BUILD_ROOT%{_datadir}/opera/{buttons,config,help,images,locale,skin,styles}
 
-for i in buttons config help images locale skin styles; do
-	cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
-done
+sh install.sh \
+  --prefix=$RPM_BUILD_ROOT%{_prefix} \
+  --wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
+  --docdir=$RPM_BUILD_ROOT%{_operadocdir} \
+  --sharedir=$RPM_BUILD_ROOT%{_datadir}/opera \
+  --exec_prefix=$RPM_BUILD_ROOT%{_datadir}/opera/bin \
+  --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
-#cp %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
+# Polish locale
 gunzip -c %{SOURCE1} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
+
+# man install
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 cp man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
-cp -r plugins $RPM_BUILD_ROOT%{_libdir}/opera
-#cp opera $RPM_BUILD_ROOT%{_libdir}/opera/%{version}
+# wrapper corection
+sed s#$RPM_BUILD_ROOT## > $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
+mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
 
-cp opera6.adr $RPM_BUILD_ROOT%{_datadir}/opera
-cp chartables.bin $RPM_BUILD_ROOT%{_datadir}/opera
-#cp unicode.dat $RPM_BUILD_ROOT%{_datadir}/opera
-
-# niech ktos wymysli jak wygenerowac wrappera z install.sh albo czysto opera bedzie odpalana
-# sh install.sh --jakiesopcje $RPM_BUILD_ROOT%{_bindir}/opera
-cp opera $RPM_BUILD_ROOT%{_bindir}/opera
+# install in kde etc.
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 
 # symlink który niweluje burkanie siê opery :>
-ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
-ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
+#ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
+#ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
+
+echo "[User Prefs]" >> $RPM_BUILD_ROOT%{configfile}
+echo "Plugin Path=/usr/lib/jre1.4.1_01/lib/i386/:/usr/lib/jre1.4.1_01/plugin/i386/ns600/:/usr/X11R6/lib/opera/plugins/:/usr/X11R6/lib/mozilla/plugins/" >> $RPM_BUILD_ROOT%{configfile}
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE bugreport
+%doc LICENSE bugreport help
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/opera
+
+%attr(755,root,root) %{_datadir}/opera/bin/*
+%{_datadir}/opera/buttons
+%{_datadir}/opera/config
+%{_datadir}/opera/help
+%{_datadir}/opera/images
+%{_datadir}/opera/java
+%{_datadir}/opera/locale
+%{_datadir}/opera/skin
+%{_datadir}/opera/styles
+%attr(755,root,root) %{_datadir}/opera/chartables.bin
+%attr(755,root,root) %{_datadir}/opera/opera6.adr
+
+%attr(755,root,root) %{_plugindir}/*
+
 %{_pixmapsdir}/opera.xpm
 %dir %{_applnkdir}/Network/WWW/*
+
 %{_mandir}/man1/opera.1.gz
-/usr/share/opera
-%attr(755,root,root) %{_libdir}/opera/plugins/*
