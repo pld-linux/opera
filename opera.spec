@@ -14,7 +14,6 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/%{name}-%{ve
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86}
 Requires:	freetype >= 2
-Requires:	qt
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NoSource:	0
 %define		_prefix		/usr/X11R6
@@ -75,4 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/opera
 %{_pixmapsdir}/opera.xpm
-/usr/share/
+/usr/share/opera
