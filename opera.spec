@@ -5,11 +5,11 @@
 
 %define	ver		7.50
 %define shver		%(echo %{ver} | tr -d .)
-%define	dirrel		20040422
+%define	dirrel		20040511
 # is this snap or beta/final release?
 %define	notsnap		1
 # type of release, usually final or beta or Preview-4 for snaps
-%define	reltype		beta1
+%define	reltype		final
 %define	x86_shared_rel		%{dirrel}.5
 %define	x86_static_rel		%{dirrel}.1
 %define	sparc_shared_rel	%{dirrel}.2
@@ -44,7 +44,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	0.1
+Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 %if %{without shared}
