@@ -175,6 +175,10 @@ sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
 rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
 ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
 
+# %{_libdir} is not the best place for it but opera doesn't search for it in better
+# places :/
+install lib/spellcheck.so %{_libdir}
+
 # so big hack that you shouldn't even ask
 objdump -p $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3 2>&1 | grep -E -q "NEEDED.*libXm.so.3" && %{__perl} -pi -e 's#libXm.so.3#libXm.so.4#g' $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
 
@@ -207,6 +211,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/opera/chartables-be.bin
 %endif
 %attr(755,root,root) %{_datadir}/opera/opera6.adr
+%{_libdir}/*.so
 %dir %{_libdir}/opera
 %dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
