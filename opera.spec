@@ -151,7 +151,7 @@ sh install.sh \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # Polish locale
-install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
+install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
 
 # man install
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
