@@ -74,3 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/opera
 %{_pixmapsdir}/opera.xpm
+/usr/share/
