@@ -38,6 +38,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}
 install -d $RPM_BUILD_ROOT%{_prefix}/opera
 install -d $RPM_BUILD_ROOT%{_prefix}/opera/{buttons,help,images,styles}
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 for i in buttons help images styles;
 do cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
@@ -47,6 +48,7 @@ cp opera.adr $RPM_BUILD_ROOT%{_datadir}/opera
 cp opera $RPM_BUILD_ROOT%{_bindir}/opera-bin
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/opera
 cp %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW/opera
+cp opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,3 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/opera
 %{_applnkdir}/Network/WWW/opera
+%{_pixmapsdir}/opera.xpm
