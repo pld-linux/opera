@@ -1,4 +1,5 @@
 # TODO:
+#	move translations into a separate, noarch package
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -41,7 +42,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	1
+Release:	2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
 %if %{without shared}
@@ -109,12 +110,34 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name
 %{!?with_distributable:NoSource:	22}
 %endif
 %{!?with_incall:%endif}
-Source3:	ftp://ftp.opera.com/pub/opera/unix/lng/752/pl/ou752_727pl.lng
-# Source3-md5:	48bfd8a0d541698c70e151c81ab61408
+Source201:	ftp://ftp.opera.com/pub/opera/unix/lng/721/bg/ou721_480bg.lng
+Source202:	ftp://ftp.opera.com/pub/opera/unix/lng/721/ca/ou721_480ca.lng
+Source203:	ftp://ftp.opera.com/pub/opera/unix/lng/721/zh-cn/ou721_480zh-cn.lng
+Source204:	ftp://ftp.opera.com/pub/opera/unix/lng/721/da/ou721_480da.lng
+Source205:	ftp://ftp.opera.com/pub/opera/unix/lng/721/nl/ou721_480nl.lng
+Source206:	ftp://ftp.opera.com/pub/opera/unix/lng/721/es-LA/ou721_480es-LA.lng
+Source207:	ftp://ftp.opera.com/pub/opera/unix/lng/721/ja/ou721_480ja.lng
+Source208:	ftp://ftp.opera.com/pub/opera/unix/lng/752/fi/ou752_727fi.lng
+Source209:	ftp://ftp.opera.com/pub/opera/unix/lng/752/fr/ou752_727fr.lng
+Source210:	ftp://ftp.opera.com/pub/opera/unix/lng/752/it/ou752_727it.lng
+Source211:	ftp://ftp.opera.com/pub/opera/unix/lng/754/de/ou754_751de.lng
+Source212:	ftp://ftp.opera.com/pub/opera/unix/lng/754/ko/ou754_751ko.lng
+Source213:	ftp://ftp.opera.com/pub/opera/unix/lng/754/nb/ou754_751nb.lng
+Source214:	ftp://ftp.opera.com/pub/opera/unix/lng/754/pl/ou754_751pl.lng
+Source215:	ftp://ftp.opera.com/pub/opera/unix/lng/754/es-ES/ou754_751es-ES.lng
+Source216:	ftp://ftp.opera.com/pub/opera/unix/lng/754/sv/ou754_751sv.lng
+Source217:	ftp://ftp.opera.com/pub/opera/linux/lng/711/el/ou711_406el.lng
+Source218:	http://www.opera.com/download/lng/linux-freebsd/ou711_406zh-tw.lng
+Source219:	http://www.opera.com/download/lng/linux-freebsd/ou711_406en-GB.lng
+Source220:	http://www.opera.com/download/lng/linux-freebsd/ou711_406nn.lng
+Source221:	http://www.opera.com/download/lng/linux-freebsd/ou711_406pt-BR.lng
+Source222:	http://www.opera.com/download/lng/linux-freebsd/ou711_406ru.lng
+Source223:	http://www.opera.com/download/lng/linux-freebsd/ou711_406tr.lng
 Source4:	%{name}.desktop
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 Requires:	freetype >= 2
+
 Requires:	openmotif >= 2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -163,7 +186,12 @@ sh install.sh \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # Polish locale
-install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
+install %{SOURCE201} %{SOURCE202} %{SOURCE203} %{SOURCE204} %{SOURCE205} \
+	%{SOURCE206} %{SOURCE207} %{SOURCE208} %{SOURCE209} %{SOURCE210} \
+	%{SOURCE211} %{SOURCE212} %{SOURCE213} %{SOURCE214} %{SOURCE215} \
+	%{SOURCE216} %{SOURCE217} %{SOURCE218} %{SOURCE219} %{SOURCE220} \
+	%{SOURCE221} %{SOURCE222} %{SOURCE223} \
+	$RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
 
 # man install
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
@@ -206,7 +234,30 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/opera/help
 %{_datadir}/opera/images
 %{_datadir}/opera/java
-%{_datadir}/opera/locale
+%dir %{_datadir}/opera/locale
+%lang(bg) %{_datadir}/opera/locale/ou*bg.lng
+%lang(ca) %{_datadir}/opera/locale/ou*ca.lng
+%lang(da) %{_datadir}/opera/locale/ou*da.lng
+%lang(de) %{_datadir}/opera/locale/ou*de.lng
+%lang(el) %{_datadir}/opera/locale/ou*el.lng
+%lang(en_GB) %{_datadir}/opera/locale/ou*en-GB.lng
+%lang(es) %{_datadir}/opera/locale/ou*es-ES.lng
+%lang(es) %{_datadir}/opera/locale/ou*es-LA.lng
+%lang(fi) %{_datadir}/opera/locale/ou*fi.lng
+%lang(fr) %{_datadir}/opera/locale/ou*fr.lng
+%lang(it) %{_datadir}/opera/locale/ou*it.lng
+%lang(ja) %{_datadir}/opera/locale/ou*ja.lng
+%lang(ko) %{_datadir}/opera/locale/ou*ko.lng
+%lang(nb) %{_datadir}/opera/locale/ou*nb.lng
+%lang(nl) %{_datadir}/opera/locale/ou*nl.lng
+%lang(nn) %{_datadir}/opera/locale/ou*nn.lng
+%lang(pl) %{_datadir}/opera/locale/ou*pl.lng
+%lang(pt_BR) %{_datadir}/opera/locale/ou*pt-BR.lng
+%lang(ru) %{_datadir}/opera/locale/ou*ru.lng
+%lang(sv) %{_datadir}/opera/locale/ou*sv.lng
+%lang(tr) %{_datadir}/opera/locale/ou*tr.lng
+%lang(zh_CN) %{_datadir}/opera/locale/ou*zh-cn.lng
+%lang(zh_TW) %{_datadir}/opera/locale/ou*zh-tw.lng
 %{_datadir}/opera/skin
 %{_datadir}/opera/styles
 %{_datadir}/opera/ini
