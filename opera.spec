@@ -3,9 +3,9 @@
 #
 %bcond_with	shared
 
-%define	ver		7.50
+%define	ver		7.51
 %define shver		%(echo %{ver} | tr -d .)
-%define	dirrel		20040511
+%define	dirrel		20040602
 # is this snap or beta/final release?
 %define	notsnap		1
 # type of release, usually final or beta or Preview-4 for snaps
