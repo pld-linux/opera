@@ -15,8 +15,8 @@
 %else
 %define	ver		8.00
 %define	sver		8.0
-%define	fix		b1
-%define	dirrel		20050104
+%define	fix		b2
+%define	dirrel		20050225
 %define	reltype		beta
 %endif
 
@@ -224,7 +224,7 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/gcc-3.2/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	82e5b5c7a8f479a87ebb9808325d6337
+# Source20-md5:	014bcd5fa5bffa1af51c57b8462ec5d5
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -236,7 +236,7 @@ Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{na
 
 %if %{need_sparc_shared}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	fdf9757960d963fcedcf7aa2286825f7
+# Source21-md5:	08765926d9b66c8e386c12c5fbbf57c7
 %{!?with_distributable:NoSource:	21}
 %endif
 
@@ -248,7 +248,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{na
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	f8aaa57fdac6db86743cf2e3b31b70d4
+# Source22-md5:	706e8b1fda949aad9508ca977db93cfc
 %{!?with_distributable:NoSource:	22}
 %endif
 
@@ -307,7 +307,7 @@ sh install.sh \
 	--wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
 	--docdir=$RPM_BUILD_ROOT%{_operadocdir} \
 	--sharedir=$RPM_BUILD_ROOT%{_datadir}/opera \
-	--exec_prefix=$RPM_BUILD_ROOT%{_datadir}/opera/bin \
+	--exec_prefix=$RPM_BUILD_ROOT%{_libdir}/opera/bin \
 	--plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # man install
@@ -322,10 +322,6 @@ install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
-# symlink który niweluje burkanie siê opery :>
-#ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
-#ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
-
 sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
 
 # always use wrapper linked with libXm.so.3
@@ -333,9 +329,8 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
 ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
 ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
 
-# %{_libdir} is not the best place for it but opera doesn't search for it in better
-# places :/
-install lib/spellcheck.so $RPM_BUILD_ROOT%{_libdir}
+# clean unneeded files
+rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/config
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -344,32 +339,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE bugreport
 %attr(755,root,root) %{_bindir}/*
-%dir %{_datadir}/opera
-%dir %{_datadir}/opera/bin
-%attr(755,root,root) %{_datadir}/opera/bin/*
-%{_datadir}/opera/*.html
-%{_datadir}/opera/*.dtd
-%{_datadir}/opera/config
-%if %{with snap}
-%{_datadir}/opera/help
-%endif
-%{_datadir}/opera/images
-%{_datadir}/opera/java
-%{_datadir}/opera/skin
-%{_datadir}/opera/styles
-%{_datadir}/opera/ini
-%{_datadir}/opera/search.ini
-%{_datadir}/opera/*.ssr
-%{_datadir}/opera/*.txt
-%ifarch %{ix86}
-%attr(755,root,root) %{_datadir}/opera/chartables.bin
-%endif
-%ifarch ppc
-%attr(755,root,root) %{_datadir}/opera/chartables-be.bin
-%endif
-%attr(755,root,root) %{_datadir}/opera/opera6.adr
-%attr(755,root,root) %{_libdir}/*.so
+%{_datadir}/opera
 %dir %{_libdir}/opera
+%dir %{_libdir}/opera/bin
+%attr(755,root,root) %{_libdir}/opera/bin/*
 %dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
 
