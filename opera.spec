@@ -107,8 +107,9 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
 
-# not needed, we leave only wrapper linked with libXm.so.3
-rm $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
+# always use wrapper linked with libXm.so.3
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
+ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
 
 %clean
 rm -rf $RPM_BUILD_ROOT
