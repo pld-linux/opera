@@ -2,9 +2,11 @@
 # There're some problems with "shared" version
 #
 %define ver	7.23
-%define	rel	20031119.1
 %define	dirrel	20031119
-%define type	static
+%{!?_with_shared:%define	rel	%{dirrel}.1}
+%{?_with_shared:%define	rel	%{dirrel}.5}
+%{!?_with_shared:%define type	static}
+%{?_with_shared:%define type	shared}
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -12,9 +14,9 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386-en.tar.bz2
-Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc-en.tar.bz2
-Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc-en.tar.bz2
+Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.i386-en.tar.bz2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.sparc-en.tar.bz2
+Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.ppc-en.tar.bz2
 # polish language file (taken from where?)
 Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
