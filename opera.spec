@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 install -d $RPM_BUILD_ROOT%{_datadir}
 install -d $RPM_BUILD_ROOT%{_prefix}/opera
-install -d $RPM_BUILD_ROOT%{_prefix}/opera/{buttons,help,images,styles}
+install -d $RPM_BUILD_ROOT%{_datadir}/opera/{buttons,help,images,styles}
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
