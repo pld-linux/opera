@@ -18,7 +18,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	1
+Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{static_rel}-static-qt.i386-en.tar.bz2
@@ -72,6 +72,8 @@ statycznie skonsolidowana z qt.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT{/etc,%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
+
 cat install.sh | sed 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' > install2.sh
 mv install2.sh install.sh
 
@@ -88,7 +90,6 @@ sh install.sh \
 install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
 
 # man install
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 # wrapper correction
@@ -96,10 +97,8 @@ sed s#$RPM_BUILD_ROOT## > $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bin
 mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
 
 # install in kde etc.
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
-install -d $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 # symlink który niweluje burkanie siê opery :>
@@ -107,6 +106,9 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 #ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
 
 sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
+
+# not needed, we leave only wrapper linked with libXm.so.3
+rm $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
 
 %clean
 rm -rf $RPM_BUILD_ROOT
