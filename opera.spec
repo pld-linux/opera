@@ -374,3 +374,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/*.desktop
 
 %{_mandir}/man1/opera.1*
+
+%config(noreplace) %verify(not md5 size mtime) /etc/opera*rc*
