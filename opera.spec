@@ -1,11 +1,11 @@
 %define 	subversion	b8-20010426.023
 
 Summary:	World fastest web browser
+Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	5.0
 Release:	0
-#Not sure about license
-License:	GPL
+License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
@@ -21,6 +21,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Opera is world fastest web browser. It supports most of nowaday
 extensions of HTML. And it is quite stable. Only disadvantage are
 advertisements on the top of its window.
+
+%description -l pl
+Opera jest najszybsz± przegl±dark± WWW na ¶wiecie. Obs³uguje wiêkszo¶æ
+dzisiejszych rozszerzeñ HTMLa. Dodatkowo jest w miarê stabilna. Jedyn±
+niedogodno¶ci± s± reklamy ukazuj±ce siê w górze okna.
 
 %prep
 %setup -q -n %{name}-%{version}-%{subversion}-dynamic.i386
