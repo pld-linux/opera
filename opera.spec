@@ -50,7 +50,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	2
+Release:	3
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
 %if %{without shared}
@@ -120,29 +120,6 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name
 %{!?with_distributable:NoSource:	22}
 %endif
 %{!?with_incall:%endif}
-Source201:	ftp://ftp.opera.com/pub/opera/unix/lng/721/bg/ou721_480bg.lng
-Source202:	ftp://ftp.opera.com/pub/opera/unix/lng/721/ca/ou721_480ca.lng
-Source203:	ftp://ftp.opera.com/pub/opera/unix/lng/721/zh-cn/ou721_480zh-cn.lng
-Source204:	ftp://ftp.opera.com/pub/opera/unix/lng/721/da/ou721_480da.lng
-Source205:	ftp://ftp.opera.com/pub/opera/unix/lng/721/nl/ou721_480nl.lng
-Source206:	ftp://ftp.opera.com/pub/opera/unix/lng/721/es-LA/ou721_480es-LA.lng
-Source207:	ftp://ftp.opera.com/pub/opera/unix/lng/721/ja/ou721_480ja.lng
-Source208:	ftp://ftp.opera.com/pub/opera/unix/lng/752/fi/ou752_727fi.lng
-Source209:	ftp://ftp.opera.com/pub/opera/unix/lng/752/fr/ou752_727fr.lng
-Source210:	ftp://ftp.opera.com/pub/opera/unix/lng/752/it/ou752_727it.lng
-Source211:	ftp://ftp.opera.com/pub/opera/unix/lng/754/de/ou754_751de.lng
-Source212:	ftp://ftp.opera.com/pub/opera/unix/lng/754/ko/ou754_751ko.lng
-Source213:	ftp://ftp.opera.com/pub/opera/unix/lng/754/nb/ou754_751nb.lng
-Source214:	ftp://ftp.opera.com/pub/opera/unix/lng/754/pl/ou754_751pl.lng
-Source215:	ftp://ftp.opera.com/pub/opera/unix/lng/754/es-ES/ou754_751es-ES.lng
-Source216:	ftp://ftp.opera.com/pub/opera/unix/lng/754/sv/ou754_751sv.lng
-Source217:	ftp://ftp.opera.com/pub/opera/linux/lng/711/el/ou711_406el.lng
-Source218:	http://www.opera.com/download/lng/linux-freebsd/ou711_406zh-tw.lng
-Source219:	http://www.opera.com/download/lng/linux-freebsd/ou711_406en-GB.lng
-Source220:	http://www.opera.com/download/lng/linux-freebsd/ou711_406nn.lng
-Source221:	http://www.opera.com/download/lng/linux-freebsd/ou711_406pt-BR.lng
-Source222:	http://www.opera.com/download/lng/linux-freebsd/ou711_406ru.lng
-Source223:	http://www.opera.com/download/lng/linux-freebsd/ou711_406tr.lng
 Source4:	%{name}.desktop
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
@@ -195,31 +172,6 @@ sh install.sh \
   --exec_prefix=$RPM_BUILD_ROOT%{_datadir}/opera/bin \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
-# Polish locale
-install %{SOURCE201} $RPM_BUILD_ROOT%{_datadir}/opera/locale/bulgarian.lng
-install %{SOURCE202} $RPM_BUILD_ROOT%{_datadir}/opera/locale/catalan.lng
-install %{SOURCE203} $RPM_BUILD_ROOT%{_datadir}/opera/locale/chinese-simplified.lng
-install %{SOURCE204} $RPM_BUILD_ROOT%{_datadir}/opera/locale/danish.lng
-install %{SOURCE205} $RPM_BUILD_ROOT%{_datadir}/opera/locale/dutch.lng
-install %{SOURCE206} $RPM_BUILD_ROOT%{_datadir}/opera/locale/spanish-latin-american.lng
-install %{SOURCE207} $RPM_BUILD_ROOT%{_datadir}/opera/locale/japanese.lng
-install %{SOURCE208} $RPM_BUILD_ROOT%{_datadir}/opera/locale/finish.lng
-install %{SOURCE209} $RPM_BUILD_ROOT%{_datadir}/opera/locale/french.lng
-install %{SOURCE210} $RPM_BUILD_ROOT%{_datadir}/opera/locale/italian.lng
-install %{SOURCE211} $RPM_BUILD_ROOT%{_datadir}/opera/locale/german.lng
-install %{SOURCE212} $RPM_BUILD_ROOT%{_datadir}/opera/locale/korean.lng
-install %{SOURCE213} $RPM_BUILD_ROOT%{_datadir}/opera/locale/norwegian-bokmal.lng
-install %{SOURCE214} $RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
-install %{SOURCE215} $RPM_BUILD_ROOT%{_datadir}/opera/locale/spanish.lng
-install %{SOURCE216} $RPM_BUILD_ROOT%{_datadir}/opera/locale/swedish.lng
-install %{SOURCE217} $RPM_BUILD_ROOT%{_datadir}/opera/locale/greek.lng
-install %{SOURCE218} $RPM_BUILD_ROOT%{_datadir}/opera/locale/chinese-traditional.lng
-install %{SOURCE219} $RPM_BUILD_ROOT%{_datadir}/opera/locale/english-british.lng
-install %{SOURCE220} $RPM_BUILD_ROOT%{_datadir}/opera/locale/norwegian-nynorsk.lng
-install %{SOURCE221} $RPM_BUILD_ROOT%{_datadir}/opera/locale/portuguese-brazilian.lng
-install %{SOURCE222} $RPM_BUILD_ROOT%{_datadir}/opera/locale/russian.lng
-install %{SOURCE223} $RPM_BUILD_ROOT%{_datadir}/opera/locale/turkish.lng
-
 # man install
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
@@ -261,32 +213,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/opera/help
 %{_datadir}/opera/images
 %{_datadir}/opera/java
-%dir %{_datadir}/opera/locale
-%lang(bg) %{_datadir}/opera/locale/bulgarian.lng
-%lang(ca) %{_datadir}/opera/locale/catalan.lng
-%lang(da) %{_datadir}/opera/locale/danish.lng
-%lang(de) %{_datadir}/opera/locale/german.lng
-%lang(el) %{_datadir}/opera/locale/greek.lng
-%lang(en) %{_datadir}/opera/locale/english.lng
-%lang(en) %{_datadir}/opera/locale/en
-%lang(en_GB) %{_datadir}/opera/locale/english-british.lng
-%lang(es) %{_datadir}/opera/locale/spanish.lng
-%lang(es) %{_datadir}/opera/locale/spanish-latin-american.lng
-%lang(fi) %{_datadir}/opera/locale/finish.lng
-%lang(fr) %{_datadir}/opera/locale/french.lng
-%lang(it) %{_datadir}/opera/locale/italian.lng
-%lang(ja) %{_datadir}/opera/locale/japanese.lng
-%lang(ko) %{_datadir}/opera/locale/korean.lng
-%lang(nb) %{_datadir}/opera/locale/norwegian-bokmal.lng
-%lang(nl) %{_datadir}/opera/locale/dutch.lng
-%lang(nn) %{_datadir}/opera/locale/norwegian-nynorsk.lng
-%lang(pl) %{_datadir}/opera/locale/polish.lng
-%lang(pt_BR) %{_datadir}/opera/locale/portuguese-brazilian.lng
-%lang(ru) %{_datadir}/opera/locale/russian.lng
-%lang(sv) %{_datadir}/opera/locale/swedish.lng
-%lang(tr) %{_datadir}/opera/locale/turkish.lng
-%lang(zh_CN) %{_datadir}/opera/locale/chinese-simplified.lng
-%lang(zh_TW) %{_datadir}/opera/locale/chinese-traditional.lng
 %{_datadir}/opera/skin
 %{_datadir}/opera/styles
 %{_datadir}/opera/ini
