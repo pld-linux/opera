@@ -14,12 +14,13 @@ Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/i386/static/%{name}-
 Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/static/%{name}-%{ver}-%{rel}-static-qt.ppc.tar.gz
 Source2:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source3:	opera.desktop
+NoSource:	0
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc
 Requires:	freetype >= 2
 Requires:	openmotif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-NoSource:	0
+
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -61,7 +62,7 @@ gunzip -c %{SOURCE2} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
 
 # man install
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
-cp man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1/
+install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 # wrapper correction
 sed s#$RPM_BUILD_ROOT## > $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
@@ -69,7 +70,7 @@ mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
 
 # install in kde etc.
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
@@ -85,7 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE bugreport help
 %attr(755,root,root) %{_bindir}/*
-
+%dir %{_datadir}/opera
+%dir %{_datadir}/opera/bin
 %attr(755,root,root) %{_datadir}/opera/bin/*
 %{_datadir}/opera/buttons
 %{_datadir}/opera/config
@@ -102,10 +104,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/opera/chartables-be.bin
 %endif
 %attr(755,root,root) %{_datadir}/opera/opera6.adr
-
+%dir %{_libdir}/opera
+%dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
 
 %{_pixmapsdir}/opera.xpm
-%dir %{_applnkdir}/Network/WWW/*
+%{_applnkdir}/Network/WWW/*.desktop
 
-%{_mandir}/man1/opera.1.gz
+%{_mandir}/man1/opera.1*
