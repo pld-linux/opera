@@ -256,7 +256,7 @@ qt.
 
 %description -l pl
 Opera jest najszybsz± przegl±dark± WWW na ¶wiecie. Obs³uguje wiêkszo¶æ
-dzisiejszych rozszerzeñ HTMLa. Dodatkowo jest w miarê stabilna. Jedyn±
+dzisiejszych rozszerzeñ HTML-a. Dodatkowo jest w miarê stabilna. Jedyn±
 niedogodno¶ci± s± reklamy ukazuj±ce siê w górze okna. Wersja
 statycznie skonsolidowana z qt.
 
