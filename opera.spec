@@ -15,8 +15,9 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{
 %ifarch ppc
 Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
-Source2:	http://web.opera.com/download/unix/locale/pl.qm.gz
-Source3:	opera.desktop
+# polish language file
+Source2:	%{name}-2887.lng	
+Source3:	%{name}.desktop
 NoSource:	0
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc
@@ -59,7 +60,7 @@ sh install.sh \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # Polish locale
-gunzip -c %{SOURCE2} > $RPM_BUILD_ROOT%{_datadir}/opera/locale/pl.qm
+install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
 
 # man install
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
