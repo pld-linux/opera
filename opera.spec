@@ -21,7 +21,7 @@ Source1:	http://snapshot.opera.com/unix/ppc-linux/437-%{rel}-%{ver}-B3/opera-%{v
 Source1:	http://snapshot.opera.com/unix/sparc-linux/437-%{rel}-%{ver}-B3/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %endif
 # polish language file
-Source2:	%{name}-2887.lng	
+Source2:	%{name}-2887.lng
 Source3:	%{name}.desktop
 NoSource:	0
 URL:		http://www.opera.com/
