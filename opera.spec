@@ -43,6 +43,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/opera/{buttons,config,help,images,locale,s
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install -d $RPM_BUILD_ROOT%{_libdir}/{%{version},plugins}
 install -d $RPM_BUILD_ROOT%{_mandir}/man1/
+install -d $RPM_BUILD_ROOT/usr/share
 
 for i in buttons config help images locale skin styles;
 do cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
@@ -63,7 +64,7 @@ cp opera $RPM_BUILD_ROOT%{_bindir}/opera
 cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 # symlink który niweluje burkanie siê opery :>
-ln -sf %{_datadir}/opera $RPM_BUILD_ROOT/usr/share/opera
+ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
