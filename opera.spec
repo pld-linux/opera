@@ -62,6 +62,9 @@ cp unicode.dat $RPM_BUILD_ROOT%{_datadir}/opera
 cp opera $RPM_BUILD_ROOT%{_bindir}/opera
 cp images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
+# symlink który niweluje burkanie siê opery :>
+ln -sf %{_datadir}/opera $RPM_BUILD_ROOT/usr/share/opera
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
