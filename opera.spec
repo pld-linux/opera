@@ -11,6 +11,9 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/500/%{name}-%{version}-dynamic.i386
 Source1:	%{name}.sh
 Source2:	%{name}.desktop
 URL:		http://www.opera.com/
+ExclusiveArch:	%{ix86}
+Requires:	qt >= 2
+Requires:	freetype >= 2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
