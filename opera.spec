@@ -13,10 +13,10 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-%ifarch ppc
+%ifarch sparc
 Source1:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 %endif
-%ifarch sparc
+%ifarch ppc
 Source2:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
 # polish language file
@@ -48,10 +48,10 @@ linkowana z qt.
 %ifarch %{ix86}
 %setup -q  -n %{name}-%{ver}-%{rel}-%{type}-qt.i386
 %endif
-%ifarch ppc
+%ifarch sparc
 %setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
 %endif
-%ifarch sparc
+%ifarch ppc
 %setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
 %endif
 
