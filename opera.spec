@@ -20,7 +20,7 @@ NoSource:	0
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc
 Requires:	freetype >= 2
-Requires:	openmotif
+Requires:	openmotif >= 2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
