@@ -33,20 +33,19 @@ niedogodno¶ci± s± reklamy ukazuj±ce siê w górze okna.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT%{_prefix}/bin
-install -d $RPM_BUILD_ROOT%{_prefix}/share
+install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT%{_datadir}
 install -d $RPM_BUILD_ROOT%{_prefix}/opera
 install -d $RPM_BUILD_ROOT%{_prefix}/opera/{buttons,help,images,styles}
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 
 for i in buttons help images styles;
-do cp -r $i $RPM_BUILD_ROOT%{_prefix}/share/opera;
+do cp -r $i $RPM_BUILD_ROOT%{_datadir}/opera;
 done
 
-cp opera.adr $RPM_BUILD_ROOT%{_prefix}/share/opera
-cp opera $RPM_BUILD_ROOT%{_prefix}/bin/opera-bin
-cp %{SOURCE1} $RPM_BUILD_ROOT%{_prefix}/bin/opera
+cp opera.adr $RPM_BUILD_ROOT%{_datadir}/opera
+cp opera $RPM_BUILD_ROOT%{_bindir}/opera-bin
+cp %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/opera
 cp %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW/opera
 
 %clean
@@ -55,6 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%attr(755,root,root) %{_prefix}/bin/*
-%{_prefix}/share/opera
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/opera
 %{_applnkdir}/Network/WWW/opera
