@@ -2,8 +2,8 @@
 # There're some problems with "shared" version
 #
 %define ver	7.21
-%define	rel	20031009.1
-%define	dirrel	20031009
+%define	rel	20031013.1
+%define	dirrel	20031013
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -12,27 +12,16 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-#Source0:	http://snapshot.opera.com/unix/intel-linux/447-%{dirrel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-Source0:	http://snapshot.opera.com/unix/7.21-Preview-3/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-# Source0-md5:	8f1f1815c8625801295d4235fd6d0fb8
-#Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
-#Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source0:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
-#Source1:	http://snapshot.opera.com/unix/ppc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-Source1:	http://snapshot.opera.com/unix/7.21-Preview-3/ppc-linux/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-# Source1-md5:	fff714debcd46ae7d6dea9b7f53e64b3
-#Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
-#Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 %endif
 %ifarch sparc
-#Source1:	http://snapshot.opera.com/unix/sparc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
-Source1:	http://snapshot.opera.com/unix/7.21-Preview-3/sparc-linux/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
-# Source1-md5:	1c6cbef31c97f629dd4516155d5a5623
-#Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
+Source2:	ftp://ftp.opera.com/pub/opera/linux/721/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
 # polish language file
-Source2:	%{name}-2887.lng
-Source3:	%{name}.desktop
+Source3:	%{name}-2887.lng
+Source4:	%{name}.desktop
 NoSource:	0
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc
@@ -63,7 +52,7 @@ linkowana z qt.
 %setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc
 %endif
 %ifarch sparc
-%setup -q -T -b 1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
+%setup -q -T -b 2 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc
 %endif
 
 %install
@@ -82,7 +71,7 @@ sh install.sh \
   --plugindir=$RPM_BUILD_ROOT%{_plugindir}
 
 # Polish locale
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
+install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/opera/locale/
 
 # man install
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
@@ -97,7 +86,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
+install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
 
 # symlink który niweluje burkanie siê opery :>
 #ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
