@@ -90,13 +90,13 @@ statycznie skonsolidowana z qt.
 
 %prep
 %ifarch %{ix86}
-%setup -q %{?_with_shared:-T -b 20} -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
+%setup -q %{?with_shared:-T -b 20} -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
 %endif
 %ifarch sparc sparc64
-%setup -q -T -b %{?_with_shared:2}1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
+%setup -q -T -b %{?with_shared:2}1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
 %endif
 %ifarch ppc
-%setup -q -T -b %{?_with_shared:2}2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc-en
+%setup -q -T -b %{?with_shared:2}2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc-en
 %endif
 
 %install
