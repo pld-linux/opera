@@ -5,14 +5,38 @@
 
 %define	ver		7.50
 %define	dirrel		20040218
-%define	shared_rel	%{dirrel}.5
-%define	static_rel	%{dirrel}.1
+%define	x86_shared_rel		%{dirrel}.5
+%define	x86_static_rel		%{dirrel}.1
+%define sparc_shared_rel	%{dirrel}.2
+%define sparc_static_rel	%{dirrel}.1
+%define ppc_shared_rel		%{dirrel}.2
+%define ppc_static_rel		%{dirrel}.1
 %if %{with shared}
-%define	rel		%{shared_rel}
+%ifarch %{ix86}
+%define	rel		%{x86_shared_rel}
 %define	type		shared
+%endif
+%ifarch sparc64 sparc
+%define rel             %{sparc_shared_rel}
+%define type            shared
+%endif
+%ifarch ppc
+%define rel             %{ppc_shared_rel}
+%define type            shared
+%endif
 %else
-%define	rel		%{static_rel}
+%ifarch %{ix86}
+%define rel             %{x86_static_rel}
+%define type            static
+%endif
+%ifarch sparc sparc64
+%define rel             %{sparc_static_rel}
+%define type            static
+%endif
+%ifarch ppc
+%define	rel		%{ppc_static_rel}
 %define	type		static
+%endif
 %endif
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -21,21 +45,21 @@ Version:	%{ver}.%{rel}
 Release:	0.1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-# Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{static_rel}-static-qt.i386-en.tar.bz2
-Source0:	http://snapshot.opera.com/unix/7.50-Preview-2/intel-linux/en/%{name}-%{ver}-%{static_rel}-static-qt.i386-en.tar.bz2
-# Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/static/%{name}-%{ver}-%{static_rel}-static-qt.sparc-en.tar.bz2
-Source1:	http://snapshot.opera.com/unix/7.50-Preview-2/sparc-linux/en/%{name}-%{ver}-%{static_rel}-static-qt.sparc-en.tar.bz2
-# Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{static_rel}-static-qt.ppc-en.tar.bz2
-Source2:        http://snapshot.opera.com/unix/7.50-Preview-2/ppc-linux/en/%{name}-%{ver}-%{static_rel}-static-qt.ppc-en.tar.bz2
+# Source0:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+Source0:	http://snapshot.opera.com/unix/7.50-Preview-2/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+# Source1:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+Source1:	http://snapshot.opera.com/unix/7.50-Preview-2/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+# Source2:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+Source2:        http://snapshot.opera.com/unix/7.50-Preview-2/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
 # polish language file (taken from where?)
 Source3:	%{name}-2887.lng
 Source4:	%{name}.desktop
-# Source20:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/shared/%{name}-%{ver}-%{shared_rel}-shared-qt.i386-en.tar.bz2
-Source20:	http://snapshot.opera.com/unix/7.50-Preview-2/intel-linux/en/%{name}-%{ver}-%{shared_rel}-shared-qt.i386-en.tar.bz2
-# Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{dirrel}.2-shared-qt.sparc-en.tar.bz2
-Source21:	http://snapshot.opera.com/unix/7.50-Preview-2/sparc-linux/en/%{name}-%{ver}-%{dirrel}.2-shared-qt.sparc-en.tar.bz2
-# Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{dirrel}.2-shared-qt.ppc-en.tar.bz2
-Source22:	http://snapshot.opera.com/unix/7.50-Preview-2/ppc-linux/en/%{name}-%{ver}-%{dirrel}.2-shared-qt.ppc-en.tar.bz2
+# Source20:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+Source20:	http://snapshot.opera.com/unix/7.50-Preview-2/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+# Source21:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+Source21:	http://snapshot.opera.com/unix/7.50-Preview-2/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+# Source22:	ftp://ftp.opera.com/pub/opera/linux/723/final/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+Source22:	http://snapshot.opera.com/unix/7.50-Preview-2/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
 NoSource:	0
 NoSource:	1
 NoSource:	2
@@ -114,8 +138,11 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
 
 # always use wrapper linked with libXm.so.3
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
-ln -sf operamotifwrapper $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
+ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
+
+# so big hack that you shouldn't even ask
+objdump -p $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3 2>&1 | grep -E -q "NEEDED.*libXm.so.3" && %{__perl} -pi -e 's#libXm.so.3#libXm.so.4#g' $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
 
 %clean
 rm -rf $RPM_BUILD_ROOT
