@@ -1,17 +1,17 @@
 #
 # There're some problems with "shared" version
 #
-%define ver	7.0.0
-%define	rel	20030307.1
+%define ver	7.1.0
+%define	rel	20030402.1
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	2
+Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	http://snapshot.opera.com/unix/intel-linux/365-20030307-7.0.0-P2/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.gz
+Source0:	http://snapshot.opera.com/unix/intel-linux/383-20030403-7.1.0-TP3/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.gz
 %ifarch ppc
 Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/%{type}/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.gz
 %endif
