@@ -47,7 +47,7 @@
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
-Version:	%{ver}.%{rel}
+Version:	%{ver}%{?with_snap:.%{rel}}
 Release:	3
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
