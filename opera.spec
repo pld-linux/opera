@@ -14,17 +14,20 @@ License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 #Source0:	http://snapshot.opera.com/unix/intel-linux/447-%{dirrel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 Source0:	http://snapshot.opera.com/unix/7.21-Preview-3/intel-linux/opera-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+# Source0-md5:	8f1f1815c8625801295d4235fd6d0fb8
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
 #Source1:	http://snapshot.opera.com/unix/ppc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 Source1:	http://snapshot.opera.com/unix/7.21-Preview-3/ppc-linux/opera-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+# Source1-md5:	fff714debcd46ae7d6dea9b7f53e64b3
 #Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
 %ifarch sparc
 #Source1:	http://snapshot.opera.com/unix/sparc-linux/447-%{rel}-%{ver}-B5/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 Source1:	http://snapshot.opera.com/unix/7.21-Preview-3/sparc-linux/opera-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
+# Source1-md5:	1c6cbef31c97f629dd4516155d5a5623
 #Source0:	ftp://ftp.opera.com/pub/opera/linux/720/beta7/en/sparc/static/%{name}-%{ver}-%{rel}-%{type}-qt.sparc.tar.bz2
 %endif
 # polish language file
