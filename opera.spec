@@ -12,6 +12,7 @@ Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+# Source0-md5:	5dacb87719576669d4c6e56df5a68fdd
 %ifarch ppc
 Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
