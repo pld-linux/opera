@@ -2,7 +2,7 @@
 # There're some problems with "shared" version
 #
 %define ver	7.11
-%define	rel	20030512.1
+%define	rel	20030515.1
 %define type	static
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -11,9 +11,9 @@ Version:	%{ver}.%{rel}
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Source0:	ftp://ftp.opera.com/pub/opera/linux/711/beta2/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
+Source0:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.i386.tar.bz2
 %ifarch ppc
-Source1:	ftp://ftp.opera.com/pub/opera/linux/711/beta2/en/i386/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/711/final/en/ppc/static/%{name}-%{ver}-%{rel}-%{type}-qt.ppc.tar.bz2
 %endif
 Source2:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source3:	opera.desktop
@@ -90,7 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/opera
 %dir %{_datadir}/opera/bin
 %attr(755,root,root) %{_datadir}/opera/bin/*
-%{_datadir}/opera/buttons
 %{_datadir}/opera/config
 %{_datadir}/opera/help
 %{_datadir}/opera/images
