@@ -173,7 +173,8 @@ sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
 
 # always use wrapper linked with libXm.so.3
 rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
-ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
+ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
+ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
 
 # %{_libdir} is not the best place for it but opera doesn't search for it in better
 # places :/
