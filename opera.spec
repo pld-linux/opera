@@ -1,5 +1,6 @@
 # TODO:
-#	move translations into a separate, noarch package
+# - move translations into a separate, noarch package
+# - SECURITY: http://securitytracker.com/alerts/2004/Aug/1010966.html
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
