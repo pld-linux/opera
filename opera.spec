@@ -3,9 +3,9 @@
 #
 %bcond_with	shared
 
-%define	ver		7.52
+%define	ver		7.53
 %define shver		%(echo %{ver} | tr -d .)
-%define	dirrel		20040706
+%define	dirrel		20040716
 # is this snap or beta/final release?
 %define	notsnap		1
 # type of release, usually final or beta or Preview-4 for snaps
@@ -98,7 +98,7 @@ Source22:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-
 NoSource:	22
 %endif
 %endif
-Source3:	ftp://ftp.opera.com/pub/opera/unix/lng/721/pl/ou721_480pl.lng
+Source3:	ftp://ftp.opera.com/pub/opera/unix/lng/752/pl/ou752_727pl.lng
 Source4:	%{name}.desktop
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
