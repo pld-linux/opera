@@ -1,8 +1,7 @@
-
 [Desktop Entry]
 Name=Opera
 Comment=World fastest web browser
-Comment[pl]=Najszybsza przegl±darka WWW na ¶wiecie
+Comment[pl]=Najszybsza przeglÄ…darka WWW na Å›wiecie
 Icon=opera.xpm
 Exec=opera
 Terminal=0
