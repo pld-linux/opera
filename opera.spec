@@ -7,7 +7,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}.%{rel}
-Release:	1
+Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/i386/static/%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 NoSource:	0
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_plugindir	%{_libdir}/mozilla/opera
+%define		_plugindir	%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}.%{rel}
 %define		configfile	%{_datadir}/opera/config/opera6rc
 
