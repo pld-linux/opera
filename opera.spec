@@ -5,8 +5,6 @@ Version:	5.0
 Release:	1
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
-Group(de):	X11/Applikationen/Netzwerkwesen
-Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://ftp.opera.com/pub/opera/linux/500/%{name}-%{version}-dynamic.i386.tar.gz
 Source1:	%{name}.sh
 Source2:	%{name}.desktop
