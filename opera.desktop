@@ -1,8 +1,9 @@
 [Desktop Entry]
 Name=Opera
 Comment=Web Browser
-Comment[pl]=Przegl±darka WWW
+Comment[pl]=PrzeglÄ…darka WWW
 Exec=opera
 Icon=opera.xpm
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
