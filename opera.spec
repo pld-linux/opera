@@ -4,8 +4,8 @@
 %bcond_with	shared
 
 %define	ver		7.50
-%define	dirrel		20040218.5
-%define	shared_rel	%{dirrel}.2
+%define	dirrel		20040218
+%define	shared_rel	%{dirrel}.5
 %define	static_rel	%{dirrel}.1
 %if %{with shared}
 %define	rel		%{shared_rel}
