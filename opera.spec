@@ -82,8 +82,8 @@ mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
-install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Network/WWW
+install -d $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 # symlink który niweluje burkanie siê opery :>
 #ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
@@ -123,6 +123,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_plugindir}/*
 
 %{_pixmapsdir}/opera.xpm
-%{_applnkdir}/Network/WWW/*.desktop
+%{_desktopdir}/*.desktop
 
 %{_mandir}/man1/opera.1*
