@@ -11,7 +11,6 @@ Release:	2
 License:	Restricted, see file LICENSE
 Group:		X11/Applications/Networking
 Source0:	%{name}-%{ver}-%{rel}-static-qt.i386.tar.gz
-Source1:	ftp://ftp.task.gda.pl/pub/opera/linux/611/final/en/ppc/static/%{name}-%{ver}-%{rel}-static-qt.ppc.tar.gz
 Source2:	http://web.opera.com/download/unix/locale/pl.qm.gz
 Source3:	opera.desktop
 NoSource:	0
