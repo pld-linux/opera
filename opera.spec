@@ -232,6 +232,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
 
+%dir %{_datadir}/opera/locale
+%{_datadir}/opera/locale/en
+
 %{_pixmapsdir}/opera.xpm
 %{_desktopdir}/*.desktop
 
