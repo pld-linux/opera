@@ -15,9 +15,9 @@
 %else
 %define	ver		8.00
 %define	sver		8.0
-%define	fix		b3
-%define	dirrel		20050316
-%define	reltype		beta
+%define	fix		%{nil}
+%define	dirrel		20050415
+%define	reltype		final
 %endif
 
 %define	shver		%(echo %{ver} | tr -d .)%{fix}
@@ -184,13 +184,13 @@ Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}%{?with_snap:.%{rel}}
 Release:	1
-Epoch:		1
+Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	85dc3af6c02ca6af0d8ba25e76906779
+# Source0-md5:	94d1d86f42d9aa912c288e47c4b3893f
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -201,7 +201,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{nam
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	b2c09c83f6dd4742268b6f064f6d346e
+# Source1-md5:	da6f20e3e881ca3c92024758dbe473d2
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -213,7 +213,7 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{nam
 
 %if %{need_ppc_static}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	d95ad00865ffa30e558280d8743c5824
+# Source2-md5:	5fe172a95df147f709af5bff021edc15
 %{!?with_distributable:NoSource:	2}
 %endif
 
@@ -224,7 +224,7 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/gcc-3.2/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	38e978828d5544745972ad2e2aa75d49
+# Source20-md5:	d48b48ffbdae4a452e626c56078b7ca8
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -236,7 +236,7 @@ Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{na
 
 %if %{need_sparc_shared}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	89514eb6c3f62c942e3ae8743ffa9da9
+# Source21-md5:	883df8058672cf52678a07d7194dcfce
 %{!?with_distributable:NoSource:	21}
 %endif
 
@@ -248,7 +248,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{na
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	dbbce08ef31f97b06bc3834bb2ed79e5
+# Source22-md5:	eae16c9b27e39376a89fe87eeddbe7bc
 %{!?with_distributable:NoSource:	22}
 %endif
 
