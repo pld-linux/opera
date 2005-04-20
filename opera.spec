@@ -1,5 +1,6 @@
 # TODO:
 # - move translations into a separate, noarch package
+# - duplicate files
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -183,7 +184,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}%{?with_snap:.%{rel}}
-Release:	1
+Release:	1.1
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -264,6 +265,7 @@ URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 Requires:	freetype >= 2
 Requires:	openmotif >= 2
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -298,8 +300,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{/etc,%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
 
-cat install.sh | sed 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' > install2.sh
-mv install2.sh install.sh
+sed -i -e 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' install.sh
 
 echo y |\
 sh install.sh \
@@ -314,8 +315,7 @@ sh install.sh \
 install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 # wrapper correction
-sed s#$RPM_BUILD_ROOT## > $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
-mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
+sed -i -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_bindir}/opera
 
 # install in kde etc.
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -347,13 +347,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE bugreport
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/opera
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
 %attr(755,root,root) %{_libdir}/opera/bin/*
 %dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
 
+# XXX duplicate files
+%{_datadir}/opera
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %{_datadir}/opera/locale/english.lng
