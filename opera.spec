@@ -1,6 +1,5 @@
 # TODO:
 # - move translations into a separate, noarch package
-# - duplicate files
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -184,7 +183,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}%{?with_snap:.%{rel}}
-Release:	1.1
+Release:	2
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -259,7 +258,11 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name
 %{!?with_distributable:NoSource:	1022}
 %endif
 
+Source3:	http://starzaki.eu.org/~hclan/operapl/download/ou800_1095pl.tar.gz
+# Source3-md5:	3d377634dc271d16d9041ed583077c44
+
 Source4:	%{name}.desktop
+
 
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
@@ -294,6 +297,7 @@ statycznie skonsolidowana z qt.
 %ifarch ppc
 %setup -q -T -b %{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en
 %endif
+tar -xzf %{SOURCE3} -C locale
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -352,13 +356,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/opera/bin/*
 %dir %{_plugindir}
 %attr(755,root,root) %{_plugindir}/*
-
-# XXX duplicate files
-%{_datadir}/opera
+%dir %{_datadir}/opera
+%{_datadir}/opera/*.*
+%{_datadir}/opera/images
+%{_datadir}/opera/ini
+%{_datadir}/opera/java
+%{_datadir}/opera/skin
+%{_datadir}/opera/styles
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %{_datadir}/opera/locale/english.lng
-
+%lang(pl) %{_datadir}/opera/locale/pl.lng
 %{_pixmapsdir}/opera.xpm
 %{_desktopdir}/*.desktop
 
