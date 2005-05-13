@@ -258,11 +258,7 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name
 %{!?with_distributable:NoSource:	1022}
 %endif
 
-Source3:	http://starzaki.eu.org/~hclan/operapl/download/ou800_1095pl.tar.gz
-# Source3-md5:	3d377634dc271d16d9041ed583077c44
-
 Source4:	%{name}.desktop
-
 
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
@@ -297,7 +293,6 @@ statycznie skonsolidowana z qt.
 %ifarch ppc
 %setup -q -T -b %{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en
 %endif
-tar -xzf %{SOURCE3} -C locale
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -366,7 +361,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %{_datadir}/opera/locale/english.lng
-%lang(pl) %{_datadir}/opera/locale/pl.lng
 %{_pixmapsdir}/opera.xpm
 %{_desktopdir}/*.desktop
 
