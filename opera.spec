@@ -7,11 +7,11 @@
 %bcond_with	snap		# snap version
 
 %if %{with snap}
-%define	ver		7.60
+%define	ver		8.01
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20041203
-%define	reltype		Preview-4
+%define	dirrel		20050509
+%define	reltype		Preview-1
 %else
 %define	ver		8.00
 %define	sver		8.0
@@ -207,7 +207,7 @@ Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static
 
 %if %{need_sparc_static_snap}
 Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source101-md5:	793af778c64d49299cbfe0f8e07ff7c4
+# Source101-md5:	913ccb28106f9f5acd3d9e4c8dc71ae1
 %{!?with_distributable:NoSource:	101}
 %endif
 
@@ -230,7 +230,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 
 %if %{need_ix86_shared_snap}
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	827f62ae5781e4f66c0d30c39723dae9
+# Source1020-md5:	e3602032ae454a86cc2854685043c1aa
 %{!?with_distributable:NoSource:	1020}
 %endif
 
@@ -242,7 +242,7 @@ Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/share
 
 %if %{need_ix86_shared_snap}
 Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source1021-md5:	16c77233c49ac600bed54c61898c15b7
+# Source1021-md5:	e98aeabb57962b6577a10d43c7b3efa0
 %{!?with_distributable:NoSource:	1021}
 %endif
 
@@ -254,7 +254,7 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/
 
 %if %{need_ppc_shared_snap}
 Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source1022-md5:	dfa0173345f3807cc5425a7903e24cb1
+# Source1022-md5:	50836edd6eae80c202edea641229a902
 %{!?with_distributable:NoSource:	1022}
 %endif
 
@@ -297,7 +297,8 @@ statycznie skonsolidowana z qt.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{/etc,%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{/etc,%{_libdir},%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
+ln -s $RPM_BUILD_ROOT/etc  $RPM_BUILD_ROOT%{_prefix}/etc
 
 sed -i -e 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' install.sh
 
