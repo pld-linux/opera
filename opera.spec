@@ -240,7 +240,7 @@ Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/share
 %{!?with_distributable:NoSource:	21}
 %endif
 
-%if %{need_ix86_shared_snap}
+%if %{need_sparc_shared_snap}
 Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
 # Source1021-md5:	e98aeabb57962b6577a10d43c7b3efa0
 %{!?with_distributable:NoSource:	1021}
