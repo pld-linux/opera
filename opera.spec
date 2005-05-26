@@ -36,7 +36,8 @@
 # We should be able to build src.rpm also on not supported archs
 %define	rel		%{x86_shared_rel}
 %ifarch sparc64 sparc
-%define	rel		%{sparc_shared_rel}
+#%%define	rel		%{sparc_shared_rel}
+%define	rel		%{sparc_static_rel}
 %endif
 %ifarch ppc
 %define	rel		%{ppc_shared_rel}
@@ -89,7 +90,8 @@
 %if %{with shared}
 #			with shared?	[if]
 %define	need_ix86_shared	1
-%define	need_sparc_shared	1
+#%%define	need_sparc_shared	1
+%define	need_sparc_static	1
 %define	need_ppc_shared	1
 %else
 #			with shared:	[else]
@@ -144,7 +146,8 @@
 #			with snap:	[else]
 %if	%{with shared}
 #				with shared?	[if]
-%define	need_sparc_shared	1
+#%%define	need_sparc_shared	1
+%define	need_sparc_static	1
 %else
 #				with shared:	[else]
 %define	need_sparc_static	1
