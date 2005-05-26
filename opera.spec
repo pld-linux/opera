@@ -6,6 +6,10 @@
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
 %bcond_with	snap		# snap version
 
+%ifarch sparc64 sparc
+%undefine shared
+%endif
+
 %if %{with snap}
 %define	ver		8.01
 %define	sver		%{ver}
@@ -183,7 +187,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}%{?with_snap:.%{rel}}
-Release:	2
+Release:	3
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
