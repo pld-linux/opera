@@ -7,7 +7,7 @@
 %bcond_with	snap		# snap version
 
 %ifarch sparc64 sparc
-%undefine shared
+%undefine with_shared
 %endif
 
 %if %{with snap}
