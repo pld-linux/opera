@@ -17,10 +17,10 @@
 %define	dirrel		20050509
 %define	reltype		Preview-1
 %else
-%define	ver		8.00
-%define	sver		8.0
+%define	ver		8.01
+%define	sver		8.01
 %define	fix		%{nil}
-%define	dirrel		20050415
+%define	dirrel		20050602
 %define	reltype		final
 %endif
 
@@ -190,7 +190,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}%{?with_snap:.%{rel}}
-Release:	4
+Release:	1
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -207,8 +207,8 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{nam
 %endif
 
 %if %{need_sparc_static}
-Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	da6f20e3e881ca3c92024758dbe473d2
+Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/en/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+# Source1-md5:	a2a0eab9c4e45d55f2b93c87c80448be
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -230,8 +230,8 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}
 %endif
 
 %if %{need_ix86_shared}
-Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/gcc-3.2/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	d48b48ffbdae4a452e626c56078b7ca8
+Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+# Source20-md5:	1cf47863f9fd9d5838b704481beb7c1a
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -254,8 +254,8 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{na
 %endif
 
 %if %{need_ppc_shared}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	eae16c9b27e39376a89fe87eeddbe7bc
+Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+# Source22-md5:	b005627dadd4664e6b2ff06b860d1e33
 %{!?with_distributable:NoSource:	22}
 %endif
 
