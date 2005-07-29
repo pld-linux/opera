@@ -11,14 +11,15 @@
 %endif
 
 %if %{with snap}
-%define	ver		8.01
+%define	ver		8.10
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20050509
-%define	reltype		Preview-1
+%define	dirrel		20050728
+%define	reltype		Preview-2
+%define	magicstr	1275-20050728-P2BT
 %else
-%define	ver		8.01
-%define	sver		8.01
+%define	ver		8.02
+%define	sver		8.02
 %define	fix		%{nil}
 %define	dirrel		20050615
 %define	reltype		final
@@ -190,7 +191,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}
-Release:	%{?with_snap:0.%{rel}.}2
+Release:	%{?with_snap:0.%{rel}.}0.1
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -202,7 +203,7 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/
 %endif
 
 %if %{need_ix86_static_snap}
-Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/en/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
 %{!?with_distributable:NoSource:	100}
 %endif
 
@@ -213,7 +214,7 @@ Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static
 %endif
 
 %if %{need_sparc_static_snap}
-Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-linux/en/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
 # Source101-md5:	913ccb28106f9f5acd3d94c8dc71ae1
 %{!?with_distributable:NoSource:	101}
 %endif
@@ -225,7 +226,7 @@ Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%
 %endif
 
 %if %{need_ppc_static_snap}
-Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/en/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
 %{!?with_distributable:NoSource:	102}
 %endif
 
@@ -236,8 +237,8 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 %endif
 
 %if %{need_ix86_shared_snap}
-Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	e3602032ae454a86cc854685043c1aa
+Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/en/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+# Source1020-md5:	d11026f15f8c3680a772e3278804accb
 %{!?with_distributable:NoSource:	1020}
 %endif
 
@@ -248,20 +249,20 @@ Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/share
 %endif
 
 %if %{need_sparc_shared_snap}
-Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source1021-md5:	e98aeabb57962b657a10d43c7b3efa0
+Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-linux/en/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+# Source1021-md5:	e190021f5530de3f711006cd9f6bb339
 %{!?with_distributable:NoSource:	1021}
 %endif
 
 %if %{need_ppc_shared}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	dc90653dd94fe326777b97776fe132fa
+Source22:	opera-8.02-20050705.3-shared-qt.ppc-en.tar.bz2
+# Source22-md5:	12a30aa4983e6f9180c3f1a039118a4e
 %{!?with_distributable:NoSource:	22}
 %endif
 
 %if %{need_ppc_shared_snap}
-Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source1022-md5:	50836edd6eae80202edea641229a902
+Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/en/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+# Source1022-md5:	daa712e362abe9d3dac74fad150d612c
 %{!?with_distributable:NoSource:	1022}
 %endif
 
