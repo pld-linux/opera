@@ -18,10 +18,10 @@
 %define	reltype		Preview-2
 %define	magicstr	1275-20050728-P2BT
 %else
-%define	ver		8.02
-%define	sver		8.02
+%define	ver		8.50
+%define	sver		8.50
 %define	fix		%{nil}
-%define	dirrel		20050727
+%define	dirrel		20050916
 %define	reltype		final
 %endif
 
@@ -198,7 +198,7 @@ Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	7f85aef69221803413b859b9e04df959
+# Source0-md5:	e66b6e4460610b7cebacb6d33e255ed7
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -209,7 +209,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-li
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	d633160f49342d6d9447778e2b4f1a63
+# Source1-md5:	e747b84c36882ab0b4ea1bc4cc7837c4
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -221,7 +221,7 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-li
 
 %if %{need_ppc_static}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	dc38c98f658e6b8b964c868b45ba6297
+# Source2-md5:	a2678016990d5e27b3f54fa040282939
 %{!?with_distributable:NoSource:	2}
 %endif
 
@@ -232,7 +232,7 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	060bcdbf97f1c49d864971501032a5fe
+# Source20-md5:	cc3641de1b6643547d7e36221990f5cf
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -256,7 +256,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	5dfdf8931fc47bc778065115fde37077
+# Source22-md5:	505d64f145d21fb40f183267163b7620
 %{!?with_distributable:NoSource:	22}
 %endif
 
