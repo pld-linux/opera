@@ -281,13 +281,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
-extensions of HTML. And it is quite stable. This version is statically
+extensions of HTML. And it is quite stable. This version is %{?with_shared:shared}%{!?with_shared:statically}
 linked with Qt.
 
 %description -l pl
 Opera jest najszybsz± przegl±dark± WWW na ¶wiecie. Obs³uguje wiêkszo¶æ
 dzisiejszych rozszerzeñ HTML-a. Dodatkowo jest w miarê stabilna. Ta
-wersja jest statycznie skonsolidowana z Qt.
+wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
 
 %prep
 %ifarch %{ix86}
