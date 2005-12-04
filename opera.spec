@@ -270,9 +270,9 @@ Source4:	%{name}.desktop
 
 URL:		http://www.opera.com/
 ExclusiveArch:	%{ix86} ppc sparc sparc64
+BuildRequires:	sed >= 4.0
 Requires:	freetype >= 2
 Requires:	openmotif >= 2
-BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -373,4 +373,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_mandir}/man1/opera.1*
 
-%config(noreplace) %verify(not md5 size mtime) /etc/opera*rc*
+%config(noreplace) %verify(not md5 mtime size) /etc/opera*rc*
