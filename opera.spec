@@ -269,10 +269,11 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-lin
 Source4:	%{name}.desktop
 
 URL:		http://www.opera.com/
-ExclusiveArch:	%{ix86} ppc sparc sparc64
 BuildRequires:	sed >= 4.0
 Requires:	freetype >= 2
 Requires:	openmotif >= 2
+Provides:	wwwbrowser
+ExclusiveArch:	%{ix86} ppc sparc sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
