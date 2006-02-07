@@ -14,8 +14,8 @@
 %define	ver		9.0
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20051020
-%define	reltype		Preview-1
+%define	dirrel		20060206
+%define	reltype		Preview-2
 %define	magicstr	%{nil}
 %else
 %define	ver		8.51
@@ -238,7 +238,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/%{name
 
 %if %{need_ix86_shared_snap}
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	2ee14fa46152665c42f0ef41436e43d0
+# Source1020-md5:	6f296be6b9fc3001588d4509016062bd
 %{!?with_distributable:NoSource:	1020}
 %endif
 
@@ -262,7 +262,7 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/%{name}
 
 %if %{need_ppc_shared_snap}
 Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source1022-md5:	bb130afce8f1b2252f7f7b641942b48b
+# Source1022-md5:	74985fa6da49b2e54c9d03dab1119325
 %{!?with_distributable:NoSource:	1022}
 %endif
 
