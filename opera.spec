@@ -18,10 +18,10 @@
 %define	reltype		Preview-2
 %define	magicstr	%{nil}
 %else
-%define	ver		8.51
-%define	sver		8.51
+%define	ver		8.52
+%define	sver		8.52
 %define	fix		%{nil}
-%define	dirrel		20051114
+%define	dirrel		20060201
 %define	reltype		final
 %endif
 
@@ -197,8 +197,8 @@ License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ 
 Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
-Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	bd6bd9cfaf13b6509c8531d02a4c51a2
+Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+# Source0-md5:	e051ee0f78dbf7fac407fad147e02d8b
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -208,8 +208,8 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-li
 %endif
 
 %if %{need_sparc_static}
-Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	ff5976406678e864116b1ff093a177b4
+Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+# Source1-md5:	2dec5155b24752517fbf1143d861f8f1
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -220,8 +220,8 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-li
 %endif
 
 %if %{need_ppc_static}
-Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	78c3b7d568b3e35a0f7cf3b55d2a6238
+Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+# Source2-md5:	42a515f683a31522484c3770618cd2dd
 %{!?with_distributable:NoSource:	2}
 %endif
 
@@ -231,8 +231,8 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 %endif
 
 %if %{need_ix86_shared}
-Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	c9aa6c640406548fcc655a18227d9037
+Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+# Source20-md5:	a1847d8693025a16188bc3c165eff71a
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -243,7 +243,7 @@ Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-l
 %endif
 
 %if %{need_sparc_shared}
-Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
+Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
 # Source21-md5:	883df8058672cf52678a07d714dcfce
 %{!?with_distributable:NoSource:	21}
 %endif
@@ -255,8 +255,8 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 %endif
 
 %if %{need_ppc_shared}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	36f9398664c70b14c748db736a25aa2a
+Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+# Source22-md5:	670e9fbc029a374187438e92a8c8602f
 %{!?with_distributable:NoSource:	22}
 %endif
 
