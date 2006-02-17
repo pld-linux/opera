@@ -5,11 +5,20 @@
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
 %bcond_with	snap		# snap version
+%bcond_with	weekly		# weekly snapshot version
 
 %ifarch sparc64 sparc
 %undefine with_shared
 %endif
 
+%if %{with weekly}
+%define	ver		9.0
+%define	sver		%{ver}
+%define	fix		%{nil}
+%define	dirrel		20060217
+%define	magicstr	1656
+%define with_snap	1
+%else
 %if %{with snap}
 %define	ver		9.0
 %define	sver		%{ver}
@@ -23,6 +32,7 @@
 %define	fix		%{nil}
 %define	dirrel		20060201
 %define	reltype		final
+%endif
 %endif
 
 %define	shver		%(echo %{ver} | tr -d .)%{fix}
@@ -82,7 +92,7 @@
 %else
 #			with shared:	[else]
 %define	need_ix86_static_snap	1
-%define	need_sparc_static_snap	0
+%define	need_sparc_static_snap	1
 %define	need_ppc_static_snap	1
 %endif
 #			with shared;	[endif]
@@ -203,7 +213,11 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/
 %endif
 
 %if %{need_ix86_static_snap}
+%if %{with weekly}
+Source100:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
+%else
 Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+%endif
 %{!?with_distributable:NoSource:	100}
 %endif
 
@@ -226,7 +240,11 @@ Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%
 %endif
 
 %if %{need_ppc_static_snap}
+%if %{with weekly}
+Source102:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en-%{magicstr}.tar.bz2
+%else
 Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+%endif
 %{!?with_distributable:NoSource:	102}
 %endif
 
@@ -237,8 +255,12 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 %endif
 
 %if %{need_ix86_shared_snap}
+%if %{with weekly}
+Source1020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
+%else
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 # Source1020-md5:	6f296be6b9fc3001588d4509016062bd
+%endif
 %{!?with_distributable:NoSource:	1020}
 %endif
 
@@ -261,8 +283,12 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/
 %endif
 
 %if %{need_ppc_shared_snap}
+%if %{with weekly}
+Source1022:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en-%{magicstr}.tar.bz2
+%else
 Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
 # Source1022-md5:	74985fa6da49b2e54c9d03dab1119325
+%endif
 %{!?with_distributable:NoSource:	1022}
 %endif
 
@@ -271,7 +297,7 @@ Source4:	%{name}.desktop
 URL:		http://www.opera.com/
 BuildRequires:	sed >= 4.0
 Requires:	freetype >= 2
-Requires:	openmotif >= 2
+%{!?with_snap:Requires:	openmotif >= 2}
 Provides:	wwwbrowser
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -292,13 +318,13 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en
+%setup -q -T -b %{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?with_weekly:-%{magicstr}}
 %endif
 %ifarch sparc sparc64
 %setup -q -T -b %{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en
 %endif
 %ifarch ppc
-%setup -q -T -b %{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en
+%setup -q -T -b %{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?with_weekly:-%{magicstr}}
 %endif
 
 %install
@@ -307,7 +333,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{/etc,%{_libdir},%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
 ln -s $RPM_BUILD_ROOT/etc  $RPM_BUILD_ROOT%{_prefix}/etc
 
-sed -i -e 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' install.sh
+sed -i -e 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' \
+	-e 's|OPERA_SCRIPT_PATH=$0|OPERA_SCRIPT_PATH=|' install.sh
 
 echo y |\
 sh install.sh \
