@@ -15,8 +15,8 @@
 %define	ver		9.0
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20060224
-%define	magicstr	1670
+%define	dirrel		20060324
+%define	magicstr	181
 %define with_snap	1
 %else
 %if %{with snap}
@@ -257,7 +257,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 %if %{need_ix86_shared_snap}
 %if %{with weekly}
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source301020-md5:	4333fb88472e23136d107ea7393f6a97
+# Source301020-md5:	a67e1d82e63d8142acddfa3ff677c88d
 %else
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 # Source1020-md5:	6f296be6b9fc3001588d4509016062bd
@@ -286,6 +286,7 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/
 %if %{need_ppc_shared_snap}
 %if %{with weekly}
 Source301022:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en-%{magicstr}.tar.bz2
+# Source301022-md5:	4ef11bec6221d79e30dfbbf76ff89fa3
 %else
 Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
 # Source1022-md5:	74985fa6da49b2e54c9d03dab1119325
@@ -380,7 +381,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE bugreport
+%doc LICENSE
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
