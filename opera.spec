@@ -15,8 +15,8 @@
 %define	ver		9.0
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20060512
-%define	magicstr	276
+%define	dirrel		20060518
+%define	magicstr	284
 %define with_snap	1
 %else
 %if %{with snap}
@@ -202,7 +202,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}
-Release:	%{?with_snap:0.%{rel}.}1
+Release:	%{?with_snap:1.%{rel}.}1
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -258,12 +258,12 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 %if %{need_ix86_shared_snap}
 %if %{with weekly}
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source301020-md5:	6c88ceec24456b56062f0b9d75375e6b
+# Source301020-md5:	4ea4938d39ae8c29c44208b246501cf6
 %else
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 # Source1020-md5:	6f296be6b9fc3001588d4509016062bd
-%endif
 %{!?with_distributable:NoSource:	1020}
+%endif
 %endif
 
 %if %{need_sparc_shared}
@@ -291,8 +291,8 @@ Source301022:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/ppc-linux/%{name
 %else
 Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
 # Source1022-md5:	74985fa6da49b2e54c9d03dab1119325
-%endif
 %{!?with_distributable:NoSource:	1022}
+%endif
 %endif
 
 Source4:	%{name}.desktop
