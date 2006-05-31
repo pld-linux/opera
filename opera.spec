@@ -300,14 +300,12 @@ Source4:	%{name}.desktop
 URL:		http://www.opera.com/
 BuildRequires:	sed >= 4.0
 Requires:	freetype >= 2
-%{!?with_snap:Requires:	openmotif >= 2}
 Provides:	wwwbrowser
 ExclusiveArch:	%{ix86} ppc sparc sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
-%define		_operadocdir	%{_docdir}/%{name}-%{ver}.%{rel}
-%define		configfile	%{_datadir}/opera/config/opera6rc
+%define		_operadocdir	%{_docdir}/%{name}-%{ver}
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
@@ -332,50 +330,21 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
-install -d $RPM_BUILD_ROOT{/etc,%{_libdir},%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
-ln -s $RPM_BUILD_ROOT/etc  $RPM_BUILD_ROOT%{_prefix}/etc
+sed -i -e 's|OPERA_SCRIPT_PATH=$0|OPERA_SCRIPT_PATH=|' install.sh
 
-sed -i -e 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' \
-	-e 's|OPERA_SCRIPT_PATH=$0|OPERA_SCRIPT_PATH=|' install.sh
-
-echo y |\
 sh install.sh \
-	--prefix=$RPM_BUILD_ROOT%{_prefix} \
-	--wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
-	--docdir=$RPM_BUILD_ROOT%{_operadocdir} \
-	--sharedir=$RPM_BUILD_ROOT%{_datadir}/opera \
-	--exec_prefix=$RPM_BUILD_ROOT%{_libdir}/opera/bin \
-	--plugindir=$RPM_BUILD_ROOT%{_plugindir}
-
-# man install
-install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
-
-# wrapper correction
-sed -i -e "s#$RPM_BUILD_ROOT##" $RPM_BUILD_ROOT%{_bindir}/opera
+	DESTDIR=$RPM_BUILD_ROOT \
+	--prefix=%{_prefix} \
+	--exec_prefix=%{_libdir}/opera/bin \
+	--docdir=%{_operadocdir}
 
 # install in kde etc.
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
-
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
-sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
-
-# always use latest possible wrapper
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
-if [ -f "$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3" ]; then
-	ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
-	ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
-elif [ -f "$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2" ]; then
-	ln -sf operamotifwrapper-2 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
-	ln -sf operamotifwrapper-2 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
-elif [ -f "$RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1" ]; then
-	ln -sf operamotifwrapper-1 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
-	ln -sf operamotifwrapper-1 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-3
-fi
-
-# clean unneeded files
-rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/config
+mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config $RPM_BUILD_ROOT/etc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -383,6 +352,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
+%config(noreplace) %verify(not md5 mtime size) /etc/opera*rc*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
@@ -399,9 +369,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %{_datadir}/opera/locale/english.lng
-%{_pixmapsdir}/opera.xpm
 %{_desktopdir}/*.desktop
-
 %{_mandir}/man1/opera.1*
-
-%config(noreplace) %verify(not md5 mtime size) /etc/opera*rc*
+%{_pixmapsdir}/opera.xpm
