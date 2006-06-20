@@ -224,7 +224,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-li
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en-%{magicstr}.tar.bz2
-# Source1-md5:	201c1927677939ab596f8c940f9fd059
+# Source1-md5:	69111e768dbb3a0e7b84e1d982655db5
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -280,7 +280,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en-%{magicstr}.tar.bz2
-# Source22-md5:	32c82535e3b1ea2b49389b4aa289234f
+# Source22-md5:	65293d788e18d0c23cccac71b9fe567c
 %{!?with_distributable:NoSource:	22}
 %endif
 
