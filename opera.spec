@@ -29,10 +29,10 @@
 %else
 %define	ver		9.00
 %define	sver		9.0
-%define	magicstr	284
+%define	magicstr	344
 %define	fix		%{nil}
-%define	dirrel		20060518
-%define	reltype		beta2
+%define	dirrel		20060616
+%define	reltype		final
 %endif
 %endif
 
@@ -251,7 +251,7 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source20-md5:	4ea4938d39ae8c29c44208b246501cf6
+# Source20-md5:	e1fec5d7a0ab7445856a17ac534e45ce
 %{!?with_distributable:NoSource:	20}
 %endif
 
