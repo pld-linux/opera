@@ -12,11 +12,11 @@
 %endif
 
 %if %{with weekly}
-%define	ver		9.0
+%define	ver		9.01
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20060622
-%define	magicstr	362
+%define	dirrel		20060629
+%define	magicstr	379
 %define with_snap	1
 %else
 %if %{with snap}
