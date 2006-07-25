@@ -15,8 +15,8 @@
 %define	ver		9.01
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20060721
-%define	magicstr	395
+%define	dirrel		20060724
+%define	magicstr	396
 %define with_snap	1
 %else
 %if %{with snap}
