@@ -27,12 +27,12 @@
 %define	reltype		Preview-2
 %define	magicstr	%{nil}
 %else
-%define	ver		9.00
-%define	sver		9.0
-%define	magicstr	344
+%define	ver		9.01
+%define	sver		9.01
 %define	fix		%{nil}
-%define	dirrel		20060616
+%define	dirrel		20060728
 %define	reltype		final
+%define	magicstr	400
 %endif
 %endif
 
@@ -208,8 +208,8 @@ License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ 
 Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
-Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
-# Source0-md5:	54a29d830506e6c9381a305e0353055c
+Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
+# Source0-md5:	3dad6ab16f0ccdbd728f3f531dd74e79
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -223,8 +223,8 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-li
 %endif
 
 %if %{need_sparc_static}
-Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en-%{magicstr}.tar.bz2
-# Source1-md5:	69111e768dbb3a0e7b84e1d982655db5
+Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
+# Source1-md5:	b3f570932d251cce723d2f41a8cd84a9
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -235,8 +235,8 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-li
 %endif
 
 %if %{need_ppc_static}
-Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en-%{magicstr}.tar.bz2
-# Source2-md5:	b86bbd1b1ca2e146c30bfedcbe4403d0
+Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
+# Source2-md5:	9a9812d6552a375dfbc321bce73bded6
 %{!?with_distributable:NoSource:	2}
 %endif
 
@@ -250,8 +250,8 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 %endif
 
 %if %{need_ix86_shared}
-Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source20-md5:	e1fec5d7a0ab7445856a17ac534e45ce
+Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
+# Source20-md5:	dd267a5830a133a33a6b9ec13fe7d363
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -267,7 +267,7 @@ Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-l
 %endif
 
 %if %{need_sparc_shared}
-Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en-%{magicstr}.tar.bz2
+Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
 # Source21-md5:	883df8058672cf52678a07d714dcfce
 %{!?with_distributable:NoSource:	21}
 %endif
@@ -279,8 +279,8 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 %endif
 
 %if %{need_ppc_shared}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en-%{magicstr}.tar.bz2
-# Source22-md5:	65293d788e18d0c23cccac71b9fe567c
+Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
+# Source22-md5:	1a8e781819cb6c1df6563a118541e1c8
 %{!?with_distributable:NoSource:	22}
 %endif
 
@@ -319,13 +319,13 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en-%{magicstr}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch sparc sparc64
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en-%{magicstr}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en-%{magicstr}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?magicstr:-%{magicstr}}
 %endif
 
 %{__sed} -i -e 's|OPERA_SCRIPT_PATH=$0|OPERA_SCRIPT_PATH=|' install.sh
