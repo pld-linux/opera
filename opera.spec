@@ -27,12 +27,12 @@
 %define	reltype		Preview-2
 %define	magicstr	%{nil}
 %else
-%define	ver		9.01
-%define	sver		9.01
+%define	ver		9.02
+%define	sver		9.02
 %define	fix		%{nil}
-%define	dirrel		20060728
+%define	dirrel		20060919
 %define	reltype		final
-%define	magicstr	400
+%define	magicstr	434
 %endif
 %endif
 
@@ -202,7 +202,7 @@ Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}
-Release:	%{?with_snap:1.%{rel}.}2
+Release:	%{?with_snap:1.%{rel}.}1
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -224,7 +224,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-li
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	b3f570932d251cce723d2f41a8cd84a9
+# Source1-md5:	6b15ff08f9f5a2f13821cf00e3ca63b2
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -251,7 +251,7 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	dd267a5830a133a33a6b9ec13fe7d363
+# Source20-md5:	327d0bf1f3c4eedd47b444b36c9091f6
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -280,7 +280,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	1a8e781819cb6c1df6563a118541e1c8
+# Source22-md5:	801b94f1a98f4a953fa11ea1c1b4cb33
 %{!?with_distributable:NoSource:	22}
 %endif
 
