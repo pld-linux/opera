@@ -332,7 +332,7 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
 sh install.sh \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -344,9 +344,8 @@ sh install.sh \
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
-sed -i -e 's#\(.*\)OPERA_SCRIPT_PATH=.*\(\$0.*\)#\1OPERA_SCRIPT_PATH=%{_bindir}/\2#g' $RPM_BUILD_ROOT%{_bindir}/opera
-
-mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config $RPM_BUILD_ROOT/etc
+%{__sed} -i -e 's#\(.*\)OPERA_SCRIPT_PATH=.*\(\$0.*\)#\1OPERA_SCRIPT_PATH=%{_bindir}/\2#g' $RPM_BUILD_ROOT%{_bindir}/opera
+mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config/* $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -354,7 +353,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%config(noreplace) %verify(not md5 mtime size) /etc/opera*rc*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
