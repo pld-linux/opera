@@ -1,6 +1,5 @@
 # TODO:
 # - move translations into a separate, noarch package
-# - opera wrapper contains: OPERA_SCRIPT_PATH=/home/users/builder/rpm/BUILD/opera-9.02-20060919.5-shared-qt.i386-en-434/$0
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -344,6 +343,8 @@ sh install.sh \
 # install in kde etc.
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
+
+sed -i -e 's#\(.*\)OPERA_SCRIPT_PATH=.*\(\$0.*\)#\1OPERA_SCRIPT_PATH=%{_bindir}/\2#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config $RPM_BUILD_ROOT/etc
 
