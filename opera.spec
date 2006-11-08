@@ -1,5 +1,6 @@
 # TODO:
 # - move translations into a separate, noarch package
+# - opera wrapper contains: OPERA_SCRIPT_PATH=/home/users/builder/rpm/BUILD/opera-9.02-20060919.5-shared-qt.i386-en-434/$0
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
