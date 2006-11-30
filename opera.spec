@@ -198,11 +198,12 @@
 %endif
 #	with incall;	[endif]
 
+%define		_rel	3
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
 Version:	%{ver}%{fix}
-Release:	%{?with_snap:1.%{rel}.}2
+Release:	%{?with_snap:1.%{rel}.}%{_rel}
 Epoch:		2
 License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
 Group:		X11/Applications/Networking
@@ -296,7 +297,7 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-lin
 %endif
 
 Source4:	%{name}.desktop
-
+Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
 BuildRequires:	sed >= 4.0
 Requires:	freetype >= 2
@@ -327,6 +328,7 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 %ifarch ppc
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?magicstr:-%{magicstr}}
 %endif
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -342,7 +344,6 @@ sh install.sh \
 install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
-%{__sed} -i -e 's#\(.*\)OPERA_SCRIPT_PATH=.*\(\$0.*\)#\1OPERA_SCRIPT_PATH=%{_bindir}/\2#g' $RPM_BUILD_ROOT%{_bindir}/opera
 mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config/* $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
