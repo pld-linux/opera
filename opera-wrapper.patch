@@ -1,0 +1,21 @@
+--- opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh~	2006-09-19 17:04:07.000000000 +0300
++++ opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh	2006-11-30 17:28:06.433528740 +0200
+@@ -843,13 +843,17 @@
+     wrapper_contain="#!/bin/sh
+ 
+ # Required for Session Management
+-case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/\$0;; esac
++case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=/usr/bin/\$0;; esac
+ export OPERA_SCRIPT_PATH
+ 
+ # Location of the Opera binaries
+ OPERA_BINARYDIR=${str_localdirexec}
+ export OPERA_BINARYDIR
+ 
++# set JAVA_HOME
++. /usr/share/java-utils/java-functions
++set_jvm
++
+ # Parse commandline parameters
+ toset=
+ _QTSTYLE_FROM_CMDLINE_='NO'
