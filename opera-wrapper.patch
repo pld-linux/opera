@@ -1,6 +1,6 @@
---- opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh~	2006-09-19 17:04:07.000000000 +0300
-+++ opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh	2006-11-30 17:28:06.433528740 +0200
-@@ -843,13 +843,17 @@
+--- opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh~	2006-12-01 18:43:27.800063859 +0200
++++ opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh	2006-12-01 18:44:24.201331154 +0200
+@@ -843,13 +843,19 @@
      wrapper_contain="#!/bin/sh
  
  # Required for Session Management
@@ -12,9 +12,11 @@
  OPERA_BINARYDIR=${str_localdirexec}
  export OPERA_BINARYDIR
  
-+# set JAVA_HOME
-+. /usr/share/java-utils/java-functions
-+set_jvm
++# set JAVA_HOME from jpackage-utils if available
++if [ -f /usr/share/java-utils/java-functions ]; then
++	. /usr/share/java-utils/java-functions
++	set_jvm
++fi
 +
  # Parse commandline parameters
  toset=
