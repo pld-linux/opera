@@ -198,7 +198,7 @@
 %endif
 #	with incall;	[endif]
 
-%define		_rel	3
+%define		_rel	4
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
