@@ -198,6 +198,13 @@
 %endif
 #	with incall;	[endif]
 
+%if %{with weekly}
+%define	need_ppc_shared_snap	0
+%define	need_ppc_static_snap	0
+%define	need_sparc_shared_snap	0
+%define	need_sparc_static_snap	0
+%endif
+
 %define		_rel	4
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
@@ -259,7 +266,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 %if %{need_ix86_shared_snap}
 %if %{with weekly}
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source301020-md5:	e1fec5d7a0ab7445856a17ac534e45ce
+# Source301020-md5:	d68b16cd162c27d4589f2ffbcf6777f2
 %else
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 # Source1020-md5:	6f296be6b9fc3001588d4509016062bd
