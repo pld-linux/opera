@@ -1,5 +1,8 @@
 [Desktop Entry]
 Name=Opera
+Name[pl]=Bon Echo
+GenericName=Web Browser
+GenericName[pl]=Przeglądarka WWW
 Comment=World fastest web browser
 Comment[pl]=Najszybsza przeglądarka WWW na świecie
 Icon=opera.xpm
