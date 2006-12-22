@@ -205,7 +205,7 @@
 %define	need_sparc_static_snap	0
 %endif
 
-%define		_rel	2
+%define		_rel	3
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
