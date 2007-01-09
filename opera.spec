@@ -205,7 +205,7 @@
 %define	need_sparc_static_snap	0
 %endif
 
-%define		_rel	3
+%define		_rel	4
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -306,7 +306,9 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-lin
 Source4:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
+BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
+Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
 ExclusiveArch:	%{ix86} ppc sparc sparc64
@@ -341,6 +343,11 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
+%browser_plugins_add_browser %{name} -p %{_libdir}/%{name}/plugins -b <<'EOF'
+# opera does not use for .xpt files
+*.xpt
+EOF
+
 sh install.sh \
 	DESTDIR=$RPM_BUILD_ROOT \
 	--prefix=%{_prefix} \
@@ -356,10 +363,23 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config/* $RPM_BUILD_ROOT%{_sysconfdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_browser_plugins
+
+%postun
+if [ "$1" = 0 ]; then
+	%update_browser_plugins
+fi
+
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
+
+# browser plugins v2
+%{_browserpluginsconfdir}/browsers.d/%{name}.*
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
+
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
