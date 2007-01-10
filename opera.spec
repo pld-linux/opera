@@ -346,6 +346,9 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 %browser_plugins_add_browser %{name} -p %{_libdir}/%{name}/plugins -b <<'EOF'
 # opera does not use for .xpt files
 *.xpt
+
+# use mplayerplug-in-opera instead
+mplayerplug-in*
 EOF
 
 sh install.sh \
