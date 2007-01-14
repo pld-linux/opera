@@ -15,8 +15,8 @@
 %define	ver		9.10
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20061214
-%define	magicstr	521
+%define	dirrel		20070112
+%define	magicstr	536
 %define with_snap	1
 %else
 %if %{with snap}
@@ -266,7 +266,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 %if %{need_ix86_shared_snap}
 %if %{with weekly}
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source301020-md5:	a60b0abe55ca580952b30f4540632425
+# Source301020-md5:	47053d41c62e2e847e052e4251e6bba4
 %else
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 # Source1020-md5:	6f296be6b9fc3001588d4509016062bd
