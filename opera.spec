@@ -207,7 +207,7 @@
 
 %define		_rel	4
 Summary:	World fastest web browser
-Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
+Summary(pl.UTF-8):   Najszybsza przeglÄ…darka WWW na Å›wiecie
 Name:		opera
 Version:	%{ver}%{fix}
 Release:	%{?with_snap:1.%{rel}.}%{_rel}
@@ -322,9 +322,9 @@ Opera is world fastest web browser. It supports most of nowaday
 extensions of HTML. And it is quite stable. This version is %{?with_shared:shared}%{!?with_shared:statically}
 linked with Qt.
 
-%description -l pl
-Opera jest najszybsz± przegl±dark± WWW na ¶wiecie. Obs³uguje wiêkszo¶æ
-dzisiejszych rozszerzeñ HTML-a. Dodatkowo jest w miarê stabilna. Ta
+%description -l pl.UTF-8
+Opera jest najszybszÄ… przeglÄ…darkÄ… WWW na Å›wiecie. ObsÅ‚uguje wiÄ™kszoÅ›Ä‡
+dzisiejszych rozszerzeÅ„ HTML-a. Dodatkowo jest w miarÄ™ stabilna. Ta
 wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
 
 %prep
