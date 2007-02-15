@@ -349,6 +349,9 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
 # use mplayerplug-in-opera instead
 mplayerplug-in*
+
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
 EOF
 
 sh install.sh \
