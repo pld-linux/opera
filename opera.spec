@@ -7,7 +7,7 @@
 %bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
 
-%ifarch sparc64 sparc
+%ifarch sparc sparc64
 %undefine with_shared
 %endif
 
@@ -47,21 +47,23 @@
 %define	type		shared
 # We should be able to build src.rpm also on not supported archs
 %define	rel		%{x86_shared_rel}
-%ifarch sparc64 sparc
+%ifarch sparc sparc64
 #%%define	rel		%{sparc_shared_rel}
 %define	rel		%{sparc_static_rel}
-%endif
+%else
 %ifarch ppc
 %define	rel		%{ppc_shared_rel}
+%endif
 %endif
 %else
 %define	type		static
 %define	rel		%{x86_static_rel}
 %ifarch sparc sparc64
 %define	rel		%{sparc_static_rel}
-%endif
+%else
 %ifarch ppc
 %define	rel		%{ppc_static_rel}
+%endif
 %endif
 %endif
 
@@ -140,8 +142,8 @@
 #				with shared;	[endif]
 %endif
 #			with snap;	[endif]
-%endif
-#		is ix86;	[endif]
+%else
+#		is ix86:	[else]
 %ifarch	sparc sparc64
 #		is sparc?	[if]
 %if	%{with snap}
@@ -167,8 +169,8 @@
 #				with shared;	[endif]
 %endif
 #			with snap;	[endif]
-%endif
-#		is sparc;	[endif]
+%else
+#		is sparc:	[else]
 %ifarch	ppc
 #		is ppc?		[if]
 %if	%{with snap}
@@ -190,11 +192,15 @@
 #				with shared:	[else]
 %define	need_ppc_static	1
 %endif
-#				with shared;	[endif
+#				with shared;	[endif]
 %endif
-#			with snap;	[endif
+#			with snap;	[endif]
 %endif
 #		is ppc;		[endif]
+%endif
+#		is sparc;	[endif]
+%endif
+#		is ix86;	[endif]
 %endif
 #	with incall;	[endif]
 
