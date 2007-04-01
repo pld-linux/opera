@@ -7,7 +7,7 @@
 %bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
 
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 %undefine with_shared
 %endif
 
@@ -47,7 +47,7 @@
 %define	type		shared
 # We should be able to build src.rpm also on not supported archs
 %define	rel		%{x86_shared_rel}
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 #%%define	rel		%{sparc_shared_rel}
 %define	rel		%{sparc_static_rel}
 %else
@@ -58,7 +58,7 @@
 %else
 %define	type		static
 %define	rel		%{x86_static_rel}
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 %define	rel		%{sparc_static_rel}
 %else
 %ifarch ppc
@@ -317,7 +317,7 @@ BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
-ExclusiveArch:	%{ix86} ppc sparc sparc64
+ExclusiveArch:	%{ix86} ppc sparc sparcv9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -337,7 +337,7 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 %ifarch %{ix86}
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
 %endif
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
