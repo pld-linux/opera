@@ -7,16 +7,16 @@
 %bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
 
-%ifarch sparc64 sparc
+%ifarch sparc sparcv9
 %undefine with_shared
 %endif
 
 %if %{with weekly}
-%define	ver		9.12
+%define	ver		9.20
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20070119
-%define	magicstr	543
+%define	dirrel		20070405
+%define	magicstr	633
 %define with_snap	1
 %else
 %if %{with snap}
@@ -27,12 +27,12 @@
 %define	reltype		Preview-2
 %define	magicstr	%{nil}
 %else
-%define	ver		9.10
-%define	sver		9.10
+%define	ver		9.20
+%define	sver		9.20
 %define	fix		%{nil}
-%define	dirrel		20061214
+%define	dirrel		20070409
 %define	reltype		final
-%define	magicstr	521
+%define	magicstr	638
 %endif
 %endif
 
@@ -47,21 +47,23 @@
 %define	type		shared
 # We should be able to build src.rpm also on not supported archs
 %define	rel		%{x86_shared_rel}
-%ifarch sparc64 sparc
+%ifarch sparc sparcv9
 #%%define	rel		%{sparc_shared_rel}
 %define	rel		%{sparc_static_rel}
-%endif
+%else
 %ifarch ppc
 %define	rel		%{ppc_shared_rel}
+%endif
 %endif
 %else
 %define	type		static
 %define	rel		%{x86_static_rel}
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 %define	rel		%{sparc_static_rel}
-%endif
+%else
 %ifarch ppc
 %define	rel		%{ppc_static_rel}
+%endif
 %endif
 %endif
 
@@ -140,8 +142,8 @@
 #				with shared;	[endif]
 %endif
 #			with snap;	[endif]
-%endif
-#		is ix86;	[endif]
+%else
+#		is ix86:	[else]
 %ifarch	sparc sparc64
 #		is sparc?	[if]
 %if	%{with snap}
@@ -167,8 +169,8 @@
 #				with shared;	[endif]
 %endif
 #			with snap;	[endif]
-%endif
-#		is sparc;	[endif]
+%else
+#		is sparc:	[else]
 %ifarch	ppc
 #		is ppc?		[if]
 %if	%{with snap}
@@ -190,11 +192,15 @@
 #				with shared:	[else]
 %define	need_ppc_static	1
 %endif
-#				with shared;	[endif
+#				with shared;	[endif]
 %endif
-#			with snap;	[endif
+#			with snap;	[endif]
 %endif
 #		is ppc;		[endif]
+%endif
+#		is sparc;	[endif]
+%endif
+#		is ix86;	[endif]
 %endif
 #	with incall;	[endif]
 
@@ -205,7 +211,7 @@
 %define	need_sparc_static_snap	0
 %endif
 
-%define		_rel	4
+%define		_rel	1
 Summary:	World fastest web browser
 Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
 Name:		opera
@@ -217,7 +223,7 @@ Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	dccdc5252ffc6658f3c46f32c64c8219
+# Source0-md5:	dd5365a5ca0f31b373deafdb80a17ac7
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -232,7 +238,7 @@ Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-li
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	e7bcbbaa48a63827d0efc60cf6fef68d
+# Source1-md5:	43c9cc58c26979db270f05141ee7cc99
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -244,7 +250,7 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-li
 
 %if %{need_ppc_static}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	d67428a09a036e786efc22e03150a344
+# Source2-md5:	cc5be6d9ec178eb7cb02bc20e0238c26
 %{!?with_distributable:NoSource:	2}
 %endif
 
@@ -259,14 +265,14 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	a60b0abe55ca580952b30f4540632425
+# Source20-md5:	9446ed1e968d511f43c1681eee44ab7a
 %{!?with_distributable:NoSource:	20}
 %endif
 
 %if %{need_ix86_shared_snap}
 %if %{with weekly}
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source301020-md5:	df8ced96f6fbb345ceacc01e51acc770
+# Source301020-md5:	596d40ef0e9fbcde91216893485a324f
 %else
 Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
 # Source1020-md5:	6f296be6b9fc3001588d4509016062bd
@@ -288,7 +294,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	6ef04f12a39fdbe671dfbd6a37080a81
+# Source22-md5:	70ea569449bdee0c3a62f55b45a7f37b
 %{!?with_distributable:NoSource:	22}
 %endif
 
@@ -311,7 +317,7 @@ BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
-ExclusiveArch:	%{ix86} ppc sparc sparc64
+ExclusiveArch:	%{ix86} ppc sparc sparcv9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -331,7 +337,7 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 %ifarch %{ix86}
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
 %endif
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
@@ -349,6 +355,9 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
 # use mplayerplug-in-opera instead
 mplayerplug-in*
+
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
 EOF
 
 sh install.sh \
