@@ -211,7 +211,7 @@
 %define	need_sparc_static_snap	0
 %endif
 
-%define		_rel	4
+%define		_rel	1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
