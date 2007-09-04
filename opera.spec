@@ -1,5 +1,7 @@
 # TODO:
 # - move translations into a separate, noarch package
+# - add kestrel (snap) x86_64 version (yes, it's available)
+# - drop those dozens of if statements and use branches for different sources
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -7,32 +9,33 @@
 %bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
 
-%ifarch sparc64 sparc
+%ifarch sparc sparcv9
 %undefine with_shared
 %endif
 
 %if %{with weekly}
-%define	ver		9.10
+%define	ver		9.23
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20061214
-%define	magicstr	521
-%define with_snap	1
+%define	dirrel		20070809
+%define	reltype		%{nil}
+%define	magicstr	660
+%define	with_snap	1
 %else
 %if %{with snap}
-%define	ver		9.0
+%define	ver		9.50
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20060206
-%define	reltype		Preview-2
-%define	magicstr	%{nil}
+%define	dirrel		20070903
+%define	reltype		Alpha-1
+%define	magicstr	1567
 %else
-%define	ver		9.10
-%define	sver		9.10
+%define	ver		9.23
+%define	sver		9.23
 %define	fix		%{nil}
-%define	dirrel		20061214
+%define	dirrel		20070809
 %define	reltype		final
-%define	magicstr	521
+%define	magicstr	660
 %endif
 %endif
 
@@ -47,21 +50,23 @@
 %define	type		shared
 # We should be able to build src.rpm also on not supported archs
 %define	rel		%{x86_shared_rel}
-%ifarch sparc64 sparc
+%ifarch sparc sparcv9
 #%%define	rel		%{sparc_shared_rel}
 %define	rel		%{sparc_static_rel}
-%endif
+%else
 %ifarch ppc
 %define	rel		%{ppc_shared_rel}
+%endif
 %endif
 %else
 %define	type		static
 %define	rel		%{x86_static_rel}
-%ifarch sparc sparc64
+%ifarch sparc sparcv9
 %define	rel		%{sparc_static_rel}
-%endif
+%else
 %ifarch ppc
 %define	rel		%{ppc_static_rel}
+%endif
 %endif
 %endif
 
@@ -140,8 +145,8 @@
 #				with shared;	[endif]
 %endif
 #			with snap;	[endif]
-%endif
-#		is ix86;	[endif]
+%else
+#		is ix86:	[else]
 %ifarch	sparc sparc64
 #		is sparc?	[if]
 %if	%{with snap}
@@ -167,8 +172,8 @@
 #				with shared;	[endif]
 %endif
 #			with snap;	[endif]
-%endif
-#		is sparc;	[endif]
+%else
+#		is sparc:	[else]
 %ifarch	ppc
 #		is ppc?		[if]
 %if	%{with snap}
@@ -190,11 +195,15 @@
 #				with shared:	[else]
 %define	need_ppc_static	1
 %endif
-#				with shared;	[endif
+#				with shared;	[endif]
 %endif
-#			with snap;	[endif
+#			with snap;	[endif]
 %endif
 #		is ppc;		[endif]
+%endif
+#		is sparc;	[endif]
+%endif
+#		is ix86;	[endif]
 %endif
 #	with incall;	[endif]
 
@@ -205,9 +214,9 @@
 %define	need_sparc_static_snap	0
 %endif
 
-%define		_rel	2
+%define		_rel	1
 Summary:	World fastest web browser
-Summary(pl):	Najszybsza przegl±darka WWW na ¶wiecie
+Summary(pl.UTF-8):	Najszybsza przeglÄ…darka WWW na Å›wiecie
 Name:		opera
 Version:	%{ver}%{fix}
 Release:	%{?with_snap:1.%{rel}.}%{_rel}
@@ -217,7 +226,7 @@ Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	dccdc5252ffc6658f3c46f32c64c8219
+# Source0-md5:	0c721abff854df6c8ec7746956a37f55
 %{!?with_distributable:NoSource:	0}
 %endif
 
@@ -225,14 +234,14 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/
 %if %{with weekly}
 Source30100:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
 %else
-Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
+Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
 %endif
 %{!?with_distributable:NoSource:	100}
 %endif
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	e7bcbbaa48a63827d0efc60cf6fef68d
+# Source1-md5:	98a84755df7d74812e8b8fa20d09d929
 %{!?with_distributable:NoSource:	1}
 %endif
 
@@ -244,7 +253,7 @@ Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-li
 
 %if %{need_ppc_static}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	d67428a09a036e786efc22e03150a344
+# Source2-md5:	132fa2d85a2e0c2840b8bf2d27cfc93d
 %{!?with_distributable:NoSource:	2}
 %endif
 
@@ -259,17 +268,17 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	a60b0abe55ca580952b30f4540632425
+# Source20-md5:	fe3c699c4509788276a94e325cd1bc5b
 %{!?with_distributable:NoSource:	20}
 %endif
 
 %if %{need_ix86_shared_snap}
 %if %{with weekly}
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
-# Source301020-md5:	a60b0abe55ca580952b30f4540632425
+# Source301020-md5:	fe3c699c4509788276a94e325cd1bc5b
 %else
-Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	6f296be6b9fc3001588d4509016062bd
+Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
+# Source1020-md5:	8655d3c4623db40076507f03987158ae
 %{!?with_distributable:NoSource:	1020}
 %endif
 %endif
@@ -288,7 +297,7 @@ Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/sparc-l
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	6ef04f12a39fdbe671dfbd6a37080a81
+# Source22-md5:	2f9bf50540fac7ed63f2984a13b1010d
 %{!?with_distributable:NoSource:	22}
 %endif
 
@@ -297,19 +306,27 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/
 Source301022:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en-%{magicstr}.tar.bz2
 # Source301022-md5:	65293d788e18d0c23cccac71b9fe567c
 %else
-Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source1022-md5:	74985fa6da49b2e54c9d03dab1119325
+Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
+# Source1022-md5:	94b4d77cdcdf42a40ebe2d682892bb9a
 %{!?with_distributable:NoSource:	1022}
 %endif
+%endif
+
+%ifarch %{x8664}
+Source23:	http://snapshot.opera.com/unix/9.50-Alpha-1/x86_64-linux/%{name}-%{version}-%{dirrel}.2-shared-qt.x86_64-%{magicstr}.tar.bz2
+# Source23-md5:	40b850632dbb729a0bb16a1c450d97e5
+%{!?with_distributable:NoSource:	23}
 %endif
 
 Source4:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
+BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
+Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
-ExclusiveArch:	%{ix86} ppc sparc sparc64
+ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -320,20 +337,23 @@ Opera is world fastest web browser. It supports most of nowaday
 extensions of HTML. And it is quite stable. This version is %{?with_shared:shared}%{!?with_shared:statically}
 linked with Qt.
 
-%description -l pl
-Opera jest najszybsz± przegl±dark± WWW na ¶wiecie. Obs³uguje wiêkszo¶æ
-dzisiejszych rozszerzeñ HTML-a. Dodatkowo jest w miarê stabilna. Ta
+%description -l pl.UTF-8
+Opera jest najszybszÄ… przeglÄ…darkÄ… WWW na Å›wiecie. ObsÅ‚uguje wiÄ™kszoÅ›Ä‡
+dzisiejszych rozszerzeÅ„ HTML-a. Dodatkowo jest w miarÄ™ stabilna. Ta
 wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
 %endif
-%ifarch sparc sparc64
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en%{?magicstr:-%{magicstr}}
+%ifarch %{x8664}
+%setup -q -T -b 23 -n %{name}-%{version}-%{dirrel}.2-shared-qt.x86_64-%{magicstr}
+%endif
+%ifarch sparc sparcv9
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc%{!?with_snap:-en}-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
 %endif
 %patch0 -p1
 
@@ -341,34 +361,66 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
+%browser_plugins_add_browser %{name} -p %{_libdir}/%{name}/plugins -b <<'EOF'
+# opera does not use for .xpt files
+*.xpt
+
+# use mplayerplug-in-opera instead
+mplayerplug-in*
+
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
+EOF
+
 sh install.sh \
 	DESTDIR=$RPM_BUILD_ROOT \
 	--prefix=%{_prefix} \
-	--exec_prefix=%{_libdir}/opera/bin \
+	--exec_prefix=%{_libdir}/%{name}/bin \
+	--plugindir=%{_libdir}/%{name}/plugins \
 	--docdir=%{_operadocdir}
 
 # install in kde etc.
-install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
+%if %{with snap}
+install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
+install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+%else
 mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config/* $RPM_BUILD_ROOT%{_sysconfdir}
+install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_browser_plugins
+
+%postun
+if [ "$1" = 0 ]; then
+	%update_browser_plugins
+fi
 
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
+
+# browser plugins v2
+%{_browserpluginsconfdir}/browsers.d/%{name}.*
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
+
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
 %attr(755,root,root) %{_libdir}/opera/bin/*
 %dir %{_plugindir}
+%if ! %{with snap}
 %attr(755,root,root) %{_plugindir}/*
+%{_datadir}/opera/images
+%endif
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
-%{_datadir}/opera/images
 %{_datadir}/opera/ini
 %{_datadir}/opera/java
 %{_datadir}/opera/skin
