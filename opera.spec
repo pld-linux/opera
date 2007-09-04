@@ -1,6 +1,7 @@
 # TODO:
 # - move translations into a separate, noarch package
 # - add kestrel (snap) x86_64 version (yes, it's available)
+# - drop those dozens of if statements and use branches for different sources
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -311,6 +312,12 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/%{name}-%
 %endif
 %endif
 
+%ifarch %{x8664}
+Source23:	http://snapshot.opera.com/unix/9.50-Alpha-1/x86_64-linux/%{name}-%{version}-%{dirrel}.2-shared-qt.x86_64-%{magicstr}.tar.bz2
+# Source23-md5:	40b850632dbb729a0bb16a1c450d97e5
+%{!?with_distributable:NoSource:	23}
+%endif
+
 Source4:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
@@ -319,7 +326,7 @@ BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
-ExclusiveArch:	%{ix86} ppc sparc sparcv9
+ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
@@ -338,6 +345,9 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 %prep
 %ifarch %{ix86}
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
+%endif
+%ifarch %{x8664}
+%setup -q -T -b 23 -n %{name}-%{version}-%{dirrel}.2-shared-qt.x86_64-%{magicstr}
 %endif
 %ifarch sparc sparcv9
 %setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc%{!?with_snap:-en}-en%{?magicstr:-%{magicstr}}
@@ -365,7 +375,8 @@ EOF
 sh install.sh \
 	DESTDIR=$RPM_BUILD_ROOT \
 	--prefix=%{_prefix} \
-	--exec_prefix=%{_libdir}/opera/bin \
+	--exec_prefix=%{_libdir}/%{name}/bin \
+	--plugindir=%{_libdir}/%{name}/plugins \
 	--docdir=%{_operadocdir}
 
 # install in kde etc.
