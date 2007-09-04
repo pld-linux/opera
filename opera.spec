@@ -1,13 +1,18 @@
+# BRANCHES:
+# - HEAD - stable version
+# - DEVEL - development version
+# - WEEKLY - weekly development version
+
 # TODO:
 # - move translations into a separate, noarch package
-# - add kestrel (snap) x86_64 version (yes, it's available)
 # - drop those dozens of if statements and use branches for different sources
+#   [ kestrel already on DEVEL ]
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
-%bcond_with	snap		# snap version
-%bcond_with	weekly		# weekly snapshot version
+%bcond_with	snap		# snap version !DROPME!
+%bcond_with	weekly		# weekly snapshot version !DROPME!
 
 %ifarch sparc sparcv9
 %undefine with_shared
