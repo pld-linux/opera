@@ -1,5 +1,6 @@
 # TODO:
 # - move translations into a separate, noarch package
+# - add kestrel (snap) x86_64 version (yes, it's available)
 #
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -21,12 +22,12 @@
 %define	with_snap	1
 %else
 %if %{with snap}
-%define	ver		9.0
+%define	ver		9.50
 %define	sver		%{ver}
 %define	fix		%{nil}
-%define	dirrel		20060206
-%define	reltype		Preview-2
-%define	magicstr	%{nil}
+%define	dirrel		20070903
+%define	reltype		Alpha-1
+%define	magicstr	1567
 %else
 %define	ver		9.23
 %define	sver		9.23
@@ -232,7 +233,7 @@ Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/
 %if %{with weekly}
 Source30100:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
 %else
-Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
+Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en-%{magicstr}.tar.bz2
 %endif
 %{!?with_distributable:NoSource:	100}
 %endif
@@ -275,8 +276,8 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 Source301020:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en-%{magicstr}.tar.bz2
 # Source301020-md5:	fe3c699c4509788276a94e325cd1bc5b
 %else
-Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source1020-md5:	6f296be6b9fc3001588d4509016062bd
+Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
+# Source1020-md5:	8655d3c4623db40076507f03987158ae
 %{!?with_distributable:NoSource:	1020}
 %endif
 %endif
@@ -304,8 +305,8 @@ Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/
 Source301022:	http://snapshot.opera.com/unix/Weekly-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en-%{magicstr}.tar.bz2
 # Source301022-md5:	65293d788e18d0c23cccac71b9fe567c
 %else
-Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source1022-md5:	74985fa6da49b2e54c9d03dab1119325
+Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
+# Source1022-md5:	94b4d77cdcdf42a40ebe2d682892bb9a
 %{!?with_distributable:NoSource:	1022}
 %endif
 %endif
@@ -336,13 +337,13 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
 %endif
 %ifarch sparc sparcv9
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc%{!?with_snap:-en}-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
 %endif
 %patch0 -p1
 
@@ -368,10 +369,15 @@ sh install.sh \
 	--docdir=%{_operadocdir}
 
 # install in kde etc.
-install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
+%if %{with snap}
+install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
+install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+%else
 mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config/* $RPM_BUILD_ROOT%{_sysconfdir}
+install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -398,10 +404,12 @@ fi
 %dir %{_libdir}/opera/bin
 %attr(755,root,root) %{_libdir}/opera/bin/*
 %dir %{_plugindir}
+%if ! %{with snap}
 %attr(755,root,root) %{_plugindir}/*
+%{_datadir}/opera/images
+%endif
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
-%{_datadir}/opera/images
 %{_datadir}/opera/ini
 %{_datadir}/opera/java
 %{_datadir}/opera/skin
