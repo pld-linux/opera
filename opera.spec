@@ -1,6 +1,11 @@
+# BRANCHES:
+# - HEAD - stable version
+# - DEVEL - development version
+# - WEEKLY - weekly development version
+
 # TODO:
+# - drop stable and snap on this (WEEKLY) branch
 # - move translations into a separate, noarch package
-# - add kestrel (snap) x86_64 version (yes, it's available)
 # - drop those dozens of if statements and use branches for different sources
 #
 %bcond_without	shared		# static or shared version
