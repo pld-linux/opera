@@ -1,11 +1,10 @@
 [Desktop Entry]
 Name=Opera
-Name[pl]=Opera
 Name[af]=opera
 Name[eo]=Opero
+Name[pl]=Opera
 Name[zu]=I Opera
 GenericName=Web Browser
-GenericName[pl]=Przeglądarka WWW
 GenericName[bs]=Web preglednik
 GenericName[de]=Web-Browser
 GenericName[eo]=TTT-rigardilo
@@ -18,6 +17,7 @@ GenericName[is]=Vafri
 GenericName[it]=Browser Web
 GenericName[nl]=webbrowser
 GenericName[nn]=Nettlesar
+GenericName[pl]=Przeglądarka WWW
 GenericName[pt]=Navegador Web
 GenericName[pt_BR]=Navegador
 GenericName[ro]=Navigator de web
