@@ -12,18 +12,18 @@
 %bcond_with	weekly		# weekly snapshot version
 
 %define	ver		9.50
-%define	dirrel		20070903
-%define	reltype		Alpha-1
-%define	magicstr	1567
+%define	dirrel		20070914
+%define	reltype		snapshot
+%define	magicstr	1581
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
 %define	sreltype	%(echo %{reltype} | tr - _)
-%define	x86_shared_rel		%{dirrel}.5
+%define	x86_shared_rel		%{dirrel}.6
 %define	x86_static_rel		%{dirrel}.9
 %define	sparc_shared_rel	%{dirrel}.2
 %define	sparc_static_rel	%{dirrel}.1
-%define	ppc_shared_rel		%{dirrel}.3
+%define	ppc_shared_rel		%{dirrel}.6
 %define	ppc_static_rel		%{dirrel}.1
 %define x86_64_shared_rel       %{dirrel}.2
 %define x86_64_static_rel       %{dirrel}.1
@@ -78,35 +78,35 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 
-Source0:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
-# Source0-md5:	8655d3c4623db40076507f03987158ae
+Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
+# Source0-md5:	d88323b05f90d8fffc472df3c0f89302
 %{!?with_distributable:NoSource:	0}
 
-#Source1:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-%{magicstr}.tar.bz2
+#Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-%{magicstr}.tar.bz2
 # Source1-md5:	913ccb28106f9f5acd3d94c8dc71ae1
 #%{!?with_distributable:NoSource:	1}
 
-Source2:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
-# Source2-md5:	94b4d77cdcdf42a40ebe2d682892bb9a
+Source2:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
+# Source2-md5:	bf78062b679c81a2b6c4d98a587a3abe
 %{!?with_distributable:NoSource:	2}
 
-Source3:     http://snapshot.opera.com/unix/%{ver}-%{reltype}/x86_64-linux/%{name}-%{sver}-%{x86_64_shared_rel}-shared-qt.x86_64-%{magicstr}.tar.bz2
-# Source3-md5:	40b850632dbb729a0bb16a1c450d97e5
+Source3:     http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_shared_rel}-shared-qt.x86_64-%{magicstr}.tar.bz2
+# Source3-md5:	aba2b015b2cfd9f6375809b42bc6463b
 %{!?with_distributable:NoSource:        3}
 
-Source10:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-%{magicstr}.tar.bz2
-# Source10-md5:	9526a13ebb9d93271ca8ae8f7f3c8f46
+Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-%{magicstr}.tar.bz2
+# Source10-md5:	dfcade905778ce07f29a583c7bbeef8a
 %{!?with_distributable:NoSource:	10}
 
-#Source11:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-%{magicstr}.tar.bz2
+#Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-%{magicstr}.tar.bz2
 # Source11-md5:	e190021f5530de3f711006cd9f6bb339
 #%{!?with_distributable:NoSource:	11}
 
-Source12:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-%{magicstr}.tar.bz2
-# Source12-md5:	b8f9b9a0be3d3d47b701779622c2f004
-%{!?with_distributable:NoSource:	12}
+#Source12:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-%{magicstr}.tar.bz2
+## Source12-md5:	b8f9b9a0be3d3d47b701779622c2f004
+#%{!?with_distributable:NoSource:	12}
 
-#Source13:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/x86_64-linux/%{name}-%{sver}-%{x86_64_static_rel}-static-qt.x86_64-%{magicstr}.tar.bz2
+#Source13:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_static_rel}-static-qt.x86_64-%{magicstr}.tar.bz2
 ## Source13-md5:	40b850632dbb729a0bb16a1c450d97e5
 #%{!?with_distributable:NoSource:	13}
 
