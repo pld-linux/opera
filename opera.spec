@@ -10,12 +10,12 @@
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
 
-%define	ver		9.23
-%define	sver		9.23
+%define	ver		9.24
+%define	sver		9.24
 %define	fix		%{nil}
-%define	dirrel		20070809
+%define	dirrel		20071015
 %define	reltype		final
-%define	magicstr	660
+%define	magicstr	671
 
 %define	shver		%(echo %{ver} | tr -d .)%{fix}
 %define	x86_shared_rel		%{dirrel}.5
@@ -123,25 +123,25 @@ Group:		X11/Applications/Networking
 
 %if %{need_ix86_static}
 Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	0c721abff854df6c8ec7746956a37f55
+# Source0-md5:	96b8010ddb0ff250817c7fb314de2d26
 %{!?with_distributable:NoSource:	0}
 %endif
 
 %if %{need_sparc_static}
 Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	98a84755df7d74812e8b8fa20d09d929
+# Source1-md5:	c8443b4b83b21a56fdd8dc3526eaf46f
 %{!?with_distributable:NoSource:	1}
 %endif
 
 %if %{need_ppc_static}
 Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	132fa2d85a2e0c2840b8bf2d27cfc93d
+# Source2-md5:	be68f701224493bbd9a6d62df8eb9b19
 %{!?with_distributable:NoSource:	2}
 %endif
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	fe3c699c4509788276a94e325cd1bc5b
+# Source20-md5:	e7d934c0fe9ce0ef7cec67981b71332d
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -154,7 +154,7 @@ Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/share
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	2f9bf50540fac7ed63f2984a13b1010d
+# Source22-md5:	07f97223ffcb2d2ab87c921ead880018
 %{!?with_distributable:NoSource:	22}
 %endif
 
