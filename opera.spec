@@ -63,8 +63,7 @@
 %if %{with shared}
 #			with shared?	[if]
 %define	need_ix86_shared	1
-#%%define	need_sparc_shared	1
-%define	need_sparc_static	1
+%define	need_sparc_shared	1
 %define	need_ppc_shared	1
 %else
 #			with shared:	[else]
@@ -83,8 +82,7 @@
 #		is sparc?	[if]
 %if	%{with shared}
 #				with shared?	[if]
-#%%define	need_sparc_shared	1
-%define	need_sparc_static	1
+%define	need_sparc_shared	1
 %else
 #				with shared:	[else]
 %define	need_sparc_static	1
@@ -111,7 +109,7 @@
 %endif
 #	with incall;	[endif]
 
-%define		_rel	1
+%define		_rel	2
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
@@ -147,7 +145,7 @@ Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared
 
 %if %{need_sparc_shared}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	883df8058672cf52678a07d714dcfce
+# Source21-md5:	84df0097ac9c52e95bc74e73407386ee
 %{!?with_distributable:NoSource:	21}
 %endif
 
