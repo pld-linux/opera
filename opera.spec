@@ -26,27 +26,26 @@
 %define	ppc_static_rel		%{dirrel}.1
 
 %if %{with shared}
-%define	type		shared
-# We should be able to build src.rpm also on not supported archs
-%define	rel		%{x86_shared_rel}
-%ifarch sparc sparcv9
-#%%define	rel		%{sparc_shared_rel}
-%define	rel		%{sparc_static_rel}
+	%define	type		shared
+	# We should be able to build src.rpm also on not supported archs
+	%define	rel		%{x86_shared_rel}
+	%ifarch sparc sparcv9
+		%define	rel		%{sparc_shared_rel}
+	%else
+		%ifarch ppc
+		%define	rel		%{ppc_shared_rel}
+		%endif
+	%endif
 %else
-%ifarch ppc
-%define	rel		%{ppc_shared_rel}
-%endif
-%endif
-%else
-%define	type		static
-%define	rel		%{x86_static_rel}
-%ifarch sparc sparcv9
-%define	rel		%{sparc_static_rel}
-%else
-%ifarch ppc
-%define	rel		%{ppc_static_rel}
-%endif
-%endif
+	%define	type		static
+	%define	rel		%{x86_static_rel}
+	%ifarch sparc sparcv9
+		%define	rel		%{sparc_static_rel}
+	%else
+		%ifarch ppc
+			%define	rel		%{ppc_static_rel}
+		%endif
+	%endif
 %endif
 
 # define to 0 and then redefine to avoid
@@ -59,55 +58,34 @@
 %define	need_ppc_static		0
 
 %if %{with incall}
-#	with incall?	[if]
-%if %{with shared}
-#			with shared?	[if]
-%define	need_ix86_shared	1
-%define	need_sparc_shared	1
-%define	need_ppc_shared	1
+	%if %{with shared}
+		%define	need_ix86_shared	1
+		%define	need_sparc_shared	1
+		%define	need_ppc_shared	1
+	%else
+		%define	need_ix86_static	1
+		%define	need_sparc_static	1
+		%define	need_ppc_static	1
+	%endif
 %else
-#			with shared:	[else]
-%define	need_ix86_static	1
-%define	need_sparc_static	1
-%define	need_ppc_static	1
+	%ifnarch %{ix86}
+		%ifarch	sparc sparc64
+			%if	%{with shared}
+				%define	need_sparc_shared	1
+			%else
+				%define	need_sparc_static	1
+			%endif
+		%else
+			%ifarch	ppc
+				%if	%{with shared}
+					%define	need_ppc_shared	1
+				%else
+					%define	need_ppc_static	1
+				%endif
+			%endif
+		%endif
+	%endif
 %endif
-#			with shared;	[endif]
-%else
-#	with incall:	[else]
-%ifarch	%{ix86}
-#		is ix86?	[if]
-%else
-#		is ix86:	[else]
-%ifarch	sparc sparc64
-#		is sparc?	[if]
-%if	%{with shared}
-#				with shared?	[if]
-%define	need_sparc_shared	1
-%else
-#				with shared:	[else]
-%define	need_sparc_static	1
-%endif
-#				with shared;	[endif]
-%else
-#		is sparc:	[else]
-%ifarch	ppc
-#		is ppc?		[if]
-%if	%{with shared}
-#				with shared?	[if]
-%define	need_ppc_shared	1
-%else
-#				with shared:	[else]
-%define	need_ppc_static	1
-%endif
-#				with shared;	[endif]
-%endif
-#		is ppc;		[endif]
-%endif
-#		is sparc;	[endif]
-%endif
-#		is ix86;	[endif]
-%endif
-#	with incall;	[endif]
 
 %define		_rel	2
 Summary:	World fastest web browser
@@ -185,7 +163,7 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 %setup -q -T -b %{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch sparc sparcv9
-%setup -q -T -b %{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en-%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
 %setup -q -T -b %{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?magicstr:-%{magicstr}}
