@@ -158,7 +158,7 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 %setup -q -T -b %{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch sparc sparcv9
-%setup -q -T -b %{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en-%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc-en%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
 %setup -q -T -b %{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{?magicstr:-%{magicstr}}
