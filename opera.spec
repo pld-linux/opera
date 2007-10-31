@@ -31,20 +31,18 @@
 	%define	rel		%{x86_shared_rel}
 	%ifarch sparc sparcv9
 		%define	rel		%{sparc_shared_rel}
-	%else
-		%ifarch ppc
-		%define	rel		%{ppc_shared_rel}
-		%endif
+	%endif
+	%ifarch ppc
+	%define	rel		%{ppc_shared_rel}
 	%endif
 %else
 	%define	type		static
 	%define	rel		%{x86_static_rel}
 	%ifarch sparc sparcv9
 		%define	rel		%{sparc_static_rel}
-	%else
-		%ifarch ppc
-			%define	rel		%{ppc_static_rel}
-		%endif
+	%endif
+	%ifarch ppc
+		%define	rel		%{ppc_static_rel}
 	%endif
 %endif
 
