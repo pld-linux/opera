@@ -68,21 +68,18 @@
 		%define	need_ppc_static	1
 	%endif
 %else
-	%ifnarch %{ix86}
-		%ifarch	sparc sparc64
-			%if	%{with shared}
-				%define	need_sparc_shared	1
-			%else
-				%define	need_sparc_static	1
-			%endif
+	%ifarch	sparc sparc64
+		%if	%{with shared}
+			%define	need_sparc_shared	1
 		%else
-			%ifarch	ppc
-				%if	%{with shared}
-					%define	need_ppc_shared	1
-				%else
-					%define	need_ppc_static	1
-				%endif
-			%endif
+			%define	need_sparc_static	1
+		%endif
+	%endif
+	%ifarch	ppc
+		%if	%{with shared}
+			%define	need_ppc_shared	1
+		%else
+			%define	need_ppc_static	1
 		%endif
 	%endif
 %endif
