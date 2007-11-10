@@ -12,9 +12,9 @@
 %bcond_with	weekly		# weekly snapshot version
 
 %define	ver		9.50
-%define	dirrel		20071102
+%define	dirrel		20071109
 %define	reltype		snapshot
-%define	magicstr	1652
+%define	magicstr	1662
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
@@ -79,7 +79,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
-# Source0-md5:	3f7a8d1907bb97dfd5e3dbdb8d9cda23
+# Source0-md5:	dfa36cd6f04b0116a435c51b650ba807
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-%{magicstr}.tar.bz2
@@ -87,15 +87,15 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{na
 #%{!?with_distributable:NoSource:	1}
 
 Source2:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
-# Source2-md5:	078113dfbf0e8cf50eb1efae8e5f3b52
+# Source2-md5:	b6769dcb2775fbf9a92d6bcb88b7b717
 %{!?with_distributable:NoSource:	2}
 
-#Source3:     http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_shared_rel}-shared-qt.x86_64-%{magicstr}.tar.bz2
-## Source3-md5:	304ca2671710f9cd7cd57e0bd9b93699
-#%{!?with_distributable:NoSource:        3}
+Source3:     http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_shared_rel}-shared-qt.x86_64-%{magicstr}.tar.bz2
+# Source3-md5:	2e89836c24c947882c36638cb05c9c09
+%{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-%{magicstr}.tar.bz2
-# Source10-md5:	0566f6feee73ede706b47981611cb93a
+# Source10-md5:	f3f5ef04baf505f5c349c4f5d46589d1
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-%{magicstr}.tar.bz2
