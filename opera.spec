@@ -9,9 +9,9 @@
 %bcond_with	weekly		# weekly snapshot version
 
 %define	ver		9.50
-%define	dirrel		20071213
+%define	dirrel		20071221
 %define	reltype		snapshot
-%define	magicstr	1719
+%define	magicstr	1729
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
@@ -76,7 +76,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
-# Source0-md5:	143b4190f985178eb6cced9c3ef51dff
+# Source0-md5:	535c6786401be7223f9a3f01215cc76a
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-%{magicstr}.tar.bz2
@@ -84,24 +84,24 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{na
 #%{!?with_distributable:NoSource:	1}
 
 Source2:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
-# Source2-md5:	990dd9e4a6a1e2b3c263d744c6cad577
+# Source2-md5:	5c7d67a8215eb5c568530e866206c241
 %{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_shared_rel}-shared-qt.x86_64-%{magicstr}.tar.bz2
-# Source3-md5:	30ba8e3c66965e0a20357f563f45ed46
+# Source3-md5:	f97e497a09988efa0c6cb513ee47a0d1
 %{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-%{magicstr}.tar.bz2
-# Source10-md5:	149e5d2129997ac3f74870ff111073a0
+# Source10-md5:	32ae3be4440f98558712d2a151ef1e62
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-%{magicstr}.tar.bz2
 ## Source11-md5:	e190021f5530de3f711006cd9f6bb339
 #%{!?with_distributable:NoSource:	11}
 
-Source12:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-%{magicstr}.tar.bz2
-# Source12-md5:	59c2f6f710c2efabeac9e153fa934743
-%{!?with_distributable:NoSource:	12}
+#Source12:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-%{magicstr}.tar.bz2
+## Source12-md5:	59c2f6f710c2efabeac9e153fa934743
+#%{!?with_distributable:NoSource:	12}
 
 #Source13:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_static_rel}-static-qt.x86_64-%{magicstr}.tar.bz2
 ## Source13-md5:	40b850632dbb729a0bb16a1c450d97e5
