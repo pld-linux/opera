@@ -123,13 +123,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
-extensions of HTML. And it is quite stable. This version is %{?with_shared:shared}%{!?with_shared:statically}
-linked with Qt.
+extensions of HTML. And it is quite stable. This version is
+%{?with_shared:shared}%{!?with_shared:statically} linked with Qt.
 
 %description -l pl.UTF-8
 Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
 dzisiejszych rozszerzeń HTML-a. Dodatkowo jest w miarę stabilna. Ta
-wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
+wersja jest skonsolidowana
+%{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
+
+%package plugin32
+Summary:	Opera 32 bit plugins support
+Group:		X11/Applications/Networking
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description plugin32
+Opera 32 bit plugins support.
 
 %prep
 %ifarch %{ix86}
@@ -202,6 +211,9 @@ fi
 %dir %{_libdir}/opera
 %dir %{_libdir}/opera/bin
 %attr(755,root,root) %{_libdir}/opera/bin/*
+%ifarch %{x8664}
+%exclude %{_libdir}/opera/bin/*-ia32-*
+%endif
 %dir %{_plugindir}
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
@@ -215,3 +227,9 @@ fi
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_pixmapsdir}/opera.xpm
+
+%ifarch %{x8664}
+%files plugin32
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/opera/bin/*-ia32-*
+%endif
