@@ -133,12 +133,16 @@ wersja jest skonsolidowana
 %{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
 
 %package plugin32
-Summary:	Opera 32 bit plugins support
+Summary:	Opera 32-bit plugins support
+Summary(pl.UTF-8):	Obsługa 32-bitowych wtyczek Opery
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description plugin32
-Opera 32 bit plugins support.
+Opera 32-bit plugins support.
+
+%description plugin32 -l pl.UTF-8
+Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
