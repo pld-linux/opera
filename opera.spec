@@ -10,18 +10,19 @@
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
 
-%define	ver		9.25
-%define	sver		9.25
+%define	ver		9.26
+%define	sver		9.26
 %define	fix		%{nil}
-%define	dirrel		20071214
+%define	dirrel		20080218
+%define	dirrel_alt	20080215
 %define	reltype		final
-%define	magicstr	687
+%define	magicstr	698
 
 %define	shver		%(echo %{ver} | tr -d .)%{fix}
-%define	x86_shared_rel		%{dirrel}.5
+%define	x86_shared_rel		%{dirrel}.6
 %define	x86_static_rel		%{dirrel}.1
-%define	sparc_shared_rel	%{dirrel}.2
-%define	sparc_static_rel	%{dirrel}.1
+%define	sparc_shared_rel	%{dirrel_alt}.2
+%define	sparc_static_rel	%{dirrel_alt}.1
 %define	ppc_shared_rel		%{dirrel}.3
 %define	ppc_static_rel		%{dirrel}.1
 
@@ -82,7 +83,7 @@
 	%endif
 %endif
 
-%define		_rel	2
+%define		_rel	1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
@@ -112,20 +113,20 @@ Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	186ac3db2d79452e911c1a9eaa9a0d0d
+# Source20-md5:	e29856b248f503b5a724c7c548c42483
 %{!?with_distributable:NoSource:	20}
 %endif
 
 %if %{need_sparc_shared}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	f483713c4a01de7589430d94132e33ed
+# Source21-md5:	a59476e33457a87790d10d36acd4e080
 %{!?with_distributable:NoSource:	21}
 %endif
 
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	8c38b2302512ce7e02815238b970d4cf
+# Source22-md5:	fef93b73655a72fa8536cc2815117829
 %{!?with_distributable:NoSource:	22}
 %endif
 
