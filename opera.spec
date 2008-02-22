@@ -1,7 +1,7 @@
 # BRANCHES:
 # - HEAD - stable version
 # - DEVEL - development version
-# - WEEKLY - weekly development version
+# - WEEKLY - weekly development version (sometimes it's on DEVEL)
 
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
@@ -16,6 +16,8 @@
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
 %define	sreltype	%(echo %{reltype} | tr - _)
+
+# http://my.opera.com/csant/blog/2007/09/06/which-is-which
 %define	x86_shared_rel		%{dirrel}.6
 %define	x86_static_rel		%{dirrel}.9
 %define	sparc_shared_rel	%{dirrel}.2
