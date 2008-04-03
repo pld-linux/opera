@@ -83,12 +83,11 @@
 	%endif
 %endif
 
-%define		_rel	0.1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}%{fix}
-Release:	%{_rel}
+Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
