@@ -10,13 +10,13 @@
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
 
-%define	ver		9.26
-%define	sver		9.26
+%define	ver		9.27
+%define	sver		9.27
 %define	fix		%{nil}
-%define	dirrel		20080218
-%define	dirrel_alt	20080215
+%define	dirrel		20080331
+%define	dirrel_alt	20080331
 %define	reltype		final
-%define	magicstr	698
+%define	magicstr	709
 
 %define	shver		%(echo %{ver} | tr -d .)%{fix}
 %define	x86_shared_rel		%{dirrel}.6
@@ -83,7 +83,7 @@
 	%endif
 %endif
 
-%define		_rel	2
+%define		_rel	0.1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
@@ -113,20 +113,20 @@ Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	e29856b248f503b5a724c7c548c42483
+# Source20-md5:	cc9a97ae719645b2a2ff092521ab9b6d
 %{!?with_distributable:NoSource:	20}
 %endif
 
 %if %{need_sparc_shared}
 Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	a59476e33457a87790d10d36acd4e080
+# Source21-md5:	33a3437d01c0f24fc3d40e3ccb08c23c
 %{!?with_distributable:NoSource:	21}
 %endif
 
 
 %if %{need_ppc_shared}
 Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	fef93b73655a72fa8536cc2815117829
+# Source22-md5:	04ba581b52eb8d21c8889a717f2dbbae
 %{!?with_distributable:NoSource:	22}
 %endif
 
