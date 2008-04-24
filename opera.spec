@@ -11,7 +11,6 @@
 %bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
 %bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
-%bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
 
 %ifarch sparc sparcv9
@@ -27,21 +26,12 @@
 %define	magicstr	660
 %define	with_snap	1
 %else
-%if %{with snap}
 %define	ver		9.50
-%define	sver		%{ver}
-%define	fix		%{nil}
-%define	dirrel		20070903
-%define	reltype		Alpha-1
-%define	magicstr	1567
-%else
-%define	ver		9.23
-%define	sver		9.23
-%define	fix		%{nil}
-%define	dirrel		20070809
+%define	sver		9.50b2
+%define	fix		b2
+%define	dirrel		20080422
 %define	reltype		final
-%define	magicstr	660
-%endif
+%define	magicstr	1933
 %endif
 
 %define	shver		%(echo %{ver} | tr -d .)%{fix}
@@ -273,7 +263,7 @@ Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/%{magicstr}/ppc-linu
 
 %if %{need_ix86_shared}
 Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	fe3c699c4509788276a94e325cd1bc5b
+# Source20-md5:	1a8e824eb39baa1c05018aa6a8d823c8
 %{!?with_distributable:NoSource:	20}
 %endif
 
@@ -317,12 +307,6 @@ Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/%{name}-%
 %endif
 %endif
 
-%ifarch %{x8664}
-Source23:	http://snapshot.opera.com/unix/9.50-Alpha-1/x86_64-linux/%{name}-%{version}-%{dirrel}.2-shared-qt.x86_64-%{magicstr}.tar.bz2
-# Source23-md5:	40b850632dbb729a0bb16a1c450d97e5
-%{!?with_distributable:NoSource:	23}
-%endif
-
 Source4:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
@@ -349,16 +333,13 @@ wersja jest skonsolidowana %{?with_shared:dynamicznie}%{!?with_shared:statycznie
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
-%endif
-%ifarch %{x8664}
-%setup -q -T -b 23 -n %{name}-%{version}-%{dirrel}.2-shared-qt.x86_64-%{magicstr}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}0 -n %{name}-%{ver}-%{rel}-%{type}-qt.i386%{?magicstr:-%{magicstr}}
 %endif
 %ifarch sparc sparcv9
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc%{!?with_snap:-en}-en%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc%{?magicstr:-%{magicstr}}
 %endif
 %ifarch ppc
-%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc-en%{!?with_snap:-en}%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{?with_weekly:30}%{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc%{?magicstr:-%{magicstr}}
 %endif
 %patch0 -p1
 
@@ -387,13 +368,8 @@ sh install.sh \
 # install in kde etc.
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
-%if %{with snap}
 install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
 install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
-%else
-mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/config/* $RPM_BUILD_ROOT%{_sysconfdir}
-install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
-%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -420,10 +396,6 @@ fi
 %dir %{_libdir}/opera/bin
 %attr(755,root,root) %{_libdir}/opera/bin/*
 %dir %{_plugindir}
-%if ! %{with snap}
-%attr(755,root,root) %{_plugindir}/*
-%{_datadir}/opera/images
-%endif
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
 %{_datadir}/opera/ini
