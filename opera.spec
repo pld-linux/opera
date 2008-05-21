@@ -9,41 +9,41 @@
 %bcond_with	weekly		# weekly snapshot version
 
 %define	ver		9.50
-%define	dirrel		20080508
 %define	reltype		snapshot
-%define	magicstr	1962
+%define	magicstr	1971
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
 %define	sreltype	%(echo %{reltype} | tr - _)
 
 # http://my.opera.com/csant/blog/2007/09/06/which-is-which
-%define	x86_shared_rel		%{dirrel}.6
-%define	x86_static_rel		%{dirrel}.9
-%define	sparc_shared_rel	%{dirrel}.2
-%define	sparc_static_rel	%{dirrel}.1
-%define	ppc_shared_rel		%{dirrel}.6
-%define	ppc_static_rel		%{dirrel}.1
-%define x86_64_shared_rel       %{dirrel}.2
-%define x86_64_static_rel       %{dirrel}.1
+# http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
+%define	x86_shared_rel		gcc4-shared-qt3
+%define	x86_static_rel		gcc4-qt4
+%define	sparc_shared_rel	unknown
+%define	sparc_static_rel	unknown
+%define	ppc_shared_rel		gcc4-shared-qt3
+%define	ppc_static_rel		gcc295-static-qt3
+%define x86_64_shared_rel       gcc4-shared-qt3
+%define x86_64_static_rel       unknown
 
 %if %{with shared}
 
 %define	type		shared
 
 # Defined to be able to build src.rpm also on not supported archs
-%define	rel		%{x86_shared_rel}
+%define	rawrel		%{x86_shared_rel}
 
 %ifarch sparc sparcv9
-%define	rel		%{sparc_shared_rel}
+%define	rawrel		%{sparc_shared_rel}
 %endif
 
 %ifarch ppc
-%define	rel		%{ppc_shared_rel}
+%define	rawrel		%{ppc_shared_rel}
 %endif
 
 %ifarch %{x8664}
-%define rel		%{x86_64_shared_rel}
+%define rawrel		%{x86_64_shared_rel}
 %endif
 
 %else # [with shared]
@@ -51,21 +51,23 @@
 %define	type		static
 
 # Defined to be able to build src.rpm also on not supported archs
-%define	rel		%{x86_static_rel}
+%define	rawrel		%{x86_static_rel}
 
 %ifarch sparc sparcv9
-%define	rel		%{sparc_static_rel}
+%define	rawrel		%{sparc_static_rel}
 %endif
 
 %ifarch ppc
-%define	rel		%{ppc_static_rel}
+%define	rawrel		%{ppc_static_rel}
 %endif
 
 %ifarch %{x8664}
-%define rel             %{x86_64_static_rel}
+%define rawrel             %{x86_64_static_rel}
 %endif
 
 %endif # [with shared]
+
+%define	rel	%(echo %{rawrel} | tr - _)
 
 %define		_rel	1
 Summary:	World fastest web browser
@@ -77,35 +79,35 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 
-Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_shared_rel}-shared-qt.i386-%{magicstr}.tar.bz2
-# Source0-md5:	fa1267931ab44c4e32708977fb1d2c98
+Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
+# Source0-md5:	778ae7040ac291e423c717efdd8f6522
 %{!?with_distributable:NoSource:	0}
 
-#Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_shared_rel}-shared-qt.sparc-%{magicstr}.tar.bz2
+#Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
 ## Source1-md5:	913ccb28106f9f5acd3d94c8dc71ae1
 #%{!?with_distributable:NoSource:	1}
 
-Source2:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_shared_rel}-shared-qt.ppc-%{magicstr}.tar.bz2
-# Source2-md5:	dd2c36674dd4a4710b37010afa5bf49e
+Source2:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{magicstr}.%{ppc_shared_rel}.ppc.tar.bz2
+# Source2-md5:	ca291eb3af1a93d67e21662377452571
 %{!?with_distributable:NoSource:	2}
 
-Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_shared_rel}-shared-qt.x86_64-%{magicstr}.tar.bz2
-# Source3-md5:	957f75bfb7a2513a87b53f86aa199022
+Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
+# Source3-md5:	61d5654a971811109a79d6c1cc803e0c
 %{!?with_distributable:NoSource:        3}
 
-Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{x86_static_rel}-static-qt.i386-%{magicstr}.tar.bz2
-# Source10-md5:	e4f3a102ff74931e4177c54904ce0dc0
+Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
+# Source10-md5:	8327a182fd764827f68f291a5772ed87
 %{!?with_distributable:NoSource:	10}
 
-#Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{sparc_static_rel}-static-qt.sparc-%{magicstr}.tar.bz2
+#Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
 ## Source11-md5:	e190021f5530de3f711006cd9f6bb339
 #%{!?with_distributable:NoSource:	11}
 
-#Source12:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{ppc_static_rel}-static-qt.ppc-%{magicstr}.tar.bz2
+#Source12:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{magicstr}.%{ppc_static_rel}.ppc.tar.bz2
 ## Source12-md5:	59c2f6f710c2efabeac9e153fa934743
 #%{!?with_distributable:NoSource:	12}
 
-#Source13:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{x86_64_static_rel}-static-qt.x86_64-%{magicstr}.tar.bz2
+#Source13:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_static_rel}.x86_64.tar.bz2
 ## Source13-md5:	40b850632dbb729a0bb16a1c450d97e5
 #%{!?with_distributable:NoSource:	13}
 
@@ -117,6 +119,7 @@ BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
+Obsoletes:	opera-i18n
 ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -148,19 +151,19 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{!?with_shared:1}0 -n %{name}-%{sver}-%{rel}-%{type}-qt.i386%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{!?with_shared:1}0 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.i386
 %endif
 
 %ifarch sparc sparcv9
-%setup -q -T -b %{!?with_shared:1}1 -n %{name}-%{sver}-%{rel}-%{type}-qt.sparc%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{!?with_shared:1}1 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.sparc
 %endif
 
 %ifarch ppc
-%setup -q -T -b %{!?with_shared:1}2 -n %{name}-%{sver}-%{rel}-%{type}-qt.ppc%{?magicstr:-%{magicstr}}
+%setup -q -T -b %{!?with_shared:1}2 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.ppc
 %endif
 
 %ifarch %{x8664}
-%setup -q -T -b %{!?with_shared:1}3 -n %{name}-%{sver}-%{rel}-%{type}-qt.x86_64-%{magicstr}
+%setup -q -T -b %{!?with_shared:1}3 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.x86_64
 %endif
 
 %patch0 -p1
@@ -230,6 +233,39 @@ fi
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %{_datadir}/opera/locale/english.lng
+%lang(be) %{_datadir}/opera/locale/be
+%lang(bg) %{_datadir}/opera/locale/bg
+%lang(cs) %{_datadir}/opera/locale/cs
+%lang(da) %{_datadir}/opera/locale/da
+%lang(de) %{_datadir}/opera/locale/de
+%lang(el) %{_datadir}/opera/locale/el
+%lang(en_GB) %{_datadir}/opera/locale/en-GB
+%lang(es_ES) %{_datadir}/opera/locale/es-ES
+%lang(es_LA) %{_datadir}/opera/locale/es-LA
+%lang(fi) %{_datadir}/opera/locale/fi
+%lang(fr) %{_datadir}/opera/locale/fr
+%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
+%lang(fy) %{_datadir}/opera/locale/fy
+%lang(hi) %{_datadir}/opera/locale/hi
+%lang(hr) %{_datadir}/opera/locale/hr
+%lang(hu) %{_datadir}/opera/locale/hu
+%lang(it) %{_datadir}/opera/locale/it
+%lang(ja) %{_datadir}/opera/locale/ja
+%lang(ka) %{_datadir}/opera/locale/ka
+%lang(ko) %{_datadir}/opera/locale/ko
+%lang(lt) %{_datadir}/opera/locale/lt
+%lang(mk) %{_datadir}/opera/locale/mk
+%lang(nb) %{_datadir}/opera/locale/nb
+%lang(nl) %{_datadir}/opera/locale/nl
+%lang(nn) %{_datadir}/opera/locale/nn
+%lang(pl) %{_datadir}/opera/locale/pl
+%lang(pt) %{_datadir}/opera/locale/pt
+%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
+%lang(ru) %{_datadir}/opera/locale/ru
+%lang(sv) %{_datadir}/opera/locale/sv
+%lang(tr) %{_datadir}/opera/locale/tr
+%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
+%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_pixmapsdir}/opera.xpm
