@@ -147,7 +147,7 @@ fi
 %lang(de) %{_datadir}/opera/locale/de
 %lang(el) %{_datadir}/opera/locale/el
 %lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es_ES) %{_datadir}/opera/locale/es-ES
+%lang(es) %{_datadir}/opera/locale/es-ES
 %lang(es_LA) %{_datadir}/opera/locale/es-LA
 %lang(fi) %{_datadir}/opera/locale/fi
 %lang(fr) %{_datadir}/opera/locale/fr
