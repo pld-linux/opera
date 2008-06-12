@@ -3,15 +3,15 @@
 # - DEVEL - development version
 # - WEEKLY - weekly development version
 #
-# NOTE, to avoid creating unreadable/unmaintainable spec:
+# NOTE: to avoid creating unreadable/unmaintainable spec:
 # - don't put static version here, create STATIC branch for that for example
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
-#
-%define	ver	9.50
-%define	shver	%(echo %{ver} | tr -d .)
-%define	buildid	2042
-#
+
+%define		ver	9.50
+%define		shver	%(echo %{ver} | tr -d .)
+%define		buildid	2042
+
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
@@ -26,8 +26,7 @@ Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%
 # Source11-md5:	091ed5b0f8a7541c7555744defca7a6c
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
 # Source12-md5:	c1b01ac1051c52a433514c3545bacac0
-
-Source4:	%{name}.desktop
+Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -45,13 +44,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Opera is world fastest web browser. It supports most of nowaday
 extensions of HTML. And it is quite stable. This version is
-%{?with_shared:shared}%{!?with_shared:statically} linked with Qt.
+linked with shared version of Qt.
 
 %description -l pl.UTF-8
 Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
 dzisiejszych rozszerzeń HTML-a. Dodatkowo jest w miarę stabilna. Ta
-wersja jest skonsolidowana
-%{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
+wersja jest skonsolidowana dynamicznie z Qt.
 
 %package plugin32
 Summary:	Opera 32-bit plugins support
@@ -100,7 +98,7 @@ sh install.sh \
 	--docdir=%{_operadocdir}
 
 # install in kde etc.
-install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE0} $RPM_BUILD_ROOT%{_desktopdir}
 
 install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
 install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
