@@ -40,6 +40,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}
+# alternative arch for plugin32
+%define		alt_arch	i386
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
@@ -56,6 +58,7 @@ Summary:	Opera 32-bit plugins support
 Summary(pl.UTF-8):	Obsługa 32-bitowych wtyczek Opery
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	browser-plugins >= 2.0
 
 %description plugin32
 Opera 32-bit plugins support.
@@ -90,6 +93,20 @@ mplayerplug-in*
 libjavaplugin_oji.so
 EOF
 
+%ifarch %{x8664}
+install -d $RPM_BUILD_ROOT%{_prefix}/lib/%{name}/plugins
+%browser_plugins_add_browser %{name} -a %{alt_arch} -p %{_prefix}/lib/%{name}/plugins -b <<'EOF'
+# opera does not use for .xpt files
+*.xpt
+
+# use mplayerplug-in-opera instead
+mplayerplug-in*
+
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
+EOF
+%endif
+
 sh install.sh \
 	DESTDIR=$RPM_BUILD_ROOT \
 	--prefix=%{_prefix} \
@@ -114,14 +131,22 @@ if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
 
+%post plugin32
+%update_browser_plugins
+
+%postun plugin32
+if [ "$1" = 0 ]; then
+	%update_browser_plugins
+fi
+
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
 
 # browser plugins v2
-%{_browserpluginsconfdir}/browsers.d/%{name}.*
-%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
+%{_browserpluginsconfdir}/browsers.d/%{name}.%{_target_base_arch}
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{_target_base_arch}.blacklist
 
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
@@ -180,5 +205,10 @@ fi
 %ifarch %{x8664}
 %files plugin32
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/opera/bin/*-ia32-*
+# browser plugins v2
+%{_browserpluginsconfdir}/browsers.d/%{name}.%{alt_arch}
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{alt_arch}.blacklist
+%dir %{_prefix}/lib/%{name}
+%dir %{_prefix}/lib/%{name}/plugins
+%attr(755,root,root) %{_libdir}/%{name}/bin/*-ia32-*
 %endif
