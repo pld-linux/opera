@@ -1,117 +1,32 @@
 # BRANCHES:
 # - HEAD - stable version
 # - DEVEL - development version
-# - WEEKLY - weekly development version (sometimes it's on DEVEL)
+# - WEEKLY - weekly development version
+#
+# NOTE: to avoid creating unreadable/unmaintainable spec:
+# - don't put static version here, create STATIC branch for that for example
+# - don't create useless bconds that for example limit SourceX: to current arch only
+#
 
-%bcond_without	shared		# static or shared version
-%bcond_without	distributable	# distributable or not
-%bcond_with	snap		# snap version
-%bcond_with	weekly		# weekly snapshot version
+%define		ver	9.50
+%define		shver	%(echo %{ver} | tr -d .)
+%define		buildid	2042
 
-%define	ver		9.51
-%define	reltype		snapshot
-%define	magicstr	2050
-
-%define sver            %{ver}
-%define	shver		%(echo %{ver} | tr -d .)
-%define	sreltype	%(echo %{reltype} | tr - _)
-
-# http://my.opera.com/csant/blog/2007/09/06/which-is-which
-# http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
-%define	x86_shared_rel		gcc4-shared-qt3
-%define	x86_static_rel		gcc4-qt4
-%define	sparc_shared_rel	unknown
-%define	sparc_static_rel	unknown
-%define	ppc_shared_rel		gcc4-shared-qt3
-%define	ppc_static_rel		gcc295-static-qt3
-%define x86_64_shared_rel       gcc4-shared-qt3
-%define x86_64_static_rel       unknown
-
-%if %{with shared}
-
-%define	type		shared
-
-# Defined to be able to build src.rpm also on not supported archs
-%define	rawrel		%{x86_shared_rel}
-
-%ifarch sparc sparcv9
-%define	rawrel		%{sparc_shared_rel}
-%endif
-
-%ifarch ppc
-%define	rawrel		%{ppc_shared_rel}
-%endif
-
-%ifarch %{x8664}
-%define rawrel		%{x86_64_shared_rel}
-%endif
-
-%else # [with shared]
-
-%define	type		static
-
-# Defined to be able to build src.rpm also on not supported archs
-%define	rawrel		%{x86_static_rel}
-
-%ifarch sparc sparcv9
-%define	rawrel		%{sparc_static_rel}
-%endif
-
-%ifarch ppc
-%define	rawrel		%{ppc_static_rel}
-%endif
-
-%ifarch %{x8664}
-%define rawrel             %{x86_64_static_rel}
-%endif
-
-%endif # [with shared]
-
-%define	rel	%(echo %{rawrel} | tr - _)
-
-%define		_rel	1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	0.%{?magicstr:%{magicstr}.}%{rel}.%{_rel}.%{sreltype}
+Release:	4
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-
-Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	6bd26d0d6aa28dde514ea5469ca5734e
-%{!?with_distributable:NoSource:	0}
-
-#Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
-## Source1-md5:	913ccb28106f9f5acd3d94c8dc71ae1
-#%{!?with_distributable:NoSource:	1}
-
-Source2:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{magicstr}.%{ppc_shared_rel}.ppc.tar.bz2
-# Source2-md5:	e105411f31fc38d92f5894b366c652ae
-%{!?with_distributable:NoSource:	2}
-
-#Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	a13778ebd81beab3503fb4a539140581
-#%{!?with_distributable:NoSource:        3}
-
-Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
-# Source10-md5:	dd13f3f1854ad1f6c8af627203241ff6
-%{!?with_distributable:NoSource:	10}
-
-#Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
-## Source11-md5:	e190021f5530de3f711006cd9f6bb339
-#%{!?with_distributable:NoSource:	11}
-
-#Source12:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/ppc-linux/%{name}-%{sver}-%{magicstr}.%{ppc_static_rel}.ppc.tar.bz2
-## Source12-md5:	59c2f6f710c2efabeac9e153fa934743
-#%{!?with_distributable:NoSource:	12}
-
-#Source13:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_static_rel}.x86_64.tar.bz2
-## Source13-md5:	40b850632dbb729a0bb16a1c450d97e5
-#%{!?with_distributable:NoSource:	13}
-
-Source4:	%{name}.desktop
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
+# Source10-md5:	34392767b4e1e233c682600d563d659f
+Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
+# Source11-md5:	091ed5b0f8a7541c7555744defca7a6c
+Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
+# Source12-md5:	c1b01ac1051c52a433514c3545bacac0
+Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -120,28 +35,30 @@ Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Provides:	wwwbrowser
 Obsoletes:	opera-i18n
-ExclusiveArch:	%{ix86} %{x8664} ppc sparc sparcv9
+ExclusiveArch:	%{ix86} %{x8664} ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}
+# alternative arch for plugin32
+%define		alt_arch	i386
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
 extensions of HTML. And it is quite stable. This version is
-%{?with_shared:shared}%{!?with_shared:statically} linked with Qt.
+linked with shared version of Qt.
 
 %description -l pl.UTF-8
 Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
 dzisiejszych rozszerzeń HTML-a. Dodatkowo jest w miarę stabilna. Ta
-wersja jest skonsolidowana
-%{?with_shared:dynamicznie}%{!?with_shared:statycznie} z Qt.
+wersja jest skonsolidowana dynamicznie z Qt.
 
 %package plugin32
 Summary:	Opera 32-bit plugins support
 Summary(pl.UTF-8):	Obsługa 32-bitowych wtyczek Opery
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	browser-plugins >= 2.0
 
 %description plugin32
 Opera 32-bit plugins support.
@@ -151,21 +68,14 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b %{!?with_shared:1}0 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.i386
+%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.i386
 %endif
-
-%ifarch sparc sparcv9
-%setup -q -T -b %{!?with_shared:1}1 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.sparc
-%endif
-
-%ifarch ppc
-%setup -q -T -b %{!?with_shared:1}2 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.ppc
-%endif
-
 %ifarch %{x8664}
-%setup -q -T -b %{!?with_shared:1}3 -n %{name}-%{sver}-%{?magicstr:%{magicstr}.}%{rawrel}.x86_64
+%setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.x86_64
 %endif
-
+%ifarch ppc
+%setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
+%endif
 %patch0 -p1
 
 %install
@@ -183,6 +93,20 @@ mplayerplug-in*
 libjavaplugin_oji.so
 EOF
 
+%ifarch %{x8664}
+install -d $RPM_BUILD_ROOT%{_prefix}/lib/%{name}/plugins
+%browser_plugins_add_browser %{name} -a %{alt_arch} -p %{_prefix}/lib/%{name}/plugins -b <<'EOF'
+# opera does not use for .xpt files
+*.xpt
+
+# use mplayerplug-in-opera instead
+mplayerplug-in*
+
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
+EOF
+%endif
+
 sh install.sh \
 	DESTDIR=$RPM_BUILD_ROOT \
 	--prefix=%{_prefix} \
@@ -191,7 +115,7 @@ sh install.sh \
 	--docdir=%{_operadocdir}
 
 # install in kde etc.
-install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE0} $RPM_BUILD_ROOT%{_desktopdir}
 
 install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
 install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -207,14 +131,22 @@ if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
 
+%post plugin32
+%update_browser_plugins
+
+%postun plugin32
+if [ "$1" = 0 ]; then
+	%update_browser_plugins
+fi
+
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
 
 # browser plugins v2
-%{_browserpluginsconfdir}/browsers.d/%{name}.*
-%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
+%{_browserpluginsconfdir}/browsers.d/%{name}.%{_target_base_arch}
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{_target_base_arch}.blacklist
 
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
@@ -240,7 +172,7 @@ fi
 %lang(de) %{_datadir}/opera/locale/de
 %lang(el) %{_datadir}/opera/locale/el
 %lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es_ES) %{_datadir}/opera/locale/es-ES
+%lang(es) %{_datadir}/opera/locale/es-ES
 %lang(es_LA) %{_datadir}/opera/locale/es-LA
 %lang(fi) %{_datadir}/opera/locale/fi
 %lang(fr) %{_datadir}/opera/locale/fr
@@ -273,5 +205,10 @@ fi
 %ifarch %{x8664}
 %files plugin32
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/opera/bin/*-ia32-*
+# browser plugins v2
+%{_browserpluginsconfdir}/browsers.d/%{name}.%{alt_arch}
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{alt_arch}.blacklist
+%dir %{_prefix}/lib/%{name}
+%dir %{_prefix}/lib/%{name}/plugins
+%attr(755,root,root) %{_libdir}/%{name}/bin/*-ia32-*
 %endif
