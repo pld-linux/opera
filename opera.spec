@@ -8,9 +8,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	9.50
+%define		ver	9.51
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	2042
+%define		buildid	2061
 
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
@@ -21,11 +21,11 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	34392767b4e1e233c682600d563d659f
+# Source10-md5:	6808a20463edad0bb1f0038427f2edac
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	091ed5b0f8a7541c7555744defca7a6c
+# Source11-md5:	24c45c43840e328b5e34276016f40538
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	c1b01ac1051c52a433514c3545bacac0
+# Source12-md5:	5fda1ed35d1d06a6ba8c16446065f3bc
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
