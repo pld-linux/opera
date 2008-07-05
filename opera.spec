@@ -8,6 +8,8 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
+%bcond_with	qt4	#take the qt4 version
+
 %define		ver	9.51
 %define		shver	%(echo %{ver} | tr -d .)
 %define		buildid	2061
@@ -20,8 +22,13 @@ Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
+%if %{with qt4}
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
+# Source10-md5:	3b8c9b22e383645a7aed57c976eec799
+%else
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
 # Source10-md5:	6808a20463edad0bb1f0038427f2edac
+%endif
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
 # Source11-md5:	24c45c43840e328b5e34276016f40538
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
@@ -68,7 +75,11 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
+%if %{with qt4}
+%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-qt4.i386
+%else
 %setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.i386
+%endif
 %endif
 %ifarch %{x8664}
 %setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.x86_64
