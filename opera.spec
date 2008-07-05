@@ -22,17 +22,14 @@ Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-%if %{with qt4}
-Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
-# Source10-md5:	3b8c9b22e383645a7aed57c976eec799
-%else
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
 # Source10-md5:	6808a20463edad0bb1f0038427f2edac
-%endif
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
 # Source11-md5:	24c45c43840e328b5e34276016f40538
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
 # Source12-md5:	5fda1ed35d1d06a6ba8c16446065f3bc
+Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
+# Source13-md5:	3b8c9b22e383645a7aed57c976eec799
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 URL:		http://www.opera.com/
