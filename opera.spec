@@ -18,7 +18,7 @@ Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	2
+Release:	3
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -74,6 +74,7 @@ Obsługa 32-bitowych wtyczek Opery.
 %ifarch %{ix86}
 %if %{with qt4}
 %setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-qt4.i386
+%define		_noautoreq	libpng12.so
 %else
 %setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.i386
 %endif
