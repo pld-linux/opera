@@ -73,8 +73,8 @@ Obsługa 32-bitowych wtyczek Opery.
 %prep
 %ifarch %{ix86}
 %if %{with qt4}
-%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-qt4.i386
-%define		_noautoreq	libpng12.so
+%setup -q -T -b 13 -n %{name}-%{version}-%{buildid}.gcc4-qt4.i386
+%define		_noautoreq	'libpng12.so.0(.*)'
 %else
 %setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.i386
 %endif
