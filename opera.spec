@@ -8,9 +8,9 @@
 %bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
 
-%define	ver		9.52
+%define	ver		9.60
 %define	reltype		snapshot
-%define	magicstr	2091
+%define	magicstr	2405
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
@@ -80,7 +80,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	f070d798975f8cea0ccfdb6b25e53c47
+# Source0-md5:	92978cdcc3c5c7628e11bbb15d981ab6
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -92,11 +92,11 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{na
 #%{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	37c2c629cf851e3df867f2befc8ed542
+# Source3-md5:	38c94632c4eef6064bc041c3ebeaf028
 %{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
-# Source10-md5:	4b5af4aa5b53bf24a7d084869f936aab
+# Source10-md5:	fbc20b36e46eee3b8bcd6a710bb8c2b4
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
@@ -233,39 +233,39 @@ fi
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %{_datadir}/opera/locale/english.lng
-%lang(be) %{_datadir}/opera/locale/be
-%lang(bg) %{_datadir}/opera/locale/bg
-%lang(cs) %{_datadir}/opera/locale/cs
-%lang(da) %{_datadir}/opera/locale/da
-%lang(de) %{_datadir}/opera/locale/de
-%lang(el) %{_datadir}/opera/locale/el
-%lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es_ES) %{_datadir}/opera/locale/es-ES
-%lang(es_LA) %{_datadir}/opera/locale/es-LA
-%lang(fi) %{_datadir}/opera/locale/fi
-%lang(fr) %{_datadir}/opera/locale/fr
-%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
-%lang(fy) %{_datadir}/opera/locale/fy
-%lang(hi) %{_datadir}/opera/locale/hi
-%lang(hr) %{_datadir}/opera/locale/hr
-%lang(hu) %{_datadir}/opera/locale/hu
-%lang(it) %{_datadir}/opera/locale/it
-%lang(ja) %{_datadir}/opera/locale/ja
-%lang(ka) %{_datadir}/opera/locale/ka
-%lang(ko) %{_datadir}/opera/locale/ko
-%lang(lt) %{_datadir}/opera/locale/lt
-%lang(mk) %{_datadir}/opera/locale/mk
-%lang(nb) %{_datadir}/opera/locale/nb
-%lang(nl) %{_datadir}/opera/locale/nl
-%lang(nn) %{_datadir}/opera/locale/nn
-%lang(pl) %{_datadir}/opera/locale/pl
-%lang(pt) %{_datadir}/opera/locale/pt
-%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
-%lang(ru) %{_datadir}/opera/locale/ru
-%lang(sv) %{_datadir}/opera/locale/sv
-%lang(tr) %{_datadir}/opera/locale/tr
-%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
-%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+#%lang(be) %{_datadir}/opera/locale/be
+#%lang(bg) %{_datadir}/opera/locale/bg
+#%lang(cs) %{_datadir}/opera/locale/cs
+#%lang(da) %{_datadir}/opera/locale/da
+#%lang(de) %{_datadir}/opera/locale/de
+#%lang(el) %{_datadir}/opera/locale/el
+#%lang(en_GB) %{_datadir}/opera/locale/en-GB
+#%lang(es_ES) %{_datadir}/opera/locale/es-ES
+#%lang(es_LA) %{_datadir}/opera/locale/es-LA
+#%lang(fi) %{_datadir}/opera/locale/fi
+#%lang(fr) %{_datadir}/opera/locale/fr
+#%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
+#%lang(fy) %{_datadir}/opera/locale/fy
+#%lang(hi) %{_datadir}/opera/locale/hi
+#%lang(hr) %{_datadir}/opera/locale/hr
+#%lang(hu) %{_datadir}/opera/locale/hu
+#%lang(it) %{_datadir}/opera/locale/it
+#%lang(ja) %{_datadir}/opera/locale/ja
+#%lang(ka) %{_datadir}/opera/locale/ka
+#%lang(ko) %{_datadir}/opera/locale/ko
+#%lang(lt) %{_datadir}/opera/locale/lt
+#%lang(mk) %{_datadir}/opera/locale/mk
+#%lang(nb) %{_datadir}/opera/locale/nb
+#%lang(nl) %{_datadir}/opera/locale/nl
+#%lang(nn) %{_datadir}/opera/locale/nn
+#%lang(pl) %{_datadir}/opera/locale/pl
+#%lang(pt) %{_datadir}/opera/locale/pt
+#%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
+#%lang(ru) %{_datadir}/opera/locale/ru
+#%lang(sv) %{_datadir}/opera/locale/sv
+#%lang(tr) %{_datadir}/opera/locale/tr
+#%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
+#%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_pixmapsdir}/opera.xpm
