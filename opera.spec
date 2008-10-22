@@ -18,7 +18,7 @@ Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	1
+Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -32,6 +32,7 @@ Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{v
 # Source13-md5:	ef895e80f26915fdedc0c5eaee486009
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
+Patch1:		%{name}-agent.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
@@ -86,6 +87,9 @@ Obsługa 32-bitowych wtyczek Opery.
 %setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
 %endif
 %patch0 -p1
+%if "%{pld_release}" == "ti"
+%patch1 -p0
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
