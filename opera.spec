@@ -18,7 +18,7 @@ Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	2
+Release:	3
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -32,8 +32,11 @@ Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{v
 # Source13-md5:	ef895e80f26915fdedc0c5eaee486009
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
-Patch1:		%{name}-agent.patch
+Patch1:		%{name}-agent-ac.patch
+Patch2:		%{name}-agent-th.patch
+Patch3:		%{name}-agent-ti.patch
 URL:		http://www.opera.com/
+BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
@@ -50,8 +53,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
-extensions of HTML. And it is quite stable. This version is
-linked with shared version of Qt.
+extensions of HTML. And it is quite stable. This version is linked
+with shared version of Qt.
 
 %description -l pl.UTF-8
 Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
@@ -87,8 +90,14 @@ Obsługa 32-bitowych wtyczek Opery.
 %setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
 %endif
 %patch0 -p1
-%if "%{pld_release}" == "ti"
+%if "%{pld_release}" == "ac"
 %patch1 -p0
+%endif
+%if "%{pld_release}" == "th"
+%patch2 -p0
+%endif
+%if "%{pld_release}" == "ti"
+%patch3 -p0
 %endif
 
 %install
