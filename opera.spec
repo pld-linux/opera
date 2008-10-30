@@ -10,7 +10,7 @@
 
 %bcond_with	qt4	#take the qt4 version
 
-%define		ver	9.61
+%define		ver	9.62
 %define		shver	%(echo %{ver} | tr -d .)
 %define		buildid	2456
 
@@ -18,18 +18,18 @@ Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	3
+Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	fab34279f40b305a90e6c248f8cf83da
+# Source10-md5:	42cdca1c97e1cc6a669c7ca73564c9a0
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	ab7d0fa42a1579d8dcf0f865f43e5504
+# Source11-md5:	59385904f503e1ecdb36377051ba9f45
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	d1cad1fc8d1405e7b381a46830f6682a
+# Source12-md5:	3091f53917484204a247ea252b1e2751
 Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
-# Source13-md5:	ef895e80f26915fdedc0c5eaee486009
+# Source13-md5:	d7018a3ddbb06e1dcad883a9c198563e
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-agent-ac.patch
