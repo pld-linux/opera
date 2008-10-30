@@ -12,7 +12,7 @@
 
 %define		ver	9.62
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	2456
+%define		buildid	2466
 
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
