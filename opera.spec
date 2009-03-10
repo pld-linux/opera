@@ -10,7 +10,7 @@
 
 %define	ver		10.00
 %define	reltype		snapshot
-%define	magicstr	4166
+%define	magicstr	4205
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
