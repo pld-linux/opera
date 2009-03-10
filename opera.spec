@@ -18,8 +18,8 @@
 
 # http://my.opera.com/csant/blog/2007/09/06/which-is-which
 # http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
-%define	x86_shared_rel		gcc4-shared-qt3
-%define	x86_static_rel		gcc4-qt4
+%define	x86_shared_rel		gcc4-qt4
+%define	x86_static_rel		unknown
 %define	sparc_shared_rel	unknown
 %define	sparc_static_rel	unknown
 %define	ppc_shared_rel		gcc4-shared-qt3
@@ -80,7 +80,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	0d11f8eb286f009dec26676db1b1f5d7
+# Source0-md5:	27cb2080c456cf1549ae55c298ee33c6
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -96,7 +96,7 @@ Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{n
 %{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
-# Source10-md5:	27cb2080c456cf1549ae55c298ee33c6
+# Source10-md5:	e8138e29a06d0eac088ed5c3a82a3a55
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
