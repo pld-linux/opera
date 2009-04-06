@@ -10,7 +10,7 @@
 
 %define	ver		10.00
 %define	reltype		snapshot
-%define	magicstr	4205
+%define	magicstr	4268
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
@@ -18,7 +18,7 @@
 
 # http://my.opera.com/csant/blog/2007/09/06/which-is-which
 # http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
-%define	x86_shared_rel		gcc4-qt4
+%define	x86_shared_rel		gcc4-shared-qt3
 %define	x86_static_rel		unknown
 %define	sparc_shared_rel	unknown
 %define	sparc_static_rel	unknown
@@ -80,7 +80,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	27cb2080c456cf1549ae55c298ee33c6
+# Source0-md5:	faae6e85b41b1b7bcb5e0d9b26f3c95d
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -92,11 +92,11 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{na
 #%{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	dc4a2f6c0b785c85af4d9daa70de53bc
+# Source3-md5:	f06f7af16d4701877f81d4bbae8e2b20
 %{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
-# Source10-md5:	e8138e29a06d0eac088ed5c3a82a3a55
+# Source10-md5:	d41d8cd98f00b204e9800998ecf8427e
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{magicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
@@ -210,7 +210,7 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
 
 # browser plugins v2
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
@@ -226,13 +226,15 @@ fi
 %dir %{_plugindir}
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
-%{_datadir}/opera/ini
+%{_datadir}/opera/aux
+%{_datadir}/opera/defaults
 %{_datadir}/opera/java
 %{_datadir}/opera/skin
+%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
+%{_datadir}/opera/ui
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
-%{_datadir}/opera/locale/english.lng
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
 %lang(cs) %{_datadir}/opera/locale/cs
