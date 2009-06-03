@@ -10,26 +10,26 @@
 
 %bcond_with	qt4	#take the qt4 version
 
-%define		ver	9.64
-%define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	2480
+%define		ver	10.00
+%define		shver	%(echo %{ver} | tr -d .)b1
+%define		buildid	4402
 
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	1
+Release:	0.1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	75089899df632484b62f75b23412fb90
-Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	b4ca665855639a72fc0c3ae47b751fae
-Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	f9d91403bda22a8405064dca70e1a76a
-Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
-# Source13-md5:	bbfb1f77cc3091b3134b710b4719ba3e
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/i386/shared/%{name}-%{version}-b1.gcc4-shared-qt3.i386.tar.bz2
+# Source10-md5:	ef58436597b112c7a92848f02e3aa276
+Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/x84_64/%{name}-%{version}-b1.gcc4-shared-qt3.x86_64.tar.bz2
+# Source11-md5:	f25a0203bae5bca39f6c822c967ca231
+Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/ppc/shared/%{name}-%{version}-b1.gcc4-shared-qt3.ppc.tar.bz2
+# Source12-md5:	1c58e3db051e4568bce11c67f490023d
+Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/i386/%{name}-%{version}-b1.gcc4-qt4.i386.tar.bz2
+# Source13-md5:	72afc138ebba2579f2d8b0232dc982a7
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-agent-ac.patch
@@ -164,7 +164,7 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*rc*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*.ini
 
 # browser plugins v2
 %{_browserpluginsconfdir}/browsers.d/%{name}.%{_target_base_arch}
@@ -180,51 +180,54 @@ fi
 %dir %{_plugindir}
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
-%{_datadir}/opera/ini
+%{_datadir}/opera/defaults
+%{_datadir}/opera/extra
 %{_datadir}/opera/java
+%{_datadir}/opera/scripts
 %{_datadir}/opera/skin
 %{_datadir}/opera/styles
+%{_datadir}/opera/ui
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
-%{_datadir}/opera/locale/english.lng
-%lang(be) %{_datadir}/opera/locale/be
-%lang(bg) %{_datadir}/opera/locale/bg
-%lang(cs) %{_datadir}/opera/locale/cs
-%lang(da) %{_datadir}/opera/locale/da
-%lang(de) %{_datadir}/opera/locale/de
-%lang(el) %{_datadir}/opera/locale/el
+#%{_datadir}/opera/locale/english.lng
+#%lang(be) %{_datadir}/opera/locale/be
+#%lang(bg) %{_datadir}/opera/locale/bg
+#%lang(cs) %{_datadir}/opera/locale/cs
+#%lang(da) %{_datadir}/opera/locale/da
+#%lang(de) %{_datadir}/opera/locale/de
+#%lang(el) %{_datadir}/opera/locale/el
 %lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es) %{_datadir}/opera/locale/es-ES
-%lang(es_LA) %{_datadir}/opera/locale/es-LA
-%lang(et) %{_datadir}/opera/locale/et
-%lang(fi) %{_datadir}/opera/locale/fi
-%lang(fr) %{_datadir}/opera/locale/fr
-%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
-%lang(fy) %{_datadir}/opera/locale/fy
-%lang(hi) %{_datadir}/opera/locale/hi
-%lang(hr) %{_datadir}/opera/locale/hr
-%lang(hu) %{_datadir}/opera/locale/hu
-%lang(id) %{_datadir}/opera/locale/id
-%lang(it) %{_datadir}/opera/locale/it
-%lang(ja) %{_datadir}/opera/locale/ja
-%lang(ka) %{_datadir}/opera/locale/ka
-%lang(ko) %{_datadir}/opera/locale/ko
-%lang(lt) %{_datadir}/opera/locale/lt
-%lang(mk) %{_datadir}/opera/locale/mk
-%lang(nb) %{_datadir}/opera/locale/nb
-%lang(nl) %{_datadir}/opera/locale/nl
-%lang(nn) %{_datadir}/opera/locale/nn
-%lang(pl) %{_datadir}/opera/locale/pl
-%lang(pt) %{_datadir}/opera/locale/pt
-%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
-%lang(ru) %{_datadir}/opera/locale/ru
-%lang(sv) %{_datadir}/opera/locale/sv
-%lang(ta) %{_datadir}/opera/locale/ta
-%lang(te) %{_datadir}/opera/locale/te
-%lang(tr) %{_datadir}/opera/locale/tr
-%lang(uk) %{_datadir}/opera/locale/uk
-%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
-%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+#%lang(es) %{_datadir}/opera/locale/es-ES
+#%lang(es_LA) %{_datadir}/opera/locale/es-LA
+#%lang(et) %{_datadir}/opera/locale/et
+#%lang(fi) %{_datadir}/opera/locale/fi
+#%lang(fr) %{_datadir}/opera/locale/fr
+#%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
+#%lang(fy) %{_datadir}/opera/locale/fy
+#%lang(hi) %{_datadir}/opera/locale/hi
+#%lang(hr) %{_datadir}/opera/locale/hr
+#%lang(hu) %{_datadir}/opera/locale/hu
+#%lang(id) %{_datadir}/opera/locale/id
+#%lang(it) %{_datadir}/opera/locale/it
+#%lang(ja) %{_datadir}/opera/locale/ja
+#%lang(ka) %{_datadir}/opera/locale/ka
+#%lang(ko) %{_datadir}/opera/locale/ko
+#%lang(lt) %{_datadir}/opera/locale/lt
+#%lang(mk) %{_datadir}/opera/locale/mk
+#%lang(nb) %{_datadir}/opera/locale/nb
+#%lang(nl) %{_datadir}/opera/locale/nl
+#%lang(nn) %{_datadir}/opera/locale/nn
+#%lang(pl) %{_datadir}/opera/locale/pl
+#%lang(pt) %{_datadir}/opera/locale/pt
+#%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
+#%lang(ru) %{_datadir}/opera/locale/ru
+#%lang(sv) %{_datadir}/opera/locale/sv
+#%lang(ta) %{_datadir}/opera/locale/ta
+#%lang(te) %{_datadir}/opera/locale/te
+#%lang(tr) %{_datadir}/opera/locale/tr
+#%lang(uk) %{_datadir}/opera/locale/uk
+#%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
+#%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_pixmapsdir}/opera.xpm
