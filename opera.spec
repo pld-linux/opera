@@ -9,14 +9,13 @@
 %bcond_with	weekly		# weekly snapshot version
 
 %define	ver		10.00
-%define	reltype		10
-%define	magicstr	4440
+%define	reltype		snapshot
+%define	magicstr	4449
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
 %define	sreltype	%(echo %{reltype} | tr - _)
 %define	smagicstr	%{magicstr}
-%define	smagicstr	unite
 
 # http://my.opera.com/csant/blog/2007/09/06/which-is-which
 # http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
@@ -82,7 +81,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	434ad3973d6fa360eb4fdf75e7b8cc5f
+# Source0-md5:	998d4cf72ff99c5f326cb9e23b942c05
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -94,11 +93,11 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{n
 #%{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	2cd3f7c76a76ed60d5f0cdce51882e7e
+# Source3-md5:	b902a29db71b8ccf58f7c0c6b6fd781b
 %{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
-# Source10-md5:	7f25da2a8e95152c9448ee884ae06223
+# Source10-md5:	fd759f2d9e77662d31c1e63b75ee5312
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
@@ -268,7 +267,10 @@ fi
 %lang(pl) %{_datadir}/opera/locale/pl
 %lang(pt) %{_datadir}/opera/locale/pt
 %lang(pt_BR) %{_datadir}/opera/locale/pt-BR
+%lang(ro) %{_datadir}/opera/locale/ro
 %lang(ru) %{_datadir}/opera/locale/ru
+%lang(sk) %{_datadir}/opera/locale/sk
+%lang(sr) %{_datadir}/opera/locale/sr
 %lang(sv) %{_datadir}/opera/locale/sv
 %lang(ta) %{_datadir}/opera/locale/ta
 %lang(te) %{_datadir}/opera/locale/te
