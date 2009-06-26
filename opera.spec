@@ -10,7 +10,7 @@
 
 %define	ver		10.00
 %define	reltype		snapshot
-%define	magicstr	4449
+%define	magicstr	4453
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
@@ -19,13 +19,13 @@
 
 # http://my.opera.com/csant/blog/2007/09/06/which-is-which
 # http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
-%define	x86_shared_rel		gcc4-shared-qt3
+%define	x86_shared_rel		gcc4-qt4
 %define	x86_static_rel		gcc4-static-qt3
 %define	sparc_shared_rel	unknown
 %define	sparc_static_rel	unknown
 %define	ppc_shared_rel		gcc4-shared-qt3
 %define	ppc_static_rel		gcc295-static-qt3
-%define x86_64_shared_rel       gcc4-shared-qt3
+%define x86_64_shared_rel       gcc4-qt4
 %define x86_64_static_rel       unknown
 
 %if %{with shared}
@@ -81,7 +81,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	998d4cf72ff99c5f326cb9e23b942c05
+# Source0-md5:	5dc918070f4f2885ad6a8c623025df0b
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -93,11 +93,11 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{n
 #%{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	b902a29db71b8ccf58f7c0c6b6fd781b
+# Source3-md5:	7707bafce29494b14dc0b646ee5a8cc3
 %{!?with_distributable:NoSource:        3}
 
 Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
-# Source10-md5:	fd759f2d9e77662d31c1e63b75ee5312
+# Source10-md5:	02aa98fee13590458b9f92922d086910
 %{!?with_distributable:NoSource:	10}
 
 #Source11:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_static_rel}.sparc.tar.bz2
@@ -277,6 +277,7 @@ fi
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
+%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
