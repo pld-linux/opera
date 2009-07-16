@@ -11,25 +11,25 @@
 %bcond_with	qt4	#take the qt4 version
 
 %define		ver	10.00
-%define		shver	%(echo %{ver} | tr -d .)b1
-%define		buildid	4402
+%define		shver	%(echo %{ver} | tr -d .)b2
+%define		buildid	4492
 
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	0.1
+Release:	0.2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/i386/shared/%{name}-%{version}-b1.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	ef58436597b112c7a92848f02e3aa276
-Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/x84_64/%{name}-%{version}-b1.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	f25a0203bae5bca39f6c822c967ca231
-Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/ppc/shared/%{name}-%{version}-b1.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	1c58e3db051e4568bce11c67f490023d
-Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta1/en/i386/%{name}-%{version}-b1.gcc4-qt4.i386.tar.bz2
-# Source13-md5:	72afc138ebba2579f2d8b0232dc982a7
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta2/en/i386/shared/%{name}-%{version}-b2.gcc4-shared-qt3.i386.tar.bz2
+# Source10-md5:	5ac383960352582ecdc04684f334fd44
+Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta2/en/x86_64/%{name}-%{version}-b2.gcc4-shared-qt3.x86_64.tar.bz2
+# Source11-md5:	74ce7da612b7d0ef619fe005b4ad2ecb
+Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta2/en/ppc/shared/%{name}-%{version}-b2.gcc4-shared-qt3.ppc.tar.bz2
+# Source12-md5:	0a73f50603f59c167e3734cd848823fd
+Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/beta2/en/i386/%{name}-%{version}-b2.gcc4-qt4.i386.tar.bz2
+# Source13-md5:	33554a315508635231d2dd0f6bd04e53
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-agent-ac.patch
@@ -196,7 +196,7 @@ fi
 #%lang(da) %{_datadir}/opera/locale/da
 #%lang(de) %{_datadir}/opera/locale/de
 #%lang(el) %{_datadir}/opera/locale/el
-%lang(en_GB) %{_datadir}/opera/locale/en-GB
+#%lang(en_GB) %{_datadir}/opera/locale/en-GB
 #%lang(es) %{_datadir}/opera/locale/es-ES
 #%lang(es_LA) %{_datadir}/opera/locale/es-LA
 #%lang(et) %{_datadir}/opera/locale/et
@@ -226,8 +226,9 @@ fi
 #%lang(te) %{_datadir}/opera/locale/te
 #%lang(tr) %{_datadir}/opera/locale/tr
 #%lang(uk) %{_datadir}/opera/locale/uk
-#%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
-#%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
+%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
+%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_pixmapsdir}/opera.xpm
