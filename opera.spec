@@ -7,6 +7,7 @@
 %bcond_without	distributable	# distributable or not
 %bcond_with	snap		# snap version
 %bcond_with	weekly		# weekly snapshot version
+%bcond_with	qt4
 
 %define	ver		10.00
 %define	reltype		snapshot
@@ -19,14 +20,20 @@
 
 # http://my.opera.com/csant/blog/2007/09/06/which-is-which
 # http://my.opera.com/csant/blog/2008/05/20/which-is-which-part-two
-%define	x86_shared_rel		gcc4-qt4
 %define	x86_static_rel		gcc4-static-qt3
 %define	sparc_shared_rel	unknown
 %define	sparc_static_rel	unknown
 %define	ppc_shared_rel		gcc4-shared-qt3
 %define	ppc_static_rel		gcc295-static-qt3
-%define x86_64_shared_rel       gcc4-qt4
 %define x86_64_static_rel       unknown
+
+%if %{with qt4}
+%define x86_64_shared_rel       gcc4-qt4
+%define x86_shared_rel          gcc4-qt4
+%else
+%define x86_64_shared_rel       gcc4-shared-qt3
+%define x86_shared_rel          gcc4-shared-qt3
+%endif
 
 %if %{with shared}
 
@@ -81,7 +88,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	3dde2e9e156916efd38d23386c76da80
+# Source0-md5:	3f4427dd44d2fdae6292844b87af28d5
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -93,7 +100,7 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{n
 #%{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	3c93d61ca3e0817cdea69d7308d8e984
+# Source3-md5:	af6ae55c449b8d4dc5eeca1f1a291958
 %{!?with_distributable:NoSource:        3}
 
 #Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
