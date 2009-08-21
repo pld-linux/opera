@@ -241,7 +241,7 @@ fi
 %{_datadir}/opera/scripts
 %{_datadir}/opera/styles
 %{_datadir}/opera/ui
-%{_datadir}/opera/unite
+#%{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %lang(be) %{_datadir}/opera/locale/be
