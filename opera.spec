@@ -88,6 +88,7 @@ Obsługa 32-bitowych wtyczek Opery.
 %setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
 %endif
 %patch0 -p1
+%patch1 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
