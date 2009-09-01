@@ -32,9 +32,7 @@ Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{v
 # Source13-md5:	0b484b74ee07e5ac93f153dd33e25437
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
-Patch1:		%{name}-agent-ac.patch
-Patch2:		%{name}-agent-th.patch
-Patch3:		%{name}-agent-ti.patch
+Patch1:		%{name}-agent.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -90,15 +88,6 @@ Obsługa 32-bitowych wtyczek Opery.
 %setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
 %endif
 %patch0 -p1
-%if "%{pld_release}" == "ac"
-%patch1 -p0
-%endif
-%if "%{pld_release}" == "th"
-%patch2 -p0
-%endif
-%if "%{pld_release}" == "ti"
-%patch3 -p0
-%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -141,6 +130,17 @@ install %{SOURCE0} $RPM_BUILD_ROOT%{_desktopdir}
 
 install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
 install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+
+%if "%{pld_release}" == "ti"
+sed -i -e 's#DISTRO#PLD/Titanium#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
+%else
+%if "%{pld_release}" == "ac"
+sed -i -e 's#DISTRO#PLD/2.0 (Ac)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
+%else
+sed -i -e 's#DISTRO#PLD/3.0 (Th)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
+%endif
+%endif
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
