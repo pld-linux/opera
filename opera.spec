@@ -8,7 +8,7 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%bcond_with	qt4	#take the qt4 version
+%bcond_without	qt4	#take the qt4 version
 
 %define		ver	10.00
 %define		shver	%(echo %{ver} | tr -d .)
@@ -18,7 +18,7 @@ Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	3
+Release:	4
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -30,6 +30,8 @@ Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{nam
 # Source12-md5:	6b25420f7f7a571b0c305c1f9ac03579
 Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
 # Source13-md5:	0b484b74ee07e5ac93f153dd33e25437
+Source14:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-qt4.x86_64.tar.bz2
+# Source14-md5:	af8230636786a5c76b267d813db52614
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-agent-qt4.patch
@@ -83,7 +85,12 @@ Obsługa 32-bitowych wtyczek Opery.
 %endif
 %endif
 %ifarch %{x8664}
+%if %{with qt4}
+%setup -q -T -b 14 -n %{name}-%{version}-%{buildid}.gcc4-qt4.x86_64
+%define		_noautoreq	'libpng12.so.0(.*)'
+%else
 %setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.x86_64
+%endif
 %endif
 %ifarch ppc
 %setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
