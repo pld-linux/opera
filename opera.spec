@@ -15,6 +15,7 @@
 %define		buildid	4585
 
 Summary:	World fastest web browser
+Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
@@ -57,6 +58,11 @@ Opera is world fastest web browser. It supports most of nowaday
 extensions of HTML. And it is quite stable. This version is linked
 with shared version of Qt.
 
+%description -l hu.UTF-8
+Opera a világ leggyorsabb webböngészője. A manapság elterjedt
+HTML-kiterjesztések túlnyomó többségét támogatja. És elég stabili is.
+Ez a verzió a Qt megosztott verziójához linkelődik.
+
 %description -l pl.UTF-8
 Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
 dzisiejszych rozszerzeń HTML-a. Dodatkowo jest w miarę stabilna. Ta
@@ -64,6 +70,7 @@ wersja jest skonsolidowana dynamicznie z Qt.
 
 %package plugin32
 Summary:	Opera 32-bit plugins support
+Summary(hu.UTF-8):	Opera 32-bites plugin támogatás
 Summary(pl.UTF-8):	Obsługa 32-bitowych wtyczek Opery
 Group:		X11/Applications/Networking
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -71,6 +78,9 @@ Requires:	browser-plugins >= 2.0
 
 %description plugin32
 Opera 32-bit plugins support.
+
+%description plugin32 -l hu.UTF-8
+Opera 32-bites plugin támogatás.
 
 %description plugin32 -l pl.UTF-8
 Obsługa 32-bitowych wtyczek Opery.
