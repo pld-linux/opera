@@ -19,7 +19,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	4
+Release:	5
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
