@@ -1,232 +1,274 @@
-# TODO:
+# BRANCHES:
+# - HEAD - stable version
+# - DEVEL - development version
+# - WEEKLY - weekly development version
 #
-%bcond_without	shared		# static or shared version
-%bcond_without	distributable	# distributable or not
-%bcond_without	incall		# include all tarballs into src.rpm (but splitted into shared/static)
-%bcond_with	snap		# snap version
+# NOTE: to avoid creating unreadable/unmaintainable spec:
+# - don't put static version here, create STATIC branch for that for example
+# - don't create useless bconds that for example limit SourceX: to current arch only
+#
 
-%define	ver		7.54
-%define shver		%(echo %{ver} | tr -d .)
-%define	dirrel		20040803
-# type of release, usually final or beta or Preview-4 for snaps
-%define	reltype		final
-%define	x86_shared_rel		%{dirrel}.5
-%define	x86_static_rel		%{dirrel}.1
-%define	sparc_shared_rel	%{dirrel}.2
-%define	sparc_static_rel	%{dirrel}.1
-%define	ppc_shared_rel		%{dirrel}.2
-%define	ppc_static_rel		%{dirrel}.1
-%if %{with shared}
-%define	type		shared
-# We should be able to build src.rpm also on not supported archs
-%define	rel		%{x86_shared_rel}
-%ifarch sparc64 sparc
-%define	rel		%{sparc_shared_rel}
-%endif
+%bcond_without	qt4	#take the qt4 version
+
+%define		ver	10.01
+%define		shver	%(echo %{ver} | tr -d .)
+%define		buildid	4682
+
 %ifarch ppc
-%define	rel		%{ppc_shared_rel}
-%endif
-%else
-%define	type		static
-%define	rel		%{x86_static_rel}
-%ifarch sparc sparc64
-%define	rel		%{sparc_static_rel}
-%endif
-%ifarch ppc
-%define	rel		%{ppc_static_rel}
-%endif
+%undefine	with_qt4
 %endif
 
 Summary:	World fastest web browser
-Summary(pl):	Najszybsza przegl±darka WWW na ∂wiecie
+Summary(hu.UTF-8):	A vil√°g leggyorsabb webb√∂ng√©sz≈ëje
+Summary(pl.UTF-8):	Najszybsza przeglƒÖdarka WWW na ≈õwiecie
 Name:		opera
-Version:	%{ver}.%{rel}
-Release:	1
-License:	Distributable for PLD until 31 Dec 2006 - http://distribute.opera.com/ (otherwise restricted, see file LICENSE)
+Version:	%{ver}
+Release:	2
+Epoch:		2
+License:	Distributable
 Group:		X11/Applications/Networking
-%if %{without shared}
-%{!?with_incall:%ifarch %{ix86}}
-%if ! %{with snap}
-Source0:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/static/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-# Source0-md5:	0a7e933ef593d4b7a897041c9f87bba2
-%else
-Source100:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_static_rel}-static-qt.i386-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	0}
-%if ! %{with incall}
-%endif
-%ifarch sparc sparc64
-%endif
-%if ! %{with snap}
-Source1:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/static/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-# Source1-md5:	04976a6ace7a4345ce5e4cf763159939
-%else
-Source101:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_static_rel}-static-qt.sparc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	1}
-%if ! %{with incall}
-%endif
-%ifarch ppc
-%endif
-%if ! %{with snap}
-Source2:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/static/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-# Source2-md5:	c11a4c78d18bdaa4bd338b4c0dc27f38
-%else
-Source102:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_static_rel}-static-qt.ppc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	2}
-%{!?with_incall:%endif}
-%else
-%{!?with_incall:%ifarch %{ix86}}
-%if ! %{with snap}
-Source20:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/i386/shared/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-# Source20-md5:	0e407a050f3aa4559011a3cea707cd20
-%else
-Source1020:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/intel-linux/en/%{name}-%{ver}-%{x86_shared_rel}-shared-qt.i386-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	20}
-%if ! %{with incall}
-%endif
-%ifarch sparc sparc64
-%endif
-%if ! %{with snap}
-Source21:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/sparc/shared/gcc-2.95/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-# Source21-md5:	d8635013dac0c98c680997fcc9dd66c4
-%else
-Source1021:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/sparc-linux/en/%{name}-%{ver}-%{sparc_shared_rel}-shared-qt.sparc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	21}
-%if ! %{with incall}
-%endif
-%ifarch ppc
-%endif
-%if ! %{with snap}
-Source22:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{reltype}/en/ppc/shared/gcc-2.95/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-# Source22-md5:	516992e68c5a710d795a1ecc791c7f4d
-%else
-Source1022:	http://snapshot.opera.com/unix/%{ver}-%{reltype}/ppc-linux/en/%{name}-%{ver}-%{ppc_shared_rel}-shared-qt.ppc-en.tar.bz2
-%endif
-%{!?with_distributable:NoSource:	22}
-%endif
-%{!?with_incall:%endif}
-Source3:	ftp://ftp.opera.com/pub/opera/unix/lng/752/pl/ou752_727pl.lng
-# Source3-md5:	48bfd8a0d541698c70e151c81ab61408
-Source4:	%{name}.desktop
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
+# Source10-md5:	e47adf975289db4e349c4032304a7069
+Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
+# Source11-md5:	b641ac3d9fc0cdc131f34c59be34254d
+Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
+# Source12-md5:	ac8847d9a70a3ad563e97d110acda27e
+Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
+# Source13-md5:	37d46117e83aa54e670104087369e175
+Source14:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-qt4.x86_64.tar.bz2
+# Source14-md5:	9d9402de11f3fe2b8040c3633970678d
+Source0:	%{name}.desktop
+Patch0:		%{name}-wrapper.patch
+Patch1:		%{name}-agent-qt4.patch
+Patch2:		%{name}-agent.patch
 URL:		http://www.opera.com/
-ExclusiveArch:	%{ix86} ppc sparc sparc64
+BuildRequires:	rpm >= 4.4.9-56
+BuildRequires:	rpmbuild(macros) >= 1.356
+BuildRequires:	sed >= 4.0
+Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
-Requires:	openmotif >= 2
+Provides:	wwwbrowser
+Obsoletes:	opera-i18n
+ExclusiveArch:	%{ix86} %{x8664} ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_libdir}/opera/plugins
-%define		_operadocdir	%{_docdir}/%{name}-%{ver}.%{rel}
-%define		configfile	%{_datadir}/opera/config/opera6rc
+%define		_operadocdir	%{_docdir}/%{name}-%{ver}
+# alternative arch for plugin32
+%define		alt_arch	i386
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
-extensions of HTML. And it is quite stable. Only disadvantage are
-advertisements on the top of its window. Version static linked with
-qt.
+extensions of HTML. And it is quite stable. This version is linked
+with shared version of Qt.
 
-%description -l pl
-Opera jest najszybsz± przegl±dark± WWW na ∂wiecie. Obs≥uguje wiÍkszo∂Ê
-dzisiejszych rozszerzeÒ HTMLa. Dodatkowo jest w miarÍ stabilna. Jedyn±
-niedogodno∂ci± s± reklamy ukazuj±ce siÍ w gÛrze okna. Wersja
-statycznie skonsolidowana z qt.
+%description -l hu.UTF-8
+Opera a vil√°g leggyorsabb webb√∂ng√©sz≈ëje. A manaps√°g elterjedt
+HTML-kiterjeszt√©sek t√∫lnyom√≥ t√∂bbs√©g√©t t√°mogatja. √âs el√©g stabili is.
+Ez a verzi√≥ a Qt megosztott verzi√≥j√°hoz linkel≈ëdik.
+
+%description -l pl.UTF-8
+Opera jest najszybszƒÖ przeglƒÖdarkƒÖ WWW na ≈õwiecie. Obs≈Çuguje wiƒôkszo≈õƒá
+dzisiejszych rozszerze≈Ñ HTML-a. Dodatkowo jest w miarƒô stabilna. Ta
+wersja jest skonsolidowana dynamicznie z Qt.
+
+%package plugin32
+Summary:	Opera 32-bit plugins support
+Summary(hu.UTF-8):	Opera 32-bites plugin t√°mogat√°s
+Summary(pl.UTF-8):	Obs≈Çuga 32-bitowych wtyczek Opery
+Group:		X11/Applications/Networking
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	browser-plugins >= 2.0
+
+%description plugin32
+Opera 32-bit plugins support.
+
+%description plugin32 -l hu.UTF-8
+Opera 32-bites plugin t√°mogat√°s.
+
+%description plugin32 -l pl.UTF-8
+Obs≈Çuga 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q %{?with_shared:-T -b %{?with_snap:10}20} -n %{name}-%{ver}-%{rel}-%{type}-qt.i386-en
+%if %{with qt4}
+%setup -q -T -b 13 -n %{name}-%{version}-%{buildid}.gcc4-qt4.i386
+%define		_noautoreq	'libpng12.so.0(.*)'
+%else
+%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.i386
 %endif
-%ifarch sparc sparc64
-%setup -q -T -b %{?with_snap:10}%{?with_shared:2}1 -n %{name}-%{ver}-%{rel}-%{type}-qt.sparc-en
+%endif
+%ifarch %{x8664}
+%if %{with qt4}
+%setup -q -T -b 14 -n %{name}-%{version}-%{buildid}.gcc4-qt4.x86_64
+%define		_noautoreq	'libpng12.so.0(.*)'
+%else
+%setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.x86_64
+%endif
 %endif
 %ifarch ppc
-%setup -q -T -b %{?with_snap:10}%{?with_shared:2}2 -n %{name}-%{ver}-%{rel}-%{type}-qt.ppc-en
+%setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
+%endif
+%patch0 -p1
+%if %{with qt4}
+%patch1 -p0
+%else
+%patch2 -p0
 %endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
-install -d $RPM_BUILD_ROOT{/etc,%{_mandir}/man1,%{_pixmapsdir},%{_desktopdir}}
+%browser_plugins_add_browser %{name} -p %{_libdir}/%{name}/plugins -b <<'EOF'
+# opera does not use for .xpt files
+*.xpt
 
-cat install.sh | sed 's|/etc|$RPM_BUILD_ROOT%{_sysconfdir}|' > install2.sh
-mv install2.sh install.sh
+# use mplayerplug-in-opera instead
+mplayerplug-in*
 
-echo y |\
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
+EOF
+
+%ifarch %{x8664}
+install -d $RPM_BUILD_ROOT%{_prefix}/lib/%{name}/plugins
+%browser_plugins_add_browser %{name} -a %{alt_arch} -p %{_prefix}/lib/%{name}/plugins -b <<'EOF'
+# opera does not use for .xpt files
+*.xpt
+
+# use mplayerplug-in-opera instead
+mplayerplug-in*
+
+# opera uses libjava.so to run java
+libjavaplugin_oji.so
+EOF
+%endif
+
 sh install.sh \
-  --prefix=$RPM_BUILD_ROOT%{_prefix} \
-  --wrapperdir=$RPM_BUILD_ROOT%{_bindir} \
-  --docdir=$RPM_BUILD_ROOT%{_operadocdir} \
-  --sharedir=$RPM_BUILD_ROOT%{_datadir}/opera \
-  --exec_prefix=$RPM_BUILD_ROOT%{_datadir}/opera/bin \
-  --plugindir=$RPM_BUILD_ROOT%{_plugindir}
-
-# Polish locale
-install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/opera/locale/polish.lng
-
-# man install
-install man/opera.1 $RPM_BUILD_ROOT%{_mandir}/man1
-
-# wrapper correction
-sed s#$RPM_BUILD_ROOT## > $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
-mv $RPM_BUILD_ROOT%{_bindir}/opera2 $RPM_BUILD_ROOT%{_bindir}/opera
+	DESTDIR=$RPM_BUILD_ROOT \
+	--prefix=%{_prefix} \
+	--exec_prefix=%{_libdir}/%{name}/bin \
+	--plugindir=%{_libdir}/%{name}/plugins \
+	--docdir=%{_operadocdir}
 
 # install in kde etc.
-install images/opera.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{SOURCE0} $RPM_BUILD_ROOT%{_desktopdir}
 
-install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
+install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
+install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
-# symlink ktÛry niweluje burkanie siÍ opery :>
-#ln -sf %{_datadir}/opera/ $RPM_BUILD_ROOT/usr/share/
-#ln -sf %{_libdir}/opera $RPM_BUILD_ROOT/usr/lib/
+%if "%{pld_release}" == "ti"
+sed -i -e 's#DISTRO#PLD/Titanium#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
+%else
+%if "%{pld_release}" == "ac"
+sed -i -e 's#DISTRO#PLD/2.0 (Ac)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
+%else
+sed -i -e 's#DISTRO#PLD/3.0 (Th)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
+%endif
+%endif
 
-sed -i -e "s#$RPM_BUILD_ROOT##g" $RPM_BUILD_ROOT%{_datadir}/opera/java/*.policy
-
-# always use wrapper linked with libXm.so.3
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper
-ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-2
-ln -sf operamotifwrapper-3 $RPM_BUILD_ROOT%{_libdir}/%{name}/plugins/operamotifwrapper-1
-
-# %{_libdir} is not the best place for it but opera doesn't search for it in better
-# places :/
-install lib/spellcheck.so $RPM_BUILD_ROOT%{_libdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_browser_plugins
+
+%postun
+if [ "$1" = 0 ]; then
+	%update_browser_plugins
+fi
+
+%post plugin32
+%update_browser_plugins
+
+%postun plugin32
+if [ "$1" = 0 ]; then
+	%update_browser_plugins
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc LICENSE bugreport help
+%doc LICENSE
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/operaprefs*.ini
+
+# browser plugins v2
+%{_browserpluginsconfdir}/browsers.d/%{name}.%{_target_base_arch}
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{_target_base_arch}.blacklist
+
 %attr(755,root,root) %{_bindir}/*
+%dir %{_libdir}/opera
+%dir %{_libdir}/opera/bin
+%attr(755,root,root) %{_libdir}/opera/bin/*
+%ifarch %{x8664}
+%exclude %{_libdir}/opera/bin/*-ia32-*
+%endif
+%dir %{_plugindir}
 %dir %{_datadir}/opera
-%dir %{_datadir}/opera/bin
-%attr(755,root,root) %{_datadir}/opera/bin/*
-%{_datadir}/opera/config
-%{_datadir}/opera/help
-%{_datadir}/opera/images
+%{_datadir}/opera/*.*
+%{_datadir}/opera/defaults
+%{_datadir}/opera/extra
 %{_datadir}/opera/java
-%{_datadir}/opera/locale
+%{_datadir}/opera/scripts
 %{_datadir}/opera/skin
 %{_datadir}/opera/styles
-%{_datadir}/opera/ini
-%{_datadir}/opera/search.ini
-%{_datadir}/opera/*.html
-%{_datadir}/opera/*.ssr
-%{_datadir}/opera/*.txt
-%ifarch %{ix86}
-%attr(755,root,root) %{_datadir}/opera/chartables.bin
-%endif
-%ifarch ppc
-%attr(755,root,root) %{_datadir}/opera/chartables-be.bin
-%endif
-%attr(755,root,root) %{_datadir}/opera/opera6.adr
-%attr(755,root,root) %{_libdir}/*.so
-%dir %{_libdir}/opera
-%dir %{_plugindir}
-%attr(755,root,root) %{_plugindir}/*
-
-%{_pixmapsdir}/opera.xpm
+%{_datadir}/opera/ui
+%dir %{_datadir}/opera/locale
+%{_datadir}/opera/locale/en
+%lang(be) %{_datadir}/opera/locale/be
+%lang(bg) %{_datadir}/opera/locale/bg
+%lang(cs) %{_datadir}/opera/locale/cs
+%lang(da) %{_datadir}/opera/locale/da
+%lang(de) %{_datadir}/opera/locale/de
+%lang(el) %{_datadir}/opera/locale/el
+%lang(en_GB) %{_datadir}/opera/locale/en-GB
+%lang(es) %{_datadir}/opera/locale/es-ES
+%lang(es_LA) %{_datadir}/opera/locale/es-LA
+%lang(et) %{_datadir}/opera/locale/et
+%lang(fi) %{_datadir}/opera/locale/fi
+%lang(fr) %{_datadir}/opera/locale/fr
+%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
+%lang(fy) %{_datadir}/opera/locale/fy
+%lang(hi) %{_datadir}/opera/locale/hi
+%lang(hr) %{_datadir}/opera/locale/hr
+%lang(hu) %{_datadir}/opera/locale/hu
+%lang(id) %{_datadir}/opera/locale/id
+%lang(it) %{_datadir}/opera/locale/it
+%lang(ja) %{_datadir}/opera/locale/ja
+%lang(ka) %{_datadir}/opera/locale/ka
+%lang(ko) %{_datadir}/opera/locale/ko
+%lang(lt) %{_datadir}/opera/locale/lt
+%lang(mk) %{_datadir}/opera/locale/mk
+%lang(nb) %{_datadir}/opera/locale/nb
+%lang(nl) %{_datadir}/opera/locale/nl
+%lang(nn) %{_datadir}/opera/locale/nn
+%lang(pl) %{_datadir}/opera/locale/pl
+%lang(pt) %{_datadir}/opera/locale/pt
+%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
+%lang(ro) %{_datadir}/opera/locale/ro
+%lang(ru) %{_datadir}/opera/locale/ru
+%lang(sk) %{_datadir}/opera/locale/sk
+%lang(sr) %{_datadir}/opera/locale/sr
+%lang(sv) %{_datadir}/opera/locale/sv
+%lang(ta) %{_datadir}/opera/locale/ta
+%lang(te) %{_datadir}/opera/locale/te
+%lang(tr) %{_datadir}/opera/locale/tr
+%lang(uk) %{_datadir}/opera/locale/uk
+%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
+%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
+%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_desktopdir}/*.desktop
-
 %{_mandir}/man1/opera.1*
+%{_pixmapsdir}/opera.xpm
+
+%ifarch %{x8664}
+%files plugin32
+%defattr(644,root,root,755)
+# browser plugins v2
+%{_browserpluginsconfdir}/browsers.d/%{name}.%{alt_arch}
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{alt_arch}.blacklist
+%dir %{_prefix}/lib/%{name}
+%dir %{_prefix}/lib/%{name}/plugins
+%attr(755,root,root) %{_libdir}/%{name}/bin/*-ia32-*
+%endif
