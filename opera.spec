@@ -8,7 +8,7 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%bcond_without	qt4	#take the qt4 version
+%bcond_with	qt4	#take the qt4 version
 
 %define		ver	10.01
 %define		shver	%(echo %{ver} | tr -d .)
@@ -23,7 +23,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	2
+Release:	3
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
