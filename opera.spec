@@ -10,8 +10,8 @@
 %bcond_with	qt4
 
 %define	ver		10.10
-%define	reltype		snapshot
-%define	magicstr	4685
+%define	reltype		rc
+%define	magicstr	4720
 
 %define sver            %{ver}
 %define	shver		%(echo %{ver} | tr -d .)
@@ -88,7 +88,7 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_shared_rel}.i386.tar.bz2
-# Source0-md5:	ff7b9d80d13ad33f020cdbc6229685e8
+# Source0-md5:	b397b0025778c2897a131008118c2107
 %{!?with_distributable:NoSource:	0}
 
 #Source1:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/sparc-linux/%{name}-%{sver}-%{magicstr}.%{sparc_shared_rel}-shared-qt.sparc.tar.bz2
@@ -100,7 +100,7 @@ Source0:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{n
 #%{!?with_distributable:NoSource:	2}
 
 Source3:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/x86_64-linux/%{name}-%{sver}-%{magicstr}.%{x86_64_shared_rel}.x86_64.tar.bz2
-# Source3-md5:	b5e2788d710ae9a2f8ae9c6c107452bc
+# Source3-md5:	73e64f5c24dbaf8670cb909b2cffe963
 %{!?with_distributable:NoSource:        3}
 
 #Source10:	http://snapshot.opera.com/unix/%{sreltype}-%{smagicstr}/intel-linux/%{name}-%{sver}-%{magicstr}.%{x86_static_rel}.i386.tar.bz2
