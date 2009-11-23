@@ -8,11 +8,11 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%bcond_with	qt4	#take the qt4 version
+%bcond_without	qt4	#take the qt4 version
 
-%define		ver	10.01
+%define		ver	10.10
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	4682
+%define		buildid	4742
 
 %ifarch ppc
 %undefine	with_qt4
@@ -23,20 +23,20 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	3
+Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	e47adf975289db4e349c4032304a7069
+# Source10-md5:	c92fb5aa77ecb7afa35a5d26d6d96a8c
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	b641ac3d9fc0cdc131f34c59be34254d
+# Source11-md5:	ad64dec30bf47ccfb6b6f90c9e1c1e3b
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	ac8847d9a70a3ad563e97d110acda27e
+# Source12-md5:	d6995d57059bb69b2a509554a70cd677
 Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
-# Source13-md5:	37d46117e83aa54e670104087369e175
+# Source13-md5:	b22f377a7a85df3f7a3831fcd2a4b2e4
 Source14:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-qt4.x86_64.tar.bz2
-# Source14-md5:	9d9402de11f3fe2b8040c3633970678d
+# Source14-md5:	bedd94ab5a663d8e4b694da4772471b4
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-agent-qt4.patch
@@ -258,6 +258,7 @@ fi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+ %{_datadir}/opera/unite
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_pixmapsdir}/opera.xpm
