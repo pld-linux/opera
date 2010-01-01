@@ -1,23 +1,25 @@
---- opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh~	2006-12-01 18:43:27.800063859 +0200
-+++ opera-9.02-20060919.5-shared-qt.i386-en-434/install.sh	2006-12-01 18:44:24.201331154 +0200
-@@ -843,13 +843,19 @@
-     wrapper_contain="#!/bin/sh
+--- opera.org	2009-12-31 11:45:05.000000000 +0100
++++ opera	2010-01-01 20:58:33.485442895 +0100
+@@ -45,7 +45,7 @@
+ fi
  
  # Required for Session Management
--case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/\$0;; esac
-+case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=/usr/bin/\$0;; esac
+-case $0 in /*) OPERA_SCRIPT_PATH=$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/$0;; esac
++case $0 in /*) OPERA_SCRIPT_PATH=$0;; *) OPERA_SCRIPT_PATH=/usr/bin/$0;; esac
  export OPERA_SCRIPT_PATH
  
- # Location of the Opera binaries
- OPERA_BINARYDIR=${str_localdirexec}
- export OPERA_BINARYDIR
+ OPERA_SYSTEM_UNAME=`uname -s`
+@@ -56,6 +56,13 @@
+ [ -f "$OPERA_BINARYDIR/opera" ] || die "The Opera binary is not located at \"$OPERA_BINARYDIR/opera\"." "Please modify the wrapper script at \"$0\"."
+ [ -x "$OPERA_BINARYDIR/opera" ] || die "You do not have execute rights on \"$OPERA_BINARYDIR/opera\", please ask the sysadmin to chmod +x it."
  
 +# set JAVA_HOME from jpackage-utils if available
 +if [ -f /usr/share/java-utils/java-functions ]; then
-+	. /usr/share/java-utils/java-functions
-+	set_jvm
++    . /usr/share/java-utils/java-functions
++    set_jvm
 +fi
 +
- # Parse commandline parameters
- toset=
- _QTSTYLE_FROM_CMDLINE_='NO'
++
+ # Opera enviroment
+ if [ -z "$OPERA_DIR" ]
+ then
