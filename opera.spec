@@ -37,6 +37,8 @@ BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
+Suggests:	gstreamer-vorbis
+Suggests:	gstreamer-theora
 Provides:	wwwbrowser
 Obsoletes:	opera-i18n
 ExclusiveArch:	%{ix86} %{x8664}
