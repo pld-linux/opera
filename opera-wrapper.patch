@@ -1,6 +1,15 @@
---- opera.org	2009-12-31 11:45:05.000000000 +0100
-+++ opera	2010-01-01 20:58:33.485442895 +0100
-@@ -45,7 +45,7 @@
+--- opera.org	2010-01-01 21:23:40.152583922 +0100
++++ opera	2010-01-01 21:34:51.531475131 +0100
+@@ -37,15 +37,14 @@
+ [ -z "$toset" ] || die "Missing parameter for $arg"
+ 
+ 
+-[ "$PWD" ] || PWD=`/bin/pwd`
+ if [ "$_PERSONALDIR_FROM_CMDLINE_" = NO ]
+ then
+-  OPERA_PERSONALDIR="$PWD/profile"
++  OPERA_PERSONALDIR="$HOME/.opera"
+   export OPERA_PERSONALDIR
  fi
  
  # Required for Session Management
@@ -9,7 +18,7 @@
  export OPERA_SCRIPT_PATH
  
  OPERA_SYSTEM_UNAME=`uname -s`
-@@ -56,6 +56,13 @@
+@@ -56,10 +55,17 @@
  [ -f "$OPERA_BINARYDIR/opera" ] || die "The Opera binary is not located at \"$OPERA_BINARYDIR/opera\"." "Please modify the wrapper script at \"$0\"."
  [ -x "$OPERA_BINARYDIR/opera" ] || die "You do not have execute rights on \"$OPERA_BINARYDIR/opera\", please ask the sysadmin to chmod +x it."
  
@@ -23,3 +32,17 @@
  # Opera enviroment
  if [ -z "$OPERA_DIR" ]
  then
+-    OPERA_DIR="$PWD/usr/share/opera"
++    OPERA_DIR="/usr/share/opera"
+ fi
+ export OPERA_DIR
+ 
+@@ -357,7 +363,7 @@
+ 
+ # Setting environment relative to current working directory
+ # Bundled Qt will be found here unless preloaded by the stance above
+-LD_LIBRARY_PATH="$PWD/usr/lib/opera${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
++LD_LIBRARY_PATH="$OPERA_BINARYDIR/${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
+ export LD_LIBRARY_PATH
+ 
+ # Run Opera:
