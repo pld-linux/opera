@@ -1,5 +1,14 @@
---- opera.org	2010-01-01 21:23:40.152583922 +0100
-+++ opera	2010-01-01 21:34:51.531475131 +0100
+--- opera	2010-01-01 21:34:51.531475131 +0100
++++ opera	2010-01-02 17:18:27.938275169 +0200
+@@ -3,7 +3,7 @@
+ # but execute it from the extracted package or current location.
+ export LC_ALL=C
+ # Location of the Opera binaries
+-OPERA_BINARYDIR=usr/lib/opera
++OPERA_BINARYDIR=/usr/lib/opera
+ 
+ die () {
+     for arg
 @@ -37,15 +37,14 @@
  [ -z "$toset" ] || die "Missing parameter for $arg"
  
