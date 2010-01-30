@@ -101,6 +101,8 @@ install etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 # install in kde etc.
 install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
+sed -i -e 's#^OPERA_BINARYDIR=.*#OPERA_BINARYDIR=%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
