@@ -10,7 +10,7 @@
 
 %define	ver		10.50
 %define	reltype		snapshot
-%define	magicstr	6177
+%define	magicstr	6201
 
 %define		_rel	1
 Summary:	World fastest web browser
@@ -22,12 +22,12 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 
-Source0:	http://snapshot.opera.com/unix/labs-6177/%{name}-%{ver}-%{magicstr}.linux.i386.tar.bz2
-# Source0-md5:	a40752ad9829dfac54bb15e16817c29a
+Source0:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.linux.i386.tar.bz2
+# Source0-md5:	e4e9162885b21eccdde0115267a4dbf8
 %{!?with_distributable:NoSource:	0}
 
-Source1:	http://snapshot.opera.com/unix/labs-6177/%{name}-%{ver}-%{magicstr}.linux.x86_64.tar.bz2
-# Source1-md5:	76dc5d8bf40e9a25a1c62881758d1f16
+Source1:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.linux.x86_64.tar.bz2
+# Source1-md5:	85b997bec8d0e133aac76c08ea6ea7c7
 %{!?with_distributable:NoSource:	1}
 
 Source4:	%{name}.desktop
@@ -123,9 +123,9 @@ fi
 
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/opera
-%ifarch %{x8664}
-%exclude %{_libdir}/opera/*-ia32-*
-%endif
+#%ifarch %{x8664}
+#%exclude %{_libdir}/opera/*-ia32-*
+#%endif
 %attr(755,root,root) %{_libdir}/opera/*.so
 %attr(755,root,root) %{_libdir}/opera/opera*
 %attr(755,root,root) %{_libdir}/opera/works
@@ -136,51 +136,51 @@ fi
 %{_datadir}/opera/extra
 %{_datadir}/opera/java
 %{_datadir}/opera/skin
-%{_datadir}/opera/scripts
+#%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
 %{_datadir}/opera/ui
 %{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
-#%lang(be) %{_datadir}/opera/locale/be
-#%lang(bg) %{_datadir}/opera/locale/bg
-#%lang(cs) %{_datadir}/opera/locale/cs
-#%lang(da) %{_datadir}/opera/locale/da
-#%lang(de) %{_datadir}/opera/locale/de
-#%lang(el) %{_datadir}/opera/locale/el
-#%lang(en_GB) %{_datadir}/opera/locale/en-GB
-#%lang(es_ES) %{_datadir}/opera/locale/es-ES
-#%lang(es_LA) %{_datadir}/opera/locale/es-LA
-#%lang(et) %{_datadir}/opera/locale/et
-#%lang(fi) %{_datadir}/opera/locale/fi
-#%lang(fr) %{_datadir}/opera/locale/fr
-#%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
-#%lang(fy) %{_datadir}/opera/locale/fy
-#%lang(hi) %{_datadir}/opera/locale/hi
-#%lang(hr) %{_datadir}/opera/locale/hr
-#%lang(hu) %{_datadir}/opera/locale/hu
-#%lang(id) %{_datadir}/opera/locale/id
-#%lang(it) %{_datadir}/opera/locale/it
-#%lang(ja) %{_datadir}/opera/locale/ja
-#%lang(ka) %{_datadir}/opera/locale/ka
-#%lang(ko) %{_datadir}/opera/locale/ko
-#%lang(lt) %{_datadir}/opera/locale/lt
-#%lang(mk) %{_datadir}/opera/locale/mk
-#%lang(nb) %{_datadir}/opera/locale/nb
-#%lang(nl) %{_datadir}/opera/locale/nl
-#%lang(nn) %{_datadir}/opera/locale/nn
-#%lang(pl) %{_datadir}/opera/locale/pl
-#%lang(pt) %{_datadir}/opera/locale/pt
-#%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
-#%lang(ro) %{_datadir}/opera/locale/ro
-#%lang(ru) %{_datadir}/opera/locale/ru
-#%lang(sk) %{_datadir}/opera/locale/sk
-#%lang(sr) %{_datadir}/opera/locale/sr
-#%lang(sv) %{_datadir}/opera/locale/sv
-#%lang(ta) %{_datadir}/opera/locale/ta
-#%lang(te) %{_datadir}/opera/locale/te
-#%lang(tr) %{_datadir}/opera/locale/tr
-#%lang(uk) %{_datadir}/opera/locale/uk
+%lang(be) %{_datadir}/opera/locale/be
+%lang(bg) %{_datadir}/opera/locale/bg
+%lang(cs) %{_datadir}/opera/locale/cs
+%lang(da) %{_datadir}/opera/locale/da
+%lang(de) %{_datadir}/opera/locale/de
+%lang(el) %{_datadir}/opera/locale/el
+%lang(en_GB) %{_datadir}/opera/locale/en-GB
+%lang(es_ES) %{_datadir}/opera/locale/es-ES
+%lang(es_LA) %{_datadir}/opera/locale/es-LA
+%lang(et) %{_datadir}/opera/locale/et
+%lang(fi) %{_datadir}/opera/locale/fi
+%lang(fr) %{_datadir}/opera/locale/fr
+%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
+%lang(fy) %{_datadir}/opera/locale/fy
+%lang(hi) %{_datadir}/opera/locale/hi
+%lang(hr) %{_datadir}/opera/locale/hr
+%lang(hu) %{_datadir}/opera/locale/hu
+%lang(id) %{_datadir}/opera/locale/id
+%lang(it) %{_datadir}/opera/locale/it
+%lang(ja) %{_datadir}/opera/locale/ja
+%lang(ka) %{_datadir}/opera/locale/ka
+%lang(ko) %{_datadir}/opera/locale/ko
+%lang(lt) %{_datadir}/opera/locale/lt
+%lang(mk) %{_datadir}/opera/locale/mk
+%lang(nb) %{_datadir}/opera/locale/nb
+%lang(nl) %{_datadir}/opera/locale/nl
+%lang(nn) %{_datadir}/opera/locale/nn
+%lang(pl) %{_datadir}/opera/locale/pl
+%lang(pt) %{_datadir}/opera/locale/pt
+%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
+%lang(ro) %{_datadir}/opera/locale/ro
+%lang(ru) %{_datadir}/opera/locale/ru
+%lang(sk) %{_datadir}/opera/locale/sk
+%lang(sr) %{_datadir}/opera/locale/sr
+%lang(sv) %{_datadir}/opera/locale/sv
+%lang(ta) %{_datadir}/opera/locale/ta
+%lang(te) %{_datadir}/opera/locale/te
+%lang(tr) %{_datadir}/opera/locale/tr
+%lang(uk) %{_datadir}/opera/locale/uk
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
@@ -189,8 +189,8 @@ fi
 %{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.*
 
-%ifarch %{x8664}
-%files plugin32
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/opera/*-ia32-*
-%endif
+#%ifarch %{x8664}
+#files plugin32
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/opera/*-ia32-*
+#%endif
