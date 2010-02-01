@@ -10,7 +10,7 @@
 
 %define	ver		10.50
 %define	reltype		snapshot
-%define	magicstr	6201
+%define	magicstr	6204
 
 %define		_rel	1
 Summary:	World fastest web browser
@@ -23,11 +23,11 @@ License:	Distributable
 Group:		X11/Applications/Networking
 
 Source0:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.linux.i386.tar.bz2
-# Source0-md5:	e4e9162885b21eccdde0115267a4dbf8
+# Source0-md5:	9c53e8bd447f8d4bb35ba3d1989aa0ac
 %{!?with_distributable:NoSource:	0}
 
 Source1:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.linux.x86_64.tar.bz2
-# Source1-md5:	85b997bec8d0e133aac76c08ea6ea7c7
+# Source1-md5:	c23b432302fb06f7f1a4be049f326223
 %{!?with_distributable:NoSource:	1}
 
 Source4:	%{name}.desktop
