@@ -10,7 +10,7 @@
 
 %define	ver		10.50
 %define	reltype		snapshot
-%define	magicstr	6204
+%define	magicstr	6219
 
 %define		_rel	1
 Summary:	World fastest web browser
@@ -22,12 +22,12 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 
-Source0:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.linux.i386.tar.bz2
-# Source0-md5:	9c53e8bd447f8d4bb35ba3d1989aa0ac
+Source0:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.i386.linux.tar.bz2
+# Source0-md5:	351a4eb5da64ac601f9f420f266b9ca4
 %{!?with_distributable:NoSource:	0}
 
-Source1:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.linux.x86_64.tar.bz2
-# Source1-md5:	c23b432302fb06f7f1a4be049f326223
+Source1:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.x86_64.linux.tar.bz2
+# Source1-md5:	adfe0766c762eb01a4cd18a3c87edcbf
 %{!?with_distributable:NoSource:	1}
 
 Source4:	%{name}.desktop
@@ -69,11 +69,11 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b0 -n %{name}-%{ver}-%{magicstr}.linux.i386
+%setup -q -T -b0 -n %{name}-%{ver}-%{magicstr}.i386.linux
 %endif
 
 %ifarch %{x8664}
-%setup -q -T -b1 -n %{name}-%{ver}-%{magicstr}.linux.x86_64
+%setup -q -T -b1 -n %{name}-%{ver}-%{magicstr}.x86_64.linux
 %endif
 
 %patch0 -p0
@@ -88,9 +88,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_datadir},%{_pixmapsdir},%{_d
 
 # use mplayerplug-in-opera instead
 mplayerplug-in*
-
-# opera uses libjava.so to run java
-libjavaplugin_oji.so
 EOF
 
 install opera $RPM_BUILD_ROOT%{_bindir}
@@ -136,7 +133,6 @@ fi
 %{_datadir}/opera/*.*
 %{_datadir}/opera/defaults
 %{_datadir}/opera/extra
-%{_datadir}/opera/java
 %{_datadir}/opera/skin
 #%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
