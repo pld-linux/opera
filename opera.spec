@@ -2,15 +2,11 @@
 # - HEAD - stable version
 # - DEVEL - development version
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
-
-%bcond_without	shared		# static or shared version
 %bcond_without	distributable	# distributable or not
-%bcond_with	snap		# snap version
-%bcond_with	weekly		# weekly snapshot version
 
-%define	ver		10.50
-%define	reltype		snapshot
-%define	magicstr	6219
+%define		ver			10.50
+%define		reltype		snapshot
+%define		magicstr	6219
 
 %define		_rel	1
 Summary:	World fastest web browser
@@ -37,14 +33,16 @@ BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
-Suggests:	gstreamer-vorbis
 Suggests:	gstreamer-theora
+Suggests:	gstreamer-vorbis
 Provides:	wwwbrowser
 Obsoletes:	opera-i18n
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_plugindir	%{_libdir}/opera/plugins
+%define		_enable_debug_packages	0
+
+%define		_plugindir		%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}
 
 %description
@@ -93,10 +91,14 @@ EOF
 install opera $RPM_BUILD_ROOT%{_bindir}
 cp -a usr/lib/opera $RPM_BUILD_ROOT%{_libdir}
 cp -a usr/share/* $RPM_BUILD_ROOT%{_datadir}
-install etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
+cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
-# install in kde etc.
-install %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
+rm $RPM_BUILD_ROOT/usr/share/doc/opera/{LGPL-2,LGPL-3,LICENSE}
+# opera packaging tools we don't need runtime
+rm -rf $RPM_BUILD_ROOT%{_datadir}/opera/package
+
+# add desktop file
+cp -a %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 sed -i -e 's#^OPERA_BINARYDIR=.*#OPERA_BINARYDIR=%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
