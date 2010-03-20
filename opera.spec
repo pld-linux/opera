@@ -4,33 +4,28 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		ver			10.50
-%define		reltype		snapshot
-%define		magicstr	6219
-
-%define		_rel	1
+%define		subver	6252
+%define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	%{ver}
-Release:	0.%{?magicstr:%{magicstr}.}%{_rel}.%{reltype}
+Version:	10.51
+Release:	0.%{subver}.%{rel}
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-
-Source0:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.i386.linux.tar.bz2
-# Source0-md5:	351a4eb5da64ac601f9f420f266b9ca4
+Source0:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{subver}.i386.linux.tar.bz2
+# Source0-md5:	c462b6dcb10e27ad869496b0f24fb3fb
 %{!?with_distributable:NoSource:	0}
-
-Source1:	http://snapshot.opera.com/unix/snapshot-%{magicstr}/%{name}-%{ver}-%{magicstr}.x86_64.linux.tar.bz2
-# Source1-md5:	adfe0766c762eb01a4cd18a3c87edcbf
+Source1:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{subver}.x86_64.linux.tar.bz2
+# Source1-md5:	a5a5d6cfa0204436eb632940e3673647
 %{!?with_distributable:NoSource:	1}
-
-Source4:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
+Requires(post,postun):	shared-mime-info
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
 Suggests:	gstreamer-theora
@@ -43,7 +38,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_enable_debug_packages	0
 
 %define		_plugindir		%{_libdir}/opera/plugins
-%define		_operadocdir	%{_docdir}/%{name}-%{ver}
+%define		_operadocdir	%{_docdir}/%{name}-%{version}
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
@@ -67,14 +62,28 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b0 -n %{name}-%{ver}-%{magicstr}.i386.linux
+%setup -q -T -b0 -n %{name}-%{version}-%{subver}.i386.linux
 %endif
-
 %ifarch %{x8664}
-%setup -q -T -b1 -n %{name}-%{ver}-%{magicstr}.x86_64.linux
+%setup -q -T -b1 -n %{name}-%{version}-%{subver}.x86_64.linux
 %endif
+sed -i -e '
+	s,@@{PREFIX},%{_prefix},g
+	s,@@{SUFFIX},,
+	s,@@{_SUFFIX},,
+' share/applications/*.desktop
 
-%patch0 -p0
+%patch0 -p1
+%patch1 -p1
+
+mv lib/opera/plugins/README README.plugins
+mv share/doc/opera/* .
+
+# nobody wants scalable huge icons
+rm -rf share/icons/hicolor/scalable
+
+# opera packaging tools we don't need runtime
+mv share/opera/package .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -88,27 +97,22 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_datadir},%{_pixmapsdir},%{_d
 mplayerplug-in*
 EOF
 
-install opera $RPM_BUILD_ROOT%{_bindir}
-cp -a usr/lib/opera $RPM_BUILD_ROOT%{_libdir}
-cp -a usr/share/* $RPM_BUILD_ROOT%{_datadir}
-cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
+install -p opera* $RPM_BUILD_ROOT%{_bindir}
+cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
+cp -a share/* $RPM_BUILD_ROOT%{_datadir}
+#cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
-rm $RPM_BUILD_ROOT/usr/share/doc/opera/{LGPL-2,LGPL-3,LICENSE}
-# opera packaging tools we don't need runtime
-rm -rf $RPM_BUILD_ROOT%{_datadir}/opera/package
-
-# add desktop file
-cp -a %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
-
-sed -i -e 's#^OPERA_BINARYDIR=.*#OPERA_BINARYDIR=%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
+sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%update_mime_database
 %update_browser_plugins
 
 %postun
+%update_mime_database
 if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
@@ -116,20 +120,21 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
+#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
 
 # browser plugins v2
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/opera
+%attr(755,root,root) %{_bindir}/opera-widget-manager
 %dir %{_libdir}/opera
 #%ifarch %{x8664}
 #%exclude %{_libdir}/opera/*-ia32-*
 #%endif
 %attr(755,root,root) %{_libdir}/opera/*.so
 %attr(755,root,root) %{_libdir}/opera/opera*
-%attr(755,root,root) %{_libdir}/opera/works
+#%attr(755,root,root) %{_libdir}/opera/works
 %dir %{_plugindir}
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
@@ -181,13 +186,16 @@ fi
 %lang(te) %{_datadir}/opera/locale/te
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
+%lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+%{_datadir}/mime/packages/opera-widget.xml
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
-%{_pixmapsdir}/opera.xpm
-%{_iconsdir}/hicolor/*/*/*.*
+%{_mandir}/man1/opera-widget-manager.1*
+#%{_pixmapsdir}/opera.xpm
+%{_iconsdir}/hicolor/*/*/*.png
 
 #%ifarch %{x8664}
 #files plugin32
