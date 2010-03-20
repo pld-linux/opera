@@ -1,13 +1,11 @@
---- opera-10.51-6252.i386.linux/share/opera/defaults/pluginpath.ini~	2010-03-20 15:38:12.000000000 +0200
-+++ opera-10.51-6252.i386.linux/share/opera/defaults/pluginpath.ini	2010-03-20 15:40:34.551656601 +0200
-@@ -6,70 +6,7 @@
- plugins=$HOME/.kde/share/config/kcmnspluginrc
- 
- [Paths]
+--- opera-10.51-6252.i386.linux/share/opera/defaults/pluginpath.ini	2010-03-20 15:40:34.551656601 +0200
++++ opera-10.51-6252.i386.linux/share/opera/defaults/pluginpath.ini	2010-03-20 17:05:02.372607367 +0200
+@@ -9,67 +9,5 @@
 -$PWD/plugins=1
 +; Netscape Plug-in Paths
 +$HOME/.mozilla/plugins/=1
  $OPERA_PERSONALDIR/plugins=1
++/usr/lib64/opera/plugins=1
  /usr/lib/opera/plugins=1
 -/usr/local/lib/opera/plugins=1
 -/opt/lib/opera/plugins=1
