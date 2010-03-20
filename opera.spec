@@ -22,9 +22,11 @@ Source1:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
+Patch2:		%{name}-pluginpath.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
+Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	shared-mime-info
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
@@ -71,12 +73,16 @@ sed -i -e '
 	s,@@{PREFIX},%{_prefix},g
 	s,@@{SUFFIX},,
 	s,@@{_SUFFIX},,
-' share/applications/*.desktop
+' share/{applications/*.desktop,mime/packages/*.xml}
+
+sed -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
 
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv lib/opera/plugins/README README.plugins
+mv share/opera/defaults/license.txt .
 mv share/doc/opera/* .
 
 # nobody wants scalable huge icons
@@ -109,10 +115,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_mime_database
+%update_desktop_database_post
 %update_browser_plugins
 
 %postun
 %update_mime_database
+%update_desktop_database_postun
 if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
