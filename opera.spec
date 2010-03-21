@@ -27,6 +27,8 @@ URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
 Requires:	browser-plugins >= 2.0
 Requires:	freetype >= 2
@@ -115,11 +117,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_mime_database
+%update_icon_cache hicolor
 %update_desktop_database_post
 %update_browser_plugins
 
 %postun
 %update_mime_database
+%update_icon_cache hicolor
 %update_desktop_database_postun
 if [ "$1" = 0 ]; then
 	%update_browser_plugins
