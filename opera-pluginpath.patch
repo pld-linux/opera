@@ -1,6 +1,9 @@
---- opera-10.51-6252.i386.linux/share/opera/defaults/pluginpath.ini	2010-03-20 15:40:34.551656601 +0200
-+++ opera-10.51-6252.i386.linux/share/opera/defaults/pluginpath.ini	2010-03-20 17:05:02.372607367 +0200
-@@ -9,67 +9,5 @@
+--- opera-10.51-6252.x86_64.linux/share/opera/defaults/pluginpath.ini~	2010-03-23 19:31:41.000000000 +0200
++++ opera-10.51-6252.x86_64.linux/share/opera/defaults/pluginpath.ini	2010-03-23 19:32:13.101013292 +0200
+@@ -6,68 +6,8 @@
+ plugins=$HOME/.kde/share/config/kcmnspluginrc
+ 
+ [Paths]
 -$PWD/plugins=1
 +; Netscape Plug-in Paths
 +$HOME/.mozilla/plugins/=1
@@ -66,8 +69,6 @@
 -; be some in the Mozilla plugin directory.
 -/usr/lib/mozilla/plugins=1
 -/usr/X11R6/lib/mozilla/plugins=1
--/usr/lib64/browser-plugins=1
 -/usr/lib/browser-plugins=1
 -
 -; General path for gentoo
--/usr/lib32/nsbrowser/plugins=1
