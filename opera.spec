@@ -70,6 +70,7 @@ Obsługa 32-bitowych wtyczek Opery.
 %endif
 %ifarch %{x8664}
 %setup -q -T -b1 -n %{name}-%{version}-%{subver}.x86_64.linux
+
 %endif
 sed -i -e '
 	s,@@{PREFIX},%{_prefix},g
@@ -81,6 +82,9 @@ sed -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
 
 %patch0 -p1
 %patch1 -p1
+
+# remove lib32/lib64 paths so patch2 can apply (i386 build contained lib64 as well, oh well)
+%{__sed} -i -e '/lib32\|lib64/d;$d' share/opera/defaults/pluginpath.ini
 %patch2 -p1
 
 mv lib/opera/plugins/README README.plugins
