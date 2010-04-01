@@ -4,21 +4,21 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver	6252
+%define		subver	6302
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	10.51
+Version:	10.52
 Release:	0.%{subver}.%{rel}
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{subver}.i386.linux.tar.bz2
-# Source0-md5:	c462b6dcb10e27ad869496b0f24fb3fb
+# Source0-md5:	890f6b3db629d606e2baed472884312a
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{subver}.x86_64.linux.tar.bz2
-# Source1-md5:	a5a5d6cfa0204436eb632940e3673647
+# Source1-md5:	c2d3b49648b12945cd064f920a4ff450
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
