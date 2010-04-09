@@ -145,9 +145,9 @@ fi
 %attr(755,root,root) %{_bindir}/opera
 %attr(755,root,root) %{_bindir}/opera-widget-manager
 %dir %{_libdir}/opera
-#%ifarch %{x8664}
-#%exclude %{_libdir}/opera/*-ia32-*
-#%endif
+%ifarch %{x8664}
+%exclude %{_libdir}/opera/*-ia32-*
+%endif
 %attr(755,root,root) %{_libdir}/opera/*.so
 %attr(755,root,root) %{_libdir}/opera/opera*
 #%attr(755,root,root) %{_libdir}/opera/works
@@ -213,8 +213,8 @@ fi
 #%{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.png
 
-#%ifarch %{x8664}
-#files plugin32
-#%defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/opera/*-ia32-*
-#%endif
+%ifarch %{x8664}
+%files plugin32
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/opera/*-ia32-*
+%endif
