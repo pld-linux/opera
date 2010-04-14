@@ -19,7 +19,7 @@
  GenericName[pt]=Navegador Web
  GenericName[pt_BR]=Navegador
  GenericName[ro]=Navigator de web
-@@ -25,10 +30,11 @@
+@@ -30,6 +30,7 @@
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
  Comment=A fast and secure web browser and Internet suite
@@ -27,8 +27,3 @@
  Icon=opera-browser
  TryExec=/usr/bin/opera
  Exec=/usr/bin/opera %U
- Terminal=false
- MimeType=text/html;text/xml;application/xhtml+xml;text/vnd.wap.wml;text/wml;application/x-mimearchive;application/mime;application/xml;application/rss+xml;application/rdf+xml;image/svg+xml;application/x-opera-widgets
--Categories=Network;WebBrowser
-+Categories=Network;WebBrowser;
- StartupWMClass=opera
