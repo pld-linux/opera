@@ -129,6 +129,7 @@ mplayerplug-in*
 
 # opera uses libjava.so to run java
 libjavaplugin_oji.so
+IcedTeaPlugin.so
 EOF
 
 %ifarch %{x8664}
