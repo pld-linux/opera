@@ -4,21 +4,22 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver	6340
+%define		subver		6344
+%define		subverdir	10.60a1
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	10.54
+Version:	10.60
 Release:	0.%{subver}.%{rel}
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source0:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{subver}.i386.linux.tar.bz2
-# Source0-md5:	d4e84588182ac58ef73f43cda74ec07a
+Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.bz2
+# Source0-md5:	80d7ba9f6db8a5764a55f2952bed904e
 %{!?with_distributable:NoSource:	0}
-Source1:	http://snapshot.opera.com/unix/snapshot-%{subver}/%{name}-%{version}-%{subver}.x86_64.linux.tar.bz2
-# Source1-md5:	e7b98f7dabd35bcfbc8323f3f3ddcdf8
+Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.bz2
+# Source1-md5:	4bd2ef84f5ffc0f81186f3f3fe0156bc
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -207,6 +208,7 @@ fi
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %{_datadir}/mime/packages/opera-widget.xml
+%{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_mandir}/man1/opera-widget-manager.1*
