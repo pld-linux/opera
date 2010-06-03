@@ -1,20 +1,16 @@
---- opera-10.54-6335.x86_64.linux/share/opera/defaults/pluginpath.ini~	2010-05-11 14:41:06.736768823 +0200
-+++ opera-10.54-6335.x86_64.linux/share/opera/defaults/pluginpath.ini	2010-05-11 14:41:43.526546065 +0200
-@@ -6,68 +6,9 @@
+--- opera-10.60-6347.x86_64.linux/share/opera/defaults/pluginpath.ini~	2010-06-03 17:15:38.405955913 +0200
++++ opera-10.60-6347.x86_64.linux/share/opera/defaults/pluginpath.ini	2010-06-03 17:16:59.252207305 +0200
+@@ -6,71 +6,7 @@
  plugins=$HOME/.kde/share/config/kcmnspluginrc
  
  [Paths]
 -$PWD/plugins=1
 -$OPERA_PERSONALDIR/plugins=1
-+; Netscape Plug-in Paths                                                                                                                                    
-+$HOME/.mozilla/plugins/=1                                                                                                                                   
-+$OPERA_PERSONALDIR/plugins=1                                                                                                                                
-+/usr/lib64/opera/plugins=1                                                                                                                                  
- /usr/lib/opera/plugins=1
+-/usr/lib/opera/plugins=1
 -/usr/local/lib/opera/plugins=1
 -/opt/lib/opera/plugins=1
 -/opt/opera/lib/opera/plugins=1
- 
+-
 -; Adobe Acrobat
 -/usr/local/Adobe/Reader8/Browser/intellinux=1
 -/usr/local/Acrobat7.0/Browsers/intellinux=1
@@ -73,3 +69,10 @@
 -/usr/lib/browser-plugins=1
 -
 -; General path for gentoo
+-
+-; Java on Ubuntu
+-/usr/lib/xulrunner-addons/plugins=1
++; Netscape Plug-in Paths                                                                                                                                    
++$HOME/.mozilla/plugins/=1                                                                                                                                   
++$OPERA_PERSONALDIR/plugins=1                                                                                                                                
++/usr/lib64/opera/plugins=1
