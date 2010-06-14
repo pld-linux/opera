@@ -4,8 +4,8 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		6355
-%define		subverdir	24911_10.60-6355
+%define		subver		6363
+%define		subverdir	19498_10.60-6363
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
@@ -16,10 +16,10 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.bz2
-# Source0-md5:	928d7581578c05e1855f7af49b4b514d
+# Source0-md5:	f3eb4b64a53f66e45f779bf223de72ef
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.bz2
-# Source1-md5:	a1492fa91f47b4cb47cb650e99ae45d9
+# Source1-md5:	67286a2ee27f3bddc39b897a09d4ec12
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -151,8 +151,11 @@ fi
 %endif
 %attr(755,root,root) %{_libdir}/opera/*.so
 %attr(755,root,root) %{_libdir}/opera/opera*
-#%attr(755,root,root) %{_libdir}/opera/works
 %dir %{_plugindir}
+%dir %{_libdir}/opera/gstreamer
+%dir %{_libdir}/opera/gstreamer/plugins
+%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperamatroska.so
+%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperavp8.so
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
 %{_datadir}/opera/defaults
