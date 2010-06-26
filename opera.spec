@@ -10,9 +10,9 @@
 
 %bcond_without	qt4	#take the qt4 version
 
-%define		ver	10.10
+%define		ver	10.11
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	4742
+%define		buildid	4791
 
 %ifarch ppc
 %undefine	with_qt4
@@ -28,15 +28,15 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	c92fb5aa77ecb7afa35a5d26d6d96a8c
+# Source10-md5:	3c6f8dfcd295fb16238437f23b7ffe3c
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	ad64dec30bf47ccfb6b6f90c9e1c1e3b
+# Source11-md5:	9d4012dd00d9b4d76ca6d46a4620bbc2
 Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	d6995d57059bb69b2a509554a70cd677
+# Source12-md5:	0e35bac674be59dee4276bf7182b66b7
 Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
-# Source13-md5:	b22f377a7a85df3f7a3831fcd2a4b2e4
+# Source13-md5:	825f39f6653fca37dc04b4d0b92797ec
 Source14:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-qt4.x86_64.tar.bz2
-# Source14-md5:	bedd94ab5a663d8e4b694da4772471b4
+# Source14-md5:	1b9ae201cb1df43d3ca291a51d7c7e6c
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-agent-qt4.patch
@@ -256,6 +256,7 @@ fi
 %lang(te) %{_datadir}/opera/locale/te
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
+%lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw

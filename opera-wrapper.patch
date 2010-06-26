@@ -1,18 +1,18 @@
---- opera	2010-01-01 21:34:51.531475131 +0100
-+++ opera	2010-01-02 17:18:27.938275169 +0200
+--- opera-10.11-4791.gcc4-qt4.i386/opera.orig	2010-06-21 16:11:12.000000000 +0200
++++ opera-10.11-4791.gcc4-qt4.i386/opera	2010-06-23 23:16:37.000000000 +0200
 @@ -3,7 +3,7 @@
  # but execute it from the extracted package or current location.
- export LC_ALL=C
+
  # Location of the Opera binaries
 -OPERA_BINARYDIR=usr/lib/opera
 +OPERA_BINARYDIR=/usr/lib/opera
- 
+
  die () {
      for arg
 @@ -37,15 +37,14 @@
  [ -z "$toset" ] || die "Missing parameter for $arg"
- 
- 
+
+
 -[ "$PWD" ] || PWD=`/bin/pwd`
  if [ "$_PERSONALDIR_FROM_CMDLINE_" = NO ]
  then
@@ -20,23 +20,22 @@
 +  OPERA_PERSONALDIR="$HOME/.opera"
    export OPERA_PERSONALDIR
  fi
- 
+
  # Required for Session Management
 -case $0 in /*) OPERA_SCRIPT_PATH=$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/$0;; esac
 +case $0 in /*) OPERA_SCRIPT_PATH=$0;; *) OPERA_SCRIPT_PATH=/usr/bin/$0;; esac
  export OPERA_SCRIPT_PATH
- 
+
  OPERA_SYSTEM_UNAME=`uname -s`
-@@ -56,10 +55,17 @@
+@@ -56,10 +55,16 @@
  [ -f "$OPERA_BINARYDIR/opera" ] || die "The Opera binary is not located at \"$OPERA_BINARYDIR/opera\"." "Please modify the wrapper script at \"$0\"."
  [ -x "$OPERA_BINARYDIR/opera" ] || die "You do not have execute rights on \"$OPERA_BINARYDIR/opera\", please ask the sysadmin to chmod +x it."
- 
+
 +# set JAVA_HOME from jpackage-utils if available
 +if [ -f /usr/share/java-utils/java-functions ]; then
 +    . /usr/share/java-utils/java-functions
 +    set_jvm
 +fi
-+
 +
  # Opera enviroment
  if [ -z "$OPERA_DIR" ]
@@ -45,13 +44,13 @@
 +    OPERA_DIR="/usr/share/opera"
  fi
  export OPERA_DIR
- 
-@@ -357,7 +363,7 @@
- 
+
+@@ -357,7 +362,7 @@
+
  # Setting environment relative to current working directory
  # Bundled Qt will be found here unless preloaded by the stance above
 -LD_LIBRARY_PATH="$PWD/usr/lib/opera${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
 +LD_LIBRARY_PATH="$OPERA_BINARYDIR/${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
  export LD_LIBRARY_PATH
- 
+
  # Run Opera:
