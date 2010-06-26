@@ -1,10 +1,12 @@
---- opera-10.60-6347.x86_64.linux/share/opera/defaults/pluginpath.ini~	2010-06-03 17:15:38.405955913 +0200
-+++ opera-10.60-6347.x86_64.linux/share/opera/defaults/pluginpath.ini	2010-06-03 17:16:59.252207305 +0200
-@@ -6,71 +6,7 @@
+--- opera-10.60-6383.x86_64.linux/share/opera/defaults/pluginpath.ini~	2010-06-26 17:50:53.993898561 +0200
++++ opera-10.60-6383.x86_64.linux/share/opera/defaults/pluginpath.ini	2010-06-26 17:53:10.341176527 +0200
+@@ -5,73 +5,7 @@
+ [KDE]
  plugins=$HOME/.kde/share/config/kcmnspluginrc
  
- [Paths]
+-[Paths]
 -$PWD/plugins=1
+-$HOME/.local/lib/opera/plugins=1
 -$OPERA_PERSONALDIR/plugins=1
 -/usr/lib/opera/plugins=1
 -/usr/local/lib/opera/plugins=1
