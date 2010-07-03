@@ -8,15 +8,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%bcond_without	qt4	#take the qt4 version
-
-%define		ver	10.11
+%define		ver	10.60
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	4791
-
-%ifarch ppc
-%undefine	with_qt4
-%endif
+%define		buildid	6386
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -27,20 +21,15 @@ Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/shared/%{name}-%{version}.gcc4-shared-qt3.i386.tar.bz2
-# Source10-md5:	3c6f8dfcd295fb16238437f23b7ffe3c
-Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-shared-qt3.x86_64.tar.bz2
-# Source11-md5:	9d4012dd00d9b4d76ca6d46a4620bbc2
-Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/ppc/shared/%{name}-%{version}.gcc4-shared-qt3.ppc.tar.bz2
-# Source12-md5:	0e35bac674be59dee4276bf7182b66b7
-Source13:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/i386/%{name}-%{version}.gcc4-qt4.i386.tar.bz2
-# Source13-md5:	825f39f6653fca37dc04b4d0b92797ec
-Source14:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/final/en/x86_64/%{name}-%{version}.gcc4-qt4.x86_64.tar.bz2
-# Source14-md5:	1b9ae201cb1df43d3ca291a51d7c7e6c
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.bz2
+# Source10-md5:	e86d604b2f9397a618e8ecf357748f55
+Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.bz2
+# Source11-md5:	6415f21430bade3193d0d6c174e3bfb1
+Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.ppc.linux.tar.bz2
+# Source12-md5:	4cd09b64a0d1c3826b3e7038326c14dc
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
-Patch1:		%{name}-agent-qt4.patch
-Patch2:		%{name}-agent.patch
+Patch1:		%{name}-agent.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -91,34 +80,23 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%if %{with qt4}
-%setup -q -T -b 13 -n %{name}-%{version}-%{buildid}.gcc4-qt4.i386
-%define		_noautoreq	'libpng12.so.0(.*)'
-%else
-%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.i386
+%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.i386.linux
 %endif
-%endif
+
 %ifarch %{x8664}
-%if %{with qt4}
-%setup -q -T -b 14 -n %{name}-%{version}-%{buildid}.gcc4-qt4.x86_64
-%define		_noautoreq	'libpng12.so.0(.*)'
-%else
-%setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.x86_64
+%setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.x86_64.linux
 %endif
-%endif
+
 %ifarch ppc
-%setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.gcc4-shared-qt3.ppc
+%setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.ppc.linux
 %endif
+
 %patch0 -p1
-%if %{with qt4}
-%patch1 -p0
-%else
-%patch2 -p0
-%endif
+#%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_datadir},%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
 %browser_plugins_add_browser %{name} -p %{_libdir}/%{name}/plugins -b <<'EOF'
 # opera does not use for .xpt files
@@ -126,10 +104,6 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
 
 # use mplayerplug-in-opera instead
 mplayerplug-in*
-
-# opera uses libjava.so to run java
-libjavaplugin_oji.so
-IcedTeaPlugin.so
 EOF
 
 %ifarch %{x8664}
@@ -140,25 +114,17 @@ install -d $RPM_BUILD_ROOT%{_prefix}/lib/%{name}/plugins
 
 # use mplayerplug-in-opera instead
 mplayerplug-in*
-
-# opera uses libjava.so to run java
-libjavaplugin_oji.so
 EOF
 %endif
 
-sh install.sh \
-	DESTDIR=$RPM_BUILD_ROOT \
-	--prefix=%{_prefix} \
-	--exec_prefix=%{_libdir}/%{name}/bin \
-	--plugindir=%{_libdir}/%{name}/plugins \
-	--docdir=%{_operadocdir}
+install -p opera* $RPM_BUILD_ROOT%{_bindir}
+cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
+cp -a share/* $RPM_BUILD_ROOT%{_datadir}
+#cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
-# install in kde etc.
-install %{SOURCE0} $RPM_BUILD_ROOT%{_desktopdir}
+sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
-install etc/* $RPM_BUILD_ROOT%{_sysconfdir}
-install usr/share/pixmaps/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
-
+%if 0
 %if "%{pld_release}" == "ti"
 sed -i -e 's#DISTRO#PLD/Titanium#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 %else
@@ -168,7 +134,7 @@ sed -i -e 's#DISTRO#PLD/2.0 (Ac)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 sed -i -e 's#DISTRO#PLD/3.0 (Th)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 %endif
 %endif
-
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -192,29 +158,34 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/operaprefs*.ini
+#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
 
 # browser plugins v2
-%{_browserpluginsconfdir}/browsers.d/%{name}.%{_target_base_arch}
-%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{_target_base_arch}.blacklist
+%{_browserpluginsconfdir}/browsers.d/%{name}.*
+%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/opera
+%attr(755,root,root) %{_bindir}/opera-widget-manager
 %dir %{_libdir}/opera
-%dir %{_libdir}/opera/bin
-%attr(755,root,root) %{_libdir}/opera/bin/*
 %ifarch %{x8664}
-%exclude %{_libdir}/opera/bin/*-ia32-*
+%exclude %{_libdir}/opera/*-ia32-*
 %endif
+%attr(755,root,root) %{_libdir}/opera/*.so
+%attr(755,root,root) %{_libdir}/opera/opera*
 %dir %{_plugindir}
+%dir %{_libdir}/opera/gstreamer
+%dir %{_libdir}/opera/gstreamer/plugins
+%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperamatroska.so
+%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperavp8.so
 %dir %{_datadir}/opera
 %{_datadir}/opera/*.*
 %{_datadir}/opera/defaults
 %{_datadir}/opera/extra
-%{_datadir}/opera/java
-%{_datadir}/opera/scripts
 %{_datadir}/opera/skin
+#%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
 %{_datadir}/opera/ui
+%{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %lang(be) %{_datadir}/opera/locale/be
@@ -224,7 +195,7 @@ fi
 %lang(de) %{_datadir}/opera/locale/de
 %lang(el) %{_datadir}/opera/locale/el
 %lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es) %{_datadir}/opera/locale/es-ES
+%lang(es_ES) %{_datadir}/opera/locale/es-ES
 %lang(es_LA) %{_datadir}/opera/locale/es-LA
 %lang(et) %{_datadir}/opera/locale/et
 %lang(fi) %{_datadir}/opera/locale/fi
@@ -260,18 +231,16 @@ fi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
- %{_datadir}/opera/unite
+%{_datadir}/mime/packages/opera-widget.xml
+%{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
-%{_pixmapsdir}/opera.xpm
+%{_mandir}/man1/opera-widget-manager.1*
+%{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/hicolor/*/*/*.svg
 
 %ifarch %{x8664}
 %files plugin32
 %defattr(644,root,root,755)
-# browser plugins v2
-%{_browserpluginsconfdir}/browsers.d/%{name}.%{alt_arch}
-%config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.%{alt_arch}.blacklist
-%dir %{_prefix}/lib/%{name}
-%dir %{_prefix}/lib/%{name}/plugins
-%attr(755,root,root) %{_libdir}/%{name}/bin/*-ia32-*
+%attr(755,root,root) %{_libdir}/opera/*-ia32-*
 %endif
