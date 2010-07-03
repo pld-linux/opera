@@ -29,7 +29,6 @@ Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buil
 # Source12-md5:	4cd09b64a0d1c3826b3e7038326c14dc
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
-Patch1:		%{name}-agent.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -40,6 +39,8 @@ Provides:	wwwbrowser
 Obsoletes:	opera-i18n
 ExclusiveArch:	%{ix86} %{x8664} ppc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_enable_debug_packages	0
 
 %define		_plugindir	%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}
@@ -92,7 +93,6 @@ Obsługa 32-bitowych wtyczek Opery.
 %endif
 
 %patch0 -p1
-#%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -120,11 +120,14 @@ EOF
 install -p opera* $RPM_BUILD_ROOT%{_bindir}
 cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
 cp -a share/* $RPM_BUILD_ROOT%{_datadir}
-#cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
 sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
-%if 0
+cat << 'EOF' > $RPM_BUILD_ROOT%{_sysconfdir}/operaprefs_default.ini
+[ISP]
+Id="DISTRO"
+EOF
+
 %if "%{pld_release}" == "ti"
 sed -i -e 's#DISTRO#PLD/Titanium#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 %else
@@ -132,7 +135,6 @@ sed -i -e 's#DISTRO#PLD/Titanium#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 sed -i -e 's#DISTRO#PLD/2.0 (Ac)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 %else
 sed -i -e 's#DISTRO#PLD/3.0 (Th)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
-%endif
 %endif
 %endif
 
@@ -163,7 +165,7 @@ fi
 # browser plugins v2
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
-
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/operaprefs*.ini
 %attr(755,root,root) %{_bindir}/opera
 %attr(755,root,root) %{_bindir}/opera-widget-manager
 %dir %{_libdir}/opera
@@ -182,7 +184,6 @@ fi
 %{_datadir}/opera/defaults
 %{_datadir}/opera/extra
 %{_datadir}/opera/skin
-#%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
 %{_datadir}/opera/ui
 %{_datadir}/opera/unite
