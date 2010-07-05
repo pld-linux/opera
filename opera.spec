@@ -17,7 +17,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	1
+Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -29,6 +29,8 @@ Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buil
 # Source12-md5:	4cd09b64a0d1c3826b3e7038326c14dc
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
+Patch1:		%{name}-desktop.patch
+Patch2:		%{name}-pluginpath.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -92,7 +94,30 @@ Obsługa 32-bitowych wtyczek Opery.
 %setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.ppc.linux
 %endif
 
+sed -i -e '
+	s,@@{PREFIX},%{_prefix},g
+	s,@@{SUFFIX},,
+	s,@@{_SUFFIX},,
+' share/{applications/*.desktop,mime/packages/*.xml}
+
+sed -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
+
 %patch0 -p1
+%patch1 -p1
+
+# remove lib32/lib64 paths so patch2 can apply (i386 build contained lib64 as well, oh well)
+%{__sed} -i -e '/lib32\|lib64/d;$d' share/opera/defaults/pluginpath.ini
+%patch2 -p1
+
+mv lib/opera/plugins/README README.plugins
+mv share/opera/defaults/license.txt .
+mv share/doc/opera/* .
+
+# nobody wants scalable huge icons
+rm -rf share/icons/hicolor/scalable
+
+# opera packaging tools we don't need runtime
+mv share/opera/package .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -106,20 +131,10 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_datadir},%{_pixmapsdir},%{_d
 mplayerplug-in*
 EOF
 
-%ifarch %{x8664}
-install -d $RPM_BUILD_ROOT%{_prefix}/lib/%{name}/plugins
-%browser_plugins_add_browser %{name} -a %{alt_arch} -p %{_prefix}/lib/%{name}/plugins -b <<'EOF'
-# opera does not use for .xpt files
-*.xpt
-
-# use mplayerplug-in-opera instead
-mplayerplug-in*
-EOF
-%endif
-
 install -p opera* $RPM_BUILD_ROOT%{_bindir}
 cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
 cp -a share/* $RPM_BUILD_ROOT%{_datadir}
+#cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
 sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
@@ -142,9 +157,15 @@ sed -i -e 's#DISTRO#PLD/3.0 (Th)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%update_mime_database
+%update_icon_cache hicolor
+%update_desktop_database_post
 %update_browser_plugins
 
 %postun
+%update_mime_database
+%update_icon_cache hicolor
+%update_desktop_database_postun
 if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
@@ -238,7 +259,6 @@ fi
 %{_mandir}/man1/opera.1*
 %{_mandir}/man1/opera-widget-manager.1*
 %{_iconsdir}/hicolor/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.svg
 
 %ifarch %{x8664}
 %files plugin32
