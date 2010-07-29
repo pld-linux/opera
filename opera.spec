@@ -36,6 +36,7 @@ BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
 Requires:	browser-plugins >= 2.0
+Requires:	desktop-file-utils
 Requires:	freetype >= 2
 Provides:	wwwbrowser
 Obsoletes:	opera-i18n
