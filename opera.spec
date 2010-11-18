@@ -4,8 +4,8 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		1060
-%define		subverdir	snowinoslo_11.00-1060
+%define		subver		1094
+%define		subverdir	awesome_11.00-1094
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
@@ -16,10 +16,10 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.xz
-# Source0-md5:	e534546351a97cfc9e492b27e587a1ec
+# Source0-md5:	773d34829d92cdaecbb0268d871a079d
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.xz
-# Source1-md5:	e7ca9c83ef1544047285245a1b722647
+# Source1-md5:	d7932271e891c52401ce12563b143e70
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -157,6 +157,7 @@ fi
 %attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperamatroska.so
 %attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperavp8.so
 %dir %{_datadir}/opera
+%{_datadir}/mime/packages/opera-extension.xml
 %{_datadir}/opera/*.*
 %{_datadir}/opera/defaults
 %{_datadir}/opera/extra
