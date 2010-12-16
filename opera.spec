@@ -22,9 +22,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.bz2
-# Source10-md5:	0ec511d7c58eb45c30afee8154486889
+# Source10-md5:	5a52a8fad55eb281975dfacee25221e6
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.bz2
-# Source11-md5:	5dce5d641edcc93e55037d61350de32e
+# Source11-md5:	a91579341ae8eb66bd0b6a60947a0fab
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
