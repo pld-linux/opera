@@ -21,10 +21,10 @@ Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.bz2
-# Source10-md5:	5a52a8fad55eb281975dfacee25221e6
-Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.bz2
-# Source11-md5:	a91579341ae8eb66bd0b6a60947a0fab
+Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
+# Source10-md5:	a4854038ca3cc5d81b28d23f9ecf4d5d
+Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
+# Source11-md5:	226bef7ada51bb01004ca7a558131258
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -33,6 +33,7 @@ URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
+BuildRequires:	xz
 Requires:	browser-plugins >= 2.0
 Requires:	desktop-file-utils
 Requires:	freetype >= 2
