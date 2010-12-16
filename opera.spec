@@ -8,9 +8,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	10.63
+%define		ver	11.00
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	6450
+%define		buildid	1156
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
