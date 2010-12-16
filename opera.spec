@@ -25,8 +25,6 @@ Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buil
 # Source10-md5:	0ec511d7c58eb45c30afee8154486889
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.bz2
 # Source11-md5:	5dce5d641edcc93e55037d61350de32e
-Source12:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.ppc.linux.tar.bz2
-# Source12-md5:	9cc19c0458cfcb23e9d57b1012dd25d1
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -89,10 +87,6 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %ifarch %{x8664}
 %setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.x86_64.linux
-%endif
-
-%ifarch ppc
-%setup -q -T -b 12 -n %{name}-%{version}-%{buildid}.ppc.linux
 %endif
 
 sed -i -e '
