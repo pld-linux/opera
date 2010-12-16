@@ -248,6 +248,7 @@ fi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 %lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+%{_datadir}/mime/packages/opera-extension.xml
 %{_datadir}/mime/packages/opera-widget.xml
 %{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
