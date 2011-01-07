@@ -4,22 +4,22 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		1156
-%define		subverdir	rc3_11.00-1156
+%define		subver		1160
+%define		subverdir	minor_11.01-1160
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	11.00
+Version:	11.01
 Release:	0.%{subver}.%{rel}
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.xz
-# Source0-md5:	a4854038ca3cc5d81b28d23f9ecf4d5d
+# Source0-md5:	5fb54a5388572aab80a32060d44f23df
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.xz
-# Source1-md5:	226bef7ada51bb01004ca7a558131258
+# Source1-md5:	1750257034108297d4581b5c8e81c8a1
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -182,7 +182,7 @@ fi
 %lang(fr) %{_datadir}/opera/locale/fr
 %lang(fr_CA) %{_datadir}/opera/locale/fr-CA
 %lang(fy) %{_datadir}/opera/locale/fy
-%lang(gd) %{_datadir}/opera/locale/gd
+#%lang(gd) %{_datadir}/opera/locale/gd
 %lang(hi) %{_datadir}/opera/locale/hi
 %lang(hr) %{_datadir}/opera/locale/hr
 %lang(hu) %{_datadir}/opera/locale/hu
