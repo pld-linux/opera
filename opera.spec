@@ -17,7 +17,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	1
+Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -34,6 +34,8 @@ BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
 BuildRequires:	xz
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
 Requires:	browser-plugins >= 2.0
 Requires:	desktop-file-utils
 Requires:	freetype >= 2
