@@ -4,8 +4,8 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		2090
-%define		subverdir	barracuda_11.10-2090
+%define		subver		2092
+%define		subverdir	4982_11.10-2092
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
@@ -16,10 +16,10 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.xz
-# Source0-md5:	90a045d5e93374a71afc072354bd67bc
+# Source0-md5:	3d2e1470f907a6ccbf87906e0fe3b543
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.xz
-# Source1-md5:	f5f124f5da38d51c783ac663119ae7f0
+# Source1-md5:	65354a02583a692afbef6f411d8aec8e
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -168,6 +168,8 @@ fi
 %{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
+%lang(af) %{_datadir}/opera/locale/af
+%lang(az) %{_datadir}/opera/locale/az
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
 %lang(cs) %{_datadir}/opera/locale/cs
@@ -192,7 +194,9 @@ fi
 %lang(ka) %{_datadir}/opera/locale/ka
 %lang(ko) %{_datadir}/opera/locale/ko
 %lang(lt) %{_datadir}/opera/locale/lt
+%lang(me) %{_datadir}/opera/locale/me
 %lang(mk) %{_datadir}/opera/locale/mk
+%lang(ms) %{_datadir}/opera/locale/ms
 %lang(nb) %{_datadir}/opera/locale/nb
 %lang(nl) %{_datadir}/opera/locale/nl
 %lang(nn) %{_datadir}/opera/locale/nn
@@ -206,8 +210,11 @@ fi
 %lang(sv) %{_datadir}/opera/locale/sv
 %lang(ta) %{_datadir}/opera/locale/ta
 %lang(te) %{_datadir}/opera/locale/te
+%lang(th) %{_datadir}/opera/locale/th
+%lang(tl) %{_datadir}/opera/locale/tl
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
+%lang(uz) %{_datadir}/opera/locale/uz
 %lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 #%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
