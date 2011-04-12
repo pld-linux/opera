@@ -8,23 +8,23 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	11.01
+%define		ver	11.10
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1190
+%define		buildid	2092
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	2
+Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	9614f1c8b1e7e71aeb398122db30bfed
+# Source10-md5:	3d2e1470f907a6ccbf87906e0fe3b543
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	802e1725acddc713dffb3441815156b9
+# Source11-md5:	65354a02583a692afbef6f411d8aec8e
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -36,12 +36,15 @@ BuildRequires:	sed >= 4.0
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
+Requires(post,postun):	shared-mime-info
 Requires:	browser-plugins >= 2.0
 Requires:	desktop-file-utils
 Requires:	freetype >= 2
+Suggests:	gstreamer-theora
+Suggests:	gstreamer-vorbis
 Provides:	wwwbrowser
 Obsoletes:	opera-i18n
-ExclusiveArch:	%{ix86} %{x8664} ppc
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_enable_debug_packages	0
@@ -179,12 +182,12 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
-#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
 
 # browser plugins v2
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/operaprefs*.ini
+
 %attr(755,root,root) %{_bindir}/opera
 %attr(755,root,root) %{_bindir}/opera-widget-manager
 %dir %{_libdir}/opera
@@ -199,15 +202,19 @@ fi
 %attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperamatroska.so
 %attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperavp8.so
 %dir %{_datadir}/opera
+%{_datadir}/mime/packages/opera-extension.xml
 %{_datadir}/opera/*.*
 %{_datadir}/opera/defaults
 %{_datadir}/opera/extra
 %{_datadir}/opera/skin
+#%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
 %{_datadir}/opera/ui
 %{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
+%lang(af) %{_datadir}/opera/locale/af
+%lang(az) %{_datadir}/opera/locale/az
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
 %lang(cs) %{_datadir}/opera/locale/cs
@@ -222,6 +229,7 @@ fi
 %lang(fr) %{_datadir}/opera/locale/fr
 %lang(fr_CA) %{_datadir}/opera/locale/fr-CA
 %lang(fy) %{_datadir}/opera/locale/fy
+%lang(gd) %{_datadir}/opera/locale/gd
 %lang(hi) %{_datadir}/opera/locale/hi
 %lang(hr) %{_datadir}/opera/locale/hr
 %lang(hu) %{_datadir}/opera/locale/hu
@@ -231,7 +239,9 @@ fi
 %lang(ka) %{_datadir}/opera/locale/ka
 %lang(ko) %{_datadir}/opera/locale/ko
 %lang(lt) %{_datadir}/opera/locale/lt
+%lang(me) %{_datadir}/opera/locale/me
 %lang(mk) %{_datadir}/opera/locale/mk
+%lang(ms) %{_datadir}/opera/locale/ms
 %lang(nb) %{_datadir}/opera/locale/nb
 %lang(nl) %{_datadir}/opera/locale/nl
 %lang(nn) %{_datadir}/opera/locale/nn
@@ -245,18 +255,21 @@ fi
 %lang(sv) %{_datadir}/opera/locale/sv
 %lang(ta) %{_datadir}/opera/locale/ta
 %lang(te) %{_datadir}/opera/locale/te
+%lang(th) %{_datadir}/opera/locale/th
+%lang(tl) %{_datadir}/opera/locale/tl
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
+%lang(uz) %{_datadir}/opera/locale/uz
 %lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
-%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
+#%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
-%{_datadir}/mime/packages/opera-extension.xml
 %{_datadir}/mime/packages/opera-widget.xml
 %{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
 %{_mandir}/man1/opera-widget-manager.1*
+#%{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.png
 
 %ifarch %{x8664}
