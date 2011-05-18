@@ -8,9 +8,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	11.10
+%define		ver	11.11
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	2092
+%define		buildid	2109
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -22,9 +22,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	3d2e1470f907a6ccbf87906e0fe3b543
+# Source10-md5:	f3de6d706152cbe25702f70969124f44
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	65354a02583a692afbef6f411d8aec8e
+# Source11-md5:	206550f16b98dd3dfd3063912dcba53a
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -213,8 +213,8 @@ fi
 %{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
-%lang(af) %{_datadir}/opera/locale/af
-%lang(az) %{_datadir}/opera/locale/az
+#%lang(af) %{_datadir}/opera/locale/af
+#%lang(az) %{_datadir}/opera/locale/az
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
 %lang(cs) %{_datadir}/opera/locale/cs
@@ -239,9 +239,9 @@ fi
 %lang(ka) %{_datadir}/opera/locale/ka
 %lang(ko) %{_datadir}/opera/locale/ko
 %lang(lt) %{_datadir}/opera/locale/lt
-%lang(me) %{_datadir}/opera/locale/me
+#%lang(me) %{_datadir}/opera/locale/me
 %lang(mk) %{_datadir}/opera/locale/mk
-%lang(ms) %{_datadir}/opera/locale/ms
+#%lang(ms) %{_datadir}/opera/locale/ms
 %lang(nb) %{_datadir}/opera/locale/nb
 %lang(nl) %{_datadir}/opera/locale/nl
 %lang(nn) %{_datadir}/opera/locale/nn
@@ -255,11 +255,11 @@ fi
 %lang(sv) %{_datadir}/opera/locale/sv
 %lang(ta) %{_datadir}/opera/locale/ta
 %lang(te) %{_datadir}/opera/locale/te
-%lang(th) %{_datadir}/opera/locale/th
-%lang(tl) %{_datadir}/opera/locale/tl
+#%lang(th) %{_datadir}/opera/locale/th
+#%lang(tl) %{_datadir}/opera/locale/tl
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
-%lang(uz) %{_datadir}/opera/locale/uz
+#%lang(uz) %{_datadir}/opera/locale/uz
 %lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 #%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
