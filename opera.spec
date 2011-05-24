@@ -4,22 +4,22 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		2092
-%define		subverdir	4982_11.10-2092
+%define		subver		1015
+%define		subverdir	food_11.50-1015
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	11.10
+Version:	11.50
 Release:	0.%{subver}.%{rel}
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.xz
-# Source0-md5:	3d2e1470f907a6ccbf87906e0fe3b543
+Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-next-%{version}-%{subver}.i386.linux.tar.xz
+# Source0-md5:	6eebd170bbc784a2a4222fd060b2edb9
 %{!?with_distributable:NoSource:	0}
-Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.xz
-# Source1-md5:	65354a02583a692afbef6f411d8aec8e
+Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-next-%{version}-%{subver}.x86_64.linux.tar.xz
+# Source1-md5:	852c078f6015ea4f14325f15cb5f3b36
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -42,7 +42,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_enable_debug_packages	0
 
-%define		_plugindir		%{_libdir}/opera/plugins
+%define		_plugindir		%{_libdir}/opera-next/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{version}
 
 %description
@@ -67,10 +67,10 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b0 -n %{name}-%{version}-%{subver}.i386.linux
+%setup -q -T -b0 -n %{name}-next-%{version}-%{subver}.i386.linux
 %endif
 %ifarch %{x8664}
-%setup -q -T -b1 -n %{name}-%{version}-%{subver}.x86_64.linux
+%setup -q -T -b1 -n %{name}-next-%{version}-%{subver}.x86_64.linux
 
 %endif
 sed -i -e '
@@ -79,24 +79,21 @@ sed -i -e '
 	s,@@{_SUFFIX},,
 ' share/{applications/*.desktop,mime/packages/*.xml}
 
-sed -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
+sed -i -e 's,kfmclient exec,xdg-open,' share/opera-next/defaults/filehandler.ini
 
 %patch0 -p1
 %patch1 -p1
 
 # remove lib32/lib64 paths so patch2 can apply (i386 build contained lib64 as well, oh well)
-%{__sed} -i -e '/lib32\|lib64/d;$d' share/opera/defaults/pluginpath.ini
+%{__sed} -i -e '/lib32\|lib64/d;$d' share/opera-next/defaults/pluginpath.ini
 %patch2 -p1
 
-mv lib/opera/plugins/README README.plugins
-mv share/opera/defaults/license.txt .
-mv share/doc/opera/* .
+mv lib/opera-next/plugins/README README.plugins
+mv share/opera-next/defaults/license.txt .
+mv share/doc/opera-next/* .
 
 # nobody wants scalable huge icons
 rm -rf share/icons/hicolor/scalable
-
-# opera packaging tools we don't need runtime
-mv share/opera/package .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -111,11 +108,11 @@ mplayerplug-in*
 EOF
 
 install -p opera* $RPM_BUILD_ROOT%{_bindir}
-cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
+cp -a lib/opera-next $RPM_BUILD_ROOT%{_libdir}
 cp -a share/* $RPM_BUILD_ROOT%{_datadir}
 #cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
-sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
+sed -i -e 's#/usr/lib/opera-next#%{_libdir}/opera-next#g' $RPM_BUILD_ROOT%{_bindir}/opera-next
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -143,92 +140,92 @@ fi
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
-%attr(755,root,root) %{_bindir}/opera
-%attr(755,root,root) %{_bindir}/opera-widget-manager
-%dir %{_libdir}/opera
+%attr(755,root,root) %{_bindir}/opera-next
+#%attr(755,root,root) %{_bindir}/opera-widget-manager
+%dir %{_libdir}/opera-next
 %ifarch %{x8664}
-%exclude %{_libdir}/opera/*-ia32-*
+%exclude %{_libdir}/opera-next/*-ia32-*
 %endif
-%attr(755,root,root) %{_libdir}/opera/*.so
-%attr(755,root,root) %{_libdir}/opera/opera*
+%attr(755,root,root) %{_libdir}/opera-next/*.so
+%attr(755,root,root) %{_libdir}/opera-next/opera*
 %dir %{_plugindir}
-%dir %{_libdir}/opera/gstreamer
-%dir %{_libdir}/opera/gstreamer/plugins
-%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperamatroska.so
-%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperavp8.so
-%dir %{_datadir}/opera
-%{_datadir}/mime/packages/opera-extension.xml
-%{_datadir}/opera/*.*
-%{_datadir}/opera/defaults
-%{_datadir}/opera/extra
-%{_datadir}/opera/skin
-#%{_datadir}/opera/scripts
-%{_datadir}/opera/styles
-%{_datadir}/opera/ui
-%{_datadir}/opera/unite
-%dir %{_datadir}/opera/locale
-%{_datadir}/opera/locale/en
-%lang(af) %{_datadir}/opera/locale/af
-%lang(az) %{_datadir}/opera/locale/az
-%lang(be) %{_datadir}/opera/locale/be
-%lang(bg) %{_datadir}/opera/locale/bg
-%lang(cs) %{_datadir}/opera/locale/cs
-%lang(da) %{_datadir}/opera/locale/da
-%lang(de) %{_datadir}/opera/locale/de
-%lang(el) %{_datadir}/opera/locale/el
-%lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es_ES) %{_datadir}/opera/locale/es-ES
-%lang(es_LA) %{_datadir}/opera/locale/es-LA
-%lang(et) %{_datadir}/opera/locale/et
-%lang(fi) %{_datadir}/opera/locale/fi
-%lang(fr) %{_datadir}/opera/locale/fr
-%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
-%lang(fy) %{_datadir}/opera/locale/fy
-%lang(gd) %{_datadir}/opera/locale/gd
-%lang(hi) %{_datadir}/opera/locale/hi
-%lang(hr) %{_datadir}/opera/locale/hr
-%lang(hu) %{_datadir}/opera/locale/hu
-%lang(id) %{_datadir}/opera/locale/id
-%lang(it) %{_datadir}/opera/locale/it
-%lang(ja) %{_datadir}/opera/locale/ja
-%lang(ka) %{_datadir}/opera/locale/ka
-%lang(ko) %{_datadir}/opera/locale/ko
-%lang(lt) %{_datadir}/opera/locale/lt
-%lang(me) %{_datadir}/opera/locale/me
-%lang(mk) %{_datadir}/opera/locale/mk
-%lang(ms) %{_datadir}/opera/locale/ms
-%lang(nb) %{_datadir}/opera/locale/nb
-%lang(nl) %{_datadir}/opera/locale/nl
-%lang(nn) %{_datadir}/opera/locale/nn
-%lang(pl) %{_datadir}/opera/locale/pl
-%lang(pt) %{_datadir}/opera/locale/pt
-%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
-%lang(ro) %{_datadir}/opera/locale/ro
-%lang(ru) %{_datadir}/opera/locale/ru
-%lang(sk) %{_datadir}/opera/locale/sk
-%lang(sr) %{_datadir}/opera/locale/sr
-%lang(sv) %{_datadir}/opera/locale/sv
-%lang(ta) %{_datadir}/opera/locale/ta
-%lang(te) %{_datadir}/opera/locale/te
-%lang(th) %{_datadir}/opera/locale/th
-%lang(tl) %{_datadir}/opera/locale/tl
-%lang(tr) %{_datadir}/opera/locale/tr
-%lang(uk) %{_datadir}/opera/locale/uk
-%lang(uz) %{_datadir}/opera/locale/uz
-%lang(vi) %{_datadir}/opera/locale/vi
-%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
-#%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
-%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
-%{_datadir}/mime/packages/opera-widget.xml
-%{_datadir}/mime/packages/opera-unite-application.xml
+%dir %{_libdir}/opera-next/gstreamer
+%dir %{_libdir}/opera-next/gstreamer/plugins
+%attr(755,root,root) %{_libdir}/opera-next/gstreamer/plugins/libgstoperamatroska.so
+%attr(755,root,root) %{_libdir}/opera-next/gstreamer/plugins/libgstoperavp8.so
+%dir %{_datadir}/opera-next
+%{_datadir}/mime/packages/opera-next-extension.xml
+%{_datadir}/opera-next/*.*
+%{_datadir}/opera-next/defaults
+%{_datadir}/opera-next/extra
+%{_datadir}/opera-next/skin
+#%{_datadir}/opera-next/scripts
+%{_datadir}/opera-next/styles
+%{_datadir}/opera-next/ui
+%{_datadir}/opera-next/unite
+%dir %{_datadir}/opera-next/locale
+%{_datadir}/opera-next/locale/en
+%lang(af) %{_datadir}/opera-next/locale/af
+%lang(az) %{_datadir}/opera-next/locale/az
+%lang(be) %{_datadir}/opera-next/locale/be
+%lang(bg) %{_datadir}/opera-next/locale/bg
+%lang(cs) %{_datadir}/opera-next/locale/cs
+%lang(da) %{_datadir}/opera-next/locale/da
+%lang(de) %{_datadir}/opera-next/locale/de
+%lang(el) %{_datadir}/opera-next/locale/el
+%lang(en_GB) %{_datadir}/opera-next/locale/en-GB
+%lang(es_ES) %{_datadir}/opera-next/locale/es-ES
+%lang(es_LA) %{_datadir}/opera-next/locale/es-LA
+%lang(et) %{_datadir}/opera-next/locale/et
+%lang(fi) %{_datadir}/opera-next/locale/fi
+%lang(fr) %{_datadir}/opera-next/locale/fr
+%lang(fr_CA) %{_datadir}/opera-next/locale/fr-CA
+%lang(fy) %{_datadir}/opera-next/locale/fy
+%lang(gd) %{_datadir}/opera-next/locale/gd
+%lang(hi) %{_datadir}/opera-next/locale/hi
+%lang(hr) %{_datadir}/opera-next/locale/hr
+%lang(hu) %{_datadir}/opera-next/locale/hu
+%lang(id) %{_datadir}/opera-next/locale/id
+%lang(it) %{_datadir}/opera-next/locale/it
+%lang(ja) %{_datadir}/opera-next/locale/ja
+%lang(ka) %{_datadir}/opera-next/locale/ka
+%lang(ko) %{_datadir}/opera-next/locale/ko
+%lang(lt) %{_datadir}/opera-next/locale/lt
+%lang(me) %{_datadir}/opera-next/locale/me
+%lang(mk) %{_datadir}/opera-next/locale/mk
+%lang(ms) %{_datadir}/opera-next/locale/ms
+%lang(nb) %{_datadir}/opera-next/locale/nb
+%lang(nl) %{_datadir}/opera-next/locale/nl
+%lang(nn) %{_datadir}/opera-next/locale/nn
+%lang(pl) %{_datadir}/opera-next/locale/pl
+%lang(pt) %{_datadir}/opera-next/locale/pt
+%lang(pt_BR) %{_datadir}/opera-next/locale/pt-BR
+%lang(ro) %{_datadir}/opera-next/locale/ro
+%lang(ru) %{_datadir}/opera-next/locale/ru
+%lang(sk) %{_datadir}/opera-next/locale/sk
+%lang(sr) %{_datadir}/opera-next/locale/sr
+%lang(sv) %{_datadir}/opera-next/locale/sv
+%lang(ta) %{_datadir}/opera-next/locale/ta
+%lang(te) %{_datadir}/opera-next/locale/te
+%lang(th) %{_datadir}/opera-next/locale/th
+%lang(tl) %{_datadir}/opera-next/locale/tl
+%lang(tr) %{_datadir}/opera-next/locale/tr
+%lang(uk) %{_datadir}/opera-next/locale/uk
+%lang(uz) %{_datadir}/opera-next/locale/uz
+%lang(vi) %{_datadir}/opera-next/locale/vi
+%lang(zh_CN) %{_datadir}/opera-next/locale/zh-cn
+#%lang(zh_HK) %{_datadir}/opera-next/locale/zh-hk
+%lang(zh_TW) %{_datadir}/opera-next/locale/zh-tw
+#%{_datadir}/mime/packages/opera-next-widget.xml
+%{_datadir}/mime/packages/opera-next-unite-application.xml
 %{_desktopdir}/*.desktop
-%{_mandir}/man1/opera.1*
-%{_mandir}/man1/opera-widget-manager.1*
+%{_mandir}/man1/opera-next.1*
+#%{_mandir}/man1/opera-widget-manager.1*
 #%{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.png
 
 %ifarch %{x8664}
 %files plugin32
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/opera/*-ia32-*
+%attr(755,root,root) %{_libdir}/opera-next/*-ia32-*
 %endif
