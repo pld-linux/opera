@@ -4,8 +4,8 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		1015
-%define		subverdir	food_11.50-1015
+%define		subver		1040
+%define		subverdir	coar_11.50-1040
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
@@ -16,10 +16,10 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-next-%{version}-%{subver}.i386.linux.tar.xz
-# Source0-md5:	6eebd170bbc784a2a4222fd060b2edb9
+# Source0-md5:	7a5345dfbd44be723b6ebd6c559a3042
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-next-%{version}-%{subver}.x86_64.linux.tar.xz
-# Source1-md5:	852c078f6015ea4f14325f15cb5f3b36
+# Source1-md5:	c1aa323c0ed87109857bbf900373c3d5
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -141,7 +141,7 @@ fi
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
 %attr(755,root,root) %{_bindir}/opera-next
-#%attr(755,root,root) %{_bindir}/opera-widget-manager
+%attr(755,root,root) %{_bindir}/opera-next-widget-manager
 %dir %{_libdir}/opera-next
 %ifarch %{x8664}
 %exclude %{_libdir}/opera-next/*-ia32-*
@@ -216,11 +216,11 @@ fi
 %lang(zh_CN) %{_datadir}/opera-next/locale/zh-cn
 #%lang(zh_HK) %{_datadir}/opera-next/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera-next/locale/zh-tw
-#%{_datadir}/mime/packages/opera-next-widget.xml
+%{_datadir}/mime/packages/opera-next-widget.xml
 %{_datadir}/mime/packages/opera-next-unite-application.xml
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera-next.1*
-#%{_mandir}/man1/opera-widget-manager.1*
+%{_mandir}/man1/opera-next-widget-manager.1*
 #%{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.png
 
