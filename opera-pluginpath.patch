@@ -1,24 +1,20 @@
---- opera-10.60-6386.x86_64.linux/share/opera-next/defaults/pluginpath.ini~	2010-07-05 12:35:24.464906567 +0200
-+++ opera-10.60-6386.x86_64.linux/share/opera-next/defaults/pluginpath.ini	2010-07-05 12:36:24.790733975 +0200
-@@ -6,75 +6,9 @@
+--- opera-10.60-6386.x86_64.linux/share/opera/defaults/pluginpath.ini~	2010-07-05 12:35:24.464906567 +0200
++++ opera-10.60-6386.x86_64.linux/share/opera/defaults/pluginpath.ini	2010-07-05 12:36:24.790733975 +0200
+@@ -6,72 +6,8 @@
  plugins=$HOME/.kde/share/config/kcmnspluginrc
  
  [Paths]
 -$PWD/plugins=1
 -$HOME/.local/lib/opera/plugins=1
--/usr/lib/opera-next/plugins=1
--/usr/local/lib/opera-next/plugins=1
--$HOME/.local/lib/opera/plugins=1
-++; Netscape Plug-in Paths
++; Netscape Plug-in Paths
 +$HOME/.mozilla/plugins/=1
  $OPERA_PERSONALDIR/plugins=1
--/usr/lib/opera/plugins=1
++/usr/lib64/opera/plugins=1
+ /usr/lib/opera/plugins=1
 -/usr/local/lib/opera/plugins=1
 -/opt/lib/opera/plugins=1
 -/opt/opera/lib/opera/plugins=1
-+/usr/lib64/opera-next/plugins=1
-+/usr/lib64/opera/plugins=1
- 
+-
 -; Adobe Acrobat
 -/usr/local/Adobe/Reader8/Browser/intellinux=1
 -/usr/local/Acrobat7.0/Browsers/intellinux=1

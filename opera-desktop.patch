@@ -1,5 +1,5 @@
---- opera-10.51-6252.i386.linux/share/applications/opera-next-browser.desktop~	2010-03-20 15:38:12.000000000 +0200
-+++ opera-10.51-6252.i386.linux/share/applications/opera-next-browser.desktop	2010-03-20 15:40:34.551656601 +0200
+--- opera-10.51-6252.i386.linux/share/applications/opera-browser.desktop~	2010-03-20 15:38:12.000000000 +0200
++++ opera-10.51-6252.i386.linux/share/applications/opera-browser.desktop	2010-03-20 15:40:34.551656601 +0200
 @@ -2,6 +2,10 @@
  Type=Application
  Version=1.0
@@ -23,7 +23,7 @@
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
  Comment=Fast and secure web browser and Internet suite
-+Comment[pl]=Szybka i bezpieczna przeglądarka WWW
++Comment[pl]=Najszybsza przeglądarka WWW na świecie
  Icon=opera-browser
  TryExec=/usr/bin/opera
  Exec=/usr/bin/opera %U
