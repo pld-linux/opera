@@ -5,8 +5,8 @@
 # - WEEKLY - weekly development version (sometimes it's on DEVEL)
 %bcond_without	distributable	# distributable or not
 
-%define		subver		1067
-%define		subverdir	rc1_11.50-1067
+%define		subver		1068
+%define		subverdir	rc2_11.50-1068
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
@@ -17,10 +17,10 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source0:	http://snapshot.opera.com/unix/%{subverdir}/Opera/%{name}-%{version}-%{subver}.i386.linux.tar.xz
-# Source0-md5:	19c1fd144230179fe6d4dc0d09f3fec3
+# Source0-md5:	1a11a6f31beae55835e00532d7de5a8a
 %{!?with_distributable:NoSource:	0}
 Source1:	http://snapshot.opera.com/unix/%{subverdir}/Opera/%{name}-%{version}-%{subver}.x86_64.linux.tar.xz
-# Source1-md5:	ac7881281ac18f5b03387842a5b75ff9
+# Source1-md5:	c8bc2c53ecb6d7c018b47453e0270176
 %{!?with_distributable:NoSource:	1}
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -173,7 +173,7 @@ fi
 %lang(az) %{_datadir}/opera/locale/az
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
-%lang(bn) %{_datadir}/opera/locale/bn
+#%lang(bn) %{_datadir}/opera/locale/bn
 %lang(cs) %{_datadir}/opera/locale/cs
 %lang(da) %{_datadir}/opera/locale/da
 %lang(de) %{_datadir}/opera/locale/de
@@ -202,7 +202,7 @@ fi
 %lang(nb) %{_datadir}/opera/locale/nb
 %lang(nl) %{_datadir}/opera/locale/nl
 %lang(nn) %{_datadir}/opera/locale/nn
-%lang(pa) %{_datadir}/opera/locale/pa
+#%lang(pa) %{_datadir}/opera/locale/pa
 %lang(pl) %{_datadir}/opera/locale/pl
 %lang(pt) %{_datadir}/opera/locale/pt
 %lang(pt_BR) %{_datadir}/opera/locale/pt-BR
@@ -211,7 +211,7 @@ fi
 %lang(sk) %{_datadir}/opera/locale/sk
 %lang(sr) %{_datadir}/opera/locale/sr
 %lang(sv) %{_datadir}/opera/locale/sv
-%lang(sw) %{_datadir}/opera/locale/sw
+#%lang(sw) %{_datadir}/opera/locale/sw
 %lang(ta) %{_datadir}/opera/locale/ta
 %lang(te) %{_datadir}/opera/locale/te
 %lang(th) %{_datadir}/opera/locale/th
@@ -223,7 +223,7 @@ fi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 #%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
-%lang(zu) %{_datadir}/opera/locale/zu
+#%lang(zu) %{_datadir}/opera/locale/zu
 %{_datadir}/mime/packages/opera-widget.xml
 %{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
