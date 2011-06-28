@@ -22,8 +22,9 @@
 @@ -30,6 +30,7 @@
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
- Comment=A fast and secure web browser and Internet suite
+ Comment=Fast and secure web browser and Internet suite
 +Comment[pl]=Najszybsza przeglądarka WWW na świecie
  Icon=opera-browser
  TryExec=/usr/bin/opera
  Exec=/usr/bin/opera %U
+

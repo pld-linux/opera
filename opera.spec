@@ -2,15 +2,16 @@
 # - HEAD - stable version
 # - DEVEL - development version
 # - WEEKLY - weekly development version
+# - NEXT - opera next
 #
 # NOTE: to avoid creating unreadable/unmaintainable spec:
 # - don't put static version here, create STATIC branch for that for example
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	11.11
+%define		ver	11.50
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	2109
+%define		buildid	1074
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -22,9 +23,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	f3de6d706152cbe25702f70969124f44
+# Source10-md5:	942ea1193c2d6a4e0714acb99a227e27
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	206550f16b98dd3dfd3063912dcba53a
+# Source11-md5:	40c06ac3d7cf3289b446499728a725a5
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -213,10 +214,11 @@ fi
 %{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
-#%lang(af) %{_datadir}/opera/locale/af
-#%lang(az) %{_datadir}/opera/locale/az
+%lang(af) %{_datadir}/opera/locale/af
+%lang(az) %{_datadir}/opera/locale/az
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
+%lang(bn) %{_datadir}/opera/locale/bn
 %lang(cs) %{_datadir}/opera/locale/cs
 %lang(da) %{_datadir}/opera/locale/da
 %lang(de) %{_datadir}/opera/locale/de
@@ -239,12 +241,13 @@ fi
 %lang(ka) %{_datadir}/opera/locale/ka
 %lang(ko) %{_datadir}/opera/locale/ko
 %lang(lt) %{_datadir}/opera/locale/lt
-#%lang(me) %{_datadir}/opera/locale/me
+%lang(me) %{_datadir}/opera/locale/me
 %lang(mk) %{_datadir}/opera/locale/mk
-#%lang(ms) %{_datadir}/opera/locale/ms
+%lang(ms) %{_datadir}/opera/locale/ms
 %lang(nb) %{_datadir}/opera/locale/nb
 %lang(nl) %{_datadir}/opera/locale/nl
 %lang(nn) %{_datadir}/opera/locale/nn
+%lang(pa) %{_datadir}/opera/locale/pa
 %lang(pl) %{_datadir}/opera/locale/pl
 %lang(pt) %{_datadir}/opera/locale/pt
 %lang(pt_BR) %{_datadir}/opera/locale/pt-BR
@@ -253,17 +256,19 @@ fi
 %lang(sk) %{_datadir}/opera/locale/sk
 %lang(sr) %{_datadir}/opera/locale/sr
 %lang(sv) %{_datadir}/opera/locale/sv
+%lang(sw) %{_datadir}/opera/locale/sw
 %lang(ta) %{_datadir}/opera/locale/ta
 %lang(te) %{_datadir}/opera/locale/te
-#%lang(th) %{_datadir}/opera/locale/th
-#%lang(tl) %{_datadir}/opera/locale/tl
+%lang(th) %{_datadir}/opera/locale/th
+%lang(tl) %{_datadir}/opera/locale/tl
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
-#%lang(uz) %{_datadir}/opera/locale/uz
+%lang(uz) %{_datadir}/opera/locale/uz
 %lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
 #%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
+%lang(zu) %{_datadir}/opera/locale/zu
 %{_datadir}/mime/packages/opera-widget.xml
 %{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
