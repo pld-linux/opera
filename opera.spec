@@ -71,18 +71,18 @@ Obsługa 32-bitowych wtyczek Opery.
 %endif
 %ifarch %{x8664}
 %setup -q -T -b1 -n %{name}-%{version}-%{subver}.x86_64.linux
-
 %endif
-sed -i -e '
-	s,@@{PREFIX},%{_prefix},g
-	s,@@{SUFFIX},,
-	s,@@{_SUFFIX},,
-' share/{applications/*.desktop,mime/packages/*.xml}
-
-sed -i -e 's,kfmclient exec,xdg-open,' share/opera-next/defaults/filehandler.ini
 
 %patch0 -p1
 %patch1 -p1
+
+sed -i -e '
+	s,@@{PREFIX},%{_prefix},g
+	s,@@{SUFFIX},-next,
+	s,@@{_SUFFIX}, Next,
+' share/{applications/*.desktop,mime/packages/*.xml}
+
+sed -i -e 's,kfmclient exec,xdg-open,' share/opera-next/defaults/filehandler.ini
 
 # remove lib32/lib64 paths so patch2 can apply (i386 build contained lib64 as well, oh well)
 %{__sed} -i -e '/lib32\|lib64/d;$d' share/opera-next/defaults/pluginpath.ini

@@ -3,7 +3,7 @@
 @@ -2,6 +2,10 @@
  Type=Application
  Version=1.0
- Name=Opera
+ Name=Opera@@{_SUFFIX}
 +Name[af]=opera
 +Name[eo]=Opero
 +Name[pl]=Opera
@@ -24,7 +24,7 @@
  GenericName[zu]=Umkhangeli zincwadi we Web
  Comment=Fast and secure web browser and Internet suite
 +Comment[pl]=Szybka i bezpieczna przeglądarka WWW
- Icon=opera-browser
- TryExec=/usr/bin/opera
- Exec=/usr/bin/opera %U
+ Icon=opera@@{SUFFIX}-browser
+ TryExec=@@{PREFIX}/bin/opera@@{SUFFIX}
+ Exec=@@{PREFIX}/bin/opera@@{SUFFIX} %U
 
