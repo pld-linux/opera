@@ -9,21 +9,21 @@
 %define		rel		1
 Summary:	World fastest web browser
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
-Name:		opera
+Name:		opera-next
 Version:	12.00
 Release:	0.%{subver}.%{rel}
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-next-%{version}-%{subver}.i386.linux.tar.xz
+Source0:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.i386.linux.tar.xz
 # Source0-md5:	af34ea94a7b27b31860e7ba72f565aa0
 %{!?with_distributable:NoSource:	0}
-Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-next-%{version}-%{subver}.x86_64.linux.tar.xz
+Source1:	http://snapshot.opera.com/unix/%{subverdir}/%{name}-%{version}-%{subver}.x86_64.linux.tar.xz
 # Source1-md5:	7606e953e13fd3114a879a62f38255e2
 %{!?with_distributable:NoSource:	1}
-Patch0:		%{name}-wrapper.patch
-Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-pluginpath.patch
+Patch0:		opera-wrapper.patch
+Patch1:		opera-desktop.patch
+Patch2:		opera-pluginpath.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpmbuild(macros) >= 1.356
 BuildRequires:	sed >= 4.0
@@ -67,10 +67,10 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %prep
 %ifarch %{ix86}
-%setup -q -T -b0 -n %{name}-next-%{version}-%{subver}.i386.linux
+%setup -q -T -b0 -n %{name}-%{version}-%{subver}.i386.linux
 %endif
 %ifarch %{x8664}
-%setup -q -T -b1 -n %{name}-next-%{version}-%{subver}.x86_64.linux
+%setup -q -T -b1 -n %{name}-%{version}-%{subver}.x86_64.linux
 
 %endif
 sed -i -e '
