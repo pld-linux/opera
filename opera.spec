@@ -9,9 +9,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	11.52
+%define		ver	11.60
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1100
+%define		buildid	1185
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -23,9 +23,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	6b7ed059dee9874d2414a04ae86bf8f7
+# Source10-md5:	d9588f16f1749b20ac0e320061e08a89
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	c4f6328600b63dd7bb236a6a98809983
+# Source11-md5:	84db7d846be0299839c82ae3081ae00b
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -269,6 +269,7 @@ fi
 #%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %lang(zu) %{_datadir}/opera/locale/zu
+%{_datadir}/opera/region
 %{_datadir}/mime/packages/opera-widget.xml
 %{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
