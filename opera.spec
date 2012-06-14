@@ -9,9 +9,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	11.64
+%define		ver	12.00
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1403
+%define		buildid	1467
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -23,9 +23,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	efcc57782e85fc080c354dbf76fdef83
+# Source10-md5:	869274a8a021e965fd56519894851bfb
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	7f5594b3ae08a438486a1cd8f4e12d68
+# Source11-md5:	c9a4a298e525ee61cbcd58059562c2b8
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -119,7 +119,7 @@ mv share/doc/opera/* .
 rm -rf share/icons/hicolor/scalable
 
 # opera packaging tools we don't need runtime
-mv share/opera/package .
+mv share/opera/package-id.ini .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -190,13 +190,14 @@ fi
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
 %attr(755,root,root) %{_bindir}/opera
-%attr(755,root,root) %{_bindir}/opera-widget-manager
+#%attr(755,root,root) %{_bindir}/opera-widget-manager
 %dir %{_libdir}/opera
 %ifarch %{x8664}
 %exclude %{_libdir}/opera/*-ia32-*
 %endif
 %attr(755,root,root) %{_libdir}/opera/*.so
 %attr(755,root,root) %{_libdir}/opera/opera*
+%attr(755,root,root) %{_libdir}/opera/pluginwrapper/*
 %dir %{_plugindir}
 %dir %{_libdir}/opera/gstreamer
 %dir %{_libdir}/opera/gstreamer/plugins
@@ -211,10 +212,11 @@ fi
 #%{_datadir}/opera/scripts
 %{_datadir}/opera/styles
 %{_datadir}/opera/ui
-%{_datadir}/opera/unite
+#%{_datadir}/opera/unite
 %dir %{_datadir}/opera/locale
 %{_datadir}/opera/locale/en
 %lang(af) %{_datadir}/opera/locale/af
+%lang(ar) %{_datadir}/opera/locale/ar
 %lang(az) %{_datadir}/opera/locale/az
 %lang(be) %{_datadir}/opera/locale/be
 %lang(bg) %{_datadir}/opera/locale/bg
@@ -227,11 +229,13 @@ fi
 %lang(es_ES) %{_datadir}/opera/locale/es-ES
 %lang(es_LA) %{_datadir}/opera/locale/es-LA
 %lang(et) %{_datadir}/opera/locale/et
+%lang(fa) %{_datadir}/opera/locale/fa
 %lang(fi) %{_datadir}/opera/locale/fi
 %lang(fr) %{_datadir}/opera/locale/fr
 %lang(fr_CA) %{_datadir}/opera/locale/fr-CA
 %lang(fy) %{_datadir}/opera/locale/fy
 %lang(gd) %{_datadir}/opera/locale/gd
+%lang(he) %{_datadir}/opera/locale/he
 %lang(hi) %{_datadir}/opera/locale/hi
 %lang(hr) %{_datadir}/opera/locale/hr
 %lang(hu) %{_datadir}/opera/locale/hu
@@ -239,6 +243,7 @@ fi
 %lang(it) %{_datadir}/opera/locale/it
 %lang(ja) %{_datadir}/opera/locale/ja
 %lang(ka) %{_datadir}/opera/locale/ka
+%lang(kk) %{_datadir}/opera/locale/kk
 %lang(ko) %{_datadir}/opera/locale/ko
 %lang(lt) %{_datadir}/opera/locale/lt
 %lang(me) %{_datadir}/opera/locale/me
@@ -263,6 +268,7 @@ fi
 %lang(tl) %{_datadir}/opera/locale/tl
 %lang(tr) %{_datadir}/opera/locale/tr
 %lang(uk) %{_datadir}/opera/locale/uk
+%lang(ur) %{_datadir}/opera/locale/ur
 %lang(uz) %{_datadir}/opera/locale/uz
 %lang(vi) %{_datadir}/opera/locale/vi
 %lang(zh_CN) %{_datadir}/opera/locale/zh-cn
@@ -270,11 +276,11 @@ fi
 %lang(zh_TW) %{_datadir}/opera/locale/zh-tw
 %lang(zu) %{_datadir}/opera/locale/zu
 %{_datadir}/opera/region
-%{_datadir}/mime/packages/opera-widget.xml
-%{_datadir}/mime/packages/opera-unite-application.xml
+#%{_datadir}/mime/packages/opera-widget.xml
+#%{_datadir}/mime/packages/opera-unite-application.xml
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/opera.1*
-%{_mandir}/man1/opera-widget-manager.1*
+#%{_mandir}/man1/opera-widget-manager.1*
 #%{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.png
 
