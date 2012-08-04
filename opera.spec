@@ -198,6 +198,7 @@ fi
 %attr(755,root,root) %{_libdir}/opera/*.so
 %attr(755,root,root) %{_libdir}/opera/opera*
 %attr(755,root,root) %{_libdir}/opera/pluginwrapper/*
+%dir %{_libdir}/opera/pluginwrapper
 %dir %{_plugindir}
 %dir %{_libdir}/opera/gstreamer
 %dir %{_libdir}/opera/gstreamer/plugins
