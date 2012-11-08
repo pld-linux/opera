@@ -9,9 +9,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	12.02
+%define		ver	12.10
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1578
+%define		buildid	1652
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -23,9 +23,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	33e067060eb63e6e22bd9605e17d0b8b
+# Source10-md5:	ae35bd96f8af4c90aa6efbc3b8211c8f
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	3e83561b0ecaae946dd29e0e47b476ef
+# Source11-md5:	6b0b8818a0c43c940965267c32c5f20a
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -247,6 +247,7 @@ fi
 %lang(kk) %{_datadir}/opera/locale/kk
 %lang(ko) %{_datadir}/opera/locale/ko
 %lang(lt) %{_datadir}/opera/locale/lt
+%lang(lt) %{_datadir}/opera/locale/lv
 %lang(me) %{_datadir}/opera/locale/me
 %lang(mk) %{_datadir}/opera/locale/mk
 %lang(ms) %{_datadir}/opera/locale/ms
