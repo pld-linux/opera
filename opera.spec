@@ -9,9 +9,9 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	12.10
+%define		ver	12.11
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1652
+%define		buildid	1661
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
@@ -23,9 +23,9 @@ Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	ae35bd96f8af4c90aa6efbc3b8211c8f
+# Source10-md5:	b87648e9555e12d4ed8581adb19a1310
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	6b0b8818a0c43c940965267c32c5f20a
+# Source11-md5:	60a35147e3697e8b58cad71b76dc31f1
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
