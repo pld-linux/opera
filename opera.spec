@@ -18,7 +18,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	1
+Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -49,6 +49,8 @@ ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_enable_debug_packages	0
+
+%define		_noautoreq	'libcurl.so.4\\(CURL_OPENSSL_3\\)'
 
 %define		_plugindir	%{_libdir}/opera/plugins
 %define		_operadocdir	%{_docdir}/%{name}-%{ver}
