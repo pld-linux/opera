@@ -9,23 +9,23 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	12.12
+%define		ver	12.14
 %define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1707
+%define		buildid	1738
 
 Summary:	World fastest web browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	2
+Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	a39d3d1818c1e025ceb83c49a624271f
+# Source10-md5:	8da42470114325b1bf33396dc5a7cb2b
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	9e04954e8f326da66da38c3acb98e78c
+# Source11-md5:	8a9f849f24e78a2360f6780b9917471b
 Source0:	%{name}.desktop
 Patch0:		%{name}-wrapper.patch
 Patch1:		%{name}-desktop.patch
@@ -96,13 +96,13 @@ Obsługa 32-bitowych wtyczek Opery.
 %setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.x86_64.linux
 %endif
 
-sed -i -e '
+%{__sed} -i -e '
 	s,@@{PREFIX},%{_prefix},g
 	s,@@{SUFFIX},,
 	s,@@{_SUFFIX},,
 ' share/{applications/*.desktop,mime/packages/*.xml}
 
-sed -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
+%{__sed} -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
 
 %patch0 -p1
 %patch1 -p1
@@ -120,6 +120,9 @@ rm -rf share/icons/hicolor/scalable
 
 # opera packaging tools we don't need runtime
 mv share/opera/package-id.ini .
+
+# cleanup backups after patching
+find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 
 %install
 rm -rf $RPM_BUILD_ROOT
