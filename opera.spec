@@ -18,7 +18,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	%{ver}
-Release:	2
+Release:	3
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -141,6 +141,7 @@ EOF
 install -p opera* $RPM_BUILD_ROOT%{_bindir}
 cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
 cp -a share/* $RPM_BUILD_ROOT%{_datadir}
+ln -s %{_docdir}/%{name}-%{version}/LICENSE $RPM_BUILD_ROOT%{_datadir}/%{name}/defaults/license.txt
 #cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
 
 sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
