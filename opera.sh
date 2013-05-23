@@ -5,5 +5,13 @@ if [ -f /usr/share/java-utils/java-functions ]; then
 	set_jvm
 fi
 export OPERA_DIR=/usr/share/opera
-export OPERA_PERSONALDIR=$HOME/.opera
+
+# Legacy dir
+export OPERA_PERSONALDIR="$HOME/.opera"
+
+# XDG path
+if [ ! -d "$OPERA_PERSONALDIR" ]; then
+	OPERA_PERSONALDIR="${XDG_CONFIG_HOME:-$HOME/.config}/opera"
+fi
+
 exec /usr/lib/opera/opera "$@"
