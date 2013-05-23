@@ -27,7 +27,7 @@ Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buil
 Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
 # Source11-md5:	59e1bb087e5861126a296ef0a68df8a4
 Source0:	%{name}.desktop
-Patch0:		%{name}-wrapper.patch
+Source1:	%{name}.sh
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-pluginpath.patch
 URL:		http://www.opera.com/
@@ -93,10 +93,11 @@ Obsługa 32-bitowych wtyczek Opery.
 %ifarch %{ix86}
 %setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.i386.linux
 %endif
-
 %ifarch %{x8664}
 %setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.x86_64.linux
 %endif
+
+sed -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{SOURCE1} > opera
 
 %{__sed} -i -e '
 	s,@@{PREFIX},%{_prefix},g
@@ -106,7 +107,6 @@ Obsługa 32-bitowych wtyczek Opery.
 
 %{__sed} -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
 
-%patch0 -p1
 %patch1 -p1
 
 # remove lib32/lib64 paths so patch2 can apply (i386 build contained lib64 as well, oh well)
@@ -143,8 +143,6 @@ cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
 cp -a share/* $RPM_BUILD_ROOT%{_datadir}
 ln -s %{_docdir}/%{name}-%{version}/LICENSE $RPM_BUILD_ROOT%{_datadir}/%{name}/defaults/license.txt
 #cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
-
-sed -i -e 's#/usr/lib/opera#%{_libdir}/opera#g' $RPM_BUILD_ROOT%{_bindir}/opera
 
 cat << 'EOF' > $RPM_BUILD_ROOT%{_sysconfdir}/operaprefs_default.ini
 [ISP]
