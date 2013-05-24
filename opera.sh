@@ -10,7 +10,7 @@ export OPERA_DIR=/usr/share/opera
 export OPERA_PERSONALDIR="$HOME/.opera"
 
 # XDG path
-if [ ! -d "$OPERA_PERSONALDIR" ]; then
+if [ ! -d "$OPERA_PERSONALDIR/operaprefs.ini" ]; then
 	OPERA_PERSONALDIR="${XDG_CONFIG_HOME:-$HOME/.config}/opera"
 fi
 
