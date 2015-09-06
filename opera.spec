@@ -14,13 +14,14 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	31.0.1889.174
-Release:	0.7
+Release:	0.8
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
 # Source10-md5:	71d13017ca60bbf4619dc3faf58fd94e
 Source1:	%{name}.sh
+Source2:	find-lang.sh
 Patch1:		%{name}-desktop.patch
 Patch2:		pepper_flash_config.patch
 URL:		http://www.opera.com/
@@ -36,6 +37,8 @@ Provides:	wwwbrowser
 Obsoletes:	opera-i18n
 ExclusiveArch:	%{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		find_lang	sh find-lang.sh %{buildroot}
 
 %define		_enable_debug_packages	0
 %define		no_install_post_strip	1
@@ -77,7 +80,8 @@ mv usr/share/doc/opera-stable/* .
 %patch1 -p1
 %patch2 -p1
 
-sed -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{_sourcedir}/%{name}.sh > %{name}.sh
+%{__sed} -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{_sourcedir}/%{name}.sh > %{name}.sh
+%{__sed} -e 's,@localedir@,%{_datadir}/%{name}/localization,' %{_sourcedir}/find-lang.sh > find-lang.sh
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -103,6 +107,11 @@ install -p %{name}.sh $RPM_BUILD_ROOT%{_bindir}/%{name}
 cp -p %{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
 cp -a icons/* $RPM_BUILD_ROOT%{_iconsdir}
 
+# find locales
+%find_lang %{name}.lang
+# always package en-US
+%{__sed} -i -e '/en-US.pak/d' %{name}.lang
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -118,7 +127,7 @@ if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc copyright
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
@@ -134,7 +143,8 @@ fi
 %{_datadir}/%{name}/resources/*.json
 %{_datadir}/%{name}/resources/dictionaries.xml
 %{_datadir}/%{name}/resources/inspector
-%{_datadir}/%{name}/localization
+%dir %{_datadir}/%{name}/localization
+%{_datadir}/%{name}/localization/en-US.pak
 
 %dir %{_libdir}/%{name}
 %{_libdir}/%{name}/icudtl.dat
