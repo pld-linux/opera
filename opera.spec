@@ -14,7 +14,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	31.0.1889.174
-Release:	0.2
+Release:	0.4
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -77,6 +77,8 @@ mv usr/share/doc/opera-stable/* .
 
 %patch1 -p1
 
+sed -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{_sourcedir}/%{name}.sh > %{name}.sh
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_libdir}/%{name}/plugins,%{_datadir}/%{name}} \
@@ -93,9 +95,8 @@ cp -a lib $RPM_BUILD_ROOT%{_libdir}/%{name}
 ln -s %{_datadir}/%{name}/localization $RPM_BUILD_ROOT%{_libdir}/%{name}/localization
 ln -s %{_datadir}/%{name}/resources $RPM_BUILD_ROOT%{_libdir}/%{name}/resources
 install -p %{name} $RPM_BUILD_ROOT%{_libdir}/%{name}
-#install -p %{name}-bin $RPM_BUILD_ROOT%{_libdir}/%{name}
 install -p %{name}_sandbox $RPM_BUILD_ROOT%{_libdir}/%{name}
-ln -s %{_libdir}/%{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
+install -p %{name}.sh $RPM_BUILD_ROOT%{_bindir}/%{name}
 cp -p %{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
 cp -a icons/* $RPM_BUILD_ROOT%{_iconsdir}
 
