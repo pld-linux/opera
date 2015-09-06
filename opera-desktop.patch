@@ -1,13 +1,33 @@
---- opera-31.0.1889.174/opera.desktop	2015-09-06 10:00:09.174694303 +0300
-+++ opera-31.0.1889.174/opera.desktop	2015-09-06 10:01:59.496777742 +0300
-@@ -1,15 +1,19 @@
+--- opera-31.0.1889.174/opera.desktop	2015-09-06 10:01:59.496777742 +0300
++++ opera-31.0.1889.174/opera.desktop	2015-09-06 11:25:23.712512805 +0300
+@@ -1,15 +1,38 @@
  [Desktop Entry]
  Version=1.0
  Name=Opera
+-GenericName=Web browser
 +Name[eo]=Opero
 +Name[zu]=I Opera
- GenericName=Web browser
++GenericName=Web Browser
++GenericName[bs]=Web preglednik
++GenericName[de]=Web-Browser
++GenericName[eo]=TTT-rigardilo
++GenericName[es]=Navegador web
++GenericName[et]=Veebibrauser
++GenericName[eu]=Web arakatzailea
++GenericName[fi]=WWW-selain
++GenericName[fr]=Un navigateur web
++GenericName[is]=Vafri
++GenericName[it]=Browser Web
++GenericName[nl]=webbrowser
++GenericName[nn]=Nettlesar
 +GenericName[pl]=Przeglądarka WWW
++GenericName[pt]=Navegador Web
++GenericName[pt_BR]=Navegador
++GenericName[ro]=Navigator de web
++GenericName[sl]=Spletni brskalnik
++GenericName[ven]=Buronza ya Webu
++GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
++GenericName[zu]=Umkhangeli zincwadi we Web
  Comment=Fast and secure web browser
 +Comment[pl]=Najszybsza przeglądarka WWW na świecie
  TryExec=opera

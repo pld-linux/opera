@@ -20,7 +20,6 @@ License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	ftp://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
 # Source10-md5:	71d13017ca60bbf4619dc3faf58fd94e
-Source0:	%{name}.desktop
 Source1:	%{name}.sh
 Patch1:		%{name}-desktop.patch
 Patch2:		pepper_flash_config.patch
