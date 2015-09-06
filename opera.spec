@@ -14,7 +14,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	31.0.1889.174
-Release:	0.6
+Release:	0.7
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -23,6 +23,7 @@ Source10:	ftp://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_
 Source0:	%{name}.desktop
 Source1:	%{name}.sh
 Patch1:		%{name}-desktop.patch
+Patch2:		pepper_flash_config.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -75,6 +76,7 @@ mv usr/share/applications/%{name}.desktop .
 mv usr/share/doc/opera-stable/* .
 
 %patch1 -p1
+%patch2 -p1
 
 sed -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{_sourcedir}/%{name}.sh > %{name}.sh
 
