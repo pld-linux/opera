@@ -14,7 +14,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	31.0.1889.174
-Release:	0.4
+Release:	0.6
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -30,7 +30,6 @@ BuildRequires:	sed >= 4.0
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
-Requires(post,postun):	shared-mime-info
 Requires:	browser-plugins >= 2.0
 Requires:	desktop-file-utils
 Provides:	wwwbrowser
@@ -96,6 +95,9 @@ ln -s %{_datadir}/%{name}/localization $RPM_BUILD_ROOT%{_libdir}/%{name}/localiz
 ln -s %{_datadir}/%{name}/resources $RPM_BUILD_ROOT%{_libdir}/%{name}/resources
 install -p %{name} $RPM_BUILD_ROOT%{_libdir}/%{name}
 install -p %{name}_sandbox $RPM_BUILD_ROOT%{_libdir}/%{name}
+install -p %{name}_crashreporter $RPM_BUILD_ROOT%{_libdir}/%{name}
+install -p %{name}_autoupdate $RPM_BUILD_ROOT%{_libdir}/%{name}
+cp -p %{name}_autoupdate.* $RPM_BUILD_ROOT%{_libdir}/%{name}
 install -p %{name}.sh $RPM_BUILD_ROOT%{_bindir}/%{name}
 cp -p %{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
 cp -a icons/* $RPM_BUILD_ROOT%{_iconsdir}
@@ -146,5 +148,11 @@ fi
 %dir %{_libdir}/%{name}/plugins
 
 %attr(755,root,root) %{_libdir}/%{name}/%{name}
+%attr(755,root,root) %{_libdir}/%{name}/%{name}_crashreporter
+
+%attr(755,root,root) %{_libdir}/%{name}/%{name}_autoupdate
+%{_libdir}/%{name}/%{name}_autoupdate.licenses
+%{_libdir}/%{name}/%{name}_autoupdate.version
+
 # These unique permissions are intentional and necessary for the sandboxing
 %attr(4555,root,root) %{_libdir}/%{name}/%{name}_sandbox
