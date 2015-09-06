@@ -14,7 +14,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	31.0.1889.174
-Release:	0.8
+Release:	0.10
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -57,6 +57,22 @@ Ez a verzió a Qt megosztott verziójához linkelődik.
 Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
 dzisiejszych rozszerzeń HTML-a. Dodatkowo jest w miarę stabilna. Ta
 wersja jest skonsolidowana dynamicznie z Qt.
+
+%package l10n
+Summary:	%{name} language packages
+Group:		I18n
+Requires:	%{name} = %{version}-%{release}
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
+
+%description l10n
+This package contains language packages for 56 languages:
+
+af, az, be, bg, bn, ca, cs, da, de, el, en-GB, es-419, es, fi, fil,
+fr-CA, fr, fy, gd, he, hi, hr, hu, id, it, ja, kk, ko, lt, lv, me, mk,
+ms, nb, nl, nn, pa, pl, pt-BR, pt-PT, ro, ru, sk, sr, sv, sw, ta, te,
+th, tr, uk, uz, vi, zh-CN, zh-TW, zu.
 
 %prep
 %setup -qcT
@@ -127,7 +143,7 @@ if [ "$1" = 0 ]; then
 	%update_browser_plugins
 fi
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc copyright
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
@@ -167,3 +183,6 @@ fi
 
 # These unique permissions are intentional and necessary for the sandboxing
 %attr(4555,root,root) %{_libdir}/%{name}/%{name}_sandbox
+
+%files l10n -f %{name}.lang
+%defattr(644,root,root,755)
