@@ -44,9 +44,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		no_install_post_strip	1
 
 %description
-Opera is world fastest web browser. It supports most of nowaday
-extensions of HTML. And it is quite stable. This version is linked
-with shared version of Qt.
+Opera is a fast, secure and user-friendly web browser. It includes web
+developer tools, news aggregation, and the ability to compress data
+via Opera Turbo on congested networks.
 
 %description -l hu.UTF-8
 Opera a világ leggyorsabb webböngészője. A manapság elterjedt
