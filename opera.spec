@@ -9,27 +9,20 @@
 # - don't create useless bconds that for example limit SourceX: to current arch only
 #
 
-%define		ver	12.16
-%define		shver	%(echo %{ver} | tr -d .)
-%define		buildid	1860
-
-Summary:	World fastest web browser
+Summary:	Opera browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	%{ver}
-Release:	1
+Version:	31.0.1889.174
+Release:	0.2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source10:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.i386.linux.tar.xz
-# Source10-md5:	08545c66ba00a568324b1a393c8782f7
-Source11:	ftp://ftp.opera.com/pub/opera/linux/%{shver}/%{name}-%{version}-%{buildid}.x86_64.linux.tar.xz
-# Source11-md5:	ead647964ace52f44ced98adbc568ae7
+Source10:	ftp://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
+# Source10-md5:	71d13017ca60bbf4619dc3faf58fd94e
 Source0:	%{name}.desktop
 Source1:	%{name}.sh
 Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-pluginpath.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -40,22 +33,13 @@ Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	shared-mime-info
 Requires:	browser-plugins >= 2.0
 Requires:	desktop-file-utils
-Requires:	freetype >= 2
-Suggests:	gstreamer-theora
-Suggests:	gstreamer-vorbis
 Provides:	wwwbrowser
 Obsoletes:	opera-i18n
-ExclusiveArch:	%{ix86} %{x8664}
+ExclusiveArch:	%{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_enable_debug_packages	0
-
-%define		_noautoreq	'libcurl.so.4\\(CURL_OPENSSL_3\\)'
-
-%define		_plugindir	%{_libdir}/opera/plugins
-%define		_operadocdir	%{_docdir}/%{name}-%{ver}
-# alternative arch for plugin32
-%define		alt_arch	i386
+%define		no_install_post_strip	1
 
 %description
 Opera is world fastest web browser. It supports most of nowaday
@@ -72,226 +56,94 @@ Opera jest najszybszą przeglądarką WWW na świecie. Obsługuje większość
 dzisiejszych rozszerzeń HTML-a. Dodatkowo jest w miarę stabilna. Ta
 wersja jest skonsolidowana dynamicznie z Qt.
 
-%package plugin32
-Summary:	Opera 32-bit plugins support
-Summary(hu.UTF-8):	Opera 32-bites plugin támogatás
-Summary(pl.UTF-8):	Obsługa 32-bitowych wtyczek Opery
-Group:		X11/Applications/Networking
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	browser-plugins >= 2.0
-
-%description plugin32
-Opera 32-bit plugins support.
-
-%description plugin32 -l hu.UTF-8
-Opera 32-bites plugin támogatás.
-
-%description plugin32 -l pl.UTF-8
-Obsługa 32-bitowych wtyczek Opery.
-
 %prep
-%ifarch %{ix86}
-%setup -q -T -b 10 -n %{name}-%{version}-%{buildid}.i386.linux
-%endif
+%setup -qcT
 %ifarch %{x8664}
-%setup -q -T -b 11 -n %{name}-%{version}-%{buildid}.x86_64.linux
+SOURCE=%{S:10}
 %endif
 
-sed -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{SOURCE1} > opera
+ar x $SOURCE
+tar xf control.tar.gz && rm control.tar.gz
+tar xf data.tar.xz && rm data.tar.xz
 
-%{__sed} -i -e '
-	s,@@{PREFIX},%{_prefix},g
-	s,@@{SUFFIX},,
-	s,@@{_SUFFIX},,
-' share/{applications/*.desktop,mime/packages/*.xml}
+version=$(awk '/Version:/{print $2}' control)
+test $version = %{version}
 
-%{__sed} -i -e 's,kfmclient exec,xdg-open,' share/opera/defaults/filehandler.ini
+mv usr/lib/*/%{name}/* .
+mv usr/share/icons .
+mv usr/share/pixmaps/%{name}.xpm .
+mv usr/share/applications/%{name}.desktop .
+mv usr/share/doc/opera-stable/* .
 
 %patch1 -p1
 
-# remove lib32/lib64 paths so patch2 can apply (i386 build contained lib64 as well, oh well)
-%{__sed} -i -e '/lib32\|lib64/d;$d' share/opera/defaults/pluginpath.ini
-%patch2 -p1
-
-mv lib/opera/plugins/README README.plugins
-mv share/opera/defaults/license.txt .
-mv share/doc/opera/* .
-
-# nobody wants scalable huge icons
-rm -rf share/icons/hicolor/scalable
-
-# opera packaging tools we don't need runtime
-mv share/opera/package-id.ini .
-
-# cleanup backups after patching
-find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
-
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_datadir},%{_pixmapsdir},%{_desktopdir},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_libdir}/%{name}/plugins,%{_datadir}/%{name}} \
+	$RPM_BUILD_ROOT{%{_pixmapsdir},%{_iconsdir},%{_desktopdir}}
 
 %browser_plugins_add_browser %{name} -p %{_libdir}/%{name}/plugins -b <<'EOF'
 # opera does not use for .xpt files
 *.xpt
-
-# use mplayerplug-in-opera instead
-mplayerplug-in*
 EOF
 
-install -p opera* $RPM_BUILD_ROOT%{_bindir}
-cp -a lib/opera $RPM_BUILD_ROOT%{_libdir}
-cp -a share/* $RPM_BUILD_ROOT%{_datadir}
-ln -s %{_docdir}/%{name}-%{version}/LICENSE $RPM_BUILD_ROOT%{_datadir}/%{name}/defaults/license.txt
-#cp -a etc/*.ini $RPM_BUILD_ROOT%{_sysconfdir}
-
-cat << 'EOF' > $RPM_BUILD_ROOT%{_sysconfdir}/operaprefs_default.ini
-[ISP]
-Id="DISTRO"
-EOF
-
-%if "%{pld_release}" == "ti"
-sed -i -e 's#DISTRO#PLD/Titanium#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
-%else
-%if "%{pld_release}" == "ac"
-sed -i -e 's#DISTRO#PLD/2.0 (Ac)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
-%else
-sed -i -e 's#DISTRO#PLD/3.0 (Th)#g' $RPM_BUILD_ROOT/etc/operaprefs_default.ini
-%endif
-%endif
+cp -a localization resources $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -p *.pak *.bin *.dat $RPM_BUILD_ROOT%{_libdir}/%{name}
+cp -a lib $RPM_BUILD_ROOT%{_libdir}/%{name}
+ln -s %{_datadir}/%{name}/localization $RPM_BUILD_ROOT%{_libdir}/%{name}/localization
+ln -s %{_datadir}/%{name}/resources $RPM_BUILD_ROOT%{_libdir}/%{name}/resources
+install -p %{name} $RPM_BUILD_ROOT%{_libdir}/%{name}
+#install -p %{name}-bin $RPM_BUILD_ROOT%{_libdir}/%{name}
+install -p %{name}_sandbox $RPM_BUILD_ROOT%{_libdir}/%{name}
+ln -s %{_libdir}/%{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
+cp -p %{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
+cp -a icons/* $RPM_BUILD_ROOT%{_iconsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%update_mime_database
 %update_icon_cache hicolor
-%update_desktop_database_post
+%update_desktop_database
 %update_browser_plugins
 
 %postun
-%update_mime_database
-%update_icon_cache hicolor
-%update_desktop_database_postun
 if [ "$1" = 0 ]; then
-	%update_browser_plugins
-fi
-
-%post plugin32
-%update_browser_plugins
-
-%postun plugin32
-if [ "$1" = 0 ]; then
+	%update_icon_cache hicolor
+	%update_desktop_database
 	%update_browser_plugins
 fi
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/opera*ini
-
-# browser plugins v2
+%doc copyright
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
-%attr(755,root,root) %{_bindir}/opera
-#%attr(755,root,root) %{_bindir}/opera-widget-manager
-%dir %{_libdir}/opera
-%ifarch %{x8664}
-%exclude %{_libdir}/opera/pluginwrapper/*-ia32-*
-%endif
-%attr(755,root,root) %{_libdir}/opera/*.so
-%attr(755,root,root) %{_libdir}/opera/opera*
-%dir %{_libdir}/opera/pluginwrapper
-%attr(755,root,root) %{_libdir}/opera/pluginwrapper/*
-%dir %{_plugindir}
-%dir %{_libdir}/opera/gstreamer
-%dir %{_libdir}/opera/gstreamer/plugins
-%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperamatroska.so
-%attr(755,root,root) %{_libdir}/opera/gstreamer/plugins/libgstoperavp8.so
-%dir %{_datadir}/opera
-%{_datadir}/mime/packages/opera-extension.xml
-%{_datadir}/opera/*.*
-%{_datadir}/opera/defaults
-%{_datadir}/opera/extra
-%{_datadir}/opera/skin
-#%{_datadir}/opera/scripts
-%{_datadir}/opera/styles
-%{_datadir}/opera/ui
-#%{_datadir}/opera/unite
-%dir %{_datadir}/opera/locale
-%{_datadir}/opera/locale/en
-%lang(af) %{_datadir}/opera/locale/af
-%lang(ar) %{_datadir}/opera/locale/ar
-%lang(az) %{_datadir}/opera/locale/az
-%lang(be) %{_datadir}/opera/locale/be
-%lang(bg) %{_datadir}/opera/locale/bg
-%lang(bn) %{_datadir}/opera/locale/bn
-%lang(cs) %{_datadir}/opera/locale/cs
-%lang(da) %{_datadir}/opera/locale/da
-%lang(de) %{_datadir}/opera/locale/de
-%lang(el) %{_datadir}/opera/locale/el
-%lang(en_GB) %{_datadir}/opera/locale/en-GB
-%lang(es_ES) %{_datadir}/opera/locale/es-ES
-%lang(es_LA) %{_datadir}/opera/locale/es-LA
-%lang(et) %{_datadir}/opera/locale/et
-%lang(fa) %{_datadir}/opera/locale/fa
-%lang(fi) %{_datadir}/opera/locale/fi
-%lang(fr) %{_datadir}/opera/locale/fr
-%lang(fr_CA) %{_datadir}/opera/locale/fr-CA
-%lang(fy) %{_datadir}/opera/locale/fy
-%lang(gd) %{_datadir}/opera/locale/gd
-%lang(he) %{_datadir}/opera/locale/he
-%lang(hi) %{_datadir}/opera/locale/hi
-%lang(hr) %{_datadir}/opera/locale/hr
-%lang(hu) %{_datadir}/opera/locale/hu
-%lang(id) %{_datadir}/opera/locale/id
-%lang(it) %{_datadir}/opera/locale/it
-%lang(ja) %{_datadir}/opera/locale/ja
-%lang(ka) %{_datadir}/opera/locale/ka
-%lang(kk) %{_datadir}/opera/locale/kk
-%lang(ko) %{_datadir}/opera/locale/ko
-%lang(lt) %{_datadir}/opera/locale/lt
-%lang(lt) %{_datadir}/opera/locale/lv
-%lang(me) %{_datadir}/opera/locale/me
-%lang(mk) %{_datadir}/opera/locale/mk
-%lang(ms) %{_datadir}/opera/locale/ms
-%lang(nb) %{_datadir}/opera/locale/nb
-%lang(nl) %{_datadir}/opera/locale/nl
-%lang(nn) %{_datadir}/opera/locale/nn
-%lang(pa) %{_datadir}/opera/locale/pa
-%lang(pl) %{_datadir}/opera/locale/pl
-%lang(pt) %{_datadir}/opera/locale/pt
-%lang(pt_BR) %{_datadir}/opera/locale/pt-BR
-%lang(ro) %{_datadir}/opera/locale/ro
-%lang(ru) %{_datadir}/opera/locale/ru
-%lang(sk) %{_datadir}/opera/locale/sk
-%lang(sr) %{_datadir}/opera/locale/sr
-%lang(sv) %{_datadir}/opera/locale/sv
-%lang(sw) %{_datadir}/opera/locale/sw
-%lang(ta) %{_datadir}/opera/locale/ta
-%lang(te) %{_datadir}/opera/locale/te
-%lang(th) %{_datadir}/opera/locale/th
-%lang(tl) %{_datadir}/opera/locale/tl
-%lang(tr) %{_datadir}/opera/locale/tr
-%lang(uk) %{_datadir}/opera/locale/uk
-%lang(ur) %{_datadir}/opera/locale/ur
-%lang(uz) %{_datadir}/opera/locale/uz
-%lang(vi) %{_datadir}/opera/locale/vi
-%lang(zh_CN) %{_datadir}/opera/locale/zh-cn
-#%lang(zh_HK) %{_datadir}/opera/locale/zh-hk
-%lang(zh_TW) %{_datadir}/opera/locale/zh-tw
-%lang(zu) %{_datadir}/opera/locale/zu
-%{_datadir}/opera/region
-#%{_datadir}/mime/packages/opera-widget.xml
-#%{_datadir}/mime/packages/opera-unite-application.xml
+%attr(755,root,root) %{_bindir}/%{name}
 %{_desktopdir}/*.desktop
-%{_mandir}/man1/opera.1*
-#%{_mandir}/man1/opera-widget-manager.1*
-#%{_pixmapsdir}/opera.xpm
 %{_iconsdir}/hicolor/*/*/*.png
 
-%ifarch %{x8664}
-%files plugin32
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/opera/pluginwrapper/*-ia32-*
-%endif
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/resources
+%{_datadir}/%{name}/resources/*.ico
+%{_datadir}/%{name}/resources/*.json
+%{_datadir}/%{name}/resources/dictionaries.xml
+%{_datadir}/%{name}/resources/inspector
+%{_datadir}/%{name}/localization
+
+%dir %{_libdir}/%{name}
+%{_libdir}/%{name}/icudtl.dat
+%{_libdir}/%{name}/natives_blob.bin
+%{_libdir}/%{name}/snapshot_blob.bin
+%{_libdir}/%{name}/*.pak
+%{_libdir}/%{name}/localization
+%{_libdir}/%{name}/resources
+%dir %{_libdir}/%{name}/lib
+%attr(755,root,root) %{_libdir}/%{name}/lib/libffmpeg.so.*
+%attr(755,root,root) %{_libdir}/%{name}/lib/libmalloc_wrapper.so
+%dir %{_libdir}/%{name}/plugins
+
+%attr(755,root,root) %{_libdir}/%{name}/%{name}
+# These unique permissions are intentional and necessary for the sandboxing
+%attr(4555,root,root) %{_libdir}/%{name}/%{name}_sandbox

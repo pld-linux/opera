@@ -1,30 +1,23 @@
---- opera-10.51-6252.i386.linux/share/applications/opera-browser.desktop~	2010-03-20 15:38:12.000000000 +0200
-+++ opera-10.51-6252.i386.linux/share/applications/opera-browser.desktop	2010-03-20 15:40:34.551656601 +0200
-@@ -2,6 +2,10 @@
- Type=Application
+--- opera-31.0.1889.174/opera.desktop	2015-09-06 10:00:09.174694303 +0300
++++ opera-31.0.1889.174/opera.desktop	2015-09-06 10:01:59.496777742 +0300
+@@ -1,15 +1,19 @@
+ [Desktop Entry]
  Version=1.0
  Name=Opera
-+Name[af]=opera
 +Name[eo]=Opero
-+Name[pl]=Opera
 +Name[zu]=I Opera
  GenericName=Web browser
- GenericName[bs]=Web preglednik
- GenericName[de]=Web-Browser
-@@ -16,6 +20,7 @@
- GenericName[nb]=Nettleser
- GenericName[nl]=webbrowser
- GenericName[nn]=Nettlesar
 +GenericName[pl]=Przeglądarka WWW
- GenericName[pt]=Navegador Web
- GenericName[pt_BR]=Navegador
- GenericName[ro]=Navigator de web
-@@ -30,6 +30,7 @@
- GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
- GenericName[zu]=Umkhangeli zincwadi we Web
- Comment=Fast and secure web browser and Internet suite
+ Comment=Fast and secure web browser
 +Comment[pl]=Najszybsza przeglądarka WWW na świecie
- Icon=opera-browser
- TryExec=/usr/bin/opera
- Exec=/usr/bin/opera %U
-
+ TryExec=opera
+ Exec=opera %U
+ Terminal=false
+ Icon=opera
+ Type=Application
+ Categories=Network;WebBrowser;
+-MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
++MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+ Actions=NewWindow;NewPrivateWindow;
+ 
+ [Desktop Action NewWindow]
