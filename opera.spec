@@ -14,7 +14,7 @@ Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
 Version:	31.0.1889.174
-Release:	1
+Release:	2
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
@@ -61,7 +61,7 @@ wersja jest skonsolidowana dynamicznie z Qt.
 %package l10n
 Summary:	%{name} language packages
 Group:		I18n
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 %if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
 %endif
