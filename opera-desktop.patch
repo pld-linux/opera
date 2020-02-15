@@ -36,8 +36,8 @@
  Icon=opera
  Type=Application
  Categories=Network;WebBrowser;
--MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
-+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
- Actions=NewWindow;NewPrivateWindow;
+-MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;application/x-opera-download;
++MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;application/x-opera-download;
+ Actions=new-window;new-private-window;
  
- [Desktop Action NewWindow]
+ [Desktop Action new-window]

@@ -13,13 +13,13 @@ Summary:	Opera browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	32.0.1948.69
+Version:	66.0.3515.72
 Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
-Source10:	ftp://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
-# Source10-md5:	a13d8b43a74d677ed2b06d09a6e17921
+Source10:	https://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
+# Source10-md5:	6403c71bb266420d19fdaa63fcf8f3c4
 Source1:	%{name}.sh
 Source2:	find-lang.sh
 Patch1:		%{name}-desktop.patch
@@ -81,17 +81,18 @@ SOURCE=%{S:10}
 %endif
 
 ar x $SOURCE
-tar xf control.tar.gz && rm control.tar.gz
+tar xf control.tar.xz && rm control.tar.xz
 tar xf data.tar.xz && rm data.tar.xz
 
 version=$(awk '/Version:/{print $2}' control)
 test $version = %{version}
 
-mv usr/lib/*/%{name}/* .
-mv usr/share/icons .
-mv usr/share/pixmaps/%{name}.xpm .
-mv usr/share/applications/%{name}.desktop .
-mv usr/share/doc/opera-stable/* .
+mkdir -p lib doc
+%{__mv} usr/lib/*/%{name}/* lib/
+%{__mv} usr/share/icons .
+%{__mv} usr/share/pixmaps/%{name}.xpm .
+%{__mv} usr/share/applications/%{name}.desktop .
+%{__mv} usr/share/doc/opera-stable/* doc/
 
 %patch1 -p1
 %patch2 -p1
@@ -109,16 +110,12 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_bindir},%{_libdir}/%{name}/plugins,
 *.xpt
 EOF
 
-cp -a localization resources $RPM_BUILD_ROOT%{_datadir}/%{name}
-cp -p *.pak *.bin *.dat $RPM_BUILD_ROOT%{_libdir}/%{name}
-cp -a lib $RPM_BUILD_ROOT%{_libdir}/%{name}
+cp -a lib/localization lib/resources $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -a lib/* $RPM_BUILD_ROOT%{_libdir}/%{name}
+%{__rm} -rf $RPM_BUILD_ROOT%{_libdir}/%{name}/{localization,resources}
 ln -s %{_datadir}/%{name}/localization $RPM_BUILD_ROOT%{_libdir}/%{name}/localization
 ln -s %{_datadir}/%{name}/resources $RPM_BUILD_ROOT%{_libdir}/%{name}/resources
-install -p %{name} $RPM_BUILD_ROOT%{_libdir}/%{name}
-install -p %{name}_sandbox $RPM_BUILD_ROOT%{_libdir}/%{name}
-install -p %{name}_crashreporter $RPM_BUILD_ROOT%{_libdir}/%{name}
-install -p %{name}_autoupdate $RPM_BUILD_ROOT%{_libdir}/%{name}
-cp -p %{name}_autoupdate.* $RPM_BUILD_ROOT%{_libdir}/%{name}
+
 install -p %{name}.sh $RPM_BUILD_ROOT%{_bindir}/%{name}
 cp -p %{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
 cp -a icons/* $RPM_BUILD_ROOT%{_iconsdir}
@@ -145,7 +142,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc copyright
+%doc doc/copyright
 %{_browserpluginsconfdir}/browsers.d/%{name}.*
 %config(noreplace) %verify(not md5 mtime size) %{_browserpluginsconfdir}/blacklist.d/%{name}.*.blacklist
 
@@ -154,11 +151,7 @@ fi
 %{_iconsdir}/hicolor/*/*/*.png
 
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/resources
-%{_datadir}/%{name}/resources/*.ico
-%{_datadir}/%{name}/resources/*.json
-%{_datadir}/%{name}/resources/dictionaries.xml
-%{_datadir}/%{name}/resources/inspector
+%{_datadir}/%{name}/resources
 %dir %{_datadir}/%{name}/localization
 %{_datadir}/%{name}/localization/en-US.pak
 
@@ -169,10 +162,15 @@ fi
 %{_libdir}/%{name}/*.pak
 %{_libdir}/%{name}/localization
 %{_libdir}/%{name}/resources
-%dir %{_libdir}/%{name}/lib
-%attr(755,root,root) %{_libdir}/%{name}/lib/libffmpeg.so.*
-%attr(755,root,root) %{_libdir}/%{name}/lib/libmalloc_wrapper.so
-%attr(755,root,root) %{_libdir}/%{name}/lib/libmojo_test_support.so
+%attr(755,root,root) %{_libdir}/%{name}/crashpad_handler
+%attr(755,root,root) %{_libdir}/%{name}/libEGL.so
+%attr(755,root,root) %{_libdir}/%{name}/libffmpeg.so
+%attr(755,root,root) %{_libdir}/%{name}/libGLESv2.so
+%attr(755,root,root) %{_libdir}/%{name}/libvk_swiftshader.so
+%dir %{_libdir}/%{name}/swiftshader
+%attr(755,root,root) %{_libdir}/%{name}/swiftshader/libEGL.so
+%attr(755,root,root) %{_libdir}/%{name}/swiftshader/libGLESv2.so
+%{_libdir}/%{name}/v8_context_snapshot.bin
 %dir %{_libdir}/%{name}/plugins
 
 %attr(755,root,root) %{_libdir}/%{name}/%{name}

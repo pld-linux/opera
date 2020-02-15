@@ -1,10 +1,10 @@
---- opera-31.0.1889.174/resources/pepper_flash_config.json	2015-09-06 11:21:10.636750476 +0300
-+++ opera-31.0.1889.174/resources/pepper_flash_config.json	2015-09-06 11:53:32.032098015 +0300
+--- opera-31.0.1889.174/lib/resources/pepper_flash_config.json	2015-09-06 11:21:10.636750476 +0300
++++ opera-31.0.1889.174/lib/resources/pepper_flash_config.json	2015-09-06 11:53:32.032098015 +0300
 @@ -1,5 +1,7 @@
  {
    "PepperFlashPaths" : [
 +    "/usr/lib64/browser-plugins/PepperFlash/libpepflashplayer.so",
 +    "/usr/lib/browser-plugins/PepperFlash/libpepflashplayer.so",
-     "/opt/google/chrome-beta/PepperFlash/libpepflashplayer.so",
-     "/opt/google/chrome-unstable/PepperFlash/libpepflashplayer.so",
-     "/opt/google/chrome/PepperFlash/libpepflashplayer.so",
+     "/usr/lib/adobe-flashplugin/libpepflashplayer.so",
+     "/usr/lib/pepperflashplugin-nonfree/libpepflashplayer.so",
+     "/usr/lib/PepperFlash/libpepflashplayer.so",
