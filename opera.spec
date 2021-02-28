@@ -62,9 +62,7 @@ wersja jest skonsolidowana dynamicznie z Qt.
 Summary:	%{name} language packages
 Group:		I18n
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description l10n
 This package contains language packages for 56 languages:
