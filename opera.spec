@@ -13,17 +13,16 @@ Summary:	Opera browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	66.0.3515.72
+Version:	85.0.4341.47
 Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	https://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
-# Source10-md5:	6403c71bb266420d19fdaa63fcf8f3c4
+# Source10-md5:	f25502863afbe78a4da951324a6a006e
 Source1:	%{name}.sh
 Source2:	find-lang.sh
 Patch1:		%{name}-desktop.patch
-Patch2:		pepper_flash_config.patch
 URL:		http://www.opera.com/
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.356
@@ -93,7 +92,6 @@ mkdir -p lib doc
 %{__mv} usr/share/doc/opera-stable/* doc/
 
 %patch1 -p1
-%patch2 -p1
 
 %{__sed} -e 's#/usr/lib/opera#%{_libdir}/opera#g' %{_sourcedir}/%{name}.sh > %{name}.sh
 %{__sed} -e 's,@localedir@,%{_datadir}/%{name}/localization,' %{_sourcedir}/find-lang.sh > find-lang.sh
@@ -155,16 +153,17 @@ fi
 
 %dir %{_libdir}/%{name}
 %{_libdir}/%{name}/icudtl.dat
-%{_libdir}/%{name}/natives_blob.bin
 %{_libdir}/%{name}/snapshot_blob.bin
 %{_libdir}/%{name}/*.pak
 %{_libdir}/%{name}/localization
 %{_libdir}/%{name}/resources
-%attr(755,root,root) %{_libdir}/%{name}/crashpad_handler
+%attr(755,root,root) %{_libdir}/%{name}/chrome_crashpad_handler
 %attr(755,root,root) %{_libdir}/%{name}/libEGL.so
 %attr(755,root,root) %{_libdir}/%{name}/libffmpeg.so
 %attr(755,root,root) %{_libdir}/%{name}/libGLESv2.so
 %attr(755,root,root) %{_libdir}/%{name}/libvk_swiftshader.so
+%attr(755,root,root) %{_libdir}/%{name}/libvulkan.so.1
+%{_libdir}/%{name}/vk_swiftshader_icd.json
 %dir %{_libdir}/%{name}/swiftshader
 %attr(755,root,root) %{_libdir}/%{name}/swiftshader/libEGL.so
 %attr(755,root,root) %{_libdir}/%{name}/swiftshader/libGLESv2.so
