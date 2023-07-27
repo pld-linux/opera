@@ -13,13 +13,13 @@ Summary:	Opera browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	100.0.4815.76
+Version:	101.0.4843.25
 Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	https://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
-# Source10-md5:	8e5012cbe99052400307a88efcd4b685
+# Source10-md5:	2999d5ae04b6e9f2778c5670f9d1b9ef
 Source1:	%{name}.sh
 Source2:	find-lang.sh
 Patch1:		%{name}-desktop.patch
@@ -162,6 +162,7 @@ fi
 %attr(755,root,root) %{_libdir}/%{name}/libffmpeg.so
 %attr(755,root,root) %{_libdir}/%{name}/libGLESv2.so
 %attr(755,root,root) %{_libdir}/%{name}/libqt5_shim.so
+%attr(755,root,root) %{_libdir}/%{name}/libqt6_shim.so
 %attr(755,root,root) %{_libdir}/%{name}/libvk_swiftshader.so
 %attr(755,root,root) %{_libdir}/%{name}/libvulkan.so.1
 %{_libdir}/%{name}/vk_swiftshader_icd.json
