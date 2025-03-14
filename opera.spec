@@ -13,13 +13,13 @@ Summary:	Opera browser
 Summary(hu.UTF-8):	A világ leggyorsabb webböngészője
 Summary(pl.UTF-8):	Najszybsza przeglądarka WWW na świecie
 Name:		opera
-Version:	117.0.5408.32
+Version:	117.0.5408.93
 Release:	1
 Epoch:		2
 License:	Distributable
 Group:		X11/Applications/Networking
 Source10:	https://ftp.opera.com/pub/opera/desktop/%{version}/linux/%{name}-stable_%{version}_amd64.deb
-# Source10-md5:	a3f258a98da89a07eeb38ceef9d4d035
+# Source10-md5:	725646e029c2a2bde6670b1cfec12bde
 Source1:	%{name}.sh
 Source2:	find-lang.sh
 Patch1:		%{name}-desktop.patch
